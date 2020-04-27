@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FlowCondition(Base):
     """Flow condition for displaying egress/ingress statistics.
-    The FlowCondition class encapsulates a list of flowCondition resources that is be managed by the user.
+    The FlowCondition class encapsulates a list of flowCondition resources that are managed by the user.
     A list of resources can be retrieved from the server using the FlowCondition.find() method.
-    The list can be managed by the user by using the FlowCondition.add() and FlowCondition.remove() methods.
+    The list can be managed by using the FlowCondition.add() and FlowCondition.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class FlowCondition(Base):
 
     @property
     def Operator(self):
-        """The logical operation to be performed.
-
-        Returns:
-            str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)
+        """
+        Returns
+        -------
+        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller): The logical operation to be performed.
         """
         return self._get_attribute('operator')
     @Operator.setter
@@ -50,10 +50,10 @@ class FlowCondition(Base):
 
     @property
     def ShowFirstMatchingSet(self):
-        """If true, displays the first matching set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, displays the first matching set.
         """
         return self._get_attribute('showFirstMatchingSet')
     @ShowFirstMatchingSet.setter
@@ -62,10 +62,10 @@ class FlowCondition(Base):
 
     @property
     def TrackingFilterId(self):
-        """Selected tracking filters from the availableTrackingFilter list.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute('trackingFilterId')
     @TrackingFilterId.setter
@@ -74,10 +74,10 @@ class FlowCondition(Base):
 
     @property
     def Values(self):
-        """Value to be matched for the condition.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Value to be matched for the condition.
         """
         return self._get_attribute('values')
     @Values.setter
@@ -85,76 +85,89 @@ class FlowCondition(Base):
         self._set_attribute('values', value)
 
     def update(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
-        """Updates a child instance of flowCondition on the server.
+        """Updates flowCondition resource on the server.
 
-        Args:
-            Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
-            ShowFirstMatchingSet (bool): If true, displays the first matching set.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Values (list(number)): Value to be matched for the condition.
+        Args
+        ----
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
-        """Adds a new flowCondition node on the server and retrieves it in this instance.
+        """Adds a new flowCondition resource on the server and adds it to the container.
 
-        Args:
-            Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
-            ShowFirstMatchingSet (bool): If true, displays the first matching set.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Values (list(number)): Value to be matched for the condition.
+        Args
+        ----
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
-        Returns:
-            self: This instance with all currently retrieved flowCondition data using find and the newly added flowCondition data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved flowCondition resources using find and the newly added flowCondition resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the flowCondition data in this instance from server.
+        """Deletes all the contained flowCondition resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
-        """Finds and retrieves flowCondition data from the server.
+        """Finds and retrieves flowCondition resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve flowCondition data from the server.
-        By default the find method takes no parameters and will retrieve all flowCondition data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowCondition resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flowCondition resources from the server.
 
-        Args:
-            Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
-            ShowFirstMatchingSet (bool): If true, displays the first matching set.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Values (list(number)): Value to be matched for the condition.
+        Args
+        ----
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
-        Returns:
-            self: This instance with matching flowCondition data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching flowCondition resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of flowCondition data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the flowCondition data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the flowCondition resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

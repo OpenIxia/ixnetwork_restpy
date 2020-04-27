@@ -36,10 +36,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def ArpDestinationIpv4AddressMask(self):
-        """If selected, Write Set Field for ARP Destination IPv4 Address Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for ARP Destination IPv4 Address Mask is supported.
         """
         return self._get_attribute('arpDestinationIpv4AddressMask')
     @ArpDestinationIpv4AddressMask.setter
@@ -48,10 +48,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def ArpDstHwAddressMask(self):
-        """If selected, Write Set Field for ARP Destination Hardware Address Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for ARP Destination Hardware Address Mask is supported.
         """
         return self._get_attribute('arpDstHwAddressMask')
     @ArpDstHwAddressMask.setter
@@ -60,10 +60,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def ArpSourceIpv4AddressMask(self):
-        """If selected, Write Set Field for ARP Source IPv4 Address Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for ARP Source IPv4 Address Mask is supported.
         """
         return self._get_attribute('arpSourceIpv4AddressMask')
     @ArpSourceIpv4AddressMask.setter
@@ -72,10 +72,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def ArpSrcHwAddressMask(self):
-        """If selected, Write Set Field for ARP Source Hardware Address Mask is supported
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for ARP Source Hardware Address Mask is supported
         """
         return self._get_attribute('arpSrcHwAddressMask')
     @ArpSrcHwAddressMask.setter
@@ -84,10 +84,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def EthernetDestinationMask(self):
-        """If selected, Write Set Field for Ethernet Destination Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for Ethernet Destination Mask is supported.
         """
         return self._get_attribute('ethernetDestinationMask')
     @EthernetDestinationMask.setter
@@ -96,10 +96,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def EthernetSourceMask(self):
-        """If selected, Write Set Field for Ethernet Source Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for Ethernet Source Mask is supported.
         """
         return self._get_attribute('ethernetSourceMask')
     @EthernetSourceMask.setter
@@ -108,10 +108,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv4DestinationMask(self):
-        """If selected, Write Set Field for IPv4 Destination Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv4 Destination Mask is supported.
         """
         return self._get_attribute('ipv4DestinationMask')
     @Ipv4DestinationMask.setter
@@ -120,10 +120,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv4SourceMask(self):
-        """If selected, Write Set Field for IPv4 Source Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv4 Source Mask is supported.
         """
         return self._get_attribute('ipv4SourceMask')
     @Ipv4SourceMask.setter
@@ -132,10 +132,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv6DestinationMask(self):
-        """If selected, Write Set Field for IPv6 Destination Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv6 Destination Mask is supported.
         """
         return self._get_attribute('ipv6DestinationMask')
     @Ipv6DestinationMask.setter
@@ -144,10 +144,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv6ExtHeaderMask(self):
-        """If selected, Write Set Field for IPv6 Ext Header Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv6 Ext Header Mask is supported.
         """
         return self._get_attribute('ipv6ExtHeaderMask')
     @Ipv6ExtHeaderMask.setter
@@ -156,10 +156,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv6FlowLabelMask(self):
-        """If selected, Write Set Field for IPv6 Flow Label Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv6 Flow Label Mask is supported.
         """
         return self._get_attribute('ipv6FlowLabelMask')
     @Ipv6FlowLabelMask.setter
@@ -168,10 +168,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def Ipv6SourceMask(self):
-        """If selected, Write Set Field for IPv6 Source Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for IPv6 Source Mask is supported.
         """
         return self._get_attribute('ipv6SourceMask')
     @Ipv6SourceMask.setter
@@ -180,10 +180,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def PbbIsidMask(self):
-        """If selected, Write Set Field for PBB ISID Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for PBB ISID Mask is supported.
         """
         return self._get_attribute('pbbIsidMask')
     @PbbIsidMask.setter
@@ -192,10 +192,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def TunnelIdMask(self):
-        """If selected, Write Set Field for Tunnel ID Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for Tunnel ID Mask is supported.
         """
         return self._get_attribute('tunnelIdMask')
     @TunnelIdMask.setter
@@ -204,10 +204,10 @@ class WriteSetFieldMask(Base):
 
     @property
     def VlanMask(self):
-        """If selected, Write Set Field for VLAN Mask is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Set Field for VLAN Mask is supported.
         """
         return self._get_attribute('vlanMask')
     @VlanMask.setter
@@ -215,26 +215,28 @@ class WriteSetFieldMask(Base):
         self._set_attribute('vlanMask', value)
 
     def update(self, ArpDestinationIpv4AddressMask=None, ArpDstHwAddressMask=None, ArpSourceIpv4AddressMask=None, ArpSrcHwAddressMask=None, EthernetDestinationMask=None, EthernetSourceMask=None, Ipv4DestinationMask=None, Ipv4SourceMask=None, Ipv6DestinationMask=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabelMask=None, Ipv6SourceMask=None, PbbIsidMask=None, TunnelIdMask=None, VlanMask=None):
-        """Updates a child instance of writeSetFieldMask on the server.
+        """Updates writeSetFieldMask resource on the server.
 
-        Args:
-            ArpDestinationIpv4AddressMask (bool): If selected, Write Set Field for ARP Destination IPv4 Address Mask is supported.
-            ArpDstHwAddressMask (bool): If selected, Write Set Field for ARP Destination Hardware Address Mask is supported.
-            ArpSourceIpv4AddressMask (bool): If selected, Write Set Field for ARP Source IPv4 Address Mask is supported.
-            ArpSrcHwAddressMask (bool): If selected, Write Set Field for ARP Source Hardware Address Mask is supported
-            EthernetDestinationMask (bool): If selected, Write Set Field for Ethernet Destination Mask is supported.
-            EthernetSourceMask (bool): If selected, Write Set Field for Ethernet Source Mask is supported.
-            Ipv4DestinationMask (bool): If selected, Write Set Field for IPv4 Destination Mask is supported.
-            Ipv4SourceMask (bool): If selected, Write Set Field for IPv4 Source Mask is supported.
-            Ipv6DestinationMask (bool): If selected, Write Set Field for IPv6 Destination Mask is supported.
-            Ipv6ExtHeaderMask (bool): If selected, Write Set Field for IPv6 Ext Header Mask is supported.
-            Ipv6FlowLabelMask (bool): If selected, Write Set Field for IPv6 Flow Label Mask is supported.
-            Ipv6SourceMask (bool): If selected, Write Set Field for IPv6 Source Mask is supported.
-            PbbIsidMask (bool): If selected, Write Set Field for PBB ISID Mask is supported.
-            TunnelIdMask (bool): If selected, Write Set Field for Tunnel ID Mask is supported.
-            VlanMask (bool): If selected, Write Set Field for VLAN Mask is supported.
+        Args
+        ----
+        - ArpDestinationIpv4AddressMask (bool): If selected, Write Set Field for ARP Destination IPv4 Address Mask is supported.
+        - ArpDstHwAddressMask (bool): If selected, Write Set Field for ARP Destination Hardware Address Mask is supported.
+        - ArpSourceIpv4AddressMask (bool): If selected, Write Set Field for ARP Source IPv4 Address Mask is supported.
+        - ArpSrcHwAddressMask (bool): If selected, Write Set Field for ARP Source Hardware Address Mask is supported
+        - EthernetDestinationMask (bool): If selected, Write Set Field for Ethernet Destination Mask is supported.
+        - EthernetSourceMask (bool): If selected, Write Set Field for Ethernet Source Mask is supported.
+        - Ipv4DestinationMask (bool): If selected, Write Set Field for IPv4 Destination Mask is supported.
+        - Ipv4SourceMask (bool): If selected, Write Set Field for IPv4 Source Mask is supported.
+        - Ipv6DestinationMask (bool): If selected, Write Set Field for IPv6 Destination Mask is supported.
+        - Ipv6ExtHeaderMask (bool): If selected, Write Set Field for IPv6 Ext Header Mask is supported.
+        - Ipv6FlowLabelMask (bool): If selected, Write Set Field for IPv6 Flow Label Mask is supported.
+        - Ipv6SourceMask (bool): If selected, Write Set Field for IPv6 Source Mask is supported.
+        - PbbIsidMask (bool): If selected, Write Set Field for PBB ISID Mask is supported.
+        - TunnelIdMask (bool): If selected, Write Set Field for Tunnel ID Mask is supported.
+        - VlanMask (bool): If selected, Write Set Field for VLAN Mask is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MacRanges(Base):
     """This object contains the MAC range configuration.
-    The MacRanges class encapsulates a list of macRanges resources that is be managed by the user.
+    The MacRanges class encapsulates a list of macRanges resources that are managed by the user.
     A list of resources can be retrieved from the server using the MacRanges.find() method.
-    The list can be managed by the user by using the MacRanges.add() and MacRanges.remove() methods.
+    The list can be managed by using the MacRanges.add() and MacRanges.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class MacRanges(Base):
 
     @property
     def Count(self):
-        """The number of times to increment in this MAC range, starting with the address set in macAddress.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times to increment in this MAC range, starting with the address set in macAddress.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class MacRanges(Base):
 
     @property
     def Enabled(self):
-        """If true, the MAC range is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the MAC range is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class MacRanges(Base):
 
     @property
     def MacAddress(self):
-        """The MAC address of the first entry in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the first entry in the range.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -74,10 +74,10 @@ class MacRanges(Base):
 
     @property
     def Step(self):
-        """The amount to increment each MAC address in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The amount to increment each MAC address in the range.
         """
         return self._get_attribute('step')
     @Step.setter
@@ -86,10 +86,10 @@ class MacRanges(Base):
 
     @property
     def TrafficGroupId(self):
-        """Assigns a traffic group to the MAC range. The traffic group must be previously configured.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -97,79 +97,92 @@ class MacRanges(Base):
         self._set_attribute('trafficGroupId', value)
 
     def update(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
-        """Updates a child instance of macRanges on the server.
+        """Updates macRanges resource on the server.
 
-        Args:
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            Enabled (bool): If true, the MAC range is enabled.
-            MacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        Args
+        ----
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - MacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
-        """Adds a new macRanges node on the server and retrieves it in this instance.
+        """Adds a new macRanges resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            Enabled (bool): If true, the MAC range is enabled.
-            MacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        Args
+        ----
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - MacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
-        Returns:
-            self: This instance with all currently retrieved macRanges data using find and the newly added macRanges data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved macRanges resources using find and the newly added macRanges resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the macRanges data in this instance from server.
+        """Deletes all the contained macRanges resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
-        """Finds and retrieves macRanges data from the server.
+        """Finds and retrieves macRanges resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve macRanges data from the server.
-        By default the find method takes no parameters and will retrieve all macRanges data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macRanges resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all macRanges resources from the server.
 
-        Args:
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            Enabled (bool): If true, the MAC range is enabled.
-            MacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        Args
+        ----
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - MacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
-        Returns:
-            self: This instance with matching macRanges data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching macRanges resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of macRanges data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the macRanges data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the macRanges resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

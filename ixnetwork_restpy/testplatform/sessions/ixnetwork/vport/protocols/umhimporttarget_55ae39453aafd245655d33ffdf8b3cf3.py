@@ -36,10 +36,10 @@ class UmhImportTarget(Base):
 
     @property
     def ImportTargetList(self):
-        """Configures import route target in case of UMH routes
-
-        Returns:
-            list(dict(arg1:str[as|asNumber2|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[as | asNumber2 | ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str)): Configures import route target in case of UMH routes
         """
         return self._get_attribute('importTargetList')
     @ImportTargetList.setter
@@ -47,12 +47,14 @@ class UmhImportTarget(Base):
         self._set_attribute('importTargetList', value)
 
     def update(self, ImportTargetList=None):
-        """Updates a child instance of umhImportTarget on the server.
+        """Updates umhImportTarget resource on the server.
 
-        Args:
-            ImportTargetList (list(dict(arg1:str[as|asNumber2|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures import route target in case of UMH routes
+        Args
+        ----
+        - ImportTargetList (list(dict(arg1:str[as | asNumber2 | ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures import route target in case of UMH routes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

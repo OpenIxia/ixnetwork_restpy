@@ -36,10 +36,10 @@ class Vlan(Base):
 
     @property
     def Tpid(self):
-        """Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
         """
         return self._get_attribute('tpid')
     @Tpid.setter
@@ -48,10 +48,10 @@ class Vlan(Base):
 
     @property
     def VlanCount(self):
-        """The number of VLANs configured for this interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of VLANs configured for this interface.
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -60,10 +60,10 @@ class Vlan(Base):
 
     @property
     def VlanEnable(self):
-        """If enabled, a VLAN can be assigned for each of the interfaces.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, a VLAN can be assigned for each of the interfaces.
         """
         return self._get_attribute('vlanEnable')
     @VlanEnable.setter
@@ -72,10 +72,10 @@ class Vlan(Base):
 
     @property
     def VlanId(self):
-        """If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -84,10 +84,10 @@ class Vlan(Base):
 
     @property
     def VlanPriority(self):
-        """The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -95,16 +95,18 @@ class Vlan(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, Tpid=None, VlanCount=None, VlanEnable=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of vlan on the server.
+        """Updates vlan resource on the server.
 
-        Args:
-            Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
-            VlanCount (number): The number of VLANs configured for this interface.
-            VlanEnable (bool): If enabled, a VLAN can be assigned for each of the interfaces.
-            VlanId (str): If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
-            VlanPriority (str): The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
+        Args
+        ----
+        - Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
+        - VlanCount (number): The number of VLANs configured for this interface.
+        - VlanEnable (bool): If enabled, a VLAN can be assigned for each of the interfaces.
+        - VlanId (str): If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
+        - VlanPriority (str): The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,10 +36,10 @@ class ExtendedCommunity(Base):
 
     @property
     def ExtendedCommunity(self):
-        """Associates BGP4 extended community attributes with a route item.
-
-        Returns:
-            list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|fourOctetAs|opaque|ip],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | fourOctetAs | opaque | ip],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str)): Associates BGP4 extended community attributes with a route item.
         """
         return self._get_attribute('extendedCommunity')
     @ExtendedCommunity.setter
@@ -47,12 +47,14 @@ class ExtendedCommunity(Base):
         self._set_attribute('extendedCommunity', value)
 
     def update(self, ExtendedCommunity=None):
-        """Updates a child instance of extendedCommunity on the server.
+        """Updates extendedCommunity resource on the server.
 
-        Args:
-            ExtendedCommunity (list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|fourOctetAs|opaque|ip],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))): Associates BGP4 extended community attributes with a route item.
+        Args
+        ----
+        - ExtendedCommunity (list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | fourOctetAs | opaque | ip],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str))): Associates BGP4 extended community attributes with a route item.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

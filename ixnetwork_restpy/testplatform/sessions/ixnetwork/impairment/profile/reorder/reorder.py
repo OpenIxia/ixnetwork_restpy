@@ -36,10 +36,10 @@ class Reorder(Base):
 
     @property
     def ClusterSize(self):
-        """Number of packets to reorder on each occurrence.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of packets to reorder on each occurrence.
         """
         return self._get_attribute('clusterSize')
     @ClusterSize.setter
@@ -48,10 +48,10 @@ class Reorder(Base):
 
     @property
     def Enabled(self):
-        """If true, periodically reorder received packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, periodically reorder received packets.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class Reorder(Base):
 
     @property
     def PercentRate(self):
-        """How often to reorder packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How often to reorder packets.
         """
         return self._get_attribute('percentRate')
     @PercentRate.setter
@@ -72,10 +72,10 @@ class Reorder(Base):
 
     @property
     def SkipCount(self):
-        """How many packets to skip before sending the reordered packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many packets to skip before sending the reordered packets.
         """
         return self._get_attribute('skipCount')
     @SkipCount.setter
@@ -83,15 +83,17 @@ class Reorder(Base):
         self._set_attribute('skipCount', value)
 
     def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
-        """Updates a child instance of reorder on the server.
+        """Updates reorder resource on the server.
 
-        Args:
-            ClusterSize (number): Number of packets to reorder on each occurrence.
-            Enabled (bool): If true, periodically reorder received packets.
-            PercentRate (number): How often to reorder packets.
-            SkipCount (number): How many packets to skip before sending the reordered packets.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to reorder on each occurrence.
+        - Enabled (bool): If true, periodically reorder received packets.
+        - PercentRate (number): How often to reorder packets.
+        - SkipCount (number): How many packets to skip before sending the reordered packets.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -101,6 +101,8 @@ class Connection(object):
         if ignore_env_proxy is True:
             os.environ['no_proxy'] = '*' 
         self._hostname = hostname
+        if ':' in self._hostname and '[' not in self._hostname:
+            self._hostname = '[%s]' % self._hostname
         self._rest_port = rest_port
         self._scheme = 'https'
         self._log_file_name = log_file_name
@@ -324,7 +326,7 @@ class Connection(object):
                         server_info = None
                     errors.append('\t%s [%s] %s' % (error['lastModified'], error['errorLevel'][1:].upper(), error['description']))
         except:
-            errors.append('\tUnable to access the server to collect appErrors')
+            pass
         # raise the appropriate error
         message = '\n'.join(errors)
         if response.status_code == 400:
@@ -401,7 +403,7 @@ class Connection(object):
                         return async_status['result']
                     else:
                         return None
-                elif self._platform == 'connection_manager' and state in ['ACTIVE', 'STOPPED']:
+                elif self._platform == 'connection_manager' and state in ['ACTIVE', 'STOPPED', 'STARTING']:
                     return response.json()
                 else:
                     return self._process_response_status_code(url, headers, response, async_status=True)

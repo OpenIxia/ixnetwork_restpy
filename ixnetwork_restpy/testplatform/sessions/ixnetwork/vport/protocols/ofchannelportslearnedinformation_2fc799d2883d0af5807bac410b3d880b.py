@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OfChannelPortsLearnedInformation(Base):
     """Signifies the information learned from OF channel ports.
-    The OfChannelPortsLearnedInformation class encapsulates a list of ofChannelPortsLearnedInformation resources that is managed by the system.
+    The OfChannelPortsLearnedInformation class encapsulates a list of ofChannelPortsLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the OfChannelPortsLearnedInformation.find() method.
     """
 
@@ -37,181 +37,188 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def AdvertisedFeatures(self):
-        """Signifies the advertised features of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the advertised features of the port.
         """
         return self._get_attribute('advertisedFeatures')
 
     @property
     def Config(self):
-        """Signifies the configuration name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the configuration name.
         """
         return self._get_attribute('config')
 
     @property
     def CurrentFeatures(self):
-        """Signifies the current features of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the current features of the port.
         """
         return self._get_attribute('currentFeatures')
 
     @property
     def CurrentSpeed(self):
-        """Indicates the current speed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the current speed.
         """
         return self._get_attribute('currentSpeed')
 
     @property
     def DataPathId(self):
-        """The Datapath identifier of the Open Flow channel.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Datapath identifier of the Open Flow channel.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """The Data Path identifier of the OpenFlow switch in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Data Path identifier of the OpenFlow switch in hexadecimal format.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def EthernetAddress(self):
-        """Signifies the Ethernet IP address of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the Ethernet IP address of the switch.
         """
         return self._get_attribute('ethernetAddress')
 
     @property
     def LocalIp(self):
-        """Signifies the local IP of the switch that the OF Channel is connected to.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the local IP of the switch that the OF Channel is connected to.
         """
         return self._get_attribute('localIp')
 
     @property
     def MaximumSpeed(self):
-        """Indicates the maximum speed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum speed.
         """
         return self._get_attribute('maximumSpeed')
 
     @property
     def Name(self):
-        """Signifies the name of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the name of the port.
         """
         return self._get_attribute('name')
 
     @property
     def PeerAdvertisedFeatures(self):
-        """Signifies the features advertised by the peer port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the features advertised by the peer port.
         """
         return self._get_attribute('peerAdvertisedFeatures')
 
     @property
     def PortNumber(self):
-        """Indicates the port number used by the corresponding switch.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the port number used by the corresponding switch.
         """
         return self._get_attribute('portNumber')
 
     @property
     def RemoteIp(self):
-        """Signifies the remote IP of the switch that the OF Channel is connected to.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the remote IP of the switch that the OF Channel is connected to.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def State(self):
-        """Signifies the state of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the state of the port.
         """
         return self._get_attribute('state')
 
     @property
     def SupportedFeatures(self):
-        """Signifies the features supported by the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the features supported by the port.
         """
         return self._get_attribute('supportedFeatures')
 
     def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, EthernetAddress=None, LocalIp=None, MaximumSpeed=None, Name=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, State=None, SupportedFeatures=None):
-        """Finds and retrieves ofChannelPortsLearnedInformation data from the server.
+        """Finds and retrieves ofChannelPortsLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ofChannelPortsLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all ofChannelPortsLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannelPortsLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ofChannelPortsLearnedInformation resources from the server.
 
-        Args:
-            AdvertisedFeatures (str): Signifies the advertised features of the port.
-            Config (str): Signifies the configuration name.
-            CurrentFeatures (str): Signifies the current features of the port.
-            CurrentSpeed (number): Indicates the current speed.
-            DataPathId (number): The Datapath identifier of the Open Flow channel.
-            DataPathIdAsHex (str): The Data Path identifier of the OpenFlow switch in hexadecimal format.
-            EthernetAddress (str): Signifies the Ethernet IP address of the switch.
-            LocalIp (str): Signifies the local IP of the switch that the OF Channel is connected to.
-            MaximumSpeed (number): Indicates the maximum speed.
-            Name (str): Signifies the name of the port.
-            PeerAdvertisedFeatures (str): Signifies the features advertised by the peer port.
-            PortNumber (number): Indicates the port number used by the corresponding switch.
-            RemoteIp (str): Signifies the remote IP of the switch that the OF Channel is connected to.
-            State (str): Signifies the state of the port.
-            SupportedFeatures (str): Signifies the features supported by the port.
+        Args
+        ----
+        - AdvertisedFeatures (str): Signifies the advertised features of the port.
+        - Config (str): Signifies the configuration name.
+        - CurrentFeatures (str): Signifies the current features of the port.
+        - CurrentSpeed (number): Indicates the current speed.
+        - DataPathId (number): The Datapath identifier of the Open Flow channel.
+        - DataPathIdAsHex (str): The Data Path identifier of the OpenFlow switch in hexadecimal format.
+        - EthernetAddress (str): Signifies the Ethernet IP address of the switch.
+        - LocalIp (str): Signifies the local IP of the switch that the OF Channel is connected to.
+        - MaximumSpeed (number): Indicates the maximum speed.
+        - Name (str): Signifies the name of the port.
+        - PeerAdvertisedFeatures (str): Signifies the features advertised by the peer port.
+        - PortNumber (number): Indicates the port number used by the corresponding switch.
+        - RemoteIp (str): Signifies the remote IP of the switch that the OF Channel is connected to.
+        - State (str): Signifies the state of the port.
+        - SupportedFeatures (str): Signifies the features supported by the port.
 
-        Returns:
-            self: This instance with matching ofChannelPortsLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ofChannelPortsLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ofChannelPortsLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ofChannelPortsLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ofChannelPortsLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

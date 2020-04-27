@@ -36,24 +36,24 @@ class CurrentPacket(Base):
 
     @property
     def Stack(self):
-        """An instance of the Stack class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack.Stack): An instance of the Stack class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack.Stack)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
         return Stack(self)
 
     @property
     def PacketHex(self):
-        """Gets the packet hex of the current packet
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Gets the packet hex of the current packet
         """
         return self._get_attribute('packetHex')
 
@@ -62,13 +62,14 @@ class CurrentPacket(Base):
 
         The command retrieves a packet from the control capture started on a port.
 
-        getPacketFromControlCapture(Arg2:number)
-            Args:
-                args[0] is Arg2 (number): The packet index.
+        getPacketFromControlCapture(Arg2=number)
+        ----------------------------------------
+        - Arg2 (number): The packet index.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -80,13 +81,14 @@ class CurrentPacket(Base):
 
         The command retrieves a packet from the data capture started on a port.
 
-        getPacketFromDataCapture(Arg2:number)
-            Args:
-                args[0] is Arg2 (number): The packet index.
+        getPacketFromDataCapture(Arg2=number)
+        -------------------------------------
+        - Arg2 (number): The packet index.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

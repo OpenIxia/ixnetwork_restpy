@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedIpv4P2mpLables(Base):
     """This objects dispalys the learned IPv4 P2MP Labels.
-    The LearnedIpv4P2mpLables class encapsulates a list of learnedIpv4P2mpLables resources that is managed by the system.
+    The LearnedIpv4P2mpLables class encapsulates a list of learnedIpv4P2mpLables resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedIpv4P2mpLables.find() method.
     """
 
@@ -37,85 +37,92 @@ class LearnedIpv4P2mpLables(Base):
 
     @property
     def OpaqueValueElement(self):
-        """An instance of the OpaqueValueElement class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_f8177f0b097bb2f77dfe99c5fe40eb59.OpaqueValueElement): An instance of the OpaqueValueElement class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_f8177f0b097bb2f77dfe99c5fe40eb59.OpaqueValueElement)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_f8177f0b097bb2f77dfe99c5fe40eb59 import OpaqueValueElement
         return OpaqueValueElement(self)
 
     @property
     def Label(self):
-        """Indicates the label value added to the packet(s) by the upstream LDP peer.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the label value added to the packet(s) by the upstream LDP peer.
         """
         return self._get_attribute('label')
 
     @property
     def LabelSpaceId(self):
-        """Part of the LSR Id. It forms the last 2 octets of the 6-octet LDP Identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Part of the LSR Id. It forms the last 2 octets of the 6-octet LDP Identifier.
         """
         return self._get_attribute('labelSpaceId')
 
     @property
     def PeerIpAddress(self):
-        """The RID of the upstream LDP peer. Part of the LSR Id. It must be globally unique. It forms the first 4 octets of the 6-octet LDP Identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The RID of the upstream LDP peer. Part of the LSR Id. It must be globally unique. It forms the first 4 octets of the 6-octet LDP Identifier.
         """
         return self._get_attribute('peerIpAddress')
 
     @property
     def RootAddress(self):
-        """Root Address of IPv4 P2MP labels learned.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Root Address of IPv4 P2MP labels learned.
         """
         return self._get_attribute('rootAddress')
 
     def find(self, Label=None, LabelSpaceId=None, PeerIpAddress=None, RootAddress=None):
-        """Finds and retrieves learnedIpv4P2mpLables data from the server.
+        """Finds and retrieves learnedIpv4P2mpLables resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedIpv4P2mpLables data from the server.
-        By default the find method takes no parameters and will retrieve all learnedIpv4P2mpLables data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedIpv4P2mpLables resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedIpv4P2mpLables resources from the server.
 
-        Args:
-            Label (number): Indicates the label value added to the packet(s) by the upstream LDP peer.
-            LabelSpaceId (number): Part of the LSR Id. It forms the last 2 octets of the 6-octet LDP Identifier.
-            PeerIpAddress (str): The RID of the upstream LDP peer. Part of the LSR Id. It must be globally unique. It forms the first 4 octets of the 6-octet LDP Identifier.
-            RootAddress (str): Root Address of IPv4 P2MP labels learned.
+        Args
+        ----
+        - Label (number): Indicates the label value added to the packet(s) by the upstream LDP peer.
+        - LabelSpaceId (number): Part of the LSR Id. It forms the last 2 octets of the 6-octet LDP Identifier.
+        - PeerIpAddress (str): The RID of the upstream LDP peer. Part of the LSR Id. It must be globally unique. It forms the first 4 octets of the 6-octet LDP Identifier.
+        - RootAddress (str): Root Address of IPv4 P2MP labels learned.
 
-        Returns:
-            self: This instance with matching learnedIpv4P2mpLables data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedIpv4P2mpLables resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedIpv4P2mpLables data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedIpv4P2mpLables data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedIpv4P2mpLables resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTlv(Base):
     """NOT DEFINED
-    The CustomTlv class encapsulates a list of customTlv resources that is be managed by the user.
+    The CustomTlv class encapsulates a list of customTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTlv.find() method.
-    The list can be managed by the user by using the CustomTlv.add() and CustomTlv.remove() methods.
+    The list can be managed by using the CustomTlv.add() and CustomTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomTlv(Base):
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class CustomTlv(Base):
 
     @property
     def IncludeInHello(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeInHello')
     @IncludeInHello.setter
@@ -62,10 +62,10 @@ class CustomTlv(Base):
 
     @property
     def IncludeInLsp(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeInLsp')
     @IncludeInLsp.setter
@@ -74,10 +74,10 @@ class CustomTlv(Base):
 
     @property
     def IncludeInNetworkRange(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeInNetworkRange')
     @IncludeInNetworkRange.setter
@@ -86,10 +86,10 @@ class CustomTlv(Base):
 
     @property
     def Length(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('length')
     @Length.setter
@@ -98,10 +98,10 @@ class CustomTlv(Base):
 
     @property
     def Type(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('type')
     @Type.setter
@@ -110,10 +110,10 @@ class CustomTlv(Base):
 
     @property
     def Value(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('value')
     @Value.setter
@@ -121,85 +121,98 @@ class CustomTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
-        """Updates a child instance of customTlv on the server.
+        """Updates customTlv resource on the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            IncludeInHello (bool): NOT DEFINED
-            IncludeInLsp (bool): NOT DEFINED
-            IncludeInNetworkRange (bool): NOT DEFINED
-            Length (number): NOT DEFINED
-            Type (number): NOT DEFINED
-            Value (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - IncludeInHello (bool): NOT DEFINED
+        - IncludeInLsp (bool): NOT DEFINED
+        - IncludeInNetworkRange (bool): NOT DEFINED
+        - Length (number): NOT DEFINED
+        - Type (number): NOT DEFINED
+        - Value (str): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
-        """Adds a new customTlv node on the server and retrieves it in this instance.
+        """Adds a new customTlv resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            IncludeInHello (bool): NOT DEFINED
-            IncludeInLsp (bool): NOT DEFINED
-            IncludeInNetworkRange (bool): NOT DEFINED
-            Length (number): NOT DEFINED
-            Type (number): NOT DEFINED
-            Value (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - IncludeInHello (bool): NOT DEFINED
+        - IncludeInLsp (bool): NOT DEFINED
+        - IncludeInNetworkRange (bool): NOT DEFINED
+        - Length (number): NOT DEFINED
+        - Type (number): NOT DEFINED
+        - Value (str): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTlv data using find and the newly added customTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTlv resources using find and the newly added customTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTlv data in this instance from server.
+        """Deletes all the contained customTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
-        """Finds and retrieves customTlv data from the server.
+        """Finds and retrieves customTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTlv data from the server.
-        By default the find method takes no parameters and will retrieve all customTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTlv resources from the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            IncludeInHello (bool): NOT DEFINED
-            IncludeInLsp (bool): NOT DEFINED
-            IncludeInNetworkRange (bool): NOT DEFINED
-            Length (number): NOT DEFINED
-            Type (number): NOT DEFINED
-            Value (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - IncludeInHello (bool): NOT DEFINED
+        - IncludeInLsp (bool): NOT DEFINED
+        - IncludeInNetworkRange (bool): NOT DEFINED
+        - Length (number): NOT DEFINED
+        - Type (number): NOT DEFINED
+        - Value (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

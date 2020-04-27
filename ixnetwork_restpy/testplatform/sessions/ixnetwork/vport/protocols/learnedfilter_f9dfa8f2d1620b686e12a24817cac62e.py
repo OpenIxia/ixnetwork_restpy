@@ -36,38 +36,38 @@ class LearnedFilter(Base):
 
     @property
     def Capabilities(self):
-        """An instance of the Capabilities class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_754497d1ff7b22c18e1ee34bf909c096.Capabilities): An instance of the Capabilities class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_754497d1ff7b22c18e1ee34bf909c096.Capabilities)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_754497d1ff7b22c18e1ee34bf909c096 import Capabilities
         return Capabilities(self)._select()
 
     @property
     def Prefix(self):
-        """An instance of the Prefix class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_70a4504d7e1406e26725789a953f84b5.Prefix): An instance of the Prefix class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_70a4504d7e1406e26725789a953f84b5.Prefix)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_70a4504d7e1406e26725789a953f84b5 import Prefix
         return Prefix(self)._select()
 
     @property
     def Afi(self):
-        """Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
         """
         return self._get_attribute('afi')
     @Afi.setter
@@ -76,10 +76,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableAfiSafi(self):
-        """If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
         """
         return self._get_attribute('enableAfiSafi')
     @EnableAfiSafi.setter
@@ -88,10 +88,10 @@ class LearnedFilter(Base):
 
     @property
     def EnablePrefix(self):
-        """If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
         """
         return self._get_attribute('enablePrefix')
     @EnablePrefix.setter
@@ -100,10 +100,10 @@ class LearnedFilter(Base):
 
     @property
     def Safi(self):
-        """Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
         """
         return self._get_attribute('safi')
     @Safi.setter
@@ -111,15 +111,17 @@ class LearnedFilter(Base):
         self._set_attribute('safi', value)
 
     def update(self, Afi=None, EnableAfiSafi=None, EnablePrefix=None, Safi=None):
-        """Updates a child instance of learnedFilter on the server.
+        """Updates learnedFilter resource on the server.
 
-        Args:
-            Afi (number): Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
-            EnableAfiSafi (bool): If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
-            EnablePrefix (bool): If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
-            Safi (number): Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
+        Args
+        ----
+        - Afi (number): Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
+        - EnableAfiSafi (bool): If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
+        - EnablePrefix (bool): If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
+        - Safi (number): Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

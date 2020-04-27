@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ListWatch(Base):
     """
-    The ListWatch class encapsulates a list of listWatch resources that is be managed by the user.
+    The ListWatch class encapsulates a list of listWatch resources that are managed by the user.
     A list of resources can be retrieved from the server using the ListWatch.find() method.
-    The list can be managed by the user by using the ListWatch.add() and ListWatch.remove() methods.
+    The list can be managed by using the ListWatch.add() and ListWatch.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class ListWatch(Base):
     @property
     def AttributesToWatch(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('attributesToWatch')
     @AttributesToWatch.setter
@@ -51,45 +51,45 @@ class ListWatch(Base):
     @property
     def AverageExecutionTime(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('averageExecutionTime')
 
     @property
     def IsDisabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isDisabled')
 
     @property
     def LastExecutionTime(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('lastExecutionTime')
 
     @property
     def LastNotification(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('lastNotification')
 
     @property
     def MaxExecutionTime(self):
-        """The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
         return self._get_attribute('maxExecutionTime')
     @MaxExecutionTime.setter
@@ -99,9 +99,9 @@ class ListWatch(Base):
     @property
     def ObjectIdToWatch(self):
         """
-
-        Returns:
-            str(None)
+        Returns
+        -------
+        - str(None): 
         """
         return self._get_attribute('objectIdToWatch')
     @ObjectIdToWatch.setter
@@ -110,10 +110,10 @@ class ListWatch(Base):
 
     @property
     def PollInterval(self):
-        """The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
         """
         return self._get_attribute('pollInterval')
     @PollInterval.setter
@@ -123,18 +123,18 @@ class ListWatch(Base):
     @property
     def Token(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('token')
 
     @property
     def Topic(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('topic')
     @Topic.setter
@@ -142,84 +142,97 @@ class ListWatch(Base):
         self._set_attribute('topic', value)
 
     def update(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
-        """Updates a child instance of listWatch on the server.
+        """Updates listWatch resource on the server.
 
-        Args:
-            AttributesToWatch (list(str)): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            ObjectIdToWatch (str(None)): 
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Topic (str): 
+        Args
+        ----
+        - AttributesToWatch (list(str)): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - ObjectIdToWatch (str(None)): 
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Topic (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
-        """Adds a new listWatch node on the server and retrieves it in this instance.
+        """Adds a new listWatch resource on the server and adds it to the container.
 
-        Args:
-            AttributesToWatch (list(str)): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            ObjectIdToWatch (str(None)): 
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Topic (str): 
+        Args
+        ----
+        - AttributesToWatch (list(str)): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - ObjectIdToWatch (str(None)): 
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Topic (str): 
 
-        Returns:
-            self: This instance with all currently retrieved listWatch data using find and the newly added listWatch data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved listWatch resources using find and the newly added listWatch resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the listWatch data in this instance from server.
+        """Deletes all the contained listWatch resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AttributesToWatch=None, AverageExecutionTime=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Token=None, Topic=None):
-        """Finds and retrieves listWatch data from the server.
+        """Finds and retrieves listWatch resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve listWatch data from the server.
-        By default the find method takes no parameters and will retrieve all listWatch data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve listWatch resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all listWatch resources from the server.
 
-        Args:
-            AttributesToWatch (list(str)): 
-            AverageExecutionTime (number): 
-            IsDisabled (bool): 
-            LastExecutionTime (number): 
-            LastNotification (str): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            ObjectIdToWatch (str(None)): 
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Token (number): 
-            Topic (str): 
+        Args
+        ----
+        - AttributesToWatch (list(str)): 
+        - AverageExecutionTime (number): 
+        - IsDisabled (bool): 
+        - LastExecutionTime (number): 
+        - LastNotification (str): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - ObjectIdToWatch (str(None)): 
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Token (number): 
+        - Topic (str): 
 
-        Returns:
-            self: This instance with matching listWatch data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching listWatch resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of listWatch data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the listWatch data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the listWatch resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

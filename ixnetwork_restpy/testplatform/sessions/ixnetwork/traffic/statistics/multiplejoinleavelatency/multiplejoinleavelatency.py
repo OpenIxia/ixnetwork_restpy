@@ -36,10 +36,10 @@ class MultipleJoinLeaveLatency(Base):
 
     @property
     def Enabled(self):
-        """If true enables multiple join leave latency.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true enables multiple join leave latency.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -47,12 +47,14 @@ class MultipleJoinLeaveLatency(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of multipleJoinLeaveLatency on the server.
+        """Updates multipleJoinLeaveLatency resource on the server.
 
-        Args:
-            Enabled (bool): If true enables multiple join leave latency.
+        Args
+        ----
+        - Enabled (bool): If true enables multiple join leave latency.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

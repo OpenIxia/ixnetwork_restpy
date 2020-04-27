@@ -36,24 +36,24 @@ class Elmi(Base):
 
     @property
     def Uni(self):
-        """An instance of the Uni class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.uni_518210d25c7d1c35994009220d8706e1.Uni): An instance of the Uni class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.uni_518210d25c7d1c35994009220d8706e1.Uni)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.uni_518210d25c7d1c35994009220d8706e1 import Uni
         return Uni(self)
 
     @property
     def Enabled(self):
-        """If true, enables the view that is created from the tcl script.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the view that is created from the tcl script.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -61,24 +61,27 @@ class Elmi(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of elmi on the server.
+        """Updates elmi resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables the view that is created from the tcl script.
+        Args
+        ----
+        - Enabled (bool): If true, enables the view that is created from the tcl script.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -88,9 +91,10 @@ class Elmi(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

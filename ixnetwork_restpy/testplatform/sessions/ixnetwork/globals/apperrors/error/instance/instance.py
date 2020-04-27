@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Instance(Base):
     """An instance of an error
-    The Instance class encapsulates a list of instance resources that is managed by the system.
+    The Instance class encapsulates a list of instance resources that are managed by the system.
     A list of resources can be retrieved from the server using the Instance.find() method.
     """
 
@@ -37,41 +37,48 @@ class Instance(Base):
 
     @property
     def SourceValues(self):
-        """The source values of the error instance
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The source values of the error instance
         """
         return self._get_attribute('sourceValues')
 
     def find(self, SourceValues=None):
-        """Finds and retrieves instance data from the server.
+        """Finds and retrieves instance resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve instance data from the server.
-        By default the find method takes no parameters and will retrieve all instance data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instance resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all instance resources from the server.
 
-        Args:
-            SourceValues (list(str)): The source values of the error instance
+        Args
+        ----
+        - SourceValues (list(str)): The source values of the error instance
 
-        Returns:
-            self: This instance with matching instance data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching instance resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of instance data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the instance data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the instance resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

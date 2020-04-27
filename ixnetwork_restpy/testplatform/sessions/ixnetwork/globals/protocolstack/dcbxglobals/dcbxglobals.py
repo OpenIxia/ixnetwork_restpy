@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DcbxGlobals(Base):
     """Global settings for DCBX protocol
-    The DcbxGlobals class encapsulates a list of dcbxGlobals resources that is be managed by the user.
+    The DcbxGlobals class encapsulates a list of dcbxGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the DcbxGlobals.find() method.
-    The list can be managed by the user by using the DcbxGlobals.add() and DcbxGlobals.remove() methods.
+    The list can be managed by using the DcbxGlobals.add() and DcbxGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DcbxGlobals(Base):
 
     @property
     def AllowMultipleSessions(self):
-        """Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
         """
         return self._get_attribute('allowMultipleSessions')
     @AllowMultipleSessions.setter
@@ -50,10 +50,10 @@ class DcbxGlobals(Base):
 
     @property
     def FailOnMismatch(self):
-        """If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
         """
         return self._get_attribute('failOnMismatch')
     @FailOnMismatch.setter
@@ -62,10 +62,10 @@ class DcbxGlobals(Base):
 
     @property
     def FlapLinkOnStart(self):
-        """Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
         """
         return self._get_attribute('flapLinkOnStart')
     @FlapLinkOnStart.setter
@@ -74,82 +74,95 @@ class DcbxGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
-        """Updates a child instance of dcbxGlobals on the server.
+        """Updates dcbxGlobals resource on the server.
 
-        Args:
-            AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
-            FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
-            FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
+        Args
+        ----
+        - AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
+        - FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
+        - FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
-        """Adds a new dcbxGlobals node on the server and retrieves it in this instance.
+        """Adds a new dcbxGlobals resource on the server and adds it to the container.
 
-        Args:
-            AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
-            FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
-            FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
+        Args
+        ----
+        - AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
+        - FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
+        - FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
 
-        Returns:
-            self: This instance with all currently retrieved dcbxGlobals data using find and the newly added dcbxGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dcbxGlobals resources using find and the newly added dcbxGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dcbxGlobals data in this instance from server.
+        """Deletes all the contained dcbxGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None, ObjectId=None):
-        """Finds and retrieves dcbxGlobals data from the server.
+        """Finds and retrieves dcbxGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dcbxGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all dcbxGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dcbxGlobals resources from the server.
 
-        Args:
-            AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
-            FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
-            FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - AllowMultipleSessions (bool): Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
+        - FailOnMismatch (bool): If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
+        - FlapLinkOnStart (bool): Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching dcbxGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dcbxGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dcbxGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dcbxGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dcbxGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

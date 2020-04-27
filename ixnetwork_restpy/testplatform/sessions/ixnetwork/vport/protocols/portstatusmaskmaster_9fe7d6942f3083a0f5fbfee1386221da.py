@@ -36,10 +36,10 @@ class PortStatusMaskMaster(Base):
 
     @property
     def PortAdd(self):
-        """This indicates that a port is added.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that a port is added.
         """
         return self._get_attribute('portAdd')
     @PortAdd.setter
@@ -48,10 +48,10 @@ class PortStatusMaskMaster(Base):
 
     @property
     def PortDelete(self):
-        """This indicates that a port is removed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that a port is removed.
         """
         return self._get_attribute('portDelete')
     @PortDelete.setter
@@ -60,10 +60,10 @@ class PortStatusMaskMaster(Base):
 
     @property
     def PortModify(self):
-        """This indicates that some attributes of the port is changed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that some attributes of the port is changed.
         """
         return self._get_attribute('portModify')
     @PortModify.setter
@@ -71,14 +71,16 @@ class PortStatusMaskMaster(Base):
         self._set_attribute('portModify', value)
 
     def update(self, PortAdd=None, PortDelete=None, PortModify=None):
-        """Updates a child instance of portStatusMaskMaster on the server.
+        """Updates portStatusMaskMaster resource on the server.
 
-        Args:
-            PortAdd (bool): This indicates that a port is added.
-            PortDelete (bool): This indicates that a port is removed.
-            PortModify (bool): This indicates that some attributes of the port is changed.
+        Args
+        ----
+        - PortAdd (bool): This indicates that a port is added.
+        - PortDelete (bool): This indicates that a port is removed.
+        - PortModify (bool): This indicates that some attributes of the port is changed.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

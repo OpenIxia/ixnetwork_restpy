@@ -36,10 +36,10 @@ class Community(Base):
 
     @property
     def Val(self):
-        """The value of the community attribute.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The value of the community attribute.
         """
         return self._get_attribute('val')
     @Val.setter
@@ -47,12 +47,14 @@ class Community(Base):
         self._set_attribute('val', value)
 
     def update(self, Val=None):
-        """Updates a child instance of community on the server.
+        """Updates community resource on the server.
 
-        Args:
-            Val (list(number)): The value of the community attribute.
+        Args
+        ----
+        - Val (list(number)): The value of the community attribute.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

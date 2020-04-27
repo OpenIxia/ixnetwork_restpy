@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Querier(Base):
     """This object contains the IGMP querier configuration.
-    The Querier class encapsulates a list of querier resources that is be managed by the user.
+    The Querier class encapsulates a list of querier resources that are managed by the user.
     A list of resources can be retrieved from the server using the Querier.find() method.
-    The list can be managed by the user by using the Querier.add() and Querier.remove() methods.
+    The list can be managed by using the Querier.add() and Querier.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Querier(Base):
 
     @property
     def LearnedGroupInfo(self):
-        """An instance of the LearnedGroupInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_7c507a18013ad2de8d72d84ff282da55.LearnedGroupInfo): An instance of the LearnedGroupInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_7c507a18013ad2de8d72d84ff282da55.LearnedGroupInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_7c507a18013ad2de8d72d84ff282da55 import LearnedGroupInfo
         return LearnedGroupInfo(self)
 
     @property
     def DiscardLearnedInfo(self):
-        """If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
         """
         return self._get_attribute('discardLearnedInfo')
     @DiscardLearnedInfo.setter
@@ -64,10 +64,10 @@ class Querier(Base):
 
     @property
     def Enabled(self):
-        """If true, the querier is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the querier is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -76,10 +76,10 @@ class Querier(Base):
 
     @property
     def GeneralQueryInterval(self):
-        """The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
         """
         return self._get_attribute('generalQueryInterval')
     @GeneralQueryInterval.setter
@@ -88,10 +88,10 @@ class Querier(Base):
 
     @property
     def GqResponseInterval(self):
-        """The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
         """
         return self._get_attribute('gqResponseInterval')
     @GqResponseInterval.setter
@@ -100,10 +100,10 @@ class Querier(Base):
 
     @property
     def InterfaceId(self):
-        """DEPRECATED The interface associated with the MLD querier. The interface must be previously configured.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The interface associated with the MLD querier. The interface must be previously configured.
         """
         return self._get_attribute('interfaceId')
     @InterfaceId.setter
@@ -112,10 +112,10 @@ class Querier(Base):
 
     @property
     def InterfaceIndex(self):
-        """The assigned protocol interface ID for this SM interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The assigned protocol interface ID for this SM interface.
         """
         return self._get_attribute('interfaceIndex')
     @InterfaceIndex.setter
@@ -124,10 +124,10 @@ class Querier(Base):
 
     @property
     def InterfaceType(self):
-        """The type of interface to be selected for this SM interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of interface to be selected for this SM interface.
         """
         return self._get_attribute('interfaceType')
     @InterfaceType.setter
@@ -136,10 +136,10 @@ class Querier(Base):
 
     @property
     def Interfaces(self):
-        """The interfaces that are associated with the selected interface type.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute('interfaces')
     @Interfaces.setter
@@ -148,46 +148,46 @@ class Querier(Base):
 
     @property
     def IsQuerier(self):
-        """If true, this MLD entity is a querier.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this MLD entity is a querier.
         """
         return self._get_attribute('isQuerier')
 
     @property
     def IsRefreshComplete(self):
-        """If true, the querier information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the querier information is current.
         """
         return self._get_attribute('isRefreshComplete')
 
     @property
     def QuerierAddress(self):
-        """The querier IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The querier IP address.
         """
         return self._get_attribute('querierAddress')
 
     @property
     def QuerierWorkingVersion(self):
-        """The querier working MLD version.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The querier working MLD version.
         """
         return self._get_attribute('querierWorkingVersion')
 
     @property
     def RobustnessVariable(self):
-        """Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
         """
         return self._get_attribute('robustnessVariable')
     @RobustnessVariable.setter
@@ -196,10 +196,10 @@ class Querier(Base):
 
     @property
     def RouterAlert(self):
-        """If true, sets the Send Router Alert bit in the IP header.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, sets the Send Router Alert bit in the IP header.
         """
         return self._get_attribute('routerAlert')
     @RouterAlert.setter
@@ -208,10 +208,10 @@ class Querier(Base):
 
     @property
     def SqResponseInterval(self):
-        """The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
         """
         return self._get_attribute('sqResponseInterval')
     @SqResponseInterval.setter
@@ -220,10 +220,10 @@ class Querier(Base):
 
     @property
     def SqTransmissionCount(self):
-        """Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
         """
         return self._get_attribute('sqTransmissionCount')
     @SqTransmissionCount.setter
@@ -232,10 +232,10 @@ class Querier(Base):
 
     @property
     def StartupQueryCount(self):
-        """The number of general query messages sent at startup. The default startup query count is 2.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of general query messages sent at startup. The default startup query count is 2.
         """
         return self._get_attribute('startupQueryCount')
     @StartupQueryCount.setter
@@ -244,10 +244,10 @@ class Querier(Base):
 
     @property
     def SupportElection(self):
-        """If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
         """
         return self._get_attribute('supportElection')
     @SupportElection.setter
@@ -256,10 +256,10 @@ class Querier(Base):
 
     @property
     def SupportOlderVersionHost(self):
-        """If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
         """
         return self._get_attribute('supportOlderVersionHost')
     @SupportOlderVersionHost.setter
@@ -268,10 +268,10 @@ class Querier(Base):
 
     @property
     def SupportOlderVersionQuerier(self):
-        """If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
         """
         return self._get_attribute('supportOlderVersionQuerier')
     @SupportOlderVersionQuerier.setter
@@ -280,10 +280,10 @@ class Querier(Base):
 
     @property
     def Version(self):
-        """Sets the version for the MLD querier.
-
-        Returns:
-            str(version1|version2)
+        """
+        Returns
+        -------
+        - str(version1 | version2): Sets the version for the MLD querier.
         """
         return self._get_attribute('version')
     @Version.setter
@@ -291,120 +291,133 @@ class Querier(Base):
         self._set_attribute('version', value)
 
     def update(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
-        """Updates a child instance of querier on the server.
+        """Updates querier resource on the server.
 
-        Args:
-            DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
-            Enabled (bool): If true, the querier is enabled.
-            GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
-            GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface associated with the MLD querier. The interface must be previously configured.
-            InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
-            InterfaceType (str): The type of interface to be selected for this SM interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
-            RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
-            SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
-            SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
-            StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
-            SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
-            SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
-            SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
-            Version (str(version1|version2)): Sets the version for the MLD querier.
+        Args
+        ----
+        - DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
+        - Enabled (bool): If true, the querier is enabled.
+        - GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
+        - GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the MLD querier. The interface must be previously configured.
+        - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
+        - InterfaceType (str): The type of interface to be selected for this SM interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+        - RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
+        - SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+        - SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+        - StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
+        - SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+        - SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+        - SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+        - Version (str(version1 | version2)): Sets the version for the MLD querier.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
-        """Adds a new querier node on the server and retrieves it in this instance.
+        """Adds a new querier resource on the server and adds it to the container.
 
-        Args:
-            DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
-            Enabled (bool): If true, the querier is enabled.
-            GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
-            GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface associated with the MLD querier. The interface must be previously configured.
-            InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
-            InterfaceType (str): The type of interface to be selected for this SM interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
-            RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
-            SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
-            SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
-            StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
-            SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
-            SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
-            SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
-            Version (str(version1|version2)): Sets the version for the MLD querier.
+        Args
+        ----
+        - DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
+        - Enabled (bool): If true, the querier is enabled.
+        - GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
+        - GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the MLD querier. The interface must be previously configured.
+        - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
+        - InterfaceType (str): The type of interface to be selected for this SM interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+        - RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
+        - SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+        - SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+        - StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
+        - SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+        - SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+        - SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+        - Version (str(version1 | version2)): Sets the version for the MLD querier.
 
-        Returns:
-            self: This instance with all currently retrieved querier data using find and the newly added querier data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved querier resources using find and the newly added querier resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the querier data in this instance from server.
+        """Deletes all the contained querier resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IsQuerier=None, IsRefreshComplete=None, QuerierAddress=None, QuerierWorkingVersion=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
-        """Finds and retrieves querier data from the server.
+        """Finds and retrieves querier resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve querier data from the server.
-        By default the find method takes no parameters and will retrieve all querier data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve querier resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all querier resources from the server.
 
-        Args:
-            DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
-            Enabled (bool): If true, the querier is enabled.
-            GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
-            GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface associated with the MLD querier. The interface must be previously configured.
-            InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
-            InterfaceType (str): The type of interface to be selected for this SM interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            IsQuerier (bool): If true, this MLD entity is a querier.
-            IsRefreshComplete (bool): If true, the querier information is current.
-            QuerierAddress (str): The querier IP address.
-            QuerierWorkingVersion (number): The querier working MLD version.
-            RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
-            RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
-            SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
-            SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
-            StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
-            SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
-            SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
-            SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
-            Version (str(version1|version2)): Sets the version for the MLD querier.
+        Args
+        ----
+        - DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
+        - Enabled (bool): If true, the querier is enabled.
+        - GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
+        - GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the MLD querier. The interface must be previously configured.
+        - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
+        - InterfaceType (str): The type of interface to be selected for this SM interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - IsQuerier (bool): If true, this MLD entity is a querier.
+        - IsRefreshComplete (bool): If true, the querier information is current.
+        - QuerierAddress (str): The querier IP address.
+        - QuerierWorkingVersion (number): The querier working MLD version.
+        - RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+        - RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
+        - SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+        - SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+        - StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
+        - SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+        - SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+        - SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+        - Version (str(version1 | version2)): Sets the version for the MLD querier.
 
-        Returns:
-            self: This instance with matching querier data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching querier resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of querier data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the querier data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the querier resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -413,12 +426,10 @@ class Querier(Base):
 
         Gets the interface accesor Iface list.
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
@@ -428,12 +439,10 @@ class Querier(Base):
 
         If enabled, it refreshes the learned info.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

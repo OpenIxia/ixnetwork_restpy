@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Test(Base):
     """
-    The Test class encapsulates a list of test resources that is managed by the system.
+    The Test class encapsulates a list of test resources that are managed by the system.
     A list of resources can be retrieved from the server using the Test.find() method.
     """
 
@@ -38,27 +38,27 @@ class Test(Base):
     @property
     def AvailableTrackBy(self):
         """
-
-        Returns:
-            list(dict(arg1:str,arg2:str))
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:str)): 
         """
         return self._get_attribute('availableTrackBy')
 
     @property
     def ConfigId(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('configId')
 
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -68,18 +68,18 @@ class Test(Base):
     @property
     def EndTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('endTime')
 
     @property
     def EndTimeAsTicks(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('endTimeAsTicks')
     @EndTimeAsTicks.setter
@@ -89,18 +89,18 @@ class Test(Base):
     @property
     def IncrementalState(self):
         """
-
-        Returns:
-            dict(arg1:number,arg2:number)
+        Returns
+        -------
+        - dict(arg1:number,arg2:number): 
         """
         return self._get_attribute('incrementalState')
 
     @property
     def MonitorPorts(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('monitorPorts')
     @MonitorPorts.setter
@@ -110,54 +110,54 @@ class Test(Base):
     @property
     def MonitorTrafficItemId(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
         """
         return self._get_attribute('monitorTrafficItemId')
 
     @property
     def NowTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('nowTime')
 
     @property
     def PreflightCheckState(self):
         """
-
-        Returns:
-            str(license|none|portLink|protocols|traffic|validity)
+        Returns
+        -------
+        - str(license | none | portLink | protocols | traffic | validity): 
         """
         return self._get_attribute('preflightCheckState')
 
     @property
     def PreflightComplete(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('preflightComplete')
 
     @property
     def QuickTestId(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=*)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/quickTest/.../*): 
         """
         return self._get_attribute('quickTestId')
 
     @property
     def Repeat(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('repeat')
     @Repeat.setter
@@ -167,18 +167,18 @@ class Test(Base):
     @property
     def StartTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('startTime')
 
     @property
     def StartTimeAsTicks(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('startTimeAsTicks')
     @StartTimeAsTicks.setter
@@ -188,9 +188,9 @@ class Test(Base):
     @property
     def State(self):
         """
-
-        Returns:
-            str(cancelled|cpDpConvergenceNotReached|fail|failedCriteria|pass|preflightCheck|preflightFail|ribInConvergenceThresholdNotReached|running|skipped|waitingForStart)
+        Returns
+        -------
+        - str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart): 
         """
         return self._get_attribute('state')
     @State.setter
@@ -200,27 +200,27 @@ class Test(Base):
     @property
     def SupportsMonitoring(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsMonitoring')
 
     @property
     def SupportsTiming(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsTiming')
 
     @property
     def TimingPort(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('timingPort')
     @TimingPort.setter
@@ -230,27 +230,27 @@ class Test(Base):
     @property
     def TimingTopologyId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('timingTopologyId')
 
     @property
     def TimingTrafficItemId(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
         """
         return self._get_attribute('timingTrafficItemId')
 
     @property
     def TrackBy(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('trackBy')
     @TrackBy.setter
@@ -260,9 +260,9 @@ class Test(Base):
     @property
     def TrafficItemIds(self):
         """
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem])
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]): 
         """
         return self._get_attribute('trafficItemIds')
     @TrafficItemIds.setter
@@ -270,74 +270,83 @@ class Test(Base):
         self._set_attribute('trafficItemIds', value)
 
     def update(self, Enabled=None, EndTimeAsTicks=None, MonitorPorts=None, Repeat=None, StartTimeAsTicks=None, State=None, TimingPort=None, TrackBy=None, TrafficItemIds=None):
-        """Updates a child instance of test on the server.
+        """Updates test resource on the server.
 
-        Args:
-            Enabled (bool): 
-            EndTimeAsTicks (number): 
-            MonitorPorts (list(str)): 
-            Repeat (number): 
-            StartTimeAsTicks (number): 
-            State (str(cancelled|cpDpConvergenceNotReached|fail|failedCriteria|pass|preflightCheck|preflightFail|ribInConvergenceThresholdNotReached|running|skipped|waitingForStart)): 
-            TimingPort (str): 
-            TrackBy (list(str)): 
-            TrafficItemIds (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem])): 
+        Args
+        ----
+        - Enabled (bool): 
+        - EndTimeAsTicks (number): 
+        - MonitorPorts (list(str)): 
+        - Repeat (number): 
+        - StartTimeAsTicks (number): 
+        - State (str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart)): 
+        - TimingPort (str): 
+        - TrackBy (list(str)): 
+        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem])): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableTrackBy=None, ConfigId=None, Enabled=None, EndTime=None, EndTimeAsTicks=None, IncrementalState=None, MonitorPorts=None, MonitorTrafficItemId=None, NowTime=None, PreflightCheckState=None, PreflightComplete=None, QuickTestId=None, Repeat=None, StartTime=None, StartTimeAsTicks=None, State=None, SupportsMonitoring=None, SupportsTiming=None, TimingPort=None, TimingTopologyId=None, TimingTrafficItemId=None, TrackBy=None, TrafficItemIds=None):
-        """Finds and retrieves test data from the server.
+        """Finds and retrieves test resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve test data from the server.
-        By default the find method takes no parameters and will retrieve all test data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve test resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all test resources from the server.
 
-        Args:
-            AvailableTrackBy (list(dict(arg1:str,arg2:str))): 
-            ConfigId (number): 
-            Enabled (bool): 
-            EndTime (str): 
-            EndTimeAsTicks (number): 
-            IncrementalState (dict(arg1:number,arg2:number)): 
-            MonitorPorts (list(str)): 
-            MonitorTrafficItemId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem)): 
-            NowTime (str): 
-            PreflightCheckState (str(license|none|portLink|protocols|traffic|validity)): 
-            PreflightComplete (bool): 
-            QuickTestId (str(None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=*)): 
-            Repeat (number): 
-            StartTime (str): 
-            StartTimeAsTicks (number): 
-            State (str(cancelled|cpDpConvergenceNotReached|fail|failedCriteria|pass|preflightCheck|preflightFail|ribInConvergenceThresholdNotReached|running|skipped|waitingForStart)): 
-            SupportsMonitoring (bool): 
-            SupportsTiming (bool): 
-            TimingPort (str): 
-            TimingTopologyId (str): 
-            TimingTrafficItemId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem)): 
-            TrackBy (list(str)): 
-            TrafficItemIds (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem])): 
+        Args
+        ----
+        - AvailableTrackBy (list(dict(arg1:str,arg2:str))): 
+        - ConfigId (number): 
+        - Enabled (bool): 
+        - EndTime (str): 
+        - EndTimeAsTicks (number): 
+        - IncrementalState (dict(arg1:number,arg2:number)): 
+        - MonitorPorts (list(str)): 
+        - MonitorTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem)): 
+        - NowTime (str): 
+        - PreflightCheckState (str(license | none | portLink | protocols | traffic | validity)): 
+        - PreflightComplete (bool): 
+        - QuickTestId (str(None | /api/v1/sessions/1/ixnetwork/quickTest/.../*)): 
+        - Repeat (number): 
+        - StartTime (str): 
+        - StartTimeAsTicks (number): 
+        - State (str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart)): 
+        - SupportsMonitoring (bool): 
+        - SupportsTiming (bool): 
+        - TimingPort (str): 
+        - TimingTopologyId (str): 
+        - TimingTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem)): 
+        - TrackBy (list(str)): 
+        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem])): 
 
-        Returns:
-            self: This instance with matching test data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching test resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of test data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the test data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the test resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

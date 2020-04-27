@@ -37,9 +37,9 @@ class ErroredFrameSecondsSummaryTlv(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -49,9 +49,9 @@ class ErroredFrameSecondsSummaryTlv(Base):
     @property
     def Summary(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('summary')
     @Summary.setter
@@ -61,9 +61,9 @@ class ErroredFrameSecondsSummaryTlv(Base):
     @property
     def Threshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('threshold')
     @Threshold.setter
@@ -73,9 +73,9 @@ class ErroredFrameSecondsSummaryTlv(Base):
     @property
     def Window(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('window')
     @Window.setter
@@ -83,15 +83,17 @@ class ErroredFrameSecondsSummaryTlv(Base):
         self._set_attribute('window', value)
 
     def update(self, Enabled=None, Summary=None, Threshold=None, Window=None):
-        """Updates a child instance of erroredFrameSecondsSummaryTlv on the server.
+        """Updates erroredFrameSecondsSummaryTlv resource on the server.
 
-        Args:
-            Enabled (bool): 
-            Summary (number): 
-            Threshold (number): 
-            Window (number): 
+        Args
+        ----
+        - Enabled (bool): 
+        - Summary (number): 
+        - Threshold (number): 
+        - Window (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

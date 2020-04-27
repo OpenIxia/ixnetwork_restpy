@@ -36,10 +36,10 @@ class Fc(Base):
 
     @property
     def CreditStarvationValue(self):
-        """If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
         """
         return self._get_attribute('creditStarvationValue')
     @CreditStarvationValue.setter
@@ -48,10 +48,10 @@ class Fc(Base):
 
     @property
     def EnableEmissionLoweringProtocol(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableEmissionLoweringProtocol')
     @EnableEmissionLoweringProtocol.setter
@@ -60,10 +60,10 @@ class Fc(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -72,10 +72,10 @@ class Fc(Base):
 
     @property
     def FixedDelayValue(self):
-        """Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
         """
         return self._get_attribute('fixedDelayValue')
     @FixedDelayValue.setter
@@ -84,10 +84,10 @@ class Fc(Base):
 
     @property
     def ForceErrors(self):
-        """Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
-
-        Returns:
-            str(noErrors|noRRDY|noRRDYEvery)
+        """
+        Returns
+        -------
+        - str(noErrors | noRRDY | noRRDYEvery): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
         """
         return self._get_attribute('forceErrors')
     @ForceErrors.setter
@@ -96,10 +96,10 @@ class Fc(Base):
 
     @property
     def Loopback(self):
-        """If true, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -108,10 +108,10 @@ class Fc(Base):
 
     @property
     def MaxDelayForRandomValue(self):
-        """The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
         """
         return self._get_attribute('maxDelayForRandomValue')
     @MaxDelayForRandomValue.setter
@@ -120,10 +120,10 @@ class Fc(Base):
 
     @property
     def MinDelayForRandomValue(self):
-        """The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
         """
         return self._get_attribute('minDelayForRandomValue')
     @MinDelayForRandomValue.setter
@@ -132,10 +132,10 @@ class Fc(Base):
 
     @property
     def NoRRDYAfter(self):
-        """Sends R_RDY primitive signals without any delay.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sends R_RDY primitive signals without any delay.
         """
         return self._get_attribute('noRRDYAfter')
     @NoRRDYAfter.setter
@@ -144,10 +144,10 @@ class Fc(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -156,10 +156,10 @@ class Fc(Base):
 
     @property
     def RrdyResponseDelays(self):
-        """Helps to set internal delays for the transmission of R_RDY Primitive Signals.
-
-        Returns:
-            str(creditStarvation|fixedDelay|noDelay|randomDelay)
+        """
+        Returns
+        -------
+        - str(creditStarvation | fixedDelay | noDelay | randomDelay): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
         """
         return self._get_attribute('rrdyResponseDelays')
     @RrdyResponseDelays.setter
@@ -168,10 +168,10 @@ class Fc(Base):
 
     @property
     def Speed(self):
-        """Indicates the line speed.
-
-        Returns:
-            str(speed2000|speed4000|speed8000)
+        """
+        Returns
+        -------
+        - str(speed2000 | speed4000 | speed8000): Indicates the line speed.
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -180,10 +180,10 @@ class Fc(Base):
 
     @property
     def TxIgnoreAvailableCredits(self):
-        """The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
         """
         return self._get_attribute('txIgnoreAvailableCredits')
     @TxIgnoreAvailableCredits.setter
@@ -192,10 +192,10 @@ class Fc(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If true, allows transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -203,25 +203,27 @@ class Fc(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of fc on the server.
+        """Updates fc resource on the server.
 
-        Args:
-            CreditStarvationValue (number): If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
-            EnableEmissionLoweringProtocol (bool): NOT DEFINED
-            EnablePPM (bool): If true, enables the portsppm.
-            FixedDelayValue (number): Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
-            ForceErrors (str(noErrors|noRRDY|noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
-            Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
-            MaxDelayForRandomValue (number): The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
-            MinDelayForRandomValue (number): The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
-            NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            RrdyResponseDelays (str(creditStarvation|fixedDelay|noDelay|randomDelay)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
-            Speed (str(speed2000|speed4000|speed8000)): Indicates the line speed.
-            TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
-            TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.
+        Args
+        ----
+        - CreditStarvationValue (number): If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
+        - EnableEmissionLoweringProtocol (bool): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - FixedDelayValue (number): Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
+        - ForceErrors (str(noErrors | noRRDY | noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
+        - Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
+        - MaxDelayForRandomValue (number): The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
+        - MinDelayForRandomValue (number): The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
+        - NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RrdyResponseDelays (str(creditStarvation | fixedDelay | noDelay | randomDelay)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+        - Speed (str(speed2000 | speed4000 | speed8000)): Indicates the line speed.
+        - TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
+        - TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

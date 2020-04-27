@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Band(Base):
     """Bands indicate a list of rate bands. It can contain any number of bands, and each band type can be repeated when it make sense. Only a single band is used at a time. If the current rate of packets exceed the rate of multiple bands, the band with the highest configured rate is used
-    The Band class encapsulates a list of band resources that is be managed by the user.
+    The Band class encapsulates a list of band resources that are managed by the user.
     A list of resources can be retrieved from the server using the Band.find() method.
-    The list can be managed by the user by using the Band.add() and Band.remove() methods.
+    The list can be managed by using the Band.add() and Band.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Band(Base):
 
     @property
     def BurstSize(self):
-        """This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -50,10 +50,10 @@ class Band(Base):
 
     @property
     def Description(self):
-        """A description of the band.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A description of the band.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -62,10 +62,10 @@ class Band(Base):
 
     @property
     def Experimenter(self):
-        """The experimenter ID. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The experimenter ID. The default value is 1.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -74,10 +74,10 @@ class Band(Base):
 
     @property
     def PrecedenceLevel(self):
-        """This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
         """
         return self._get_attribute('precedenceLevel')
     @PrecedenceLevel.setter
@@ -86,10 +86,10 @@ class Band(Base):
 
     @property
     def Rate(self):
-        """This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
         """
         return self._get_attribute('rate')
     @Rate.setter
@@ -98,10 +98,10 @@ class Band(Base):
 
     @property
     def Type(self):
-        """Select the band type from the list.
-
-        Returns:
-            str(drop|dscpRemark|experimenter)
+        """
+        Returns
+        -------
+        - str(drop | dscpRemark | experimenter): Select the band type from the list.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -109,82 +109,95 @@ class Band(Base):
         self._set_attribute('type', value)
 
     def update(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
-        """Updates a child instance of band on the server.
+        """Updates band resource on the server.
 
-        Args:
-            BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
-            Description (str): A description of the band.
-            Experimenter (number): The experimenter ID. The default value is 1.
-            PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
-            Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
-            Type (str(drop|dscpRemark|experimenter)): Select the band type from the list.
+        Args
+        ----
+        - BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
+        - Description (str): A description of the band.
+        - Experimenter (number): The experimenter ID. The default value is 1.
+        - PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
+        - Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
+        - Type (str(drop | dscpRemark | experimenter)): Select the band type from the list.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
-        """Adds a new band node on the server and retrieves it in this instance.
+        """Adds a new band resource on the server and adds it to the container.
 
-        Args:
-            BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
-            Description (str): A description of the band.
-            Experimenter (number): The experimenter ID. The default value is 1.
-            PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
-            Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
-            Type (str(drop|dscpRemark|experimenter)): Select the band type from the list.
+        Args
+        ----
+        - BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
+        - Description (str): A description of the band.
+        - Experimenter (number): The experimenter ID. The default value is 1.
+        - PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
+        - Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
+        - Type (str(drop | dscpRemark | experimenter)): Select the band type from the list.
 
-        Returns:
-            self: This instance with all currently retrieved band data using find and the newly added band data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved band resources using find and the newly added band resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the band data in this instance from server.
+        """Deletes all the contained band resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
-        """Finds and retrieves band data from the server.
+        """Finds and retrieves band resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve band data from the server.
-        By default the find method takes no parameters and will retrieve all band data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve band resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all band resources from the server.
 
-        Args:
-            BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
-            Description (str): A description of the band.
-            Experimenter (number): The experimenter ID. The default value is 1.
-            PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
-            Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
-            Type (str(drop|dscpRemark|experimenter)): Select the band type from the list.
+        Args
+        ----
+        - BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
+        - Description (str): A description of the band.
+        - Experimenter (number): The experimenter ID. The default value is 1.
+        - PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
+        - Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
+        - Type (str(drop | dscpRemark | experimenter)): Select the band type from the list.
 
-        Returns:
-            self: This instance with matching band data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching band resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of band data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the band data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the band resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

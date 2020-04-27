@@ -36,10 +36,10 @@ class CertInfo(Base):
 
     @property
     def AltName(self):
-        """Other Options - Alternative Subject Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Other Options - Alternative Subject Name
         """
         return self._get_attribute('altName')
     @AltName.setter
@@ -48,10 +48,10 @@ class CertInfo(Base):
 
     @property
     def CertFormat(self):
-        """Required.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Required.
         """
         return self._get_attribute('certFormat')
     @CertFormat.setter
@@ -60,10 +60,10 @@ class CertInfo(Base):
 
     @property
     def CertPath(self):
-        """The path to certificate files.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The path to certificate files.
         """
         return self._get_attribute('certPath')
     @CertPath.setter
@@ -72,10 +72,10 @@ class CertInfo(Base):
 
     @property
     def City(self):
-        """Identification Info - City
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identification Info - City
         """
         return self._get_attribute('city')
     @City.setter
@@ -84,10 +84,10 @@ class CertInfo(Base):
 
     @property
     def Company(self):
-        """Identification Info - Company
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identification Info - Company
         """
         return self._get_attribute('company')
     @Company.setter
@@ -96,10 +96,10 @@ class CertInfo(Base):
 
     @property
     def Country(self):
-        """Identification Info - Country
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identification Info - Country
         """
         return self._get_attribute('country')
     @Country.setter
@@ -108,10 +108,10 @@ class CertInfo(Base):
 
     @property
     def Department(self):
-        """Identification Info - Department
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identification Info - Department
         """
         return self._get_attribute('department')
     @Department.setter
@@ -120,10 +120,10 @@ class CertInfo(Base):
 
     @property
     def GetCACertOnly(self):
-        """Obtain only the CA certificate.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Obtain only the CA certificate.
         """
         return self._get_attribute('getCACertOnly')
     @GetCACertOnly.setter
@@ -132,10 +132,10 @@ class CertInfo(Base):
 
     @property
     def KeyPath(self):
-        """The path to key files.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The path to key files.
         """
         return self._get_attribute('keyPath')
     @KeyPath.setter
@@ -144,10 +144,10 @@ class CertInfo(Base):
 
     @property
     def KeySize(self):
-        """Key Options - Key Size
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Key Options - Key Size
         """
         return self._get_attribute('keySize')
     @KeySize.setter
@@ -156,10 +156,10 @@ class CertInfo(Base):
 
     @property
     def KeyUsage(self):
-        """Key Options - Key Usage
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Key Options - Key Usage
         """
         return self._get_attribute('keyUsage')
     @KeyUsage.setter
@@ -168,19 +168,19 @@ class CertInfo(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SameKeyFile(self):
-        """Required.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Required.
         """
         return self._get_attribute('sameKeyFile')
     @SameKeyFile.setter
@@ -189,10 +189,10 @@ class CertInfo(Base):
 
     @property
     def SendCACertOnly(self):
-        """Send only the CA certificate.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Send only the CA certificate.
         """
         return self._get_attribute('sendCACertOnly')
     @SendCACertOnly.setter
@@ -201,10 +201,10 @@ class CertInfo(Base):
 
     @property
     def ServerUrl(self):
-        """Cerficate Server URL
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Cerficate Server URL
         """
         return self._get_attribute('serverUrl')
     @ServerUrl.setter
@@ -213,10 +213,10 @@ class CertInfo(Base):
 
     @property
     def State(self):
-        """Identification Info - State
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identification Info - State
         """
         return self._get_attribute('state')
     @State.setter
@@ -225,10 +225,10 @@ class CertInfo(Base):
 
     @property
     def UseCertServer(self):
-        """This value is true if the certificates are obtained from a certificate server.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This value is true if the certificates are obtained from a certificate server.
         """
         return self._get_attribute('useCertServer')
     @UseCertServer.setter
@@ -236,27 +236,29 @@ class CertInfo(Base):
         self._set_attribute('useCertServer', value)
 
     def update(self, AltName=None, CertFormat=None, CertPath=None, City=None, Company=None, Country=None, Department=None, GetCACertOnly=None, KeyPath=None, KeySize=None, KeyUsage=None, SameKeyFile=None, SendCACertOnly=None, ServerUrl=None, State=None, UseCertServer=None):
-        """Updates a child instance of certInfo on the server.
+        """Updates certInfo resource on the server.
 
-        Args:
-            AltName (str): Other Options - Alternative Subject Name
-            CertFormat (str): Required.
-            CertPath (str): The path to certificate files.
-            City (str): Identification Info - City
-            Company (str): Identification Info - Company
-            Country (str): Identification Info - Country
-            Department (str): Identification Info - Department
-            GetCACertOnly (bool): Obtain only the CA certificate.
-            KeyPath (str): The path to key files.
-            KeySize (number): Key Options - Key Size
-            KeyUsage (str): Key Options - Key Usage
-            SameKeyFile (bool): Required.
-            SendCACertOnly (bool): Send only the CA certificate.
-            ServerUrl (str): Cerficate Server URL
-            State (str): Identification Info - State
-            UseCertServer (bool): This value is true if the certificates are obtained from a certificate server.
+        Args
+        ----
+        - AltName (str): Other Options - Alternative Subject Name
+        - CertFormat (str): Required.
+        - CertPath (str): The path to certificate files.
+        - City (str): Identification Info - City
+        - Company (str): Identification Info - Company
+        - Country (str): Identification Info - Country
+        - Department (str): Identification Info - Department
+        - GetCACertOnly (bool): Obtain only the CA certificate.
+        - KeyPath (str): The path to key files.
+        - KeySize (number): Key Options - Key Size
+        - KeyUsage (str): Key Options - Key Usage
+        - SameKeyFile (bool): Required.
+        - SendCACertOnly (bool): Send only the CA certificate.
+        - ServerUrl (str): Cerficate Server URL
+        - State (str): Identification Info - State
+        - UseCertServer (bool): This value is true if the certificates are obtained from a certificate server.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

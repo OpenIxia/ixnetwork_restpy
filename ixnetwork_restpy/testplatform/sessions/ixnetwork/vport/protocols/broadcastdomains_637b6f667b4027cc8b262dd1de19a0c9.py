@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BroadcastDomains(Base):
     """Configures Broadcast Domains under EVI.
-    The BroadcastDomains class encapsulates a list of broadcastDomains resources that is be managed by the user.
+    The BroadcastDomains class encapsulates a list of broadcastDomains resources that are managed by the user.
     A list of resources can be retrieved from the server using the BroadcastDomains.find() method.
-    The list can be managed by the user by using the BroadcastDomains.add() and BroadcastDomains.remove() methods.
+    The list can be managed by using the BroadcastDomains.add() and BroadcastDomains.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class BroadcastDomains(Base):
 
     @property
     def CMacRange(self):
-        """An instance of the CMacRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_42040692e3d568beaec57c13e9b72a4b.CMacRange): An instance of the CMacRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_42040692e3d568beaec57c13e9b72a4b.CMacRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_42040692e3d568beaec57c13e9b72a4b import CMacRange
         return CMacRange(self)
 
     @property
     def AdRouteLabel(self):
-        """Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
         """
         return self._get_attribute('adRouteLabel')
     @AdRouteLabel.setter
@@ -64,10 +64,10 @@ class BroadcastDomains(Base):
 
     @property
     def BVlanId(self):
-        """B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
         """
         return self._get_attribute('bVlanId')
     @BVlanId.setter
@@ -76,10 +76,10 @@ class BroadcastDomains(Base):
 
     @property
     def BVlanPriority(self):
-        """B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
         """
         return self._get_attribute('bVlanPriority')
     @BVlanPriority.setter
@@ -88,10 +88,10 @@ class BroadcastDomains(Base):
 
     @property
     def BVlanTpId(self):
-        """B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
-
-        Returns:
-            str(0x8100|0x9100|0x9200|0x88A8)
+        """
+        Returns
+        -------
+        - str(0x8100 | 0x9100 | 0x9200 | 0x88A8): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
         """
         return self._get_attribute('bVlanTpId')
     @BVlanTpId.setter
@@ -100,10 +100,10 @@ class BroadcastDomains(Base):
 
     @property
     def Enabled(self):
-        """If true then Broadcast Domain is used in EVPN.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then Broadcast Domain is used in EVPN.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -112,10 +112,10 @@ class BroadcastDomains(Base):
 
     @property
     def EthernetTagId(self):
-        """Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
         """
         return self._get_attribute('ethernetTagId')
     @EthernetTagId.setter
@@ -123,83 +123,96 @@ class BroadcastDomains(Base):
         self._set_attribute('ethernetTagId', value)
 
     def update(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
-        """Updates a child instance of broadcastDomains on the server.
+        """Updates broadcastDomains resource on the server.
 
-        Args:
-            AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
-            BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
-            BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
-            BVlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
-            Enabled (bool): If true then Broadcast Domain is used in EVPN.
-            EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
+        Args
+        ----
+        - AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+        - BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+        - BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+        - BVlanTpId (str(0x8100 | 0x9100 | 0x9200 | 0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+        - Enabled (bool): If true then Broadcast Domain is used in EVPN.
+        - EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
-        """Adds a new broadcastDomains node on the server and retrieves it in this instance.
+        """Adds a new broadcastDomains resource on the server and adds it to the container.
 
-        Args:
-            AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
-            BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
-            BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
-            BVlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
-            Enabled (bool): If true then Broadcast Domain is used in EVPN.
-            EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
+        Args
+        ----
+        - AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+        - BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+        - BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+        - BVlanTpId (str(0x8100 | 0x9100 | 0x9200 | 0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+        - Enabled (bool): If true then Broadcast Domain is used in EVPN.
+        - EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
 
-        Returns:
-            self: This instance with all currently retrieved broadcastDomains data using find and the newly added broadcastDomains data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved broadcastDomains resources using find and the newly added broadcastDomains resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the broadcastDomains data in this instance from server.
+        """Deletes all the contained broadcastDomains resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
-        """Finds and retrieves broadcastDomains data from the server.
+        """Finds and retrieves broadcastDomains resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve broadcastDomains data from the server.
-        By default the find method takes no parameters and will retrieve all broadcastDomains data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve broadcastDomains resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all broadcastDomains resources from the server.
 
-        Args:
-            AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
-            BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
-            BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
-            BVlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
-            Enabled (bool): If true then Broadcast Domain is used in EVPN.
-            EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
+        Args
+        ----
+        - AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+        - BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+        - BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+        - BVlanTpId (str(0x8100 | 0x9100 | 0x9200 | 0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+        - Enabled (bool): If true then Broadcast Domain is used in EVPN.
+        - EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
 
-        Returns:
-            self: This instance with matching broadcastDomains data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching broadcastDomains resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of broadcastDomains data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the broadcastDomains data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the broadcastDomains resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -208,12 +221,10 @@ class BroadcastDomains(Base):
 
         NOT DEFINED
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('advertiseAliasing', payload=payload, response_object=None)
@@ -223,12 +234,10 @@ class BroadcastDomains(Base):
 
         NOT DEFINED
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('withdrawAliasing', payload=payload, response_object=None)

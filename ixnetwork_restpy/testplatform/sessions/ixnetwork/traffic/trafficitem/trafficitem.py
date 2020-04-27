@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrafficItem(Base):
     """This object specifies the particular traffic item related properties.
-    The TrafficItem class encapsulates a list of trafficItem resources that is be managed by the user.
+    The TrafficItem class encapsulates a list of trafficItem resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrafficItem.find() method.
-    The list can be managed by the user by using the TrafficItem.add() and TrafficItem.remove() methods.
+    The list can be managed by using the TrafficItem.add() and TrafficItem.remove() methods.
     """
 
     __slots__ = ()
@@ -38,122 +38,122 @@ class TrafficItem(Base):
 
     @property
     def AppLibProfile(self):
-        """An instance of the AppLibProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile.AppLibProfile): An instance of the AppLibProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile.AppLibProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import AppLibProfile
         return AppLibProfile(self)
 
     @property
     def ConfigElement(self):
-        """An instance of the ConfigElement class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement.ConfigElement): An instance of the ConfigElement class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement.ConfigElement)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
         return ConfigElement(self)
 
     @property
     def DynamicUpdate(self):
-        """An instance of the DynamicUpdate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate.DynamicUpdate): An instance of the DynamicUpdate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate.DynamicUpdate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import DynamicUpdate
         return DynamicUpdate(self)
 
     @property
     def EgressTracking(self):
-        """An instance of the EgressTracking class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking.EgressTracking): An instance of the EgressTracking class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking.EgressTracking)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
         return EgressTracking(self)
 
     @property
     def EndpointSet(self):
-        """An instance of the EndpointSet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset.EndpointSet): An instance of the EndpointSet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset.EndpointSet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
         return EndpointSet(self)
 
     @property
     def HighLevelStream(self):
-        """An instance of the HighLevelStream class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream.HighLevelStream): An instance of the HighLevelStream class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream.HighLevelStream)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
         return HighLevelStream(self)
 
     @property
     def Tracking(self):
-        """An instance of the Tracking class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking.Tracking): An instance of the Tracking class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking.Tracking)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
         return Tracking(self)
 
     @property
     def TransmissionDistribution(self):
-        """An instance of the TransmissionDistribution class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution.TransmissionDistribution): An instance of the TransmissionDistribution class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution.TransmissionDistribution)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
         return TransmissionDistribution(self)
 
     @property
     def AllowSelfDestined(self):
-        """If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
         """
         return self._get_attribute('allowSelfDestined')
     @AllowSelfDestined.setter
@@ -162,10 +162,10 @@ class TrafficItem(Base):
 
     @property
     def BiDirectional(self):
-        """If true, this enables traffic to be sent in forward and reverse destination.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this enables traffic to be sent in forward and reverse destination.
         """
         return self._get_attribute('biDirectional')
     @BiDirectional.setter
@@ -174,10 +174,10 @@ class TrafficItem(Base):
 
     @property
     def EgressEnabled(self):
-        """Enables the egress.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the egress.
         """
         return self._get_attribute('egressEnabled')
     @EgressEnabled.setter
@@ -186,10 +186,10 @@ class TrafficItem(Base):
 
     @property
     def EnableDynamicMplsLabelValues(self):
-        """Enables the dynamic MPLS label values.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the dynamic MPLS label values.
         """
         return self._get_attribute('enableDynamicMplsLabelValues')
     @EnableDynamicMplsLabelValues.setter
@@ -197,23 +197,11 @@ class TrafficItem(Base):
         self._set_attribute('enableDynamicMplsLabelValues', value)
 
     @property
-    def EnableMacsecEgressOnlyAutoConfig(self):
-        """
-
-        Returns:
-            bool
-        """
-        return self._get_attribute('enableMacsecEgressOnlyAutoConfig')
-    @EnableMacsecEgressOnlyAutoConfig.setter
-    def EnableMacsecEgressOnlyAutoConfig(self, value):
-        self._set_attribute('enableMacsecEgressOnlyAutoConfig', value)
-
-    @property
     def Enabled(self):
-        """If true, this enables the selected traffic item.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this enables the selected traffic item.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -222,28 +210,28 @@ class TrafficItem(Base):
 
     @property
     def Errors(self):
-        """Displays the errors.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Displays the errors.
         """
         return self._get_attribute('errors')
 
     @property
     def FlowGroupCount(self):
-        """Indicates the number of flow groups.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of flow groups.
         """
         return self._get_attribute('flowGroupCount')
 
     @property
     def FrerDuplicateElimination(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('frerDuplicateElimination')
     @FrerDuplicateElimination.setter
@@ -252,10 +240,10 @@ class TrafficItem(Base):
 
     @property
     def HasOpenFlow(self):
-        """Indicates whether or not this trafficItem has openflow.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether or not this trafficItem has openflow.
         """
         return self._get_attribute('hasOpenFlow')
     @HasOpenFlow.setter
@@ -264,10 +252,10 @@ class TrafficItem(Base):
 
     @property
     def HostsPerNetwork(self):
-        """The number of emulated hosts for the traffic stream.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of emulated hosts for the traffic stream.
         """
         return self._get_attribute('hostsPerNetwork')
     @HostsPerNetwork.setter
@@ -276,10 +264,10 @@ class TrafficItem(Base):
 
     @property
     def InterAsBgpPreference(self):
-        """Signifies the inter as BGP prefence
-
-        Returns:
-            str(one|two)
+        """
+        Returns
+        -------
+        - str(one | two): Signifies the inter as BGP prefence
         """
         return self._get_attribute('interAsBgpPreference')
     @InterAsBgpPreference.setter
@@ -288,10 +276,10 @@ class TrafficItem(Base):
 
     @property
     def InterAsLdpPreference(self):
-        """Preferences inter as LDP
-
-        Returns:
-            str(one|two)
+        """
+        Returns
+        -------
+        - str(one | two): Preferences inter as LDP
         """
         return self._get_attribute('interAsLdpPreference')
     @InterAsLdpPreference.setter
@@ -300,10 +288,10 @@ class TrafficItem(Base):
 
     @property
     def MaxNumberOfVpnLabelStack(self):
-        """Signifies the maximum number of VPN label stack
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the maximum number of VPN label stack
         """
         return self._get_attribute('maxNumberOfVpnLabelStack')
     @MaxNumberOfVpnLabelStack.setter
@@ -312,10 +300,10 @@ class TrafficItem(Base):
 
     @property
     def MergeDestinations(self):
-        """If true, merges the traffic flow in the destination ranges.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, merges the traffic flow in the destination ranges.
         """
         return self._get_attribute('mergeDestinations')
     @MergeDestinations.setter
@@ -325,9 +313,9 @@ class TrafficItem(Base):
     @property
     def MulticastForwardingMode(self):
         """
-
-        Returns:
-            str(loadBalancing|replication)
+        Returns
+        -------
+        - str(loadBalancing | replication): 
         """
         return self._get_attribute('multicastForwardingMode')
     @MulticastForwardingMode.setter
@@ -336,10 +324,10 @@ class TrafficItem(Base):
 
     @property
     def Name(self):
-        """The name of the traffic item.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the traffic item.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -348,10 +336,10 @@ class TrafficItem(Base):
 
     @property
     def NumVlansForMulticastReplication(self):
-        """Set the number of vlans for multicast replication
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the number of vlans for multicast replication
         """
         return self._get_attribute('numVlansForMulticastReplication')
     @NumVlansForMulticastReplication.setter
@@ -360,10 +348,10 @@ class TrafficItem(Base):
 
     @property
     def OrdinalNo(self):
-        """Signifies the ordinal number
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the ordinal number
         """
         return self._get_attribute('ordinalNo')
     @OrdinalNo.setter
@@ -372,10 +360,10 @@ class TrafficItem(Base):
 
     @property
     def OriginatorType(self):
-        """Indicates who created this trafficItem.
-
-        Returns:
-            str(endUser|quickTest)
+        """
+        Returns
+        -------
+        - str(endUser | quickTest): Indicates who created this trafficItem.
         """
         return self._get_attribute('originatorType')
     @OriginatorType.setter
@@ -384,10 +372,10 @@ class TrafficItem(Base):
 
     @property
     def RoundRobinPacketOrdering(self):
-        """This option enables Round Robin Packet Ordering within endpoints across Rx ports.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         """
         return self._get_attribute('roundRobinPacketOrdering')
     @RoundRobinPacketOrdering.setter
@@ -396,10 +384,10 @@ class TrafficItem(Base):
 
     @property
     def RouteMesh(self):
-        """The traffic flow type between each pair of source route endpoint and destination route endpoint.
-
-        Returns:
-            str(fullMesh|oneToOne)
+        """
+        Returns
+        -------
+        - str(fullMesh | oneToOne): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         """
         return self._get_attribute('routeMesh')
     @RouteMesh.setter
@@ -408,10 +396,10 @@ class TrafficItem(Base):
 
     @property
     def SrcDestMesh(self):
-        """Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-
-        Returns:
-            str(fullMesh|manyToMany|none|oneToOne)
+        """
+        Returns
+        -------
+        - str(fullMesh | manyToMany | none | oneToOne): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         """
         return self._get_attribute('srcDestMesh')
     @SrcDestMesh.setter
@@ -420,19 +408,19 @@ class TrafficItem(Base):
 
     @property
     def State(self):
-        """(Read only) A read-only field which indicates the current state of the traffic item.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read only) A read-only field which indicates the current state of the traffic item.
         """
         return self._get_attribute('state')
 
     @property
     def Suspend(self):
-        """Suspends all traffic on this stream.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Suspends all traffic on this stream.
         """
         return self._get_attribute('suspend')
     @Suspend.setter
@@ -441,10 +429,10 @@ class TrafficItem(Base):
 
     @property
     def TrafficItemType(self):
-        """Helps to configure and edit a traffic item that is sent across Ixia ports.
-
-        Returns:
-            str(application|applicationLibrary|l2L3|quick)
+        """
+        Returns
+        -------
+        - str(application | applicationLibrary | l2L3 | quick): Helps to configure and edit a traffic item that is sent across Ixia ports.
         """
         return self._get_attribute('trafficItemType')
     @TrafficItemType.setter
@@ -453,10 +441,10 @@ class TrafficItem(Base):
 
     @property
     def TrafficType(self):
-        """Helps to select the type of traffic endpoint to be configured.
-
-        Returns:
-            str(atm|avb1722|avbRaw|ethernetVlan|fc|fcoe|frameRelay|hdlc|ipv4|ipv4ApplicationTraffic|ipv6|ipv6ApplicationTraffic|ppp|raw)
+        """
+        Returns
+        -------
+        - str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw): Helps to select the type of traffic endpoint to be configured.
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -465,10 +453,10 @@ class TrafficItem(Base):
 
     @property
     def TransmitMode(self):
-        """The transmit mode for this traffic item
-
-        Returns:
-            str(interleaved|sequential)
+        """
+        Returns
+        -------
+        - str(interleaved | sequential): The transmit mode for this traffic item
         """
         return self._get_attribute('transmitMode')
     @TransmitMode.setter
@@ -477,10 +465,10 @@ class TrafficItem(Base):
 
     @property
     def TransportLdpPreference(self):
-        """Transports LDP preference
-
-        Returns:
-            str(one|two)
+        """
+        Returns
+        -------
+        - str(one | two): Transports LDP preference
         """
         return self._get_attribute('transportLdpPreference')
     @TransportLdpPreference.setter
@@ -489,10 +477,10 @@ class TrafficItem(Base):
 
     @property
     def TransportRsvpTePreference(self):
-        """Transports RSVP TE preference
-
-        Returns:
-            str(one|two)
+        """
+        Returns
+        -------
+        - str(one | two): Transports RSVP TE preference
         """
         return self._get_attribute('transportRsvpTePreference')
     @TransportRsvpTePreference.setter
@@ -502,9 +490,9 @@ class TrafficItem(Base):
     @property
     def UseControlPlaneFrameSize(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('useControlPlaneFrameSize')
     @UseControlPlaneFrameSize.setter
@@ -514,9 +502,9 @@ class TrafficItem(Base):
     @property
     def UseControlPlaneRate(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('useControlPlaneRate')
     @UseControlPlaneRate.setter
@@ -525,164 +513,174 @@ class TrafficItem(Base):
 
     @property
     def Warnings(self):
-        """Displays the warnings.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Displays the warnings.
         """
         return self._get_attribute('warnings')
 
-    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
-        """Updates a child instance of trafficItem on the server.
+    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+        """Updates trafficItem resource on the server.
 
-        Args:
-            AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-            BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
-            EgressEnabled (bool): Enables the egress.
-            EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-            EnableMacsecEgressOnlyAutoConfig (bool): 
-            Enabled (bool): If true, this enables the selected traffic item.
-            FrerDuplicateElimination (bool): 
-            HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
-            HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-            InterAsBgpPreference (str(one|two)): Signifies the inter as BGP prefence
-            InterAsLdpPreference (str(one|two)): Preferences inter as LDP
-            MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
-            MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-            MulticastForwardingMode (str(loadBalancing|replication)): 
-            Name (str): The name of the traffic item.
-            NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
-            OrdinalNo (number): Signifies the ordinal number
-            OriginatorType (str(endUser|quickTest)): Indicates who created this trafficItem.
-            RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
-            RouteMesh (str(fullMesh|oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
-            SrcDestMesh (str(fullMesh|manyToMany|none|oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-            Suspend (bool): Suspends all traffic on this stream.
-            TrafficItemType (str(application|applicationLibrary|l2L3|quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-            TrafficType (str(atm|avb1722|avbRaw|ethernetVlan|fc|fcoe|frameRelay|hdlc|ipv4|ipv4ApplicationTraffic|ipv6|ipv6ApplicationTraffic|ppp|raw)): Helps to select the type of traffic endpoint to be configured.
-            TransmitMode (str(interleaved|sequential)): The transmit mode for this traffic item
-            TransportLdpPreference (str(one|two)): Transports LDP preference
-            TransportRsvpTePreference (str(one|two)): Transports RSVP TE preference
-            UseControlPlaneFrameSize (bool): 
-            UseControlPlaneRate (bool): 
+        Args
+        ----
+        - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
+        - EgressEnabled (bool): Enables the egress.
+        - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - Enabled (bool): If true, this enables the selected traffic item.
+        - FrerDuplicateElimination (bool): 
+        - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
+        - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
+        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
+        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
+        - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
+        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - Name (str): The name of the traffic item.
+        - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
+        - OrdinalNo (number): Signifies the ordinal number
+        - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
+        - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
+        - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
+        - Suspend (bool): Suspends all traffic on this stream.
+        - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
+        - TransportLdpPreference (str(one | two)): Transports LDP preference
+        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - UseControlPlaneFrameSize (bool): 
+        - UseControlPlaneRate (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
-        """Adds a new trafficItem node on the server and retrieves it in this instance.
+    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+        """Adds a new trafficItem resource on the server and adds it to the container.
 
-        Args:
-            AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-            BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
-            EgressEnabled (bool): Enables the egress.
-            EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-            EnableMacsecEgressOnlyAutoConfig (bool): 
-            Enabled (bool): If true, this enables the selected traffic item.
-            FrerDuplicateElimination (bool): 
-            HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
-            HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-            InterAsBgpPreference (str(one|two)): Signifies the inter as BGP prefence
-            InterAsLdpPreference (str(one|two)): Preferences inter as LDP
-            MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
-            MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-            MulticastForwardingMode (str(loadBalancing|replication)): 
-            Name (str): The name of the traffic item.
-            NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
-            OrdinalNo (number): Signifies the ordinal number
-            OriginatorType (str(endUser|quickTest)): Indicates who created this trafficItem.
-            RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
-            RouteMesh (str(fullMesh|oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
-            SrcDestMesh (str(fullMesh|manyToMany|none|oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-            Suspend (bool): Suspends all traffic on this stream.
-            TrafficItemType (str(application|applicationLibrary|l2L3|quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-            TrafficType (str(atm|avb1722|avbRaw|ethernetVlan|fc|fcoe|frameRelay|hdlc|ipv4|ipv4ApplicationTraffic|ipv6|ipv6ApplicationTraffic|ppp|raw)): Helps to select the type of traffic endpoint to be configured.
-            TransmitMode (str(interleaved|sequential)): The transmit mode for this traffic item
-            TransportLdpPreference (str(one|two)): Transports LDP preference
-            TransportRsvpTePreference (str(one|two)): Transports RSVP TE preference
-            UseControlPlaneFrameSize (bool): 
-            UseControlPlaneRate (bool): 
+        Args
+        ----
+        - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
+        - EgressEnabled (bool): Enables the egress.
+        - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - Enabled (bool): If true, this enables the selected traffic item.
+        - FrerDuplicateElimination (bool): 
+        - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
+        - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
+        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
+        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
+        - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
+        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - Name (str): The name of the traffic item.
+        - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
+        - OrdinalNo (number): Signifies the ordinal number
+        - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
+        - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
+        - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
+        - Suspend (bool): Suspends all traffic on this stream.
+        - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
+        - TransportLdpPreference (str(one | two)): Transports LDP preference
+        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - UseControlPlaneFrameSize (bool): 
+        - UseControlPlaneRate (bool): 
 
-        Returns:
-            self: This instance with all currently retrieved trafficItem data using find and the newly added trafficItem data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trafficItem resources using find and the newly added trafficItem resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trafficItem data in this instance from server.
+        """Deletes all the contained trafficItem resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
-    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
-        """Finds and retrieves trafficItem data from the server.
+    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
+        """Finds and retrieves trafficItem resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trafficItem data from the server.
-        By default the find method takes no parameters and will retrieve all trafficItem data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficItem resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trafficItem resources from the server.
 
-        Args:
-            AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-            BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
-            EgressEnabled (bool): Enables the egress.
-            EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-            EnableMacsecEgressOnlyAutoConfig (bool): 
-            Enabled (bool): If true, this enables the selected traffic item.
-            Errors (list(str)): Displays the errors.
-            FlowGroupCount (number): Indicates the number of flow groups.
-            FrerDuplicateElimination (bool): 
-            HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
-            HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-            InterAsBgpPreference (str(one|two)): Signifies the inter as BGP prefence
-            InterAsLdpPreference (str(one|two)): Preferences inter as LDP
-            MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
-            MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-            MulticastForwardingMode (str(loadBalancing|replication)): 
-            Name (str): The name of the traffic item.
-            NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
-            OrdinalNo (number): Signifies the ordinal number
-            OriginatorType (str(endUser|quickTest)): Indicates who created this trafficItem.
-            RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
-            RouteMesh (str(fullMesh|oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
-            SrcDestMesh (str(fullMesh|manyToMany|none|oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-            State (str): (Read only) A read-only field which indicates the current state of the traffic item.
-            Suspend (bool): Suspends all traffic on this stream.
-            TrafficItemType (str(application|applicationLibrary|l2L3|quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-            TrafficType (str(atm|avb1722|avbRaw|ethernetVlan|fc|fcoe|frameRelay|hdlc|ipv4|ipv4ApplicationTraffic|ipv6|ipv6ApplicationTraffic|ppp|raw)): Helps to select the type of traffic endpoint to be configured.
-            TransmitMode (str(interleaved|sequential)): The transmit mode for this traffic item
-            TransportLdpPreference (str(one|two)): Transports LDP preference
-            TransportRsvpTePreference (str(one|two)): Transports RSVP TE preference
-            UseControlPlaneFrameSize (bool): 
-            UseControlPlaneRate (bool): 
-            Warnings (list(str)): Displays the warnings.
+        Args
+        ----
+        - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
+        - EgressEnabled (bool): Enables the egress.
+        - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - Enabled (bool): If true, this enables the selected traffic item.
+        - Errors (list(str)): Displays the errors.
+        - FlowGroupCount (number): Indicates the number of flow groups.
+        - FrerDuplicateElimination (bool): 
+        - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
+        - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
+        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
+        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
+        - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
+        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - Name (str): The name of the traffic item.
+        - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
+        - OrdinalNo (number): Signifies the ordinal number
+        - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
+        - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
+        - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
+        - State (str): (Read only) A read-only field which indicates the current state of the traffic item.
+        - Suspend (bool): Suspends all traffic on this stream.
+        - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
+        - TransportLdpPreference (str(one | two)): Transports LDP preference
+        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - UseControlPlaneFrameSize (bool): 
+        - UseControlPlaneRate (bool): 
+        - Warnings (list(str)): Displays the warnings.
 
-        Returns:
-            self: This instance with matching trafficItem data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trafficItem resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trafficItem data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trafficItem data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trafficItem resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -691,9 +689,10 @@ class TrafficItem(Base):
 
         Converts a non-raw traffic item to a raw traffic item.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('convertToRaw', payload=payload, response_object=None)
@@ -703,13 +702,14 @@ class TrafficItem(Base):
 
         Duplicates a specific traffic item.
 
-        duplicate(Arg2:number)
-            Args:
-                args[0] is Arg2 (number): The number of times to duplicate the traffic item.
+        duplicate(Arg2=number)
+        ----------------------
+        - Arg2 (number): The number of times to duplicate the traffic item.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -721,9 +721,10 @@ class TrafficItem(Base):
 
         Duplicates a list of traffic items.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('duplicateItems', payload=payload, response_object=None)
@@ -733,16 +734,12 @@ class TrafficItem(Base):
 
         Generate traffic for specific traffic items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        generate()
-
-        generate()
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('generate', payload=payload, response_object=None)
@@ -752,12 +749,10 @@ class TrafficItem(Base):
 
         Resolves /vport/protocolStack/. endpoints being used by a specific traffic item.
 
-            Returns:
-                str: This exec returns a string containing the resolved endpoints.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('resolveAptixiaEndpoints', payload=payload, response_object=None)
@@ -767,16 +762,12 @@ class TrafficItem(Base):
 
         Starts default learning for a list of traffic items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startDefaultLearning()
-
-        startDefaultLearning()
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startDefaultLearning', payload=payload, response_object=None)
@@ -786,37 +777,37 @@ class TrafficItem(Base):
 
         Sends learning frames.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startLearning(Arg2:number, Arg3:number, Arg4:number)
-            Args:
-                args[0] is Arg2 (number): The framesize of the learning frame.
-                args[1] is Arg3 (number): The framecount of the learning frames.
-                args[2] is Arg4 (number): The frames per second of the learning frames.
+        startLearning(Arg2=number, Arg3=number, Arg4=number)
+        ----------------------------------------------------
+        - Arg2 (number): The framesize of the learning frame.
+        - Arg3 (number): The framecount of the learning frames.
+        - Arg4 (number): The frames per second of the learning frames.
 
-        startLearning(Arg2:number, Arg3:number, Arg4:number, Arg5:bool, Arg6:bool, Arg7:bool)
-            Args:
-                args[0] is Arg2 (number): The framesize of the learning frame.
-                args[1] is Arg3 (number): The framecount of the learning frames.
-                args[2] is Arg4 (number): The frames per second of the learning frames.
-                args[3] is Arg5 (bool): Send gratuitous ARP frames.
-                args[4] is Arg6 (bool): Send MAC frames.
-                args[5] is Arg7 (bool): Send Fast Path frames.
+        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool)
+        -------------------------------------------------------------------------------------
+        - Arg2 (number): The framesize of the learning frame.
+        - Arg3 (number): The framecount of the learning frames.
+        - Arg4 (number): The frames per second of the learning frames.
+        - Arg5 (bool): Send gratuitous ARP frames.
+        - Arg6 (bool): Send MAC frames.
+        - Arg7 (bool): Send Fast Path frames.
 
-        startLearning(Arg2:number, Arg3:number, Arg4:number, Arg5:bool, Arg6:bool, Arg7:bool, Arg8:bool)
-            Args:
-                args[0] is Arg2 (number): The framesize of the learning frame.
-                args[1] is Arg3 (number): The framecount of the learning frames.
-                args[2] is Arg4 (number): The frames per second of the learning frames.
-                args[3] is Arg5 (bool): Send gratuitous ARP frames.
-                args[4] is Arg6 (bool): Send MAC frames.
-                args[5] is Arg7 (bool): Send Fast Path frames.
-                args[6] is Arg8 (bool): Send full mesh.
+        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, Arg8=bool)
+        ------------------------------------------------------------------------------------------------
+        - Arg2 (number): The framesize of the learning frame.
+        - Arg3 (number): The framecount of the learning frames.
+        - Arg4 (number): The frames per second of the learning frames.
+        - Arg5 (bool): Send gratuitous ARP frames.
+        - Arg6 (bool): Send MAC frames.
+        - Arg7 (bool): Send Fast Path frames.
+        - Arg8 (bool): Send full mesh.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -828,9 +819,10 @@ class TrafficItem(Base):
 
         Start the traffic configuration for stateless traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTraffic', payload=payload, response_object=None)
@@ -840,9 +832,10 @@ class TrafficItem(Base):
 
         Start the traffic configuration for stateless traffic items only. This will block until traffic is fully started.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
@@ -852,9 +845,10 @@ class TrafficItem(Base):
 
         Stop the stateless traffic items.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
@@ -864,9 +858,10 @@ class TrafficItem(Base):
 
         Stop the traffic configuration for stateless traffic items only. This will block until traffic is fully stopped.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)

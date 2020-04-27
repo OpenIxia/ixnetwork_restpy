@@ -36,10 +36,10 @@ class LosLof(Base):
 
     @property
     def Duration(self):
-        """The burst duration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The burst duration.
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -48,10 +48,10 @@ class LosLof(Base):
 
     @property
     def IsBurst(self):
-        """If true, loss of signal or loss of frame will be enabled for the specified duration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, loss of signal or loss of frame will be enabled for the specified duration.
         """
         return self._get_attribute('isBurst')
     @IsBurst.setter
@@ -60,19 +60,19 @@ class LosLof(Base):
 
     @property
     def State(self):
-        """Gets the loss of signal or loss of framing state.
-
-        Returns:
-            str(started|stopped)
+        """
+        Returns
+        -------
+        - str(started | stopped): Gets the loss of signal or loss of framing state.
         """
         return self._get_attribute('state')
 
     @property
     def Type(self):
-        """Selects loss of signal or loss of framing.
-
-        Returns:
-            str(lof|los)
+        """
+        Returns
+        -------
+        - str(lof | los): Selects loss of signal or loss of framing.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -81,10 +81,10 @@ class LosLof(Base):
 
     @property
     def Units(self):
-        """Burst duration units.
-
-        Returns:
-            str(kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)
+        """
+        Returns
+        -------
+        - str(kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Burst duration units.
         """
         return self._get_attribute('units')
     @Units.setter
@@ -92,27 +92,30 @@ class LosLof(Base):
         self._set_attribute('units', value)
 
     def update(self, Duration=None, IsBurst=None, Type=None, Units=None):
-        """Updates a child instance of losLof on the server.
+        """Updates losLof resource on the server.
 
-        Args:
-            Duration (number): The burst duration.
-            IsBurst (bool): If true, loss of signal or loss of frame will be enabled for the specified duration.
-            Type (str(lof|los)): Selects loss of signal or loss of framing.
-            Units (str(kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)): Burst duration units.
+        Args
+        ----
+        - Duration (number): The burst duration.
+        - IsBurst (bool): If true, loss of signal or loss of frame will be enabled for the specified duration.
+        - Type (str(lof | los)): Selects loss of signal or loss of framing.
+        - Units (str(kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds)): Burst duration units.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the impairments defined by user (traffic will be impaired).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -122,9 +125,10 @@ class LosLof(Base):
 
         Stops the impairments defined by user (traffic will pass unimpaired).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

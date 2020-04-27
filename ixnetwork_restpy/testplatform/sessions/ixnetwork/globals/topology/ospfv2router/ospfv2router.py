@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv2Router(Base):
     """Ospf Port Specific Data
-    The Ospfv2Router class encapsulates a list of ospfv2Router resources that is managed by the system.
+    The Ospfv2Router class encapsulates a list of ospfv2Router resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ospfv2Router.find() method.
     """
 
@@ -37,92 +37,96 @@ class Ospfv2Router(Base):
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def BierMplsEncapSubTlvType(self):
-        """BIER MPLS Encapsulation Sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bierMplsEncapSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BIER MPLS Encapsulation Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bierMplsEncapSubTlvType'))
 
     @property
     def BierSubTlvType(self):
-        """BIER Sub-TLV Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bierSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BIER Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bierSubTlvType'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableDrBdr(self):
-        """Enable DR/BDR
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableDrBdr')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable DR/BDR
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableDrBdr'))
 
     @property
     def FloodLsUpdatesPerInterval(self):
-        """Flood Link State Updates per Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('floodLsUpdatesPerInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flood Link State Updates per Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('floodLsUpdatesPerInterval'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -131,68 +135,78 @@ class Ospfv2Router(Base):
 
     @property
     def RateControlInterval(self):
-        """Rate Control Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rateControlInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Rate Control Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rateControlInterval'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     def update(self, Name=None):
-        """Updates a child instance of ospfv2Router on the server.
+        """Updates ospfv2Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
-        """Finds and retrieves ospfv2Router data from the server.
+        """Finds and retrieves ospfv2Router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfv2Router data from the server.
-        By default the find method takes no parameters and will retrieve all ospfv2Router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv2Router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfv2Router resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            RowNames (list(str)): Name of rows
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
 
-        Returns:
-            self: This instance with matching ospfv2Router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfv2Router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfv2Router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfv2Router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfv2Router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -201,18 +215,21 @@ class Ospfv2Router(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BierMplsEncapSubTlvType (str): optional regex of bierMplsEncapSubTlvType
-            BierSubTlvType (str): optional regex of bierSubTlvType
-            EnableDrBdr (str): optional regex of enableDrBdr
-            FloodLsUpdatesPerInterval (str): optional regex of floodLsUpdatesPerInterval
-            RateControlInterval (str): optional regex of rateControlInterval
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BierMplsEncapSubTlvType (str): optional regex of bierMplsEncapSubTlvType
+        - BierSubTlvType (str): optional regex of bierSubTlvType
+        - EnableDrBdr (str): optional regex of enableDrBdr
+        - FloodLsUpdatesPerInterval (str): optional regex of floodLsUpdatesPerInterval
+        - RateControlInterval (str): optional regex of rateControlInterval
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

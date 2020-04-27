@@ -36,10 +36,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def AddressRangesToSkip(self):
-        """Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
         """
         return self._get_attribute('addressRangesToSkip')
     @AddressRangesToSkip.setter
@@ -48,10 +48,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def CustomDistributionFile(self):
-        """Source file having custom distribution information.
-
-        Returns:
-            obj(ixnetwork_restpy.files.Files)
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.files.Files): Source file having custom distribution information.
         """
         return self._get_attribute('customDistributionFile')
     @CustomDistributionFile.setter
@@ -60,10 +60,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def DuplicateRoutesAsPathSuffix(self):
-        """AS Path Suffix for Duplicate Routes
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AS Path Suffix for Duplicate Routes
         """
         return self._get_attribute('duplicateRoutesAsPathSuffix')
     @DuplicateRoutesAsPathSuffix.setter
@@ -72,10 +72,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def DuplicateRoutesPerDevicePercent(self):
-        """Percentage to Duplicate Primary Routes per Device.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Percentage to Duplicate Primary Routes per Device.
         """
         return self._get_attribute('duplicateRoutesPerDevicePercent')
     @DuplicateRoutesPerDevicePercent.setter
@@ -84,10 +84,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def NetworkAddressStart(self):
-        """Network Address Start Value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Network Address Start Value.
         """
         return self._get_attribute('networkAddressStart')
     @NetworkAddressStart.setter
@@ -96,10 +96,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def NetworkAddressStep(self):
-        """Network Address Step Value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Network Address Step Value.
         """
         return self._get_attribute('networkAddressStep')
     @NetworkAddressStep.setter
@@ -108,10 +108,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrefixLengthDistributionScope(self):
-        """Prefix Length Distribution Scope.
-
-        Returns:
-            str(perTopology|perDevice|perPort)
+        """
+        Returns
+        -------
+        - str(perTopology | perDevice | perPort): Prefix Length Distribution Scope.
         """
         return self._get_attribute('prefixLengthDistributionScope')
     @PrefixLengthDistributionScope.setter
@@ -120,10 +120,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrefixLengthDistributionType(self):
-        """Prefix Length Distribution Type.
-
-        Returns:
-            str(fixed|random|even|exponential|internet|custom)
+        """
+        Returns
+        -------
+        - str(fixed | random | even | exponential | internet | custom): Prefix Length Distribution Type.
         """
         return self._get_attribute('prefixLengthDistributionType')
     @PrefixLengthDistributionType.setter
@@ -132,10 +132,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrefixLengthEnd(self):
-        """Prefix Length End Value. Applicable only for Even and Exponential distribution type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Prefix Length End Value. Applicable only for Even and Exponential distribution type.
         """
         return self._get_attribute('prefixLengthEnd')
     @PrefixLengthEnd.setter
@@ -144,10 +144,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrefixLengthStart(self):
-        """Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
         """
         return self._get_attribute('prefixLengthStart')
     @PrefixLengthStart.setter
@@ -156,10 +156,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrimaryRoutesAsPathSuffix(self):
-        """AS Path Suffix for Primary Routes
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AS Path Suffix for Primary Routes
         """
         return self._get_attribute('primaryRoutesAsPathSuffix')
     @PrimaryRoutesAsPathSuffix.setter
@@ -168,10 +168,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrimaryRoutesPerDevice(self):
-        """Number of Primary Routes per Device.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Primary Routes per Device.
         """
         return self._get_attribute('primaryRoutesPerDevice')
     @PrimaryRoutesPerDevice.setter
@@ -180,10 +180,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def PrimaryRoutesPerRange(self):
-        """Number of Routes per Route Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Routes per Route Range.
         """
         return self._get_attribute('primaryRoutesPerRange')
     @PrimaryRoutesPerRange.setter
@@ -192,10 +192,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def SkipLoopback(self):
-        """Do not include Loopback Address in the generated Address Range
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Do not include Loopback Address in the generated Address Range
         """
         return self._get_attribute('skipLoopback')
     @SkipLoopback.setter
@@ -204,10 +204,10 @@ class GenerateIpv6RoutesParams(Base):
 
     @property
     def SkipMcast(self):
-        """Do not include Multicast Address in the generated Address Range
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Do not include Multicast Address in the generated Address Range
         """
         return self._get_attribute('skipMcast')
     @SkipMcast.setter
@@ -215,38 +215,41 @@ class GenerateIpv6RoutesParams(Base):
         self._set_attribute('skipMcast', value)
 
     def update(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, SkipLoopback=None, SkipMcast=None):
-        """Updates a child instance of generateIpv6RoutesParams on the server.
+        """Updates generateIpv6RoutesParams resource on the server.
 
-        Args:
-            AddressRangesToSkip (str): Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
-            CustomDistributionFile (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
-            DuplicateRoutesAsPathSuffix (str): AS Path Suffix for Duplicate Routes
-            DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
-            NetworkAddressStart (str): Network Address Start Value.
-            NetworkAddressStep (str): Network Address Step Value.
-            PrefixLengthDistributionScope (str(perTopology|perDevice|perPort)): Prefix Length Distribution Scope.
-            PrefixLengthDistributionType (str(fixed|random|even|exponential|internet|custom)): Prefix Length Distribution Type.
-            PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
-            PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
-            PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
-            PrimaryRoutesPerDevice (number): Number of Primary Routes per Device.
-            PrimaryRoutesPerRange (number): Number of Routes per Route Range.
-            SkipLoopback (bool): Do not include Loopback Address in the generated Address Range
-            SkipMcast (bool): Do not include Multicast Address in the generated Address Range
+        Args
+        ----
+        - AddressRangesToSkip (str): Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
+        - CustomDistributionFile (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
+        - DuplicateRoutesAsPathSuffix (str): AS Path Suffix for Duplicate Routes
+        - DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
+        - NetworkAddressStart (str): Network Address Start Value.
+        - NetworkAddressStep (str): Network Address Step Value.
+        - PrefixLengthDistributionScope (str(perTopology | perDevice | perPort)): Prefix Length Distribution Scope.
+        - PrefixLengthDistributionType (str(fixed | random | even | exponential | internet | custom)): Prefix Length Distribution Type.
+        - PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
+        - PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
+        - PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
+        - PrimaryRoutesPerDevice (number): Number of Primary Routes per Device.
+        - PrimaryRoutesPerRange (number): Number of Routes per Route Range.
+        - SkipLoopback (bool): Do not include Loopback Address in the generated Address Range
+        - SkipMcast (bool): Do not include Multicast Address in the generated Address Range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def GenerateIpv6Routes(self):
         """Executes the generateIpv6Routes operation on the server.
 
         Generate Primary and Duplicate Routes with advanced prefix length distribution options.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateIpv6Routes', payload=payload, response_object=None)

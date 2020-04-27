@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisTrillRouter(Base):
     """TRILL Port Configuration
-    The IsisTrillRouter class encapsulates a list of isisTrillRouter resources that is managed by the system.
+    The IsisTrillRouter class encapsulates a list of isisTrillRouter resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisTrillRouter.find() method.
     """
 
@@ -37,74 +37,76 @@ class IsisTrillRouter(Base):
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isistrillrouter.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def AllL1RBridgesMAC(self):
-        """TRILL All L1 RBridges MAC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('allL1RBridgesMAC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TRILL All L1 RBridges MAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('allL1RBridgesMAC'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def HelloMulticastMAC(self):
-        """TRILL Hello Multicast MAC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloMulticastMAC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TRILL Hello Multicast MAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloMulticastMAC'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -113,95 +115,108 @@ class IsisTrillRouter(Base):
 
     @property
     def NlpId(self):
-        """TRILL NLP ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nlpId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TRILL NLP ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nlpId'))
 
     @property
     def NoOfLSPsOrMgroupPDUsPerInterval(self):
-        """LSPs/MGROUP-PDUs per Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('noOfLSPsOrMgroupPDUsPerInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSPs/MGROUP-PDUs per Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('noOfLSPsOrMgroupPDUsPerInterval'))
 
     @property
     def RateControlInterval(self):
-        """Rate Control Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rateControlInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Rate Control Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rateControlInterval'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     @property
     def SendP2PHellosToUnicastMAC(self):
-        """TRILL/Fabric-Path Send P2P Hellos To Unicast MAC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendP2PHellosToUnicastMAC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TRILL/Fabric-Path Send P2P Hellos To Unicast MAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendP2PHellosToUnicastMAC'))
 
     def update(self, Name=None):
-        """Updates a child instance of isisTrillRouter on the server.
+        """Updates isisTrillRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
-        """Finds and retrieves isisTrillRouter data from the server.
+        """Finds and retrieves isisTrillRouter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisTrillRouter data from the server.
-        By default the find method takes no parameters and will retrieve all isisTrillRouter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillRouter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisTrillRouter resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            RowNames (list(str)): Name of rows
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
 
-        Returns:
-            self: This instance with matching isisTrillRouter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisTrillRouter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisTrillRouter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisTrillRouter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisTrillRouter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -210,19 +225,22 @@ class IsisTrillRouter(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            AllL1RBridgesMAC (str): optional regex of allL1RBridgesMAC
-            HelloMulticastMAC (str): optional regex of helloMulticastMAC
-            NlpId (str): optional regex of nlpId
-            NoOfLSPsOrMgroupPDUsPerInterval (str): optional regex of noOfLSPsOrMgroupPDUsPerInterval
-            RateControlInterval (str): optional regex of rateControlInterval
-            SendP2PHellosToUnicastMAC (str): optional regex of sendP2PHellosToUnicastMAC
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AllL1RBridgesMAC (str): optional regex of allL1RBridgesMAC
+        - HelloMulticastMAC (str): optional regex of helloMulticastMAC
+        - NlpId (str): optional regex of nlpId
+        - NoOfLSPsOrMgroupPDUsPerInterval (str): optional regex of noOfLSPsOrMgroupPDUsPerInterval
+        - RateControlInterval (str): optional regex of rateControlInterval
+        - SendP2PHellosToUnicastMAC (str): optional regex of sendP2PHellosToUnicastMAC
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

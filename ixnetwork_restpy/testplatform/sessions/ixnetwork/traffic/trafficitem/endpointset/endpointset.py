@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EndpointSet(Base):
     """This object helps to set the endpoint set of a traffic item.
-    The EndpointSet class encapsulates a list of endpointSet resources that is be managed by the user.
+    The EndpointSet class encapsulates a list of endpointSet resources that are managed by the user.
     A list of resources can be retrieved from the server using the EndpointSet.find() method.
-    The list can be managed by the user by using the EndpointSet.add() and EndpointSet.remove() methods.
+    The list can be managed by using the EndpointSet.add() and EndpointSet.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EndpointSet(Base):
 
     @property
     def AllowEmptyTopologySets(self):
-        """Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
         """
         return self._get_attribute('allowEmptyTopologySets')
     @AllowEmptyTopologySets.setter
@@ -50,10 +50,10 @@ class EndpointSet(Base):
 
     @property
     def DestinationFilter(self):
-        """The list of conditions used for filtering destinations endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of conditions used for filtering destinations endpoints.
         """
         return self._get_attribute('destinationFilter')
     @DestinationFilter.setter
@@ -62,10 +62,10 @@ class EndpointSet(Base):
 
     @property
     def Destinations(self):
-        """Indicates the number of destination endpoints configured.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): Indicates the number of destination endpoints configured.
         """
         return self._get_attribute('destinations')
     @Destinations.setter
@@ -74,19 +74,19 @@ class EndpointSet(Base):
 
     @property
     def DestinationsDescription(self):
-        """Summary description of destination endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Summary description of destination endpoints.
         """
         return self._get_attribute('destinationsDescription')
 
     @property
     def FullyMeshedEndpoints(self):
         """
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): 
         """
         return self._get_attribute('fullyMeshedEndpoints')
     @FullyMeshedEndpoints.setter
@@ -95,19 +95,19 @@ class EndpointSet(Base):
 
     @property
     def FullyMeshedEndpointsDescription(self):
-        """Summary description of fully meshed endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Summary description of fully meshed endpoints.
         """
         return self._get_attribute('fullyMeshedEndpointsDescription')
 
     @property
     def MulticastDestinations(self):
-        """A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
-
-        Returns:
-            list(dict(arg1:bool,arg2:str[igmp|mld|none],arg3:str,arg4:str,arg5:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number)): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
         """
         return self._get_attribute('multicastDestinations')
     @MulticastDestinations.setter
@@ -116,10 +116,10 @@ class EndpointSet(Base):
 
     @property
     def MulticastReceivers(self):
-        """A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number)): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
         """
         return self._get_attribute('multicastReceivers')
     @MulticastReceivers.setter
@@ -128,10 +128,10 @@ class EndpointSet(Base):
 
     @property
     def Name(self):
-        """The name of the endpoint set.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the endpoint set.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -140,10 +140,10 @@ class EndpointSet(Base):
 
     @property
     def NgpfFilters(self):
-        """The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
-
-        Returns:
-            list(dict(arg1:str,arg2:list[number]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:list[number])): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
         """
         return self._get_attribute('ngpfFilters')
     @NgpfFilters.setter
@@ -152,10 +152,10 @@ class EndpointSet(Base):
 
     @property
     def ScalableDestinations(self):
-        """A list of scalable destination structures
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number)): A list of scalable destination structures
         """
         return self._get_attribute('scalableDestinations')
     @ScalableDestinations.setter
@@ -164,10 +164,10 @@ class EndpointSet(Base):
 
     @property
     def ScalableSources(self):
-        """A list of scalable source structures.
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number)): A list of scalable source structures.
         """
         return self._get_attribute('scalableSources')
     @ScalableSources.setter
@@ -176,10 +176,10 @@ class EndpointSet(Base):
 
     @property
     def SourceFilter(self):
-        """The list of conditions used for filtering source endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of conditions used for filtering source endpoints.
         """
         return self._get_attribute('sourceFilter')
     @SourceFilter.setter
@@ -188,10 +188,10 @@ class EndpointSet(Base):
 
     @property
     def Sources(self):
-        """Indicates the number of source endpoints configured.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): Indicates the number of source endpoints configured.
         """
         return self._get_attribute('sources')
     @Sources.setter
@@ -200,19 +200,19 @@ class EndpointSet(Base):
 
     @property
     def SourcesDescription(self):
-        """Summary description of source endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Summary description of source endpoints.
         """
         return self._get_attribute('sourcesDescription')
 
     @property
     def TrafficGroups(self):
-        """Indicates the traffic groups selected in the source/destination endpoint set.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../*]): Indicates the traffic groups selected in the source/destination endpoint set.
         """
         return self._get_attribute('trafficGroups')
     @TrafficGroups.setter
@@ -220,107 +220,120 @@ class EndpointSet(Base):
         self._set_attribute('trafficGroups', value)
 
     def update(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, FullyMeshedEndpoints=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, TrafficGroups=None):
-        """Updates a child instance of endpointSet on the server.
+        """Updates endpointSet resource on the server.
 
-        Args:
-            AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
-            DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
-            Destinations (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of destination endpoints configured.
-            FullyMeshedEndpoints (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): 
-            MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp|mld|none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
-            MulticastReceivers (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
-            Name (str): The name of the endpoint set.
-            NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
-            ScalableDestinations (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
-            ScalableSources (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
-            SourceFilter (str): The list of conditions used for filtering source endpoints.
-            Sources (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of source endpoints configured.
-            TrafficGroups (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*])): Indicates the traffic groups selected in the source/destination endpoint set.
+        Args
+        ----
+        - AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
+        - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
+        - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
+        - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
+        - Name (str): The name of the endpoint set.
+        - NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
+        - ScalableDestinations (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
+        - ScalableSources (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
+        - SourceFilter (str): The list of conditions used for filtering source endpoints.
+        - Sources (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of source endpoints configured.
+        - TrafficGroups (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../*])): Indicates the traffic groups selected in the source/destination endpoint set.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, FullyMeshedEndpoints=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, TrafficGroups=None):
-        """Adds a new endpointSet node on the server and retrieves it in this instance.
+        """Adds a new endpointSet resource on the server and adds it to the container.
 
-        Args:
-            AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
-            DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
-            Destinations (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of destination endpoints configured.
-            FullyMeshedEndpoints (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): 
-            MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp|mld|none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
-            MulticastReceivers (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
-            Name (str): The name of the endpoint set.
-            NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
-            ScalableDestinations (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
-            ScalableSources (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
-            SourceFilter (str): The list of conditions used for filtering source endpoints.
-            Sources (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of source endpoints configured.
-            TrafficGroups (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*])): Indicates the traffic groups selected in the source/destination endpoint set.
+        Args
+        ----
+        - AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
+        - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
+        - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
+        - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
+        - Name (str): The name of the endpoint set.
+        - NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
+        - ScalableDestinations (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
+        - ScalableSources (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
+        - SourceFilter (str): The list of conditions used for filtering source endpoints.
+        - Sources (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of source endpoints configured.
+        - TrafficGroups (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../*])): Indicates the traffic groups selected in the source/destination endpoint set.
 
-        Returns:
-            self: This instance with all currently retrieved endpointSet data using find and the newly added endpointSet data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved endpointSet resources using find and the newly added endpointSet resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the endpointSet data in this instance from server.
+        """Deletes all the contained endpointSet resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, DestinationsDescription=None, FullyMeshedEndpoints=None, FullyMeshedEndpointsDescription=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, SourcesDescription=None, TrafficGroups=None):
-        """Finds and retrieves endpointSet data from the server.
+        """Finds and retrieves endpointSet resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve endpointSet data from the server.
-        By default the find method takes no parameters and will retrieve all endpointSet data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve endpointSet resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all endpointSet resources from the server.
 
-        Args:
-            AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
-            DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
-            Destinations (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of destination endpoints configured.
-            DestinationsDescription (str): Summary description of destination endpoints.
-            FullyMeshedEndpoints (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): 
-            FullyMeshedEndpointsDescription (str): Summary description of fully meshed endpoints.
-            MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp|mld|none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
-            MulticastReceivers (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
-            Name (str): The name of the endpoint set.
-            NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
-            ScalableDestinations (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
-            ScalableSources (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
-            SourceFilter (str): The list of conditions used for filtering source endpoints.
-            Sources (list(str[None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*|/api/v1/sessions/1/ixnetwork/topology?deepchild=*|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*|/api/v1/sessions/1/ixnetwork/vport?deepchild=*])): Indicates the number of source endpoints configured.
-            SourcesDescription (str): Summary description of source endpoints.
-            TrafficGroups (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=*])): Indicates the traffic groups selected in the source/destination endpoint set.
+        Args
+        ----
+        - AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
+        - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
+        - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
+        - DestinationsDescription (str): Summary description of destination endpoints.
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - FullyMeshedEndpointsDescription (str): Summary description of fully meshed endpoints.
+        - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
+        - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
+        - Name (str): The name of the endpoint set.
+        - NgpfFilters (list(dict(arg1:str,arg2:list[number]))): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
+        - ScalableDestinations (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable destination structures
+        - ScalableSources (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number))): A list of scalable source structures.
+        - SourceFilter (str): The list of conditions used for filtering source endpoints.
+        - Sources (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of source endpoints configured.
+        - SourcesDescription (str): Summary description of source endpoints.
+        - TrafficGroups (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../*])): Indicates the traffic groups selected in the source/destination endpoint set.
 
-        Returns:
-            self: This instance with matching endpointSet data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching endpointSet resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of endpointSet data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the endpointSet data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the endpointSet resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -329,30 +342,26 @@ class EndpointSet(Base):
 
         This will lookup the multicast receiver group index from the multicast provider using the group id start/step/count which can then be used as the group index argument in the endpointSet multicastReceivers struct.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        findMulticastReceiverGroupIndex(Arg2:href, Arg3:string, Arg4:string, Arg5:number)number
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): A valid object reference
-                args[1] is Arg3 (str): The multicast group id start value
-                args[2] is Arg4 (str): The multicast group id step value
-                args[3] is Arg5 (number): The multicast group id count value
+        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string, Arg4=string, Arg5=number)number
+        ---------------------------------------------------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): A valid object reference
+        - Arg3 (str): The multicast group id start value
+        - Arg4 (str): The multicast group id step value
+        - Arg5 (number): The multicast group id count value
+        - Returns number: The index of the multicast group id.
 
-            Returns:
-                number: The index of the multicast group id.
+        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string)number
+        -------------------------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology)): A valid object reference
+        - Arg3 (str): The multicast group id which must be an eight digit hex value separated by colons i.e., 00:00:01:01:00:01:01:00.
+        - Returns number: The index of the multicast group id.
 
-        findMulticastReceiverGroupIndex(Arg2:href, Arg3:string)number
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/topology)): A valid object reference
-                args[1] is Arg3 (str): The multicast group id which must be an eight digit hex value separated by colons i.e., 00:00:01:01:00:01:01:00.
-
-            Returns:
-                number: The index of the multicast group id.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

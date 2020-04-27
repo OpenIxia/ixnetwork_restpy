@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class ApplyActionsLearnedInfo(Base):
     """NOT DEFINED
-    The ApplyActionsLearnedInfo class encapsulates a list of applyActionsLearnedInfo resources that is managed by the system.
+    The ApplyActionsLearnedInfo class encapsulates a list of applyActionsLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the ApplyActionsLearnedInfo.find() method.
     """
 
@@ -37,61 +37,68 @@ class ApplyActionsLearnedInfo(Base):
 
     @property
     def NextTableIds(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nextTableIds')
 
     @property
     def Property(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('property')
 
     @property
     def SupportedField(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('supportedField')
 
     def find(self, NextTableIds=None, Property=None, SupportedField=None):
-        """Finds and retrieves applyActionsLearnedInfo data from the server.
+        """Finds and retrieves applyActionsLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve applyActionsLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all applyActionsLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve applyActionsLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all applyActionsLearnedInfo resources from the server.
 
-        Args:
-            NextTableIds (str): NOT DEFINED
-            Property (str): NOT DEFINED
-            SupportedField (str): NOT DEFINED
+        Args
+        ----
+        - NextTableIds (str): NOT DEFINED
+        - Property (str): NOT DEFINED
+        - SupportedField (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching applyActionsLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching applyActionsLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of applyActionsLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the applyActionsLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the applyActionsLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

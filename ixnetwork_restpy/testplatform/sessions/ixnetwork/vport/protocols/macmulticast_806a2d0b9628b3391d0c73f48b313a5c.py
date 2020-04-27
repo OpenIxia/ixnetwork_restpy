@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class MacMulticast(Base):
     """The DCE ISIS Learned Information option fetches the learned information for the Multicast MAC Range of a particular DCE ISIS router.
-    The MacMulticast class encapsulates a list of macMulticast resources that is managed by the system.
+    The MacMulticast class encapsulates a list of macMulticast resources that are managed by the system.
     A list of resources can be retrieved from the server using the MacMulticast.find() method.
     """
 
@@ -37,105 +37,112 @@ class MacMulticast(Base):
 
     @property
     def UnicastMacItem(self):
-        """An instance of the UnicastMacItem class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_0916f96e93d3e7e89619ac1a57171f15.UnicastMacItem): An instance of the UnicastMacItem class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_0916f96e93d3e7e89619ac1a57171f15.UnicastMacItem)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_0916f96e93d3e7e89619ac1a57171f15 import UnicastMacItem
         return UnicastMacItem(self)
 
     @property
     def Age(self):
-        """This indicates the age in time, in seconds, since it was last refreshed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the age in time, in seconds, since it was last refreshed.
         """
         return self._get_attribute('age')
 
     @property
     def HostName(self):
-        """The host name as retrieved from the related packets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The host name as retrieved from the related packets.
         """
         return self._get_attribute('hostName')
 
     @property
     def LspId(self):
-        """This indicates the LSP identification number.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the LSP identification number.
         """
         return self._get_attribute('lspId')
 
     @property
     def MulticastGroupMacAddress(self):
-        """This indicates the MAC Multicast Group Address in the Group Record.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the MAC Multicast Group Address in the Group Record.
         """
         return self._get_attribute('multicastGroupMacAddress')
 
     @property
     def SequenceNumber(self):
-        """This indicates the sequence number of the LSP containing the route.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the sequence number of the LSP containing the route.
         """
         return self._get_attribute('sequenceNumber')
 
     @property
     def VlanId(self):
-        """This indicates the VLAN ID in the Group Record.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the VLAN ID in the Group Record.
         """
         return self._get_attribute('vlanId')
 
     def find(self, Age=None, HostName=None, LspId=None, MulticastGroupMacAddress=None, SequenceNumber=None, VlanId=None):
-        """Finds and retrieves macMulticast data from the server.
+        """Finds and retrieves macMulticast resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve macMulticast data from the server.
-        By default the find method takes no parameters and will retrieve all macMulticast data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macMulticast resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all macMulticast resources from the server.
 
-        Args:
-            Age (number): This indicates the age in time, in seconds, since it was last refreshed.
-            HostName (str): The host name as retrieved from the related packets.
-            LspId (str): This indicates the LSP identification number.
-            MulticastGroupMacAddress (str): This indicates the MAC Multicast Group Address in the Group Record.
-            SequenceNumber (number): This indicates the sequence number of the LSP containing the route.
-            VlanId (number): This indicates the VLAN ID in the Group Record.
+        Args
+        ----
+        - Age (number): This indicates the age in time, in seconds, since it was last refreshed.
+        - HostName (str): The host name as retrieved from the related packets.
+        - LspId (str): This indicates the LSP identification number.
+        - MulticastGroupMacAddress (str): This indicates the MAC Multicast Group Address in the Group Record.
+        - SequenceNumber (number): This indicates the sequence number of the LSP containing the route.
+        - VlanId (number): This indicates the VLAN ID in the Group Record.
 
-        Returns:
-            self: This instance with matching macMulticast data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching macMulticast resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of macMulticast data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the macMulticast data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the macMulticast resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

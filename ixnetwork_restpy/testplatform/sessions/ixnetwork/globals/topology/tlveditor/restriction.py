@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Restriction(Base):
     """Choices for field value
-    The Restriction class encapsulates a list of restriction resources that is be managed by the user.
+    The Restriction class encapsulates a list of restriction resources that are managed by the user.
     A list of resources can be retrieved from the server using the Restriction.find() method.
-    The list can be managed by the user by using the Restriction.add() and Restriction.remove() methods.
+    The list can be managed by using the Restriction.add() and Restriction.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Restriction(Base):
 
     @property
     def Enum(self):
-        """Internal enumeration type to be used as value options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Internal enumeration type to be used as value options
         """
         return self._get_attribute('enum')
     @Enum.setter
@@ -50,10 +50,10 @@ class Restriction(Base):
 
     @property
     def SingleValue(self):
-        """Restricts the field to single value pattern without overlays
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Restricts the field to single value pattern without overlays
         """
         return self._get_attribute('singleValue')
     @SingleValue.setter
@@ -61,70 +61,83 @@ class Restriction(Base):
         self._set_attribute('singleValue', value)
 
     def update(self, Enum=None, SingleValue=None):
-        """Updates a child instance of restriction on the server.
+        """Updates restriction resource on the server.
 
-        Args:
-            Enum (str): Internal enumeration type to be used as value options
-            SingleValue (bool): Restricts the field to single value pattern without overlays
+        Args
+        ----
+        - Enum (str): Internal enumeration type to be used as value options
+        - SingleValue (bool): Restricts the field to single value pattern without overlays
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enum=None, SingleValue=None):
-        """Adds a new restriction node on the server and retrieves it in this instance.
+        """Adds a new restriction resource on the server and adds it to the container.
 
-        Args:
-            Enum (str): Internal enumeration type to be used as value options
-            SingleValue (bool): Restricts the field to single value pattern without overlays
+        Args
+        ----
+        - Enum (str): Internal enumeration type to be used as value options
+        - SingleValue (bool): Restricts the field to single value pattern without overlays
 
-        Returns:
-            self: This instance with all currently retrieved restriction data using find and the newly added restriction data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved restriction resources using find and the newly added restriction resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the restriction data in this instance from server.
+        """Deletes all the contained restriction resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enum=None, SingleValue=None):
-        """Finds and retrieves restriction data from the server.
+        """Finds and retrieves restriction resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve restriction data from the server.
-        By default the find method takes no parameters and will retrieve all restriction data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve restriction resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all restriction resources from the server.
 
-        Args:
-            Enum (str): Internal enumeration type to be used as value options
-            SingleValue (bool): Restricts the field to single value pattern without overlays
+        Args
+        ----
+        - Enum (str): Internal enumeration type to be used as value options
+        - SingleValue (bool): Restricts the field to single value pattern without overlays
 
-        Returns:
-            self: This instance with matching restriction data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching restriction resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of restriction data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the restriction data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the restriction resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IpV6MulticastMplsVpn(Base):
     """This object allows to configure the IPv6 Multicast MplsVpn.
-    The IpV6MulticastMplsVpn class encapsulates a list of ipV6MulticastMplsVpn resources that is managed by the system.
+    The IpV6MulticastMplsVpn class encapsulates a list of ipV6MulticastMplsVpn resources that are managed by the system.
     A list of resources can be retrieved from the server using the IpV6MulticastMplsVpn.find() method.
     """
 
@@ -37,101 +37,108 @@ class IpV6MulticastMplsVpn(Base):
 
     @property
     def AsPath(self):
-        """Indicates the local IP address of the BGP router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP address of the BGP router.
         """
         return self._get_attribute('asPath')
 
     @property
     def IpPrefix(self):
-        """The route IP prefix.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The route IP prefix.
         """
         return self._get_attribute('ipPrefix')
 
     @property
     def Label(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('label')
 
     @property
     def Neighbor(self):
-        """The descriptive identifier for the BGP neighbor.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The descriptive identifier for the BGP neighbor.
         """
         return self._get_attribute('neighbor')
 
     @property
     def NextHop(self):
-        """A 4-octet IP address which indicates the next hop.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A 4-octet IP address which indicates the next hop.
         """
         return self._get_attribute('nextHop')
 
     @property
     def PrefixLength(self):
-        """The length of the route IP prefix, in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The length of the route IP prefix, in bytes.
         """
         return self._get_attribute('prefixLength')
 
     @property
     def RouteDistinguisher(self):
-        """The route distinguisher for the route, for use with IPv6 MPLS VPN address types.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The route distinguisher for the route, for use with IPv6 MPLS VPN address types.
         """
         return self._get_attribute('routeDistinguisher')
 
     def find(self, AsPath=None, IpPrefix=None, Label=None, Neighbor=None, NextHop=None, PrefixLength=None, RouteDistinguisher=None):
-        """Finds and retrieves ipV6MulticastMplsVpn data from the server.
+        """Finds and retrieves ipV6MulticastMplsVpn resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipV6MulticastMplsVpn data from the server.
-        By default the find method takes no parameters and will retrieve all ipV6MulticastMplsVpn data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipV6MulticastMplsVpn resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipV6MulticastMplsVpn resources from the server.
 
-        Args:
-            AsPath (str): Indicates the local IP address of the BGP router.
-            IpPrefix (str): The route IP prefix.
-            Label (number): NOT DEFINED
-            Neighbor (str): The descriptive identifier for the BGP neighbor.
-            NextHop (str): A 4-octet IP address which indicates the next hop.
-            PrefixLength (number): The length of the route IP prefix, in bytes.
-            RouteDistinguisher (str): The route distinguisher for the route, for use with IPv6 MPLS VPN address types.
+        Args
+        ----
+        - AsPath (str): Indicates the local IP address of the BGP router.
+        - IpPrefix (str): The route IP prefix.
+        - Label (number): NOT DEFINED
+        - Neighbor (str): The descriptive identifier for the BGP neighbor.
+        - NextHop (str): A 4-octet IP address which indicates the next hop.
+        - PrefixLength (number): The length of the route IP prefix, in bytes.
+        - RouteDistinguisher (str): The route distinguisher for the route, for use with IPv6 MPLS VPN address types.
 
-        Returns:
-            self: This instance with matching ipV6MulticastMplsVpn data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipV6MulticastMplsVpn resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipV6MulticastMplsVpn data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipV6MulticastMplsVpn data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipV6MulticastMplsVpn resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

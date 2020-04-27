@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OspfSRAlgorithmList(Base):
     """Ospf SR Algorithms
-    The OspfSRAlgorithmList class encapsulates a list of ospfSRAlgorithmList resources that is managed by the system.
+    The OspfSRAlgorithmList class encapsulates a list of ospfSRAlgorithmList resources that are managed by the system.
     A list of resources can be retrieved from the server using the OspfSRAlgorithmList.find() method.
     """
 
@@ -37,28 +37,28 @@ class OspfSRAlgorithmList(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -67,58 +67,68 @@ class OspfSRAlgorithmList(Base):
 
     @property
     def OspfSrAlgorithm(self):
-        """SR Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ospfSrAlgorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SR Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ospfSrAlgorithm'))
 
     def update(self, Name=None):
-        """Updates a child instance of ospfSRAlgorithmList on the server.
+        """Updates ospfSRAlgorithmList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves ospfSRAlgorithmList data from the server.
+        """Finds and retrieves ospfSRAlgorithmList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfSRAlgorithmList data from the server.
-        By default the find method takes no parameters and will retrieve all ospfSRAlgorithmList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfSRAlgorithmList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfSRAlgorithmList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching ospfSRAlgorithmList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfSRAlgorithmList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfSRAlgorithmList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfSRAlgorithmList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfSRAlgorithmList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -127,14 +137,17 @@ class OspfSRAlgorithmList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            OspfSrAlgorithm (str): optional regex of ospfSrAlgorithm
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - OspfSrAlgorithm (str): optional regex of ospfSrAlgorithm
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

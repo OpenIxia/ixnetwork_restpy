@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EapoUdpGlobals(Base):
     """
-    The EapoUdpGlobals class encapsulates a list of eapoUdpGlobals resources that is be managed by the user.
+    The EapoUdpGlobals class encapsulates a list of eapoUdpGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the EapoUdpGlobals.find() method.
-    The list can be managed by the user by using the EapoUdpGlobals.add() and EapoUdpGlobals.remove() methods.
+    The list can be managed by using the EapoUdpGlobals.add() and EapoUdpGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class EapoUdpGlobals(Base):
 
     @property
     def CertInfo(self):
-        """An instance of the CertInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo.CertInfo): An instance of the CertInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo.CertInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo import CertInfo
         return CertInfo(self)._select()
 
     @property
     def NacSettings(self):
-        """An instance of the NacSettings class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings.NacSettings): An instance of the NacSettings class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings.NacSettings)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings import NacSettings
         return NacSettings(self)._select()
 
     @property
     def ChangeStatusQuery(self):
-        """After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
         """
         return self._get_attribute('changeStatusQuery')
     @ChangeStatusQuery.setter
@@ -78,10 +78,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def CookieSize(self):
-        """The size of the cookie we send.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The size of the cookie we send.
         """
         return self._get_attribute('cookieSize')
     @CookieSize.setter
@@ -90,10 +90,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def FragmentSize(self):
-        """Size of the frame sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Size of the frame sent.
         """
         return self._get_attribute('fragmentSize')
     @FragmentSize.setter
@@ -102,10 +102,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def MaxClientsPerSecond(self):
-        """The number of interfaces to setup per second. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces to setup per second. Zero value means maximum with no limit.
         """
         return self._get_attribute('maxClientsPerSecond')
     @MaxClientsPerSecond.setter
@@ -114,10 +114,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -126,19 +126,19 @@ class EapoUdpGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Port(self):
-        """Port on which we start listening for UDP messages for this plugin.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Port on which we start listening for UDP messages for this plugin.
         """
         return self._get_attribute('port')
     @Port.setter
@@ -147,10 +147,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def Timeout(self):
-        """After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
         """
         return self._get_attribute('timeout')
     @Timeout.setter
@@ -159,10 +159,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def TriggerCount(self):
-        """How many triggers are sent when a client is started.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many triggers are sent when a client is started.
         """
         return self._get_attribute('triggerCount')
     @TriggerCount.setter
@@ -171,10 +171,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def TriggerOrigin(self):
-        """The trigger source can be external (outside port) or internal (another plugin or application).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The trigger source can be external (outside port) or internal (another plugin or application).
         """
         return self._get_attribute('triggerOrigin')
     @TriggerOrigin.setter
@@ -183,10 +183,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def TriggerType(self):
-        """Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
         """
         return self._get_attribute('triggerType')
     @TriggerType.setter
@@ -195,10 +195,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def WaitBeforeRun(self):
-        """Time to wait before running this protocol
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait before running this protocol
         """
         return self._get_attribute('waitBeforeRun')
     @WaitBeforeRun.setter
@@ -207,10 +207,10 @@ class EapoUdpGlobals(Base):
 
     @property
     def WaitForCompletion(self):
-        """If true the configuration will end after all interfaces are configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the configuration will end after all interfaces are configured.
         """
         return self._get_attribute('waitForCompletion')
     @WaitForCompletion.setter
@@ -218,101 +218,114 @@ class EapoUdpGlobals(Base):
         self._set_attribute('waitForCompletion', value)
 
     def update(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Updates a child instance of eapoUdpGlobals on the server.
+        """Updates eapoUdpGlobals resource on the server.
 
-        Args:
-            ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
-            CookieSize (number): The size of the cookie we send.
-            FragmentSize (number): Size of the frame sent.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            Port (number): Port on which we start listening for UDP messages for this plugin.
-            Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
-            TriggerCount (number): How many triggers are sent when a client is started.
-            TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
-            TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
+        - CookieSize (number): The size of the cookie we send.
+        - FragmentSize (number): Size of the frame sent.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - Port (number): Port on which we start listening for UDP messages for this plugin.
+        - Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
+        - TriggerCount (number): How many triggers are sent when a client is started.
+        - TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
+        - TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Adds a new eapoUdpGlobals node on the server and retrieves it in this instance.
+        """Adds a new eapoUdpGlobals resource on the server and adds it to the container.
 
-        Args:
-            ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
-            CookieSize (number): The size of the cookie we send.
-            FragmentSize (number): Size of the frame sent.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            Port (number): Port on which we start listening for UDP messages for this plugin.
-            Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
-            TriggerCount (number): How many triggers are sent when a client is started.
-            TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
-            TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
+        - CookieSize (number): The size of the cookie we send.
+        - FragmentSize (number): Size of the frame sent.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - Port (number): Port on which we start listening for UDP messages for this plugin.
+        - Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
+        - TriggerCount (number): How many triggers are sent when a client is started.
+        - TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
+        - TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Returns:
-            self: This instance with all currently retrieved eapoUdpGlobals data using find and the newly added eapoUdpGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved eapoUdpGlobals resources using find and the newly added eapoUdpGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the eapoUdpGlobals data in this instance from server.
+        """Deletes all the contained eapoUdpGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Finds and retrieves eapoUdpGlobals data from the server.
+        """Finds and retrieves eapoUdpGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve eapoUdpGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all eapoUdpGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eapoUdpGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all eapoUdpGlobals resources from the server.
 
-        Args:
-            ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
-            CookieSize (number): The size of the cookie we send.
-            FragmentSize (number): Size of the frame sent.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            ObjectId (str): Unique identifier for this object
-            Port (number): Port on which we start listening for UDP messages for this plugin.
-            Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
-            TriggerCount (number): How many triggers are sent when a client is started.
-            TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
-            TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - ChangeStatusQuery (number): After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
+        - CookieSize (number): The size of the cookie we send.
+        - FragmentSize (number): Size of the frame sent.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - ObjectId (str): Unique identifier for this object
+        - Port (number): Port on which we start listening for UDP messages for this plugin.
+        - Timeout (number): After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
+        - TriggerCount (number): How many triggers are sent when a client is started.
+        - TriggerOrigin (str): The trigger source can be external (outside port) or internal (another plugin or application).
+        - TriggerType (str): Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Returns:
-            self: This instance with matching eapoUdpGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching eapoUdpGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of eapoUdpGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the eapoUdpGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the eapoUdpGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

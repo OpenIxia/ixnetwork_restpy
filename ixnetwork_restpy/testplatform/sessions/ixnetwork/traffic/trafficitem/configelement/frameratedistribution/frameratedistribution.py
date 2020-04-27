@@ -36,10 +36,10 @@ class FrameRateDistribution(Base):
 
     @property
     def PortDistribution(self):
-        """At the port level, apply the target configuration transmission rate for each encapsulation.
-
-        Returns:
-            str(applyRateToAll|splitRateEvenly)
+        """
+        Returns
+        -------
+        - str(applyRateToAll | splitRateEvenly): At the port level, apply the target configuration transmission rate for each encapsulation.
         """
         return self._get_attribute('portDistribution')
     @PortDistribution.setter
@@ -48,10 +48,10 @@ class FrameRateDistribution(Base):
 
     @property
     def StreamDistribution(self):
-        """At the flow group level, apply the target rate of each port.
-
-        Returns:
-            str(applyRateToAll|splitRateEvenly)
+        """
+        Returns
+        -------
+        - str(applyRateToAll | splitRateEvenly): At the flow group level, apply the target rate of each port.
         """
         return self._get_attribute('streamDistribution')
     @StreamDistribution.setter
@@ -59,13 +59,15 @@ class FrameRateDistribution(Base):
         self._set_attribute('streamDistribution', value)
 
     def update(self, PortDistribution=None, StreamDistribution=None):
-        """Updates a child instance of frameRateDistribution on the server.
+        """Updates frameRateDistribution resource on the server.
 
-        Args:
-            PortDistribution (str(applyRateToAll|splitRateEvenly)): At the port level, apply the target configuration transmission rate for each encapsulation.
-            StreamDistribution (str(applyRateToAll|splitRateEvenly)): At the flow group level, apply the target rate of each port.
+        Args
+        ----
+        - PortDistribution (str(applyRateToAll | splitRateEvenly)): At the port level, apply the target configuration transmission rate for each encapsulation.
+        - StreamDistribution (str(applyRateToAll | splitRateEvenly)): At the flow group level, apply the target rate of each port.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

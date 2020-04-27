@@ -36,24 +36,24 @@ class EvbStationRange(Base):
 
     @property
     def ErRange(self):
-        """An instance of the ErRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_b60e36f063737f23b406adcd522fa43c.ErRange): An instance of the ErRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_b60e36f063737f23b406adcd522fa43c.ErRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_b60e36f063737f23b406adcd522fa43c import ErRange
         return ErRange(self)
 
     @property
     def ChannelCapability(self):
-        """Advertised Channel Capability.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Advertised Channel Capability.
         """
         return self._get_attribute('channelCapability')
     @ChannelCapability.setter
@@ -62,10 +62,10 @@ class EvbStationRange(Base):
 
     @property
     def ChassisId(self):
-        """The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Chassis ID that will be advertised in the mandatory LLDP TLVs.
         """
         return self._get_attribute('chassisId')
     @ChassisId.setter
@@ -75,9 +75,9 @@ class EvbStationRange(Base):
     @property
     def DefaultEr(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=erRange)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange): 
         """
         return self._get_attribute('defaultEr')
     @DefaultEr.setter
@@ -86,10 +86,10 @@ class EvbStationRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -98,10 +98,10 @@ class EvbStationRange(Base):
 
     @property
     def HoldTime(self):
-        """Multiplier to get actual TTL value used in an LLDPDU.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Multiplier to get actual TTL value used in an LLDPDU.
         """
         return self._get_attribute('holdTime')
     @HoldTime.setter
@@ -110,10 +110,10 @@ class EvbStationRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -122,19 +122,19 @@ class EvbStationRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PortIdInterfaceName(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('portIdInterfaceName')
     @PortIdInterfaceName.setter
@@ -144,9 +144,9 @@ class EvbStationRange(Base):
     @property
     def PortIdMacAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('portIdMacAddress')
     @PortIdMacAddress.setter
@@ -155,10 +155,10 @@ class EvbStationRange(Base):
 
     @property
     def PortIdSubType(self):
-        """Pop-up used for configuring the port id.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Pop-up used for configuring the port id.
         """
         return self._get_attribute('portIdSubType')
     @PortIdSubType.setter
@@ -167,10 +167,10 @@ class EvbStationRange(Base):
 
     @property
     def SComponentMode(self):
-        """This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
         """
         return self._get_attribute('sComponentMode')
     @SComponentMode.setter
@@ -179,10 +179,10 @@ class EvbStationRange(Base):
 
     @property
     def TxDelay(self):
-        """Minimum delay between successive LLDP packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Minimum delay between successive LLDP packets.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -191,10 +191,10 @@ class EvbStationRange(Base):
 
     @property
     def TxInterval(self):
-        """This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
         """
         return self._get_attribute('txInterval')
     @TxInterval.setter
@@ -202,40 +202,43 @@ class EvbStationRange(Base):
         self._set_attribute('txInterval', value)
 
     def update(self, ChannelCapability=None, ChassisId=None, DefaultEr=None, Enabled=None, HoldTime=None, Name=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, SComponentMode=None, TxDelay=None, TxInterval=None):
-        """Updates a child instance of evbStationRange on the server.
+        """Updates evbStationRange resource on the server.
 
-        Args:
-            ChannelCapability (number): Advertised Channel Capability.
-            ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-            DefaultEr (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=erRange)): 
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
-            Name (str): Name of range
-            PortIdInterfaceName (str): 
-            PortIdMacAddress (str): 
-            PortIdSubType (number): Pop-up used for configuring the port id.
-            SComponentMode (str): This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
-            TxDelay (number): Minimum delay between successive LLDP packets.
-            TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
+        Args
+        ----
+        - ChannelCapability (number): Advertised Channel Capability.
+        - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
+        - Name (str): Name of range
+        - PortIdInterfaceName (str): 
+        - PortIdMacAddress (str): 
+        - PortIdSubType (number): Pop-up used for configuring the port id.
+        - SComponentMode (str): This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
+        - TxDelay (number): Minimum delay between successive LLDP packets.
+        - TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -247,16 +250,15 @@ class EvbStationRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -268,16 +270,15 @@ class EvbStationRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

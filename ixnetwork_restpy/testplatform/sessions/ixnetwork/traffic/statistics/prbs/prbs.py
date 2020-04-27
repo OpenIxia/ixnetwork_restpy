@@ -36,10 +36,10 @@ class Prbs(Base):
 
     @property
     def Enabled(self):
-        """If true, enables and fetches Pseudo-Random Bit Sequence (PRBS) statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables and fetches Pseudo-Random Bit Sequence (PRBS) statistics
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -47,12 +47,14 @@ class Prbs(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of prbs on the server.
+        """Updates prbs resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables and fetches Pseudo-Random Bit Sequence (PRBS) statistics
+        Args
+        ----
+        - Enabled (bool): If true, enables and fetches Pseudo-Random Bit Sequence (PRBS) statistics
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

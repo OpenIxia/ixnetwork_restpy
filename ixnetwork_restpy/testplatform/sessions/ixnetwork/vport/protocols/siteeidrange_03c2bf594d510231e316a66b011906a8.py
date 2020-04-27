@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SiteEidRange(Base):
     """It gives details about the site eid range
-    The SiteEidRange class encapsulates a list of siteEidRange resources that is be managed by the user.
+    The SiteEidRange class encapsulates a list of siteEidRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SiteEidRange.find() method.
-    The list can be managed by the user by using the SiteEidRange.add() and SiteEidRange.remove() methods.
+    The list can be managed by using the SiteEidRange.add() and SiteEidRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class SiteEidRange(Base):
 
     @property
     def Address(self):
-        """It gives details about the Ip address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the Ip address
         """
         return self._get_attribute('address')
     @Address.setter
@@ -50,10 +50,10 @@ class SiteEidRange(Base):
 
     @property
     def Count(self):
-        """It details about the count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It details about the count
         """
         return self._get_attribute('count')
     @Count.setter
@@ -62,10 +62,10 @@ class SiteEidRange(Base):
 
     @property
     def Enabled(self):
-        """It true, it enables the protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It true, it enables the protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class SiteEidRange(Base):
 
     @property
     def Family(self):
-        """It describes which family it belongs to
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): It describes which family it belongs to
         """
         return self._get_attribute('family')
     @Family.setter
@@ -86,10 +86,10 @@ class SiteEidRange(Base):
 
     @property
     def IncludeOrExclude(self):
-        """It decides whether to include or exclude
-
-        Returns:
-            str(include|exclude)
+        """
+        Returns
+        -------
+        - str(include | exclude): It decides whether to include or exclude
         """
         return self._get_attribute('includeOrExclude')
     @IncludeOrExclude.setter
@@ -98,10 +98,10 @@ class SiteEidRange(Base):
 
     @property
     def InstanceId(self):
-        """It gives the instance id
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives the instance id
         """
         return self._get_attribute('instanceId')
     @InstanceId.setter
@@ -110,10 +110,10 @@ class SiteEidRange(Base):
 
     @property
     def PrefixLength(self):
-        """It gives details about the prefix length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the prefix length
         """
         return self._get_attribute('prefixLength')
     @PrefixLength.setter
@@ -121,85 +121,98 @@ class SiteEidRange(Base):
         self._set_attribute('prefixLength', value)
 
     def update(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
-        """Updates a child instance of siteEidRange on the server.
+        """Updates siteEidRange resource on the server.
 
-        Args:
-            Address (str): It gives details about the Ip address
-            Count (number): It details about the count
-            Enabled (bool): It true, it enables the protocol
-            Family (str(ipv4|ipv6)): It describes which family it belongs to
-            IncludeOrExclude (str(include|exclude)): It decides whether to include or exclude
-            InstanceId (number): It gives the instance id
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the Ip address
+        - Count (number): It details about the count
+        - Enabled (bool): It true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It describes which family it belongs to
+        - IncludeOrExclude (str(include | exclude)): It decides whether to include or exclude
+        - InstanceId (number): It gives the instance id
+        - PrefixLength (number): It gives details about the prefix length
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
-        """Adds a new siteEidRange node on the server and retrieves it in this instance.
+        """Adds a new siteEidRange resource on the server and adds it to the container.
 
-        Args:
-            Address (str): It gives details about the Ip address
-            Count (number): It details about the count
-            Enabled (bool): It true, it enables the protocol
-            Family (str(ipv4|ipv6)): It describes which family it belongs to
-            IncludeOrExclude (str(include|exclude)): It decides whether to include or exclude
-            InstanceId (number): It gives the instance id
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the Ip address
+        - Count (number): It details about the count
+        - Enabled (bool): It true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It describes which family it belongs to
+        - IncludeOrExclude (str(include | exclude)): It decides whether to include or exclude
+        - InstanceId (number): It gives the instance id
+        - PrefixLength (number): It gives details about the prefix length
 
-        Returns:
-            self: This instance with all currently retrieved siteEidRange data using find and the newly added siteEidRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved siteEidRange resources using find and the newly added siteEidRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the siteEidRange data in this instance from server.
+        """Deletes all the contained siteEidRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
-        """Finds and retrieves siteEidRange data from the server.
+        """Finds and retrieves siteEidRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve siteEidRange data from the server.
-        By default the find method takes no parameters and will retrieve all siteEidRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve siteEidRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all siteEidRange resources from the server.
 
-        Args:
-            Address (str): It gives details about the Ip address
-            Count (number): It details about the count
-            Enabled (bool): It true, it enables the protocol
-            Family (str(ipv4|ipv6)): It describes which family it belongs to
-            IncludeOrExclude (str(include|exclude)): It decides whether to include or exclude
-            InstanceId (number): It gives the instance id
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the Ip address
+        - Count (number): It details about the count
+        - Enabled (bool): It true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It describes which family it belongs to
+        - IncludeOrExclude (str(include | exclude)): It decides whether to include or exclude
+        - InstanceId (number): It gives the instance id
+        - PrefixLength (number): It gives details about the prefix length
 
-        Returns:
-            self: This instance with matching siteEidRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching siteEidRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of siteEidRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the siteEidRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the siteEidRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

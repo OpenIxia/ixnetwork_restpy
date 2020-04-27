@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OrganizationSpecificOamPduData(Base):
     """
-    The OrganizationSpecificOamPduData class encapsulates a list of organizationSpecificOamPduData resources that is be managed by the user.
+    The OrganizationSpecificOamPduData class encapsulates a list of organizationSpecificOamPduData resources that are managed by the user.
     A list of resources can be retrieved from the server using the OrganizationSpecificOamPduData.find() method.
-    The list can be managed by the user by using the OrganizationSpecificOamPduData.add() and OrganizationSpecificOamPduData.remove() methods.
+    The list can be managed by using the OrganizationSpecificOamPduData.add() and OrganizationSpecificOamPduData.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class OrganizationSpecificOamPduData(Base):
     @property
     def Oui(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('oui')
     @Oui.setter
@@ -51,9 +51,9 @@ class OrganizationSpecificOamPduData(Base):
     @property
     def Value(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('value')
     @Value.setter
@@ -61,70 +61,83 @@ class OrganizationSpecificOamPduData(Base):
         self._set_attribute('value', value)
 
     def update(self, Oui=None, Value=None):
-        """Updates a child instance of organizationSpecificOamPduData on the server.
+        """Updates organizationSpecificOamPduData resource on the server.
 
-        Args:
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Oui (str): 
+        - Value (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Oui=None, Value=None):
-        """Adds a new organizationSpecificOamPduData node on the server and retrieves it in this instance.
+        """Adds a new organizationSpecificOamPduData resource on the server and adds it to the container.
 
-        Args:
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Oui (str): 
+        - Value (str): 
 
-        Returns:
-            self: This instance with all currently retrieved organizationSpecificOamPduData data using find and the newly added organizationSpecificOamPduData data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved organizationSpecificOamPduData resources using find and the newly added organizationSpecificOamPduData resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the organizationSpecificOamPduData data in this instance from server.
+        """Deletes all the contained organizationSpecificOamPduData resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Oui=None, Value=None):
-        """Finds and retrieves organizationSpecificOamPduData data from the server.
+        """Finds and retrieves organizationSpecificOamPduData resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve organizationSpecificOamPduData data from the server.
-        By default the find method takes no parameters and will retrieve all organizationSpecificOamPduData data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve organizationSpecificOamPduData resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all organizationSpecificOamPduData resources from the server.
 
-        Args:
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Oui (str): 
+        - Value (str): 
 
-        Returns:
-            self: This instance with matching organizationSpecificOamPduData data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching organizationSpecificOamPduData resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of organizationSpecificOamPduData data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the organizationSpecificOamPduData data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the organizationSpecificOamPduData resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

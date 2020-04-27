@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SwitchTables(Base):
     """This object allows to define the configuration parameters for the switch tables.
-    The SwitchTables class encapsulates a list of switchTables resources that is be managed by the user.
+    The SwitchTables class encapsulates a list of switchTables resources that are managed by the user.
     A list of resources can be retrieved from the server using the SwitchTables.find() method.
-    The list can be managed by the user by using the SwitchTables.add() and SwitchTables.remove() methods.
+    The list can be managed by using the SwitchTables.add() and SwitchTables.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SwitchTables(Base):
 
     @property
     def WildcardsSupported(self):
-        """An instance of the WildcardsSupported class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_bfc16266e5887567238ef779c0dde19a.WildcardsSupported): An instance of the WildcardsSupported class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_bfc16266e5887567238ef779c0dde19a.WildcardsSupported)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_bfc16266e5887567238ef779c0dde19a import WildcardsSupported
         return WildcardsSupported(self)._select()
 
     @property
     def MaxEntries(self):
-        """Indicates the maximum number of entries supported. The default value is 10,000.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the maximum number of entries supported. The default value is 10,000.
         """
         return self._get_attribute('maxEntries')
     @MaxEntries.setter
@@ -64,10 +64,10 @@ class SwitchTables(Base):
 
     @property
     def NumberOfTables(self):
-        """Indicates the number of entries in the table range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of entries in the table range.
         """
         return self._get_attribute('numberOfTables')
     @NumberOfTables.setter
@@ -76,10 +76,10 @@ class SwitchTables(Base):
 
     @property
     def TableId(self):
-        """Indicates the Identifier of the switch table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Identifier of the switch table.
         """
         return self._get_attribute('tableId')
     @TableId.setter
@@ -88,10 +88,10 @@ class SwitchTables(Base):
 
     @property
     def TableName(self):
-        """Indicates the name of the switch table
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the name of the switch table
         """
         return self._get_attribute('tableName')
     @TableName.setter
@@ -99,76 +99,89 @@ class SwitchTables(Base):
         self._set_attribute('tableName', value)
 
     def update(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
-        """Updates a child instance of switchTables on the server.
+        """Updates switchTables resource on the server.
 
-        Args:
-            MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
-            NumberOfTables (number): Indicates the number of entries in the table range.
-            TableId (str): Indicates the Identifier of the switch table.
-            TableName (str): Indicates the name of the switch table
+        Args
+        ----
+        - MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
+        - NumberOfTables (number): Indicates the number of entries in the table range.
+        - TableId (str): Indicates the Identifier of the switch table.
+        - TableName (str): Indicates the name of the switch table
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
-        """Adds a new switchTables node on the server and retrieves it in this instance.
+        """Adds a new switchTables resource on the server and adds it to the container.
 
-        Args:
-            MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
-            NumberOfTables (number): Indicates the number of entries in the table range.
-            TableId (str): Indicates the Identifier of the switch table.
-            TableName (str): Indicates the name of the switch table
+        Args
+        ----
+        - MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
+        - NumberOfTables (number): Indicates the number of entries in the table range.
+        - TableId (str): Indicates the Identifier of the switch table.
+        - TableName (str): Indicates the name of the switch table
 
-        Returns:
-            self: This instance with all currently retrieved switchTables data using find and the newly added switchTables data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchTables resources using find and the newly added switchTables resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the switchTables data in this instance from server.
+        """Deletes all the contained switchTables resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
-        """Finds and retrieves switchTables data from the server.
+        """Finds and retrieves switchTables resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchTables data from the server.
-        By default the find method takes no parameters and will retrieve all switchTables data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchTables resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchTables resources from the server.
 
-        Args:
-            MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
-            NumberOfTables (number): Indicates the number of entries in the table range.
-            TableId (str): Indicates the Identifier of the switch table.
-            TableName (str): Indicates the name of the switch table
+        Args
+        ----
+        - MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
+        - NumberOfTables (number): Indicates the number of entries in the table range.
+        - TableId (str): Indicates the Identifier of the switch table.
+        - TableName (str): Indicates the name of the switch table
 
-        Returns:
-            self: This instance with matching switchTables data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchTables resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchTables data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchTables data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchTables resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

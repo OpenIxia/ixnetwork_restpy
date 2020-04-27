@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ping(Base):
     """"Packet Internet Groper/PING" uses Internet Message Control Protocol (ICMP) echo messages and responses.
-    The Ping class encapsulates a list of ping resources that is be managed by the user.
+    The Ping class encapsulates a list of ping resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ping.find() method.
-    The list can be managed by the user by using the Ping.add() and Ping.remove() methods.
+    The list can be managed by using the Ping.add() and Ping.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Ping(Base):
 
     @property
     def Enabled(self):
-        """Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -49,67 +49,80 @@ class Ping(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of ping on the server.
+        """Updates ping resource on the server.
 
-        Args:
-            Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
+        Args
+        ----
+        - Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None):
-        """Adds a new ping node on the server and retrieves it in this instance.
+        """Adds a new ping resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
+        Args
+        ----
+        - Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
 
-        Returns:
-            self: This instance with all currently retrieved ping data using find and the newly added ping data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ping resources using find and the newly added ping resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ping data in this instance from server.
+        """Deletes all the contained ping resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None):
-        """Finds and retrieves ping data from the server.
+        """Finds and retrieves ping resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ping data from the server.
-        By default the find method takes no parameters and will retrieve all ping data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ping resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ping resources from the server.
 
-        Args:
-            Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
+        Args
+        ----
+        - Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
 
-        Returns:
-            self: This instance with matching ping data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ping resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ping data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ping data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ping resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

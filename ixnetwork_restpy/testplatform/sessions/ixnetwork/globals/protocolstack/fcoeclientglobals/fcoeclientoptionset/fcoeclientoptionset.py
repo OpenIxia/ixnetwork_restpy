@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FcoeClientOptionSet(Base):
     """A group of TLV options.
-    The FcoeClientOptionSet class encapsulates a list of fcoeClientOptionSet resources that is be managed by the user.
+    The FcoeClientOptionSet class encapsulates a list of fcoeClientOptionSet resources that are managed by the user.
     A list of resources can be retrieved from the server using the FcoeClientOptionSet.find() method.
-    The list can be managed by the user by using the FcoeClientOptionSet.add() and FcoeClientOptionSet.remove() methods.
+    The list can be managed by using the FcoeClientOptionSet.add() and FcoeClientOptionSet.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class FcoeClientOptionSet(Base):
 
     @property
     def FcoeClientOptionTlv(self):
-        """An instance of the FcoeClientOptionTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptiontlv.fcoeclientoptiontlv.FcoeClientOptionTlv): An instance of the FcoeClientOptionTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptiontlv.fcoeclientoptiontlv.FcoeClientOptionTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptiontlv.fcoeclientoptiontlv import FcoeClientOptionTlv
         return FcoeClientOptionTlv(self)
 
     @property
     def Defaultp(self):
-        """True to assign this option set to new ranges.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: True to assign this option set to new ranges.
         """
         return self._get_attribute('defaultp')
     @Defaultp.setter
@@ -64,10 +64,10 @@ class FcoeClientOptionSet(Base):
 
     @property
     def Name(self):
-        """Option set name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option set name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -76,79 +76,92 @@ class FcoeClientOptionSet(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, Defaultp=None, Name=None):
-        """Updates a child instance of fcoeClientOptionSet on the server.
+        """Updates fcoeClientOptionSet resource on the server.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            Name (str): Option set name.
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - Name (str): Option set name.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Defaultp=None, Name=None):
-        """Adds a new fcoeClientOptionSet node on the server and retrieves it in this instance.
+        """Adds a new fcoeClientOptionSet resource on the server and adds it to the container.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            Name (str): Option set name.
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - Name (str): Option set name.
 
-        Returns:
-            self: This instance with all currently retrieved fcoeClientOptionSet data using find and the newly added fcoeClientOptionSet data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved fcoeClientOptionSet resources using find and the newly added fcoeClientOptionSet resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the fcoeClientOptionSet data in this instance from server.
+        """Deletes all the contained fcoeClientOptionSet resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Defaultp=None, Name=None, ObjectId=None):
-        """Finds and retrieves fcoeClientOptionSet data from the server.
+        """Finds and retrieves fcoeClientOptionSet resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve fcoeClientOptionSet data from the server.
-        By default the find method takes no parameters and will retrieve all fcoeClientOptionSet data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientOptionSet resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeClientOptionSet resources from the server.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            Name (str): Option set name.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - Name (str): Option set name.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching fcoeClientOptionSet data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching fcoeClientOptionSet resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientOptionSet data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the fcoeClientOptionSet data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the fcoeClientOptionSet resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

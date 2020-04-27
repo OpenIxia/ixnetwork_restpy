@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AppErrors(Base):
     """This node holds application errors.
-    The AppErrors class encapsulates a list of appErrors resources that is managed by the system.
+    The AppErrors class encapsulates a list of appErrors resources that are managed by the system.
     A list of resources can be retrieved from the server using the AppErrors.find() method.
     """
 
@@ -37,75 +37,82 @@ class AppErrors(Base):
 
     @property
     def Error(self):
-        """An instance of the Error class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error.Error): An instance of the Error class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error.Error)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error import Error
         return Error(self)
 
     @property
     def ErrorCount(self):
-        """Total number of errors
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Total number of errors
         """
         return self._get_attribute('errorCount')
 
     @property
     def LastModified(self):
-        """Time of latest logged error or warning
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Time of latest logged error or warning
         """
         return self._get_attribute('lastModified')
 
     @property
     def WarningCount(self):
-        """Total number of warnings
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Total number of warnings
         """
         return self._get_attribute('warningCount')
 
     def find(self, ErrorCount=None, LastModified=None, WarningCount=None):
-        """Finds and retrieves appErrors data from the server.
+        """Finds and retrieves appErrors resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve appErrors data from the server.
-        By default the find method takes no parameters and will retrieve all appErrors data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve appErrors resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all appErrors resources from the server.
 
-        Args:
-            ErrorCount (number): Total number of errors
-            LastModified (str): Time of latest logged error or warning
-            WarningCount (number): Total number of warnings
+        Args
+        ----
+        - ErrorCount (number): Total number of errors
+        - LastModified (str): Time of latest logged error or warning
+        - WarningCount (number): Total number of warnings
 
-        Returns:
-            self: This instance with matching appErrors data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching appErrors resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of appErrors data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the appErrors data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the appErrors resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

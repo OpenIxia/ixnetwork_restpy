@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Fr(Base):
     """This object holds the list of statically-configured Frame Relay DLCIs for the port.
-    The Fr class encapsulates a list of fr resources that is be managed by the user.
+    The Fr class encapsulates a list of fr resources that are managed by the user.
     A list of resources can be retrieved from the server using the Fr.find() method.
-    The list can be managed by the user by using the Fr.add() and Fr.remove() methods.
+    The list can be managed by using the Fr.add() and Fr.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Fr(Base):
 
     @property
     def Count(self):
-        """The total number of DLCIs to create for this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of DLCIs to create for this range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class Fr(Base):
 
     @property
     def Dlci(self):
-        """The Data Link Connection Identifier (DLCI) value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Data Link Connection Identifier (DLCI) value.
         """
         return self._get_attribute('dlci')
     @Dlci.setter
@@ -62,10 +62,10 @@ class Fr(Base):
 
     @property
     def EnableIncrement(self):
-        """Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
         """
         return self._get_attribute('enableIncrement')
     @EnableIncrement.setter
@@ -74,10 +74,10 @@ class Fr(Base):
 
     @property
     def Enabled(self):
-        """Check this box to enable this Frame Relay (FR) DLCI entry.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Check this box to enable this Frame Relay (FR) DLCI entry.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -86,10 +86,10 @@ class Fr(Base):
 
     @property
     def TrafficGroupId(self):
-        """The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -97,79 +97,92 @@ class Fr(Base):
         self._set_attribute('trafficGroupId', value)
 
     def update(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
-        """Updates a child instance of fr on the server.
+        """Updates fr resource on the server.
 
-        Args:
-            Count (number): The total number of DLCIs to create for this range.
-            Dlci (number): The Data Link Connection Identifier (DLCI) value.
-            EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
-            Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of DLCIs to create for this range.
+        - Dlci (number): The Data Link Connection Identifier (DLCI) value.
+        - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
+        - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
-        """Adds a new fr node on the server and retrieves it in this instance.
+        """Adds a new fr resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The total number of DLCIs to create for this range.
-            Dlci (number): The Data Link Connection Identifier (DLCI) value.
-            EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
-            Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of DLCIs to create for this range.
+        - Dlci (number): The Data Link Connection Identifier (DLCI) value.
+        - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
+        - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Returns:
-            self: This instance with all currently retrieved fr data using find and the newly added fr data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved fr resources using find and the newly added fr resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the fr data in this instance from server.
+        """Deletes all the contained fr resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
-        """Finds and retrieves fr data from the server.
+        """Finds and retrieves fr resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve fr data from the server.
-        By default the find method takes no parameters and will retrieve all fr data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fr resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fr resources from the server.
 
-        Args:
-            Count (number): The total number of DLCIs to create for this range.
-            Dlci (number): The Data Link Connection Identifier (DLCI) value.
-            EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
-            Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of DLCIs to create for this range.
+        - Dlci (number): The Data Link Connection Identifier (DLCI) value.
+        - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
+        - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Returns:
-            self: This instance with matching fr data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching fr resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of fr data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the fr data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the fr resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

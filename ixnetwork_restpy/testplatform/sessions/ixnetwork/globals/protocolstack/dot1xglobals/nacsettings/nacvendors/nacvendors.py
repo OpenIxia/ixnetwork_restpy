@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NacVendors(Base):
     """TLV Vendor ID
-    The NacVendors class encapsulates a list of nacVendors resources that is be managed by the user.
+    The NacVendors class encapsulates a list of nacVendors resources that are managed by the user.
     A list of resources can be retrieved from the server using the NacVendors.find() method.
-    The list can be managed by the user by using the NacVendors.add() and NacVendors.remove() methods.
+    The list can be managed by using the NacVendors.add() and NacVendors.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class NacVendors(Base):
 
     @property
     def NacTypes(self):
-        """An instance of the NacTypes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nactypes.nactypes.NacTypes): An instance of the NacTypes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nactypes.nactypes.NacTypes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nactypes.nactypes import NacTypes
         return NacTypes(self)
 
     @property
     def Name(self):
-        """Vendor Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Vendor Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -64,19 +64,19 @@ class NacVendors(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """Vendor ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Vendor ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -84,71 +84,84 @@ class NacVendors(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of nacVendors on the server.
+        """Updates nacVendors resource on the server.
 
-        Args:
-            Name (str): Vendor Name.
-            Value (number): Vendor ID.
+        Args
+        ----
+        - Name (str): Vendor Name.
+        - Value (number): Vendor ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, Value=None):
-        """Adds a new nacVendors node on the server and retrieves it in this instance.
+        """Adds a new nacVendors resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Vendor Name.
-            Value (number): Vendor ID.
+        Args
+        ----
+        - Name (str): Vendor Name.
+        - Value (number): Vendor ID.
 
-        Returns:
-            self: This instance with all currently retrieved nacVendors data using find and the newly added nacVendors data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved nacVendors resources using find and the newly added nacVendors resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the nacVendors data in this instance from server.
+        """Deletes all the contained nacVendors resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Name=None, ObjectId=None, Value=None):
-        """Finds and retrieves nacVendors data from the server.
+        """Finds and retrieves nacVendors resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nacVendors data from the server.
-        By default the find method takes no parameters and will retrieve all nacVendors data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacVendors resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nacVendors resources from the server.
 
-        Args:
-            Name (str): Vendor Name.
-            ObjectId (str): Unique identifier for this object
-            Value (number): Vendor ID.
+        Args
+        ----
+        - Name (str): Vendor Name.
+        - ObjectId (str): Unique identifier for this object
+        - Value (number): Vendor ID.
 
-        Returns:
-            self: This instance with matching nacVendors data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nacVendors resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nacVendors data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nacVendors data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nacVendors resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

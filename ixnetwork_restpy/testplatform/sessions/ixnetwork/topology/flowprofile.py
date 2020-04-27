@@ -36,42 +36,42 @@ class FlowProfile(Base):
 
     @property
     def MatchAction(self):
-        """An instance of the MatchAction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchaction.MatchAction): An instance of the MatchAction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchaction.MatchAction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchaction import MatchAction
         return MatchAction(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -79,28 +79,31 @@ class FlowProfile(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of flowProfile on the server.
+        """Updates flowProfile resource on the server.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def AddFromTemplate(self, *args, **kwargs):
         """Executes the addFromTemplate operation on the server.
 
         Creates a Match Action prototype supported by the template.
 
-        addFromTemplate(Arg2:href)
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/?deepchild=*)): 
+        addFromTemplate(Arg2=href)
+        --------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Atm(Base):
     """This object holds the list  of statically-configured ATM Permanent Virtual Circuit (PVC) links for the port.
-    The Atm class encapsulates a list of atm resources that is be managed by the user.
+    The Atm class encapsulates a list of atm resources that are managed by the user.
     A list of resources can be retrieved from the server using the Atm.find() method.
-    The list can be managed by the user by using the Atm.add() and Atm.remove() methods.
+    The list can be managed by using the Atm.add() and Atm.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Atm(Base):
 
     @property
     def AtmEncapsulation(self):
-        """The type of ATM encapsulation to use for this ATM Name.
-
-        Returns:
-            str(llcRoutedSnap|llcBridged802p3WithFcs|llcBridged802p3WithOutFcs|ppp|vcMultiplexedPpp|vcMultiRouted|vcMultiBridged802p3WithFcs|vcMultiBridged802p3WithOutFcs)
+        """
+        Returns
+        -------
+        - str(llcRoutedSnap | llcBridged802p3WithFcs | llcBridged802p3WithOutFcs | ppp | vcMultiplexedPpp | vcMultiRouted | vcMultiBridged802p3WithFcs | vcMultiBridged802p3WithOutFcs): The type of ATM encapsulation to use for this ATM Name.
         """
         return self._get_attribute('atmEncapsulation')
     @AtmEncapsulation.setter
@@ -50,10 +50,10 @@ class Atm(Base):
 
     @property
     def Count(self):
-        """The total number of VPI/VCI pairs to create.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of VPI/VCI pairs to create.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -62,10 +62,10 @@ class Atm(Base):
 
     @property
     def Enabled(self):
-        """Enables this ATM VPI/VCI entry.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this ATM VPI/VCI entry.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class Atm(Base):
 
     @property
     def IncrementVci(self):
-        """Creates multiple VCIs. Each additional VCI will be incremented by 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Creates multiple VCIs. Each additional VCI will be incremented by 1.
         """
         return self._get_attribute('incrementVci')
     @IncrementVci.setter
@@ -86,10 +86,10 @@ class Atm(Base):
 
     @property
     def IncrementVpi(self):
-        """Creates multiple VPIs. Each additional VPI will be incremented by 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Creates multiple VPIs. Each additional VPI will be incremented by 1.
         """
         return self._get_attribute('incrementVpi')
     @IncrementVpi.setter
@@ -98,10 +98,10 @@ class Atm(Base):
 
     @property
     def Name(self):
-        """The identifier associated with this ATM VPI/VCI entry.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The identifier associated with this ATM VPI/VCI entry.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -110,10 +110,10 @@ class Atm(Base):
 
     @property
     def TrafficGroupId(self):
-        """The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -122,10 +122,10 @@ class Atm(Base):
 
     @property
     def Vci(self):
-        """The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
         """
         return self._get_attribute('vci')
     @Vci.setter
@@ -134,10 +134,10 @@ class Atm(Base):
 
     @property
     def Vpi(self):
-        """The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
         """
         return self._get_attribute('vpi')
     @Vpi.setter
@@ -145,91 +145,104 @@ class Atm(Base):
         self._set_attribute('vpi', value)
 
     def update(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
-        """Updates a child instance of atm on the server.
+        """Updates atm resource on the server.
 
-        Args:
-            AtmEncapsulation (str(llcRoutedSnap|llcBridged802p3WithFcs|llcBridged802p3WithOutFcs|ppp|vcMultiplexedPpp|vcMultiRouted|vcMultiBridged802p3WithFcs|vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
-            Count (number): The total number of VPI/VCI pairs to create.
-            Enabled (bool): Enables this ATM VPI/VCI entry.
-            IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
-            IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
-            Name (str): The identifier associated with this ATM VPI/VCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
-            Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
+        Args
+        ----
+        - AtmEncapsulation (str(llcRoutedSnap | llcBridged802p3WithFcs | llcBridged802p3WithOutFcs | ppp | vcMultiplexedPpp | vcMultiRouted | vcMultiBridged802p3WithFcs | vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
+        - Count (number): The total number of VPI/VCI pairs to create.
+        - Enabled (bool): Enables this ATM VPI/VCI entry.
+        - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
+        - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
+        - Name (str): The identifier associated with this ATM VPI/VCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
+        - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
-        """Adds a new atm node on the server and retrieves it in this instance.
+        """Adds a new atm resource on the server and adds it to the container.
 
-        Args:
-            AtmEncapsulation (str(llcRoutedSnap|llcBridged802p3WithFcs|llcBridged802p3WithOutFcs|ppp|vcMultiplexedPpp|vcMultiRouted|vcMultiBridged802p3WithFcs|vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
-            Count (number): The total number of VPI/VCI pairs to create.
-            Enabled (bool): Enables this ATM VPI/VCI entry.
-            IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
-            IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
-            Name (str): The identifier associated with this ATM VPI/VCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
-            Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
+        Args
+        ----
+        - AtmEncapsulation (str(llcRoutedSnap | llcBridged802p3WithFcs | llcBridged802p3WithOutFcs | ppp | vcMultiplexedPpp | vcMultiRouted | vcMultiBridged802p3WithFcs | vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
+        - Count (number): The total number of VPI/VCI pairs to create.
+        - Enabled (bool): Enables this ATM VPI/VCI entry.
+        - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
+        - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
+        - Name (str): The identifier associated with this ATM VPI/VCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
+        - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 
-        Returns:
-            self: This instance with all currently retrieved atm data using find and the newly added atm data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved atm resources using find and the newly added atm resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the atm data in this instance from server.
+        """Deletes all the contained atm resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
-        """Finds and retrieves atm data from the server.
+        """Finds and retrieves atm resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve atm data from the server.
-        By default the find method takes no parameters and will retrieve all atm data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve atm resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all atm resources from the server.
 
-        Args:
-            AtmEncapsulation (str(llcRoutedSnap|llcBridged802p3WithFcs|llcBridged802p3WithOutFcs|ppp|vcMultiplexedPpp|vcMultiRouted|vcMultiBridged802p3WithFcs|vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
-            Count (number): The total number of VPI/VCI pairs to create.
-            Enabled (bool): Enables this ATM VPI/VCI entry.
-            IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
-            IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
-            Name (str): The identifier associated with this ATM VPI/VCI entry.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
-            Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
+        Args
+        ----
+        - AtmEncapsulation (str(llcRoutedSnap | llcBridged802p3WithFcs | llcBridged802p3WithOutFcs | ppp | vcMultiplexedPpp | vcMultiRouted | vcMultiBridged802p3WithFcs | vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
+        - Count (number): The total number of VPI/VCI pairs to create.
+        - Enabled (bool): Enables this ATM VPI/VCI entry.
+        - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
+        - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
+        - Name (str): The identifier associated with this ATM VPI/VCI entry.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
+        - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 
-        Returns:
-            self: This instance with matching atm data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching atm resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of atm data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the atm data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the atm resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

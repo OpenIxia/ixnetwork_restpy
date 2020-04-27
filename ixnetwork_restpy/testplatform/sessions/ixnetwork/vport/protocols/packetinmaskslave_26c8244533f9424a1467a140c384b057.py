@@ -36,10 +36,10 @@ class PacketInMaskSlave(Base):
 
     @property
     def Action(self):
-        """Action explicitly output to controller.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Action explicitly output to controller.
         """
         return self._get_attribute('action')
     @Action.setter
@@ -48,10 +48,10 @@ class PacketInMaskSlave(Base):
 
     @property
     def InvalidTtl(self):
-        """This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
         """
         return self._get_attribute('invalidTtl')
     @InvalidTtl.setter
@@ -60,10 +60,10 @@ class PacketInMaskSlave(Base):
 
     @property
     def NoMatch(self):
-        """This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
         """
         return self._get_attribute('noMatch')
     @NoMatch.setter
@@ -71,14 +71,16 @@ class PacketInMaskSlave(Base):
         self._set_attribute('noMatch', value)
 
     def update(self, Action=None, InvalidTtl=None, NoMatch=None):
-        """Updates a child instance of packetInMaskSlave on the server.
+        """Updates packetInMaskSlave resource on the server.
 
-        Args:
-            Action (bool): Action explicitly output to controller.
-            InvalidTtl (bool): This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
-            NoMatch (bool): This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
+        Args
+        ----
+        - Action (bool): Action explicitly output to controller.
+        - InvalidTtl (bool): This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
+        - NoMatch (bool): This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

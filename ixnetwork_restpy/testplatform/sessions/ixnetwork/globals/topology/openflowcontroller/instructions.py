@@ -36,33 +36,33 @@ class Instructions(Base):
 
     @property
     def Instruction(self):
-        """An instance of the Instruction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.instruction.Instruction): An instance of the Instruction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.instruction.Instruction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.instruction import Instruction
         return Instruction(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Description(self):
-        """Description of the TLV prototype.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the TLV prototype.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -71,10 +71,10 @@ class Instructions(Base):
 
     @property
     def IsEditable(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -83,10 +83,10 @@ class Instructions(Base):
 
     @property
     def IsRepeatable(self):
-        """Information if the field can be multiplied in the tlv definition.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information if the field can be multiplied in the tlv definition.
         """
         return self._get_attribute('isRepeatable')
     @IsRepeatable.setter
@@ -95,10 +95,10 @@ class Instructions(Base):
 
     @property
     def IsRequired(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -107,10 +107,10 @@ class Instructions(Base):
 
     @property
     def Name(self):
-        """Name of the TLV field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the TLV field.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -118,16 +118,18 @@ class Instructions(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Updates a child instance of instructions on the server.
+        """Updates instructions resource on the server.
 
-        Args:
-            Description (str): Description of the TLV prototype.
-            IsEditable (bool): Information on the requirement of the field.
-            IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of the TLV field.
+        Args
+        ----
+        - Description (str): Description of the TLV prototype.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of the TLV field.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

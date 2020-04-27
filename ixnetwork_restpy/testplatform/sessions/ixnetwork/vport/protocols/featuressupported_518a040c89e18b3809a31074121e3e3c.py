@@ -36,10 +36,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplyActions(self):
-        """Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
         """
         return self._get_attribute('applyActions')
     @ApplyActions.setter
@@ -48,10 +48,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplyActionsMiss(self):
-        """Select the type of apply action miss instructions that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of apply action miss instructions that the table miss flow entry will support.
         """
         return self._get_attribute('applyActionsMiss')
     @ApplyActionsMiss.setter
@@ -60,10 +60,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplySetField(self):
-        """Apply set field property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply set field property.
         """
         return self._get_attribute('applySetField')
     @ApplySetField.setter
@@ -72,10 +72,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplySetFieldMiss(self):
-        """Apply set field for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply set field for table-miss.
         """
         return self._get_attribute('applySetFieldMiss')
     @ApplySetFieldMiss.setter
@@ -84,10 +84,10 @@ class FeaturesSupported(Base):
 
     @property
     def Experimenter(self):
-        """This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -96,10 +96,10 @@ class FeaturesSupported(Base):
 
     @property
     def ExperimenterMiss(self):
-        """Experimenter for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Experimenter for table-miss.
         """
         return self._get_attribute('experimenterMiss')
     @ExperimenterMiss.setter
@@ -108,10 +108,10 @@ class FeaturesSupported(Base):
 
     @property
     def Instruction(self):
-        """It select the type of instructions that the table flow entry will support
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It select the type of instructions that the table flow entry will support
         """
         return self._get_attribute('instruction')
     @Instruction.setter
@@ -120,10 +120,10 @@ class FeaturesSupported(Base):
 
     @property
     def InstructionMiss(self):
-        """Select the type of instruction miss capabilities that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of instruction miss capabilities that the table miss flow entry will support.
         """
         return self._get_attribute('instructionMiss')
     @InstructionMiss.setter
@@ -132,10 +132,10 @@ class FeaturesSupported(Base):
 
     @property
     def Match(self):
-        """Select the type of match instructions that the table will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of match instructions that the table will support.
         """
         return self._get_attribute('match')
     @Match.setter
@@ -144,10 +144,10 @@ class FeaturesSupported(Base):
 
     @property
     def NextTable(self):
-        """Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
         """
         return self._get_attribute('nextTable')
     @NextTable.setter
@@ -156,10 +156,10 @@ class FeaturesSupported(Base):
 
     @property
     def NextTableMiss(self):
-        """Specify the Next table Miss value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Specify the Next table Miss value.
         """
         return self._get_attribute('nextTableMiss')
     @NextTableMiss.setter
@@ -168,10 +168,10 @@ class FeaturesSupported(Base):
 
     @property
     def Wildcards(self):
-        """Select the type of wildcard instructions that the table will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of wildcard instructions that the table will support.
         """
         return self._get_attribute('wildcards')
     @Wildcards.setter
@@ -180,10 +180,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteActions(self):
-        """Select the type of write action instructions that the table flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of write action instructions that the table flow entry will support.
         """
         return self._get_attribute('writeActions')
     @WriteActions.setter
@@ -192,10 +192,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteActionsMiss(self):
-        """Select the type of write action miss instructions that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of write action miss instructions that the table miss flow entry will support.
         """
         return self._get_attribute('writeActionsMiss')
     @WriteActionsMiss.setter
@@ -204,10 +204,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteSetField(self):
-        """Apply set field for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply set field for table-miss.
         """
         return self._get_attribute('writeSetField')
     @WriteSetField.setter
@@ -216,10 +216,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteSetFieldMiss(self):
-        """Write set field for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Write set field for table-miss.
         """
         return self._get_attribute('writeSetFieldMiss')
     @WriteSetFieldMiss.setter
@@ -227,27 +227,29 @@ class FeaturesSupported(Base):
         self._set_attribute('writeSetFieldMiss', value)
 
     def update(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Experimenter=None, ExperimenterMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
-        """Updates a child instance of featuresSupported on the server.
+        """Updates featuresSupported resource on the server.
 
-        Args:
-            ApplyActions (bool): Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
-            ApplyActionsMiss (bool): Select the type of apply action miss instructions that the table miss flow entry will support.
-            ApplySetField (bool): Apply set field property.
-            ApplySetFieldMiss (bool): Apply set field for table-miss.
-            Experimenter (bool): This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
-            ExperimenterMiss (bool): Experimenter for table-miss.
-            Instruction (bool): It select the type of instructions that the table flow entry will support
-            InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
-            Match (bool): Select the type of match instructions that the table will support.
-            NextTable (bool): Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
-            NextTableMiss (bool): Specify the Next table Miss value.
-            Wildcards (bool): Select the type of wildcard instructions that the table will support.
-            WriteActions (bool): Select the type of write action instructions that the table flow entry will support.
-            WriteActionsMiss (bool): Select the type of write action miss instructions that the table miss flow entry will support.
-            WriteSetField (bool): Apply set field for table-miss.
-            WriteSetFieldMiss (bool): Write set field for table-miss.
+        Args
+        ----
+        - ApplyActions (bool): Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
+        - ApplyActionsMiss (bool): Select the type of apply action miss instructions that the table miss flow entry will support.
+        - ApplySetField (bool): Apply set field property.
+        - ApplySetFieldMiss (bool): Apply set field for table-miss.
+        - Experimenter (bool): This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
+        - ExperimenterMiss (bool): Experimenter for table-miss.
+        - Instruction (bool): It select the type of instructions that the table flow entry will support
+        - InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
+        - Match (bool): Select the type of match instructions that the table will support.
+        - NextTable (bool): Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
+        - NextTableMiss (bool): Specify the Next table Miss value.
+        - Wildcards (bool): Select the type of wildcard instructions that the table will support.
+        - WriteActions (bool): Select the type of write action instructions that the table flow entry will support.
+        - WriteActionsMiss (bool): Select the type of write action miss instructions that the table miss flow entry will support.
+        - WriteSetField (bool): Apply set field for table-miss.
+        - WriteSetFieldMiss (bool): Write set field for table-miss.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,51 +36,52 @@ class ExpectedInitiatedLspList(Base):
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def InsertIpv6ExplicitNull(self):
-        """Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         """
         return self._get_attribute('insertIpv6ExplicitNull')
     @InsertIpv6ExplicitNull.setter
@@ -89,10 +90,10 @@ class ExpectedInitiatedLspList(Base):
 
     @property
     def MaxExpectedSegmentCount(self):
-        """This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
         """
         return self._get_attribute('maxExpectedSegmentCount')
     @MaxExpectedSegmentCount.setter
@@ -101,10 +102,10 @@ class ExpectedInitiatedLspList(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -113,63 +114,71 @@ class ExpectedInitiatedLspList(Base):
 
     @property
     def SourceIpv4Address(self):
-        """This is used to set the Source IPv4 address in the IP header of the generated traffic.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceIpv4Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv4 address in the IP header of the generated traffic.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceIpv4Address'))
 
     @property
     def SourceIpv6Address(self):
-        """This is used to set the Source IPv6 address in the IP header of the generated traffic.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceIpv6Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv6 address in the IP header of the generated traffic.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceIpv6Address'))
 
     @property
     def SymbolicPathName(self):
-        """This is used for generating the traffic for those LSPs from PCE for which the Symbolic Path Name is configured and matches the value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('symbolicPathName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used for generating the traffic for those LSPs from PCE for which the Symbolic Path Name is configured and matches the value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('symbolicPathName'))
 
     def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None):
-        """Updates a child instance of expectedInitiatedLspList on the server.
+        """Updates expectedInitiatedLspList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
-            MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
         """Base class infrastructure that gets a list of expectedInitiatedLspList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            SourceIpv4Address (str): optional regex of sourceIpv4Address
-            SourceIpv6Address (str): optional regex of sourceIpv6Address
-            SymbolicPathName (str): optional regex of symbolicPathName
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - SourceIpv4Address (str): optional regex of sourceIpv4Address
+        - SourceIpv6Address (str): optional regex of sourceIpv6Address
+        - SymbolicPathName (str): optional regex of symbolicPathName
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

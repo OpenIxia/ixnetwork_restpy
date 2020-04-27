@@ -36,128 +36,135 @@ class RsvpP2mpEgressLsps(Base):
 
     @property
     def RsvpRROSubObjectsList(self):
-        """An instance of the RsvpRROSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist.RsvpRROSubObjectsList): An instance of the RsvpRROSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist.RsvpRROSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist import RsvpRROSubObjectsList
         return RsvpRROSubObjectsList(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DestinationIpv4GroupAddress(self):
-        """Destination IPv4 Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destinationIpv4GroupAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv4 Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destinationIpv4GroupAddress'))
 
     @property
     def EnableFixedLabelForReservations(self):
-        """Enable Fixed Label For Reservations
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableFixedLabelForReservations')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Fixed Label For Reservations
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableFixedLabelForReservations'))
 
     @property
     def EndPointIpv6(self):
-        """Destination IPv6 Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endPointIpv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6 Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endPointIpv6'))
 
     @property
     def IncludeConnectedIpOnTop(self):
-        """Include connected IP on top
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeConnectedIpOnTop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include connected IP on top
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeConnectedIpOnTop'))
 
     @property
     def IncludeLeafIpAtBottom(self):
-        """Include Leaf IP at bottom
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeLeafIpAtBottom')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Leaf IP at bottom
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeLeafIpAtBottom'))
 
     @property
     def LabelValue(self):
-        """Label Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelValue'))
 
     @property
     def LocalIp(self):
-        """Local IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Local IP
         """
         return self._get_attribute('localIp')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -166,10 +173,10 @@ class RsvpP2mpEgressLsps(Base):
 
     @property
     def NumberOfRroSubObjects(self):
-        """Number Of RRO Sub-Objects
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of RRO Sub-Objects
         """
         return self._get_attribute('numberOfRroSubObjects')
     @NumberOfRroSubObjects.setter
@@ -178,109 +185,119 @@ class RsvpP2mpEgressLsps(Base):
 
     @property
     def P2mpIdAsNumber(self):
-        """P2MP ID displayed in Integer format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('p2mpIdAsNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P2MP ID displayed in Integer format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('p2mpIdAsNumber'))
 
     @property
     def P2mpIdIp(self):
-        """P2MP ID displayed in IP Address format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('p2mpIdIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P2MP ID displayed in IP Address format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('p2mpIdIp'))
 
     @property
     def ReflectRro(self):
-        """Reflect RRO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reflectRro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reflect RRO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reflectRro'))
 
     @property
     def RefreshInterval(self):
-        """Refresh Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('refreshInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Refresh Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('refreshInterval'))
 
     @property
     def ReservationStyle(self):
-        """Reservation Style
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservationStyle')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reservation Style
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservationStyle'))
 
     @property
     def SendAsRro(self):
-        """Send As RRO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendAsRro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send As RRO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendAsRro'))
 
     @property
     def SendAsSrro(self):
-        """Send As SRRO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendAsSrro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send As SRRO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendAsSrro'))
 
     @property
     def SendReservationConfirmation(self):
-        """Send Reservation Confirmation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendReservationConfirmation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send Reservation Confirmation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendReservationConfirmation'))
 
     @property
     def State(self):
-        """State
-
-        Returns:
-            list(str[down|none|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | none | notStarted | up]): State
         """
         return self._get_attribute('state')
 
     @property
     def SubLspsDown(self):
-        """Sub LSPs Down
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('subLspsDown')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Sub LSPs Down
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('subLspsDown'))
 
     @property
     def TimeoutMultiplier(self):
-        """Timeout Multiplier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('timeoutMultiplier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout Multiplier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('timeoutMultiplier'))
 
     @property
     def TypeP2mpId(self):
-        """P2MP ID Type
-
-        Returns:
-            str(p2MPId|iP)
+        """
+        Returns
+        -------
+        - str(p2MPId | iP): P2MP ID Type
         """
         return self._get_attribute('typeP2mpId')
     @TypeP2mpId.setter
@@ -288,51 +305,56 @@ class RsvpP2mpEgressLsps(Base):
         self._set_attribute('typeP2mpId', value)
 
     def update(self, Name=None, NumberOfRroSubObjects=None, TypeP2mpId=None):
-        """Updates a child instance of rsvpP2mpEgressLsps on the server.
+        """Updates rsvpP2mpEgressLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
-            TypeP2mpId (str(p2MPId|iP)): P2MP ID Type
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+        - TypeP2mpId (str(p2MPId | iP)): P2MP ID Type
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, DestinationIpv4GroupAddress=None, EnableFixedLabelForReservations=None, EndPointIpv6=None, IncludeConnectedIpOnTop=None, IncludeLeafIpAtBottom=None, LabelValue=None, P2mpIdAsNumber=None, P2mpIdIp=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, SendAsRro=None, SendAsSrro=None, SendReservationConfirmation=None, SubLspsDown=None, TimeoutMultiplier=None):
         """Base class infrastructure that gets a list of rsvpP2mpEgressLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            DestinationIpv4GroupAddress (str): optional regex of destinationIpv4GroupAddress
-            EnableFixedLabelForReservations (str): optional regex of enableFixedLabelForReservations
-            EndPointIpv6 (str): optional regex of endPointIpv6
-            IncludeConnectedIpOnTop (str): optional regex of includeConnectedIpOnTop
-            IncludeLeafIpAtBottom (str): optional regex of includeLeafIpAtBottom
-            LabelValue (str): optional regex of labelValue
-            P2mpIdAsNumber (str): optional regex of p2mpIdAsNumber
-            P2mpIdIp (str): optional regex of p2mpIdIp
-            ReflectRro (str): optional regex of reflectRro
-            RefreshInterval (str): optional regex of refreshInterval
-            ReservationStyle (str): optional regex of reservationStyle
-            SendAsRro (str): optional regex of sendAsRro
-            SendAsSrro (str): optional regex of sendAsSrro
-            SendReservationConfirmation (str): optional regex of sendReservationConfirmation
-            SubLspsDown (str): optional regex of subLspsDown
-            TimeoutMultiplier (str): optional regex of timeoutMultiplier
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - DestinationIpv4GroupAddress (str): optional regex of destinationIpv4GroupAddress
+        - EnableFixedLabelForReservations (str): optional regex of enableFixedLabelForReservations
+        - EndPointIpv6 (str): optional regex of endPointIpv6
+        - IncludeConnectedIpOnTop (str): optional regex of includeConnectedIpOnTop
+        - IncludeLeafIpAtBottom (str): optional regex of includeLeafIpAtBottom
+        - LabelValue (str): optional regex of labelValue
+        - P2mpIdAsNumber (str): optional regex of p2mpIdAsNumber
+        - P2mpIdIp (str): optional regex of p2mpIdIp
+        - ReflectRro (str): optional regex of reflectRro
+        - RefreshInterval (str): optional regex of refreshInterval
+        - ReservationStyle (str): optional regex of reservationStyle
+        - SendAsRro (str): optional regex of sendAsRro
+        - SendAsSrro (str): optional regex of sendAsSrro
+        - SendReservationConfirmation (str): optional regex of sendReservationConfirmation
+        - SubLspsDown (str): optional regex of subLspsDown
+        - TimeoutMultiplier (str): optional regex of timeoutMultiplier
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -341,29 +363,25 @@ class RsvpP2mpEgressLsps(Base):
 
         Activate/Enable Tunnel selected SubLsp Ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        graftSubLsp()
+        graftSubLsp(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        graftSubLsp(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        graftSubLsp(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        graftSubLsp(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        graftSubLsp(Arg2=list)list
+        --------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        graftSubLsp(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -375,29 +393,25 @@ class RsvpP2mpEgressLsps(Base):
 
         Deactivate/Disable selected Tunnel SubLsp Ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        pruneSubLsp()
+        pruneSubLsp(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        pruneSubLsp(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        pruneSubLsp(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        pruneSubLsp(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        pruneSubLsp(Arg2=list)list
+        --------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        pruneSubLsp(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -409,29 +423,25 @@ class RsvpP2mpEgressLsps(Base):
 
         Activate/Enable selected Tunnel Tail Ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        start(Arg2=list)list
+        --------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        start(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -443,29 +453,25 @@ class RsvpP2mpEgressLsps(Base):
 
         Deactivate/Disable selected Tunnel Tail Ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        stop(Arg2=list)list
+        -------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        stop(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

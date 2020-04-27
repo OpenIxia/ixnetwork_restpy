@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Greoipv6(Base):
     """GRE IPv6 protocol.
-    The Greoipv6 class encapsulates a list of greoipv6 resources that is be managed by the user.
+    The Greoipv6 class encapsulates a list of greoipv6 resources that are managed by the user.
     A list of resources can be retrieved from the server using the Greoipv6.find() method.
-    The list can be managed by the user by using the Greoipv6.add() and Greoipv6.remove() methods.
+    The list can be managed by using the Greoipv6.add() and Greoipv6.remove() methods.
     """
 
     __slots__ = ()
@@ -38,388 +38,388 @@ class Greoipv6(Base):
 
     @property
     def BondedGRE(self):
-        """An instance of the BondedGRE class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre.BondedGRE): An instance of the BondedGRE class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre.BondedGRE)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre import BondedGRE
         return BondedGRE(self)
 
     @property
     def CfmBridge(self):
-        """An instance of the CfmBridge class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge.CfmBridge): An instance of the CfmBridge class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge.CfmBridge)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge import CfmBridge
         return CfmBridge(self)
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def Dhcpv4client(self):
-        """An instance of the Dhcpv4client class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client.Dhcpv4client): An instance of the Dhcpv4client class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client.Dhcpv4client)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client import Dhcpv4client
         return Dhcpv4client(self)
 
     @property
     def Dhcpv6client(self):
-        """An instance of the Dhcpv6client class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client.Dhcpv6client): An instance of the Dhcpv6client class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client.Dhcpv6client)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client import Dhcpv6client
         return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
-        """An instance of the ECpriRe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe): An instance of the ECpriRe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire import ECpriRe
         return ECpriRe(self)
 
     @property
     def ECpriRec(self):
-        """An instance of the ECpriRec class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec): An instance of the ECpriRec class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import ECpriRec
         return ECpriRec(self)
 
     @property
     def Ethernet(self):
-        """An instance of the Ethernet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet.Ethernet): An instance of the Ethernet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet.Ethernet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet import Ethernet
         return Ethernet(self)
 
     @property
     def Ipv4(self):
-        """An instance of the Ipv4 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4.Ipv4): An instance of the Ipv4 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4.Ipv4)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4 import Ipv4
         return Ipv4(self)
 
     @property
     def Ipv6(self):
-        """An instance of the Ipv6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6.Ipv6): An instance of the Ipv6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6.Ipv6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6 import Ipv6
         return Ipv6(self)
 
     @property
     def Ipv6Autoconfiguration(self):
-        """An instance of the Ipv6Autoconfiguration class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration.Ipv6Autoconfiguration): An instance of the Ipv6Autoconfiguration class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration.Ipv6Autoconfiguration)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration import Ipv6Autoconfiguration
         return Ipv6Autoconfiguration(self)
 
     @property
     def IsisDceSimRouter(self):
-        """An instance of the IsisDceSimRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter.IsisDceSimRouter): An instance of the IsisDceSimRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter.IsisDceSimRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter import IsisDceSimRouter
         return IsisDceSimRouter(self)
 
     @property
     def IsisFabricPath(self):
-        """An instance of the IsisFabricPath class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath.IsisFabricPath): An instance of the IsisFabricPath class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath.IsisFabricPath)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath import IsisFabricPath
         return IsisFabricPath(self)
 
     @property
     def IsisL3(self):
-        """An instance of the IsisL3 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3.IsisL3): An instance of the IsisL3 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3.IsisL3)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3 import IsisL3
         return IsisL3(self)
 
     @property
     def IsisSpbBcb(self):
-        """An instance of the IsisSpbBcb class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb.IsisSpbBcb): An instance of the IsisSpbBcb class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb.IsisSpbBcb)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb import IsisSpbBcb
         return IsisSpbBcb(self)
 
     @property
     def IsisSpbBeb(self):
-        """An instance of the IsisSpbBeb class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb.IsisSpbBeb): An instance of the IsisSpbBeb class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb.IsisSpbBeb)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb import IsisSpbBeb
         return IsisSpbBeb(self)
 
     @property
     def IsisSpbSimRouter(self):
-        """An instance of the IsisSpbSimRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter.IsisSpbSimRouter): An instance of the IsisSpbSimRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter.IsisSpbSimRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter import IsisSpbSimRouter
         return IsisSpbSimRouter(self)
 
     @property
     def IsisTrill(self):
-        """An instance of the IsisTrill class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill.IsisTrill): An instance of the IsisTrill class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill.IsisTrill)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill import IsisTrill
         return IsisTrill(self)
 
     @property
     def IsisTrillSimRouter(self):
-        """An instance of the IsisTrillSimRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter.IsisTrillSimRouter): An instance of the IsisTrillSimRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter.IsisTrillSimRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter import IsisTrillSimRouter
         return IsisTrillSimRouter(self)
 
     @property
     def Lacp(self):
-        """An instance of the Lacp class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp.Lacp): An instance of the Lacp class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp.Lacp)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp import Lacp
         return Lacp(self)
 
     @property
     def Lagportlacp(self):
-        """An instance of the Lagportlacp class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp.Lagportlacp): An instance of the Lagportlacp class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp.Lagportlacp)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp import Lagportlacp
         return Lagportlacp(self)
 
     @property
     def Lagportstaticlag(self):
-        """An instance of the Lagportstaticlag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag.Lagportstaticlag): An instance of the Lagportstaticlag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag.Lagportstaticlag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag import Lagportstaticlag
         return Lagportstaticlag(self)
 
     @property
     def MsrpListener(self):
-        """An instance of the MsrpListener class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener.MsrpListener): An instance of the MsrpListener class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener.MsrpListener)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener import MsrpListener
         return MsrpListener(self)
 
     @property
     def MsrpTalker(self):
-        """An instance of the MsrpTalker class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker.MsrpTalker): An instance of the MsrpTalker class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker.MsrpTalker)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker import MsrpTalker
         return MsrpTalker(self)
 
     @property
     def StaticLag(self):
-        """An instance of the StaticLag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag.StaticLag): An instance of the StaticLag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag.StaticLag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag import StaticLag
         return StaticLag(self)
 
     @property
     def Streams(self):
-        """An instance of the Streams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams.Streams): An instance of the Streams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams.Streams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams import Streams
         return Streams(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -428,82 +428,87 @@ class Greoipv6(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DestIp(self):
-        """Destination IPv6 address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6 address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destIp'))
 
     @property
     def EnableChecksum(self):
-        """Enable Checksum.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableChecksum')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Checksum.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableChecksum'))
 
     @property
     def EnableKey(self):
-        """Enable Key.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Key.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableKey'))
 
     @property
     def EnableSequenceNumber(self):
-        """Enable Sequence Number.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableSequenceNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sequence Number.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableSequenceNumber'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def InKey(self):
-        """In Key.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('inKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): In Key.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('inKey'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -512,10 +517,10 @@ class Greoipv6(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -524,37 +529,39 @@ class Greoipv6(Base):
 
     @property
     def OutKey(self):
-        """Out Key.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('outKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Out Key.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('outKey'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def SrcIp(self):
-        """Source IPv6 address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srcIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6 address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srcIp'))
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -563,103 +570,116 @@ class Greoipv6(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of greoipv6 on the server.
+        """Updates greoipv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new greoipv6 node on the server and retrieves it in this instance.
+        """Adds a new greoipv6 resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved greoipv6 data using find and the newly added greoipv6 data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved greoipv6 resources using find and the newly added greoipv6 resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the greoipv6 data in this instance from server.
+        """Deletes all the contained greoipv6 resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves greoipv6 data from the server.
+        """Finds and retrieves greoipv6 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve greoipv6 data from the server.
-        By default the find method takes no parameters and will retrieve all greoipv6 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve greoipv6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all greoipv6 resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching greoipv6 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching greoipv6 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of greoipv6 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the greoipv6 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the greoipv6 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -668,21 +688,24 @@ class Greoipv6(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            DestIp (str): optional regex of destIp
-            EnableChecksum (str): optional regex of enableChecksum
-            EnableKey (str): optional regex of enableKey
-            EnableSequenceNumber (str): optional regex of enableSequenceNumber
-            InKey (str): optional regex of inKey
-            OutKey (str): optional regex of outKey
-            SrcIp (str): optional regex of srcIp
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - DestIp (str): optional regex of destIp
+        - EnableChecksum (str): optional regex of enableChecksum
+        - EnableKey (str): optional regex of enableKey
+        - EnableSequenceNumber (str): optional regex of enableSequenceNumber
+        - InKey (str): optional regex of inKey
+        - OutKey (str): optional regex of outKey
+        - SrcIp (str): optional regex of srcIp
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -691,22 +714,20 @@ class Greoipv6(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -718,22 +739,20 @@ class Greoipv6(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -745,22 +764,20 @@ class Greoipv6(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

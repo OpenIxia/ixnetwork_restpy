@@ -36,94 +36,94 @@ class Statistics(Base):
 
     @property
     def AutoRefresh(self):
-        """An instance of the AutoRefresh class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh.AutoRefresh): An instance of the AutoRefresh class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh.AutoRefresh)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import AutoRefresh
         return AutoRefresh(self)._select()
 
     @property
     def CsvSnapshot(self):
-        """An instance of the CsvSnapshot class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot.CsvSnapshot): An instance of the CsvSnapshot class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot.CsvSnapshot)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import CsvSnapshot
         return CsvSnapshot(self)._select()
 
     @property
     def Ixreporter(self):
-        """An instance of the Ixreporter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter.Ixreporter): An instance of the Ixreporter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter.Ixreporter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import Ixreporter
         return Ixreporter(self)._select()
 
     @property
     def MeasurementMode(self):
-        """An instance of the MeasurementMode class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode.MeasurementMode): An instance of the MeasurementMode class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode.MeasurementMode)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import MeasurementMode
         return MeasurementMode(self)._select()
 
     @property
     def RawData(self):
-        """An instance of the RawData class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata.RawData): An instance of the RawData class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata.RawData)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import RawData
         return RawData(self)._select()
 
     @property
     def View(self):
-        """An instance of the View class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view.View): An instance of the View class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view.View)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view import View
         return View(self)
 
     @property
     def AdditionalFcoeStat1(self):
-        """Signifies additional FCOE stat 1
-
-        Returns:
-            str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)
+        """
+        Returns
+        -------
+        - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Signifies additional FCOE stat 1
         """
         return self._get_attribute('additionalFcoeStat1')
     @AdditionalFcoeStat1.setter
@@ -132,10 +132,10 @@ class Statistics(Base):
 
     @property
     def AdditionalFcoeStat2(self):
-        """Sets the additional FCoE shared stats.
-
-        Returns:
-            str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)
+        """
+        Returns
+        -------
+        - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Sets the additional FCoE shared stats.
         """
         return self._get_attribute('additionalFcoeStat2')
     @AdditionalFcoeStat2.setter
@@ -144,10 +144,10 @@ class Statistics(Base):
 
     @property
     def CsvFilePath(self):
-        """Sets the CSV file path.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the CSV file path.
         """
         return self._get_attribute('csvFilePath')
     @CsvFilePath.setter
@@ -156,10 +156,10 @@ class Statistics(Base):
 
     @property
     def CsvLogPollIntervalMultiplier(self):
-        """Used to specify the time interval between log polling events.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used to specify the time interval between log polling events.
         """
         return self._get_attribute('csvLogPollIntervalMultiplier')
     @CsvLogPollIntervalMultiplier.setter
@@ -168,10 +168,10 @@ class Statistics(Base):
 
     @property
     def DataStorePollingIntervalMultiplier(self):
-        """The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
         return self._get_attribute('dataStorePollingIntervalMultiplier')
     @DataStorePollingIntervalMultiplier.setter
@@ -180,10 +180,10 @@ class Statistics(Base):
 
     @property
     def EnableAutoDataStore(self):
-        """If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
         """
         return self._get_attribute('enableAutoDataStore')
     @EnableAutoDataStore.setter
@@ -192,10 +192,10 @@ class Statistics(Base):
 
     @property
     def EnableCsvLogging(self):
-        """If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
         """
         return self._get_attribute('enableCsvLogging')
     @EnableCsvLogging.setter
@@ -204,10 +204,10 @@ class Statistics(Base):
 
     @property
     def EnableDataCenterSharedStats(self):
-        """If true, enables statistics for Data Center.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables statistics for Data Center.
         """
         return self._get_attribute('enableDataCenterSharedStats')
     @EnableDataCenterSharedStats.setter
@@ -216,10 +216,10 @@ class Statistics(Base):
 
     @property
     def GuardrailEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('guardrailEnabled')
     @GuardrailEnabled.setter
@@ -228,10 +228,10 @@ class Statistics(Base):
 
     @property
     def MaxNumberOfStatsPerCustomGraph(self):
-        """The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
         return self._get_attribute('maxNumberOfStatsPerCustomGraph')
     @MaxNumberOfStatsPerCustomGraph.setter
@@ -240,10 +240,10 @@ class Statistics(Base):
 
     @property
     def PollInterval(self):
-        """The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
         """
         return self._get_attribute('pollInterval')
     @PollInterval.setter
@@ -252,10 +252,10 @@ class Statistics(Base):
 
     @property
     def TimeSynchronization(self):
-        """The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
-
-        Returns:
-            str(syncTimeToSystemClock|syncTimeToTestStart)
+        """
+        Returns
+        -------
+        - str(syncTimeToSystemClock | syncTimeToTestStart): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
         """
         return self._get_attribute('timeSynchronization')
     @TimeSynchronization.setter
@@ -264,10 +264,10 @@ class Statistics(Base):
 
     @property
     def TimestampPrecision(self):
-        """The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
         """
         return self._get_attribute('timestampPrecision')
     @TimestampPrecision.setter
@@ -276,48 +276,51 @@ class Statistics(Base):
 
     @property
     def UgsTcpPort(self):
-        """Used to specify the UGS TCP port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used to specify the UGS TCP port.
         """
         return self._get_attribute('ugsTcpPort')
 
     def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None):
-        """Updates a child instance of statistics on the server.
+        """Updates statistics resource on the server.
 
-        Args:
-            AdditionalFcoeStat1 (str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)): Signifies additional FCOE stat 1
-            AdditionalFcoeStat2 (str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)): Sets the additional FCoE shared stats.
-            CsvFilePath (str): Sets the CSV file path.
-            CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
-            DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
-            EnableAutoDataStore (bool): If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
-            EnableCsvLogging (bool): If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
-            EnableDataCenterSharedStats (bool): If true, enables statistics for Data Center.
-            GuardrailEnabled (bool): NOT DEFINED
-            MaxNumberOfStatsPerCustomGraph (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
-            PollInterval (number): The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
-            TimeSynchronization (str(syncTimeToSystemClock|syncTimeToTestStart)): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
-            TimestampPrecision (number): The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
+        Args
+        ----
+        - AdditionalFcoeStat1 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Signifies additional FCOE stat 1
+        - AdditionalFcoeStat2 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Sets the additional FCoE shared stats.
+        - CsvFilePath (str): Sets the CSV file path.
+        - CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
+        - DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+        - EnableAutoDataStore (bool): If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
+        - EnableCsvLogging (bool): If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
+        - EnableDataCenterSharedStats (bool): If true, enables statistics for Data Center.
+        - GuardrailEnabled (bool): NOT DEFINED
+        - MaxNumberOfStatsPerCustomGraph (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+        - PollInterval (number): The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
+        - TimeSynchronization (str(syncTimeToSystemClock | syncTimeToTestStart)): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
+        - TimestampPrecision (number): The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CheckViewTreeGroupExists(self, *args, **kwargs):
         """Executes the checkViewTreeGroupExists operation on the server.
 
         This command verifies that the specified group name exists in the StatViewer tree.
 
-        checkViewTreeGroupExists(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
+        checkViewTreeGroupExists(Arg2=string)
+        -------------------------------------
+        - Arg2 (str): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -329,9 +332,10 @@ class Statistics(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('dockStatViewer', payload=payload, response_object=None)
@@ -341,17 +345,16 @@ class Statistics(Base):
 
         NOT DEFINED
 
-        getPGIDList(Arg2:string, Arg3:string)list
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
-                args[1] is Arg3 (str): NOT DEFINED
+        getPGIDList(Arg2=string, Arg3=string)list
+        -----------------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (str): NOT DEFINED
+        - Returns list(str): NOT DEFINED
 
-            Returns:
-                list(str): NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -363,18 +366,17 @@ class Statistics(Base):
 
         This command retrieves Stats Footers from traffic stats.
 
-        getStatsFooters(Arg2:string, Arg3:string, Arg4:string)string
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
-                args[1] is Arg3 (str): NOT DEFINED
-                args[2] is Arg4 (str): NOT DEFINED
+        getStatsFooters(Arg2=string, Arg3=string, Arg4=string)string
+        ------------------------------------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (str): NOT DEFINED
+        - Arg4 (str): NOT DEFINED
+        - Returns str: NOT DEFINED
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

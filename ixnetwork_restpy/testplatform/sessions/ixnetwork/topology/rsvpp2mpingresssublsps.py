@@ -36,87 +36,91 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def RsvpEROSubObjectsList(self):
-        """An instance of the RsvpEROSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist.RsvpEROSubObjectsList): An instance of the RsvpEROSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist.RsvpEROSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist import RsvpEROSubObjectsList
         return RsvpEROSubObjectsList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AppendLeaf(self):
-        """Append Leaf
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('appendLeaf')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Append Leaf
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('appendLeaf'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableEro(self):
-        """Enable ERO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableEro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable ERO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableEro'))
 
     @property
     def LeafIp(self):
-        """Leaf IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('leafIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Leaf IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('leafIp'))
 
     @property
     def LocalIp(self):
-        """Local IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Local IP
         """
         return self._get_attribute('localIp')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -125,10 +129,10 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def NumberOfEroSubObjects(self):
-        """Number Of ERO Sub-Objects
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of ERO Sub-Objects
         """
         return self._get_attribute('numberOfEroSubObjects')
     @NumberOfEroSubObjects.setter
@@ -137,122 +141,132 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def P2mpIdAsIp(self):
-        """P2MP ID As IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): P2MP ID As IP
         """
         return self._get_attribute('p2mpIdAsIp')
 
     @property
     def P2mpIdAsNum(self):
-        """P2MP ID displayed in Integer format
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): P2MP ID displayed in Integer format
         """
         return self._get_attribute('p2mpIdAsNum')
 
     @property
     def PrefixLengthOfDut(self):
-        """Prefix Length of DUT
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLengthOfDut')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length of DUT
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLengthOfDut'))
 
     @property
     def PrefixLengthOfLeaf(self):
-        """Prefix Length of Leaf
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLengthOfLeaf')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length of Leaf
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLengthOfLeaf'))
 
     @property
     def PrependDut(self):
-        """Prepend DUT
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prependDut')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prepend DUT
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prependDut'))
 
     @property
     def SendAsEro(self):
-        """Send As ERO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendAsEro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send As ERO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendAsEro'))
 
     @property
     def SendAsSero(self):
-        """Send As SERO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendAsSero')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send As SERO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendAsSero'))
 
     @property
     def SessionInformation(self):
-        """Logs additional information about the RSVP session state
-
-        Returns:
-            list(str[lastErrLSPAdmissionControlFailure|lastErrLSPBadAdSpecValue|lastErrLSPBadExplicitRoute|lastErrLSPBadFlowspecValue|lastErrLSPBadInitialSubobject|lastErrLSPBadLooseNode|lastErrLSPBadStrictNode|lastErrLSPBadTSpecValue|lastErrLSPDelayBoundNotMet|lastErrLSPMPLSAllocationFailure|lastErrLSPMTUTooBig|lastErrLSPNonRSVPRouter|lastErrLSPNoRouteAvailable|lastErrLSPPathErr|lastErrLSPPathTearSent|lastErrLSPRequestedBandwidthUnavailable|lastErrLSPReservationTearReceived|lastErrLSPReservationTearSent|lastErrLSPReservationTimeout|lastErrLSPRoutingLoops|lastErrLSPRoutingProblem|lastErrLSPRSVPSystemError|lastErrLSPServiceConflict|lastErrLSPServiceUnsupported|lastErrLSPTrafficControlError|lastErrLSPTrafficControlSystemError|lastErrLSPTrafficOrganizationError|lastErrLSPTrafficServiceError|lastErrLSPUnknownObjectClass|lastErrLSPUnknownObjectCType|lastErrLSPUnsupportedL3PID|lSPAdmissionControlFailure|lSPBadAdSpecValue|lSPBadExplicitRoute|lSPBadFlowspecValue|lSPBadInitialSubobject|lSPBadLooseNode|lSPBadStrictNode|lSPBadTSpecValue|lSPDelayBoundNotMet|lSPMPLSAllocationFailure|lSPMTUTooBig|lSPNonRSVPRouter|lSPNoRouteAvailable|lSPPathErr|lSPPathTearSent|lSPRequestedBandwidthUnavailable|lSPReservationNotReceived|lSPReservationTearReceived|lSPReservationTearSent|lSPReservationTimeout|lSPRoutingLoops|lSPRoutingProblem|lSPRSVPSystemError|lSPServiceConflict|lSPServiceUnsupported|lSPTrafficControlError|lSPTrafficControlSystemError|lSPTrafficOrganizationError|lSPTrafficServiceError|lSPUnknownObjectClass|lSPUnknownObjectCType|lSPUnsupportedL3PID|mbbCompleted|mbbTriggered|none])
+        """
+        Returns
+        -------
+        - list(str[lastErrLSPAdmissionControlFailure | lastErrLSPBadAdSpecValue | lastErrLSPBadExplicitRoute | lastErrLSPBadFlowspecValue | lastErrLSPBadInitialSubobject | lastErrLSPBadLooseNode | lastErrLSPBadStrictNode | lastErrLSPBadTSpecValue | lastErrLSPDelayBoundNotMet | lastErrLSPMPLSAllocationFailure | lastErrLSPMTUTooBig | lastErrLSPNonRSVPRouter | lastErrLSPNoRouteAvailable | lastErrLSPPathErr | lastErrLSPPathTearSent | lastErrLSPRequestedBandwidthUnavailable | lastErrLSPReservationTearReceived | lastErrLSPReservationTearSent | lastErrLSPReservationTimeout | lastErrLSPRoutingLoops | lastErrLSPRoutingProblem | lastErrLSPRSVPSystemError | lastErrLSPServiceConflict | lastErrLSPServiceUnsupported | lastErrLSPTrafficControlError | lastErrLSPTrafficControlSystemError | lastErrLSPTrafficOrganizationError | lastErrLSPTrafficServiceError | lastErrLSPUnknownObjectClass | lastErrLSPUnknownObjectCType | lastErrLSPUnsupportedL3PID | lSPAdmissionControlFailure | lSPBadAdSpecValue | lSPBadExplicitRoute | lSPBadFlowspecValue | lSPBadInitialSubobject | lSPBadLooseNode | lSPBadStrictNode | lSPBadTSpecValue | lSPDelayBoundNotMet | lSPMPLSAllocationFailure | lSPMTUTooBig | lSPNonRSVPRouter | lSPNoRouteAvailable | lSPPathErr | lSPPathTearSent | lSPRequestedBandwidthUnavailable | lSPReservationNotReceived | lSPReservationTearReceived | lSPReservationTearSent | lSPReservationTimeout | lSPRoutingLoops | lSPRoutingProblem | lSPRSVPSystemError | lSPServiceConflict | lSPServiceUnsupported | lSPTrafficControlError | lSPTrafficControlSystemError | lSPTrafficOrganizationError | lSPTrafficServiceError | lSPUnknownObjectClass | lSPUnknownObjectCType | lSPUnsupportedL3PID | mbbCompleted | mbbTriggered | none]): Logs additional information about the RSVP session state
         """
         return self._get_attribute('sessionInformation')
 
     @property
     def State(self):
-        """State
-
-        Returns:
-            list(str[down|none|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | none | notStarted | up]): State
         """
         return self._get_attribute('state')
 
     def update(self, Name=None, NumberOfEroSubObjects=None):
-        """Updates a child instance of rsvpP2mpIngressSubLsps on the server.
+        """Updates rsvpP2mpIngressSubLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfEroSubObjects (number): Number Of ERO Sub-Objects
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AppendLeaf=None, EnableEro=None, LeafIp=None, PrefixLengthOfDut=None, PrefixLengthOfLeaf=None, PrependDut=None, SendAsEro=None, SendAsSero=None):
         """Base class infrastructure that gets a list of rsvpP2mpIngressSubLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AppendLeaf (str): optional regex of appendLeaf
-            EnableEro (str): optional regex of enableEro
-            LeafIp (str): optional regex of leafIp
-            PrefixLengthOfDut (str): optional regex of prefixLengthOfDut
-            PrefixLengthOfLeaf (str): optional regex of prefixLengthOfLeaf
-            PrependDut (str): optional regex of prependDut
-            SendAsEro (str): optional regex of sendAsEro
-            SendAsSero (str): optional regex of sendAsSero
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AppendLeaf (str): optional regex of appendLeaf
+        - EnableEro (str): optional regex of enableEro
+        - LeafIp (str): optional regex of leafIp
+        - PrefixLengthOfDut (str): optional regex of prefixLengthOfDut
+        - PrefixLengthOfLeaf (str): optional regex of prefixLengthOfLeaf
+        - PrependDut (str): optional regex of prependDut
+        - SendAsEro (str): optional regex of sendAsEro
+        - SendAsSero (str): optional regex of sendAsSero
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -261,16 +275,15 @@ class RsvpP2mpIngressSubLsps(Base):
 
         Prune Ingress P2MP SubLSP
 
-        excludeEroOrSero(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        excludeEroOrSero(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -282,16 +295,15 @@ class RsvpP2mpIngressSubLsps(Base):
 
         Activate/Enable Tunnel selected SubLsp Ranges
 
-        graftSubLsp(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        graftSubLsp(Arg2=list)list
+        --------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -303,16 +315,15 @@ class RsvpP2mpIngressSubLsps(Base):
 
         Graft Ingress P2MP SubLSP
 
-        includeEroOrSero(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        includeEroOrSero(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -324,16 +335,15 @@ class RsvpP2mpIngressSubLsps(Base):
 
         Deactivate/Disable selected Tunnel SubLsp Ranges
 
-        pruneSubLsp(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        pruneSubLsp(Arg2=list)list
+        --------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

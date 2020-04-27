@@ -36,10 +36,10 @@ class WildcardsFields(Base):
 
     @property
     def ArpDestinationIpv4Address(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('arpDestinationIpv4Address')
     @ArpDestinationIpv4Address.setter
@@ -48,10 +48,10 @@ class WildcardsFields(Base):
 
     @property
     def ArpOpcode(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('arpOpcode')
     @ArpOpcode.setter
@@ -60,10 +60,10 @@ class WildcardsFields(Base):
 
     @property
     def ArpSourceHardwareAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('arpSourceHardwareAddress')
     @ArpSourceHardwareAddress.setter
@@ -72,10 +72,10 @@ class WildcardsFields(Base):
 
     @property
     def ArpSourceIpv4Address(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('arpSourceIpv4Address')
     @ArpSourceIpv4Address.setter
@@ -84,10 +84,10 @@ class WildcardsFields(Base):
 
     @property
     def ArpTargetHardwareAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('arpTargetHardwareAddress')
     @ArpTargetHardwareAddress.setter
@@ -96,10 +96,10 @@ class WildcardsFields(Base):
 
     @property
     def EthernetDestination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -108,10 +108,10 @@ class WildcardsFields(Base):
 
     @property
     def EthernetSource(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -120,10 +120,10 @@ class WildcardsFields(Base):
 
     @property
     def EthernetType(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -132,10 +132,10 @@ class WildcardsFields(Base):
 
     @property
     def Experimenter(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -144,10 +144,10 @@ class WildcardsFields(Base):
 
     @property
     def IcmpCode(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('icmpCode')
     @IcmpCode.setter
@@ -156,10 +156,10 @@ class WildcardsFields(Base):
 
     @property
     def IcmpType(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('icmpType')
     @IcmpType.setter
@@ -168,10 +168,10 @@ class WildcardsFields(Base):
 
     @property
     def Icmpv6Code(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('icmpv6Code')
     @Icmpv6Code.setter
@@ -180,10 +180,10 @@ class WildcardsFields(Base):
 
     @property
     def Icmpv6Type(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('icmpv6Type')
     @Icmpv6Type.setter
@@ -192,10 +192,10 @@ class WildcardsFields(Base):
 
     @property
     def InPort(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('inPort')
     @InPort.setter
@@ -204,10 +204,10 @@ class WildcardsFields(Base):
 
     @property
     def IpDscp(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -216,10 +216,10 @@ class WildcardsFields(Base):
 
     @property
     def IpEcn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipEcn')
     @IpEcn.setter
@@ -228,10 +228,10 @@ class WildcardsFields(Base):
 
     @property
     def IpProtocol(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -240,10 +240,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv4Destination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -252,10 +252,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv4Source(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -264,10 +264,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6Destination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6Destination')
     @Ipv6Destination.setter
@@ -276,10 +276,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6ExtHeader(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6ExtHeader')
     @Ipv6ExtHeader.setter
@@ -288,10 +288,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -300,10 +300,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6NdSll(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6NdSll')
     @Ipv6NdSll.setter
@@ -312,10 +312,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6NdTarget(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6NdTarget')
     @Ipv6NdTarget.setter
@@ -324,10 +324,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6NdTll(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6NdTll')
     @Ipv6NdTll.setter
@@ -336,10 +336,10 @@ class WildcardsFields(Base):
 
     @property
     def Ipv6Source(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipv6Source')
     @Ipv6Source.setter
@@ -348,10 +348,10 @@ class WildcardsFields(Base):
 
     @property
     def Metadata(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('metadata')
     @Metadata.setter
@@ -360,10 +360,10 @@ class WildcardsFields(Base):
 
     @property
     def MplsBos(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('mplsBos')
     @MplsBos.setter
@@ -372,10 +372,10 @@ class WildcardsFields(Base):
 
     @property
     def MplsLabel(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -384,10 +384,10 @@ class WildcardsFields(Base):
 
     @property
     def MplsTc(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('mplsTc')
     @MplsTc.setter
@@ -396,10 +396,10 @@ class WildcardsFields(Base):
 
     @property
     def PbbIsid(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('pbbIsid')
     @PbbIsid.setter
@@ -408,10 +408,10 @@ class WildcardsFields(Base):
 
     @property
     def PhysicalInPort(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('physicalInPort')
     @PhysicalInPort.setter
@@ -420,10 +420,10 @@ class WildcardsFields(Base):
 
     @property
     def SctpDestination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('sctpDestination')
     @SctpDestination.setter
@@ -432,10 +432,10 @@ class WildcardsFields(Base):
 
     @property
     def SctpSource(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('sctpSource')
     @SctpSource.setter
@@ -444,10 +444,10 @@ class WildcardsFields(Base):
 
     @property
     def TcpDestination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tcpDestination')
     @TcpDestination.setter
@@ -456,10 +456,10 @@ class WildcardsFields(Base):
 
     @property
     def TcpSource(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tcpSource')
     @TcpSource.setter
@@ -468,10 +468,10 @@ class WildcardsFields(Base):
 
     @property
     def TunnelId(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tunnelId')
     @TunnelId.setter
@@ -480,10 +480,10 @@ class WildcardsFields(Base):
 
     @property
     def UdpDestination(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -492,10 +492,10 @@ class WildcardsFields(Base):
 
     @property
     def UdpSource(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -504,10 +504,10 @@ class WildcardsFields(Base):
 
     @property
     def VlanId(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -516,10 +516,10 @@ class WildcardsFields(Base):
 
     @property
     def VlanPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -527,52 +527,54 @@ class WildcardsFields(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, ArpTargetHardwareAddress=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of wildcardsFields on the server.
+        """Updates wildcardsFields resource on the server.
 
-        Args:
-            ArpDestinationIpv4Address (bool): NOT DEFINED
-            ArpOpcode (bool): NOT DEFINED
-            ArpSourceHardwareAddress (bool): NOT DEFINED
-            ArpSourceIpv4Address (bool): NOT DEFINED
-            ArpTargetHardwareAddress (bool): NOT DEFINED
-            EthernetDestination (bool): NOT DEFINED
-            EthernetSource (bool): NOT DEFINED
-            EthernetType (bool): NOT DEFINED
-            Experimenter (bool): NOT DEFINED
-            IcmpCode (bool): NOT DEFINED
-            IcmpType (bool): NOT DEFINED
-            Icmpv6Code (bool): NOT DEFINED
-            Icmpv6Type (bool): NOT DEFINED
-            InPort (bool): NOT DEFINED
-            IpDscp (bool): NOT DEFINED
-            IpEcn (bool): NOT DEFINED
-            IpProtocol (bool): NOT DEFINED
-            Ipv4Destination (bool): NOT DEFINED
-            Ipv4Source (bool): NOT DEFINED
-            Ipv6Destination (bool): NOT DEFINED
-            Ipv6ExtHeader (bool): NOT DEFINED
-            Ipv6FlowLabel (bool): NOT DEFINED
-            Ipv6NdSll (bool): NOT DEFINED
-            Ipv6NdTarget (bool): NOT DEFINED
-            Ipv6NdTll (bool): NOT DEFINED
-            Ipv6Source (bool): NOT DEFINED
-            Metadata (bool): NOT DEFINED
-            MplsBos (bool): NOT DEFINED
-            MplsLabel (bool): NOT DEFINED
-            MplsTc (bool): NOT DEFINED
-            PbbIsid (bool): NOT DEFINED
-            PhysicalInPort (bool): NOT DEFINED
-            SctpDestination (bool): NOT DEFINED
-            SctpSource (bool): NOT DEFINED
-            TcpDestination (bool): NOT DEFINED
-            TcpSource (bool): NOT DEFINED
-            TunnelId (bool): NOT DEFINED
-            UdpDestination (bool): NOT DEFINED
-            UdpSource (bool): NOT DEFINED
-            VlanId (bool): NOT DEFINED
-            VlanPriority (bool): NOT DEFINED
+        Args
+        ----
+        - ArpDestinationIpv4Address (bool): NOT DEFINED
+        - ArpOpcode (bool): NOT DEFINED
+        - ArpSourceHardwareAddress (bool): NOT DEFINED
+        - ArpSourceIpv4Address (bool): NOT DEFINED
+        - ArpTargetHardwareAddress (bool): NOT DEFINED
+        - EthernetDestination (bool): NOT DEFINED
+        - EthernetSource (bool): NOT DEFINED
+        - EthernetType (bool): NOT DEFINED
+        - Experimenter (bool): NOT DEFINED
+        - IcmpCode (bool): NOT DEFINED
+        - IcmpType (bool): NOT DEFINED
+        - Icmpv6Code (bool): NOT DEFINED
+        - Icmpv6Type (bool): NOT DEFINED
+        - InPort (bool): NOT DEFINED
+        - IpDscp (bool): NOT DEFINED
+        - IpEcn (bool): NOT DEFINED
+        - IpProtocol (bool): NOT DEFINED
+        - Ipv4Destination (bool): NOT DEFINED
+        - Ipv4Source (bool): NOT DEFINED
+        - Ipv6Destination (bool): NOT DEFINED
+        - Ipv6ExtHeader (bool): NOT DEFINED
+        - Ipv6FlowLabel (bool): NOT DEFINED
+        - Ipv6NdSll (bool): NOT DEFINED
+        - Ipv6NdTarget (bool): NOT DEFINED
+        - Ipv6NdTll (bool): NOT DEFINED
+        - Ipv6Source (bool): NOT DEFINED
+        - Metadata (bool): NOT DEFINED
+        - MplsBos (bool): NOT DEFINED
+        - MplsLabel (bool): NOT DEFINED
+        - MplsTc (bool): NOT DEFINED
+        - PbbIsid (bool): NOT DEFINED
+        - PhysicalInPort (bool): NOT DEFINED
+        - SctpDestination (bool): NOT DEFINED
+        - SctpSource (bool): NOT DEFINED
+        - TcpDestination (bool): NOT DEFINED
+        - TcpSource (bool): NOT DEFINED
+        - TunnelId (bool): NOT DEFINED
+        - UdpDestination (bool): NOT DEFINED
+        - UdpSource (bool): NOT DEFINED
+        - VlanId (bool): NOT DEFINED
+        - VlanPriority (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

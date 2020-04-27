@@ -36,246 +36,264 @@ class Dhcpv6client(Base):
 
     @property
     def SessionLifetime(self):
-        """An instance of the SessionLifetime class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.sessionlifetime.sessionlifetime.SessionLifetime): An instance of the SessionLifetime class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.sessionlifetime.sessionlifetime.SessionLifetime)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.sessionlifetime.sessionlifetime import SessionLifetime
         return SessionLifetime(self)._select()
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
-        """An instance of the TlvEditor class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor): An instance of the TlvEditor class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
         return TlvEditor(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Dhcp6EchoIAInfo(self):
-        """If set, the DHCPv6 client will request the exact address as advertised by server.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6EchoIAInfo')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, the DHCPv6 client will request the exact address as advertised by server.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6EchoIAInfo'))
 
     @property
     def Dhcp6InfoReqMaxRc(self):
-        """RFC 3315 Info Request Attempts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6InfoReqMaxRc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Info Request Attempts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6InfoReqMaxRc'))
 
     @property
     def Dhcp6InfoReqMaxRt(self):
-        """RFC 3315 Max Information-request timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6InfoReqMaxRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Information-request timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6InfoReqMaxRt'))
 
     @property
     def Dhcp6InfoReqTimeout(self):
-        """RFC 3315 Initial Information-request timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6InfoReqTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Information-request timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6InfoReqTimeout'))
 
     @property
     def Dhcp6NsGw(self):
-        """If enabled, DHCP clients NS to find their Gateway MAC Addresses.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6NsGw')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP clients NS to find their Gateway MAC Addresses.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6NsGw'))
 
     @property
     def Dhcp6RebMaxRt(self):
-        """RFC 3315 Max Rebind timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RebMaxRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Rebind timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RebMaxRt'))
 
     @property
     def Dhcp6RebTimeout(self):
-        """RFC 3315 Initial Rebind timeout seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RebTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Rebind timeout seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RebTimeout'))
 
     @property
     def Dhcp6RelMaxRc(self):
-        """RFC 3315 Release attempts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RelMaxRc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Release attempts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RelMaxRc'))
 
     @property
     def Dhcp6RelTimeout(self):
-        """RFC 3315 Initial Release timeout in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RelTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Release timeout in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RelTimeout'))
 
     @property
     def Dhcp6RenMaxRt(self):
-        """RFC 3315 Max Renew timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RenMaxRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Renew timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RenMaxRt'))
 
     @property
     def Dhcp6RenTimeout(self):
-        """RFC 3315 Initial Renew timeout in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6RenTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Renew timeout in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6RenTimeout'))
 
     @property
     def Dhcp6ReqMaxRc(self):
-        """RFC 3315 Max Request retry attempts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6ReqMaxRc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Request retry attempts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6ReqMaxRc'))
 
     @property
     def Dhcp6ReqMaxRt(self):
-        """RFC 3315 Max Request timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6ReqMaxRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Request timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6ReqMaxRt'))
 
     @property
     def Dhcp6ReqTimeout(self):
-        """RFC 3315 Initial Request timeout in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6ReqTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Request timeout in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6ReqTimeout'))
 
     @property
     def Dhcp6SolMaxRc(self):
-        """RFC 3315 Max Solicit retry attempts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6SolMaxRc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Solicit retry attempts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6SolMaxRc'))
 
     @property
     def Dhcp6SolMaxRt(self):
-        """RFC 3315 Max Solicit timeout value in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6SolMaxRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Max Solicit timeout value in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6SolMaxRt'))
 
     @property
     def Dhcp6SolTimeout(self):
-        """RFC 3315 Initial Solicit timeout in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dhcp6SolTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Initial Solicit timeout in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dhcp6SolTimeout'))
 
     @property
     def ImmediateResponse(self):
-        """Enables DHCP client to send Request immediately after receiving Advertise irrespective of Initial Solicit Timeout.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('immediateResponse')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP client to send Request immediately after receiving Advertise irrespective of Initial Solicit Timeout.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('immediateResponse'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -284,77 +302,84 @@ class Dhcpv6client(Base):
 
     @property
     def RenewOnLinkUp(self):
-        """Indicate to renew the active DHCP sessions after link status goes down and up.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('renewOnLinkUp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicate to renew the active DHCP sessions after link status goes down and up.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('renewOnLinkUp'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     @property
     def SkipReleaseOnStop(self):
-        """If enabled, the client does not send a DHCPRELEASE packet when the Stop command is given.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('skipReleaseOnStop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the client does not send a DHCPRELEASE packet when the Stop command is given.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('skipReleaseOnStop'))
 
     def update(self, Name=None):
-        """Updates a child instance of dhcpv6client on the server.
+        """Updates dhcpv6client resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Dhcp6EchoIAInfo=None, Dhcp6InfoReqMaxRc=None, Dhcp6InfoReqMaxRt=None, Dhcp6InfoReqTimeout=None, Dhcp6NsGw=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, ImmediateResponse=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
         """Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Dhcp6EchoIAInfo (str): optional regex of dhcp6EchoIAInfo
-            Dhcp6InfoReqMaxRc (str): optional regex of dhcp6InfoReqMaxRc
-            Dhcp6InfoReqMaxRt (str): optional regex of dhcp6InfoReqMaxRt
-            Dhcp6InfoReqTimeout (str): optional regex of dhcp6InfoReqTimeout
-            Dhcp6NsGw (str): optional regex of dhcp6NsGw
-            Dhcp6RebMaxRt (str): optional regex of dhcp6RebMaxRt
-            Dhcp6RebTimeout (str): optional regex of dhcp6RebTimeout
-            Dhcp6RelMaxRc (str): optional regex of dhcp6RelMaxRc
-            Dhcp6RelTimeout (str): optional regex of dhcp6RelTimeout
-            Dhcp6RenMaxRt (str): optional regex of dhcp6RenMaxRt
-            Dhcp6RenTimeout (str): optional regex of dhcp6RenTimeout
-            Dhcp6ReqMaxRc (str): optional regex of dhcp6ReqMaxRc
-            Dhcp6ReqMaxRt (str): optional regex of dhcp6ReqMaxRt
-            Dhcp6ReqTimeout (str): optional regex of dhcp6ReqTimeout
-            Dhcp6SolMaxRc (str): optional regex of dhcp6SolMaxRc
-            Dhcp6SolMaxRt (str): optional regex of dhcp6SolMaxRt
-            Dhcp6SolTimeout (str): optional regex of dhcp6SolTimeout
-            ImmediateResponse (str): optional regex of immediateResponse
-            RenewOnLinkUp (str): optional regex of renewOnLinkUp
-            SkipReleaseOnStop (str): optional regex of skipReleaseOnStop
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Dhcp6EchoIAInfo (str): optional regex of dhcp6EchoIAInfo
+        - Dhcp6InfoReqMaxRc (str): optional regex of dhcp6InfoReqMaxRc
+        - Dhcp6InfoReqMaxRt (str): optional regex of dhcp6InfoReqMaxRt
+        - Dhcp6InfoReqTimeout (str): optional regex of dhcp6InfoReqTimeout
+        - Dhcp6NsGw (str): optional regex of dhcp6NsGw
+        - Dhcp6RebMaxRt (str): optional regex of dhcp6RebMaxRt
+        - Dhcp6RebTimeout (str): optional regex of dhcp6RebTimeout
+        - Dhcp6RelMaxRc (str): optional regex of dhcp6RelMaxRc
+        - Dhcp6RelTimeout (str): optional regex of dhcp6RelTimeout
+        - Dhcp6RenMaxRt (str): optional regex of dhcp6RenMaxRt
+        - Dhcp6RenTimeout (str): optional regex of dhcp6RenTimeout
+        - Dhcp6ReqMaxRc (str): optional regex of dhcp6ReqMaxRc
+        - Dhcp6ReqMaxRt (str): optional regex of dhcp6ReqMaxRt
+        - Dhcp6ReqTimeout (str): optional regex of dhcp6ReqTimeout
+        - Dhcp6SolMaxRc (str): optional regex of dhcp6SolMaxRc
+        - Dhcp6SolMaxRt (str): optional regex of dhcp6SolMaxRt
+        - Dhcp6SolTimeout (str): optional regex of dhcp6SolTimeout
+        - ImmediateResponse (str): optional regex of immediateResponse
+        - RenewOnLinkUp (str): optional regex of renewOnLinkUp
+        - SkipReleaseOnStop (str): optional regex of skipReleaseOnStop
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

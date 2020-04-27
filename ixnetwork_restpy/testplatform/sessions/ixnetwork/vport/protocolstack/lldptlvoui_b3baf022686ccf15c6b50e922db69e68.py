@@ -36,10 +36,10 @@ class LldpTlvOui(Base):
 
     @property
     def Info(self):
-        """Information String.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Information String.
         """
         return self._get_attribute('info')
     @Info.setter
@@ -48,19 +48,19 @@ class LldpTlvOui(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Oui(self):
-        """OUI.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: OUI.
         """
         return self._get_attribute('oui')
     @Oui.setter
@@ -69,10 +69,10 @@ class LldpTlvOui(Base):
 
     @property
     def Subtype(self):
-        """OUI Subtype
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: OUI Subtype
         """
         return self._get_attribute('subtype')
     @Subtype.setter
@@ -80,31 +80,34 @@ class LldpTlvOui(Base):
         self._set_attribute('subtype', value)
 
     def update(self, Info=None, Oui=None, Subtype=None):
-        """Updates a child instance of lldpTlvOui on the server.
+        """Updates lldpTlvOui resource on the server.
 
-        Args:
-            Info (str): Information String.
-            Oui (str): OUI.
-            Subtype (number): OUI Subtype
+        Args
+        ----
+        - Info (str): Information String.
+        - Oui (str): OUI.
+        - Subtype (number): OUI Subtype
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -116,16 +119,15 @@ class LldpTlvOui(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -137,16 +139,15 @@ class LldpTlvOui(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

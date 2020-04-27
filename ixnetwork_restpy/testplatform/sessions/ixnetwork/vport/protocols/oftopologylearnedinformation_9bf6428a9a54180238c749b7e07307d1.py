@@ -36,24 +36,24 @@ class OfTopologyLearnedInformation(Base):
 
     @property
     def TopologyLearnedInfo(self):
-        """An instance of the TopologyLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210.TopologyLearnedInfo): An instance of the TopologyLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210.TopologyLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210 import TopologyLearnedInfo
         return TopologyLearnedInfo(self)
 
     @property
     def EnableInstallLldpFlow(self):
-        """If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
         """
         return self._get_attribute('enableInstallLldpFlow')
     @EnableInstallLldpFlow.setter
@@ -62,10 +62,10 @@ class OfTopologyLearnedInformation(Base):
 
     @property
     def EnableRefreshLldpLearnedInformation(self):
-        """If true, the LLDP trigger configuration parameters are available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the LLDP trigger configuration parameters are available.
         """
         return self._get_attribute('enableRefreshLldpLearnedInformation')
     @EnableRefreshLldpLearnedInformation.setter
@@ -74,19 +74,19 @@ class OfTopologyLearnedInformation(Base):
 
     @property
     def IsOfTopologyLearnedInformationRefreshed(self):
-        """If true, it denotes that the Topology Learned Info is received.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it denotes that the Topology Learned Info is received.
         """
         return self._get_attribute('isOfTopologyLearnedInformationRefreshed')
 
     @property
     def LldpDestinationMac(self):
-        """Indicates the Destination MAC Address for LLDP PacketOut.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Destination MAC Address for LLDP PacketOut.
         """
         return self._get_attribute('lldpDestinationMac')
     @LldpDestinationMac.setter
@@ -95,10 +95,10 @@ class OfTopologyLearnedInformation(Base):
 
     @property
     def LldpResponseTimeOut(self):
-        """Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
         """
         return self._get_attribute('lldpResponseTimeOut')
     @LldpResponseTimeOut.setter
@@ -106,30 +106,30 @@ class OfTopologyLearnedInformation(Base):
         self._set_attribute('lldpResponseTimeOut', value)
 
     def update(self, EnableInstallLldpFlow=None, EnableRefreshLldpLearnedInformation=None, LldpDestinationMac=None, LldpResponseTimeOut=None):
-        """Updates a child instance of ofTopologyLearnedInformation on the server.
+        """Updates ofTopologyLearnedInformation resource on the server.
 
-        Args:
-            EnableInstallLldpFlow (bool): If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
-            EnableRefreshLldpLearnedInformation (bool): If true, the LLDP trigger configuration parameters are available.
-            LldpDestinationMac (str): Indicates the Destination MAC Address for LLDP PacketOut.
-            LldpResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
+        Args
+        ----
+        - EnableInstallLldpFlow (bool): If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
+        - EnableRefreshLldpLearnedInformation (bool): If true, the LLDP trigger configuration parameters are available.
+        - LldpDestinationMac (str): Indicates the Destination MAC Address for LLDP PacketOut.
+        - LldpResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def RefreshOfTopology(self):
         """Executes the refreshOfTopology operation on the server.
 
         Exec to refresh ofChannel topology.
 
-            Returns:
-                number: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshOfTopology', payload=payload, response_object=None)

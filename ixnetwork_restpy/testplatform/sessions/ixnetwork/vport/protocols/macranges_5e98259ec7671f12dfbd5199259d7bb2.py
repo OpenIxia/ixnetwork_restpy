@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MacRanges(Base):
     """The macRanges object controls the configuration of trunk MAC ranges.
-    The MacRanges class encapsulates a list of macRanges resources that is be managed by the user.
+    The MacRanges class encapsulates a list of macRanges resources that are managed by the user.
     A list of resources can be retrieved from the server using the MacRanges.find() method.
-    The list can be managed by the user by using the MacRanges.add() and MacRanges.remove() methods.
+    The list can be managed by using the MacRanges.add() and MacRanges.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class MacRanges(Base):
 
     @property
     def CVlanId(self):
-        """The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
         """
         return self._get_attribute('cVlanId')
     @CVlanId.setter
@@ -50,10 +50,10 @@ class MacRanges(Base):
 
     @property
     def CVlanPriority(self):
-        """The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
         return self._get_attribute('cVlanPriority')
     @CVlanPriority.setter
@@ -62,10 +62,10 @@ class MacRanges(Base):
 
     @property
     def CVlanTpId(self):
-        """The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         """
         return self._get_attribute('cVlanTpId')
     @CVlanTpId.setter
@@ -74,10 +74,10 @@ class MacRanges(Base):
 
     @property
     def Count(self):
-        """The number of times to increment in this MAC range, starting with the address set in macAddress.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times to increment in this MAC range, starting with the address set in macAddress.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -86,10 +86,10 @@ class MacRanges(Base):
 
     @property
     def EnableVlan(self):
-        """If true, the VLAN assigned to the MAC range is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the VLAN assigned to the MAC range is enabled.
         """
         return self._get_attribute('enableVlan')
     @EnableVlan.setter
@@ -98,10 +98,10 @@ class MacRanges(Base):
 
     @property
     def Enabled(self):
-        """If true, the MAC range is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the MAC range is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,19 +110,19 @@ class MacRanges(Base):
 
     @property
     def ITagethernetType(self):
-        """(Read-only) The I-Tag Ethernet type for the MAC range. An I-Tag is amultiplexing tag for service instance scaling in Provider Bridged Networks. This value is set to 0x88E7.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read-only) The I-Tag Ethernet type for the MAC range. An I-Tag is amultiplexing tag for service instance scaling in Provider Bridged Networks. This value is set to 0x88E7.
         """
         return self._get_attribute('iTagethernetType')
 
     @property
     def ITagiSid(self):
-        """The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
         """
         return self._get_attribute('iTagiSid')
     @ITagiSid.setter
@@ -131,10 +131,10 @@ class MacRanges(Base):
 
     @property
     def SVlanId(self):
-        """A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
         """
         return self._get_attribute('sVlanId')
     @SVlanId.setter
@@ -143,10 +143,10 @@ class MacRanges(Base):
 
     @property
     def SVlanPriority(self):
-        """The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
         return self._get_attribute('sVlanPriority')
     @SVlanPriority.setter
@@ -155,10 +155,10 @@ class MacRanges(Base):
 
     @property
     def SVlanTpId(self):
-        """The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         """
         return self._get_attribute('sVlanTpId')
     @SVlanTpId.setter
@@ -167,10 +167,10 @@ class MacRanges(Base):
 
     @property
     def StartMacAddress(self):
-        """The MAC address of the first entry in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the first entry in the range.
         """
         return self._get_attribute('startMacAddress')
     @StartMacAddress.setter
@@ -179,10 +179,10 @@ class MacRanges(Base):
 
     @property
     def Step(self):
-        """The amount to increment each MAC address in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The amount to increment each MAC address in the range.
         """
         return self._get_attribute('step')
     @Step.setter
@@ -191,10 +191,10 @@ class MacRanges(Base):
 
     @property
     def TrafficGroupId(self):
-        """Assigns a traffic group to the MAC range. The traffic group must be previously configured.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -203,10 +203,10 @@ class MacRanges(Base):
 
     @property
     def Type(self):
-        """Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
-
-        Returns:
-            str(singleVlan|stackedVlan)
+        """
+        Returns
+        -------
+        - str(singleVlan | stackedVlan): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -214,107 +214,120 @@ class MacRanges(Base):
         self._set_attribute('type', value)
 
     def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
-        """Updates a child instance of macRanges on the server.
+        """Updates macRanges resource on the server.
 
-        Args:
-            CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
-            CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
-            Enabled (bool): If true, the MAC range is enabled.
-            ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
-            SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
-            SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            StartMacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
-            Type (str(singleVlan|stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
+        Args
+        ----
+        - CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
+        - CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
+        - SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
+        - SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - StartMacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
-        """Adds a new macRanges node on the server and retrieves it in this instance.
+        """Adds a new macRanges resource on the server and adds it to the container.
 
-        Args:
-            CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
-            CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
-            Enabled (bool): If true, the MAC range is enabled.
-            ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
-            SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
-            SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            StartMacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
-            Type (str(singleVlan|stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
+        Args
+        ----
+        - CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
+        - CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
+        - SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
+        - SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - StartMacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
-        Returns:
-            self: This instance with all currently retrieved macRanges data using find and the newly added macRanges data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved macRanges resources using find and the newly added macRanges resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the macRanges data in this instance from server.
+        """Deletes all the contained macRanges resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagethernetType=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
-        """Finds and retrieves macRanges data from the server.
+        """Finds and retrieves macRanges resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve macRanges data from the server.
-        By default the find method takes no parameters and will retrieve all macRanges data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macRanges resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all macRanges resources from the server.
 
-        Args:
-            CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
-            CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
-            EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
-            Enabled (bool): If true, the MAC range is enabled.
-            ITagethernetType (str): (Read-only) The I-Tag Ethernet type for the MAC range. An I-Tag is amultiplexing tag for service instance scaling in Provider Bridged Networks. This value is set to 0x88E7.
-            ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
-            SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
-            SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
-            SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
-            StartMacAddress (str): The MAC address of the first entry in the range.
-            Step (str): The amount to increment each MAC address in the range.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
-            Type (str(singleVlan|stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
+        Args
+        ----
+        - CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
+        - CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+        - EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
+        - Enabled (bool): If true, the MAC range is enabled.
+        - ITagethernetType (str): (Read-only) The I-Tag Ethernet type for the MAC range. An I-Tag is amultiplexing tag for service instance scaling in Provider Bridged Networks. This value is set to 0x88E7.
+        - ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
+        - SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
+        - SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+        - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+        - StartMacAddress (str): The MAC address of the first entry in the range.
+        - Step (str): The amount to increment each MAC address in the range.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
-        Returns:
-            self: This instance with matching macRanges data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching macRanges resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of macRanges data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the macRanges data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the macRanges resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

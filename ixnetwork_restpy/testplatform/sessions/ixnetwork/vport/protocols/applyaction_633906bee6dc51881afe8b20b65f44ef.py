@@ -36,38 +36,38 @@ class ApplyAction(Base):
 
     @property
     def ApplyActionMissType(self):
-        """An instance of the ApplyActionMissType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_a75ec9a5ea7b266980da44f76b4f2884.ApplyActionMissType): An instance of the ApplyActionMissType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_a75ec9a5ea7b266980da44f76b4f2884.ApplyActionMissType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_a75ec9a5ea7b266980da44f76b4f2884 import ApplyActionMissType
         return ApplyActionMissType(self)._select()
 
     @property
     def ApplyActionType(self):
-        """An instance of the ApplyActionType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_d78e4a4dbea6b1924ac59d7ab0d19131.ApplyActionType): An instance of the ApplyActionType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_d78e4a4dbea6b1924ac59d7ab0d19131.ApplyActionType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_d78e4a4dbea6b1924ac59d7ab0d19131 import ApplyActionType
         return ApplyActionType(self)._select()
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -76,10 +76,10 @@ class ApplyAction(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -88,10 +88,10 @@ class ApplyAction(Base):
 
     @property
     def ExperimenterDataLengthMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLengthMiss')
     @ExperimenterDataLengthMiss.setter
@@ -100,10 +100,10 @@ class ApplyAction(Base):
 
     @property
     def ExperimenterDataMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterDataMiss')
     @ExperimenterDataMiss.setter
@@ -112,10 +112,10 @@ class ApplyAction(Base):
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -124,10 +124,10 @@ class ApplyAction(Base):
 
     @property
     def ExperimenterIdMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterIdMiss')
     @ExperimenterIdMiss.setter
@@ -135,17 +135,19 @@ class ApplyAction(Base):
         self._set_attribute('experimenterIdMiss', value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
-        """Updates a child instance of applyAction on the server.
+        """Updates applyAction resource on the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterDataLengthMiss (number): NOT DEFINED
-            ExperimenterDataMiss (str): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            ExperimenterIdMiss (number): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterDataLengthMiss (number): NOT DEFINED
+        - ExperimenterDataMiss (str): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - ExperimenterIdMiss (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

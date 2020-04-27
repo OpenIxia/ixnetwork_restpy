@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchMeterLearnedInfo(Base):
     """NOT DEFINED
-    The SwitchMeterLearnedInfo class encapsulates a list of switchMeterLearnedInfo resources that is managed by the system.
+    The SwitchMeterLearnedInfo class encapsulates a list of switchMeterLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchMeterLearnedInfo.find() method.
     """
 
@@ -37,155 +37,162 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def SwitchMeterBandLearnedInfo(self):
-        """An instance of the SwitchMeterBandLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_9914d666cf769ae43f47184bbf372ad3.SwitchMeterBandLearnedInfo): An instance of the SwitchMeterBandLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_9914d666cf769ae43f47184bbf372ad3.SwitchMeterBandLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_9914d666cf769ae43f47184bbf372ad3 import SwitchMeterBandLearnedInfo
         return SwitchMeterBandLearnedInfo(self)
 
     @property
     def BytesInInput(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('bytesInInput')
 
     @property
     def DatapathId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('datapathId')
 
     @property
     def DatapathIdAsHex(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('datapathIdAsHex')
 
     @property
     def DurationNSec(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('durationNSec')
 
     @property
     def DurationSec(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('durationSec')
 
     @property
     def FlowCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('flowCount')
 
     @property
     def LocalIp(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('localIp')
 
     @property
     def MeterConfigurationFlags(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('meterConfigurationFlags')
 
     @property
     def MeterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterId')
 
     @property
     def NumOfBands(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numOfBands')
 
     @property
     def PacketsInInput(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('packetsInInput')
 
     def find(self, BytesInInput=None, DatapathId=None, DatapathIdAsHex=None, DurationNSec=None, DurationSec=None, FlowCount=None, LocalIp=None, MeterConfigurationFlags=None, MeterId=None, NumOfBands=None, PacketsInInput=None):
-        """Finds and retrieves switchMeterLearnedInfo data from the server.
+        """Finds and retrieves switchMeterLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchMeterLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchMeterLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchMeterLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchMeterLearnedInfo resources from the server.
 
-        Args:
-            BytesInInput (number): NOT DEFINED
-            DatapathId (str): NOT DEFINED
-            DatapathIdAsHex (str): NOT DEFINED
-            DurationNSec (number): NOT DEFINED
-            DurationSec (number): NOT DEFINED
-            FlowCount (number): NOT DEFINED
-            LocalIp (str): NOT DEFINED
-            MeterConfigurationFlags (str): NOT DEFINED
-            MeterId (number): NOT DEFINED
-            NumOfBands (number): NOT DEFINED
-            PacketsInInput (number): NOT DEFINED
+        Args
+        ----
+        - BytesInInput (number): NOT DEFINED
+        - DatapathId (str): NOT DEFINED
+        - DatapathIdAsHex (str): NOT DEFINED
+        - DurationNSec (number): NOT DEFINED
+        - DurationSec (number): NOT DEFINED
+        - FlowCount (number): NOT DEFINED
+        - LocalIp (str): NOT DEFINED
+        - MeterConfigurationFlags (str): NOT DEFINED
+        - MeterId (number): NOT DEFINED
+        - NumOfBands (number): NOT DEFINED
+        - PacketsInInput (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching switchMeterLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchMeterLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchMeterLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchMeterLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchMeterLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

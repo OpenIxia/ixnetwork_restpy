@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Router(Base):
     """The object represents a simulated router. In addition to some identifying options, it holds two lists for the router: (1) Route ranges-routes to be advertised by the simulated router. (2) Interfaces-router interface.
-    The Router class encapsulates a list of router resources that is be managed by the user.
+    The Router class encapsulates a list of router resources that are managed by the user.
     A list of resources can be retrieved from the server using the Router.find() method.
-    The list can be managed by the user by using the Router.add() and Router.remove() methods.
+    The list can be managed by using the Router.add() and Router.remove() methods.
     """
 
     __slots__ = ()
@@ -38,220 +38,220 @@ class Router(Base):
 
     @property
     def CustomTlv(self):
-        """An instance of the CustomTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_fc5cd7be1cd9bebc868031b7043f78a9.CustomTlv): An instance of the CustomTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_fc5cd7be1cd9bebc868031b7043f78a9.CustomTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_fc5cd7be1cd9bebc868031b7043f78a9 import CustomTlv
         return CustomTlv(self)
 
     @property
     def CustomTopology(self):
-        """An instance of the CustomTopology class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_e5f8f4334b4592b90b1d03ec8ea11746.CustomTopology): An instance of the CustomTopology class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_e5f8f4334b4592b90b1d03ec8ea11746.CustomTopology)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_e5f8f4334b4592b90b1d03ec8ea11746 import CustomTopology
         return CustomTopology(self)
 
     @property
     def DceMulticastIpv4GroupRange(self):
-        """An instance of the DceMulticastIpv4GroupRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_9225f6cc0cb31ae53401e8adfcc64155.DceMulticastIpv4GroupRange): An instance of the DceMulticastIpv4GroupRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_9225f6cc0cb31ae53401e8adfcc64155.DceMulticastIpv4GroupRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_9225f6cc0cb31ae53401e8adfcc64155 import DceMulticastIpv4GroupRange
         return DceMulticastIpv4GroupRange(self)
 
     @property
     def DceMulticastIpv6GroupRange(self):
-        """An instance of the DceMulticastIpv6GroupRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_251714d94a06a19e6e38ddc05e8475a4.DceMulticastIpv6GroupRange): An instance of the DceMulticastIpv6GroupRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_251714d94a06a19e6e38ddc05e8475a4.DceMulticastIpv6GroupRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_251714d94a06a19e6e38ddc05e8475a4 import DceMulticastIpv6GroupRange
         return DceMulticastIpv6GroupRange(self)
 
     @property
     def DceMulticastMacRange(self):
-        """An instance of the DceMulticastMacRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_472cef8478aac5290801515b2cba0c2d.DceMulticastMacRange): An instance of the DceMulticastMacRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_472cef8478aac5290801515b2cba0c2d.DceMulticastMacRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_472cef8478aac5290801515b2cba0c2d import DceMulticastMacRange
         return DceMulticastMacRange(self)
 
     @property
     def DceNetworkRange(self):
-        """An instance of the DceNetworkRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_d2a0faec88d1eed421402923d385687e.DceNetworkRange): An instance of the DceNetworkRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_d2a0faec88d1eed421402923d385687e.DceNetworkRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_d2a0faec88d1eed421402923d385687e import DceNetworkRange
         return DceNetworkRange(self)
 
     @property
     def DceTopologyRange(self):
-        """An instance of the DceTopologyRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e16c0275c021f88a166e917f0e90296d.DceTopologyRange): An instance of the DceTopologyRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e16c0275c021f88a166e917f0e90296d.DceTopologyRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e16c0275c021f88a166e917f0e90296d import DceTopologyRange
         return DceTopologyRange(self)
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_947805cf6862ac79b0781c9a2f0d7173.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_947805cf6862ac79b0781c9a2f0d7173.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_947805cf6862ac79b0781c9a2f0d7173 import Interface
         return Interface(self)
 
     @property
     def LearnedInformation(self):
-        """An instance of the LearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_2d1aa12bbd95afeaab89631108150c29.LearnedInformation): An instance of the LearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_2d1aa12bbd95afeaab89631108150c29.LearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_2d1aa12bbd95afeaab89631108150c29 import LearnedInformation
         return LearnedInformation(self)._select()
 
     @property
     def NetworkRange(self):
-        """An instance of the NetworkRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_9311d8d3cab28df19f2c57b4111a0af8.NetworkRange): An instance of the NetworkRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_9311d8d3cab28df19f2c57b4111a0af8.NetworkRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_9311d8d3cab28df19f2c57b4111a0af8 import NetworkRange
         return NetworkRange(self)
 
     @property
     def RouteRange(self):
-        """An instance of the RouteRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_5dc89fa06d8387fb2c0e6e846d218a82.RouteRange): An instance of the RouteRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_5dc89fa06d8387fb2c0e6e846d218a82.RouteRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_5dc89fa06d8387fb2c0e6e846d218a82 import RouteRange
         return RouteRange(self)
 
     @property
     def SpbNetworkRange(self):
-        """An instance of the SpbNetworkRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_eca3ebf0560e4e9e69e51fda669e5308.SpbNetworkRange): An instance of the SpbNetworkRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_eca3ebf0560e4e9e69e51fda669e5308.SpbNetworkRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_eca3ebf0560e4e9e69e51fda669e5308 import SpbNetworkRange
         return SpbNetworkRange(self)
 
     @property
     def SpbTopologyRange(self):
-        """An instance of the SpbTopologyRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_d75dd5311041fb24957d758685f27589.SpbTopologyRange): An instance of the SpbTopologyRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_d75dd5311041fb24957d758685f27589.SpbTopologyRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_d75dd5311041fb24957d758685f27589 import SpbTopologyRange
         return SpbTopologyRange(self)
 
     @property
     def TrillPingOam(self):
-        """An instance of the TrillPingOam class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_2c487aeba406c30569e69006ceea0600.TrillPingOam): An instance of the TrillPingOam class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_2c487aeba406c30569e69006ceea0600.TrillPingOam)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_2c487aeba406c30569e69006ceea0600 import TrillPingOam
         return TrillPingOam(self)._select()
 
     @property
     def TrillUnicastMacRange(self):
-        """An instance of the TrillUnicastMacRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_835c9625dbd0ffb4475c201bfbb536e5.TrillUnicastMacRange): An instance of the TrillUnicastMacRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_835c9625dbd0ffb4475c201bfbb536e5.TrillUnicastMacRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_835c9625dbd0ffb4475c201bfbb536e5 import TrillUnicastMacRange
         return TrillUnicastMacRange(self)
 
     @property
     def AreaAddressList(self):
-        """The list of area addresses to use.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of area addresses to use.
         """
         return self._get_attribute('areaAddressList')
     @AreaAddressList.setter
@@ -260,10 +260,10 @@ class Router(Base):
 
     @property
     def AreaAuthType(self):
-        """Sets up authentication for Level 1 LSPs.
-
-        Returns:
-            str(none|password|md5)
+        """
+        Returns
+        -------
+        - str(none | password | md5): Sets up authentication for Level 1 LSPs.
         """
         return self._get_attribute('areaAuthType')
     @AreaAuthType.setter
@@ -272,10 +272,10 @@ class Router(Base):
 
     @property
     def AreaReceivedPasswordList(self):
-        """If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
         """
         return self._get_attribute('areaReceivedPasswordList')
     @AreaReceivedPasswordList.setter
@@ -284,10 +284,10 @@ class Router(Base):
 
     @property
     def AreaTransmitPassword(self):
-        """If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
         """
         return self._get_attribute('areaTransmitPassword')
     @AreaTransmitPassword.setter
@@ -296,10 +296,10 @@ class Router(Base):
 
     @property
     def BroadcastRootPriority(self):
-        """DEPRECATED The value of the Broadcast Root Priority of a particular DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The value of the Broadcast Root Priority of a particular DCE ISIS router.
         """
         return self._get_attribute('broadcastRootPriority')
     @BroadcastRootPriority.setter
@@ -308,10 +308,10 @@ class Router(Base):
 
     @property
     def CapabilityRouterId(self):
-        """The IPv4 address format of the Capability Router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the Capability Router.
         """
         return self._get_attribute('capabilityRouterId')
     @CapabilityRouterId.setter
@@ -320,10 +320,10 @@ class Router(Base):
 
     @property
     def DeviceId(self):
-        """DEPRECATED This is a deprecated attribute in DCE ISIS mode.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: This is a deprecated attribute in DCE ISIS mode.
         """
         return self._get_attribute('deviceId')
     @DeviceId.setter
@@ -332,10 +332,10 @@ class Router(Base):
 
     @property
     def DevicePriority(self):
-        """DEPRECATED This is a deprecated attribute in DCE ISIS mode.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: This is a deprecated attribute in DCE ISIS mode.
         """
         return self._get_attribute('devicePriority')
     @DevicePriority.setter
@@ -344,10 +344,10 @@ class Router(Base):
 
     @property
     def DomainAuthType(self):
-        """Sets up authentication for Level 2 LSPs.
-
-        Returns:
-            str(none|password|md5)
+        """
+        Returns
+        -------
+        - str(none | password | md5): Sets up authentication for Level 2 LSPs.
         """
         return self._get_attribute('domainAuthType')
     @DomainAuthType.setter
@@ -356,10 +356,10 @@ class Router(Base):
 
     @property
     def DomainReceivedPasswordList(self):
-        """If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
         """
         return self._get_attribute('domainReceivedPasswordList')
     @DomainReceivedPasswordList.setter
@@ -368,10 +368,10 @@ class Router(Base):
 
     @property
     def DomainTransmitPassword(self):
-        """If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
         """
         return self._get_attribute('domainTransmitPassword')
     @DomainTransmitPassword.setter
@@ -380,10 +380,10 @@ class Router(Base):
 
     @property
     def EnableAttached(self):
-        """Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
         """
         return self._get_attribute('enableAttached')
     @EnableAttached.setter
@@ -392,10 +392,10 @@ class Router(Base):
 
     @property
     def EnableAutoLoopback(self):
-        """If enabled, loopback addresses are allowed in the generated routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, loopback addresses are allowed in the generated routes.
         """
         return self._get_attribute('enableAutoLoopback')
     @EnableAutoLoopback.setter
@@ -404,10 +404,10 @@ class Router(Base):
 
     @property
     def EnableDiscardLearnedLsps(self):
-        """If enabled, LSPs learned from this router's interfaces will be discarded.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, LSPs learned from this router's interfaces will be discarded.
         """
         return self._get_attribute('enableDiscardLearnedLsps')
     @EnableDiscardLearnedLsps.setter
@@ -416,10 +416,10 @@ class Router(Base):
 
     @property
     def EnableHelloPadding(self):
-        """If true, enables padding of hello messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables padding of hello messages.
         """
         return self._get_attribute('enableHelloPadding')
     @EnableHelloPadding.setter
@@ -428,10 +428,10 @@ class Router(Base):
 
     @property
     def EnableHitlessRestart(self):
-        """Hitless Restart is enabled for this emulated ISIS router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Hitless Restart is enabled for this emulated ISIS router.
         """
         return self._get_attribute('enableHitlessRestart')
     @EnableHitlessRestart.setter
@@ -440,10 +440,10 @@ class Router(Base):
 
     @property
     def EnableHostName(self):
-        """If true, the given dynamic host name is transmitted in all the packets sent from this router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
         return self._get_attribute('enableHostName')
     @EnableHostName.setter
@@ -452,10 +452,10 @@ class Router(Base):
 
     @property
     def EnableIgnoreMtPortCapability(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableIgnoreMtPortCapability')
     @EnableIgnoreMtPortCapability.setter
@@ -464,10 +464,10 @@ class Router(Base):
 
     @property
     def EnableIgnoreRecvMd5(self):
-        """MD5 authentication will be disabled for incoming/received packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: MD5 authentication will be disabled for incoming/received packets.
         """
         return self._get_attribute('enableIgnoreRecvMd5')
     @EnableIgnoreRecvMd5.setter
@@ -476,10 +476,10 @@ class Router(Base):
 
     @property
     def EnableMtIpv6(self):
-        """If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
         """
         return self._get_attribute('enableMtIpv6')
     @EnableMtIpv6.setter
@@ -488,10 +488,10 @@ class Router(Base):
 
     @property
     def EnableMtuProbe(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableMtuProbe')
     @EnableMtuProbe.setter
@@ -500,10 +500,10 @@ class Router(Base):
 
     @property
     def EnableMultiTopology(self):
-        """Enables more than one topology (distribution tree) corresponding to the given R bridge.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables more than one topology (distribution tree) corresponding to the given R bridge.
         """
         return self._get_attribute('enableMultiTopology')
     @EnableMultiTopology.setter
@@ -512,10 +512,10 @@ class Router(Base):
 
     @property
     def EnableOverloaded(self):
-        """If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
         """
         return self._get_attribute('enableOverloaded')
     @EnableOverloaded.setter
@@ -524,10 +524,10 @@ class Router(Base):
 
     @property
     def EnablePartitionRepair(self):
-        """Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
         """
         return self._get_attribute('enablePartitionRepair')
     @EnablePartitionRepair.setter
@@ -536,10 +536,10 @@ class Router(Base):
 
     @property
     def EnableTrillOam(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableTrillOam')
     @EnableTrillOam.setter
@@ -548,10 +548,10 @@ class Router(Base):
 
     @property
     def EnableWideMetric(self):
-        """Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
         """
         return self._get_attribute('enableWideMetric')
     @EnableWideMetric.setter
@@ -560,10 +560,10 @@ class Router(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the simulated router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the simulated router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -572,10 +572,10 @@ class Router(Base):
 
     @property
     def FTagValue(self):
-        """DEPRECATED This is a deprecated attribute in DCE ISIS mode.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: This is a deprecated attribute in DCE ISIS mode.
         """
         return self._get_attribute('fTagValue')
     @FTagValue.setter
@@ -584,10 +584,10 @@ class Router(Base):
 
     @property
     def FilterIpv4MulticastTlvs(self):
-        """If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
         """
         return self._get_attribute('filterIpv4MulticastTlvs')
     @FilterIpv4MulticastTlvs.setter
@@ -596,10 +596,10 @@ class Router(Base):
 
     @property
     def FilterIpv6MulticastTlvs(self):
-        """If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
         """
         return self._get_attribute('filterIpv6MulticastTlvs')
     @FilterIpv6MulticastTlvs.setter
@@ -608,10 +608,10 @@ class Router(Base):
 
     @property
     def FilterLearnedIpv4Prefixes(self):
-        """If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
         """
         return self._get_attribute('filterLearnedIpv4Prefixes')
     @FilterLearnedIpv4Prefixes.setter
@@ -620,10 +620,10 @@ class Router(Base):
 
     @property
     def FilterLearnedIpv6Prefixes(self):
-        """If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
         """
         return self._get_attribute('filterLearnedIpv6Prefixes')
     @FilterLearnedIpv6Prefixes.setter
@@ -632,10 +632,10 @@ class Router(Base):
 
     @property
     def FilterLearnedRbridges(self):
-        """If true, retrieves RBridges learned information in the DCE ISIS mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves RBridges learned information in the DCE ISIS mode.
         """
         return self._get_attribute('filterLearnedRbridges')
     @FilterLearnedRbridges.setter
@@ -644,10 +644,10 @@ class Router(Base):
 
     @property
     def FilterLearnedSpbRbridges(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('filterLearnedSpbRbridges')
     @FilterLearnedSpbRbridges.setter
@@ -656,10 +656,10 @@ class Router(Base):
 
     @property
     def FilterLearnedTrillMacUnicast(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('filterLearnedTrillMacUnicast')
     @FilterLearnedTrillMacUnicast.setter
@@ -668,10 +668,10 @@ class Router(Base):
 
     @property
     def FilterMacMulticastTlvs(self):
-        """If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
         """
         return self._get_attribute('filterMacMulticastTlvs')
     @FilterMacMulticastTlvs.setter
@@ -680,10 +680,10 @@ class Router(Base):
 
     @property
     def HostName(self):
-        """Allows to add a host name to this router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Allows to add a host name to this router.
         """
         return self._get_attribute('hostName')
     @HostName.setter
@@ -692,10 +692,10 @@ class Router(Base):
 
     @property
     def InterLspMgroupPduBurstGap(self):
-        """Indicates the gap between each LSP MGROUP-PDUs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the gap between each LSP MGROUP-PDUs.
         """
         return self._get_attribute('interLspMgroupPduBurstGap')
     @InterLspMgroupPduBurstGap.setter
@@ -704,10 +704,10 @@ class Router(Base):
 
     @property
     def LspLifeTime(self):
-        """(in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
         """
         return self._get_attribute('lspLifeTime')
     @LspLifeTime.setter
@@ -716,10 +716,10 @@ class Router(Base):
 
     @property
     def LspMaxSize(self):
-        """(in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
         """
         return self._get_attribute('lspMaxSize')
     @LspMaxSize.setter
@@ -728,10 +728,10 @@ class Router(Base):
 
     @property
     def LspMgroupPduMinTransmissionInterval(self):
-        """Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
         """
         return self._get_attribute('lspMgroupPduMinTransmissionInterval')
     @LspMgroupPduMinTransmissionInterval.setter
@@ -740,10 +740,10 @@ class Router(Base):
 
     @property
     def LspRefreshRate(self):
-        """(in sec) The rate at which LSPs are resent. The default value is 900 sec.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (in sec) The rate at which LSPs are resent. The default value is 900 sec.
         """
         return self._get_attribute('lspRefreshRate')
     @LspRefreshRate.setter
@@ -752,10 +752,10 @@ class Router(Base):
 
     @property
     def MaxAreaAddresses(self):
-        """The number of area addresses permitted for this IS area.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of area addresses permitted for this IS area.
         """
         return self._get_attribute('maxAreaAddresses')
     @MaxAreaAddresses.setter
@@ -764,10 +764,10 @@ class Router(Base):
 
     @property
     def MaxLspMgroupPdusPerBurst(self):
-        """Indicates the maximum number of LSP MGROUP-PDUs for each burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum number of LSP MGROUP-PDUs for each burst.
         """
         return self._get_attribute('maxLspMgroupPdusPerBurst')
     @MaxLspMgroupPdusPerBurst.setter
@@ -776,10 +776,10 @@ class Router(Base):
 
     @property
     def NumberOfMtuProbes(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numberOfMtuProbes')
     @NumberOfMtuProbes.setter
@@ -788,10 +788,10 @@ class Router(Base):
 
     @property
     def NumberOfMultiDestinationTrees(self):
-        """DEPRECATED The number of Multi-Destination Trees for the emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The number of Multi-Destination Trees for the emulated DCE ISIS router.
         """
         return self._get_attribute('numberOfMultiDestinationTrees')
     @NumberOfMultiDestinationTrees.setter
@@ -800,10 +800,10 @@ class Router(Base):
 
     @property
     def OriginatingLspBufSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('originatingLspBufSize')
     @OriginatingLspBufSize.setter
@@ -812,10 +812,10 @@ class Router(Base):
 
     @property
     def PsnpInterval(self):
-        """The PSPN Interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The PSPN Interval.
         """
         return self._get_attribute('psnpInterval')
     @PsnpInterval.setter
@@ -824,10 +824,10 @@ class Router(Base):
 
     @property
     def RestartMode(self):
-        """If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
-
-        Returns:
-            str(normalRouter|restartingRouter|startingRouter|helperRouter)
+        """
+        Returns
+        -------
+        - str(normalRouter | restartingRouter | startingRouter | helperRouter): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
         """
         return self._get_attribute('restartMode')
     @RestartMode.setter
@@ -836,10 +836,10 @@ class Router(Base):
 
     @property
     def RestartTime(self):
-        """Enter the restart time in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Enter the restart time in seconds.
         """
         return self._get_attribute('restartTime')
     @RestartTime.setter
@@ -848,10 +848,10 @@ class Router(Base):
 
     @property
     def RestartVersion(self):
-        """If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
-
-        Returns:
-            str(version3|version4)
+        """
+        Returns
+        -------
+        - str(version3 | version4): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
         """
         return self._get_attribute('restartVersion')
     @RestartVersion.setter
@@ -860,10 +860,10 @@ class Router(Base):
 
     @property
     def StartFtagValue(self):
-        """DEPRECATED The starting FTAG value of the emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The starting FTAG value of the emulated DCE ISIS router.
         """
         return self._get_attribute('startFtagValue')
     @StartFtagValue.setter
@@ -872,10 +872,10 @@ class Router(Base):
 
     @property
     def SwitchId(self):
-        """DEPRECATED The Switch ID of the emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The Switch ID of the emulated DCE ISIS router.
         """
         return self._get_attribute('switchId')
     @SwitchId.setter
@@ -884,10 +884,10 @@ class Router(Base):
 
     @property
     def SwitchIdPriority(self):
-        """DEPRECATED The Switch ID priority of the emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The Switch ID priority of the emulated DCE ISIS router.
         """
         return self._get_attribute('switchIdPriority')
     @SwitchIdPriority.setter
@@ -896,10 +896,10 @@ class Router(Base):
 
     @property
     def SystemId(self):
-        """The neighbor's system ID.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The neighbor's system ID.
         """
         return self._get_attribute('systemId')
     @SystemId.setter
@@ -908,10 +908,10 @@ class Router(Base):
 
     @property
     def TeEnable(self):
-        """Enables traffic engineering (TE) on this emulated ISIS router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables traffic engineering (TE) on this emulated ISIS router.
         """
         return self._get_attribute('teEnable')
     @TeEnable.setter
@@ -920,10 +920,10 @@ class Router(Base):
 
     @property
     def TeRouterId(self):
-        """The ID of the simulated router, expressed as an IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The ID of the simulated router, expressed as an IP address.
         """
         return self._get_attribute('teRouterId')
     @TeRouterId.setter
@@ -932,10 +932,10 @@ class Router(Base):
 
     @property
     def TrafficGroupId(self):
-        """Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -943,239 +943,252 @@ class Router(Base):
         self._set_attribute('trafficGroupId', value)
 
     def update(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
-        """Updates a child instance of router on the server.
+        """Updates router resource on the server.
 
-        Args:
-            AreaAddressList (list(str)): The list of area addresses to use.
-            AreaAuthType (str(none|password|md5)): Sets up authentication for Level 1 LSPs.
-            AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
-            CapabilityRouterId (str): The IPv4 address format of the Capability Router.
-            DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
-            DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
-            DomainAuthType (str(none|password|md5)): Sets up authentication for Level 2 LSPs.
-            DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
-            EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
-            EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
-            EnableHelloPadding (bool): If true, enables padding of hello messages.
-            EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableIgnoreMtPortCapability (bool): NOT DEFINED
-            EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
-            EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
-            EnableMtuProbe (bool): NOT DEFINED
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
-            EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
-            EnableTrillOam (bool): NOT DEFINED
-            EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
-            Enabled (bool): Enables or disables the simulated router.
-            FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
-            FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
-            FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
-            FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
-            FilterLearnedSpbRbridges (bool): NOT DEFINED
-            FilterLearnedTrillMacUnicast (bool): NOT DEFINED
-            FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
-            HostName (str): Allows to add a host name to this router.
-            InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
-            LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
-            LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
-            LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
-            LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
-            MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
-            MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
-            NumberOfMtuProbes (number): NOT DEFINED
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
-            OriginatingLspBufSize (number): NOT DEFINED
-            PsnpInterval (number): The PSPN Interval.
-            RestartMode (str(normalRouter|restartingRouter|startingRouter|helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
-            RestartTime (number): Enter the restart time in seconds.
-            RestartVersion (str(version3|version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
-            StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
-            SwitchId (number): The Switch ID of the emulated DCE ISIS router.
-            SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
-            SystemId (str): The neighbor's system ID.
-            TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
-            TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        Args
+        ----
+        - AreaAddressList (list(str)): The list of area addresses to use.
+        - AreaAuthType (str(none | password | md5)): Sets up authentication for Level 1 LSPs.
+        - AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
+        - CapabilityRouterId (str): The IPv4 address format of the Capability Router.
+        - DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
+        - DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
+        - DomainAuthType (str(none | password | md5)): Sets up authentication for Level 2 LSPs.
+        - DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
+        - EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
+        - EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
+        - EnableHelloPadding (bool): If true, enables padding of hello messages.
+        - EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableIgnoreMtPortCapability (bool): NOT DEFINED
+        - EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
+        - EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
+        - EnableMtuProbe (bool): NOT DEFINED
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
+        - EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
+        - EnableTrillOam (bool): NOT DEFINED
+        - EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
+        - Enabled (bool): Enables or disables the simulated router.
+        - FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
+        - FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
+        - FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
+        - FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
+        - FilterLearnedSpbRbridges (bool): NOT DEFINED
+        - FilterLearnedTrillMacUnicast (bool): NOT DEFINED
+        - FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
+        - HostName (str): Allows to add a host name to this router.
+        - InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
+        - LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
+        - LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
+        - LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
+        - LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
+        - MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
+        - MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
+        - NumberOfMtuProbes (number): NOT DEFINED
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
+        - OriginatingLspBufSize (number): NOT DEFINED
+        - PsnpInterval (number): The PSPN Interval.
+        - RestartMode (str(normalRouter | restartingRouter | startingRouter | helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
+        - RestartTime (number): Enter the restart time in seconds.
+        - RestartVersion (str(version3 | version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
+        - StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
+        - SwitchId (number): The Switch ID of the emulated DCE ISIS router.
+        - SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
+        - SystemId (str): The neighbor's system ID.
+        - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
+        - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
-        """Adds a new router node on the server and retrieves it in this instance.
+        """Adds a new router resource on the server and adds it to the container.
 
-        Args:
-            AreaAddressList (list(str)): The list of area addresses to use.
-            AreaAuthType (str(none|password|md5)): Sets up authentication for Level 1 LSPs.
-            AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
-            CapabilityRouterId (str): The IPv4 address format of the Capability Router.
-            DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
-            DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
-            DomainAuthType (str(none|password|md5)): Sets up authentication for Level 2 LSPs.
-            DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
-            EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
-            EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
-            EnableHelloPadding (bool): If true, enables padding of hello messages.
-            EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableIgnoreMtPortCapability (bool): NOT DEFINED
-            EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
-            EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
-            EnableMtuProbe (bool): NOT DEFINED
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
-            EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
-            EnableTrillOam (bool): NOT DEFINED
-            EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
-            Enabled (bool): Enables or disables the simulated router.
-            FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
-            FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
-            FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
-            FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
-            FilterLearnedSpbRbridges (bool): NOT DEFINED
-            FilterLearnedTrillMacUnicast (bool): NOT DEFINED
-            FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
-            HostName (str): Allows to add a host name to this router.
-            InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
-            LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
-            LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
-            LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
-            LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
-            MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
-            MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
-            NumberOfMtuProbes (number): NOT DEFINED
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
-            OriginatingLspBufSize (number): NOT DEFINED
-            PsnpInterval (number): The PSPN Interval.
-            RestartMode (str(normalRouter|restartingRouter|startingRouter|helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
-            RestartTime (number): Enter the restart time in seconds.
-            RestartVersion (str(version3|version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
-            StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
-            SwitchId (number): The Switch ID of the emulated DCE ISIS router.
-            SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
-            SystemId (str): The neighbor's system ID.
-            TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
-            TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        Args
+        ----
+        - AreaAddressList (list(str)): The list of area addresses to use.
+        - AreaAuthType (str(none | password | md5)): Sets up authentication for Level 1 LSPs.
+        - AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
+        - CapabilityRouterId (str): The IPv4 address format of the Capability Router.
+        - DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
+        - DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
+        - DomainAuthType (str(none | password | md5)): Sets up authentication for Level 2 LSPs.
+        - DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
+        - EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
+        - EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
+        - EnableHelloPadding (bool): If true, enables padding of hello messages.
+        - EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableIgnoreMtPortCapability (bool): NOT DEFINED
+        - EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
+        - EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
+        - EnableMtuProbe (bool): NOT DEFINED
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
+        - EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
+        - EnableTrillOam (bool): NOT DEFINED
+        - EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
+        - Enabled (bool): Enables or disables the simulated router.
+        - FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
+        - FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
+        - FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
+        - FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
+        - FilterLearnedSpbRbridges (bool): NOT DEFINED
+        - FilterLearnedTrillMacUnicast (bool): NOT DEFINED
+        - FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
+        - HostName (str): Allows to add a host name to this router.
+        - InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
+        - LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
+        - LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
+        - LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
+        - LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
+        - MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
+        - MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
+        - NumberOfMtuProbes (number): NOT DEFINED
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
+        - OriginatingLspBufSize (number): NOT DEFINED
+        - PsnpInterval (number): The PSPN Interval.
+        - RestartMode (str(normalRouter | restartingRouter | startingRouter | helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
+        - RestartTime (number): Enter the restart time in seconds.
+        - RestartVersion (str(version3 | version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
+        - StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
+        - SwitchId (number): The Switch ID of the emulated DCE ISIS router.
+        - SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
+        - SystemId (str): The neighbor's system ID.
+        - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
+        - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
-        Returns:
-            self: This instance with all currently retrieved router data using find and the newly added router data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved router resources using find and the newly added router resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the router data in this instance from server.
+        """Deletes all the contained router resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
-        """Finds and retrieves router data from the server.
+        """Finds and retrieves router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve router data from the server.
-        By default the find method takes no parameters and will retrieve all router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all router resources from the server.
 
-        Args:
-            AreaAddressList (list(str)): The list of area addresses to use.
-            AreaAuthType (str(none|password|md5)): Sets up authentication for Level 1 LSPs.
-            AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
-            CapabilityRouterId (str): The IPv4 address format of the Capability Router.
-            DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
-            DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
-            DomainAuthType (str(none|password|md5)): Sets up authentication for Level 2 LSPs.
-            DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
-            DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
-            EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
-            EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
-            EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
-            EnableHelloPadding (bool): If true, enables padding of hello messages.
-            EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableIgnoreMtPortCapability (bool): NOT DEFINED
-            EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
-            EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
-            EnableMtuProbe (bool): NOT DEFINED
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
-            EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
-            EnableTrillOam (bool): NOT DEFINED
-            EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
-            Enabled (bool): Enables or disables the simulated router.
-            FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
-            FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
-            FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
-            FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
-            FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
-            FilterLearnedSpbRbridges (bool): NOT DEFINED
-            FilterLearnedTrillMacUnicast (bool): NOT DEFINED
-            FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
-            HostName (str): Allows to add a host name to this router.
-            InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
-            LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
-            LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
-            LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
-            LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
-            MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
-            MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
-            NumberOfMtuProbes (number): NOT DEFINED
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
-            OriginatingLspBufSize (number): NOT DEFINED
-            PsnpInterval (number): The PSPN Interval.
-            RestartMode (str(normalRouter|restartingRouter|startingRouter|helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
-            RestartTime (number): Enter the restart time in seconds.
-            RestartVersion (str(version3|version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
-            StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
-            SwitchId (number): The Switch ID of the emulated DCE ISIS router.
-            SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
-            SystemId (str): The neighbor's system ID.
-            TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
-            TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        Args
+        ----
+        - AreaAddressList (list(str)): The list of area addresses to use.
+        - AreaAuthType (str(none | password | md5)): Sets up authentication for Level 1 LSPs.
+        - AreaReceivedPasswordList (list(str)): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - AreaTransmitPassword (str): If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - BroadcastRootPriority (number): The value of the Broadcast Root Priority of a particular DCE ISIS router.
+        - CapabilityRouterId (str): The IPv4 address format of the Capability Router.
+        - DeviceId (number): This is a deprecated attribute in DCE ISIS mode.
+        - DevicePriority (number): This is a deprecated attribute in DCE ISIS mode.
+        - DomainAuthType (str(none | password | md5)): Sets up authentication for Level 2 LSPs.
+        - DomainReceivedPasswordList (list(str)): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+        - DomainTransmitPassword (str): If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+        - EnableAttached (bool): Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
+        - EnableAutoLoopback (bool): If enabled, loopback addresses are allowed in the generated routes.
+        - EnableDiscardLearnedLsps (bool): If enabled, LSPs learned from this router's interfaces will be discarded.
+        - EnableHelloPadding (bool): If true, enables padding of hello messages.
+        - EnableHitlessRestart (bool): Hitless Restart is enabled for this emulated ISIS router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableIgnoreMtPortCapability (bool): NOT DEFINED
+        - EnableIgnoreRecvMd5 (bool): MD5 authentication will be disabled for incoming/received packets.
+        - EnableMtIpv6 (bool): If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
+        - EnableMtuProbe (bool): NOT DEFINED
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EnableOverloaded (bool): If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
+        - EnablePartitionRepair (bool): Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
+        - EnableTrillOam (bool): NOT DEFINED
+        - EnableWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
+        - Enabled (bool): Enables or disables the simulated router.
+        - FTagValue (number): This is a deprecated attribute in DCE ISIS mode.
+        - FilterIpv4MulticastTlvs (bool): If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
+        - FilterIpv6MulticastTlvs (bool): If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
+        - FilterLearnedIpv4Prefixes (bool): If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedIpv6Prefixes (bool): If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
+        - FilterLearnedRbridges (bool): If true, retrieves RBridges learned information in the DCE ISIS mode.
+        - FilterLearnedSpbRbridges (bool): NOT DEFINED
+        - FilterLearnedTrillMacUnicast (bool): NOT DEFINED
+        - FilterMacMulticastTlvs (bool): If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
+        - HostName (str): Allows to add a host name to this router.
+        - InterLspMgroupPduBurstGap (number): Indicates the gap between each LSP MGROUP-PDUs.
+        - LspLifeTime (number): (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
+        - LspMaxSize (number): (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
+        - LspMgroupPduMinTransmissionInterval (number): Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
+        - LspRefreshRate (number): (in sec) The rate at which LSPs are resent. The default value is 900 sec.
+        - MaxAreaAddresses (number): The number of area addresses permitted for this IS area.
+        - MaxLspMgroupPdusPerBurst (number): Indicates the maximum number of LSP MGROUP-PDUs for each burst.
+        - NumberOfMtuProbes (number): NOT DEFINED
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the emulated DCE ISIS router.
+        - OriginatingLspBufSize (number): NOT DEFINED
+        - PsnpInterval (number): The PSPN Interval.
+        - RestartMode (str(normalRouter | restartingRouter | startingRouter | helperRouter)): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
+        - RestartTime (number): Enter the restart time in seconds.
+        - RestartVersion (str(version3 | version4)): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
+        - StartFtagValue (number): The starting FTAG value of the emulated DCE ISIS router.
+        - SwitchId (number): The Switch ID of the emulated DCE ISIS router.
+        - SwitchIdPriority (number): The Switch ID priority of the emulated DCE ISIS router.
+        - SystemId (str): The neighbor's system ID.
+        - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
+        - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
-        Returns:
-            self: This instance with matching router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -1184,12 +1197,10 @@ class Router(Base):
 
         This option refreshes the learned information of ISIS router.
 
-            Returns:
-                bool: Boolean.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshLearnedInformation', payload=payload, response_object=None)
@@ -1199,12 +1210,10 @@ class Router(Base):
 
         This option will send trill OAM ping.
 
-            Returns:
-                bool: Boolean.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendTrillOamPing', payload=payload, response_object=None)

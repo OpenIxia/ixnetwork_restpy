@@ -36,10 +36,10 @@ class SupportedFeatures(Base):
 
     @property
     def HundredGbFd(self):
-        """If selected, 100 GB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 100 GB full-duplex rate support is available.
         """
         return self._get_attribute('100GbFd')
     @HundredGbFd.setter
@@ -48,10 +48,10 @@ class SupportedFeatures(Base):
 
     @property
     def HundredMbFd(self):
-        """If selected, 100 MB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 100 MB full-duplex rate support is available.
         """
         return self._get_attribute('100MbFd')
     @HundredMbFd.setter
@@ -60,10 +60,10 @@ class SupportedFeatures(Base):
 
     @property
     def HundredMbHd(self):
-        """If selected, 100 MB half-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 100 MB half-duplex rate support is available.
         """
         return self._get_attribute('100MbHd')
     @HundredMbHd.setter
@@ -72,10 +72,10 @@ class SupportedFeatures(Base):
 
     @property
     def TenGbFd(self):
-        """If selected, 10 GB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 10 GB full-duplex rate support is available.
         """
         return self._get_attribute('10GbFd')
     @TenGbFd.setter
@@ -84,10 +84,10 @@ class SupportedFeatures(Base):
 
     @property
     def TenMbFd(self):
-        """If selected, 10 MB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 10 MB full-duplex rate support is available.
         """
         return self._get_attribute('10MbFd')
     @TenMbFd.setter
@@ -96,10 +96,10 @@ class SupportedFeatures(Base):
 
     @property
     def TenMbHd(self):
-        """If selected, 10 MB half-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 10 MB half-duplex rate support is available.
         """
         return self._get_attribute('10MbHd')
     @TenMbHd.setter
@@ -108,10 +108,10 @@ class SupportedFeatures(Base):
 
     @property
     def OneGbFd(self):
-        """If selected, 1 GB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 1 GB full-duplex rate support is available.
         """
         return self._get_attribute('1GbFd')
     @OneGbFd.setter
@@ -120,10 +120,10 @@ class SupportedFeatures(Base):
 
     @property
     def OneGbHd(self):
-        """If selected, 1 GB half-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 1 GB half-duplex rate support is available.
         """
         return self._get_attribute('1GbHd')
     @OneGbHd.setter
@@ -132,10 +132,10 @@ class SupportedFeatures(Base):
 
     @property
     def OneTbFd(self):
-        """If selected, 1 TB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 1 TB full-duplex rate support is available.
         """
         return self._get_attribute('1TbFd')
     @OneTbFd.setter
@@ -144,10 +144,10 @@ class SupportedFeatures(Base):
 
     @property
     def FortyGbFd(self):
-        """If selected, 40 GB full-duplex rate support is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, 40 GB full-duplex rate support is available.
         """
         return self._get_attribute('40GbFd')
     @FortyGbFd.setter
@@ -156,10 +156,10 @@ class SupportedFeatures(Base):
 
     @property
     def AsymmetricPause(self):
-        """If selected, asymmetric pause of ports feature is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, asymmetric pause of ports feature is available.
         """
         return self._get_attribute('asymmetricPause')
     @AsymmetricPause.setter
@@ -168,10 +168,10 @@ class SupportedFeatures(Base):
 
     @property
     def AutoNegotiation(self):
-        """If selected, auto negotiation of ports is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, auto negotiation of ports is available.
         """
         return self._get_attribute('autoNegotiation')
     @AutoNegotiation.setter
@@ -180,10 +180,10 @@ class SupportedFeatures(Base):
 
     @property
     def CopperMedium(self):
-        """If selected, copper medium link type is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, copper medium link type is available.
         """
         return self._get_attribute('copperMedium')
     @CopperMedium.setter
@@ -192,10 +192,10 @@ class SupportedFeatures(Base):
 
     @property
     def FiberMedium(self):
-        """If selected, fiber medium link type is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, fiber medium link type is available.
         """
         return self._get_attribute('fiberMedium')
     @FiberMedium.setter
@@ -204,10 +204,10 @@ class SupportedFeatures(Base):
 
     @property
     def OtherRate(self):
-        """If true, supports other rate, not in the list.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, supports other rate, not in the list.
         """
         return self._get_attribute('otherRate')
     @OtherRate.setter
@@ -216,10 +216,10 @@ class SupportedFeatures(Base):
 
     @property
     def Pause(self):
-        """If selected, pause ports feature is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, pause ports feature is available.
         """
         return self._get_attribute('pause')
     @Pause.setter
@@ -227,27 +227,29 @@ class SupportedFeatures(Base):
         self._set_attribute('pause', value)
 
     def update(self, HundredGbFd=None, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, OneTbFd=None, FortyGbFd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, OtherRate=None, Pause=None):
-        """Updates a child instance of supportedFeatures on the server.
+        """Updates supportedFeatures resource on the server.
 
-        Args:
-            HundredGbFd (bool): If selected, 100 GB full-duplex rate support is available.
-            HundredMbFd (bool): If selected, 100 MB full-duplex rate support is available.
-            HundredMbHd (bool): If selected, 100 MB half-duplex rate support is available.
-            TenGbFd (bool): If selected, 10 GB full-duplex rate support is available.
-            TenMbFd (bool): If selected, 10 MB full-duplex rate support is available.
-            TenMbHd (bool): If selected, 10 MB half-duplex rate support is available.
-            OneGbFd (bool): If selected, 1 GB full-duplex rate support is available.
-            OneGbHd (bool): If selected, 1 GB half-duplex rate support is available.
-            OneTbFd (bool): If selected, 1 TB full-duplex rate support is available.
-            FortyGbFd (bool): If selected, 40 GB full-duplex rate support is available.
-            AsymmetricPause (bool): If selected, asymmetric pause of ports feature is available.
-            AutoNegotiation (bool): If selected, auto negotiation of ports is available.
-            CopperMedium (bool): If selected, copper medium link type is available.
-            FiberMedium (bool): If selected, fiber medium link type is available.
-            OtherRate (bool): If true, supports other rate, not in the list.
-            Pause (bool): If selected, pause ports feature is available.
+        Args
+        ----
+        - HundredGbFd (bool): If selected, 100 GB full-duplex rate support is available.
+        - HundredMbFd (bool): If selected, 100 MB full-duplex rate support is available.
+        - HundredMbHd (bool): If selected, 100 MB half-duplex rate support is available.
+        - TenGbFd (bool): If selected, 10 GB full-duplex rate support is available.
+        - TenMbFd (bool): If selected, 10 MB full-duplex rate support is available.
+        - TenMbHd (bool): If selected, 10 MB half-duplex rate support is available.
+        - OneGbFd (bool): If selected, 1 GB full-duplex rate support is available.
+        - OneGbHd (bool): If selected, 1 GB half-duplex rate support is available.
+        - OneTbFd (bool): If selected, 1 TB full-duplex rate support is available.
+        - FortyGbFd (bool): If selected, 40 GB full-duplex rate support is available.
+        - AsymmetricPause (bool): If selected, asymmetric pause of ports feature is available.
+        - AutoNegotiation (bool): If selected, auto negotiation of ports is available.
+        - CopperMedium (bool): If selected, copper medium link type is available.
+        - FiberMedium (bool): If selected, fiber medium link type is available.
+        - OtherRate (bool): If true, supports other rate, not in the list.
+        - Pause (bool): If selected, pause ports feature is available.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

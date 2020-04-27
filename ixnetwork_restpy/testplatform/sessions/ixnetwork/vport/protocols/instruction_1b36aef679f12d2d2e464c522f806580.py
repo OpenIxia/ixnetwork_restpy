@@ -36,38 +36,38 @@ class Instruction(Base):
 
     @property
     def InstructionType(self):
-        """An instance of the InstructionType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontype_e2e292780df3696df03270f481644fc2.InstructionType): An instance of the InstructionType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontype_e2e292780df3696df03270f481644fc2.InstructionType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontype_e2e292780df3696df03270f481644fc2 import InstructionType
         return InstructionType(self)._select()
 
     @property
     def InstructionTypeMiss(self):
-        """An instance of the InstructionTypeMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontypemiss_2ba351f9fe858ac799cf86b09244f8e6.InstructionTypeMiss): An instance of the InstructionTypeMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontypemiss_2ba351f9fe858ac799cf86b09244f8e6.InstructionTypeMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontypemiss_2ba351f9fe858ac799cf86b09244f8e6 import InstructionTypeMiss
         return InstructionTypeMiss(self)._select()
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -76,10 +76,10 @@ class Instruction(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -88,10 +88,10 @@ class Instruction(Base):
 
     @property
     def ExperimenterDataLengthMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLengthMiss')
     @ExperimenterDataLengthMiss.setter
@@ -100,10 +100,10 @@ class Instruction(Base):
 
     @property
     def ExperimenterDataMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterDataMiss')
     @ExperimenterDataMiss.setter
@@ -112,10 +112,10 @@ class Instruction(Base):
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -124,10 +124,10 @@ class Instruction(Base):
 
     @property
     def ExperimenterIdMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterIdMiss')
     @ExperimenterIdMiss.setter
@@ -135,17 +135,19 @@ class Instruction(Base):
         self._set_attribute('experimenterIdMiss', value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
-        """Updates a child instance of instruction on the server.
+        """Updates instruction resource on the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterDataLengthMiss (number): NOT DEFINED
-            ExperimenterDataMiss (str): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            ExperimenterIdMiss (number): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterDataLengthMiss (number): NOT DEFINED
+        - ExperimenterDataMiss (str): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - ExperimenterIdMiss (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

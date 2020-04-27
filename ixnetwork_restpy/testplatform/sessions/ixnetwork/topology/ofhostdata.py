@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OfHostData(Base):
     """Contains number of host ports per switch and number of hosts per host port
-    The OfHostData class encapsulates a list of ofHostData resources that is be managed by the user.
+    The OfHostData class encapsulates a list of ofHostData resources that are managed by the user.
     A list of resources can be retrieved from the server using the OfHostData.find() method.
-    The list can be managed by the user by using the OfHostData.add() and OfHostData.remove() methods.
+    The list can be managed by using the OfHostData.add() and OfHostData.remove() methods.
     """
 
     __slots__ = ()
@@ -38,28 +38,28 @@ class OfHostData(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -68,10 +68,10 @@ class OfHostData(Base):
 
     @property
     def NumberOfHostPorts(self):
-        """number of Host Ports per OF Switch.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: number of Host Ports per OF Switch.
         """
         return self._get_attribute('numberOfHostPorts')
     @NumberOfHostPorts.setter
@@ -80,10 +80,10 @@ class OfHostData(Base):
 
     @property
     def NumberOfHostsPerPort(self):
-        """Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
         """
         return self._get_attribute('numberOfHostsPerPort')
     @NumberOfHostsPerPort.setter
@@ -92,87 +92,101 @@ class OfHostData(Base):
 
     @property
     def ParentSwitchPortName(self):
-        """Description of the parent Switch Port.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('parentSwitchPortName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Description of the parent Switch Port.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('parentSwitchPortName'))
 
     def update(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
-        """Updates a child instance of ofHostData on the server.
+        """Updates ofHostData resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfHostPorts (number): number of Host Ports per OF Switch.
-            NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfHostPorts (number): number of Host Ports per OF Switch.
+        - NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
-        """Adds a new ofHostData node on the server and retrieves it in this instance.
+        """Adds a new ofHostData resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfHostPorts (number): number of Host Ports per OF Switch.
-            NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfHostPorts (number): number of Host Ports per OF Switch.
+        - NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
 
-        Returns:
-            self: This instance with all currently retrieved ofHostData data using find and the newly added ofHostData data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofHostData resources using find and the newly added ofHostData resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ofHostData data in this instance from server.
+        """Deletes all the contained ofHostData resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
-        """Finds and retrieves ofHostData data from the server.
+        """Finds and retrieves ofHostData resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ofHostData data from the server.
-        By default the find method takes no parameters and will retrieve all ofHostData data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofHostData resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ofHostData resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfHostPorts (number): number of Host Ports per OF Switch.
-            NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfHostPorts (number): number of Host Ports per OF Switch.
+        - NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
 
-        Returns:
-            self: This instance with matching ofHostData data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ofHostData resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ofHostData data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ofHostData data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ofHostData resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -181,15 +195,18 @@ class OfHostData(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ParentSwitchPortName (str): optional regex of parentSwitchPortName
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ParentSwitchPortName (str): optional regex of parentSwitchPortName
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -198,23 +215,22 @@ class OfHostData(Base):
 
         Send an Host Packet (ARP/PING/CUSTOM) from the given device instance to the given destination instance.
 
-        sendPacketWithTraverseLI(Arg2:list, Arg3:number, Arg4:enum, Arg5:number, Arg6:number, Arg7:bool, Arg8:number, Arg9:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IP addresses are used as the source of the request messages.
-                args[1] is Arg3 (number): Destination Host index.
-                args[2] is Arg4 (str(aRP|pING|custom)): Packet Type.
-                args[3] is Arg5 (number): Encapsulation index.
-                args[4] is Arg6 (number): Response Timeout.
-                args[5] is Arg7 (bool): Periodic.
-                args[6] is Arg8 (number): Periodic Interval.
-                args[7] is Arg9 (number): Number of Iteration.
+        sendPacketWithTraverseLI(Arg2=list, Arg3=number, Arg4=enum, Arg5=number, Arg6=number, Arg7=bool, Arg8=number, Arg9=number)list
+        ------------------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IP addresses are used as the source of the request messages.
+        - Arg3 (number): Destination Host index.
+        - Arg4 (str(aRP | pING | custom)): Packet Type.
+        - Arg5 (number): Encapsulation index.
+        - Arg6 (number): Response Timeout.
+        - Arg7 (bool): Periodic.
+        - Arg8 (number): Periodic Interval.
+        - Arg9 (number): Number of Iteration.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

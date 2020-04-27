@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbTopologyRange(Base):
     """Sets the SPB Topology of a particular DCE ISIS Topology Range
-    The SpbTopologyRange class encapsulates a list of spbTopologyRange resources that is be managed by the user.
+    The SpbTopologyRange class encapsulates a list of spbTopologyRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbTopologyRange.find() method.
-    The list can be managed by the user by using the SpbTopologyRange.add() and SpbTopologyRange.remove() methods.
+    The list can be managed by using the SpbTopologyRange.add() and SpbTopologyRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SpbTopologyRange(Base):
 
     @property
     def SpbBaseVidRange(self):
-        """An instance of the SpbBaseVidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_7921e78c56288841d8b0247728edf677.SpbBaseVidRange): An instance of the SpbBaseVidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_7921e78c56288841d8b0247728edf677.SpbBaseVidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_7921e78c56288841d8b0247728edf677 import SpbBaseVidRange
         return SpbBaseVidRange(self)
 
     @property
     def AuxMcidConfigName(self):
-        """The auxiliary MCID configuration name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The auxiliary MCID configuration name.
         """
         return self._get_attribute('auxMcidConfigName')
     @AuxMcidConfigName.setter
@@ -64,10 +64,10 @@ class SpbTopologyRange(Base):
 
     @property
     def AuxMcidSignature(self):
-        """The auxiliary MCID signature.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The auxiliary MCID signature.
         """
         return self._get_attribute('auxMcidSignature')
     @AuxMcidSignature.setter
@@ -76,10 +76,10 @@ class SpbTopologyRange(Base):
 
     @property
     def BridgePriority(self):
-        """The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
         """
         return self._get_attribute('bridgePriority')
     @BridgePriority.setter
@@ -88,10 +88,10 @@ class SpbTopologyRange(Base):
 
     @property
     def CistExternalRootCost(self):
-        """The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
         """
         return self._get_attribute('cistExternalRootCost')
     @CistExternalRootCost.setter
@@ -100,10 +100,10 @@ class SpbTopologyRange(Base):
 
     @property
     def CistRootIdentiifer(self):
-        """Bridge identifier of the CIST root bridge.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Bridge identifier of the CIST root bridge.
         """
         return self._get_attribute('cistRootIdentiifer')
     @CistRootIdentiifer.setter
@@ -112,10 +112,10 @@ class SpbTopologyRange(Base):
 
     @property
     def EnableVbit(self):
-        """If true, activates the V bit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, activates the V bit.
         """
         return self._get_attribute('enableVbit')
     @EnableVbit.setter
@@ -124,10 +124,10 @@ class SpbTopologyRange(Base):
 
     @property
     def Enabled(self):
-        """If true, the topology range will be part of the simulated network.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the topology range will be part of the simulated network.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -136,10 +136,10 @@ class SpbTopologyRange(Base):
 
     @property
     def LinkMetric(self):
-        """The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
         """
         return self._get_attribute('linkMetric')
     @LinkMetric.setter
@@ -148,10 +148,10 @@ class SpbTopologyRange(Base):
 
     @property
     def McidConfigName(self):
-        """The MCID configuration name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MCID configuration name.
         """
         return self._get_attribute('mcidConfigName')
     @McidConfigName.setter
@@ -160,10 +160,10 @@ class SpbTopologyRange(Base):
 
     @property
     def McidSignature(self):
-        """The MCID signature.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MCID signature.
         """
         return self._get_attribute('mcidSignature')
     @McidSignature.setter
@@ -172,10 +172,10 @@ class SpbTopologyRange(Base):
 
     @property
     def NoOfPorts(self):
-        """The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
         """
         return self._get_attribute('noOfPorts')
     @NoOfPorts.setter
@@ -184,10 +184,10 @@ class SpbTopologyRange(Base):
 
     @property
     def PortIdentifier(self):
-        """The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
         """
         return self._get_attribute('portIdentifier')
     @PortIdentifier.setter
@@ -196,10 +196,10 @@ class SpbTopologyRange(Base):
 
     @property
     def SpSourceId(self):
-        """The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
         """
         return self._get_attribute('spSourceId')
     @SpSourceId.setter
@@ -207,103 +207,116 @@ class SpbTopologyRange(Base):
         self._set_attribute('spSourceId', value)
 
     def update(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
-        """Updates a child instance of spbTopologyRange on the server.
+        """Updates spbTopologyRange resource on the server.
 
-        Args:
-            AuxMcidConfigName (str): The auxiliary MCID configuration name.
-            AuxMcidSignature (str): The auxiliary MCID signature.
-            BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
-            CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
-            CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
-            EnableVbit (bool): If true, activates the V bit.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
-            McidConfigName (str): The MCID configuration name.
-            McidSignature (str): The MCID signature.
-            NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
-            PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
-            SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
+        Args
+        ----
+        - AuxMcidConfigName (str): The auxiliary MCID configuration name.
+        - AuxMcidSignature (str): The auxiliary MCID signature.
+        - BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
+        - CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
+        - CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
+        - EnableVbit (bool): If true, activates the V bit.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
+        - McidConfigName (str): The MCID configuration name.
+        - McidSignature (str): The MCID signature.
+        - NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
+        - PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
+        - SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
-        """Adds a new spbTopologyRange node on the server and retrieves it in this instance.
+        """Adds a new spbTopologyRange resource on the server and adds it to the container.
 
-        Args:
-            AuxMcidConfigName (str): The auxiliary MCID configuration name.
-            AuxMcidSignature (str): The auxiliary MCID signature.
-            BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
-            CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
-            CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
-            EnableVbit (bool): If true, activates the V bit.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
-            McidConfigName (str): The MCID configuration name.
-            McidSignature (str): The MCID signature.
-            NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
-            PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
-            SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
+        Args
+        ----
+        - AuxMcidConfigName (str): The auxiliary MCID configuration name.
+        - AuxMcidSignature (str): The auxiliary MCID signature.
+        - BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
+        - CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
+        - CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
+        - EnableVbit (bool): If true, activates the V bit.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
+        - McidConfigName (str): The MCID configuration name.
+        - McidSignature (str): The MCID signature.
+        - NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
+        - PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
+        - SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
 
-        Returns:
-            self: This instance with all currently retrieved spbTopologyRange data using find and the newly added spbTopologyRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbTopologyRange resources using find and the newly added spbTopologyRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbTopologyRange data in this instance from server.
+        """Deletes all the contained spbTopologyRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
-        """Finds and retrieves spbTopologyRange data from the server.
+        """Finds and retrieves spbTopologyRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbTopologyRange data from the server.
-        By default the find method takes no parameters and will retrieve all spbTopologyRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbTopologyRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbTopologyRange resources from the server.
 
-        Args:
-            AuxMcidConfigName (str): The auxiliary MCID configuration name.
-            AuxMcidSignature (str): The auxiliary MCID signature.
-            BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
-            CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
-            CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
-            EnableVbit (bool): If true, activates the V bit.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
-            McidConfigName (str): The MCID configuration name.
-            McidSignature (str): The MCID signature.
-            NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
-            PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
-            SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
+        Args
+        ----
+        - AuxMcidConfigName (str): The auxiliary MCID configuration name.
+        - AuxMcidSignature (str): The auxiliary MCID signature.
+        - BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
+        - CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
+        - CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
+        - EnableVbit (bool): If true, activates the V bit.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
+        - McidConfigName (str): The MCID configuration name.
+        - McidSignature (str): The MCID signature.
+        - NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
+        - PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
+        - SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
 
-        Returns:
-            self: This instance with matching spbTopologyRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbTopologyRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbTopologyRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbTopologyRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbTopologyRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

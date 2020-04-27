@@ -36,10 +36,10 @@ class L2VcIpRange(Base):
 
     @property
     def Enabled(self):
-        """Enables the Layer 2 IP address range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the Layer 2 IP address range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class L2VcIpRange(Base):
 
     @property
     def IncrementBy(self):
-        """The value to be added for creating each additional L2 VC IP route range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value to be added for creating each additional L2 VC IP route range.
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -60,10 +60,10 @@ class L2VcIpRange(Base):
 
     @property
     def Mask(self):
-        """The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
         """
         return self._get_attribute('mask')
     @Mask.setter
@@ -72,10 +72,10 @@ class L2VcIpRange(Base):
 
     @property
     def NumHosts(self):
-        """The number of emulated LDP hosts to be created on this port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of emulated LDP hosts to be created on this port.
         """
         return self._get_attribute('numHosts')
     @NumHosts.setter
@@ -84,19 +84,19 @@ class L2VcIpRange(Base):
 
     @property
     def PeerAddress(self):
-        """The 32-bit IPv4 address of the LDP peer.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 32-bit IPv4 address of the LDP peer.
         """
         return self._get_attribute('peerAddress')
 
     @property
     def StartAddress(self):
-        """The IP address that starts the L2 VC IP range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address that starts the L2 VC IP range.
         """
         return self._get_attribute('startAddress')
     @StartAddress.setter
@@ -104,16 +104,18 @@ class L2VcIpRange(Base):
         self._set_attribute('startAddress', value)
 
     def update(self, Enabled=None, IncrementBy=None, Mask=None, NumHosts=None, StartAddress=None):
-        """Updates a child instance of l2VcIpRange on the server.
+        """Updates l2VcIpRange resource on the server.
 
-        Args:
-            Enabled (bool): Enables the Layer 2 IP address range.
-            IncrementBy (number): The value to be added for creating each additional L2 VC IP route range.
-            Mask (number): The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
-            NumHosts (number): The number of emulated LDP hosts to be created on this port.
-            StartAddress (str): The IP address that starts the L2 VC IP range.
+        Args
+        ----
+        - Enabled (bool): Enables the Layer 2 IP address range.
+        - IncrementBy (number): The value to be added for creating each additional L2 VC IP route range.
+        - Mask (number): The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
+        - NumHosts (number): The number of emulated LDP hosts to be created on this port.
+        - StartAddress (str): The IP address that starts the L2 VC IP range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

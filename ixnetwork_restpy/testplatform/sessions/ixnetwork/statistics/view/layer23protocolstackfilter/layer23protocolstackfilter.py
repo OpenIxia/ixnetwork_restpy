@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Layer23ProtocolStackFilter(Base):
     """Filters associated with layer23ProtocolStack view.
-    The Layer23ProtocolStackFilter class encapsulates a list of layer23ProtocolStackFilter resources that is be managed by the user.
+    The Layer23ProtocolStackFilter class encapsulates a list of layer23ProtocolStackFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the Layer23ProtocolStackFilter.find() method.
-    The list can be managed by the user by using the Layer23ProtocolStackFilter.add() and Layer23ProtocolStackFilter.remove() methods.
+    The list can be managed by using the Layer23ProtocolStackFilter.add() and Layer23ProtocolStackFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Layer23ProtocolStackFilter(Base):
 
     @property
     def DrilldownType(self):
-        """Emulates perRange or perSession view based on the option seleted.
-
-        Returns:
-            str(perRange|perSession)
+        """
+        Returns
+        -------
+        - str(perRange | perSession): Emulates perRange or perSession view based on the option seleted.
         """
         return self._get_attribute('drilldownType')
     @DrilldownType.setter
@@ -50,10 +50,10 @@ class Layer23ProtocolStackFilter(Base):
 
     @property
     def NumberOfResults(self):
-        """Number of traffic flows to be displayed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of traffic flows to be displayed.
         """
         return self._get_attribute('numberOfResults')
     @NumberOfResults.setter
@@ -62,10 +62,10 @@ class Layer23ProtocolStackFilter(Base):
 
     @property
     def ProtocolStackFilterId(self):
-        """Selected protocol stack filters from the availableProtocolStackFilter list.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolStackFilter])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
         """
         return self._get_attribute('protocolStackFilterId')
     @ProtocolStackFilterId.setter
@@ -74,10 +74,10 @@ class Layer23ProtocolStackFilter(Base):
 
     @property
     def SortAscending(self):
-        """Sets the display order of the view.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Sets the display order of the view.
         """
         return self._get_attribute('sortAscending')
     @SortAscending.setter
@@ -86,10 +86,10 @@ class Layer23ProtocolStackFilter(Base):
 
     @property
     def SortingStatistic(self):
-        """The reference statistic by which the data will be sorted in created SV.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=statistic)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute('sortingStatistic')
     @SortingStatistic.setter
@@ -97,79 +97,92 @@ class Layer23ProtocolStackFilter(Base):
         self._set_attribute('sortingStatistic', value)
 
     def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
-        """Updates a child instance of layer23ProtocolStackFilter on the server.
+        """Updates layer23ProtocolStackFilter resource on the server.
 
-        Args:
-            DrilldownType (str(perRange|perSession)): Emulates perRange or perSession view based on the option seleted.
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            ProtocolStackFilterId (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
-            SortAscending (bool): Sets the display order of the view.
-            SortingStatistic (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=statistic)): The reference statistic by which the data will be sorted in created SV.
+        Args
+        ----
+        - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - SortAscending (bool): Sets the display order of the view.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
-        """Adds a new layer23ProtocolStackFilter node on the server and retrieves it in this instance.
+        """Adds a new layer23ProtocolStackFilter resource on the server and adds it to the container.
 
-        Args:
-            DrilldownType (str(perRange|perSession)): Emulates perRange or perSession view based on the option seleted.
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            ProtocolStackFilterId (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
-            SortAscending (bool): Sets the display order of the view.
-            SortingStatistic (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=statistic)): The reference statistic by which the data will be sorted in created SV.
+        Args
+        ----
+        - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - SortAscending (bool): Sets the display order of the view.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
-        Returns:
-            self: This instance with all currently retrieved layer23ProtocolStackFilter data using find and the newly added layer23ProtocolStackFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved layer23ProtocolStackFilter resources using find and the newly added layer23ProtocolStackFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the layer23ProtocolStackFilter data in this instance from server.
+        """Deletes all the contained layer23ProtocolStackFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
-        """Finds and retrieves layer23ProtocolStackFilter data from the server.
+        """Finds and retrieves layer23ProtocolStackFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve layer23ProtocolStackFilter data from the server.
-        By default the find method takes no parameters and will retrieve all layer23ProtocolStackFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolStackFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all layer23ProtocolStackFilter resources from the server.
 
-        Args:
-            DrilldownType (str(perRange|perSession)): Emulates perRange or perSession view based on the option seleted.
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            ProtocolStackFilterId (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
-            SortAscending (bool): Sets the display order of the view.
-            SortingStatistic (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=statistic)): The reference statistic by which the data will be sorted in created SV.
+        Args
+        ----
+        - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - SortAscending (bool): Sets the display order of the view.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
-        Returns:
-            self: This instance with matching layer23ProtocolStackFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching layer23ProtocolStackFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of layer23ProtocolStackFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the layer23ProtocolStackFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the layer23ProtocolStackFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

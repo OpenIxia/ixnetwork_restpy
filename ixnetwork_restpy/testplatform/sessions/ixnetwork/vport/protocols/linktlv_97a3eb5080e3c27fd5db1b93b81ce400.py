@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LinkTlv(Base):
     """
-    The LinkTlv class encapsulates a list of linkTlv resources that is managed by the system.
+    The LinkTlv class encapsulates a list of linkTlv resources that are managed by the system.
     A list of resources can be retrieved from the server using the LinkTlv.find() method.
     """
 
@@ -38,9 +38,9 @@ class LinkTlv(Base):
     @property
     def EnableLinkId(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLinkId')
     @EnableLinkId.setter
@@ -50,9 +50,9 @@ class LinkTlv(Base):
     @property
     def EnableLinkMetric(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLinkMetric')
     @EnableLinkMetric.setter
@@ -62,9 +62,9 @@ class LinkTlv(Base):
     @property
     def EnableLinkResourceClass(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLinkResourceClass')
     @EnableLinkResourceClass.setter
@@ -74,9 +74,9 @@ class LinkTlv(Base):
     @property
     def EnableLinkType(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLinkType')
     @EnableLinkType.setter
@@ -86,9 +86,9 @@ class LinkTlv(Base):
     @property
     def EnableLocalIpAddress(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLocalIpAddress')
     @EnableLocalIpAddress.setter
@@ -98,9 +98,9 @@ class LinkTlv(Base):
     @property
     def EnableMaxBandwidth(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableMaxBandwidth')
     @EnableMaxBandwidth.setter
@@ -110,9 +110,9 @@ class LinkTlv(Base):
     @property
     def EnableMaxResBandwidth(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableMaxResBandwidth')
     @EnableMaxResBandwidth.setter
@@ -122,9 +122,9 @@ class LinkTlv(Base):
     @property
     def EnableRemoteIpAddress(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRemoteIpAddress')
     @EnableRemoteIpAddress.setter
@@ -134,9 +134,9 @@ class LinkTlv(Base):
     @property
     def EnableUnreservedBandwidth(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableUnreservedBandwidth')
     @EnableUnreservedBandwidth.setter
@@ -146,9 +146,9 @@ class LinkTlv(Base):
     @property
     def LinkId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkId')
     @LinkId.setter
@@ -158,9 +158,9 @@ class LinkTlv(Base):
     @property
     def LinkLocalIpAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkLocalIpAddress')
     @LinkLocalIpAddress.setter
@@ -170,9 +170,9 @@ class LinkTlv(Base):
     @property
     def LinkMetric(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('linkMetric')
     @LinkMetric.setter
@@ -182,9 +182,9 @@ class LinkTlv(Base):
     @property
     def LinkRemoteIpAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkRemoteIpAddress')
     @LinkRemoteIpAddress.setter
@@ -194,9 +194,9 @@ class LinkTlv(Base):
     @property
     def LinkResourceClass(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkResourceClass')
     @LinkResourceClass.setter
@@ -206,9 +206,9 @@ class LinkTlv(Base):
     @property
     def LinkType(self):
         """
-
-        Returns:
-            str(pointToPoint|multiaccess)
+        Returns
+        -------
+        - str(pointToPoint | multiaccess): 
         """
         return self._get_attribute('linkType')
     @LinkType.setter
@@ -218,9 +218,9 @@ class LinkTlv(Base):
     @property
     def LinkUnreservedBandwidth(self):
         """
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('linkUnreservedBandwidth')
     @LinkUnreservedBandwidth.setter
@@ -230,9 +230,9 @@ class LinkTlv(Base):
     @property
     def MaxBandwidth(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxBandwidth')
     @MaxBandwidth.setter
@@ -242,9 +242,9 @@ class LinkTlv(Base):
     @property
     def MaxResBandwidth(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxResBandwidth')
     @MaxResBandwidth.setter
@@ -254,9 +254,9 @@ class LinkTlv(Base):
     @property
     def SubTlvs(self):
         """
-
-        Returns:
-            list(dict(arg1:str,arg2:number,arg3:number))
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:number,arg3:number)): 
         """
         return self._get_attribute('subTlvs')
     @SubTlvs.setter
@@ -264,80 +264,89 @@ class LinkTlv(Base):
         self._set_attribute('subTlvs', value)
 
     def update(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
-        """Updates a child instance of linkTlv on the server.
+        """Updates linkTlv resource on the server.
 
-        Args:
-            EnableLinkId (bool): 
-            EnableLinkMetric (bool): 
-            EnableLinkResourceClass (bool): 
-            EnableLinkType (bool): 
-            EnableLocalIpAddress (bool): 
-            EnableMaxBandwidth (bool): 
-            EnableMaxResBandwidth (bool): 
-            EnableRemoteIpAddress (bool): 
-            EnableUnreservedBandwidth (bool): 
-            LinkId (str): 
-            LinkLocalIpAddress (str): 
-            LinkMetric (number): 
-            LinkRemoteIpAddress (str): 
-            LinkResourceClass (str): 
-            LinkType (str(pointToPoint|multiaccess)): 
-            LinkUnreservedBandwidth (list(number)): 
-            MaxBandwidth (number): 
-            MaxResBandwidth (number): 
-            SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+        Args
+        ----
+        - EnableLinkId (bool): 
+        - EnableLinkMetric (bool): 
+        - EnableLinkResourceClass (bool): 
+        - EnableLinkType (bool): 
+        - EnableLocalIpAddress (bool): 
+        - EnableMaxBandwidth (bool): 
+        - EnableMaxResBandwidth (bool): 
+        - EnableRemoteIpAddress (bool): 
+        - EnableUnreservedBandwidth (bool): 
+        - LinkId (str): 
+        - LinkLocalIpAddress (str): 
+        - LinkMetric (number): 
+        - LinkRemoteIpAddress (str): 
+        - LinkResourceClass (str): 
+        - LinkType (str(pointToPoint | multiaccess)): 
+        - LinkUnreservedBandwidth (list(number)): 
+        - MaxBandwidth (number): 
+        - MaxResBandwidth (number): 
+        - SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
-        """Finds and retrieves linkTlv data from the server.
+        """Finds and retrieves linkTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve linkTlv data from the server.
-        By default the find method takes no parameters and will retrieve all linkTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve linkTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all linkTlv resources from the server.
 
-        Args:
-            EnableLinkId (bool): 
-            EnableLinkMetric (bool): 
-            EnableLinkResourceClass (bool): 
-            EnableLinkType (bool): 
-            EnableLocalIpAddress (bool): 
-            EnableMaxBandwidth (bool): 
-            EnableMaxResBandwidth (bool): 
-            EnableRemoteIpAddress (bool): 
-            EnableUnreservedBandwidth (bool): 
-            LinkId (str): 
-            LinkLocalIpAddress (str): 
-            LinkMetric (number): 
-            LinkRemoteIpAddress (str): 
-            LinkResourceClass (str): 
-            LinkType (str(pointToPoint|multiaccess)): 
-            LinkUnreservedBandwidth (list(number)): 
-            MaxBandwidth (number): 
-            MaxResBandwidth (number): 
-            SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+        Args
+        ----
+        - EnableLinkId (bool): 
+        - EnableLinkMetric (bool): 
+        - EnableLinkResourceClass (bool): 
+        - EnableLinkType (bool): 
+        - EnableLocalIpAddress (bool): 
+        - EnableMaxBandwidth (bool): 
+        - EnableMaxResBandwidth (bool): 
+        - EnableRemoteIpAddress (bool): 
+        - EnableUnreservedBandwidth (bool): 
+        - LinkId (str): 
+        - LinkLocalIpAddress (str): 
+        - LinkMetric (number): 
+        - LinkRemoteIpAddress (str): 
+        - LinkResourceClass (str): 
+        - LinkType (str(pointToPoint | multiaccess)): 
+        - LinkUnreservedBandwidth (list(number)): 
+        - MaxBandwidth (number): 
+        - MaxResBandwidth (number): 
+        - SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
 
-        Returns:
-            self: This instance with matching linkTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching linkTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of linkTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the linkTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the linkTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

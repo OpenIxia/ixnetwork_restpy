@@ -36,10 +36,10 @@ class PassCriteria(Base):
 
     @property
     def EnablePassFail(self):
-        """If true, the pass fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the pass fail criteria is set.
         """
         return self._get_attribute('enablePassFail')
     @EnablePassFail.setter
@@ -48,10 +48,10 @@ class PassCriteria(Base):
 
     @property
     def PassFailFrequency(self):
-        """NOT DEFINED
-
-        Returns:
-            str(framesizes|trials)
+        """
+        Returns
+        -------
+        - str(framesizes | trials): NOT DEFINED
         """
         return self._get_attribute('passFailFrequency')
     @PassFailFrequency.setter
@@ -59,25 +59,28 @@ class PassCriteria(Base):
         self._set_attribute('passFailFrequency', value)
 
     def update(self, EnablePassFail=None, PassFailFrequency=None):
-        """Updates a child instance of passCriteria on the server.
+        """Updates passCriteria resource on the server.
 
-        Args:
-            EnablePassFail (bool): If true, the pass fail criteria is set.
-            PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+        Args
+        ----
+        - EnablePassFail (bool): If true, the pass fail criteria is set.
+        - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -85,9 +88,10 @@ class PassCriteria(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -95,12 +99,10 @@ class PassCriteria(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -110,9 +112,10 @@ class PassCriteria(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -122,12 +125,10 @@ class PassCriteria(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -137,24 +138,17 @@ class PassCriteria(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -166,18 +160,16 @@ class PassCriteria(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -189,9 +181,10 @@ class PassCriteria(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -201,12 +194,10 @@ class PassCriteria(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

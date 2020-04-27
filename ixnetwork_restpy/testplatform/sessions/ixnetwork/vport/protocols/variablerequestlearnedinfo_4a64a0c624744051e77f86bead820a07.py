@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class VariableRequestLearnedInfo(Base):
     """
-    The VariableRequestLearnedInfo class encapsulates a list of variableRequestLearnedInfo resources that is managed by the system.
+    The VariableRequestLearnedInfo class encapsulates a list of variableRequestLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the VariableRequestLearnedInfo.find() method.
     """
 
@@ -38,80 +38,87 @@ class VariableRequestLearnedInfo(Base):
     @property
     def VariableBranch(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('variableBranch')
 
     @property
     def VariableIndication(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('variableIndication')
 
     @property
     def VariableLeaf(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('variableLeaf')
 
     @property
     def VariableValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('variableValue')
 
     @property
     def VariableWidth(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableWidth')
 
     def find(self, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
-        """Finds and retrieves variableRequestLearnedInfo data from the server.
+        """Finds and retrieves variableRequestLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve variableRequestLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all variableRequestLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve variableRequestLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all variableRequestLearnedInfo resources from the server.
 
-        Args:
-            VariableBranch (str): 
-            VariableIndication (bool): 
-            VariableLeaf (str): 
-            VariableValue (str): 
-            VariableWidth (number): 
+        Args
+        ----
+        - VariableBranch (str): 
+        - VariableIndication (bool): 
+        - VariableLeaf (str): 
+        - VariableValue (str): 
+        - VariableWidth (number): 
 
-        Returns:
-            self: This instance with matching variableRequestLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching variableRequestLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of variableRequestLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the variableRequestLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the variableRequestLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

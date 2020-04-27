@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NacTlv(Base):
     """TLV (Type-Length-Value)
-    The NacTlv class encapsulates a list of nacTlv resources that is be managed by the user.
+    The NacTlv class encapsulates a list of nacTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the NacTlv.find() method.
-    The list can be managed by the user by using the NacTlv.add() and NacTlv.remove() methods.
+    The list can be managed by using the NacTlv.add() and NacTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,52 +38,52 @@ class NacTlv(Base):
 
     @property
     def AppCodeRef(self):
-        """An instance of the AppCodeRef class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef.AppCodeRef): An instance of the AppCodeRef class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef.AppCodeRef)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef import AppCodeRef
         return AppCodeRef(self)._select()
 
     @property
     def AppTypeRef(self):
-        """An instance of the AppTypeRef class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef.AppTypeRef): An instance of the AppTypeRef class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef.AppTypeRef)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef import AppTypeRef
         return AppTypeRef(self)._select()
 
     @property
     def VendorRef(self):
-        """An instance of the VendorRef class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref.VendorRef): An instance of the VendorRef class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref.VendorRef)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref import VendorRef
         return VendorRef(self)._select()
 
     @property
     def AppCode(self):
-        """Application code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Application code.
         """
         return self._get_attribute('appCode')
     @AppCode.setter
@@ -92,10 +92,10 @@ class NacTlv(Base):
 
     @property
     def AppType(self):
-        """Application type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Application type.
         """
         return self._get_attribute('appType')
     @AppType.setter
@@ -104,10 +104,10 @@ class NacTlv(Base):
 
     @property
     def AvpType(self):
-        """The value type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value type.
         """
         return self._get_attribute('avpType')
     @AvpType.setter
@@ -116,10 +116,10 @@ class NacTlv(Base):
 
     @property
     def Name(self):
-        """Unique name for this NAC TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique name for this NAC TLV.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -128,19 +128,19 @@ class NacTlv(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Selected(self):
-        """Add to TLV list.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Add to TLV list.
         """
         return self._get_attribute('selected')
     @Selected.setter
@@ -149,10 +149,10 @@ class NacTlv(Base):
 
     @property
     def Value(self):
-        """Actual value of this TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Actual value of this TLV.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -161,10 +161,10 @@ class NacTlv(Base):
 
     @property
     def VendorId(self):
-        """Vendor id.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Vendor id.
         """
         return self._get_attribute('vendorId')
     @VendorId.setter
@@ -172,86 +172,99 @@ class NacTlv(Base):
         self._set_attribute('vendorId', value)
 
     def update(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
-        """Updates a child instance of nacTlv on the server.
+        """Updates nacTlv resource on the server.
 
-        Args:
-            AppCode (number): Application code.
-            AppType (number): Application type.
-            AvpType (number): The value type.
-            Name (str): Unique name for this NAC TLV.
-            Selected (bool): Add to TLV list.
-            Value (str): Actual value of this TLV.
-            VendorId (number): Vendor id.
+        Args
+        ----
+        - AppCode (number): Application code.
+        - AppType (number): Application type.
+        - AvpType (number): The value type.
+        - Name (str): Unique name for this NAC TLV.
+        - Selected (bool): Add to TLV list.
+        - Value (str): Actual value of this TLV.
+        - VendorId (number): Vendor id.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
-        """Adds a new nacTlv node on the server and retrieves it in this instance.
+        """Adds a new nacTlv resource on the server and adds it to the container.
 
-        Args:
-            AppCode (number): Application code.
-            AppType (number): Application type.
-            AvpType (number): The value type.
-            Name (str): Unique name for this NAC TLV.
-            Selected (bool): Add to TLV list.
-            Value (str): Actual value of this TLV.
-            VendorId (number): Vendor id.
+        Args
+        ----
+        - AppCode (number): Application code.
+        - AppType (number): Application type.
+        - AvpType (number): The value type.
+        - Name (str): Unique name for this NAC TLV.
+        - Selected (bool): Add to TLV list.
+        - Value (str): Actual value of this TLV.
+        - VendorId (number): Vendor id.
 
-        Returns:
-            self: This instance with all currently retrieved nacTlv data using find and the newly added nacTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved nacTlv resources using find and the newly added nacTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the nacTlv data in this instance from server.
+        """Deletes all the contained nacTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AppCode=None, AppType=None, AvpType=None, Name=None, ObjectId=None, Selected=None, Value=None, VendorId=None):
-        """Finds and retrieves nacTlv data from the server.
+        """Finds and retrieves nacTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nacTlv data from the server.
-        By default the find method takes no parameters and will retrieve all nacTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nacTlv resources from the server.
 
-        Args:
-            AppCode (number): Application code.
-            AppType (number): Application type.
-            AvpType (number): The value type.
-            Name (str): Unique name for this NAC TLV.
-            ObjectId (str): Unique identifier for this object
-            Selected (bool): Add to TLV list.
-            Value (str): Actual value of this TLV.
-            VendorId (number): Vendor id.
+        Args
+        ----
+        - AppCode (number): Application code.
+        - AppType (number): Application type.
+        - AvpType (number): The value type.
+        - Name (str): Unique name for this NAC TLV.
+        - ObjectId (str): Unique identifier for this object
+        - Selected (bool): Add to TLV list.
+        - Value (str): Actual value of this TLV.
+        - VendorId (number): Vendor id.
 
-        Returns:
-            self: This instance with matching nacTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nacTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nacTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nacTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nacTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

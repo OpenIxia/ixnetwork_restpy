@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchGroupBucketLearnedInfo(Base):
     """NOT DEFINED
-    The SwitchGroupBucketLearnedInfo class encapsulates a list of switchGroupBucketLearnedInfo resources that is managed by the system.
+    The SwitchGroupBucketLearnedInfo class encapsulates a list of switchGroupBucketLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchGroupBucketLearnedInfo.find() method.
     """
 
@@ -37,95 +37,102 @@ class SwitchGroupBucketLearnedInfo(Base):
 
     @property
     def SwitchGroupActionLearnedInfo(self):
-        """An instance of the SwitchGroupActionLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee.SwitchGroupActionLearnedInfo): An instance of the SwitchGroupActionLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee.SwitchGroupActionLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee import SwitchGroupActionLearnedInfo
         return SwitchGroupActionLearnedInfo(self)
 
     @property
     def ByteCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('byteCount')
 
     @property
     def PacketCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('packetCount')
 
     @property
     def WatchGroup(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('watchGroup')
 
     @property
     def WatchPort(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('watchPort')
 
     @property
     def Weight(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('weight')
 
     def find(self, ByteCount=None, PacketCount=None, WatchGroup=None, WatchPort=None, Weight=None):
-        """Finds and retrieves switchGroupBucketLearnedInfo data from the server.
+        """Finds and retrieves switchGroupBucketLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchGroupBucketLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchGroupBucketLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupBucketLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchGroupBucketLearnedInfo resources from the server.
 
-        Args:
-            ByteCount (number): NOT DEFINED
-            PacketCount (number): NOT DEFINED
-            WatchGroup (number): NOT DEFINED
-            WatchPort (number): NOT DEFINED
-            Weight (number): NOT DEFINED
+        Args
+        ----
+        - ByteCount (number): NOT DEFINED
+        - PacketCount (number): NOT DEFINED
+        - WatchGroup (number): NOT DEFINED
+        - WatchPort (number): NOT DEFINED
+        - Weight (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching switchGroupBucketLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchGroupBucketLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchGroupBucketLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchGroupBucketLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchGroupBucketLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

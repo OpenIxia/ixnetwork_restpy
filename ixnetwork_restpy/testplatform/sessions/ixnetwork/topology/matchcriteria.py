@@ -36,47 +36,47 @@ class MatchCriteria(Base):
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field import Field
         return Field(self)
 
     @property
     def MatchCriteria(self):
-        """An instance of the MatchCriteria class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria.MatchCriteria): An instance of the MatchCriteria class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria.MatchCriteria)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria import MatchCriteria
         return MatchCriteria(self)._select()
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Description(self):
-        """Description of the field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the field.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -85,19 +85,19 @@ class MatchCriteria(Base):
 
     @property
     def DisplayName(self):
-        """Display name used by GUI.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Display name used by GUI.
         """
         return self._get_attribute('displayName')
 
     @property
     def IsEditable(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -106,10 +106,10 @@ class MatchCriteria(Base):
 
     @property
     def IsEnabled(self):
-        """Enables disables the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables disables the field.
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -118,10 +118,10 @@ class MatchCriteria(Base):
 
     @property
     def IsRequired(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -130,10 +130,10 @@ class MatchCriteria(Base):
 
     @property
     def Name(self):
-        """Name of packet field
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of packet field
         """
         return self._get_attribute('name')
     @Name.setter
@@ -141,16 +141,18 @@ class MatchCriteria(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Updates a child instance of matchCriteria on the server.
+        """Updates matchCriteria resource on the server.
 
-        Args:
-            Description (str): Description of the field.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Description (str): Description of the field.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

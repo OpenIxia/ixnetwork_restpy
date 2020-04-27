@@ -36,65 +36,65 @@ class Page(Base):
 
     @property
     def Egress(self):
-        """An instance of the DEPRECATED Egress class.
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress): An instance of the Egress class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
         return Egress(self)
 
     @property
     def EgressRxCondition(self):
-        """An instance of the EgressRxCondition class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition.EgressRxCondition): An instance of the EgressRxCondition class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition.EgressRxCondition)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
         return EgressRxCondition(self)._select()
 
     @property
     def AllowPaging(self):
-        """If true, statistics will be displayed in multiple pages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, statistics will be displayed in multiple pages.
         """
         return self._get_attribute('allowPaging')
 
     @property
     def ColumnCaptions(self):
-        """The statistics column caption.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The statistics column caption.
         """
         return self._get_attribute('columnCaptions')
 
     @property
     def ColumnCount(self):
-        """Displays the particular column number in the view.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Displays the particular column number in the view.
         """
         return self._get_attribute('columnCount')
 
     @property
     def CurrentPage(self):
-        """The current page number being displayed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The current page number being displayed.
         """
         return self._get_attribute('currentPage')
     @CurrentPage.setter
@@ -103,10 +103,10 @@ class Page(Base):
 
     @property
     def EgressMode(self):
-        """Emulates conditional or paged egress tracking view based on selected mode.
-
-        Returns:
-            str(conditional|paged)
+        """
+        Returns
+        -------
+        - str(conditional | paged): Emulates conditional or paged egress tracking view based on selected mode.
         """
         return self._get_attribute('egressMode')
     @EgressMode.setter
@@ -115,10 +115,10 @@ class Page(Base):
 
     @property
     def EgressPageSize(self):
-        """The current egress page size across all ingress rows. Default = 3
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The current egress page size across all ingress rows. Default = 3
         """
         return self._get_attribute('egressPageSize')
     @EgressPageSize.setter
@@ -127,28 +127,28 @@ class Page(Base):
 
     @property
     def IsBlocked(self):
-        """Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
         """
         return self._get_attribute('isBlocked')
 
     @property
     def IsReady(self):
-        """If true, the counter is ready to record the statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the counter is ready to record the statistics.
         """
         return self._get_attribute('isReady')
 
     @property
     def IsReadyTimeout(self):
-        """The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         """
         return self._get_attribute('isReadyTimeout')
     @IsReadyTimeout.setter
@@ -157,10 +157,10 @@ class Page(Base):
 
     @property
     def PageSize(self):
-        """The number of statistics per page.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of statistics per page.
         """
         return self._get_attribute('pageSize')
     @PageSize.setter
@@ -169,69 +169,71 @@ class Page(Base):
 
     @property
     def PageValues(self):
-        """Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
-
-        Returns:
-            list(list[list[str]])
+        """
+        Returns
+        -------
+        - list(list[list[str]]): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         """
         return self._get_attribute('pageValues')
 
     @property
     def RowCount(self):
-        """Displays the particular row number in the view.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Displays the particular row number in the view.
         """
         return self._get_attribute('rowCount')
 
     @property
     def RowValues(self):
-        """DEPRECATED All statistics values in a row.
-
-        Returns:
-            dict(arg1:list[list[list[str]]])
+        """DEPRECATED 
+        Returns
+        -------
+        - dict(arg1:list[list[list[str]]]): All statistics values in a row.
         """
         return self._get_attribute('rowValues')
 
     @property
     def Timestamp(self):
-        """Describes the date and time of the event.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Describes the date and time of the event.
         """
         return self._get_attribute('timestamp')
 
     @property
     def TotalPages(self):
-        """The total number of statistics pages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of statistics pages.
         """
         return self._get_attribute('totalPages')
 
     @property
     def TotalRows(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('totalRows')
 
     def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
-        """Updates a child instance of page on the server.
+        """Updates page resource on the server.
 
-        Args:
-            CurrentPage (number): The current page number being displayed.
-            EgressMode (str(conditional|paged)): Emulates conditional or paged egress tracking view based on selected mode.
-            EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
-            IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
-            PageSize (number): The number of statistics per page.
+        Args
+        ----
+        - CurrentPage (number): The current page number being displayed.
+        - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
+        - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
+        - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
+        - PageSize (number): The number of statistics per page.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

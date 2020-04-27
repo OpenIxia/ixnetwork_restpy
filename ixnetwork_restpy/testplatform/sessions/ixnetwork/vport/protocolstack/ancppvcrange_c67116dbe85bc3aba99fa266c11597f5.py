@@ -36,10 +36,10 @@ class AncpPvcRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class AncpPvcRange(Base):
 
     @property
     def IncrementMode(self):
-        """May take the following values: 0 (VCI first), 1 (VPI first), 2 (Both)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: May take the following values: 0 (VCI first), 1 (VPI first), 2 (Both)
         """
         return self._get_attribute('incrementMode')
     @IncrementMode.setter
@@ -60,10 +60,10 @@ class AncpPvcRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -72,19 +72,19 @@ class AncpPvcRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def VciFirstId(self):
-        """First ATM VCI value to use
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: First ATM VCI value to use
         """
         return self._get_attribute('vciFirstId')
     @VciFirstId.setter
@@ -93,10 +93,10 @@ class AncpPvcRange(Base):
 
     @property
     def VciIncrement(self):
-        """Step size for VCI increment
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Step size for VCI increment
         """
         return self._get_attribute('vciIncrement')
     @VciIncrement.setter
@@ -105,10 +105,10 @@ class AncpPvcRange(Base):
 
     @property
     def VciIncrementStep(self):
-        """Increment VCI every 'vciIncrementStep' addresses
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment VCI every 'vciIncrementStep' addresses
         """
         return self._get_attribute('vciIncrementStep')
     @VciIncrementStep.setter
@@ -117,10 +117,10 @@ class AncpPvcRange(Base):
 
     @property
     def VciUniqueCount(self):
-        """Number of VCIs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of VCIs
         """
         return self._get_attribute('vciUniqueCount')
     @VciUniqueCount.setter
@@ -129,10 +129,10 @@ class AncpPvcRange(Base):
 
     @property
     def VpiFirstId(self):
-        """First ATM VPI value to use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: First ATM VPI value to use.
         """
         return self._get_attribute('vpiFirstId')
     @VpiFirstId.setter
@@ -141,10 +141,10 @@ class AncpPvcRange(Base):
 
     @property
     def VpiIncrement(self):
-        """Step size for VPI increment
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Step size for VPI increment
         """
         return self._get_attribute('vpiIncrement')
     @VpiIncrement.setter
@@ -153,10 +153,10 @@ class AncpPvcRange(Base):
 
     @property
     def VpiIncrementStep(self):
-        """Increment VPI every 'vpiIncrementStep' addresses
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment VPI every 'vpiIncrementStep' addresses
         """
         return self._get_attribute('vpiIncrementStep')
     @VpiIncrementStep.setter
@@ -165,10 +165,10 @@ class AncpPvcRange(Base):
 
     @property
     def VpiUniqueCount(self):
-        """Number of VPIs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of VPIs
         """
         return self._get_attribute('vpiUniqueCount')
     @VpiUniqueCount.setter
@@ -176,39 +176,42 @@ class AncpPvcRange(Base):
         self._set_attribute('vpiUniqueCount', value)
 
     def update(self, Enabled=None, IncrementMode=None, Name=None, VciFirstId=None, VciIncrement=None, VciIncrementStep=None, VciUniqueCount=None, VpiFirstId=None, VpiIncrement=None, VpiIncrementStep=None, VpiUniqueCount=None):
-        """Updates a child instance of ancpPvcRange on the server.
+        """Updates ancpPvcRange resource on the server.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IncrementMode (number): May take the following values: 0 (VCI first), 1 (VPI first), 2 (Both)
-            Name (str): Name of range
-            VciFirstId (number): First ATM VCI value to use
-            VciIncrement (number): Step size for VCI increment
-            VciIncrementStep (number): Increment VCI every 'vciIncrementStep' addresses
-            VciUniqueCount (number): Number of VCIs
-            VpiFirstId (number): First ATM VPI value to use.
-            VpiIncrement (number): Step size for VPI increment
-            VpiIncrementStep (number): Increment VPI every 'vpiIncrementStep' addresses
-            VpiUniqueCount (number): Number of VPIs
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IncrementMode (number): May take the following values: 0 (VCI first), 1 (VPI first), 2 (Both)
+        - Name (str): Name of range
+        - VciFirstId (number): First ATM VCI value to use
+        - VciIncrement (number): Step size for VCI increment
+        - VciIncrementStep (number): Increment VCI every 'vciIncrementStep' addresses
+        - VciUniqueCount (number): Number of VCIs
+        - VpiFirstId (number): First ATM VPI value to use.
+        - VpiIncrement (number): Step size for VPI increment
+        - VpiIncrementStep (number): Increment VPI every 'vpiIncrementStep' addresses
+        - VpiUniqueCount (number): Number of VPIs
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -220,16 +223,15 @@ class AncpPvcRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -241,16 +243,15 @@ class AncpPvcRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,91 +36,288 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
+
+    @property
+    def ActiveTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('activeTo'))
 
     @property
     def AdvertiseCustomSubTLV(self):
-        """Advertise Custom Sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseCustomSubTLV')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Custom Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseCustomSubTLV'))
+
+    @property
+    def AdvertiseCustomSubTLVTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Custom Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseCustomSubTLVTo'))
 
     @property
     def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('algorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
+
+    @property
+    def AlgorithmTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithmTo'))
+
+    @property
+    def ArgumentLength(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('argumentLength'))
+
+    @property
+    def ArgumentLengthTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('argumentLengthTo'))
 
     @property
     def BFlag(self):
-        """B-Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bFlag'))
+
+    @property
+    def BFlagTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bFlagTo'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
-    def CustomSubTlv(self):
-        """Custom Sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def CustomEndPointFunction(self):
         """
-        return self._get_attribute('customSubTlv')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Function
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('customEndPointFunction'))
+
+    @property
+    def CustomEndPointFunctionTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Function
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('customEndPointFunctionTo'))
+
+    @property
+    def CustomSubTlv(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Custom Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('customSubTlv'))
+
+    @property
+    def CustomSubTlvTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Custom Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('customSubTlvTo'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EndPointFunction(self):
-        """End-Point Function
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endPointFunction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): End-Point Function
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endPointFunction'))
+
+    @property
+    def EndPointFunctionTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): End-Point Function
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endPointFunctionTo'))
+
+    @property
+    def FunctionLength(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('functionLength'))
+
+    @property
+    def FunctionLengthTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('functionLengthTo'))
+
+    @property
+    def IncludeSRv6SIDStructureSubSubTlv(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include SRv6 SID Structure Sub-Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeSRv6SIDStructureSubSubTlv'))
+
+    @property
+    def IncludeSRv6SIDStructureSubSubTlvTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include SRv6 SID Structure Sub-Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeSRv6SIDStructureSubSubTlvTo'))
 
     @property
     def Ipv6AdjSid(self):
-        """IPv6 Adj SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6AdjSid')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6AdjSid'))
+
+    @property
+    def Ipv6AdjSidTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6AdjSidTo'))
+
+    @property
+    def LocatorBlockLength(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorBlockLength'))
+
+    @property
+    def LocatorBlockLengthTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorBlockLengthTo'))
+
+    @property
+    def LocatorNodeLength(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorNodeLength'))
+
+    @property
+    def LocatorNodeLengthTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorNodeLengthTo'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -129,78 +326,150 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def PFlag(self):
-        """P-Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
+
+    @property
+    def PFlagTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagTo'))
 
     @property
     def Reserved(self):
-        """Reserved
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reserved')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reserved'))
+
+    @property
+    def ReservedTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedTo'))
 
     @property
     def SFlag(self):
-        """S-Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): S-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sFlag'))
+
+    @property
+    def SFlagTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): S-Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sFlagTo'))
 
     @property
     def Weight(self):
-        """Weight
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
+
+    @property
+    def WeightTo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weightTo'))
 
     def update(self, Name=None):
-        """Updates a child instance of isisPseudoSRv6AdjSIDList on the server.
+        """Updates isisPseudoSRv6AdjSIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseCustomSubTLV=None, Algorithm=None, BFlag=None, CustomSubTlv=None, EndPointFunction=None, Ipv6AdjSid=None, PFlag=None, Reserved=None, SFlag=None, Weight=None):
+    def get_device_ids(self, PortNames=None, Active=None, ActiveTo=None, AdvertiseCustomSubTLV=None, AdvertiseCustomSubTLVTo=None, Algorithm=None, AlgorithmTo=None, ArgumentLength=None, ArgumentLengthTo=None, BFlag=None, BFlagTo=None, CustomEndPointFunction=None, CustomEndPointFunctionTo=None, CustomSubTlv=None, CustomSubTlvTo=None, EndPointFunction=None, EndPointFunctionTo=None, FunctionLength=None, FunctionLengthTo=None, IncludeSRv6SIDStructureSubSubTlv=None, IncludeSRv6SIDStructureSubSubTlvTo=None, Ipv6AdjSid=None, Ipv6AdjSidTo=None, LocatorBlockLength=None, LocatorBlockLengthTo=None, LocatorNodeLength=None, LocatorNodeLengthTo=None, PFlag=None, PFlagTo=None, Reserved=None, ReservedTo=None, SFlag=None, SFlagTo=None, Weight=None, WeightTo=None):
         """Base class infrastructure that gets a list of isisPseudoSRv6AdjSIDList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AdvertiseCustomSubTLV (str): optional regex of advertiseCustomSubTLV
-            Algorithm (str): optional regex of algorithm
-            BFlag (str): optional regex of bFlag
-            CustomSubTlv (str): optional regex of customSubTlv
-            EndPointFunction (str): optional regex of endPointFunction
-            Ipv6AdjSid (str): optional regex of ipv6AdjSid
-            PFlag (str): optional regex of pFlag
-            Reserved (str): optional regex of reserved
-            SFlag (str): optional regex of sFlag
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ActiveTo (str): optional regex of activeTo
+        - AdvertiseCustomSubTLV (str): optional regex of advertiseCustomSubTLV
+        - AdvertiseCustomSubTLVTo (str): optional regex of advertiseCustomSubTLVTo
+        - Algorithm (str): optional regex of algorithm
+        - AlgorithmTo (str): optional regex of algorithmTo
+        - ArgumentLength (str): optional regex of argumentLength
+        - ArgumentLengthTo (str): optional regex of argumentLengthTo
+        - BFlag (str): optional regex of bFlag
+        - BFlagTo (str): optional regex of bFlagTo
+        - CustomEndPointFunction (str): optional regex of customEndPointFunction
+        - CustomEndPointFunctionTo (str): optional regex of customEndPointFunctionTo
+        - CustomSubTlv (str): optional regex of customSubTlv
+        - CustomSubTlvTo (str): optional regex of customSubTlvTo
+        - EndPointFunction (str): optional regex of endPointFunction
+        - EndPointFunctionTo (str): optional regex of endPointFunctionTo
+        - FunctionLength (str): optional regex of functionLength
+        - FunctionLengthTo (str): optional regex of functionLengthTo
+        - IncludeSRv6SIDStructureSubSubTlv (str): optional regex of includeSRv6SIDStructureSubSubTlv
+        - IncludeSRv6SIDStructureSubSubTlvTo (str): optional regex of includeSRv6SIDStructureSubSubTlvTo
+        - Ipv6AdjSid (str): optional regex of ipv6AdjSid
+        - Ipv6AdjSidTo (str): optional regex of ipv6AdjSidTo
+        - LocatorBlockLength (str): optional regex of locatorBlockLength
+        - LocatorBlockLengthTo (str): optional regex of locatorBlockLengthTo
+        - LocatorNodeLength (str): optional regex of locatorNodeLength
+        - LocatorNodeLengthTo (str): optional regex of locatorNodeLengthTo
+        - PFlag (str): optional regex of pFlag
+        - PFlagTo (str): optional regex of pFlagTo
+        - Reserved (str): optional regex of reserved
+        - ReservedTo (str): optional regex of reservedTo
+        - SFlag (str): optional regex of sFlag
+        - SFlagTo (str): optional regex of sFlagTo
+        - Weight (str): optional regex of weight
+        - WeightTo (str): optional regex of weightTo
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -209,9 +478,10 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -221,9 +491,10 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

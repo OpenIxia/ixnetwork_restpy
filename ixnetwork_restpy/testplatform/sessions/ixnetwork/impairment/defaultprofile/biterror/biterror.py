@@ -36,10 +36,10 @@ class BitError(Base):
 
     @property
     def Enabled(self):
-        """If true, periodically introduce bit errors.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, periodically introduce bit errors.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class BitError(Base):
 
     @property
     def LogRate(self):
-        """If logRate is n, error one out of 10^n bits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If logRate is n, error one out of 10^n bits.
         """
         return self._get_attribute('logRate')
     @LogRate.setter
@@ -60,10 +60,10 @@ class BitError(Base):
 
     @property
     def SkipEndOctets(self):
-        """Number of octets to skip at the end of each packet when erroring bits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of octets to skip at the end of each packet when erroring bits.
         """
         return self._get_attribute('skipEndOctets')
     @SkipEndOctets.setter
@@ -72,10 +72,10 @@ class BitError(Base):
 
     @property
     def SkipStartOctets(self):
-        """Number of octets to skip at the start of each packet when erroring bits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of octets to skip at the start of each packet when erroring bits.
         """
         return self._get_attribute('skipStartOctets')
     @SkipStartOctets.setter
@@ -83,15 +83,17 @@ class BitError(Base):
         self._set_attribute('skipStartOctets', value)
 
     def update(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
-        """Updates a child instance of bitError on the server.
+        """Updates bitError resource on the server.
 
-        Args:
-            Enabled (bool): If true, periodically introduce bit errors.
-            LogRate (number): If logRate is n, error one out of 10^n bits.
-            SkipEndOctets (number): Number of octets to skip at the end of each packet when erroring bits.
-            SkipStartOctets (number): Number of octets to skip at the start of each packet when erroring bits.
+        Args
+        ----
+        - Enabled (bool): If true, periodically introduce bit errors.
+        - LogRate (number): If logRate is n, error one out of 10^n bits.
+        - SkipEndOctets (number): Number of octets to skip at the end of each packet when erroring bits.
+        - SkipStartOctets (number): Number of octets to skip at the start of each packet when erroring bits.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,10 +36,10 @@ class Checksums(Base):
 
     @property
     def AlwaysCorrectWhenModifying(self):
-        """If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
         """
         return self._get_attribute('alwaysCorrectWhenModifying')
     @AlwaysCorrectWhenModifying.setter
@@ -48,10 +48,10 @@ class Checksums(Base):
 
     @property
     def CorrectTxChecksumOverIp(self):
-        """If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
         """
         return self._get_attribute('correctTxChecksumOverIp')
     @CorrectTxChecksumOverIp.setter
@@ -60,10 +60,10 @@ class Checksums(Base):
 
     @property
     def CorrectTxIpv4Checksum(self):
-        """If true, correct the IPv4 header checksum in outgoing IPv4 packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, correct the IPv4 header checksum in outgoing IPv4 packets.
         """
         return self._get_attribute('correctTxIpv4Checksum')
     @CorrectTxIpv4Checksum.setter
@@ -72,10 +72,10 @@ class Checksums(Base):
 
     @property
     def CorrectTxL2FcsErrors(self):
-        """If true, correct the L2 frame check sequence in outgoing packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, correct the L2 frame check sequence in outgoing packets.
         """
         return self._get_attribute('correctTxL2FcsErrors')
     @CorrectTxL2FcsErrors.setter
@@ -84,10 +84,10 @@ class Checksums(Base):
 
     @property
     def DropRxL2FcsErrors(self):
-        """If true, drop incoming packets with L2 frame check sequence errors.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, drop incoming packets with L2 frame check sequence errors.
         """
         return self._get_attribute('dropRxL2FcsErrors')
     @DropRxL2FcsErrors.setter
@@ -95,16 +95,18 @@ class Checksums(Base):
         self._set_attribute('dropRxL2FcsErrors', value)
 
     def update(self, AlwaysCorrectWhenModifying=None, CorrectTxChecksumOverIp=None, CorrectTxIpv4Checksum=None, CorrectTxL2FcsErrors=None, DropRxL2FcsErrors=None):
-        """Updates a child instance of checksums on the server.
+        """Updates checksums resource on the server.
 
-        Args:
-            AlwaysCorrectWhenModifying (bool): If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
-            CorrectTxChecksumOverIp (bool): If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
-            CorrectTxIpv4Checksum (bool): If true, correct the IPv4 header checksum in outgoing IPv4 packets.
-            CorrectTxL2FcsErrors (bool): If true, correct the L2 frame check sequence in outgoing packets.
-            DropRxL2FcsErrors (bool): If true, drop incoming packets with L2 frame check sequence errors.
+        Args
+        ----
+        - AlwaysCorrectWhenModifying (bool): If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
+        - CorrectTxChecksumOverIp (bool): If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
+        - CorrectTxIpv4Checksum (bool): If true, correct the IPv4 header checksum in outgoing IPv4 packets.
+        - CorrectTxL2FcsErrors (bool): If true, correct the L2 frame check sequence in outgoing packets.
+        - DropRxL2FcsErrors (bool): If true, drop incoming packets with L2 frame check sequence errors.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

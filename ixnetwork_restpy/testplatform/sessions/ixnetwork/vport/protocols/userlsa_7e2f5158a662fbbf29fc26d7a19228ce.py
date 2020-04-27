@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class UserLsa(Base):
     """
-    The UserLsa class encapsulates a list of userLsa resources that is be managed by the user.
+    The UserLsa class encapsulates a list of userLsa resources that are managed by the user.
     A list of resources can be retrieved from the server using the UserLsa.find() method.
-    The list can be managed by the user by using the UserLsa.add() and UserLsa.remove() methods.
+    The list can be managed by using the UserLsa.add() and UserLsa.remove() methods.
     """
 
     __slots__ = ()
@@ -38,98 +38,98 @@ class UserLsa(Base):
 
     @property
     def AsExternal(self):
-        """An instance of the AsExternal class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asexternal_fd9b5e29352919ddb5344374a5c1fab0.AsExternal): An instance of the AsExternal class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asexternal_fd9b5e29352919ddb5344374a5c1fab0.AsExternal)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asexternal_fd9b5e29352919ddb5344374a5c1fab0 import AsExternal
         return AsExternal(self)
 
     @property
     def InterAreaPrefix(self):
-        """An instance of the InterAreaPrefix class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interareaprefix_2546e7ce9c33014e1b97fba5f4b3fa3c.InterAreaPrefix): An instance of the InterAreaPrefix class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interareaprefix_2546e7ce9c33014e1b97fba5f4b3fa3c.InterAreaPrefix)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interareaprefix_2546e7ce9c33014e1b97fba5f4b3fa3c import InterAreaPrefix
         return InterAreaPrefix(self)
 
     @property
     def InterAreaRouter(self):
-        """An instance of the InterAreaRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interarearouter_0238fd494b1e4de1d385c53ea6e47643.InterAreaRouter): An instance of the InterAreaRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interarearouter_0238fd494b1e4de1d385c53ea6e47643.InterAreaRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interarearouter_0238fd494b1e4de1d385c53ea6e47643 import InterAreaRouter
         return InterAreaRouter(self)
 
     @property
     def IntraAreaPrefix(self):
-        """An instance of the IntraAreaPrefix class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.intraareaprefix_5b774b390b3423e7b7245a4a8e6fa2bf.IntraAreaPrefix): An instance of the IntraAreaPrefix class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.intraareaprefix_5b774b390b3423e7b7245a4a8e6fa2bf.IntraAreaPrefix)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.intraareaprefix_5b774b390b3423e7b7245a4a8e6fa2bf import IntraAreaPrefix
         return IntraAreaPrefix(self)
 
     @property
     def Link(self):
-        """An instance of the Link class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_f91be640fe4d64015cbd067fec175e7b.Link): An instance of the Link class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_f91be640fe4d64015cbd067fec175e7b.Link)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_f91be640fe4d64015cbd067fec175e7b import Link
         return Link(self)
 
     @property
     def Network(self):
-        """An instance of the Network class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_6359169f221f6f5d9ea00380b4291ddb.Network): An instance of the Network class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_6359169f221f6f5d9ea00380b4291ddb.Network)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_6359169f221f6f5d9ea00380b4291ddb import Network
         return Network(self)
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_a07d67a2b1486caa253b2d7e6c180d8e.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_a07d67a2b1486caa253b2d7e6c180d8e.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_a07d67a2b1486caa253b2d7e6c180d8e import Router
         return Router(self)
@@ -137,9 +137,9 @@ class UserLsa(Base):
     @property
     def AdvertisingRouterId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('advertisingRouterId')
     @AdvertisingRouterId.setter
@@ -149,9 +149,9 @@ class UserLsa(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -161,9 +161,9 @@ class UserLsa(Base):
     @property
     def ExpandIntoLinksOrAttachedRouters(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('expandIntoLinksOrAttachedRouters')
     @ExpandIntoLinksOrAttachedRouters.setter
@@ -173,9 +173,9 @@ class UserLsa(Base):
     @property
     def LinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkStateId')
     @LinkStateId.setter
@@ -185,9 +185,9 @@ class UserLsa(Base):
     @property
     def LsaType(self):
         """
-
-        Returns:
-            str(router|network|interAreaPrefix|interAreaRouter|asExternal|link|intraAreaPrefix)
+        Returns
+        -------
+        - str(router | network | interAreaPrefix | interAreaRouter | asExternal | link | intraAreaPrefix): 
         """
         return self._get_attribute('lsaType')
     @LsaType.setter
@@ -195,79 +195,92 @@ class UserLsa(Base):
         self._set_attribute('lsaType', value)
 
     def update(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
-        """Updates a child instance of userLsa on the server.
+        """Updates userLsa resource on the server.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|interAreaPrefix|interAreaRouter|asExternal|link|intraAreaPrefix)): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | interAreaPrefix | interAreaRouter | asExternal | link | intraAreaPrefix)): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
-        """Adds a new userLsa node on the server and retrieves it in this instance.
+        """Adds a new userLsa resource on the server and adds it to the container.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|interAreaPrefix|interAreaRouter|asExternal|link|intraAreaPrefix)): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | interAreaPrefix | interAreaRouter | asExternal | link | intraAreaPrefix)): 
 
-        Returns:
-            self: This instance with all currently retrieved userLsa data using find and the newly added userLsa data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved userLsa resources using find and the newly added userLsa resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the userLsa data in this instance from server.
+        """Deletes all the contained userLsa resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
-        """Finds and retrieves userLsa data from the server.
+        """Finds and retrieves userLsa resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve userLsa data from the server.
-        By default the find method takes no parameters and will retrieve all userLsa data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsa resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all userLsa resources from the server.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|interAreaPrefix|interAreaRouter|asExternal|link|intraAreaPrefix)): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | interAreaPrefix | interAreaRouter | asExternal | link | intraAreaPrefix)): 
 
-        Returns:
-            self: This instance with matching userLsa data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching userLsa resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of userLsa data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the userLsa data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the userLsa resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

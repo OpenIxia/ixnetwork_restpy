@@ -36,82 +36,88 @@ class NtpServers(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AuthDelay(self):
-        """Authentication Delay (microsecs)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authDelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Delay (microsecs)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authDelay'))
 
     @property
     def Authentication(self):
-        """Authentication Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authentication')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authentication'))
 
     @property
     def AuthenticationKey(self):
-        """Authentication Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationKey'))
 
     @property
     def BurstMode(self):
-        """Burst Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('burstMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Burst Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('burstMode'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def InitialBurstMode(self):
-        """Initial Burst Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('initialBurstMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Burst Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('initialBurstMode'))
 
     @property
     def IsParentV6(self):
-        """Parent v6
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Parent v6
         """
         return self._get_attribute('isParentV6')
     @IsParentV6.setter
@@ -120,37 +126,40 @@ class NtpServers(Base):
 
     @property
     def KeyId(self):
-        """Key Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('keyId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Key Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('keyId'))
 
     @property
     def MaxPollInterval(self):
-        """Max Poll Interval (log2 seconds)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxPollInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max Poll Interval (log2 seconds)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxPollInterval'))
 
     @property
     def MinPollInterval(self):
-        """Min Poll Interval (log2 seconds)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('minPollInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Min Poll Interval (log2 seconds)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('minPollInterval'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -159,71 +168,79 @@ class NtpServers(Base):
 
     @property
     def ParticipateInClockSelect(self):
-        """Participate in Clock Select
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('participateInClockSelect')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Participate in Clock Select
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('participateInClockSelect'))
 
     @property
     def ServerIPAddress(self):
-        """Server IP Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('serverIPAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Server IP Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('serverIPAddress'))
 
     @property
     def ServerIPv6Address(self):
-        """Server IPv6 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('serverIPv6Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Server IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('serverIPv6Address'))
 
     def update(self, IsParentV6=None, Name=None):
-        """Updates a child instance of ntpServers on the server.
+        """Updates ntpServers resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            IsParentV6 (bool): Parent v6
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - IsParentV6 (bool): Parent v6
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AuthDelay=None, Authentication=None, AuthenticationKey=None, BurstMode=None, InitialBurstMode=None, KeyId=None, MaxPollInterval=None, MinPollInterval=None, ParticipateInClockSelect=None, ServerIPAddress=None, ServerIPv6Address=None):
         """Base class infrastructure that gets a list of ntpServers device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AuthDelay (str): optional regex of authDelay
-            Authentication (str): optional regex of authentication
-            AuthenticationKey (str): optional regex of authenticationKey
-            BurstMode (str): optional regex of burstMode
-            InitialBurstMode (str): optional regex of initialBurstMode
-            KeyId (str): optional regex of keyId
-            MaxPollInterval (str): optional regex of maxPollInterval
-            MinPollInterval (str): optional regex of minPollInterval
-            ParticipateInClockSelect (str): optional regex of participateInClockSelect
-            ServerIPAddress (str): optional regex of serverIPAddress
-            ServerIPv6Address (str): optional regex of serverIPv6Address
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AuthDelay (str): optional regex of authDelay
+        - Authentication (str): optional regex of authentication
+        - AuthenticationKey (str): optional regex of authenticationKey
+        - BurstMode (str): optional regex of burstMode
+        - InitialBurstMode (str): optional regex of initialBurstMode
+        - KeyId (str): optional regex of keyId
+        - MaxPollInterval (str): optional regex of maxPollInterval
+        - MinPollInterval (str): optional regex of minPollInterval
+        - ParticipateInClockSelect (str): optional regex of participateInClockSelect
+        - ServerIPAddress (str): optional regex of serverIPAddress
+        - ServerIPv6Address (str): optional regex of serverIPv6Address
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -232,29 +249,25 @@ class NtpServers(Base):
 
         Activate/Enable Ntp Servers
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        start(Arg2=list)list
+        --------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        start(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -266,29 +279,25 @@ class NtpServers(Base):
 
         Deactivate/Disable selected Ntp Servers
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        stop(Arg2=list)list
+        -------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        stop(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

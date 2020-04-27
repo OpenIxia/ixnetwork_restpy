@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VpnRouteRange(Base):
     """This object represents a route range present at a VPN site.
-    The VpnRouteRange class encapsulates a list of vpnRouteRange resources that is be managed by the user.
+    The VpnRouteRange class encapsulates a list of vpnRouteRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the VpnRouteRange.find() method.
-    The list can be managed by the user by using the VpnRouteRange.add() and VpnRouteRange.remove() methods.
+    The list can be managed by using the VpnRouteRange.add() and VpnRouteRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,94 +38,94 @@ class VpnRouteRange(Base):
 
     @property
     def AsSegment(self):
-        """An instance of the AsSegment class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_9dec5eeebc6ccfb5a5d691f8d083f39b.AsSegment): An instance of the AsSegment class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_9dec5eeebc6ccfb5a5d691f8d083f39b.AsSegment)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_9dec5eeebc6ccfb5a5d691f8d083f39b import AsSegment
         return AsSegment(self)._select()
 
     @property
     def Cluster(self):
-        """An instance of the Cluster class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_48686b0b22a2c27704e7bb41b248efaf.Cluster): An instance of the Cluster class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_48686b0b22a2c27704e7bb41b248efaf.Cluster)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_48686b0b22a2c27704e7bb41b248efaf import Cluster
         return Cluster(self)._select()
 
     @property
     def Community(self):
-        """An instance of the Community class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_c33bd0307af83deab0f89ee8a28f1fea.Community): An instance of the Community class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_c33bd0307af83deab0f89ee8a28f1fea.Community)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_c33bd0307af83deab0f89ee8a28f1fea import Community
         return Community(self)._select()
 
     @property
     def ExtendedCommunity(self):
-        """An instance of the ExtendedCommunity class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_8ef1d51546425512a5df80b5c231e055.ExtendedCommunity): An instance of the ExtendedCommunity class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_8ef1d51546425512a5df80b5c231e055.ExtendedCommunity)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_8ef1d51546425512a5df80b5c231e055 import ExtendedCommunity
         return ExtendedCommunity(self)._select()
 
     @property
     def Flapping(self):
-        """An instance of the Flapping class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_379c53e28ec8ab559a196939ff503478.Flapping): An instance of the Flapping class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_379c53e28ec8ab559a196939ff503478.Flapping)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_379c53e28ec8ab559a196939ff503478 import Flapping
         return Flapping(self)._select()
 
     @property
     def LabelSpace(self):
-        """An instance of the LabelSpace class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_24e68c2360ccce67dfc2e7e701b2b3df.LabelSpace): An instance of the LabelSpace class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_24e68c2360ccce67dfc2e7e701b2b3df.LabelSpace)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_24e68c2360ccce67dfc2e7e701b2b3df import LabelSpace
         return LabelSpace(self)._select()
 
     @property
     def AdvertiseNextHopAsV4(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('advertiseNextHopAsV4')
     @AdvertiseNextHopAsV4.setter
@@ -134,10 +134,10 @@ class VpnRouteRange(Base):
 
     @property
     def AggregatorAsNum(self):
-        """The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
         """
         return self._get_attribute('aggregatorAsNum')
     @AggregatorAsNum.setter
@@ -146,10 +146,10 @@ class VpnRouteRange(Base):
 
     @property
     def AggregatorIpAddress(self):
-        """The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('aggregatorIpAddress')
     @AggregatorIpAddress.setter
@@ -158,10 +158,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAsNumber(self):
-        """If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
         """
         return self._get_attribute('distinguisherAsNumber')
     @DistinguisherAsNumber.setter
@@ -170,10 +170,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAsNumberStep(self):
-        """The increment step for for the distinguisher AS number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for for the distinguisher AS number.
         """
         return self._get_attribute('distinguisherAsNumberStep')
     @DistinguisherAsNumberStep.setter
@@ -182,10 +182,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAsNumberStepAcrossVrfs(self):
-        """The increment step for per VRF distinguisher AS number within the VRF Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for per VRF distinguisher AS number within the VRF Range.
         """
         return self._get_attribute('distinguisherAsNumberStepAcrossVrfs')
     @DistinguisherAsNumberStepAcrossVrfs.setter
@@ -194,10 +194,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAssignedNumber(self):
-        """The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
         """
         return self._get_attribute('distinguisherAssignedNumber')
     @DistinguisherAssignedNumber.setter
@@ -206,10 +206,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAssignedNumberStep(self):
-        """The increment step for for the distinguisher assigned number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for for the distinguisher assigned number.
         """
         return self._get_attribute('distinguisherAssignedNumberStep')
     @DistinguisherAssignedNumberStep.setter
@@ -218,10 +218,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherAssignedNumberStepAcrossVrfs(self):
-        """The increment step for per VRF distinguisher assigned number within the VRF Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for per VRF distinguisher assigned number within the VRF Range.
         """
         return self._get_attribute('distinguisherAssignedNumberStepAcrossVrfs')
     @DistinguisherAssignedNumberStepAcrossVrfs.setter
@@ -230,10 +230,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherCount(self):
-        """The number of times that the increment step will be used. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times that the increment step will be used. (default = 1)
         """
         return self._get_attribute('distinguisherCount')
     @DistinguisherCount.setter
@@ -242,10 +242,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherCountPerVrf(self):
-        """The number of times that the increment step is used per VRF.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times that the increment step is used per VRF.
         """
         return self._get_attribute('distinguisherCountPerVrf')
     @DistinguisherCountPerVrf.setter
@@ -254,10 +254,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherIpAddress(self):
-        """If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
         """
         return self._get_attribute('distinguisherIpAddress')
     @DistinguisherIpAddress.setter
@@ -266,10 +266,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherIpAddressStep(self):
-        """The increment step for for the distinguisher IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step for for the distinguisher IP address.
         """
         return self._get_attribute('distinguisherIpAddressStep')
     @DistinguisherIpAddressStep.setter
@@ -278,10 +278,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherIpAddressStepAcrossVrfs(self):
-        """The increment step for per VRF distinguisher IP address within the VRF Range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step for per VRF distinguisher IP address within the VRF Range.
         """
         return self._get_attribute('distinguisherIpAddressStepAcrossVrfs')
     @DistinguisherIpAddressStepAcrossVrfs.setter
@@ -290,10 +290,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherMode(self):
-        """Specifies which part of the route distinguisher you want to increment.
-
-        Returns:
-            str(global|local)
+        """
+        Returns
+        -------
+        - str(global | local): Specifies which part of the route distinguisher you want to increment.
         """
         return self._get_attribute('distinguisherMode')
     @DistinguisherMode.setter
@@ -302,10 +302,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherStep(self):
-        """The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
         """
         return self._get_attribute('distinguisherStep')
     @DistinguisherStep.setter
@@ -314,10 +314,10 @@ class VpnRouteRange(Base):
 
     @property
     def DistinguisherType(self):
-        """Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
-
-        Returns:
-            str(as|ip|asNumber2)
+        """
+        Returns
+        -------
+        - str(as | ip | asNumber2): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
         """
         return self._get_attribute('distinguisherType')
     @DistinguisherType.setter
@@ -326,10 +326,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableAggregator(self):
-        """Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
         """
         return self._get_attribute('enableAggregator')
     @EnableAggregator.setter
@@ -338,10 +338,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableAggregatorIdIncrementMode(self):
-        """If true, increments the Aggregator ID by interationStep.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, increments the Aggregator ID by interationStep.
         """
         return self._get_attribute('enableAggregatorIdIncrementMode')
     @EnableAggregatorIdIncrementMode.setter
@@ -350,10 +350,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableAsPath(self):
-        """Enables the generation of AS Path related items.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of AS Path related items.
         """
         return self._get_attribute('enableAsPath')
     @EnableAsPath.setter
@@ -362,10 +362,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableAtomicAttribute(self):
-        """Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
         """
         return self._get_attribute('enableAtomicAttribute')
     @EnableAtomicAttribute.setter
@@ -374,10 +374,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableCluster(self):
-        """Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
         """
         return self._get_attribute('enableCluster')
     @EnableCluster.setter
@@ -386,10 +386,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableCommunity(self):
-        """Enables the generation of a COMMUNITY attribute list. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of a COMMUNITY attribute list. (default = false)
         """
         return self._get_attribute('enableCommunity')
     @EnableCommunity.setter
@@ -398,10 +398,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableGenerateUniqueRoutes(self):
-        """When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
         """
         return self._get_attribute('enableGenerateUniqueRoutes')
     @EnableGenerateUniqueRoutes.setter
@@ -411,9 +411,9 @@ class VpnRouteRange(Base):
     @property
     def EnableIncludeLoopback(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableIncludeLoopback')
     @EnableIncludeLoopback.setter
@@ -423,9 +423,9 @@ class VpnRouteRange(Base):
     @property
     def EnableIncludeMulticast(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableIncludeMulticast')
     @EnableIncludeMulticast.setter
@@ -434,10 +434,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableLocalPref(self):
-        """Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
         """
         return self._get_attribute('enableLocalPref')
     @EnableLocalPref.setter
@@ -446,10 +446,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableMed(self):
-        """Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
         """
         return self._get_attribute('enableMed')
     @EnableMed.setter
@@ -458,10 +458,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableNextHop(self):
-        """Enables the generation of a NEXT HOP attribute. (default = true)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of a NEXT HOP attribute. (default = true)
         """
         return self._get_attribute('enableNextHop')
     @EnableNextHop.setter
@@ -470,10 +470,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableOrigin(self):
-        """Enables the generation of an ORIGIN attribute. (default = true)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of an ORIGIN attribute. (default = true)
         """
         return self._get_attribute('enableOrigin')
     @EnableOrigin.setter
@@ -482,10 +482,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableOriginatorId(self):
-        """Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
         """
         return self._get_attribute('enableOriginatorId')
     @EnableOriginatorId.setter
@@ -494,10 +494,10 @@ class VpnRouteRange(Base):
 
     @property
     def EnableTraditionalNlriUpdate(self):
-        """If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
         """
         return self._get_attribute('enableTraditionalNlriUpdate')
     @EnableTraditionalNlriUpdate.setter
@@ -506,10 +506,10 @@ class VpnRouteRange(Base):
 
     @property
     def Enabled(self):
-        """Enables the VPN route range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the VPN route range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -518,10 +518,10 @@ class VpnRouteRange(Base):
 
     @property
     def EndOfRib(self):
-        """If true, enables end of rib
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables end of rib
         """
         return self._get_attribute('endOfRib')
     @EndOfRib.setter
@@ -530,10 +530,10 @@ class VpnRouteRange(Base):
 
     @property
     def FromPacking(self):
-        """The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
         """
         return self._get_attribute('fromPacking')
     @FromPacking.setter
@@ -542,10 +542,10 @@ class VpnRouteRange(Base):
 
     @property
     def FromPrefix(self):
-        """The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
         """
         return self._get_attribute('fromPrefix')
     @FromPrefix.setter
@@ -554,10 +554,10 @@ class VpnRouteRange(Base):
 
     @property
     def IncludeSourceAsExtendedCommunityPresent(self):
-        """If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
         """
         return self._get_attribute('includeSourceAsExtendedCommunityPresent')
     @IncludeSourceAsExtendedCommunityPresent.setter
@@ -566,10 +566,10 @@ class VpnRouteRange(Base):
 
     @property
     def IncludeVrfRouteImportExtendedCommunityPresent(self):
-        """Defines the route target extended community.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Defines the route target extended community.
         """
         return self._get_attribute('includeVrfRouteImportExtendedCommunityPresent')
     @IncludeVrfRouteImportExtendedCommunityPresent.setter
@@ -578,10 +578,10 @@ class VpnRouteRange(Base):
 
     @property
     def IpType(self):
-        """The type of IP address in nextworkAddress.
-
-        Returns:
-            str(ipAny|ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipAny | ipv4 | ipv6): The type of IP address in nextworkAddress.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -590,10 +590,10 @@ class VpnRouteRange(Base):
 
     @property
     def IterationStep(self):
-        """During prefix generation, the increment between prefixes. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: During prefix generation, the increment between prefixes. (default = 1)
         """
         return self._get_attribute('iterationStep')
     @IterationStep.setter
@@ -602,10 +602,10 @@ class VpnRouteRange(Base):
 
     @property
     def LocalPref(self):
-        """The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
         """
         return self._get_attribute('localPref')
     @LocalPref.setter
@@ -614,10 +614,10 @@ class VpnRouteRange(Base):
 
     @property
     def Med(self):
-        """The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
         """
         return self._get_attribute('med')
     @Med.setter
@@ -626,10 +626,10 @@ class VpnRouteRange(Base):
 
     @property
     def NetworkAddress(self):
-        """The network address used for the generated prefixes. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The network address used for the generated prefixes. (default = 0.0.0.0)
         """
         return self._get_attribute('networkAddress')
     @NetworkAddress.setter
@@ -638,10 +638,10 @@ class VpnRouteRange(Base):
 
     @property
     def NextHopIpAddress(self):
-        """The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('nextHopIpAddress')
     @NextHopIpAddress.setter
@@ -650,10 +650,10 @@ class VpnRouteRange(Base):
 
     @property
     def NextHopMode(self):
-        """Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-
-        Returns:
-            str(fixed|nextHopIncrement|incrementPerPrefix)
+        """
+        Returns
+        -------
+        - str(fixed | nextHopIncrement | incrementPerPrefix): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
         """
         return self._get_attribute('nextHopMode')
     @NextHopMode.setter
@@ -662,10 +662,10 @@ class VpnRouteRange(Base):
 
     @property
     def NextHopSetMode(self):
-        """Indicates now to set the next hop IP address.
-
-        Returns:
-            str(setManually|sameAsLocalIp)
+        """
+        Returns
+        -------
+        - str(setManually | sameAsLocalIp): Indicates now to set the next hop IP address.
         """
         return self._get_attribute('nextHopSetMode')
     @NextHopSetMode.setter
@@ -674,10 +674,10 @@ class VpnRouteRange(Base):
 
     @property
     def NumRoutes(self):
-        """The number of prefixes (routes) to generate for this routeItem. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of prefixes (routes) to generate for this routeItem. (default = 1)
         """
         return self._get_attribute('numRoutes')
     @NumRoutes.setter
@@ -686,10 +686,10 @@ class VpnRouteRange(Base):
 
     @property
     def OriginProtocol(self):
-        """An indication of where the route entry originated.
-
-        Returns:
-            str(igp|egp|incomplete)
+        """
+        Returns
+        -------
+        - str(igp | egp | incomplete): An indication of where the route entry originated.
         """
         return self._get_attribute('originProtocol')
     @OriginProtocol.setter
@@ -698,10 +698,10 @@ class VpnRouteRange(Base):
 
     @property
     def OriginatorId(self):
-        """The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('originatorId')
     @OriginatorId.setter
@@ -710,10 +710,10 @@ class VpnRouteRange(Base):
 
     @property
     def RouteStepAcrossVRFs(self):
-        """The route increment value across VRFs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The route increment value across VRFs.
         """
         return self._get_attribute('routeStepAcrossVRFs')
     @RouteStepAcrossVRFs.setter
@@ -722,10 +722,10 @@ class VpnRouteRange(Base):
 
     @property
     def ThruPacking(self):
-        """The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
         """
         return self._get_attribute('thruPacking')
     @ThruPacking.setter
@@ -734,10 +734,10 @@ class VpnRouteRange(Base):
 
     @property
     def ThruPrefix(self):
-        """The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
         """
         return self._get_attribute('thruPrefix')
     @ThruPrefix.setter
@@ -745,220 +745,233 @@ class VpnRouteRange(Base):
         self._set_attribute('thruPrefix', value)
 
     def update(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, RouteStepAcrossVRFs=None, ThruPacking=None, ThruPrefix=None):
-        """Updates a child instance of vpnRouteRange on the server.
+        """Updates vpnRouteRange resource on the server.
 
-        Args:
-            AdvertiseNextHopAsV4 (bool): NOT DEFINED
-            AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-            AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-            DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
-            DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
-            DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
-            DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
-            DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
-            DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
-            DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
-            DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
-            DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
-            DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
-            DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
-            DistinguisherMode (str(global|local)): Specifies which part of the route distinguisher you want to increment.
-            DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
-            DistinguisherType (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
-            EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-            EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
-            EnableAsPath (bool): Enables the generation of AS Path related items.
-            EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-            EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-            EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
-            EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
-            EnableIncludeLoopback (bool): 
-            EnableIncludeMulticast (bool): 
-            EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-            EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-            EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
-            EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
-            EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-            EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
-            Enabled (bool): Enables the VPN route range.
-            EndOfRib (bool): If true, enables end of rib
-            FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
-            FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
-            IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
-            IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
-            IpType (str(ipAny|ipv4|ipv6)): The type of IP address in nextworkAddress.
-            IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
-            LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-            Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-            NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
-            NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-            NextHopMode (str(fixed|nextHopIncrement|incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-            NextHopSetMode (str(setManually|sameAsLocalIp)): Indicates now to set the next hop IP address.
-            NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
-            OriginProtocol (str(igp|egp|incomplete)): An indication of where the route entry originated.
-            OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-            RouteStepAcrossVRFs (str): The route increment value across VRFs.
-            ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
-            ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        Args
+        ----
+        - AdvertiseNextHopAsV4 (bool): NOT DEFINED
+        - AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+        - AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+        - DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
+        - DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
+        - DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
+        - DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
+        - DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
+        - DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
+        - DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
+        - DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
+        - DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
+        - DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
+        - DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
+        - DistinguisherMode (str(global | local)): Specifies which part of the route distinguisher you want to increment.
+        - DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
+        - DistinguisherType (str(as | ip | asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+        - EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+        - EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
+        - EnableAsPath (bool): Enables the generation of AS Path related items.
+        - EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+        - EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+        - EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+        - EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
+        - EnableIncludeLoopback (bool): 
+        - EnableIncludeMulticast (bool): 
+        - EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+        - EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+        - EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+        - EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+        - EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+        - EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
+        - Enabled (bool): Enables the VPN route range.
+        - EndOfRib (bool): If true, enables end of rib
+        - FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
+        - FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        - IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
+        - IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
+        - IpType (str(ipAny | ipv4 | ipv6)): The type of IP address in nextworkAddress.
+        - IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
+        - LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+        - Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+        - NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
+        - NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+        - NextHopMode (str(fixed | nextHopIncrement | incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+        - NextHopSetMode (str(setManually | sameAsLocalIp)): Indicates now to set the next hop IP address.
+        - NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
+        - OriginProtocol (str(igp | egp | incomplete)): An indication of where the route entry originated.
+        - OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+        - RouteStepAcrossVRFs (str): The route increment value across VRFs.
+        - ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
+        - ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, RouteStepAcrossVRFs=None, ThruPacking=None, ThruPrefix=None):
-        """Adds a new vpnRouteRange node on the server and retrieves it in this instance.
+        """Adds a new vpnRouteRange resource on the server and adds it to the container.
 
-        Args:
-            AdvertiseNextHopAsV4 (bool): NOT DEFINED
-            AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-            AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-            DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
-            DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
-            DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
-            DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
-            DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
-            DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
-            DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
-            DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
-            DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
-            DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
-            DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
-            DistinguisherMode (str(global|local)): Specifies which part of the route distinguisher you want to increment.
-            DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
-            DistinguisherType (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
-            EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-            EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
-            EnableAsPath (bool): Enables the generation of AS Path related items.
-            EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-            EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-            EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
-            EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
-            EnableIncludeLoopback (bool): 
-            EnableIncludeMulticast (bool): 
-            EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-            EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-            EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
-            EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
-            EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-            EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
-            Enabled (bool): Enables the VPN route range.
-            EndOfRib (bool): If true, enables end of rib
-            FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
-            FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
-            IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
-            IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
-            IpType (str(ipAny|ipv4|ipv6)): The type of IP address in nextworkAddress.
-            IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
-            LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-            Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-            NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
-            NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-            NextHopMode (str(fixed|nextHopIncrement|incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-            NextHopSetMode (str(setManually|sameAsLocalIp)): Indicates now to set the next hop IP address.
-            NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
-            OriginProtocol (str(igp|egp|incomplete)): An indication of where the route entry originated.
-            OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-            RouteStepAcrossVRFs (str): The route increment value across VRFs.
-            ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
-            ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        Args
+        ----
+        - AdvertiseNextHopAsV4 (bool): NOT DEFINED
+        - AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+        - AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+        - DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
+        - DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
+        - DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
+        - DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
+        - DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
+        - DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
+        - DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
+        - DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
+        - DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
+        - DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
+        - DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
+        - DistinguisherMode (str(global | local)): Specifies which part of the route distinguisher you want to increment.
+        - DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
+        - DistinguisherType (str(as | ip | asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+        - EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+        - EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
+        - EnableAsPath (bool): Enables the generation of AS Path related items.
+        - EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+        - EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+        - EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+        - EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
+        - EnableIncludeLoopback (bool): 
+        - EnableIncludeMulticast (bool): 
+        - EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+        - EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+        - EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+        - EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+        - EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+        - EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
+        - Enabled (bool): Enables the VPN route range.
+        - EndOfRib (bool): If true, enables end of rib
+        - FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
+        - FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        - IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
+        - IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
+        - IpType (str(ipAny | ipv4 | ipv6)): The type of IP address in nextworkAddress.
+        - IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
+        - LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+        - Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+        - NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
+        - NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+        - NextHopMode (str(fixed | nextHopIncrement | incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+        - NextHopSetMode (str(setManually | sameAsLocalIp)): Indicates now to set the next hop IP address.
+        - NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
+        - OriginProtocol (str(igp | egp | incomplete)): An indication of where the route entry originated.
+        - OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+        - RouteStepAcrossVRFs (str): The route increment value across VRFs.
+        - ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
+        - ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
 
-        Returns:
-            self: This instance with all currently retrieved vpnRouteRange data using find and the newly added vpnRouteRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vpnRouteRange resources using find and the newly added vpnRouteRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vpnRouteRange data in this instance from server.
+        """Deletes all the contained vpnRouteRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, RouteStepAcrossVRFs=None, ThruPacking=None, ThruPrefix=None):
-        """Finds and retrieves vpnRouteRange data from the server.
+        """Finds and retrieves vpnRouteRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vpnRouteRange data from the server.
-        By default the find method takes no parameters and will retrieve all vpnRouteRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vpnRouteRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vpnRouteRange resources from the server.
 
-        Args:
-            AdvertiseNextHopAsV4 (bool): NOT DEFINED
-            AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-            AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-            DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
-            DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
-            DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
-            DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
-            DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
-            DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
-            DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
-            DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
-            DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
-            DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
-            DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
-            DistinguisherMode (str(global|local)): Specifies which part of the route distinguisher you want to increment.
-            DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
-            DistinguisherType (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
-            EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-            EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
-            EnableAsPath (bool): Enables the generation of AS Path related items.
-            EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-            EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-            EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
-            EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
-            EnableIncludeLoopback (bool): 
-            EnableIncludeMulticast (bool): 
-            EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-            EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-            EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
-            EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
-            EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-            EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
-            Enabled (bool): Enables the VPN route range.
-            EndOfRib (bool): If true, enables end of rib
-            FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
-            FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
-            IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
-            IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
-            IpType (str(ipAny|ipv4|ipv6)): The type of IP address in nextworkAddress.
-            IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
-            LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-            Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-            NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
-            NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-            NextHopMode (str(fixed|nextHopIncrement|incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-            NextHopSetMode (str(setManually|sameAsLocalIp)): Indicates now to set the next hop IP address.
-            NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
-            OriginProtocol (str(igp|egp|incomplete)): An indication of where the route entry originated.
-            OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-            RouteStepAcrossVRFs (str): The route increment value across VRFs.
-            ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
-            ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        Args
+        ----
+        - AdvertiseNextHopAsV4 (bool): NOT DEFINED
+        - AggregatorAsNum (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+        - AggregatorIpAddress (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+        - DistinguisherAsNumber (number): If distinguisherType is set to bgp4DistinguisherTypeAS, this is the 2-byte AS number in the administrator sub-field of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0)
+        - DistinguisherAsNumberStep (number): The increment step for for the distinguisher AS number.
+        - DistinguisherAsNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher AS number within the VRF Range.
+        - DistinguisherAssignedNumber (number): The assigned number of the VPN route distinguisher. It is a number from a numbering space which is maintained by the enterprise administers for a given IP address or ASN space. It is the local part of the route distinguisher. (default = 0)
+        - DistinguisherAssignedNumberStep (number): The increment step for for the distinguisher assigned number.
+        - DistinguisherAssignedNumberStepAcrossVrfs (number): The increment step for per VRF distinguisher assigned number within the VRF Range.
+        - DistinguisherCount (number): The number of times that the increment step will be used. (default = 1)
+        - DistinguisherCountPerVrf (number): The number of times that the increment step is used per VRF.
+        - DistinguisherIpAddress (str): If distinguisherType is set to bgp4DistinguisherTypeIP, this is the 4-byte IP address in the administrator subfield of the value field of the VPN Route Distinguisher. It is the global part of the route distinguisher. (default = 0.0.0.0)
+        - DistinguisherIpAddressStep (str): The increment step for for the distinguisher IP address.
+        - DistinguisherIpAddressStepAcrossVrfs (str): The increment step for per VRF distinguisher IP address within the VRF Range.
+        - DistinguisherMode (str(global | local)): Specifies which part of the route distinguisher you want to increment.
+        - DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
+        - DistinguisherType (str(as | ip | asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+        - EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+        - EnableAggregatorIdIncrementMode (bool): If true, increments the Aggregator ID by interationStep.
+        - EnableAsPath (bool): Enables the generation of AS Path related items.
+        - EnableAtomicAttribute (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+        - EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+        - EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+        - EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
+        - EnableIncludeLoopback (bool): 
+        - EnableIncludeMulticast (bool): 
+        - EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+        - EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+        - EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+        - EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+        - EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+        - EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
+        - Enabled (bool): Enables the VPN route range.
+        - EndOfRib (bool): If true, enables end of rib
+        - FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
+        - FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
+        - IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
+        - IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
+        - IpType (str(ipAny | ipv4 | ipv6)): The type of IP address in nextworkAddress.
+        - IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
+        - LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+        - Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+        - NetworkAddress (str): The network address used for the generated prefixes. (default = 0.0.0.0)
+        - NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+        - NextHopMode (str(fixed | nextHopIncrement | incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+        - NextHopSetMode (str(setManually | sameAsLocalIp)): Indicates now to set the next hop IP address.
+        - NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
+        - OriginProtocol (str(igp | egp | incomplete)): An indication of where the route entry originated.
+        - OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+        - RouteStepAcrossVRFs (str): The route increment value across VRFs.
+        - ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. See the discussion under fromPacking above. (default = 0)
+        - ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
 
-        Returns:
-            self: This instance with matching vpnRouteRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vpnRouteRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vpnRouteRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vpnRouteRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vpnRouteRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

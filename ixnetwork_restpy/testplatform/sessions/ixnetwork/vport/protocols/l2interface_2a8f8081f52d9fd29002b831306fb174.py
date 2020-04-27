@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class L2Interface(Base):
     """A single interface on a simulated router to be used in establishing Layer 2 VPNs.
-    The L2Interface class encapsulates a list of l2Interface resources that is be managed by the user.
+    The L2Interface class encapsulates a list of l2Interface resources that are managed by the user.
     A list of resources can be retrieved from the server using the L2Interface.find() method.
-    The list can be managed by the user by using the L2Interface.add() and L2Interface.remove() methods.
+    The list can be managed by using the L2Interface.add() and L2Interface.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class L2Interface(Base):
 
     @property
     def L2VcRange(self):
-        """An instance of the L2VcRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_fafd1f3f3e7a42c196ce8f20a3397d26.L2VcRange): An instance of the L2VcRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_fafd1f3f3e7a42c196ce8f20a3397d26.L2VcRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_fafd1f3f3e7a42c196ce8f20a3397d26 import L2VcRange
         return L2VcRange(self)
 
     @property
     def Count(self):
-        """The number of contiguous values of groupId that will be used in generating FECs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of contiguous values of groupId that will be used in generating FECs.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -64,10 +64,10 @@ class L2Interface(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of this interface for the simulated router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this interface for the simulated router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -76,10 +76,10 @@ class L2Interface(Base):
 
     @property
     def GroupId(self):
-        """The group ID associated with all VC FEC elements of this interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The group ID associated with all VC FEC elements of this interface.
         """
         return self._get_attribute('groupId')
     @GroupId.setter
@@ -88,10 +88,10 @@ class L2Interface(Base):
 
     @property
     def TrafficGroupId(self):
-        """Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -100,10 +100,10 @@ class L2Interface(Base):
 
     @property
     def Type(self):
-        """The type of virtual circuit.
-
-        Returns:
-            str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip|satopE1|satopT1|satopE3|satopT3|cesoPsnBasic|cesoPsnCas|frameRelayRfc4619)
+        """
+        Returns
+        -------
+        - str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619): The type of virtual circuit.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -111,79 +111,92 @@ class L2Interface(Base):
         self._set_attribute('type', value)
 
     def update(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
-        """Updates a child instance of l2Interface on the server.
+        """Updates l2Interface resource on the server.
 
-        Args:
-            Count (number): The number of contiguous values of groupId that will be used in generating FECs.
-            Enabled (bool): Enables the use of this interface for the simulated router.
-            GroupId (number): The group ID associated with all VC FEC elements of this interface.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
-            Type (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip|satopE1|satopT1|satopE3|satopT3|cesoPsnBasic|cesoPsnCas|frameRelayRfc4619)): The type of virtual circuit.
+        Args
+        ----
+        - Count (number): The number of contiguous values of groupId that will be used in generating FECs.
+        - Enabled (bool): Enables the use of this interface for the simulated router.
+        - GroupId (number): The group ID associated with all VC FEC elements of this interface.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - Type (str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619)): The type of virtual circuit.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
-        """Adds a new l2Interface node on the server and retrieves it in this instance.
+        """Adds a new l2Interface resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The number of contiguous values of groupId that will be used in generating FECs.
-            Enabled (bool): Enables the use of this interface for the simulated router.
-            GroupId (number): The group ID associated with all VC FEC elements of this interface.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
-            Type (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip|satopE1|satopT1|satopE3|satopT3|cesoPsnBasic|cesoPsnCas|frameRelayRfc4619)): The type of virtual circuit.
+        Args
+        ----
+        - Count (number): The number of contiguous values of groupId that will be used in generating FECs.
+        - Enabled (bool): Enables the use of this interface for the simulated router.
+        - GroupId (number): The group ID associated with all VC FEC elements of this interface.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - Type (str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619)): The type of virtual circuit.
 
-        Returns:
-            self: This instance with all currently retrieved l2Interface data using find and the newly added l2Interface data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved l2Interface resources using find and the newly added l2Interface resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the l2Interface data in this instance from server.
+        """Deletes all the contained l2Interface resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
-        """Finds and retrieves l2Interface data from the server.
+        """Finds and retrieves l2Interface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve l2Interface data from the server.
-        By default the find method takes no parameters and will retrieve all l2Interface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l2Interface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all l2Interface resources from the server.
 
-        Args:
-            Count (number): The number of contiguous values of groupId that will be used in generating FECs.
-            Enabled (bool): Enables the use of this interface for the simulated router.
-            GroupId (number): The group ID associated with all VC FEC elements of this interface.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
-            Type (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip|satopE1|satopT1|satopE3|satopT3|cesoPsnBasic|cesoPsnCas|frameRelayRfc4619)): The type of virtual circuit.
+        Args
+        ----
+        - Count (number): The number of contiguous values of groupId that will be used in generating FECs.
+        - Enabled (bool): Enables the use of this interface for the simulated router.
+        - GroupId (number): The group ID associated with all VC FEC elements of this interface.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - Type (str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619)): The type of virtual circuit.
 
-        Returns:
-            self: This instance with matching l2Interface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching l2Interface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of l2Interface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the l2Interface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the l2Interface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

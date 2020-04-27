@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DomainGroup(Base):
     """Domain Group
-    The DomainGroup class encapsulates a list of domainGroup resources that is be managed by the user.
+    The DomainGroup class encapsulates a list of domainGroup resources that are managed by the user.
     A list of resources can be retrieved from the server using the DomainGroup.find() method.
-    The list can be managed by the user by using the DomainGroup.add() and DomainGroup.remove() methods.
+    The list can be managed by using the DomainGroup.add() and DomainGroup.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DomainGroup(Base):
 
     @property
     def AutoIncrement(self):
-        """If enabled, ID is incremented
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, ID is incremented
         """
         return self._get_attribute('autoIncrement')
     @AutoIncrement.setter
@@ -50,10 +50,10 @@ class DomainGroup(Base):
 
     @property
     def BaseName(self):
-        """Base name of the domain group
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base name of the domain group
         """
         return self._get_attribute('baseName')
     @BaseName.setter
@@ -62,10 +62,10 @@ class DomainGroup(Base):
 
     @property
     def FullName(self):
-        """Full name of the domain group
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Full name of the domain group
         """
         return self._get_attribute('fullName')
     @FullName.setter
@@ -74,10 +74,10 @@ class DomainGroup(Base):
 
     @property
     def IncrementCount(self):
-        """Number of iterations of numerical field
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of iterations of numerical field
         """
         return self._get_attribute('incrementCount')
     @IncrementCount.setter
@@ -86,10 +86,10 @@ class DomainGroup(Base):
 
     @property
     def IncrementRepeat(self):
-        """Number of times the ID is repeated before passing to the next value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of times the ID is repeated before passing to the next value
         """
         return self._get_attribute('incrementRepeat')
     @IncrementRepeat.setter
@@ -98,10 +98,10 @@ class DomainGroup(Base):
 
     @property
     def IpAddresses(self):
-        """List of ipAddresses
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of ipAddresses
         """
         return self._get_attribute('ipAddresses')
     @IpAddresses.setter
@@ -110,19 +110,19 @@ class DomainGroup(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def StartWidth(self):
-        """Initial increment pattern including trailing characters e.g. 0001
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Initial increment pattern including trailing characters e.g. 0001
         """
         return self._get_attribute('startWidth')
     @StartWidth.setter
@@ -131,10 +131,10 @@ class DomainGroup(Base):
 
     @property
     def TrailingName(self):
-        """String appended after the numeric expression in the name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: String appended after the numeric expression in the name
         """
         return self._get_attribute('trailingName')
     @TrailingName.setter
@@ -142,90 +142,103 @@ class DomainGroup(Base):
         self._set_attribute('trailingName', value)
 
     def update(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
-        """Updates a child instance of domainGroup on the server.
+        """Updates domainGroup resource on the server.
 
-        Args:
-            AutoIncrement (bool): If enabled, ID is incremented
-            BaseName (str): Base name of the domain group
-            FullName (str): Full name of the domain group
-            IncrementCount (number): Number of iterations of numerical field
-            IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
-            IpAddresses (list(str)): List of ipAddresses
-            StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
-            TrailingName (str): String appended after the numeric expression in the name
+        Args
+        ----
+        - AutoIncrement (bool): If enabled, ID is incremented
+        - BaseName (str): Base name of the domain group
+        - FullName (str): Full name of the domain group
+        - IncrementCount (number): Number of iterations of numerical field
+        - IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
+        - IpAddresses (list(str)): List of ipAddresses
+        - StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
+        - TrailingName (str): String appended after the numeric expression in the name
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
-        """Adds a new domainGroup node on the server and retrieves it in this instance.
+        """Adds a new domainGroup resource on the server and adds it to the container.
 
-        Args:
-            AutoIncrement (bool): If enabled, ID is incremented
-            BaseName (str): Base name of the domain group
-            FullName (str): Full name of the domain group
-            IncrementCount (number): Number of iterations of numerical field
-            IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
-            IpAddresses (list(str)): List of ipAddresses
-            StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
-            TrailingName (str): String appended after the numeric expression in the name
+        Args
+        ----
+        - AutoIncrement (bool): If enabled, ID is incremented
+        - BaseName (str): Base name of the domain group
+        - FullName (str): Full name of the domain group
+        - IncrementCount (number): Number of iterations of numerical field
+        - IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
+        - IpAddresses (list(str)): List of ipAddresses
+        - StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
+        - TrailingName (str): String appended after the numeric expression in the name
 
-        Returns:
-            self: This instance with all currently retrieved domainGroup data using find and the newly added domainGroup data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved domainGroup resources using find and the newly added domainGroup resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the domainGroup data in this instance from server.
+        """Deletes all the contained domainGroup resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, ObjectId=None, StartWidth=None, TrailingName=None):
-        """Finds and retrieves domainGroup data from the server.
+        """Finds and retrieves domainGroup resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve domainGroup data from the server.
-        By default the find method takes no parameters and will retrieve all domainGroup data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve domainGroup resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all domainGroup resources from the server.
 
-        Args:
-            AutoIncrement (bool): If enabled, ID is incremented
-            BaseName (str): Base name of the domain group
-            FullName (str): Full name of the domain group
-            IncrementCount (number): Number of iterations of numerical field
-            IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
-            IpAddresses (list(str)): List of ipAddresses
-            ObjectId (str): Unique identifier for this object
-            StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
-            TrailingName (str): String appended after the numeric expression in the name
+        Args
+        ----
+        - AutoIncrement (bool): If enabled, ID is incremented
+        - BaseName (str): Base name of the domain group
+        - FullName (str): Full name of the domain group
+        - IncrementCount (number): Number of iterations of numerical field
+        - IncrementRepeat (number): Number of times the ID is repeated before passing to the next value
+        - IpAddresses (list(str)): List of ipAddresses
+        - ObjectId (str): Unique identifier for this object
+        - StartWidth (str): Initial increment pattern including trailing characters e.g. 0001
+        - TrailingName (str): String appended after the numeric expression in the name
 
-        Returns:
-            self: This instance with matching domainGroup data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching domainGroup resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of domainGroup data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the domainGroup data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the domainGroup resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -234,14 +247,15 @@ class DomainGroup(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -253,16 +267,15 @@ class DomainGroup(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -274,16 +287,15 @@ class DomainGroup(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

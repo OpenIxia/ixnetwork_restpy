@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DeadFlowsFilter(Base):
     """Dead flows filter specification.
-    The DeadFlowsFilter class encapsulates a list of deadFlowsFilter resources that is be managed by the user.
+    The DeadFlowsFilter class encapsulates a list of deadFlowsFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the DeadFlowsFilter.find() method.
-    The list can be managed by the user by using the DeadFlowsFilter.add() and DeadFlowsFilter.remove() methods.
+    The list can be managed by using the DeadFlowsFilter.add() and DeadFlowsFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DeadFlowsFilter(Base):
 
     @property
     def NumberOfResults(self):
-        """Number of traffic flows to be displayed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of traffic flows to be displayed.
         """
         return self._get_attribute('numberOfResults')
     @NumberOfResults.setter
@@ -50,10 +50,10 @@ class DeadFlowsFilter(Base):
 
     @property
     def SortingCondition(self):
-        """Sets the display order of the view.
-
-        Returns:
-            str(ascending|descending)
+        """
+        Returns
+        -------
+        - str(ascending | descending): Sets the display order of the view.
         """
         return self._get_attribute('sortingCondition')
     @SortingCondition.setter
@@ -61,70 +61,83 @@ class DeadFlowsFilter(Base):
         self._set_attribute('sortingCondition', value)
 
     def update(self, NumberOfResults=None, SortingCondition=None):
-        """Updates a child instance of deadFlowsFilter on the server.
+        """Updates deadFlowsFilter resource on the server.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortingCondition (str(ascending|descending)): Sets the display order of the view.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortingCondition (str(ascending | descending)): Sets the display order of the view.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, NumberOfResults=None, SortingCondition=None):
-        """Adds a new deadFlowsFilter node on the server and retrieves it in this instance.
+        """Adds a new deadFlowsFilter resource on the server and adds it to the container.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortingCondition (str(ascending|descending)): Sets the display order of the view.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortingCondition (str(ascending | descending)): Sets the display order of the view.
 
-        Returns:
-            self: This instance with all currently retrieved deadFlowsFilter data using find and the newly added deadFlowsFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved deadFlowsFilter resources using find and the newly added deadFlowsFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the deadFlowsFilter data in this instance from server.
+        """Deletes all the contained deadFlowsFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, NumberOfResults=None, SortingCondition=None):
-        """Finds and retrieves deadFlowsFilter data from the server.
+        """Finds and retrieves deadFlowsFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve deadFlowsFilter data from the server.
-        By default the find method takes no parameters and will retrieve all deadFlowsFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve deadFlowsFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all deadFlowsFilter resources from the server.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortingCondition (str(ascending|descending)): Sets the display order of the view.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortingCondition (str(ascending | descending)): Sets the display order of the view.
 
-        Returns:
-            self: This instance with matching deadFlowsFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching deadFlowsFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of deadFlowsFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the deadFlowsFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the deadFlowsFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

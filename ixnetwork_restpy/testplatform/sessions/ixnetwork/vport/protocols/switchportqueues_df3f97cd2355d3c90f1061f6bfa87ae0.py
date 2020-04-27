@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SwitchPortQueues(Base):
     """Indicates the Queue Range associated with a port range.
-    The SwitchPortQueues class encapsulates a list of switchPortQueues resources that is be managed by the user.
+    The SwitchPortQueues class encapsulates a list of switchPortQueues resources that are managed by the user.
     A list of resources can be retrieved from the server using the SwitchPortQueues.find() method.
-    The list can be managed by the user by using the SwitchPortQueues.add() and SwitchPortQueues.remove() methods.
+    The list can be managed by using the SwitchPortQueues.add() and SwitchPortQueues.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SwitchPortQueues(Base):
 
     @property
     def QueueProperty(self):
-        """An instance of the QueueProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_ca8559bf68a899ed1e84fdde441b0eeb.QueueProperty): An instance of the QueueProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_ca8559bf68a899ed1e84fdde441b0eeb.QueueProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_ca8559bf68a899ed1e84fdde441b0eeb import QueueProperty
         return QueueProperty(self)._select()
 
     @property
     def MinRate(self):
-        """Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
         """
         return self._get_attribute('minRate')
     @MinRate.setter
@@ -64,10 +64,10 @@ class SwitchPortQueues(Base):
 
     @property
     def NumberOfQueues(self):
-        """Specifies the number of entries in the queue range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of entries in the queue range.
         """
         return self._get_attribute('numberOfQueues')
     @NumberOfQueues.setter
@@ -76,10 +76,10 @@ class SwitchPortQueues(Base):
 
     @property
     def QueueId(self):
-        """Indicates the ID for the specific queue.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the ID for the specific queue.
         """
         return self._get_attribute('queueId')
     @QueueId.setter
@@ -87,73 +87,86 @@ class SwitchPortQueues(Base):
         self._set_attribute('queueId', value)
 
     def update(self, MinRate=None, NumberOfQueues=None, QueueId=None):
-        """Updates a child instance of switchPortQueues on the server.
+        """Updates switchPortQueues resource on the server.
 
-        Args:
-            MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
-            NumberOfQueues (number): Specifies the number of entries in the queue range.
-            QueueId (str): Indicates the ID for the specific queue.
+        Args
+        ----
+        - MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
+        - NumberOfQueues (number): Specifies the number of entries in the queue range.
+        - QueueId (str): Indicates the ID for the specific queue.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, MinRate=None, NumberOfQueues=None, QueueId=None):
-        """Adds a new switchPortQueues node on the server and retrieves it in this instance.
+        """Adds a new switchPortQueues resource on the server and adds it to the container.
 
-        Args:
-            MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
-            NumberOfQueues (number): Specifies the number of entries in the queue range.
-            QueueId (str): Indicates the ID for the specific queue.
+        Args
+        ----
+        - MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
+        - NumberOfQueues (number): Specifies the number of entries in the queue range.
+        - QueueId (str): Indicates the ID for the specific queue.
 
-        Returns:
-            self: This instance with all currently retrieved switchPortQueues data using find and the newly added switchPortQueues data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchPortQueues resources using find and the newly added switchPortQueues resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the switchPortQueues data in this instance from server.
+        """Deletes all the contained switchPortQueues resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, MinRate=None, NumberOfQueues=None, QueueId=None):
-        """Finds and retrieves switchPortQueues data from the server.
+        """Finds and retrieves switchPortQueues resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchPortQueues data from the server.
-        By default the find method takes no parameters and will retrieve all switchPortQueues data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchPortQueues resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchPortQueues resources from the server.
 
-        Args:
-            MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
-            NumberOfQueues (number): Specifies the number of entries in the queue range.
-            QueueId (str): Indicates the ID for the specific queue.
+        Args
+        ----
+        - MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
+        - NumberOfQueues (number): Specifies the number of entries in the queue range.
+        - QueueId (str): Indicates the ID for the specific queue.
 
-        Returns:
-            self: This instance with matching switchPortQueues data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchPortQueues resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchPortQueues data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchPortQueues data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchPortQueues resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

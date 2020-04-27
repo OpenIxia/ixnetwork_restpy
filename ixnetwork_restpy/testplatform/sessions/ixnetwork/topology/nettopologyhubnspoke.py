@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NetTopologyHubNSpoke(Base):
     """hub-n-spoke topology
-    The NetTopologyHubNSpoke class encapsulates a list of netTopologyHubNSpoke resources that is be managed by the user.
+    The NetTopologyHubNSpoke class encapsulates a list of netTopologyHubNSpoke resources that are managed by the user.
     A list of resources can be retrieved from the server using the NetTopologyHubNSpoke.find() method.
-    The list can be managed by the user by using the NetTopologyHubNSpoke.add() and NetTopologyHubNSpoke.remove() methods.
+    The list can be managed by using the NetTopologyHubNSpoke.add() and NetTopologyHubNSpoke.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class NetTopologyHubNSpoke(Base):
 
     @property
     def EnableLevel2Spokes(self):
-        """Enable Level 2 Spokes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Level 2 Spokes
         """
         return self._get_attribute('enableLevel2Spokes')
     @EnableLevel2Spokes.setter
@@ -50,10 +50,10 @@ class NetTopologyHubNSpoke(Base):
 
     @property
     def IncludeEntryPoint(self):
-        """if true, entry node belongs to ring topology, otherwise it is outside of ring
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
         return self._get_attribute('includeEntryPoint')
     @IncludeEntryPoint.setter
@@ -62,10 +62,10 @@ class NetTopologyHubNSpoke(Base):
 
     @property
     def LinkMultiplier(self):
-        """number of links between two nodes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: number of links between two nodes
         """
         return self._get_attribute('linkMultiplier')
     @LinkMultiplier.setter
@@ -74,10 +74,10 @@ class NetTopologyHubNSpoke(Base):
 
     @property
     def NumberOfFirstLevelSpokes(self):
-        """Number of First Level Spokes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of First Level Spokes
         """
         return self._get_attribute('numberOfFirstLevelSpokes')
     @NumberOfFirstLevelSpokes.setter
@@ -86,10 +86,10 @@ class NetTopologyHubNSpoke(Base):
 
     @property
     def NumberOfSecondLevelSpokes(self):
-        """Number of Second Level Spokes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Second Level Spokes
         """
         return self._get_attribute('numberOfSecondLevelSpokes')
     @NumberOfSecondLevelSpokes.setter
@@ -97,79 +97,92 @@ class NetTopologyHubNSpoke(Base):
         self._set_attribute('numberOfSecondLevelSpokes', value)
 
     def update(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
-        """Updates a child instance of netTopologyHubNSpoke on the server.
+        """Updates netTopologyHubNSpoke resource on the server.
 
-        Args:
-            EnableLevel2Spokes (bool): Enable Level 2 Spokes
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
-            NumberOfFirstLevelSpokes (number): Number of First Level Spokes
-            NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
+        Args
+        ----
+        - EnableLevel2Spokes (bool): Enable Level 2 Spokes
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
+        - NumberOfFirstLevelSpokes (number): Number of First Level Spokes
+        - NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
-        """Adds a new netTopologyHubNSpoke node on the server and retrieves it in this instance.
+        """Adds a new netTopologyHubNSpoke resource on the server and adds it to the container.
 
-        Args:
-            EnableLevel2Spokes (bool): Enable Level 2 Spokes
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
-            NumberOfFirstLevelSpokes (number): Number of First Level Spokes
-            NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
+        Args
+        ----
+        - EnableLevel2Spokes (bool): Enable Level 2 Spokes
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
+        - NumberOfFirstLevelSpokes (number): Number of First Level Spokes
+        - NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
 
-        Returns:
-            self: This instance with all currently retrieved netTopologyHubNSpoke data using find and the newly added netTopologyHubNSpoke data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved netTopologyHubNSpoke resources using find and the newly added netTopologyHubNSpoke resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the netTopologyHubNSpoke data in this instance from server.
+        """Deletes all the contained netTopologyHubNSpoke resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
-        """Finds and retrieves netTopologyHubNSpoke data from the server.
+        """Finds and retrieves netTopologyHubNSpoke resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve netTopologyHubNSpoke data from the server.
-        By default the find method takes no parameters and will retrieve all netTopologyHubNSpoke data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyHubNSpoke resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all netTopologyHubNSpoke resources from the server.
 
-        Args:
-            EnableLevel2Spokes (bool): Enable Level 2 Spokes
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
-            NumberOfFirstLevelSpokes (number): Number of First Level Spokes
-            NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
+        Args
+        ----
+        - EnableLevel2Spokes (bool): Enable Level 2 Spokes
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
+        - NumberOfFirstLevelSpokes (number): Number of First Level Spokes
+        - NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
 
-        Returns:
-            self: This instance with matching netTopologyHubNSpoke data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching netTopologyHubNSpoke resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of netTopologyHubNSpoke data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the netTopologyHubNSpoke data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the netTopologyHubNSpoke resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

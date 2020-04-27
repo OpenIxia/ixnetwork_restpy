@@ -37,9 +37,9 @@ class Cleanup(Base):
     @property
     def ChassisDaysOld(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('chassisDaysOld')
     @ChassisDaysOld.setter
@@ -49,9 +49,9 @@ class Cleanup(Base):
     @property
     def CleanupChassis(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('cleanupChassis')
     @CleanupChassis.setter
@@ -61,9 +61,9 @@ class Cleanup(Base):
     @property
     def CleanupClient(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('cleanupClient')
     @CleanupClient.setter
@@ -73,9 +73,9 @@ class Cleanup(Base):
     @property
     def ClientDaysOld(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('clientDaysOld')
     @ClientDaysOld.setter
@@ -84,10 +84,10 @@ class Cleanup(Base):
 
     @property
     def ProfileAes(self):
-        """Set this flag to cleanup AES logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup AES logs/artifacts
         """
         return self._get_attribute('profileAes')
     @ProfileAes.setter
@@ -96,10 +96,10 @@ class Cleanup(Base):
 
     @property
     def ProfileAllprofiles(self):
-        """Set this flag to cleanup All-Profiles logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup All-Profiles logs/artifacts
         """
         return self._get_attribute('profileAllprofiles')
     @ProfileAllprofiles.setter
@@ -108,10 +108,10 @@ class Cleanup(Base):
 
     @property
     def ProfileAnalyzer(self):
-        """Set this flag to cleanup Analyzer logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup Analyzer logs/artifacts
         """
         return self._get_attribute('profileAnalyzer')
     @ProfileAnalyzer.setter
@@ -120,10 +120,10 @@ class Cleanup(Base):
 
     @property
     def ProfileHlapi(self):
-        """Set this flag to cleanup HLAPI logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup HLAPI logs/artifacts
         """
         return self._get_attribute('profileHlapi')
     @ProfileHlapi.setter
@@ -132,10 +132,10 @@ class Cleanup(Base):
 
     @property
     def ProfileImpairment(self):
-        """Set this flag to cleanup Impairment logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup Impairment logs/artifacts
         """
         return self._get_attribute('profileImpairment')
     @ProfileImpairment.setter
@@ -144,10 +144,10 @@ class Cleanup(Base):
 
     @property
     def ProfileIxloadlite(self):
-        """Set this flag to cleanup IxLoad Lite logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup IxLoad Lite logs/artifacts
         """
         return self._get_attribute('profileIxloadlite')
     @ProfileIxloadlite.setter
@@ -156,10 +156,10 @@ class Cleanup(Base):
 
     @property
     def ProfileMiddleware(self):
-        """Set this flag to cleanup MiddleWare logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup MiddleWare logs/artifacts
         """
         return self._get_attribute('profileMiddleware')
     @ProfileMiddleware.setter
@@ -168,10 +168,10 @@ class Cleanup(Base):
 
     @property
     def ProfileQuicktests(self):
-        """Set this flag to cleanup QuickTests logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup QuickTests logs/artifacts
         """
         return self._get_attribute('profileQuicktests')
     @ProfileQuicktests.setter
@@ -180,10 +180,10 @@ class Cleanup(Base):
 
     @property
     def ProfileStackmanager(self):
-        """Set this flag to cleanup StackManager logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup StackManager logs/artifacts
         """
         return self._get_attribute('profileStackmanager')
     @ProfileStackmanager.setter
@@ -192,10 +192,10 @@ class Cleanup(Base):
 
     @property
     def ProfileStatviewerreporter(self):
-        """Set this flag to cleanup StatViewer-Reporter logs/artifacts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set this flag to cleanup StatViewer-Reporter logs/artifacts
         """
         return self._get_attribute('profileStatviewerreporter')
     @ProfileStatviewerreporter.setter
@@ -203,35 +203,38 @@ class Cleanup(Base):
         self._set_attribute('profileStatviewerreporter', value)
 
     def update(self, ChassisDaysOld=None, CleanupChassis=None, CleanupClient=None, ClientDaysOld=None, ProfileAes=None, ProfileAllprofiles=None, ProfileAnalyzer=None, ProfileHlapi=None, ProfileImpairment=None, ProfileIxloadlite=None, ProfileMiddleware=None, ProfileQuicktests=None, ProfileStackmanager=None, ProfileStatviewerreporter=None):
-        """Updates a child instance of cleanup on the server.
+        """Updates cleanup resource on the server.
 
-        Args:
-            ChassisDaysOld (number): 
-            CleanupChassis (bool): 
-            CleanupClient (bool): 
-            ClientDaysOld (number): 
-            ProfileAes (bool): Set this flag to cleanup AES logs/artifacts
-            ProfileAllprofiles (bool): Set this flag to cleanup All-Profiles logs/artifacts
-            ProfileAnalyzer (bool): Set this flag to cleanup Analyzer logs/artifacts
-            ProfileHlapi (bool): Set this flag to cleanup HLAPI logs/artifacts
-            ProfileImpairment (bool): Set this flag to cleanup Impairment logs/artifacts
-            ProfileIxloadlite (bool): Set this flag to cleanup IxLoad Lite logs/artifacts
-            ProfileMiddleware (bool): Set this flag to cleanup MiddleWare logs/artifacts
-            ProfileQuicktests (bool): Set this flag to cleanup QuickTests logs/artifacts
-            ProfileStackmanager (bool): Set this flag to cleanup StackManager logs/artifacts
-            ProfileStatviewerreporter (bool): Set this flag to cleanup StatViewer-Reporter logs/artifacts
+        Args
+        ----
+        - ChassisDaysOld (number): 
+        - CleanupChassis (bool): 
+        - CleanupClient (bool): 
+        - ClientDaysOld (number): 
+        - ProfileAes (bool): Set this flag to cleanup AES logs/artifacts
+        - ProfileAllprofiles (bool): Set this flag to cleanup All-Profiles logs/artifacts
+        - ProfileAnalyzer (bool): Set this flag to cleanup Analyzer logs/artifacts
+        - ProfileHlapi (bool): Set this flag to cleanup HLAPI logs/artifacts
+        - ProfileImpairment (bool): Set this flag to cleanup Impairment logs/artifacts
+        - ProfileIxloadlite (bool): Set this flag to cleanup IxLoad Lite logs/artifacts
+        - ProfileMiddleware (bool): Set this flag to cleanup MiddleWare logs/artifacts
+        - ProfileQuicktests (bool): Set this flag to cleanup QuickTests logs/artifacts
+        - ProfileStackmanager (bool): Set this flag to cleanup StackManager logs/artifacts
+        - ProfileStatviewerreporter (bool): Set this flag to cleanup StatViewer-Reporter logs/artifacts
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CleanupLogs(self):
         """Executes the cleanupLogs operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('cleanupLogs', payload=payload, response_object=None)

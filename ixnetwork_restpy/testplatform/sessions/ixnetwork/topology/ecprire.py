@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ECpriRe(Base):
     """EcpriRe
-    The ECpriRe class encapsulates a list of eCpriRe resources that is be managed by the user.
+    The ECpriRe class encapsulates a list of eCpriRe resources that are managed by the user.
     A list of resources can be retrieved from the server using the ECpriRe.find() method.
-    The list can be managed by the user by using the ECpriRe.add() and ECpriRe.remove() methods.
+    The list can be managed by using the ECpriRe.add() and ECpriRe.remove() methods.
     """
 
     __slots__ = ()
@@ -38,74 +38,78 @@ class ECpriRe(Base):
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def ECpriFaultSubObjectsList(self):
-        """An instance of the ECpriFaultSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist.ECpriFaultSubObjectsList): An instance of the ECpriFaultSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist.ECpriFaultSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist import ECpriFaultSubObjectsList
         return ECpriFaultSubObjectsList(self)
 
     @property
     def ActionType(self):
-        """Action Type value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actionType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Action Type value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actionType'))
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Address(self):
-        """The Address is a 48-bit value. Details such as whether the memory on the opposite node is organized in one or more memory banks or whether an address offset is signaled over the interface etc. are vendor specific. The Element ID could be used for identifying a specific memory hardware instance.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Address is a 48-bit value. Details such as whether the memory on the opposite node is organized in one or more memory banks or whether an address offset is signaled over the interface etc. are vendor specific. The Element ID could be used for identifying a specific memory hardware instance.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('address'))
 
     @property
     def CompensationValue(self):
-        """When Action Type is set to 0x00 (Request), 0x02 (Response) or 0x05 (Follow_Up) in the message, this field will contain the Compensation Value which is the compensation time measured in nanoseconds and multiplied by 2 to the power 16 and follows the format for the correctionField in the common message header specified in IEEE 1588-2008 Clause 13.3 [13]. When Action Type is set to 0x03 (Remote Request) or 0x04 (Remote Request with Follow_Up) the time information fields TimeStamp and Compensation Value are set to 0b in all bits. A Compensation Value of 0 (zero) is a valid value.Example: A Compensation Value of 183.5 ns is represented as 0000000000B78000 with base 16.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('compensationValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When Action Type is set to 0x00 (Request), 0x02 (Response) or 0x05 (Follow_Up) in the message, this field will contain the Compensation Value which is the compensation time measured in nanoseconds and multiplied by 2 to the power 16 and follows the format for the correctionField in the common message header specified in IEEE 1588-2008 Clause 13.3 [13]. When Action Type is set to 0x03 (Remote Request) or 0x04 (Remote Request with Follow_Up) the time information fields TimeStamp and Compensation Value are set to 0b in all bits. A Compensation Value of 0 (zero) is a valid value.Example: A Compensation Value of 183.5 ns is represented as 0000000000B78000 with base 16.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('compensationValue'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -114,91 +118,97 @@ class ECpriRe(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DelayMeasurementId(self):
-        """The Measurement ID is a 1-byte value used by the sender of the request when the response is received to distinguish between different measurements, i.e. the receiver of the request shall copy the ID from the request into the response message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('delayMeasurementId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Measurement ID is a 1-byte value used by the sender of the request when the response is received to distinguish between different measurements, i.e. the receiver of the request shall copy the ID from the request into the response message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('delayMeasurementId'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DummyBytesLength(self):
-        """The number of dummy bytes included in the eCPRI-payload will be defined by the eCPRI payload size field in the eCPRI common header. Due to network characteristics, a small message might take shorter time through the network than a large one, with the dummy bytes the one-way delay estimation can be improved. The insertion of dummy bytes is only needed when the Action Type set to 0x00 (Request) or to 0x01(Request with Follow_Up).
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dummyBytesLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of dummy bytes included in the eCPRI-payload will be defined by the eCPRI payload size field in the eCPRI common header. Due to network characteristics, a small message might take shorter time through the network than a large one, with the dummy bytes the one-way delay estimation can be improved. The insertion of dummy bytes is only needed when the Action Type set to 0x00 (Request) or to 0x01(Request with Follow_Up).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dummyBytesLength'))
 
     @property
     def ElementId(self):
-        """Depending on implementation the Element ID could be used for instance to point out a specific instance of a generic hardware function.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('elementId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Element ID could be used for instance to point out a specific instance of a generic hardware function.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('elementId'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def EventId(self):
-        """A 1-byte value set by the transmitter of an Event Indication or a Synchronization Request to enable identification of the acknowledge response.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eventId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A 1-byte value set by the transmitter of an Event Indication or a Synchronization Request to enable identification of the acknowledge response.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eventId'))
 
     @property
     def EventSequenceNumber(self):
-        """The Sequence Number is a 1-byte value that is incremented each time the transmitter sends the Event Indication with Event Type set to 0x00 (Fault(s) Indication). The receiver will use the sequence number to ensure that the correct status for a specific combination of {Element-ID; Fault-value} is used. Due to the nature of the packet based fronthaul network, packets might be delivered out of order and a sequence number is needed to handle this scenario. When a fault indication is not acknowledged the transmitter will re-transmit the fault, setting the sequence number to the same value used in the initial transmission.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eventSequenceNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Sequence Number is a 1-byte value that is incremented each time the transmitter sends the Event Indication with Event Type set to 0x00 (Fault(s) Indication). The receiver will use the sequence number to ensure that the correct status for a specific combination of {Element-ID; Fault-value} is used. Due to the nature of the packet based fronthaul network, packets might be delivered out of order and a sequence number is needed to handle this scenario. When a fault indication is not acknowledged the transmitter will re-transmit the fault, setting the sequence number to the same value used in the initial transmission.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eventSequenceNumber'))
 
     @property
     def EventType(self):
-        """Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eventType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values are from 0x06 to 0xFF are Reserved.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eventType'))
 
     @property
     def MessageType(self):
-        """Message Type
-
-        Returns:
-            str(realTimeControlData|remoteMemoryAccess|onewayDelayMeasurement|remoteReset|eventIndication)
+        """
+        Returns
+        -------
+        - str(realTimeControlData | remoteMemoryAccess | onewayDelayMeasurement | remoteReset | eventIndication): Message Type
         """
         return self._get_attribute('messageType')
     @MessageType.setter
@@ -207,10 +217,10 @@ class ECpriRe(Base):
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -219,10 +229,10 @@ class ECpriRe(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -231,10 +241,10 @@ class ECpriRe(Base):
 
     @property
     def NumberOfFaultSubObjects(self):
-        """Number Of Fault or Notify.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of Fault or Notify.
         """
         return self._get_attribute('numberOfFaultSubObjects')
     @NumberOfFaultSubObjects.setter
@@ -243,109 +253,119 @@ class ECpriRe(Base):
 
     @property
     def ReadWriteType(self):
-        """The field consist of two parts, a read or write indication and a request or response indication. The Response value 0010b (Failure) is used when the receiver of the request is unable to perform the read or write request due to invalid content in received parameters or other faults.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('readWriteType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The field consist of two parts, a read or write indication and a request or response indication. The Response value 0010b (Failure) is used when the receiver of the request is unable to perform the read or write request due to invalid content in received parameters or other faults.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('readWriteType'))
 
     @property
     def RemoteResetId(self):
-        """Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteResetId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. How to allocate values to Reset ID is vendor specific.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteResetId'))
 
     @property
     def ReservedActionType(self):
-        """The Action Type is a 1-byte value. Value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservedActionType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Action Type is a 1-byte value. Value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedActionType'))
 
     @property
     def ReservedEventType(self):
-        """Reserved Event Type values from 0x06 to 0xFF are Reserved.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservedEventType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved Event Type values are from 0x06 to 0xFF are Reserved.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedEventType'))
 
     @property
     def ReservedResetCode(self):
-        """The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote reset request, 0x02 represents Remote reset response and value ranging from 0x03 to 0xFF are Reserved.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservedResetCode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote reset request, 0x02 represents Remote reset response and value ranging from 0x03 to 0xFF are Reserved.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedResetCode'))
 
     @property
     def ResetCodeOp(self):
-        """The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('resetCodeOp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Values 0x00 Reserved, 0x01 Remote reset request, 0x02 Remote reset response, 0x03 to 0xFF Reserved.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('resetCodeOp'))
 
     @property
     def RmaAction(self):
-        """RMA Action Type is Request or Response or Failure.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rmaAction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RMA Action Type is Request or Response or Failure.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rmaAction'))
 
     @property
     def RmaDataLength(self):
-        """Number of bytes(0 to 255) to read or write from or to remote node.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rmaDataLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of bytes(0 to 255) to be read or write from or to remote node.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rmaDataLength'))
 
     @property
     def RtcDataLength(self):
-        """Size of RTC data that will be included in the eCPRI message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rtcDataLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Size of RTC data that will be included in the eCPRI message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rtcDataLength'))
 
     @property
     def SequenceId(self):
-        """An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sequenceId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. How to allocate values to SEQ_ID is vendor specific.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sequenceId'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -354,145 +374,162 @@ class ECpriRe(Base):
 
     @property
     def StartingRmaId(self):
-        """Identifier of the request message used by the Initiator to match the corresponding response message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startingRmaId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Identifier of the request message used by the Initiator to match the corresponding response message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startingRmaId'))
 
     @property
     def StartingRtcId(self):
-        """RTC ID of the eRE or eREC.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startingRtcId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RTC ID of the eRE or eREC.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startingRtcId'))
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TimeStamp(self):
-        """When Action Type is set to 0x00 (Request) in the message this field will contain the time stamp t1 and when Action Type is set to 0x02 (Response) the time stamp t2. When action type is set to 0x01(Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits, the corresponding time information values are sent in the Follow_Up message. When Action Type is set to 0x03 or 0x04 (Remote Request and Remote Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits. When using the Follow_Up message (2-Step version) the Follow_Up message (Action Type set to 0x05) the time information values t1 and tCV1 will be set to the TimeStamp field. The time information values follow the format specified in IEEE 1588-2008 [13] Clause 5.3.3. The value consists of 2 parts, one seconds-part and one nanoseconds-part. The first 6 bytes are the seconds and the next 4 bytes are the nanoseconds.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('timeStamp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When Action Type is set to 0x00 (Request) in the message this field will contain the time stamp t1 and when Action Type is set to 0x02 (Response) the time stamp t2. When action type is set to 0x01(Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits, the corresponding time information values are sent in the Follow_Up message. When Action Type is set to 0x03 or 0x04 (Remote Request and Remote Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits. When using the Follow_Up message (2-Step version) the Follow_Up message (Action Type set to 0x05) the time information values t1 and tCV1 will be set to the TimeStamp field. The time information values follow the format specified in IEEE 1588-2008 [13] Clause 5.3.3. The value consists of 2 parts, one seconds-part and one nanoseconds-part. The first 6 bytes are the seconds and the next 4 bytes are the nanoseconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('timeStamp'))
 
     @property
     def VendorSpecificPayloadLength(self):
-        """Vendor Specific Payload bytes are used to carry optional vendor-specific information. The vendor specific information can contain data items such as authentication parameters or any parameters to select a specific reset behavior. This specification does not detail any concrete reset behavior.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vendorSpecificPayloadLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Vendor Specific Payload bytes are used to carry optional vendor-specific information. The vendor specific information can contain data items such as authentication parameters or any parameters to select a specific reset behavior. This specification does not detail any concrete reset behavior.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vendorSpecificPayloadLength'))
 
     def update(self, ConnectedVia=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, StackedLayers=None):
-        """Updates a child instance of eCpriRe on the server.
+        """Updates eCpriRe resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            MessageType (str(realTimeControlData|remoteMemoryAccess|onewayDelayMeasurement|remoteReset|eventIndication)): Message Type
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfFaultSubObjects (number): Number Of Fault or Notify.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - MessageType (str(realTimeControlData | remoteMemoryAccess | onewayDelayMeasurement | remoteReset | eventIndication)): Message Type
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFaultSubObjects (number): Number Of Fault or Notify.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, StackedLayers=None):
-        """Adds a new eCpriRe node on the server and retrieves it in this instance.
+        """Adds a new eCpriRe resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            MessageType (str(realTimeControlData|remoteMemoryAccess|onewayDelayMeasurement|remoteReset|eventIndication)): Message Type
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfFaultSubObjects (number): Number Of Fault or Notify.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - MessageType (str(realTimeControlData | remoteMemoryAccess | onewayDelayMeasurement | remoteReset | eventIndication)): Message Type
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFaultSubObjects (number): Number Of Fault or Notify.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved eCpriRe data using find and the newly added eCpriRe data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved eCpriRe resources using find and the newly added eCpriRe resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the eCpriRe data in this instance from server.
+        """Deletes all the contained eCpriRe resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves eCpriRe data from the server.
+        """Finds and retrieves eCpriRe resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve eCpriRe data from the server.
-        By default the find method takes no parameters and will retrieve all eCpriRe data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eCpriRe resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all eCpriRe resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            MessageType (str(realTimeControlData|remoteMemoryAccess|onewayDelayMeasurement|remoteReset|eventIndication)): Message Type
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfFaultSubObjects (number): Number Of Fault or Notify.
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - MessageType (str(realTimeControlData | remoteMemoryAccess | onewayDelayMeasurement | remoteReset | eventIndication)): Message Type
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFaultSubObjects (number): Number Of Fault or Notify.
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching eCpriRe data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching eCpriRe resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of eCpriRe data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the eCpriRe data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the eCpriRe resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -501,38 +538,41 @@ class ECpriRe(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ActionType (str): optional regex of actionType
-            Active (str): optional regex of active
-            Address (str): optional regex of address
-            CompensationValue (str): optional regex of compensationValue
-            DelayMeasurementId (str): optional regex of delayMeasurementId
-            DummyBytesLength (str): optional regex of dummyBytesLength
-            ElementId (str): optional regex of elementId
-            EventId (str): optional regex of eventId
-            EventSequenceNumber (str): optional regex of eventSequenceNumber
-            EventType (str): optional regex of eventType
-            ReadWriteType (str): optional regex of readWriteType
-            RemoteResetId (str): optional regex of remoteResetId
-            ReservedActionType (str): optional regex of reservedActionType
-            ReservedEventType (str): optional regex of reservedEventType
-            ReservedResetCode (str): optional regex of reservedResetCode
-            ResetCodeOp (str): optional regex of resetCodeOp
-            RmaAction (str): optional regex of rmaAction
-            RmaDataLength (str): optional regex of rmaDataLength
-            RtcDataLength (str): optional regex of rtcDataLength
-            SequenceId (str): optional regex of sequenceId
-            StartingRmaId (str): optional regex of startingRmaId
-            StartingRtcId (str): optional regex of startingRtcId
-            TimeStamp (str): optional regex of timeStamp
-            VendorSpecificPayloadLength (str): optional regex of vendorSpecificPayloadLength
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ActionType (str): optional regex of actionType
+        - Active (str): optional regex of active
+        - Address (str): optional regex of address
+        - CompensationValue (str): optional regex of compensationValue
+        - DelayMeasurementId (str): optional regex of delayMeasurementId
+        - DummyBytesLength (str): optional regex of dummyBytesLength
+        - ElementId (str): optional regex of elementId
+        - EventId (str): optional regex of eventId
+        - EventSequenceNumber (str): optional regex of eventSequenceNumber
+        - EventType (str): optional regex of eventType
+        - ReadWriteType (str): optional regex of readWriteType
+        - RemoteResetId (str): optional regex of remoteResetId
+        - ReservedActionType (str): optional regex of reservedActionType
+        - ReservedEventType (str): optional regex of reservedEventType
+        - ReservedResetCode (str): optional regex of reservedResetCode
+        - ResetCodeOp (str): optional regex of resetCodeOp
+        - RmaAction (str): optional regex of rmaAction
+        - RmaDataLength (str): optional regex of rmaDataLength
+        - RtcDataLength (str): optional regex of rtcDataLength
+        - SequenceId (str): optional regex of sequenceId
+        - StartingRmaId (str): optional regex of startingRmaId
+        - StartingRtcId (str): optional regex of startingRtcId
+        - TimeStamp (str): optional regex of timeStamp
+        - VendorSpecificPayloadLength (str): optional regex of vendorSpecificPayloadLength
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -541,22 +581,20 @@ class ECpriRe(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -568,22 +606,20 @@ class ECpriRe(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -595,22 +631,20 @@ class ECpriRe(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

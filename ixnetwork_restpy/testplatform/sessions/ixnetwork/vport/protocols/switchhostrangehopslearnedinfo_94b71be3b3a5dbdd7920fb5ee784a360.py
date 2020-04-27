@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchHostRangeHopsLearnedInfo(Base):
     """NOT DEFINED
-    The SwitchHostRangeHopsLearnedInfo class encapsulates a list of switchHostRangeHopsLearnedInfo resources that is managed by the system.
+    The SwitchHostRangeHopsLearnedInfo class encapsulates a list of switchHostRangeHopsLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchHostRangeHopsLearnedInfo.find() method.
     """
 
@@ -37,121 +37,128 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def Action(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('action')
 
     @property
     def DestinationHostMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationHostMac')
 
     @property
     def InputPort(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('inputPort')
 
     @property
     def InputTimeInMs(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('inputTimeInMs')
 
     @property
     def OutputPort(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('outputPort')
 
     @property
     def OutputTimeInMs(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('outputTimeInMs')
 
     @property
     def SourceHostMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sourceHostMac')
 
     @property
     def SwitchDataPathId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('switchDataPathId')
 
     @property
     def SwitchIp(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('switchIp')
 
     def find(self, Action=None, DestinationHostMac=None, InputPort=None, InputTimeInMs=None, OutputPort=None, OutputTimeInMs=None, SourceHostMac=None, SwitchDataPathId=None, SwitchIp=None):
-        """Finds and retrieves switchHostRangeHopsLearnedInfo data from the server.
+        """Finds and retrieves switchHostRangeHopsLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchHostRangeHopsLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchHostRangeHopsLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRangeHopsLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchHostRangeHopsLearnedInfo resources from the server.
 
-        Args:
-            Action (str): NOT DEFINED
-            DestinationHostMac (str): NOT DEFINED
-            InputPort (number): NOT DEFINED
-            InputTimeInMs (number): NOT DEFINED
-            OutputPort (number): NOT DEFINED
-            OutputTimeInMs (number): NOT DEFINED
-            SourceHostMac (str): NOT DEFINED
-            SwitchDataPathId (number): NOT DEFINED
-            SwitchIp (str): NOT DEFINED
+        Args
+        ----
+        - Action (str): NOT DEFINED
+        - DestinationHostMac (str): NOT DEFINED
+        - InputPort (number): NOT DEFINED
+        - InputTimeInMs (number): NOT DEFINED
+        - OutputPort (number): NOT DEFINED
+        - OutputTimeInMs (number): NOT DEFINED
+        - SourceHostMac (str): NOT DEFINED
+        - SwitchDataPathId (number): NOT DEFINED
+        - SwitchIp (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching switchHostRangeHopsLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchHostRangeHopsLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchHostRangeHopsLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchHostRangeHopsLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchHostRangeHopsLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

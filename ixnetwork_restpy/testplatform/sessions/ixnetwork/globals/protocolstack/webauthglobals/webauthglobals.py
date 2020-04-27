@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class WebAuthGlobals(Base):
     """Web Authentication Global Options
-    The WebAuthGlobals class encapsulates a list of webAuthGlobals resources that is be managed by the user.
+    The WebAuthGlobals class encapsulates a list of webAuthGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the WebAuthGlobals.find() method.
-    The list can be managed by the user by using the WebAuthGlobals.add() and WebAuthGlobals.remove() methods.
+    The list can be managed by using the WebAuthGlobals.add() and WebAuthGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class WebAuthGlobals(Base):
 
     @property
     def AuthFailure(self):
-        """Text to match on web page to determine if authentication was unsuccessful
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Text to match on web page to determine if authentication was unsuccessful
         """
         return self._get_attribute('authFailure')
     @AuthFailure.setter
@@ -50,10 +50,10 @@ class WebAuthGlobals(Base):
 
     @property
     def AuthSuccess(self):
-        """Text to match on web page to determine if authentication was successful
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Text to match on web page to determine if authentication was successful
         """
         return self._get_attribute('authSuccess')
     @AuthSuccess.setter
@@ -62,10 +62,10 @@ class WebAuthGlobals(Base):
 
     @property
     def AuthTimeout(self):
-        """The amount of time to wait for the DUT to return a success or failure page
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time to wait for the DUT to return a success or failure page
         """
         return self._get_attribute('authTimeout')
     @AuthTimeout.setter
@@ -74,10 +74,10 @@ class WebAuthGlobals(Base):
 
     @property
     def DefaultFields(self):
-        """Controls if we look up for default HTML tags
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Controls if we look up for default HTML tags
         """
         return self._get_attribute('defaultFields')
     @DefaultFields.setter
@@ -86,10 +86,10 @@ class WebAuthGlobals(Base):
 
     @property
     def DelayDhcp(self):
-        """DHCP delay
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: DHCP delay
         """
         return self._get_attribute('delayDhcp')
     @DelayDhcp.setter
@@ -98,10 +98,10 @@ class WebAuthGlobals(Base):
 
     @property
     def DisableArpResponse(self):
-        """If enabled, bla bla
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, bla bla
         """
         return self._get_attribute('disableArpResponse')
     @DisableArpResponse.setter
@@ -110,10 +110,10 @@ class WebAuthGlobals(Base):
 
     @property
     def EnableMaxOutstanding(self):
-        """If set, maximum number of sessions will be enforced
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set, maximum number of sessions will be enforced
         """
         return self._get_attribute('enableMaxOutstanding')
     @EnableMaxOutstanding.setter
@@ -122,10 +122,10 @@ class WebAuthGlobals(Base):
 
     @property
     def InputField1(self):
-        """The label on the first field of the web authentication form to be matched
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The label on the first field of the web authentication form to be matched
         """
         return self._get_attribute('inputField1')
     @InputField1.setter
@@ -134,10 +134,10 @@ class WebAuthGlobals(Base):
 
     @property
     def InputField2(self):
-        """The label on the second field of the web authentication form to be matched
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The label on the second field of the web authentication form to be matched
         """
         return self._get_attribute('inputField2')
     @InputField2.setter
@@ -146,10 +146,10 @@ class WebAuthGlobals(Base):
 
     @property
     def InputField3(self):
-        """The label on the third field of the web authentication form to be matched
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The label on the third field of the web authentication form to be matched
         """
         return self._get_attribute('inputField3')
     @InputField3.setter
@@ -158,10 +158,10 @@ class WebAuthGlobals(Base):
 
     @property
     def MaxClientsPerSecond(self):
-        """The number of interfaces to setup per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces to setup per second
         """
         return self._get_attribute('maxClientsPerSecond')
     @MaxClientsPerSecond.setter
@@ -170,10 +170,10 @@ class WebAuthGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """The maximum number of sessions that can be outstanding at any time
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of sessions that can be outstanding at any time
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -182,10 +182,10 @@ class WebAuthGlobals(Base):
 
     @property
     def NumRetry(self):
-        """The number of times to attempt web authentication, including failures and timeouts.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times to attempt web authentication, including failures and timeouts.
         """
         return self._get_attribute('numRetry')
     @NumRetry.setter
@@ -194,19 +194,19 @@ class WebAuthGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PolicyEnable(self):
-        """Attempt to read the Request URL after a successful authentication
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Attempt to read the Request URL after a successful authentication
         """
         return self._get_attribute('policyEnable')
     @PolicyEnable.setter
@@ -215,10 +215,10 @@ class WebAuthGlobals(Base):
 
     @property
     def PolicySuccess(self):
-        """Text to match on web page to determine if policy enforcement was successful
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Text to match on web page to determine if policy enforcement was successful
         """
         return self._get_attribute('policySuccess')
     @PolicySuccess.setter
@@ -227,10 +227,10 @@ class WebAuthGlobals(Base):
 
     @property
     def PolicyTimeout(self):
-        """The amount of time to wait for the DUT to return the Request URL page
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time to wait for the DUT to return the Request URL page
         """
         return self._get_attribute('policyTimeout')
     @PolicyTimeout.setter
@@ -239,10 +239,10 @@ class WebAuthGlobals(Base):
 
     @property
     def Port(self):
-        """TCP port number for the Protocol Type
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: TCP port number for the Protocol Type
         """
         return self._get_attribute('port')
     @Port.setter
@@ -251,10 +251,10 @@ class WebAuthGlobals(Base):
 
     @property
     def Protocol(self):
-        """The protocol used by the supplicants
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The protocol used by the supplicants
         """
         return self._get_attribute('protocol')
     @Protocol.setter
@@ -263,10 +263,10 @@ class WebAuthGlobals(Base):
 
     @property
     def RedirectFailureUrl(self):
-        """URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
         """
         return self._get_attribute('redirectFailureUrl')
     @RedirectFailureUrl.setter
@@ -275,10 +275,10 @@ class WebAuthGlobals(Base):
 
     @property
     def RedirectLoginUrl(self):
-        """URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
         """
         return self._get_attribute('redirectLoginUrl')
     @RedirectLoginUrl.setter
@@ -287,10 +287,10 @@ class WebAuthGlobals(Base):
 
     @property
     def RenewDhcp(self):
-        """If set, a new DHCP request will be generated following a successful authentication
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set, a new DHCP request will be generated following a successful authentication
         """
         return self._get_attribute('renewDhcp')
     @RenewDhcp.setter
@@ -299,10 +299,10 @@ class WebAuthGlobals(Base):
 
     @property
     def RequestUrl(self):
-        """The URL that the emulated supplicants will request, also used to determine successful authentication
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The URL that the emulated supplicants will request, also used to determine successful authentication
         """
         return self._get_attribute('requestUrl')
     @RequestUrl.setter
@@ -311,10 +311,10 @@ class WebAuthGlobals(Base):
 
     @property
     def ResponseDelay(self):
-        """The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
         """
         return self._get_attribute('responseDelay')
     @ResponseDelay.setter
@@ -323,10 +323,10 @@ class WebAuthGlobals(Base):
 
     @property
     def WaitBeforeRun(self):
-        """Wait before running this protocol
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Wait before running this protocol
         """
         return self._get_attribute('waitBeforeRun')
     @WaitBeforeRun.setter
@@ -335,10 +335,10 @@ class WebAuthGlobals(Base):
 
     @property
     def WaitForCompletion(self):
-        """If true the configuration will end after all interfaces are configured
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the configuration will end after all interfaces are configured
         """
         return self._get_attribute('waitForCompletion')
     @WaitForCompletion.setter
@@ -346,140 +346,153 @@ class WebAuthGlobals(Base):
         self._set_attribute('waitForCompletion', value)
 
     def update(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Updates a child instance of webAuthGlobals on the server.
+        """Updates webAuthGlobals resource on the server.
 
-        Args:
-            AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
-            AuthSuccess (str): Text to match on web page to determine if authentication was successful
-            AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
-            DefaultFields (bool): Controls if we look up for default HTML tags
-            DelayDhcp (number): DHCP delay
-            DisableArpResponse (bool): If enabled, bla bla
-            EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
-            InputField1 (str): The label on the first field of the web authentication form to be matched
-            InputField2 (str): The label on the second field of the web authentication form to be matched
-            InputField3 (str): The label on the third field of the web authentication form to be matched
-            MaxClientsPerSecond (number): The number of interfaces to setup per second
-            MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
-            NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
-            PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
-            PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
-            PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
-            Port (number): TCP port number for the Protocol Type
-            Protocol (str): The protocol used by the supplicants
-            RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
-            RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
-            RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
-            RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
-            ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
-            WaitBeforeRun (number): Wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
+        Args
+        ----
+        - AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
+        - AuthSuccess (str): Text to match on web page to determine if authentication was successful
+        - AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
+        - DefaultFields (bool): Controls if we look up for default HTML tags
+        - DelayDhcp (number): DHCP delay
+        - DisableArpResponse (bool): If enabled, bla bla
+        - EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
+        - InputField1 (str): The label on the first field of the web authentication form to be matched
+        - InputField2 (str): The label on the second field of the web authentication form to be matched
+        - InputField3 (str): The label on the third field of the web authentication form to be matched
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
+        - NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
+        - PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
+        - PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
+        - PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
+        - Port (number): TCP port number for the Protocol Type
+        - Protocol (str): The protocol used by the supplicants
+        - RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
+        - RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
+        - RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
+        - RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
+        - ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
+        - WaitBeforeRun (number): Wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Adds a new webAuthGlobals node on the server and retrieves it in this instance.
+        """Adds a new webAuthGlobals resource on the server and adds it to the container.
 
-        Args:
-            AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
-            AuthSuccess (str): Text to match on web page to determine if authentication was successful
-            AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
-            DefaultFields (bool): Controls if we look up for default HTML tags
-            DelayDhcp (number): DHCP delay
-            DisableArpResponse (bool): If enabled, bla bla
-            EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
-            InputField1 (str): The label on the first field of the web authentication form to be matched
-            InputField2 (str): The label on the second field of the web authentication form to be matched
-            InputField3 (str): The label on the third field of the web authentication form to be matched
-            MaxClientsPerSecond (number): The number of interfaces to setup per second
-            MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
-            NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
-            PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
-            PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
-            PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
-            Port (number): TCP port number for the Protocol Type
-            Protocol (str): The protocol used by the supplicants
-            RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
-            RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
-            RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
-            RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
-            ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
-            WaitBeforeRun (number): Wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
+        Args
+        ----
+        - AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
+        - AuthSuccess (str): Text to match on web page to determine if authentication was successful
+        - AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
+        - DefaultFields (bool): Controls if we look up for default HTML tags
+        - DelayDhcp (number): DHCP delay
+        - DisableArpResponse (bool): If enabled, bla bla
+        - EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
+        - InputField1 (str): The label on the first field of the web authentication form to be matched
+        - InputField2 (str): The label on the second field of the web authentication form to be matched
+        - InputField3 (str): The label on the third field of the web authentication form to be matched
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
+        - NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
+        - PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
+        - PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
+        - PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
+        - Port (number): TCP port number for the Protocol Type
+        - Protocol (str): The protocol used by the supplicants
+        - RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
+        - RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
+        - RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
+        - RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
+        - ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
+        - WaitBeforeRun (number): Wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
 
-        Returns:
-            self: This instance with all currently retrieved webAuthGlobals data using find and the newly added webAuthGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved webAuthGlobals resources using find and the newly added webAuthGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the webAuthGlobals data in this instance from server.
+        """Deletes all the contained webAuthGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, ObjectId=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Finds and retrieves webAuthGlobals data from the server.
+        """Finds and retrieves webAuthGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve webAuthGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all webAuthGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve webAuthGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all webAuthGlobals resources from the server.
 
-        Args:
-            AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
-            AuthSuccess (str): Text to match on web page to determine if authentication was successful
-            AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
-            DefaultFields (bool): Controls if we look up for default HTML tags
-            DelayDhcp (number): DHCP delay
-            DisableArpResponse (bool): If enabled, bla bla
-            EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
-            InputField1 (str): The label on the first field of the web authentication form to be matched
-            InputField2 (str): The label on the second field of the web authentication form to be matched
-            InputField3 (str): The label on the third field of the web authentication form to be matched
-            MaxClientsPerSecond (number): The number of interfaces to setup per second
-            MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
-            NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
-            ObjectId (str): Unique identifier for this object
-            PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
-            PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
-            PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
-            Port (number): TCP port number for the Protocol Type
-            Protocol (str): The protocol used by the supplicants
-            RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
-            RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
-            RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
-            RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
-            ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
-            WaitBeforeRun (number): Wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
+        Args
+        ----
+        - AuthFailure (str): Text to match on web page to determine if authentication was unsuccessful
+        - AuthSuccess (str): Text to match on web page to determine if authentication was successful
+        - AuthTimeout (number): The amount of time to wait for the DUT to return a success or failure page
+        - DefaultFields (bool): Controls if we look up for default HTML tags
+        - DelayDhcp (number): DHCP delay
+        - DisableArpResponse (bool): If enabled, bla bla
+        - EnableMaxOutstanding (bool): If set, maximum number of sessions will be enforced
+        - InputField1 (str): The label on the first field of the web authentication form to be matched
+        - InputField2 (str): The label on the second field of the web authentication form to be matched
+        - InputField3 (str): The label on the third field of the web authentication form to be matched
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be outstanding at any time
+        - NumRetry (number): The number of times to attempt web authentication, including failures and timeouts.
+        - ObjectId (str): Unique identifier for this object
+        - PolicyEnable (bool): Attempt to read the Request URL after a successful authentication
+        - PolicySuccess (str): Text to match on web page to determine if policy enforcement was successful
+        - PolicyTimeout (number): The amount of time to wait for the DUT to return the Request URL page
+        - Port (number): TCP port number for the Protocol Type
+        - Protocol (str): The protocol used by the supplicants
+        - RedirectFailureUrl (str): URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
+        - RedirectLoginUrl (str): URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
+        - RenewDhcp (bool): If set, a new DHCP request will be generated following a successful authentication
+        - RequestUrl (str): The URL that the emulated supplicants will request, also used to determine successful authentication
+        - ResponseDelay (number): The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
+        - WaitBeforeRun (number): Wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured
 
-        Returns:
-            self: This instance with matching webAuthGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching webAuthGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of webAuthGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the webAuthGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the webAuthGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

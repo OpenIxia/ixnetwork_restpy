@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchHostRangeLearnedInfo(Base):
     """NOT DEFINED
-    The SwitchHostRangeLearnedInfo class encapsulates a list of switchHostRangeLearnedInfo resources that is managed by the system.
+    The SwitchHostRangeLearnedInfo class encapsulates a list of switchHostRangeLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchHostRangeLearnedInfo.find() method.
     """
 
@@ -37,115 +37,122 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def SwitchHostRangeHopsLearnedInfo(self):
-        """An instance of the SwitchHostRangeHopsLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_94b71be3b3a5dbdd7920fb5ee784a360.SwitchHostRangeHopsLearnedInfo): An instance of the SwitchHostRangeHopsLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_94b71be3b3a5dbdd7920fb5ee784a360.SwitchHostRangeHopsLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_94b71be3b3a5dbdd7920fb5ee784a360 import SwitchHostRangeHopsLearnedInfo
         return SwitchHostRangeHopsLearnedInfo(self)
 
     @property
     def DestinationHostIpv4Address(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationHostIpv4Address')
 
     @property
     def DestinationHostMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationHostMac')
 
     @property
     def PacketType(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('packetType')
 
     @property
     def Path(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('path')
 
     @property
     def SourceHostIpv4Address(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sourceHostIpv4Address')
 
     @property
     def SourceHostMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sourceHostMac')
 
     @property
     def Status(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('status')
 
     def find(self, DestinationHostIpv4Address=None, DestinationHostMac=None, PacketType=None, Path=None, SourceHostIpv4Address=None, SourceHostMac=None, Status=None):
-        """Finds and retrieves switchHostRangeLearnedInfo data from the server.
+        """Finds and retrieves switchHostRangeLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchHostRangeLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchHostRangeLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRangeLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchHostRangeLearnedInfo resources from the server.
 
-        Args:
-            DestinationHostIpv4Address (str): NOT DEFINED
-            DestinationHostMac (str): NOT DEFINED
-            PacketType (str): NOT DEFINED
-            Path (str): NOT DEFINED
-            SourceHostIpv4Address (str): NOT DEFINED
-            SourceHostMac (str): NOT DEFINED
-            Status (str): NOT DEFINED
+        Args
+        ----
+        - DestinationHostIpv4Address (str): NOT DEFINED
+        - DestinationHostMac (str): NOT DEFINED
+        - PacketType (str): NOT DEFINED
+        - Path (str): NOT DEFINED
+        - SourceHostIpv4Address (str): NOT DEFINED
+        - SourceHostMac (str): NOT DEFINED
+        - Status (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching switchHostRangeLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchHostRangeLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchHostRangeLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchHostRangeLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchHostRangeLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

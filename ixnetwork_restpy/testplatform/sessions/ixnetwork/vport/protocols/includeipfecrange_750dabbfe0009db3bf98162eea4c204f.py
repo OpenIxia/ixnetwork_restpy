@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IncludeIpFecRange(Base):
     """An instance of a particular FEC that may be used to filter learned routes for an interface.
-    The IncludeIpFecRange class encapsulates a list of includeIpFecRange resources that is be managed by the user.
+    The IncludeIpFecRange class encapsulates a list of includeIpFecRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the IncludeIpFecRange.find() method.
-    The list can be managed by the user by using the IncludeIpFecRange.add() and IncludeIpFecRange.remove() methods.
+    The list can be managed by using the IncludeIpFecRange.add() and IncludeIpFecRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IncludeIpFecRange(Base):
 
     @property
     def EnableExactPrefixMatch(self):
-        """Matching for FEC address ranges, for the purpose of filtering.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Matching for FEC address ranges, for the purpose of filtering.
         """
         return self._get_attribute('enableExactPrefixMatch')
     @EnableExactPrefixMatch.setter
@@ -50,10 +50,10 @@ class IncludeIpFecRange(Base):
 
     @property
     def Enabled(self):
-        """Enables this explicit include FEC range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this explicit include FEC range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class IncludeIpFecRange(Base):
 
     @property
     def FirstNetwork(self):
-        """The first FEC network address in the range (in IP address format).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first FEC network address in the range (in IP address format).
         """
         return self._get_attribute('firstNetwork')
     @FirstNetwork.setter
@@ -74,10 +74,10 @@ class IncludeIpFecRange(Base):
 
     @property
     def MaskWidth(self):
-        """The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
         """
         return self._get_attribute('maskWidth')
     @MaskWidth.setter
@@ -86,10 +86,10 @@ class IncludeIpFecRange(Base):
 
     @property
     def NumberOfNetworks(self):
-        """The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
         """
         return self._get_attribute('numberOfNetworks')
     @NumberOfNetworks.setter
@@ -97,79 +97,92 @@ class IncludeIpFecRange(Base):
         self._set_attribute('numberOfNetworks', value)
 
     def update(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
-        """Updates a child instance of includeIpFecRange on the server.
+        """Updates includeIpFecRange resource on the server.
 
-        Args:
-            EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
-            Enabled (bool): Enables this explicit include FEC range.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
-            NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
+        - Enabled (bool): Enables this explicit include FEC range.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
+        - NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
-        """Adds a new includeIpFecRange node on the server and retrieves it in this instance.
+        """Adds a new includeIpFecRange resource on the server and adds it to the container.
 
-        Args:
-            EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
-            Enabled (bool): Enables this explicit include FEC range.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
-            NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
+        - Enabled (bool): Enables this explicit include FEC range.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
+        - NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Returns:
-            self: This instance with all currently retrieved includeIpFecRange data using find and the newly added includeIpFecRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved includeIpFecRange resources using find and the newly added includeIpFecRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the includeIpFecRange data in this instance from server.
+        """Deletes all the contained includeIpFecRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
-        """Finds and retrieves includeIpFecRange data from the server.
+        """Finds and retrieves includeIpFecRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve includeIpFecRange data from the server.
-        By default the find method takes no parameters and will retrieve all includeIpFecRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve includeIpFecRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all includeIpFecRange resources from the server.
 
-        Args:
-            EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
-            Enabled (bool): Enables this explicit include FEC range.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
-            NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
+        - Enabled (bool): Enables this explicit include FEC range.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
+        - NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Returns:
-            self: This instance with matching includeIpFecRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching includeIpFecRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of includeIpFecRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the includeIpFecRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the includeIpFecRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

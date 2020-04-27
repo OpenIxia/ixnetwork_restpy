@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class PcrfSecondaryRange(Base):
     """
-    The PcrfSecondaryRange class encapsulates a list of pcrfSecondaryRange resources that is be managed by the user.
+    The PcrfSecondaryRange class encapsulates a list of pcrfSecondaryRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the PcrfSecondaryRange.find() method.
-    The list can be managed by the user by using the PcrfSecondaryRange.add() and PcrfSecondaryRange.remove() methods.
+    The list can be managed by using the PcrfSecondaryRange.add() and PcrfSecondaryRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,64 +38,73 @@ class PcrfSecondaryRange(Base):
 
     @property
     def EgtpSgwRange(self):
-        """An instance of the EgtpSgwRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwrange_96260c709144e06a3d95d2d453510013.EgtpSgwRange): An instance of the EgtpSgwRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwrange_96260c709144e06a3d95d2d453510013.EgtpSgwRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwrange_96260c709144e06a3d95d2d453510013 import EgtpSgwRange
         return EgtpSgwRange(self)._select()
 
     def add(self):
-        """Adds a new pcrfSecondaryRange node on the server and retrieves it in this instance.
+        """Adds a new pcrfSecondaryRange resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved pcrfSecondaryRange data using find and the newly added pcrfSecondaryRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved pcrfSecondaryRange resources using find and the newly added pcrfSecondaryRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the pcrfSecondaryRange data in this instance from server.
+        """Deletes all the contained pcrfSecondaryRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self):
-        """Finds and retrieves pcrfSecondaryRange data from the server.
+        """Finds and retrieves pcrfSecondaryRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pcrfSecondaryRange data from the server.
-        By default the find method takes no parameters and will retrieve all pcrfSecondaryRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcrfSecondaryRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pcrfSecondaryRange resources from the server.
 
-        Returns:
-            self: This instance with matching pcrfSecondaryRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pcrfSecondaryRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pcrfSecondaryRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pcrfSecondaryRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pcrfSecondaryRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -104,14 +113,15 @@ class PcrfSecondaryRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -123,16 +133,15 @@ class PcrfSecondaryRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -144,16 +153,15 @@ class PcrfSecondaryRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

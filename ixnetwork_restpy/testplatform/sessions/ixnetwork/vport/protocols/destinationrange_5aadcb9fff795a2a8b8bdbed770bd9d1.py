@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DestinationRange(Base):
     """Describes a set of routers that are the destination of MPLS tunnels. Destination ranges correspond to Ingress or Egress routers.
-    The DestinationRange class encapsulates a list of destinationRange resources that is be managed by the user.
+    The DestinationRange class encapsulates a list of destinationRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DestinationRange.find() method.
-    The list can be managed by the user by using the DestinationRange.add() and DestinationRange.remove() methods.
+    The list can be managed by using the DestinationRange.add() and DestinationRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,66 +38,66 @@ class DestinationRange(Base):
 
     @property
     def Egress(self):
-        """An instance of the Egress class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_80a225a7d2f89ae802ed81a7e65b6c35.Egress): An instance of the Egress class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_80a225a7d2f89ae802ed81a7e65b6c35.Egress)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_80a225a7d2f89ae802ed81a7e65b6c35 import Egress
         return Egress(self)._select()
 
     @property
     def Ingress(self):
-        """An instance of the Ingress class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_8fb0ec838166824b807bb5ec3d9c9624.Ingress): An instance of the Ingress class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_8fb0ec838166824b807bb5ec3d9c9624.Ingress)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_8fb0ec838166824b807bb5ec3d9c9624 import Ingress
         return Ingress(self)._select()
 
     @property
     def TunnelLeafRange(self):
-        """An instance of the TunnelLeafRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_f490a88e6322eac42bbdff6a179a8222.TunnelLeafRange): An instance of the TunnelLeafRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_f490a88e6322eac42bbdff6a179a8222.TunnelLeafRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_f490a88e6322eac42bbdff6a179a8222 import TunnelLeafRange
         return TunnelLeafRange(self)
 
     @property
     def TunnelTailTrafficEndPoint(self):
-        """An instance of the TunnelTailTrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_bfa5151749f5f113c4f8fd8a7fe858a2.TunnelTailTrafficEndPoint): An instance of the TunnelTailTrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_bfa5151749f5f113c4f8fd8a7fe858a2.TunnelTailTrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_bfa5151749f5f113c4f8fd8a7fe858a2 import TunnelTailTrafficEndPoint
         return TunnelTailTrafficEndPoint(self)
 
     @property
     def Behavior(self):
-        """Indicates whether the destination range corresponds to an Ingress or Egress router.
-
-        Returns:
-            str(ingress|egress)
+        """
+        Returns
+        -------
+        - str(ingress | egress): Indicates whether the destination range corresponds to an Ingress or Egress router.
         """
         return self._get_attribute('behavior')
     @Behavior.setter
@@ -106,10 +106,10 @@ class DestinationRange(Base):
 
     @property
     def EmulationType(self):
-        """The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
-
-        Returns:
-            str(reserved|rsvpTe|rsvpTeP2mP)
+        """
+        Returns
+        -------
+        - str(reserved | rsvpTe | rsvpTeP2mP): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
         """
         return self._get_attribute('emulationType')
     @EmulationType.setter
@@ -118,10 +118,10 @@ class DestinationRange(Base):
 
     @property
     def EnableReplyingLspPing(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableReplyingLspPing')
     @EnableReplyingLspPing.setter
@@ -130,10 +130,10 @@ class DestinationRange(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the use of the destination range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of the destination range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -142,10 +142,10 @@ class DestinationRange(Base):
 
     @property
     def IpAddressFrom(self):
-        """The IP address of the first destination router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the first destination router.
         """
         return self._get_attribute('ipAddressFrom')
     @IpAddressFrom.setter
@@ -154,10 +154,10 @@ class DestinationRange(Base):
 
     @property
     def IpCount(self):
-        """The number of destination routers. Each router's address is one greater than the previous one's.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of destination routers. Each router's address is one greater than the previous one's.
         """
         return self._get_attribute('ipCount')
     @IpCount.setter
@@ -166,10 +166,10 @@ class DestinationRange(Base):
 
     @property
     def IsConnectedIpAppended(self):
-        """Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
         """
         return self._get_attribute('isConnectedIpAppended')
     @IsConnectedIpAppended.setter
@@ -178,10 +178,10 @@ class DestinationRange(Base):
 
     @property
     def IsHeadIpPrepended(self):
-        """If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
         """
         return self._get_attribute('isHeadIpPrepended')
     @IsHeadIpPrepended.setter
@@ -190,10 +190,10 @@ class DestinationRange(Base):
 
     @property
     def IsLeafIpPrepended(self):
-        """If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
         """
         return self._get_attribute('isLeafIpPrepended')
     @IsLeafIpPrepended.setter
@@ -202,10 +202,10 @@ class DestinationRange(Base):
 
     @property
     def IsSendingAsRro(self):
-        """If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
         """
         return self._get_attribute('isSendingAsRro')
     @IsSendingAsRro.setter
@@ -214,10 +214,10 @@ class DestinationRange(Base):
 
     @property
     def IsSendingAsSrro(self):
-        """If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
         """
         return self._get_attribute('isSendingAsSrro')
     @IsSendingAsSrro.setter
@@ -226,10 +226,10 @@ class DestinationRange(Base):
 
     @property
     def P2mpId(self):
-        """The P2MP id represented in IP address format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The P2MP id represented in IP address format.
         """
         return self._get_attribute('p2mpId')
     @P2mpId.setter
@@ -237,100 +237,113 @@ class DestinationRange(Base):
         self._set_attribute('p2mpId', value)
 
     def update(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
-        """Updates a child instance of destinationRange on the server.
+        """Updates destinationRange resource on the server.
 
-        Args:
-            Behavior (str(ingress|egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
-            EmulationType (str(reserved|rsvpTe|rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables or disables the use of the destination range.
-            IpAddressFrom (str): The IP address of the first destination router.
-            IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
-            IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
-            IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
-            IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
-            P2mpId (str): The P2MP id represented in IP address format.
+        Args
+        ----
+        - Behavior (str(ingress | egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
+        - EmulationType (str(reserved | rsvpTe | rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables or disables the use of the destination range.
+        - IpAddressFrom (str): The IP address of the first destination router.
+        - IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+        - IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
+        - IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
+        - IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
+        - P2mpId (str): The P2MP id represented in IP address format.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
-        """Adds a new destinationRange node on the server and retrieves it in this instance.
+        """Adds a new destinationRange resource on the server and adds it to the container.
 
-        Args:
-            Behavior (str(ingress|egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
-            EmulationType (str(reserved|rsvpTe|rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables or disables the use of the destination range.
-            IpAddressFrom (str): The IP address of the first destination router.
-            IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
-            IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
-            IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
-            IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
-            P2mpId (str): The P2MP id represented in IP address format.
+        Args
+        ----
+        - Behavior (str(ingress | egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
+        - EmulationType (str(reserved | rsvpTe | rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables or disables the use of the destination range.
+        - IpAddressFrom (str): The IP address of the first destination router.
+        - IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+        - IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
+        - IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
+        - IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
+        - P2mpId (str): The P2MP id represented in IP address format.
 
-        Returns:
-            self: This instance with all currently retrieved destinationRange data using find and the newly added destinationRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved destinationRange resources using find and the newly added destinationRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the destinationRange data in this instance from server.
+        """Deletes all the contained destinationRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
-        """Finds and retrieves destinationRange data from the server.
+        """Finds and retrieves destinationRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve destinationRange data from the server.
-        By default the find method takes no parameters and will retrieve all destinationRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve destinationRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all destinationRange resources from the server.
 
-        Args:
-            Behavior (str(ingress|egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
-            EmulationType (str(reserved|rsvpTe|rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables or disables the use of the destination range.
-            IpAddressFrom (str): The IP address of the first destination router.
-            IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
-            IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
-            IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
-            IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
-            IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
-            P2mpId (str): The P2MP id represented in IP address format.
+        Args
+        ----
+        - Behavior (str(ingress | egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
+        - EmulationType (str(reserved | rsvpTe | rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables or disables the use of the destination range.
+        - IpAddressFrom (str): The IP address of the first destination router.
+        - IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+        - IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
+        - IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
+        - IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
+        - IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
+        - P2mpId (str): The P2MP id represented in IP address format.
 
-        Returns:
-            self: This instance with matching destinationRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching destinationRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of destinationRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the destinationRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the destinationRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

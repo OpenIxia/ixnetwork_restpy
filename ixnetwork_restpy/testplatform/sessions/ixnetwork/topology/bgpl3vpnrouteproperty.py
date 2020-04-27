@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BgpL3VpnRouteProperty(Base):
     """BGP L3-VPN Route Range Properties
-    The BgpL3VpnRouteProperty class encapsulates a list of bgpL3VpnRouteProperty resources that is be managed by the user.
+    The BgpL3VpnRouteProperty class encapsulates a list of bgpL3VpnRouteProperty resources that are managed by the user.
     A list of resources can be retrieved from the server using the BgpL3VpnRouteProperty.find() method.
-    The list can be managed by the user by using the BgpL3VpnRouteProperty.add() and BgpL3VpnRouteProperty.remove() methods.
+    The list can be managed by using the BgpL3VpnRouteProperty.add() and BgpL3VpnRouteProperty.remove() methods.
     """
 
     __slots__ = ()
@@ -38,365 +38,389 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def BgpAsPathSegmentList(self):
-        """An instance of the BgpAsPathSegmentList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList): An instance of the BgpAsPathSegmentList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist import BgpAsPathSegmentList
         return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
-        """An instance of the BgpClusterIdList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList): An instance of the BgpClusterIdList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist import BgpClusterIdList
         return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
-        """An instance of the BgpCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList): An instance of the BgpCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist import BgpCommunitiesList
         return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
-        """An instance of the BgpExtendedCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist import BgpExtendedCommunitiesList
         return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpNonVPNRRLargeCommunitiesList(self):
-        """An instance of the BgpNonVPNRRLargeCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist.BgpNonVPNRRLargeCommunitiesList): An instance of the BgpNonVPNRRLargeCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist.BgpNonVPNRRLargeCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist import BgpNonVPNRRLargeCommunitiesList
         return BgpNonVPNRRLargeCommunitiesList(self)
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
     def OverridePeerAsSetMode(self):
-        """Override Peer AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('OverridePeerAsSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('OverridePeerAsSetMode'))
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdvertiseNexthopAsV4(self):
-        """Advertise Nexthop as V4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseNexthopAsV4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Nexthop as V4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseNexthopAsV4'))
 
     @property
     def AggregatorAs(self):
-        """Aggregator AS
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorAs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorAs'))
 
     @property
     def AggregatorId(self):
-        """Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorId'))
 
     @property
     def AggregatorIdMode(self):
-        """Aggregator ID Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorIdMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorIdMode'))
 
     @property
     def AsNumSuffixRange(self):
-        """Supported Formats: value value1-value2 Values or value ranges separated by comma(,). e.g. 100,150-200,400,600-800 etc. Cannot be kept empty. Should be >= (Max Number of AS Path Segments) x (Max AS Numbers Per Segment)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumSuffixRange')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 Values or value ranges separated by comma(,). e.g. 100,150-200,400,600-800 etc. Cannot be kept empty. Should be >= (Max Number of AS Path Segments) x (Max AS Numbers Per Segment)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumSuffixRange'))
 
     @property
     def AsPathASString(self):
-        """Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
         """
         return self._get_attribute('asPathASString')
 
     @property
     def AsPathPerRoute(self):
-        """When there are multiple routes in a route range, this option decides whether to use same or different AS paths randomly generated for all the routes within that route range. For the Different option, each route will be sent in different update messages.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asPathPerRoute')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When there are multiple routes in a route range, this option decides whether to use same or different AS paths randomly generated for all the routes within that route range. For the Different option, each route will be sent in different update messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asPathPerRoute'))
 
     @property
     def AsRandomSeed(self):
-        """Seed value decides the way the AS Values are generated. To generate different AS Paths for different Route ranges, select unique Seed Values.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asRandomSeed')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Seed value decides the way the AS Values are generated. To generate different AS Paths for different Route ranges, select unique Seed Values.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asRandomSeed'))
 
     @property
     def AsSegDist(self):
-        """Type of AS Segment generated. If user selects Random, then any of the four types (AS-SET, AS-SEQ, AS-SET-CONFEDERATION, AS-SEQ-CONFEDERATION) will get randomly generated.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asSegDist')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Type of AS Segment generated. If user selects Random, then any of the four types (AS-SET, AS-SEQ, AS-SET-CONFEDERATION, AS-SEQ-CONFEDERATION) will get randomly generated.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asSegDist'))
 
     @property
     def AsSetMode(self):
-        """AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asSetMode'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Delay(self):
-        """Delay in Seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('delay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay in Seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('delay'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DistinguisherAsNumber(self):
-        """L3VPN RR Distinguisher AS Number (2-byte or 4-Byte)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distinguisherAsNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Distinguisher AS Number (2-byte or 4-Byte)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distinguisherAsNumber'))
 
     @property
     def DistinguisherAssignedNumber(self):
-        """L3VPN RR Distinguisher Assigned Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distinguisherAssignedNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Distinguisher Assigned Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distinguisherAssignedNumber'))
 
     @property
     def DistinguisherIpAddress(self):
-        """L3VPN RR Distinguisher IP Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distinguisherIpAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Distinguisher IP Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distinguisherIpAddress'))
 
     @property
     def DistinguisherType(self):
-        """L3VPN RR Distinguisher Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distinguisherType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Distinguisher Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distinguisherType'))
 
     @property
     def Downtime(self):
-        """Downtime In Seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('downtime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Downtime In Seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('downtime'))
 
     @property
     def EnableAggregatorId(self):
-        """Enable Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAggregatorId'))
 
     @property
     def EnableAsPathSegments(self):
-        """Enable Non-Random AS Path Segments
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAsPathSegments')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Non-Random AS Path Segments
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAsPathSegments'))
 
     @property
     def EnableAtomicAggregate(self):
-        """Enable Atomic Aggregate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAtomicAggregate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAtomicAggregate'))
 
     @property
     def EnableCluster(self):
-        """Enable Cluster
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCluster')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCluster'))
 
     @property
     def EnableCommunity(self):
-        """Enable Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCommunity'))
 
     @property
     def EnableExtendedCommunity(self):
-        """Enable Extended Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableExtendedCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableExtendedCommunity'))
 
     @property
     def EnableFlapping(self):
-        """Enable Flapping
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableFlapping')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Flapping
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableFlapping'))
 
     @property
     def EnableIpv4Receiver(self):
-        """Enable IPv4 Receiver
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable IPv4 Receiver
         """
         return self._get_attribute('enableIpv4Receiver')
     @EnableIpv4Receiver.setter
@@ -405,10 +429,10 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def EnableIpv4Sender(self):
-        """Enable IPv4 Sender
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable IPv4 Sender
         """
         return self._get_attribute('enableIpv4Sender')
     @EnableIpv4Sender.setter
@@ -417,244 +441,270 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def EnableLargeCommunities(self):
-        """Enable Large Communities Attribute
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableLargeCommunities')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Large Communities Attribute
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLargeCommunities'))
 
     @property
     def EnableLocalPreference(self):
-        """Enable Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableLocalPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLocalPreference'))
 
     @property
     def EnableMultiExitDiscriminator(self):
-        """Enable Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMultiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMultiExitDiscriminator'))
 
     @property
     def EnableNextHop(self):
-        """Enable Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableNextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableNextHop'))
 
     @property
     def EnableOrigin(self):
-        """Enable Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOrigin'))
 
     @property
     def EnableOriginatorId(self):
-        """Enable Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOriginatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOriginatorId'))
 
     @property
     def EnableRandomAsPath(self):
-        """Enables generation/advertisement of Random AS Path Segments.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRandomAsPath')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables generation/advertisement of Random AS Path Segments.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRandomAsPath'))
 
     @property
     def EnableWeight(self):
-        """Enable Weight
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableWeight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableWeight'))
 
     @property
     def FlapFromRouteIndex(self):
-        """Flap From Route Index
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flapFromRouteIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flap From Route Index
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flapFromRouteIndex'))
 
     @property
     def FlapToRouteIndex(self):
-        """Flap To Route Index
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flapToRouteIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flap To Route Index
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flapToRouteIndex'))
 
     @property
     def IncludeRdInNextHopLength(self):
-        """If RD is included in NH Len then NH Len is NH size + RD size else NH len is NH size.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeRdInNextHopLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If RD is included in NH Len then NH Len is NH size + RD size else NH len is NH size.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeRdInNextHopLength'))
 
     @property
     def IncludeSourceAsExtComm(self):
-        """Include Source AS ExtComm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeSourceAsExtComm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Source AS ExtComm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeSourceAsExtComm'))
 
     @property
     def IncludeVrfRouteImportExtComm(self):
-        """Include VRF Route Import ExtComm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeVrfRouteImportExtComm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include VRF Route Import ExtComm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeVrfRouteImportExtComm'))
 
     @property
     def Ipv4NextHop(self):
-        """IPv4 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4NextHop'))
 
     @property
     def Ipv6NextHop(self):
-        """IPv6 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NextHop'))
 
     @property
     def LabelEnd(self):
-        """L3VPN RR Label End
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelEnd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Label End
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelEnd'))
 
     @property
     def LabelMode(self):
-        """L3VPN RR Label Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Label Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelMode'))
 
     @property
     def LabelSpaceId(self):
-        """L3VPN RR Label Space ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelSpaceId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Label Space ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelSpaceId'))
 
     @property
     def LabelStart(self):
-        """L3VPN RR Label Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Label Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelStart'))
 
     @property
     def LabelStep(self):
-        """L3VPN RR Label Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN RR Label Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelStep'))
 
     @property
     def LocalPreference(self):
-        """Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('localPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('localPreference'))
 
     @property
     def MaxASNumPerSegment(self):
-        """Maximum Number Of AS Numbers generated per Segment
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxASNumPerSegment')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Number Of AS Numbers generated per Segment
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxASNumPerSegment'))
 
     @property
     def MaxNoOfASPathSegmentsPerRouteRange(self):
-        """Maximum Number Of AS Path Segments Per Route Range.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxNoOfASPathSegmentsPerRouteRange')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Number Of AS Path Segments Per Route Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxNoOfASPathSegmentsPerRouteRange'))
 
     @property
     def MinASNumPerSegment(self):
-        """Minimum Number Of AS Numbers generated per Segments.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('minASNumPerSegment')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Number Of AS Numbers generated per Segments.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('minASNumPerSegment'))
 
     @property
     def MinNoOfASPathSegmentsPerRouteRange(self):
-        """Minimum Number Of AS Path Segments Per Route Range.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('minNoOfASPathSegmentsPerRouteRange')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Number Of AS Path Segments Per Route Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('minNoOfASPathSegmentsPerRouteRange'))
 
     @property
     def MultiExitDiscriminator(self):
-        """Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('multiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('multiExitDiscriminator'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -663,37 +713,40 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def NextHopIPType(self):
-        """Set Next Hop IP Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextHopIPType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextHopIPType'))
 
     @property
     def NextHopIncrementMode(self):
-        """Next Hop Increment Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextHopIncrementMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Next Hop Increment Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextHopIncrementMode'))
 
     @property
     def NextHopType(self):
-        """Set Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextHopType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextHopType'))
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
-        """Number Of non-random or manually configured AS Path Segments Per Route Range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of non-random or manually configured AS Path Segments Per Route Range
         """
         return self._get_attribute('noOfASPathSegmentsPerRouteRange')
     @NoOfASPathSegmentsPerRouteRange.setter
@@ -702,10 +755,10 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def NoOfClusters(self):
-        """Number of Clusters
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Clusters
         """
         return self._get_attribute('noOfClusters')
     @NoOfClusters.setter
@@ -714,10 +767,10 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def NoOfCommunities(self):
-        """Number of Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Communities
         """
         return self._get_attribute('noOfCommunities')
     @NoOfCommunities.setter
@@ -726,10 +779,10 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def NoOfExternalCommunities(self):
-        """Number of Extended Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Extended Communities
         """
         return self._get_attribute('noOfExternalCommunities')
     @NoOfExternalCommunities.setter
@@ -738,10 +791,10 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def NoOfLargeCommunities(self):
-        """Number of Large Communities (Should be in the range 1-32)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Large Communities (Should be in the range 1-32)
         """
         return self._get_attribute('noOfLargeCommunities')
     @NoOfLargeCommunities.setter
@@ -750,64 +803,70 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def Origin(self):
-        """Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('origin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('origin'))
 
     @property
     def OriginatorId(self):
-        """Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('originatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('originatorId'))
 
     @property
     def PackingFrom(self):
-        """Packing From
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('packingFrom')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Packing From
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('packingFrom'))
 
     @property
     def PackingTo(self):
-        """Packing To
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('packingTo')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Packing To
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('packingTo'))
 
     @property
     def PartialFlap(self):
-        """Partial Flap
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('partialFlap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Partial Flap
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('partialFlap'))
 
     @property
     def Uptime(self):
-        """Uptime In Seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('uptime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Uptime In Seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('uptime'))
 
     @property
     def UseAsIpv4UmhRoutes(self):
-        """Use As IPv4 UMH Routes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use As IPv4 UMH Routes
         """
         return self._get_attribute('useAsIpv4UmhRoutes')
     @UseAsIpv4UmhRoutes.setter
@@ -816,124 +875,140 @@ class BgpL3VpnRouteProperty(Base):
 
     @property
     def UseAsUmhRoutes(self):
-        """DEPRECATED Use As UMH Routes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use As UMH Routes
         """
-        return self._get_attribute('useAsUmhRoutes')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useAsUmhRoutes'))
 
     @property
     def UseTraditionalNlri(self):
-        """Use Traditional NLRI
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useTraditionalNlri')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use Traditional NLRI
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useTraditionalNlri'))
 
     @property
     def Weight(self):
-        """Weight
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
 
     def update(self, EnableIpv4Receiver=None, EnableIpv4Sender=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLargeCommunities=None, UseAsIpv4UmhRoutes=None):
-        """Updates a child instance of bgpL3VpnRouteProperty on the server.
+        """Updates bgpL3VpnRouteProperty resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            EnableIpv4Receiver (bool): Enable IPv4 Receiver
-            EnableIpv4Sender (bool): Enable IPv4 Sender
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
-            NoOfClusters (number): Number of Clusters
-            NoOfCommunities (number): Number of Communities
-            NoOfExternalCommunities (number): Number of Extended Communities
-            NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
-            UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
+        Args
+        ----
+        - EnableIpv4Receiver (bool): Enable IPv4 Receiver
+        - EnableIpv4Sender (bool): Enable IPv4 Sender
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExternalCommunities (number): Number of Extended Communities
+        - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+        - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableIpv4Receiver=None, EnableIpv4Sender=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLargeCommunities=None, UseAsIpv4UmhRoutes=None):
-        """Adds a new bgpL3VpnRouteProperty node on the server and retrieves it in this instance.
+        """Adds a new bgpL3VpnRouteProperty resource on the server and adds it to the container.
 
-        Args:
-            EnableIpv4Receiver (bool): Enable IPv4 Receiver
-            EnableIpv4Sender (bool): Enable IPv4 Sender
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
-            NoOfClusters (number): Number of Clusters
-            NoOfCommunities (number): Number of Communities
-            NoOfExternalCommunities (number): Number of Extended Communities
-            NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
-            UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
+        Args
+        ----
+        - EnableIpv4Receiver (bool): Enable IPv4 Receiver
+        - EnableIpv4Sender (bool): Enable IPv4 Sender
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExternalCommunities (number): Number of Extended Communities
+        - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+        - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
 
-        Returns:
-            self: This instance with all currently retrieved bgpL3VpnRouteProperty data using find and the newly added bgpL3VpnRouteProperty data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpL3VpnRouteProperty resources using find and the newly added bgpL3VpnRouteProperty resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bgpL3VpnRouteProperty data in this instance from server.
+        """Deletes all the contained bgpL3VpnRouteProperty resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AsPathASString=None, Count=None, DescriptiveName=None, EnableIpv4Receiver=None, EnableIpv4Sender=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLargeCommunities=None, UseAsIpv4UmhRoutes=None):
-        """Finds and retrieves bgpL3VpnRouteProperty data from the server.
+        """Finds and retrieves bgpL3VpnRouteProperty resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bgpL3VpnRouteProperty data from the server.
-        By default the find method takes no parameters and will retrieve all bgpL3VpnRouteProperty data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpL3VpnRouteProperty resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpL3VpnRouteProperty resources from the server.
 
-        Args:
-            AsPathASString (list(str)): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableIpv4Receiver (bool): Enable IPv4 Receiver
-            EnableIpv4Sender (bool): Enable IPv4 Sender
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
-            NoOfClusters (number): Number of Clusters
-            NoOfCommunities (number): Number of Communities
-            NoOfExternalCommunities (number): Number of Extended Communities
-            NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
-            UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
+        Args
+        ----
+        - AsPathASString (list(str)): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableIpv4Receiver (bool): Enable IPv4 Receiver
+        - EnableIpv4Sender (bool): Enable IPv4 Sender
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExternalCommunities (number): Number of Extended Communities
+        - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+        - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
 
-        Returns:
-            self: This instance with matching bgpL3VpnRouteProperty data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bgpL3VpnRouteProperty resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bgpL3VpnRouteProperty data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bgpL3VpnRouteProperty data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bgpL3VpnRouteProperty resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -942,76 +1017,79 @@ class BgpL3VpnRouteProperty(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            OverridePeerAsSetMode (str): optional regex of OverridePeerAsSetMode
-            Active (str): optional regex of active
-            AdvertiseNexthopAsV4 (str): optional regex of advertiseNexthopAsV4
-            AggregatorAs (str): optional regex of aggregatorAs
-            AggregatorId (str): optional regex of aggregatorId
-            AggregatorIdMode (str): optional regex of aggregatorIdMode
-            AsNumSuffixRange (str): optional regex of asNumSuffixRange
-            AsPathPerRoute (str): optional regex of asPathPerRoute
-            AsRandomSeed (str): optional regex of asRandomSeed
-            AsSegDist (str): optional regex of asSegDist
-            AsSetMode (str): optional regex of asSetMode
-            Delay (str): optional regex of delay
-            DistinguisherAsNumber (str): optional regex of distinguisherAsNumber
-            DistinguisherAssignedNumber (str): optional regex of distinguisherAssignedNumber
-            DistinguisherIpAddress (str): optional regex of distinguisherIpAddress
-            DistinguisherType (str): optional regex of distinguisherType
-            Downtime (str): optional regex of downtime
-            EnableAggregatorId (str): optional regex of enableAggregatorId
-            EnableAsPathSegments (str): optional regex of enableAsPathSegments
-            EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
-            EnableCluster (str): optional regex of enableCluster
-            EnableCommunity (str): optional regex of enableCommunity
-            EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
-            EnableFlapping (str): optional regex of enableFlapping
-            EnableLargeCommunities (str): optional regex of enableLargeCommunities
-            EnableLocalPreference (str): optional regex of enableLocalPreference
-            EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
-            EnableNextHop (str): optional regex of enableNextHop
-            EnableOrigin (str): optional regex of enableOrigin
-            EnableOriginatorId (str): optional regex of enableOriginatorId
-            EnableRandomAsPath (str): optional regex of enableRandomAsPath
-            EnableWeight (str): optional regex of enableWeight
-            FlapFromRouteIndex (str): optional regex of flapFromRouteIndex
-            FlapToRouteIndex (str): optional regex of flapToRouteIndex
-            IncludeRdInNextHopLength (str): optional regex of includeRdInNextHopLength
-            IncludeSourceAsExtComm (str): optional regex of includeSourceAsExtComm
-            IncludeVrfRouteImportExtComm (str): optional regex of includeVrfRouteImportExtComm
-            Ipv4NextHop (str): optional regex of ipv4NextHop
-            Ipv6NextHop (str): optional regex of ipv6NextHop
-            LabelEnd (str): optional regex of labelEnd
-            LabelMode (str): optional regex of labelMode
-            LabelSpaceId (str): optional regex of labelSpaceId
-            LabelStart (str): optional regex of labelStart
-            LabelStep (str): optional regex of labelStep
-            LocalPreference (str): optional regex of localPreference
-            MaxASNumPerSegment (str): optional regex of maxASNumPerSegment
-            MaxNoOfASPathSegmentsPerRouteRange (str): optional regex of maxNoOfASPathSegmentsPerRouteRange
-            MinASNumPerSegment (str): optional regex of minASNumPerSegment
-            MinNoOfASPathSegmentsPerRouteRange (str): optional regex of minNoOfASPathSegmentsPerRouteRange
-            MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
-            NextHopIPType (str): optional regex of nextHopIPType
-            NextHopIncrementMode (str): optional regex of nextHopIncrementMode
-            NextHopType (str): optional regex of nextHopType
-            Origin (str): optional regex of origin
-            OriginatorId (str): optional regex of originatorId
-            PackingFrom (str): optional regex of packingFrom
-            PackingTo (str): optional regex of packingTo
-            PartialFlap (str): optional regex of partialFlap
-            Uptime (str): optional regex of uptime
-            UseAsUmhRoutes (str): optional regex of useAsUmhRoutes
-            UseTraditionalNlri (str): optional regex of useTraditionalNlri
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - OverridePeerAsSetMode (str): optional regex of OverridePeerAsSetMode
+        - Active (str): optional regex of active
+        - AdvertiseNexthopAsV4 (str): optional regex of advertiseNexthopAsV4
+        - AggregatorAs (str): optional regex of aggregatorAs
+        - AggregatorId (str): optional regex of aggregatorId
+        - AggregatorIdMode (str): optional regex of aggregatorIdMode
+        - AsNumSuffixRange (str): optional regex of asNumSuffixRange
+        - AsPathPerRoute (str): optional regex of asPathPerRoute
+        - AsRandomSeed (str): optional regex of asRandomSeed
+        - AsSegDist (str): optional regex of asSegDist
+        - AsSetMode (str): optional regex of asSetMode
+        - Delay (str): optional regex of delay
+        - DistinguisherAsNumber (str): optional regex of distinguisherAsNumber
+        - DistinguisherAssignedNumber (str): optional regex of distinguisherAssignedNumber
+        - DistinguisherIpAddress (str): optional regex of distinguisherIpAddress
+        - DistinguisherType (str): optional regex of distinguisherType
+        - Downtime (str): optional regex of downtime
+        - EnableAggregatorId (str): optional regex of enableAggregatorId
+        - EnableAsPathSegments (str): optional regex of enableAsPathSegments
+        - EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
+        - EnableCluster (str): optional regex of enableCluster
+        - EnableCommunity (str): optional regex of enableCommunity
+        - EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
+        - EnableFlapping (str): optional regex of enableFlapping
+        - EnableLargeCommunities (str): optional regex of enableLargeCommunities
+        - EnableLocalPreference (str): optional regex of enableLocalPreference
+        - EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
+        - EnableNextHop (str): optional regex of enableNextHop
+        - EnableOrigin (str): optional regex of enableOrigin
+        - EnableOriginatorId (str): optional regex of enableOriginatorId
+        - EnableRandomAsPath (str): optional regex of enableRandomAsPath
+        - EnableWeight (str): optional regex of enableWeight
+        - FlapFromRouteIndex (str): optional regex of flapFromRouteIndex
+        - FlapToRouteIndex (str): optional regex of flapToRouteIndex
+        - IncludeRdInNextHopLength (str): optional regex of includeRdInNextHopLength
+        - IncludeSourceAsExtComm (str): optional regex of includeSourceAsExtComm
+        - IncludeVrfRouteImportExtComm (str): optional regex of includeVrfRouteImportExtComm
+        - Ipv4NextHop (str): optional regex of ipv4NextHop
+        - Ipv6NextHop (str): optional regex of ipv6NextHop
+        - LabelEnd (str): optional regex of labelEnd
+        - LabelMode (str): optional regex of labelMode
+        - LabelSpaceId (str): optional regex of labelSpaceId
+        - LabelStart (str): optional regex of labelStart
+        - LabelStep (str): optional regex of labelStep
+        - LocalPreference (str): optional regex of localPreference
+        - MaxASNumPerSegment (str): optional regex of maxASNumPerSegment
+        - MaxNoOfASPathSegmentsPerRouteRange (str): optional regex of maxNoOfASPathSegmentsPerRouteRange
+        - MinASNumPerSegment (str): optional regex of minASNumPerSegment
+        - MinNoOfASPathSegmentsPerRouteRange (str): optional regex of minNoOfASPathSegmentsPerRouteRange
+        - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
+        - NextHopIPType (str): optional regex of nextHopIPType
+        - NextHopIncrementMode (str): optional regex of nextHopIncrementMode
+        - NextHopType (str): optional regex of nextHopType
+        - Origin (str): optional regex of origin
+        - OriginatorId (str): optional regex of originatorId
+        - PackingFrom (str): optional regex of packingFrom
+        - PackingTo (str): optional regex of packingTo
+        - PartialFlap (str): optional regex of partialFlap
+        - Uptime (str): optional regex of uptime
+        - UseAsUmhRoutes (str): optional regex of useAsUmhRoutes
+        - UseTraditionalNlri (str): optional regex of useTraditionalNlri
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -1020,26 +1098,26 @@ class BgpL3VpnRouteProperty(Base):
 
         Age out percentage of BGP Routes in a Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ageOutRoutes(Percentage:number)
-            Args:
-                args[0] is Percentage (number): This parameter requires a percentage of type kInteger
+        ageOutRoutes(Percentage=number)
+        -------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
 
-        ageOutRoutes(Percentage:number, SessionIndices:list)
-            Args:
-                args[0] is Percentage (number): This parameter requires a percentage of type kInteger
-                args[1] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        ageOutRoutes(Percentage=number, SessionIndices=list)
+        ----------------------------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        ageOutRoutes(SessionIndices:string, Percentage:number)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a percentage of type kInteger
-                args[1] is Percentage (number): This parameter requires a string of session numbers 1-4;6;7-12
+        ageOutRoutes(SessionIndices=string, Percentage=number)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a percentage of type kInteger
+        - Percentage (number): This parameter requires a string of session numbers 1-4;6;7-12
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1051,17 +1129,16 @@ class BgpL3VpnRouteProperty(Base):
 
         Completely/Partially age out routes contained in this route range.
 
-        ageoutroutes(Arg2:list, Arg3:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-                args[1] is Arg3 (number): What percentage of routes to age out. 100% means all routes.
+        ageoutroutes(Arg2=list, Arg3=number)list
+        ----------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Arg3 (number): What percentage of routes to age out. 100% means all routes.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1073,22 +1150,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Activate or Deactivate Ipv4 Multicast Receiver Site
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        enableIpv4Receiver()
+        enableIpv4Receiver(SessionIndices=list)
+        ---------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        enableIpv4Receiver(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        enableIpv4Receiver(SessionIndices=string)
+        -----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        enableIpv4Receiver(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1100,22 +1175,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Activate or Deactivate Ipv4 Multicast Sender Site
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        enableIpv4Sender()
+        enableIpv4Sender(SessionIndices=list)
+        -------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        enableIpv4Sender(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        enableIpv4Sender(SessionIndices=string)
+        ---------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        enableIpv4Sender(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1127,22 +1200,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Re-advertise Aged out BGP Routes in a Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        readvertiseRoutes()
+        readvertiseRoutes(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        readvertiseRoutes(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        readvertiseRoutes(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        readvertiseRoutes(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1154,16 +1225,15 @@ class BgpL3VpnRouteProperty(Base):
 
         Readvertise only the aged-out routes contained in this route range.
 
-        readvertiseroutes(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        readvertiseroutes(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1175,22 +1245,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Start BGP Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1202,22 +1270,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Stop BGP Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1229,22 +1295,20 @@ class BgpL3VpnRouteProperty(Base):
 
         Activate Deactivate Ipv4 UMH Route Selection
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        useAsIpv4UmhRoutes()
+        useAsIpv4UmhRoutes(SessionIndices=list)
+        ---------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        useAsIpv4UmhRoutes(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        useAsIpv4UmhRoutes(SessionIndices=string)
+        -----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        useAsIpv4UmhRoutes(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BgpMVpnSenderSitesIpv6(Base):
     """Bgp MVPN Sender Sites Properties
-    The BgpMVpnSenderSitesIpv6 class encapsulates a list of bgpMVpnSenderSitesIpv6 resources that is be managed by the user.
+    The BgpMVpnSenderSitesIpv6 class encapsulates a list of bgpMVpnSenderSitesIpv6 resources that are managed by the user.
     A list of resources can be retrieved from the server using the BgpMVpnSenderSitesIpv6.find() method.
-    The list can be managed by the user by using the BgpMVpnSenderSitesIpv6.add() and BgpMVpnSenderSitesIpv6.remove() methods.
+    The list can be managed by using the BgpMVpnSenderSitesIpv6.add() and BgpMVpnSenderSitesIpv6.remove() methods.
     """
 
     __slots__ = ()
@@ -38,120 +38,154 @@ class BgpMVpnSenderSitesIpv6(Base):
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
-    def GroupAddressCount(self):
-        """Group Address Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def EnableNextHop(self):
         """
-        return self._get_attribute('groupAddressCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableNextHop'))
+
+    @property
+    def GroupAddressCount(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupAddressCount'))
 
     @property
     def GroupMaskWidth(self):
-        """Group Mask Width
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupMaskWidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Group Mask Width
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupMaskWidth'))
 
     @property
     def IncludeIpv6ExplicitNullLabel(self):
-        """Include IPv6 Explicit NULL Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeIpv6ExplicitNullLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include IPv6 Explicit NULL Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeIpv6ExplicitNullLabel'))
+
+    @property
+    def Ipv4NextHop(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4NextHop'))
+
+    @property
+    def Ipv6NextHop(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NextHop'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -160,152 +194,199 @@ class BgpMVpnSenderSitesIpv6(Base):
 
     @property
     def SendTriggeredSourceActiveADRoute(self):
-        """Send Triggered Source Active A-D Route
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendTriggeredSourceActiveADRoute')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send Triggered Source Active A-D Route
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendTriggeredSourceActiveADRoute'))
+
+    @property
+    def SetNextHop(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHop'))
+
+    @property
+    def SetNextHopIpType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHopIpType'))
 
     @property
     def SourceAddressCount(self):
-        """Source Address Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAddressCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAddressCount'))
 
     @property
     def SourceGroupMapping(self):
-        """Source Group Mapping
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceGroupMapping')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Group Mapping
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceGroupMapping'))
 
     @property
     def SourceMaskWidth(self):
-        """Source Mask Width
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceMaskWidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Mask Width
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceMaskWidth'))
 
     @property
     def StartGroupAddressIpv6(self):
-        """Start Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startGroupAddressIpv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startGroupAddressIpv6'))
 
     @property
     def StartSourceAddressIpv6(self):
-        """Start Source Address IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startSourceAddressIpv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start Source Address IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startSourceAddressIpv6'))
 
     def update(self, Name=None):
-        """Updates a child instance of bgpMVpnSenderSitesIpv6 on the server.
+        """Updates bgpMVpnSenderSitesIpv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None):
-        """Adds a new bgpMVpnSenderSitesIpv6 node on the server and retrieves it in this instance.
+        """Adds a new bgpMVpnSenderSitesIpv6 resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with all currently retrieved bgpMVpnSenderSitesIpv6 data using find and the newly added bgpMVpnSenderSitesIpv6 data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpMVpnSenderSitesIpv6 resources using find and the newly added bgpMVpnSenderSitesIpv6 resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bgpMVpnSenderSitesIpv6 data in this instance from server.
+        """Deletes all the contained bgpMVpnSenderSitesIpv6 resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves bgpMVpnSenderSitesIpv6 data from the server.
+        """Finds and retrieves bgpMVpnSenderSitesIpv6 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bgpMVpnSenderSitesIpv6 data from the server.
-        By default the find method takes no parameters and will retrieve all bgpMVpnSenderSitesIpv6 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpMVpnSenderSitesIpv6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpMVpnSenderSitesIpv6 resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching bgpMVpnSenderSitesIpv6 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bgpMVpnSenderSitesIpv6 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bgpMVpnSenderSitesIpv6 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bgpMVpnSenderSitesIpv6 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bgpMVpnSenderSitesIpv6 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, SendTriggeredSourceActiveADRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddressIpv6=None, StartSourceAddressIpv6=None):
+    def get_device_ids(self, PortNames=None, Active=None, EnableNextHop=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, Ipv4NextHop=None, Ipv6NextHop=None, SendTriggeredSourceActiveADRoute=None, SetNextHop=None, SetNextHopIpType=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddressIpv6=None, StartSourceAddressIpv6=None):
         """Base class infrastructure that gets a list of bgpMVpnSenderSitesIpv6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            GroupAddressCount (str): optional regex of groupAddressCount
-            GroupMaskWidth (str): optional regex of groupMaskWidth
-            IncludeIpv6ExplicitNullLabel (str): optional regex of includeIpv6ExplicitNullLabel
-            SendTriggeredSourceActiveADRoute (str): optional regex of sendTriggeredSourceActiveADRoute
-            SourceAddressCount (str): optional regex of sourceAddressCount
-            SourceGroupMapping (str): optional regex of sourceGroupMapping
-            SourceMaskWidth (str): optional regex of sourceMaskWidth
-            StartGroupAddressIpv6 (str): optional regex of startGroupAddressIpv6
-            StartSourceAddressIpv6 (str): optional regex of startSourceAddressIpv6
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - EnableNextHop (str): optional regex of enableNextHop
+        - GroupAddressCount (str): optional regex of groupAddressCount
+        - GroupMaskWidth (str): optional regex of groupMaskWidth
+        - IncludeIpv6ExplicitNullLabel (str): optional regex of includeIpv6ExplicitNullLabel
+        - Ipv4NextHop (str): optional regex of ipv4NextHop
+        - Ipv6NextHop (str): optional regex of ipv6NextHop
+        - SendTriggeredSourceActiveADRoute (str): optional regex of sendTriggeredSourceActiveADRoute
+        - SetNextHop (str): optional regex of setNextHop
+        - SetNextHopIpType (str): optional regex of setNextHopIpType
+        - SourceAddressCount (str): optional regex of sourceAddressCount
+        - SourceGroupMapping (str): optional regex of sourceGroupMapping
+        - SourceMaskWidth (str): optional regex of sourceMaskWidth
+        - StartGroupAddressIpv6 (str): optional regex of startGroupAddressIpv6
+        - StartSourceAddressIpv6 (str): optional regex of startSourceAddressIpv6
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -314,22 +395,20 @@ class BgpMVpnSenderSitesIpv6(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -341,22 +420,20 @@ class BgpMVpnSenderSitesIpv6(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -368,29 +445,25 @@ class BgpMVpnSenderSitesIpv6(Base):
 
         SwitchToSPMSI
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        switchToSpmsi()
+        switchToSpmsi(SessionIndices=list)
+        ----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        switchToSpmsi(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        switchToSpmsi(SessionIndices=string)
+        ------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        switchToSpmsi(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        switchToSpmsi(Arg2=list)list
+        ----------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-        switchToSpmsi(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

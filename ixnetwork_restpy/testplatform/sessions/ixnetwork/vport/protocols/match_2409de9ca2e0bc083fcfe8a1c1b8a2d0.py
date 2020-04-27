@@ -36,10 +36,10 @@ class Match(Base):
 
     @property
     def ArpDestinationHardwareAddress(self):
-        """If selected, ARP Destination Hardware Address matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Destination Hardware Address matching is supported.
         """
         return self._get_attribute('arpDestinationHardwareAddress')
     @ArpDestinationHardwareAddress.setter
@@ -48,10 +48,10 @@ class Match(Base):
 
     @property
     def ArpDestinationIpv4Address(self):
-        """If selected, ARP Destination IPv4 Address matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Destination IPv4 Address matching is supported.
         """
         return self._get_attribute('arpDestinationIpv4Address')
     @ArpDestinationIpv4Address.setter
@@ -60,10 +60,10 @@ class Match(Base):
 
     @property
     def ArpOpcode(self):
-        """If selected, ARP Opcode matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Opcode matching is supported.
         """
         return self._get_attribute('arpOpcode')
     @ArpOpcode.setter
@@ -72,10 +72,10 @@ class Match(Base):
 
     @property
     def ArpSourceHardwareAddress(self):
-        """If selected, ARP Source Hardware Address matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Source Hardware Address matching is supported.
         """
         return self._get_attribute('arpSourceHardwareAddress')
     @ArpSourceHardwareAddress.setter
@@ -84,10 +84,10 @@ class Match(Base):
 
     @property
     def ArpSourceIpv4Address(self):
-        """If selected, ARP Source IPv4 Address matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Source IPv4 Address matching is supported.
         """
         return self._get_attribute('arpSourceIpv4Address')
     @ArpSourceIpv4Address.setter
@@ -96,10 +96,10 @@ class Match(Base):
 
     @property
     def EthernetDestination(self):
-        """If selected, Ethernet Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Ethernet Destination matching is supported.
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -108,10 +108,10 @@ class Match(Base):
 
     @property
     def EthernetSource(self):
-        """If selected, Ethernet Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Ethernet Source matching is supported.
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -120,10 +120,10 @@ class Match(Base):
 
     @property
     def EthernetType(self):
-        """If selected, Ethernet Type matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Ethernet Type matching is supported.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -132,10 +132,10 @@ class Match(Base):
 
     @property
     def Experimenter(self):
-        """If selected, Experimenter matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Experimenter matching is supported.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -144,10 +144,10 @@ class Match(Base):
 
     @property
     def IcmpCode(self):
-        """If selected, ICMP Code matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ICMP Code matching is supported.
         """
         return self._get_attribute('icmpCode')
     @IcmpCode.setter
@@ -156,10 +156,10 @@ class Match(Base):
 
     @property
     def IcmpType(self):
-        """If selected, ICMP Type matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ICMP Type matching is supported.
         """
         return self._get_attribute('icmpType')
     @IcmpType.setter
@@ -168,10 +168,10 @@ class Match(Base):
 
     @property
     def Icmpv6Code(self):
-        """If selected, ICMPv6 Code matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ICMPv6 Code matching is supported.
         """
         return self._get_attribute('icmpv6Code')
     @Icmpv6Code.setter
@@ -180,10 +180,10 @@ class Match(Base):
 
     @property
     def Icmpv6Type(self):
-        """If selected, ICMPv6 Type matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ICMPv6 Type matching is supported.
         """
         return self._get_attribute('icmpv6Type')
     @Icmpv6Type.setter
@@ -192,10 +192,10 @@ class Match(Base):
 
     @property
     def InPort(self):
-        """If selected, In Port matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, In Port matching is supported.
         """
         return self._get_attribute('inPort')
     @InPort.setter
@@ -204,10 +204,10 @@ class Match(Base):
 
     @property
     def IpDscp(self):
-        """If selected, IP DSCP matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IP DSCP matching is supported.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -216,10 +216,10 @@ class Match(Base):
 
     @property
     def IpEcn(self):
-        """If selected, IP ECN matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IP ECN matching is supported.
         """
         return self._get_attribute('ipEcn')
     @IpEcn.setter
@@ -228,10 +228,10 @@ class Match(Base):
 
     @property
     def IpProtocol(self):
-        """If selected, IP Protocol matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IP Protocol matching is supported.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -240,10 +240,10 @@ class Match(Base):
 
     @property
     def Ipv4Destination(self):
-        """If selected, IPv4 Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv4 Destination matching is supported.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -252,10 +252,10 @@ class Match(Base):
 
     @property
     def Ipv4Source(self):
-        """If selected, IPv4 Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv4 Source matching is supported.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -264,10 +264,10 @@ class Match(Base):
 
     @property
     def Ipv6Destination(self):
-        """If selected, IPv6 Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Destination matching is supported.
         """
         return self._get_attribute('ipv6Destination')
     @Ipv6Destination.setter
@@ -276,10 +276,10 @@ class Match(Base):
 
     @property
     def Ipv6ExtHeader(self):
-        """If selected, IPv6 Ext Header matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Ext Header matching is supported.
         """
         return self._get_attribute('ipv6ExtHeader')
     @Ipv6ExtHeader.setter
@@ -288,10 +288,10 @@ class Match(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """If selected, IPv6 Flow Label matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Flow Label matching is supported.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -300,10 +300,10 @@ class Match(Base):
 
     @property
     def Ipv6NdSll(self):
-        """If selected, IPv6 ND SLL matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 ND SLL matching is supported.
         """
         return self._get_attribute('ipv6NdSll')
     @Ipv6NdSll.setter
@@ -312,10 +312,10 @@ class Match(Base):
 
     @property
     def Ipv6NdTarget(self):
-        """If selected, IPv6 ND Target matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 ND Target matching is supported.
         """
         return self._get_attribute('ipv6NdTarget')
     @Ipv6NdTarget.setter
@@ -324,10 +324,10 @@ class Match(Base):
 
     @property
     def Ipv6NdTll(self):
-        """If selected, IPv6 ND TLL matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 ND TLL matching is supported.
         """
         return self._get_attribute('ipv6NdTll')
     @Ipv6NdTll.setter
@@ -336,10 +336,10 @@ class Match(Base):
 
     @property
     def Ipv6Source(self):
-        """If selected, IPv6 Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Source matching is supported.
         """
         return self._get_attribute('ipv6Source')
     @Ipv6Source.setter
@@ -348,10 +348,10 @@ class Match(Base):
 
     @property
     def Metadata(self):
-        """If selected, Metadata matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Metadata matching is supported.
         """
         return self._get_attribute('metadata')
     @Metadata.setter
@@ -360,10 +360,10 @@ class Match(Base):
 
     @property
     def MplsBos(self):
-        """If selected, MPLS BoS matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, MPLS BoS matching is supported.
         """
         return self._get_attribute('mplsBos')
     @MplsBos.setter
@@ -372,10 +372,10 @@ class Match(Base):
 
     @property
     def MplsLabel(self):
-        """If selected, MPLS Label matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, MPLS Label matching is supported.
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -384,10 +384,10 @@ class Match(Base):
 
     @property
     def MplsTc(self):
-        """If selected, MPLS TC matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, MPLS TC matching is supported.
         """
         return self._get_attribute('mplsTc')
     @MplsTc.setter
@@ -396,10 +396,10 @@ class Match(Base):
 
     @property
     def PbbIsid(self):
-        """If selected, PBB ISID matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, PBB ISID matching is supported.
         """
         return self._get_attribute('pbbIsid')
     @PbbIsid.setter
@@ -408,10 +408,10 @@ class Match(Base):
 
     @property
     def PhysicalInPort(self):
-        """If selected, Physical In Port matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Physical In Port matching is supported.
         """
         return self._get_attribute('physicalInPort')
     @PhysicalInPort.setter
@@ -420,10 +420,10 @@ class Match(Base):
 
     @property
     def SctpDestination(self):
-        """If selected, SCTP Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, SCTP Destination matching is supported.
         """
         return self._get_attribute('sctpDestination')
     @SctpDestination.setter
@@ -432,10 +432,10 @@ class Match(Base):
 
     @property
     def SctpSource(self):
-        """If selected, SCTP Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, SCTP Source matching is supported.
         """
         return self._get_attribute('sctpSource')
     @SctpSource.setter
@@ -444,10 +444,10 @@ class Match(Base):
 
     @property
     def TcpDestination(self):
-        """If selected, TCP Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, TCP Destination matching is supported.
         """
         return self._get_attribute('tcpDestination')
     @TcpDestination.setter
@@ -456,10 +456,10 @@ class Match(Base):
 
     @property
     def TcpSource(self):
-        """If selected, TCP Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, TCP Source matching is supported.
         """
         return self._get_attribute('tcpSource')
     @TcpSource.setter
@@ -468,10 +468,10 @@ class Match(Base):
 
     @property
     def TunnelId(self):
-        """If selected, Tunnel ID matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Tunnel ID matching is supported.
         """
         return self._get_attribute('tunnelId')
     @TunnelId.setter
@@ -480,10 +480,10 @@ class Match(Base):
 
     @property
     def UdpDestination(self):
-        """If selected, UDP Destination matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, UDP Destination matching is supported.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -492,10 +492,10 @@ class Match(Base):
 
     @property
     def UdpSource(self):
-        """If selected, UDP Source matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, UDP Source matching is supported.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -504,10 +504,10 @@ class Match(Base):
 
     @property
     def VlanId(self):
-        """If selected, VLAN ID matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, VLAN ID matching is supported.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -516,10 +516,10 @@ class Match(Base):
 
     @property
     def VlanPriority(self):
-        """If selected, VLAN Priority matching is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, VLAN Priority matching is supported.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -527,52 +527,54 @@ class Match(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of match on the server.
+        """Updates match resource on the server.
 
-        Args:
-            ArpDestinationHardwareAddress (bool): If selected, ARP Destination Hardware Address matching is supported.
-            ArpDestinationIpv4Address (bool): If selected, ARP Destination IPv4 Address matching is supported.
-            ArpOpcode (bool): If selected, ARP Opcode matching is supported.
-            ArpSourceHardwareAddress (bool): If selected, ARP Source Hardware Address matching is supported.
-            ArpSourceIpv4Address (bool): If selected, ARP Source IPv4 Address matching is supported.
-            EthernetDestination (bool): If selected, Ethernet Destination matching is supported.
-            EthernetSource (bool): If selected, Ethernet Source matching is supported.
-            EthernetType (bool): If selected, Ethernet Type matching is supported.
-            Experimenter (bool): If selected, Experimenter matching is supported.
-            IcmpCode (bool): If selected, ICMP Code matching is supported.
-            IcmpType (bool): If selected, ICMP Type matching is supported.
-            Icmpv6Code (bool): If selected, ICMPv6 Code matching is supported.
-            Icmpv6Type (bool): If selected, ICMPv6 Type matching is supported.
-            InPort (bool): If selected, In Port matching is supported.
-            IpDscp (bool): If selected, IP DSCP matching is supported.
-            IpEcn (bool): If selected, IP ECN matching is supported.
-            IpProtocol (bool): If selected, IP Protocol matching is supported.
-            Ipv4Destination (bool): If selected, IPv4 Destination matching is supported.
-            Ipv4Source (bool): If selected, IPv4 Source matching is supported.
-            Ipv6Destination (bool): If selected, IPv6 Destination matching is supported.
-            Ipv6ExtHeader (bool): If selected, IPv6 Ext Header matching is supported.
-            Ipv6FlowLabel (bool): If selected, IPv6 Flow Label matching is supported.
-            Ipv6NdSll (bool): If selected, IPv6 ND SLL matching is supported.
-            Ipv6NdTarget (bool): If selected, IPv6 ND Target matching is supported.
-            Ipv6NdTll (bool): If selected, IPv6 ND TLL matching is supported.
-            Ipv6Source (bool): If selected, IPv6 Source matching is supported.
-            Metadata (bool): If selected, Metadata matching is supported.
-            MplsBos (bool): If selected, MPLS BoS matching is supported.
-            MplsLabel (bool): If selected, MPLS Label matching is supported.
-            MplsTc (bool): If selected, MPLS TC matching is supported.
-            PbbIsid (bool): If selected, PBB ISID matching is supported.
-            PhysicalInPort (bool): If selected, Physical In Port matching is supported.
-            SctpDestination (bool): If selected, SCTP Destination matching is supported.
-            SctpSource (bool): If selected, SCTP Source matching is supported.
-            TcpDestination (bool): If selected, TCP Destination matching is supported.
-            TcpSource (bool): If selected, TCP Source matching is supported.
-            TunnelId (bool): If selected, Tunnel ID matching is supported.
-            UdpDestination (bool): If selected, UDP Destination matching is supported.
-            UdpSource (bool): If selected, UDP Source matching is supported.
-            VlanId (bool): If selected, VLAN ID matching is supported.
-            VlanPriority (bool): If selected, VLAN Priority matching is supported.
+        Args
+        ----
+        - ArpDestinationHardwareAddress (bool): If selected, ARP Destination Hardware Address matching is supported.
+        - ArpDestinationIpv4Address (bool): If selected, ARP Destination IPv4 Address matching is supported.
+        - ArpOpcode (bool): If selected, ARP Opcode matching is supported.
+        - ArpSourceHardwareAddress (bool): If selected, ARP Source Hardware Address matching is supported.
+        - ArpSourceIpv4Address (bool): If selected, ARP Source IPv4 Address matching is supported.
+        - EthernetDestination (bool): If selected, Ethernet Destination matching is supported.
+        - EthernetSource (bool): If selected, Ethernet Source matching is supported.
+        - EthernetType (bool): If selected, Ethernet Type matching is supported.
+        - Experimenter (bool): If selected, Experimenter matching is supported.
+        - IcmpCode (bool): If selected, ICMP Code matching is supported.
+        - IcmpType (bool): If selected, ICMP Type matching is supported.
+        - Icmpv6Code (bool): If selected, ICMPv6 Code matching is supported.
+        - Icmpv6Type (bool): If selected, ICMPv6 Type matching is supported.
+        - InPort (bool): If selected, In Port matching is supported.
+        - IpDscp (bool): If selected, IP DSCP matching is supported.
+        - IpEcn (bool): If selected, IP ECN matching is supported.
+        - IpProtocol (bool): If selected, IP Protocol matching is supported.
+        - Ipv4Destination (bool): If selected, IPv4 Destination matching is supported.
+        - Ipv4Source (bool): If selected, IPv4 Source matching is supported.
+        - Ipv6Destination (bool): If selected, IPv6 Destination matching is supported.
+        - Ipv6ExtHeader (bool): If selected, IPv6 Ext Header matching is supported.
+        - Ipv6FlowLabel (bool): If selected, IPv6 Flow Label matching is supported.
+        - Ipv6NdSll (bool): If selected, IPv6 ND SLL matching is supported.
+        - Ipv6NdTarget (bool): If selected, IPv6 ND Target matching is supported.
+        - Ipv6NdTll (bool): If selected, IPv6 ND TLL matching is supported.
+        - Ipv6Source (bool): If selected, IPv6 Source matching is supported.
+        - Metadata (bool): If selected, Metadata matching is supported.
+        - MplsBos (bool): If selected, MPLS BoS matching is supported.
+        - MplsLabel (bool): If selected, MPLS Label matching is supported.
+        - MplsTc (bool): If selected, MPLS TC matching is supported.
+        - PbbIsid (bool): If selected, PBB ISID matching is supported.
+        - PhysicalInPort (bool): If selected, Physical In Port matching is supported.
+        - SctpDestination (bool): If selected, SCTP Destination matching is supported.
+        - SctpSource (bool): If selected, SCTP Source matching is supported.
+        - TcpDestination (bool): If selected, TCP Destination matching is supported.
+        - TcpSource (bool): If selected, TCP Source matching is supported.
+        - TunnelId (bool): If selected, Tunnel ID matching is supported.
+        - UdpDestination (bool): If selected, UDP Destination matching is supported.
+        - UdpSource (bool): If selected, UDP Source matching is supported.
+        - VlanId (bool): If selected, VLAN ID matching is supported.
+        - VlanPriority (bool): If selected, VLAN Priority matching is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

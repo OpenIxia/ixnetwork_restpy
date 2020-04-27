@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def AmountOfTraffic(self):
-        """The amount of traffic.
-
-        Returns:
-            str(duration|numFrames)
+        """
+        Returns
+        -------
+        - str(duration | numFrames): The amount of traffic.
         """
         return self._get_attribute('amountOfTraffic')
     @AmountOfTraffic.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """The number of packets that are sent in a burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of packets that are sent in a burst.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def CongestNumFrames(self):
-        """The number of frames that are congested.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of frames that are congested.
         """
         return self._get_attribute('congestNumFrames')
     @CongestNumFrames.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """If true, frame sizes are counted at random.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, frame sizes are counted at random.
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def CustomLoadUnit(self):
-        """Specifies the custom load unit.
-
-        Returns:
-            str(percentMaxRate)
+        """
+        Returns
+        -------
+        - str(percentMaxRate): Specifies the custom load unit.
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """A delay that is inserted after transmit is complete, before it continues with the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A delay that is inserted after transmit is complete, before it continues with the test.
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """sec
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: sec
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def EnableBpPassFail(self):
-        """If true, BP Pass/Fail criterion is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, BP Pass/Fail criterion is enabled.
         """
         return self._get_attribute('enableBpPassFail')
     @EnableBpPassFail.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def EnableHolbPassFail(self):
-        """If true, HOLB Pass/Fail criterion is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, HOLB Pass/Fail criterion is enabled.
         """
         return self._get_attribute('enableHolbPassFail')
     @EnableHolbPassFail.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def EnableOldStatsForReef(self):
-        """If true, allows to get the old statistics for reef load module.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows to get the old statistics for reef load module.
         """
         return self._get_attribute('enableOldStatsForReef')
     @EnableOldStatsForReef.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """Initiates a forced regeneration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Initiates a forced regeneration.
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian.
-
-        Returns:
-            str(custom|fixed|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | fixed | increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def Framesize(self):
-        """Bytes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Bytes
         """
         return self._get_attribute('framesize')
     @Framesize.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """List containing the frame sizes used in the test.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List containing the frame sizes used in the test.
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateList(self):
-        """The rate list of the load item.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The rate list of the load item.
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """The type of the payload setting.
-
-        Returns:
-            str(custom)
+        """
+        Returns
+        -------
+        - str(custom): The type of the payload setting.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """The POS traffic map type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The POS traffic map type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """The integer that states the maximum amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the maximum amount to which the frame size can be incremented.
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """The integer that states the maximum random amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the maximum random amount to which the frame size can be incremented.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def MinFpsRate(self):
-        """The rate at which minimum frames are sent per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which minimum frames are sent per second.
         """
         return self._get_attribute('minFpsRate')
     @MinFpsRate.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """The integer that states the minimum amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the minimum amount to which the frame size can be incremented.
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def MinKbpsRate(self):
-        """The rate at which minimum frames are sent per kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which minimum frames are sent per kbps.
         """
         return self._get_attribute('minKbpsRate')
     @MinKbpsRate.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The integer that states the minimum random amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the minimum random amount to which the frame size can be incremented.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """Defines how many times each frame size will be tested.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines how many times each frame size will be tested.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def PercentMaxRate(self):
-        """The percentage of the maximum rate that is specified.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The percentage of the maximum rate that is specified.
         """
         return self._get_attribute('percentMaxRate')
     @PercentMaxRate.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def RateSelect(self):
-        """Selects the rate list.
-
-        Returns:
-            str(fpsRate|kbpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(fpsRate | kbpsRate | percentMaxRate): Selects the rate list.
         """
         return self._get_attribute('rateSelect')
     @RateSelect.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """Reports sequence errors in the test result.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Reports sequence errors in the test result.
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def Resolution(self):
-        """Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
         """
         return self._get_attribute('resolution')
     @Resolution.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def StaggeredStart(self):
-        """Starts test with a stagger.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Starts test with a stagger.
         """
         return self._get_attribute('staggeredStart')
     @StaggeredStart.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """The step to increment the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step to increment the frame size.
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """The traffic types supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The traffic types supported.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def Tolerance(self):
-        """The level of acceptable threshold.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The level of acceptable threshold.
         """
         return self._get_attribute('tolerance')
     @Tolerance.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def TrafficType(self):
-        """The test based on the traffic type.
-
-        Returns:
-            str(burstyLoading|constantLoading)
+        """
+        Returns
+        -------
+        - str(burstyLoading | constantLoading): The test based on the traffic type.
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def UsePercentOffsets(self):
-        """Uses percentage offset value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Uses percentage offset value.
         """
         return self._get_attribute('usePercentOffsets')
     @UsePercentOffsets.setter
@@ -515,63 +515,66 @@ class TestConfig(Base):
         self._set_attribute('usePercentOffsets', value)
 
     def update(self, AmountOfTraffic=None, BurstSize=None, CongestNumFrames=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, Duration=None, EnableBpPassFail=None, EnableHolbPassFail=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, ForceRegenerate=None, FrameSizeMode=None, Framesize=None, FramesizeList=None, LoadRateList=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinRandomFrameSize=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RateSelect=None, ReportSequenceError=None, Resolution=None, StaggeredStart=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UsePercentOffsets=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            AmountOfTraffic (str(duration|numFrames)): The amount of traffic.
-            BurstSize (number): The number of packets that are sent in a burst.
-            CongestNumFrames (number): The number of frames that are congested.
-            CountRandomFrameSize (number): If true, frame sizes are counted at random.
-            CustomLoadUnit (str(percentMaxRate)): Specifies the custom load unit.
-            DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
-            Duration (number): sec
-            EnableBpPassFail (bool): If true, BP Pass/Fail criterion is enabled.
-            EnableHolbPassFail (bool): If true, HOLB Pass/Fail criterion is enabled.
-            EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
-            EnableOldStatsForReef (bool): If true, allows to get the old statistics for reef load module.
-            ForceRegenerate (bool): Initiates a forced regeneration.
-            FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
-            Framesize (number): Bytes
-            FramesizeList (list(str)): List containing the frame sizes used in the test.
-            LoadRateList (str): The rate list of the load item.
-            LoadType (str(custom)): The type of the payload setting.
-            MapType (str): The POS traffic map type.
-            MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
-            MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
-            MinFpsRate (number): The rate at which minimum frames are sent per second.
-            MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
-            MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
-            MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
-            Numtrials (number): Defines how many times each frame size will be tested.
-            PercentMaxRate (number): The percentage of the maximum rate that is specified.
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
-            PortDelayValue (number): Sets the port delay value
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): Selects the rate list.
-            ReportSequenceError (bool): Reports sequence errors in the test result.
-            Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-            StaggeredStart (bool): Starts test with a stagger.
-            StepIncrementFrameSize (number): The step to increment the frame size.
-            SupportedTrafficTypes (str): The traffic types supported.
-            Tolerance (number): The level of acceptable threshold.
-            TrafficType (str(burstyLoading|constantLoading)): The test based on the traffic type.
-            TxDelay (number): The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
-            UsePercentOffsets (bool): Uses percentage offset value.
+        Args
+        ----
+        - AmountOfTraffic (str(duration | numFrames)): The amount of traffic.
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CongestNumFrames (number): The number of frames that are congested.
+        - CountRandomFrameSize (number): If true, frame sizes are counted at random.
+        - CustomLoadUnit (str(percentMaxRate)): Specifies the custom load unit.
+        - DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
+        - Duration (number): sec
+        - EnableBpPassFail (bool): If true, BP Pass/Fail criterion is enabled.
+        - EnableHolbPassFail (bool): If true, HOLB Pass/Fail criterion is enabled.
+        - EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
+        - EnableOldStatsForReef (bool): If true, allows to get the old statistics for reef load module.
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - Framesize (number): Bytes
+        - FramesizeList (list(str)): List containing the frame sizes used in the test.
+        - LoadRateList (str): The rate list of the load item.
+        - LoadType (str(custom)): The type of the payload setting.
+        - MapType (str): The POS traffic map type.
+        - MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
+        - MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+        - MinFpsRate (number): The rate at which minimum frames are sent per second.
+        - MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
+        - MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+        - MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
+        - Numtrials (number): Defines how many times each frame size will be tested.
+        - PercentMaxRate (number): The percentage of the maximum rate that is specified.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): Selects the rate list.
+        - ReportSequenceError (bool): Reports sequence errors in the test result.
+        - Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+        - StaggeredStart (bool): Starts test with a stagger.
+        - StepIncrementFrameSize (number): The step to increment the frame size.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - Tolerance (number): The level of acceptable threshold.
+        - TrafficType (str(burstyLoading | constantLoading)): The test based on the traffic type.
+        - TxDelay (number): The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
+        - UsePercentOffsets (bool): Uses percentage offset value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -579,9 +582,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -589,12 +593,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -604,9 +606,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -616,12 +619,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -631,24 +632,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -660,18 +654,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -683,9 +675,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -695,12 +688,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

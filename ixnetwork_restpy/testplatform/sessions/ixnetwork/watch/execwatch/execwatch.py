@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ExecWatch(Base):
     """
-    The ExecWatch class encapsulates a list of execWatch resources that is be managed by the user.
+    The ExecWatch class encapsulates a list of execWatch resources that are managed by the user.
     A list of resources can be retrieved from the server using the ExecWatch.find() method.
-    The list can be managed by the user by using the ExecWatch.add() and ExecWatch.remove() methods.
+    The list can be managed by using the ExecWatch.add() and ExecWatch.remove() methods.
     """
 
     __slots__ = ()
@@ -39,18 +39,18 @@ class ExecWatch(Base):
     @property
     def AverageExecutionTime(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('averageExecutionTime')
 
     @property
     def ExecToWatch(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('execToWatch')
     @ExecToWatch.setter
@@ -60,36 +60,36 @@ class ExecWatch(Base):
     @property
     def IsDisabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isDisabled')
 
     @property
     def LastExecutionTime(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('lastExecutionTime')
 
     @property
     def LastNotification(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('lastNotification')
 
     @property
     def MaxExecutionTime(self):
-        """The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
         return self._get_attribute('maxExecutionTime')
     @MaxExecutionTime.setter
@@ -98,10 +98,10 @@ class ExecWatch(Base):
 
     @property
     def PollInterval(self):
-        """The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
         """
         return self._get_attribute('pollInterval')
     @PollInterval.setter
@@ -111,18 +111,18 @@ class ExecWatch(Base):
     @property
     def Token(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('token')
 
     @property
     def Topic(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('topic')
     @Topic.setter
@@ -130,81 +130,94 @@ class ExecWatch(Base):
         self._set_attribute('topic', value)
 
     def update(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
-        """Updates a child instance of execWatch on the server.
+        """Updates execWatch resource on the server.
 
-        Args:
-            ExecToWatch (str): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Topic (str): 
+        Args
+        ----
+        - ExecToWatch (str): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Topic (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
-        """Adds a new execWatch node on the server and retrieves it in this instance.
+        """Adds a new execWatch resource on the server and adds it to the container.
 
-        Args:
-            ExecToWatch (str): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Topic (str): 
+        Args
+        ----
+        - ExecToWatch (str): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Topic (str): 
 
-        Returns:
-            self: This instance with all currently retrieved execWatch data using find and the newly added execWatch data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved execWatch resources using find and the newly added execWatch resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the execWatch data in this instance from server.
+        """Deletes all the contained execWatch resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AverageExecutionTime=None, ExecToWatch=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, PollInterval=None, Token=None, Topic=None):
-        """Finds and retrieves execWatch data from the server.
+        """Finds and retrieves execWatch resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve execWatch data from the server.
-        By default the find method takes no parameters and will retrieve all execWatch data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve execWatch resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all execWatch resources from the server.
 
-        Args:
-            AverageExecutionTime (number): 
-            ExecToWatch (str): 
-            IsDisabled (bool): 
-            LastExecutionTime (number): 
-            LastNotification (str): 
-            MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-            PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
-            Token (number): 
-            Topic (str): 
+        Args
+        ----
+        - AverageExecutionTime (number): 
+        - ExecToWatch (str): 
+        - IsDisabled (bool): 
+        - LastExecutionTime (number): 
+        - LastNotification (str): 
+        - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - Token (number): 
+        - Topic (str): 
 
-        Returns:
-            self: This instance with matching execWatch data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching execWatch resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of execWatch data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the execWatch data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the execWatch resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

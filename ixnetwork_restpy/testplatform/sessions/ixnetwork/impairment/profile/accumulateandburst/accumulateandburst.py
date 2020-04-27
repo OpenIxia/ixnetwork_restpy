@@ -36,10 +36,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def BurstSize(self):
-        """Represents the burst octet size. The default value is 1014.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Represents the burst octet size. The default value is 1014.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -48,10 +48,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def BurstSizeUnit(self):
-        """The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
-
-        Returns:
-            str(kilobytes|kKilobytes|kMegabytes|megabytes)
+        """
+        Returns
+        -------
+        - str(kilobytes | kKilobytes | kMegabytes | megabytes): The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
         """
         return self._get_attribute('burstSizeUnit')
     @BurstSizeUnit.setter
@@ -60,10 +60,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def BurstTimeout(self):
-        """The burst timeout.The default value is 5 seconds.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The burst timeout.The default value is 5 seconds.
         """
         return self._get_attribute('burstTimeout')
     @BurstTimeout.setter
@@ -72,10 +72,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def BurstTimeoutUnit(self):
-        """Seconds(default) / milliseconds / mm:ss.fff time format.
-
-        Returns:
-            str(kMilliseconds|kSeconds|kTimeFormat|milliseconds|seconds|timeFormat)
+        """
+        Returns
+        -------
+        - str(kMilliseconds | kSeconds | kTimeFormat | milliseconds | seconds | timeFormat): Seconds(default) / milliseconds / mm:ss.fff time format.
         """
         return self._get_attribute('burstTimeoutUnit')
     @BurstTimeoutUnit.setter
@@ -84,10 +84,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def Enabled(self):
-        """If true, received packets are queued and transmitted in bursts.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, received packets are queued and transmitted in bursts.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -96,10 +96,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def InterBurstGap(self):
-        """Tail to head (default) / Head to head.
-
-        Returns:
-            str(headToHead|kHeadToHead|kTailToHead|tailToHead)
+        """
+        Returns
+        -------
+        - str(headToHead | kHeadToHead | kTailToHead | tailToHead): Tail to head (default) / Head to head.
         """
         return self._get_attribute('interBurstGap')
     @InterBurstGap.setter
@@ -108,10 +108,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def InterBurstGapValue(self):
-        """The InterBurst gap value. The default value is 20 ms.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The InterBurst gap value. The default value is 20 ms.
         """
         return self._get_attribute('interBurstGapValue')
     @InterBurstGapValue.setter
@@ -120,10 +120,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def InterBurstGapValueUnit(self):
-        """Seconds / milliseconds (default).
-
-        Returns:
-            str(kMilliseconds|kSeconds|milliseconds|seconds)
+        """
+        Returns
+        -------
+        - str(kMilliseconds | kSeconds | milliseconds | seconds): Seconds / milliseconds (default).
         """
         return self._get_attribute('interBurstGapValueUnit')
     @InterBurstGapValueUnit.setter
@@ -132,10 +132,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def PacketCount(self):
-        """Represents the burst packet count. The default value is 1000 packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Represents the burst packet count. The default value is 1000 packets.
         """
         return self._get_attribute('packetCount')
     @PacketCount.setter
@@ -144,19 +144,19 @@ class AccumulateAndBurst(Base):
 
     @property
     def QueueAutoSize(self):
-        """Gets the automatically calculated queue size when queueAutoSizeEnable is true or zero when queueAutoSizeEnable is false.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Gets the automatically calculated queue size when queueAutoSizeEnable is true or zero when queueAutoSizeEnable is false.
         """
         return self._get_attribute('queueAutoSize')
 
     @property
     def QueueAutoSizeEnabled(self):
-        """Automatically calculate queue size. The default value is true.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Automatically calculate queue size. The default value is true.
         """
         return self._get_attribute('queueAutoSizeEnabled')
     @QueueAutoSizeEnabled.setter
@@ -165,10 +165,10 @@ class AccumulateAndBurst(Base):
 
     @property
     def QueueSize(self):
-        """The accumulate-and-burst queue size expressed in MB. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The accumulate-and-burst queue size expressed in MB. The default value is 1.
         """
         return self._get_attribute('queueSize')
     @QueueSize.setter
@@ -176,22 +176,24 @@ class AccumulateAndBurst(Base):
         self._set_attribute('queueSize', value)
 
     def update(self, BurstSize=None, BurstSizeUnit=None, BurstTimeout=None, BurstTimeoutUnit=None, Enabled=None, InterBurstGap=None, InterBurstGapValue=None, InterBurstGapValueUnit=None, PacketCount=None, QueueAutoSizeEnabled=None, QueueSize=None):
-        """Updates a child instance of accumulateAndBurst on the server.
+        """Updates accumulateAndBurst resource on the server.
 
-        Args:
-            BurstSize (number): Represents the burst octet size. The default value is 1014.
-            BurstSizeUnit (str(kilobytes|kKilobytes|kMegabytes|megabytes)): The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
-            BurstTimeout (str): The burst timeout.The default value is 5 seconds.
-            BurstTimeoutUnit (str(kMilliseconds|kSeconds|kTimeFormat|milliseconds|seconds|timeFormat)): Seconds(default) / milliseconds / mm:ss.fff time format.
-            Enabled (bool): If true, received packets are queued and transmitted in bursts.
-            InterBurstGap (str(headToHead|kHeadToHead|kTailToHead|tailToHead)): Tail to head (default) / Head to head.
-            InterBurstGapValue (number): The InterBurst gap value. The default value is 20 ms.
-            InterBurstGapValueUnit (str(kMilliseconds|kSeconds|milliseconds|seconds)): Seconds / milliseconds (default).
-            PacketCount (number): Represents the burst packet count. The default value is 1000 packets.
-            QueueAutoSizeEnabled (bool): Automatically calculate queue size. The default value is true.
-            QueueSize (number): The accumulate-and-burst queue size expressed in MB. The default value is 1.
+        Args
+        ----
+        - BurstSize (number): Represents the burst octet size. The default value is 1014.
+        - BurstSizeUnit (str(kilobytes | kKilobytes | kMegabytes | megabytes)): The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
+        - BurstTimeout (str): The burst timeout.The default value is 5 seconds.
+        - BurstTimeoutUnit (str(kMilliseconds | kSeconds | kTimeFormat | milliseconds | seconds | timeFormat)): Seconds(default) / milliseconds / mm:ss.fff time format.
+        - Enabled (bool): If true, received packets are queued and transmitted in bursts.
+        - InterBurstGap (str(headToHead | kHeadToHead | kTailToHead | tailToHead)): Tail to head (default) / Head to head.
+        - InterBurstGapValue (number): The InterBurst gap value. The default value is 20 ms.
+        - InterBurstGapValueUnit (str(kMilliseconds | kSeconds | milliseconds | seconds)): Seconds / milliseconds (default).
+        - PacketCount (number): Represents the burst packet count. The default value is 1000 packets.
+        - QueueAutoSizeEnabled (bool): Automatically calculate queue size. The default value is true.
+        - QueueSize (number): The accumulate-and-burst queue size expressed in MB. The default value is 1.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

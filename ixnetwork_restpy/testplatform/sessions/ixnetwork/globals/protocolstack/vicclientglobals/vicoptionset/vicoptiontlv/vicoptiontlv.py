@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VicOptionTlv(Base):
     """Define a single TLV option.
-    The VicOptionTlv class encapsulates a list of vicOptionTlv resources that is be managed by the user.
+    The VicOptionTlv class encapsulates a list of vicOptionTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the VicOptionTlv.find() method.
-    The list can be managed by the user by using the VicOptionTlv.add() and VicOptionTlv.remove() methods.
+    The list can be managed by using the VicOptionTlv.add() and VicOptionTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class VicOptionTlv(Base):
 
     @property
     def Code(self):
-        """Option code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Option code.
         """
         return self._get_attribute('code')
     @Code.setter
@@ -50,10 +50,10 @@ class VicOptionTlv(Base):
 
     @property
     def Increment(self):
-        """The increment step for this TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step for this TLV.
         """
         return self._get_attribute('increment')
     @Increment.setter
@@ -62,10 +62,10 @@ class VicOptionTlv(Base):
 
     @property
     def Name(self):
-        """Option name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -74,19 +74,19 @@ class VicOptionTlv(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Rfc(self):
-        """True if defined in RFC documents.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: True if defined in RFC documents.
         """
         return self._get_attribute('rfc')
     @Rfc.setter
@@ -95,10 +95,10 @@ class VicOptionTlv(Base):
 
     @property
     def Type(self):
-        """Option value type.
-
-        Returns:
-            str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)
+        """
+        Returns
+        -------
+        - str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength): Option value type.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -107,10 +107,10 @@ class VicOptionTlv(Base):
 
     @property
     def Value(self):
-        """Option value represented as string.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option value represented as string.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -118,83 +118,96 @@ class VicOptionTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None):
-        """Updates a child instance of vicOptionTlv on the server.
+        """Updates vicOptionTlv resource on the server.
 
-        Args:
-            Code (number): Option code.
-            Increment (str): The increment step for this TLV.
-            Name (str): Option name.
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Increment (str): The increment step for this TLV.
+        - Name (str): Option name.
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None):
-        """Adds a new vicOptionTlv node on the server and retrieves it in this instance.
+        """Adds a new vicOptionTlv resource on the server and adds it to the container.
 
-        Args:
-            Code (number): Option code.
-            Increment (str): The increment step for this TLV.
-            Name (str): Option name.
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Increment (str): The increment step for this TLV.
+        - Name (str): Option name.
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Returns:
-            self: This instance with all currently retrieved vicOptionTlv data using find and the newly added vicOptionTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vicOptionTlv resources using find and the newly added vicOptionTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vicOptionTlv data in this instance from server.
+        """Deletes all the contained vicOptionTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Code=None, Increment=None, Name=None, ObjectId=None, Rfc=None, Type=None, Value=None):
-        """Finds and retrieves vicOptionTlv data from the server.
+        """Finds and retrieves vicOptionTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vicOptionTlv data from the server.
-        By default the find method takes no parameters and will retrieve all vicOptionTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vicOptionTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vicOptionTlv resources from the server.
 
-        Args:
-            Code (number): Option code.
-            Increment (str): The increment step for this TLV.
-            Name (str): Option name.
-            ObjectId (str): Unique identifier for this object
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Increment (str): The increment step for this TLV.
+        - Name (str): Option name.
+        - ObjectId (str): Unique identifier for this object
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Returns:
-            self: This instance with matching vicOptionTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vicOptionTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vicOptionTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vicOptionTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vicOptionTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

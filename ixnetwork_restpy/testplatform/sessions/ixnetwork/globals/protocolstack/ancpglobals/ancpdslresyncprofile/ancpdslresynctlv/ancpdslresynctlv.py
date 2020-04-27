@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AncpDslResyncTlv(Base):
     """ANCP TLV (Type-Length-Value) used in resync profiles
-    The AncpDslResyncTlv class encapsulates a list of ancpDslResyncTlv resources that is be managed by the user.
+    The AncpDslResyncTlv class encapsulates a list of ancpDslResyncTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the AncpDslResyncTlv.find() method.
-    The list can be managed by the user by using the AncpDslResyncTlv.add() and AncpDslResyncTlv.remove() methods.
+    The list can be managed by using the AncpDslResyncTlv.add() and AncpDslResyncTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def Code(self):
-        """Option code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Option code.
         """
         return self._get_attribute('code')
     @Code.setter
@@ -50,10 +50,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def FirstValue(self):
-        """Used by Trend mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used by Trend mode.
         """
         return self._get_attribute('firstValue')
     @FirstValue.setter
@@ -62,10 +62,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def LastValue(self):
-        """Used by Trend mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used by Trend mode.
         """
         return self._get_attribute('lastValue')
     @LastValue.setter
@@ -74,10 +74,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def MaxValue(self):
-        """Used by Random mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used by Random mode.
         """
         return self._get_attribute('maxValue')
     @MaxValue.setter
@@ -86,10 +86,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def MinValue(self):
-        """Used by Random mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used by Random mode.
         """
         return self._get_attribute('minValue')
     @MinValue.setter
@@ -98,10 +98,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def Mode(self):
-        """Sets the TLV value update method.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the TLV value update method.
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -110,10 +110,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def Name(self):
-        """Option name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -122,19 +122,19 @@ class AncpDslResyncTlv(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def StepValue(self):
-        """Used by Trend mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Used by Trend mode.
         """
         return self._get_attribute('stepValue')
     @StepValue.setter
@@ -143,10 +143,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def Type(self):
-        """Value type.
-
-        Returns:
-            str(bytes3|bytes4|bytes8|string)
+        """
+        Returns
+        -------
+        - str(bytes3 | bytes4 | bytes8 | string): Value type.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -155,10 +155,10 @@ class AncpDslResyncTlv(Base):
 
     @property
     def Value(self):
-        """Value represented as string.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value represented as string.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -166,95 +166,108 @@ class AncpDslResyncTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Code=None, FirstValue=None, LastValue=None, MaxValue=None, MinValue=None, Mode=None, Name=None, StepValue=None, Type=None, Value=None):
-        """Updates a child instance of ancpDslResyncTlv on the server.
+        """Updates ancpDslResyncTlv resource on the server.
 
-        Args:
-            Code (number): Option code.
-            FirstValue (number): Used by Trend mode.
-            LastValue (number): Used by Trend mode.
-            MaxValue (number): Used by Random mode.
-            MinValue (number): Used by Random mode.
-            Mode (str): Sets the TLV value update method.
-            Name (str): Option name.
-            StepValue (number): Used by Trend mode.
-            Type (str(bytes3|bytes4|bytes8|string)): Value type.
-            Value (str): Value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - FirstValue (number): Used by Trend mode.
+        - LastValue (number): Used by Trend mode.
+        - MaxValue (number): Used by Random mode.
+        - MinValue (number): Used by Random mode.
+        - Mode (str): Sets the TLV value update method.
+        - Name (str): Option name.
+        - StepValue (number): Used by Trend mode.
+        - Type (str(bytes3 | bytes4 | bytes8 | string)): Value type.
+        - Value (str): Value represented as string.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Code=None, FirstValue=None, LastValue=None, MaxValue=None, MinValue=None, Mode=None, Name=None, StepValue=None, Type=None, Value=None):
-        """Adds a new ancpDslResyncTlv node on the server and retrieves it in this instance.
+        """Adds a new ancpDslResyncTlv resource on the server and adds it to the container.
 
-        Args:
-            Code (number): Option code.
-            FirstValue (number): Used by Trend mode.
-            LastValue (number): Used by Trend mode.
-            MaxValue (number): Used by Random mode.
-            MinValue (number): Used by Random mode.
-            Mode (str): Sets the TLV value update method.
-            Name (str): Option name.
-            StepValue (number): Used by Trend mode.
-            Type (str(bytes3|bytes4|bytes8|string)): Value type.
-            Value (str): Value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - FirstValue (number): Used by Trend mode.
+        - LastValue (number): Used by Trend mode.
+        - MaxValue (number): Used by Random mode.
+        - MinValue (number): Used by Random mode.
+        - Mode (str): Sets the TLV value update method.
+        - Name (str): Option name.
+        - StepValue (number): Used by Trend mode.
+        - Type (str(bytes3 | bytes4 | bytes8 | string)): Value type.
+        - Value (str): Value represented as string.
 
-        Returns:
-            self: This instance with all currently retrieved ancpDslResyncTlv data using find and the newly added ancpDslResyncTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ancpDslResyncTlv resources using find and the newly added ancpDslResyncTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ancpDslResyncTlv data in this instance from server.
+        """Deletes all the contained ancpDslResyncTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Code=None, FirstValue=None, LastValue=None, MaxValue=None, MinValue=None, Mode=None, Name=None, ObjectId=None, StepValue=None, Type=None, Value=None):
-        """Finds and retrieves ancpDslResyncTlv data from the server.
+        """Finds and retrieves ancpDslResyncTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ancpDslResyncTlv data from the server.
-        By default the find method takes no parameters and will retrieve all ancpDslResyncTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpDslResyncTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ancpDslResyncTlv resources from the server.
 
-        Args:
-            Code (number): Option code.
-            FirstValue (number): Used by Trend mode.
-            LastValue (number): Used by Trend mode.
-            MaxValue (number): Used by Random mode.
-            MinValue (number): Used by Random mode.
-            Mode (str): Sets the TLV value update method.
-            Name (str): Option name.
-            ObjectId (str): Unique identifier for this object
-            StepValue (number): Used by Trend mode.
-            Type (str(bytes3|bytes4|bytes8|string)): Value type.
-            Value (str): Value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - FirstValue (number): Used by Trend mode.
+        - LastValue (number): Used by Trend mode.
+        - MaxValue (number): Used by Random mode.
+        - MinValue (number): Used by Random mode.
+        - Mode (str): Sets the TLV value update method.
+        - Name (str): Option name.
+        - ObjectId (str): Unique identifier for this object
+        - StepValue (number): Used by Trend mode.
+        - Type (str(bytes3 | bytes4 | bytes8 | string)): Value type.
+        - Value (str): Value represented as string.
 
-        Returns:
-            self: This instance with matching ancpDslResyncTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ancpDslResyncTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ancpDslResyncTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ancpDslResyncTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ancpDslResyncTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

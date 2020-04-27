@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Stack(Base):
     """This object helps to specify the field properties of a protocol stack.
-    The Stack class encapsulates a list of stack resources that is managed by the system.
+    The Stack class encapsulates a list of stack resources that are managed by the system.
     A list of resources can be retrieved from the server using the Stack.find() method.
     """
 
@@ -37,76 +37,83 @@ class Stack(Base):
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.field.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.field.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.field.field import Field
         return Field(self)
 
     @property
     def DisplayName(self):
-        """The display name of the stack.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The display name of the stack.
         """
         return self._get_attribute('displayName')
 
     @property
     def StackTypeId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('stackTypeId')
 
     @property
     def TemplateName(self):
-        """Indiates the protocol template name that is added to a packet in a stack.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indiates the protocol template name that is added to a packet in a stack.
         """
         return self._get_attribute('templateName')
 
     def find(self, DisplayName=None, StackTypeId=None, TemplateName=None):
-        """Finds and retrieves stack data from the server.
+        """Finds and retrieves stack resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve stack data from the server.
-        By default the find method takes no parameters and will retrieve all stack data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stack resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all stack resources from the server.
 
-        Args:
-            DisplayName (str): The display name of the stack.
-            StackTypeId (str): 
-            TemplateName (str): Indiates the protocol template name that is added to a packet in a stack.
+        Args
+        ----
+        - DisplayName (str): The display name of the stack.
+        - StackTypeId (str): 
+        - TemplateName (str): Indiates the protocol template name that is added to a packet in a stack.
 
-        Returns:
-            self: This instance with matching stack data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching stack resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of stack data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the stack data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the stack resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -115,16 +122,15 @@ class Stack(Base):
 
         Append a protocol template after the specified stack object reference.
 
-        DEPRECATED append(Arg2:href)string
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        DEPRECATED append(Arg2=href)string
+        ----------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Returns str: This exec returns an object reference to the newly appended stack item.
 
-            Returns:
-                str: This exec returns an object reference to the newly appended stack item.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -136,16 +142,15 @@ class Stack(Base):
 
         Append a protocol template after the specified stack object reference.
 
-        appendProtocol(Arg2:href)href
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        appendProtocol(Arg2=href)href
+        -----------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly appended stack item.
 
-            Returns:
-                str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stack): This exec returns an object reference to the newly appended stack item.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -157,12 +162,10 @@ class Stack(Base):
 
         Retrieves the list of recommended protocols that can be added on top of the current protocol.
 
-            Returns:
-                list(str): This exec returns an array containing: the name of the protocol, the reference of the protocol and the type of it (successor or ancestor)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getValidProtocols', payload=payload, response_object=None)
@@ -172,16 +175,15 @@ class Stack(Base):
 
         Insert a protocol template before the specified stack object reference.
 
-        DEPRECATED insert(Arg2:href)string
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        DEPRECATED insert(Arg2=href)string
+        ----------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Returns str: This exec returns an object reference to the newly inserted stack item.
 
-            Returns:
-                str: This exec returns an object reference to the newly inserted stack item.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -193,16 +195,15 @@ class Stack(Base):
 
         Insert a protocol template before the specified stack object reference.
 
-        insertProtocol(Arg2:href)href
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        insertProtocol(Arg2=href)href
+        -----------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly inserted stack item.
 
-            Returns:
-                str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stack): This exec returns an object reference to the newly inserted stack item.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -214,9 +215,10 @@ class Stack(Base):
 
         Delete the specified stack object reference.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('remove', payload=payload, response_object=None)

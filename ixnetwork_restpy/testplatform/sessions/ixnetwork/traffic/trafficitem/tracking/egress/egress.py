@@ -36,42 +36,42 @@ class Egress(Base):
 
     @property
     def FieldOffset(self):
-        """An instance of the FieldOffset class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset.FieldOffset): An instance of the FieldOffset class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset.FieldOffset)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
         return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
-        """Specifies the available Encapsulations for Egress Tracking.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Specifies the available Encapsulations for Egress Tracking.
         """
         return self._get_attribute('availableEncapsulations')
 
     @property
     def AvailableOffsets(self):
-        """Specifies the available Offsets for Egress Tracking.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Specifies the available Offsets for Egress Tracking.
         """
         return self._get_attribute('availableOffsets')
 
     @property
     def CustomOffsetBits(self):
-        """Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
         return self._get_attribute('customOffsetBits')
     @CustomOffsetBits.setter
@@ -80,10 +80,10 @@ class Egress(Base):
 
     @property
     def CustomWidthBits(self):
-        """Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
         return self._get_attribute('customWidthBits')
     @CustomWidthBits.setter
@@ -92,10 +92,10 @@ class Egress(Base):
 
     @property
     def Enabled(self):
-        """If true, egress tracking is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, egress tracking is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -104,10 +104,10 @@ class Egress(Base):
 
     @property
     def Encapsulation(self):
-        """Specifies the Encapsulation for Egress Tracking.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Encapsulation for Egress Tracking.
         """
         return self._get_attribute('encapsulation')
     @Encapsulation.setter
@@ -116,10 +116,10 @@ class Egress(Base):
 
     @property
     def Offset(self):
-        """Specifies the Offset for Egress Tracking.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Offset for Egress Tracking.
         """
         return self._get_attribute('offset')
     @Offset.setter
@@ -127,16 +127,18 @@ class Egress(Base):
         self._set_attribute('offset', value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
-        """Updates a child instance of egress on the server.
+        """Updates egress resource on the server.
 
-        Args:
-            CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
-            CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
-            Enabled (bool): If true, egress tracking is enabled.
-            Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
-            Offset (str): Specifies the Offset for Egress Tracking.
+        Args
+        ----
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+        - Enabled (bool): If true, egress tracking is enabled.
+        - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+        - Offset (str): Specifies the Offset for Egress Tracking.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

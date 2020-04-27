@@ -36,150 +36,150 @@ class OpenFlow(Base):
 
     @property
     def Device(self):
-        """An instance of the Device class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.device_4e16fa0ebc2bc8204e8e814618b4431d.Device): An instance of the Device class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.device_4e16fa0ebc2bc8204e8e814618b4431d.Device)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.device_4e16fa0ebc2bc8204e8e814618b4431d import Device
         return Device(self)
 
     @property
     def EthernetTrafficEndPoint(self):
-        """An instance of the EthernetTrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettrafficendpoint_ac7c5d4e1e9ff92e14a1ffb430b8be8b.EthernetTrafficEndPoint): An instance of the EthernetTrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettrafficendpoint_ac7c5d4e1e9ff92e14a1ffb430b8be8b.EthernetTrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettrafficendpoint_ac7c5d4e1e9ff92e14a1ffb430b8be8b import EthernetTrafficEndPoint
         return EthernetTrafficEndPoint(self)
 
     @property
     def HostTopologyLearnedInformation(self):
-        """An instance of the HostTopologyLearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_19bd395ad8fe429f3c1712e0d4281a89.HostTopologyLearnedInformation): An instance of the HostTopologyLearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_19bd395ad8fe429f3c1712e0d4281a89.HostTopologyLearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_19bd395ad8fe429f3c1712e0d4281a89 import HostTopologyLearnedInformation
         return HostTopologyLearnedInformation(self)._select()
 
     @property
     def Ipv4TrafficEndPoint(self):
-        """An instance of the Ipv4TrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4trafficendpoint_5ac747be14640838fcd7db82a0483ee4.Ipv4TrafficEndPoint): An instance of the Ipv4TrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4trafficendpoint_5ac747be14640838fcd7db82a0483ee4.Ipv4TrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4trafficendpoint_5ac747be14640838fcd7db82a0483ee4 import Ipv4TrafficEndPoint
         return Ipv4TrafficEndPoint(self)
 
     @property
     def Ipv6TrafficEndPoint(self):
-        """An instance of the Ipv6TrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6trafficendpoint_83227b0419e7cb1138d5bd325ead95f4.Ipv6TrafficEndPoint): An instance of the Ipv6TrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6trafficendpoint_83227b0419e7cb1138d5bd325ead95f4.Ipv6TrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6trafficendpoint_83227b0419e7cb1138d5bd325ead95f4 import Ipv6TrafficEndPoint
         return Ipv6TrafficEndPoint(self)
 
     @property
     def LearnedInformation(self):
-        """An instance of the LearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_27c59a01c678cebe3fc8be0ee2ac2d0a.LearnedInformation): An instance of the LearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_27c59a01c678cebe3fc8be0ee2ac2d0a.LearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_27c59a01c678cebe3fc8be0ee2ac2d0a import LearnedInformation
         return LearnedInformation(self)._select()
 
     @property
     def MplsTrafficEndPoint(self):
-        """An instance of the MplsTrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstrafficendpoint_913cb5e2d372d7495ef373a5d7cdb78b.MplsTrafficEndPoint): An instance of the MplsTrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstrafficendpoint_913cb5e2d372d7495ef373a5d7cdb78b.MplsTrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstrafficendpoint_913cb5e2d372d7495ef373a5d7cdb78b import MplsTrafficEndPoint
         return MplsTrafficEndPoint(self)
 
     @property
     def OfTopologyLearnedInformation(self):
-        """An instance of the OfTopologyLearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.oftopologylearnedinformation_9bf6428a9a54180238c749b7e07307d1.OfTopologyLearnedInformation): An instance of the OfTopologyLearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.oftopologylearnedinformation_9bf6428a9a54180238c749b7e07307d1.OfTopologyLearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.oftopologylearnedinformation_9bf6428a9a54180238c749b7e07307d1 import OfTopologyLearnedInformation
         return OfTopologyLearnedInformation(self)._select()
 
     @property
     def SwitchLearnedInformation(self):
-        """An instance of the SwitchLearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchlearnedinformation_511299f091081f14d15eb7136e3d4e76.SwitchLearnedInformation): An instance of the SwitchLearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchlearnedinformation_511299f091081f14d15eb7136e3d4e76.SwitchLearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchlearnedinformation_511299f091081f14d15eb7136e3d4e76 import SwitchLearnedInformation
         return SwitchLearnedInformation(self)._select()
 
     @property
     def TrafficEndPoint(self):
-        """An instance of the TrafficEndPoint class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficendpoint_c20d895be4e76bf8d262400376eccbc6.TrafficEndPoint): An instance of the TrafficEndPoint class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficendpoint_c20d895be4e76bf8d262400376eccbc6.TrafficEndPoint)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficendpoint_c20d895be4e76bf8d262400376eccbc6 import TrafficEndPoint
         return TrafficEndPoint(self)
 
     @property
     def Enabled(self):
-        """If true, the openFlow object is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the openFlow object is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -188,10 +188,10 @@ class OpenFlow(Base):
 
     @property
     def PortRole(self):
-        """Indicates the role of the port in the protocol configuration.
-
-        Returns:
-            str(control|traffic|controlAndTraffic)
+        """
+        Returns
+        -------
+        - str(control | traffic | controlAndTraffic): Indicates the role of the port in the protocol configuration.
         """
         return self._get_attribute('portRole')
     @PortRole.setter
@@ -200,33 +200,36 @@ class OpenFlow(Base):
 
     @property
     def RunningState(self):
-        """Indicates the state of the OpenFlow protocol on the port.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): Indicates the state of the OpenFlow protocol on the port.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None, PortRole=None):
-        """Updates a child instance of openFlow on the server.
+        """Updates openFlow resource on the server.
 
-        Args:
-            Enabled (bool): If true, the openFlow object is enabled.
-            PortRole (str(control|traffic|controlAndTraffic)): Indicates the role of the port in the protocol configuration.
+        Args
+        ----
+        - Enabled (bool): If true, the openFlow object is enabled.
+        - PortRole (str(control | traffic | controlAndTraffic)): Indicates the role of the port in the protocol configuration.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         This describes the start value of the trigger settings.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -236,9 +239,10 @@ class OpenFlow(Base):
 
         This describes the stop value of the trigger settings.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

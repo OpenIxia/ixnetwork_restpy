@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Card(Base):
     """This command allows the user to view version and type information for the card.
-    The Card class encapsulates a list of card resources that is managed by the system.
+    The Card class encapsulates a list of card resources that are managed by the system.
     A list of resources can be retrieved from the server using the Card.find() method.
     """
 
@@ -37,38 +37,38 @@ class Card(Base):
 
     @property
     def Aggregation(self):
-        """An instance of the Aggregation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation.Aggregation): An instance of the Aggregation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation.Aggregation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation import Aggregation
         return Aggregation(self)
 
     @property
     def Port(self):
-        """An instance of the Port class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port.Port): An instance of the Port class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port.Port)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port import Port
         return Port(self)
 
     @property
     def AggregationMode(self):
-        """Gets or sets the aggregation mode.
-
-        Returns:
-            str(notSupported|mixed|normal|tenGigAggregation|fortyGigAggregation|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut)
+        """
+        Returns
+        -------
+        - str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut): Gets or sets the aggregation mode.
         """
         return self._get_attribute('aggregationMode')
     @AggregationMode.setter
@@ -77,84 +77,93 @@ class Card(Base):
 
     @property
     def AggregationSupported(self):
-        """(read only) If true, indicates that the card is operating in resource group mode and not in normal mode
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates that the card is operating in resource group mode and not in normal mode
         """
         return self._get_attribute('aggregationSupported')
 
     @property
     def AvailableModes(self):
-        """Gets the supported port resource group modes on the card.
-
-        Returns:
-            list(str[notSupported|mixed|normal|tenGigAggregation|fortyGigAggregation|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut])
+        """
+        Returns
+        -------
+        - list(str[notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut]): Gets the supported port resource group modes on the card.
         """
         return self._get_attribute('availableModes')
 
     @property
     def CardId(self):
-        """Identifier for the card on the chassis.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Identifier for the card on the chassis.
         """
         return self._get_attribute('cardId')
 
     @property
     def Description(self):
-        """Description of the card.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the card.
         """
         return self._get_attribute('description')
 
     def update(self, AggregationMode=None):
-        """Updates a child instance of card on the server.
+        """Updates card resource on the server.
 
-        Args:
-            AggregationMode (str(notSupported|mixed|normal|tenGigAggregation|fortyGigAggregation|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut)): Gets or sets the aggregation mode.
+        Args
+        ----
+        - AggregationMode (str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut)): Gets or sets the aggregation mode.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AggregationMode=None, AggregationSupported=None, AvailableModes=None, CardId=None, Description=None):
-        """Finds and retrieves card data from the server.
+        """Finds and retrieves card resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve card data from the server.
-        By default the find method takes no parameters and will retrieve all card data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve card resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all card resources from the server.
 
-        Args:
-            AggregationMode (str(notSupported|mixed|normal|tenGigAggregation|fortyGigAggregation|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut)): Gets or sets the aggregation mode.
-            AggregationSupported (bool): (read only) If true, indicates that the card is operating in resource group mode and not in normal mode
-            AvailableModes (list(str[notSupported|mixed|normal|tenGigAggregation|fortyGigAggregation|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut])): Gets the supported port resource group modes on the card.
-            CardId (number): Identifier for the card on the chassis.
-            Description (str): Description of the card.
+        Args
+        ----
+        - AggregationMode (str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut)): Gets or sets the aggregation mode.
+        - AggregationSupported (bool): (read only) If true, indicates that the card is operating in resource group mode and not in normal mode
+        - AvailableModes (list(str[notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut])): Gets the supported port resource group modes on the card.
+        - CardId (number): Identifier for the card on the chassis.
+        - Description (str): Description of the card.
 
-        Returns:
-            self: This instance with matching card data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching card resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of card data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the card data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the card resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -163,9 +172,10 @@ class Card(Base):
 
         Refresh the hardware information.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('refreshInfo', payload=payload, response_object=None)

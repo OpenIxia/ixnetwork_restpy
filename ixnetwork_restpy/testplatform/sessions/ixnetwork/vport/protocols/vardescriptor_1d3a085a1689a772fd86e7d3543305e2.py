@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VarDescriptor(Base):
     """
-    The VarDescriptor class encapsulates a list of varDescriptor resources that is be managed by the user.
+    The VarDescriptor class encapsulates a list of varDescriptor resources that are managed by the user.
     A list of resources can be retrieved from the server using the VarDescriptor.find() method.
-    The list can be managed by the user by using the VarDescriptor.add() and VarDescriptor.remove() methods.
+    The list can be managed by using the VarDescriptor.add() and VarDescriptor.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class VarDescriptor(Base):
     @property
     def VariableBranch(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableBranch')
     @VariableBranch.setter
@@ -51,9 +51,9 @@ class VarDescriptor(Base):
     @property
     def VariableLeaf(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableLeaf')
     @VariableLeaf.setter
@@ -61,70 +61,83 @@ class VarDescriptor(Base):
         self._set_attribute('variableLeaf', value)
 
     def update(self, VariableBranch=None, VariableLeaf=None):
-        """Updates a child instance of varDescriptor on the server.
+        """Updates varDescriptor resource on the server.
 
-        Args:
-            VariableBranch (number): 
-            VariableLeaf (number): 
+        Args
+        ----
+        - VariableBranch (number): 
+        - VariableLeaf (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, VariableBranch=None, VariableLeaf=None):
-        """Adds a new varDescriptor node on the server and retrieves it in this instance.
+        """Adds a new varDescriptor resource on the server and adds it to the container.
 
-        Args:
-            VariableBranch (number): 
-            VariableLeaf (number): 
+        Args
+        ----
+        - VariableBranch (number): 
+        - VariableLeaf (number): 
 
-        Returns:
-            self: This instance with all currently retrieved varDescriptor data using find and the newly added varDescriptor data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved varDescriptor resources using find and the newly added varDescriptor resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the varDescriptor data in this instance from server.
+        """Deletes all the contained varDescriptor resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, VariableBranch=None, VariableLeaf=None):
-        """Finds and retrieves varDescriptor data from the server.
+        """Finds and retrieves varDescriptor resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve varDescriptor data from the server.
-        By default the find method takes no parameters and will retrieve all varDescriptor data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve varDescriptor resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all varDescriptor resources from the server.
 
-        Args:
-            VariableBranch (number): 
-            VariableLeaf (number): 
+        Args
+        ----
+        - VariableBranch (number): 
+        - VariableLeaf (number): 
 
-        Returns:
-            self: This instance with matching varDescriptor data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching varDescriptor resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of varDescriptor data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the varDescriptor data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the varDescriptor resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

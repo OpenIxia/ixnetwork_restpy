@@ -36,52 +36,52 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def LinkFeature(self):
-        """An instance of the LinkFeature class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_53f0e5e74597926d2021ab14fdb7c070.LinkFeature): An instance of the LinkFeature class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_53f0e5e74597926d2021ab14fdb7c070.LinkFeature)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_53f0e5e74597926d2021ab14fdb7c070 import LinkFeature
         return LinkFeature(self)._select()
 
     @property
     def LinkMode(self):
-        """An instance of the LinkMode class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_67979c83fbb5709b589f3240b7745259.LinkMode): An instance of the LinkMode class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_67979c83fbb5709b589f3240b7745259.LinkMode)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_67979c83fbb5709b589f3240b7745259 import LinkMode
         return LinkMode(self)._select()
 
     @property
     def LinkType(self):
-        """An instance of the LinkType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_9edbf52c8156b995789c47b8403da104.LinkType): An instance of the LinkType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_9edbf52c8156b995789c47b8403da104.LinkType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_9edbf52c8156b995789c47b8403da104 import LinkType
         return LinkType(self)._select()
 
     @property
     def AdvertisedFeatures(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('advertisedFeatures')
     @AdvertisedFeatures.setter
@@ -90,10 +90,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def DoNotSendPacketIn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('doNotSendPacketIn')
     @DoNotSendPacketIn.setter
@@ -102,10 +102,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def DropAllPackets(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('dropAllPackets')
     @DropAllPackets.setter
@@ -114,10 +114,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def DropForwardedPackets(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('dropForwardedPackets')
     @DropForwardedPackets.setter
@@ -126,10 +126,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EnableAdvertiseFeature(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAdvertiseFeature')
     @EnableAdvertiseFeature.setter
@@ -138,10 +138,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EnableEthernetAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableEthernetAddress')
     @EnableEthernetAddress.setter
@@ -150,10 +150,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EnablePortConfig(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enablePortConfig')
     @EnablePortConfig.setter
@@ -162,10 +162,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EnablePortModPortFeatures(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enablePortModPortFeatures')
     @EnablePortModPortFeatures.setter
@@ -174,10 +174,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EnablePortNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enablePortNumber')
     @EnablePortNumber.setter
@@ -186,10 +186,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def EthernetAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('ethernetAddress')
     @EthernetAddress.setter
@@ -198,10 +198,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def PortAdministrativelyDown(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portAdministrativelyDown')
     @PortAdministrativelyDown.setter
@@ -210,10 +210,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def PortConfig(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('portConfig')
     @PortConfig.setter
@@ -222,10 +222,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def PortConfigMask(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('portConfigMask')
     @PortConfigMask.setter
@@ -234,10 +234,10 @@ class PortModificationTriggerAttributes(Base):
 
     @property
     def PortNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('portNumber')
     @PortNumber.setter
@@ -245,25 +245,27 @@ class PortModificationTriggerAttributes(Base):
         self._set_attribute('portNumber', value)
 
     def update(self, AdvertisedFeatures=None, DoNotSendPacketIn=None, DropAllPackets=None, DropForwardedPackets=None, EnableAdvertiseFeature=None, EnableEthernetAddress=None, EnablePortConfig=None, EnablePortModPortFeatures=None, EnablePortNumber=None, EthernetAddress=None, PortAdministrativelyDown=None, PortConfig=None, PortConfigMask=None, PortNumber=None):
-        """Updates a child instance of portModificationTriggerAttributes on the server.
+        """Updates portModificationTriggerAttributes resource on the server.
 
-        Args:
-            AdvertisedFeatures (str): NOT DEFINED
-            DoNotSendPacketIn (bool): NOT DEFINED
-            DropAllPackets (bool): NOT DEFINED
-            DropForwardedPackets (bool): NOT DEFINED
-            EnableAdvertiseFeature (bool): NOT DEFINED
-            EnableEthernetAddress (bool): NOT DEFINED
-            EnablePortConfig (bool): NOT DEFINED
-            EnablePortModPortFeatures (bool): NOT DEFINED
-            EnablePortNumber (bool): NOT DEFINED
-            EthernetAddress (str): NOT DEFINED
-            PortAdministrativelyDown (bool): NOT DEFINED
-            PortConfig (str): NOT DEFINED
-            PortConfigMask (str): NOT DEFINED
-            PortNumber (number): NOT DEFINED
+        Args
+        ----
+        - AdvertisedFeatures (str): NOT DEFINED
+        - DoNotSendPacketIn (bool): NOT DEFINED
+        - DropAllPackets (bool): NOT DEFINED
+        - DropForwardedPackets (bool): NOT DEFINED
+        - EnableAdvertiseFeature (bool): NOT DEFINED
+        - EnableEthernetAddress (bool): NOT DEFINED
+        - EnablePortConfig (bool): NOT DEFINED
+        - EnablePortModPortFeatures (bool): NOT DEFINED
+        - EnablePortNumber (bool): NOT DEFINED
+        - EthernetAddress (str): NOT DEFINED
+        - PortAdministrativelyDown (bool): NOT DEFINED
+        - PortConfig (str): NOT DEFINED
+        - PortConfigMask (str): NOT DEFINED
+        - PortNumber (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,10 +36,10 @@ class TableModificationTriggerAttributes(Base):
 
     @property
     def AllTables(self):
-        """To apply the change to all tables.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: To apply the change to all tables.
         """
         return self._get_attribute('allTables')
     @AllTables.setter
@@ -48,10 +48,10 @@ class TableModificationTriggerAttributes(Base):
 
     @property
     def Config(self):
-        """2.Type the value of the Config.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: 2.Type the value of the Config.
         """
         return self._get_attribute('config')
     @Config.setter
@@ -59,13 +59,15 @@ class TableModificationTriggerAttributes(Base):
         self._set_attribute('config', value)
 
     def update(self, AllTables=None, Config=None):
-        """Updates a child instance of tableModificationTriggerAttributes on the server.
+        """Updates tableModificationTriggerAttributes resource on the server.
 
-        Args:
-            AllTables (bool): To apply the change to all tables.
-            Config (number): 2.Type the value of the Config.
+        Args
+        ----
+        - AllTables (bool): To apply the change to all tables.
+        - Config (number): 2.Type the value of the Config.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

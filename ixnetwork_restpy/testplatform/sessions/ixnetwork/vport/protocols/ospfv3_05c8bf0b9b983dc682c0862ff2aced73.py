@@ -36,24 +36,24 @@ class OspfV3(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_adb8dc61790b656c99023aeb0fdb5de7.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_adb8dc61790b656c99023aeb0fdb5de7.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_adb8dc61790b656c99023aeb0fdb5de7 import Router
         return Router(self)
 
     @property
     def EnableDrOrBdr(self):
-        """Enables the OSPF Router to participate in DR/BDR election process
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the OSPF Router to participate in DR/BDR election process
         """
         return self._get_attribute('enableDrOrBdr')
     @EnableDrOrBdr.setter
@@ -62,10 +62,10 @@ class OspfV3(Base):
 
     @property
     def Enabled(self):
-        """Enables this emulated OSPFv3 router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this emulated OSPFv3 router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,53 +74,51 @@ class OspfV3(Base):
 
     @property
     def RunningState(self):
-        """The current state of the OSPFv6 router.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current state of the OSPFv6 router.
         """
         return self._get_attribute('runningState')
 
     def update(self, EnableDrOrBdr=None, Enabled=None):
-        """Updates a child instance of ospfV3 on the server.
+        """Updates ospfV3 resource on the server.
 
-        Args:
-            EnableDrOrBdr (bool): Enables the OSPF Router to participate in DR/BDR election process
-            Enabled (bool): Enables this emulated OSPFv3 router.
+        Args
+        ----
+        - EnableDrOrBdr (bool): Enables the OSPF Router to participate in DR/BDR election process
+        - Enabled (bool): Enables this emulated OSPFv3 router.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def GracefulRouterRestart(self, *args, **kwargs):
         """Executes the gracefulRouterRestart operation on the server.
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        gracefulRouterRestart(Arg2:list)string
-            Args:
-                args[0] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router])): NOT DEFINED
+        gracefulRouterRestart(Arg2=list)string
+        --------------------------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
+        - Returns str: NOT DEFINED
 
-            Returns:
-                str: NOT DEFINED
+        gracefulRouterRestart(Arg2=list, Arg3=number, Arg4=enum, Arg5=number)string
+        ---------------------------------------------------------------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
+        - Arg3 (number): NOT DEFINED
+        - Arg4 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
+        - Arg5 (number): NOT DEFINED
+        - Returns str: NOT DEFINED
 
-        gracefulRouterRestart(Arg2:list, Arg3:number, Arg4:enum, Arg5:number)string
-            Args:
-                args[0] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router])): NOT DEFINED
-                args[1] is Arg3 (number): NOT DEFINED
-                args[2] is Arg4 (str(softwareReloadOrUpgrade|softwareRestart|switchToRedundantControlProcessor|unknown)): NOT DEFINED
-                args[3] is Arg5 (number): NOT DEFINED
-
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -132,9 +130,10 @@ class OspfV3(Base):
 
         Starts the OSPFv3 protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -144,9 +143,10 @@ class OspfV3(Base):
 
         Stops the OSPFv3 protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

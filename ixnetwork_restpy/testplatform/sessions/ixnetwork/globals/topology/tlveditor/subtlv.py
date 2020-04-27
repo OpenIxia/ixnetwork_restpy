@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SubTlv(Base):
     """Sub Tlv container
-    The SubTlv class encapsulates a list of subTlv resources that is be managed by the user.
+    The SubTlv class encapsulates a list of subTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the SubTlv.find() method.
-    The list can be managed by the user by using the SubTlv.add() and SubTlv.remove() methods.
+    The list can be managed by using the SubTlv.add() and SubTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,52 +38,52 @@ class SubTlv(Base):
 
     @property
     def Length(self):
-        """An instance of the Length class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length.Length): An instance of the Length class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length.Length)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length import Length
         return Length(self)._select()
 
     @property
     def Type(self):
-        """An instance of the Type class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type.Type): An instance of the Type class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type.Type)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type import Type
         return Type(self)._select()
 
     @property
     def Value(self):
-        """An instance of the Value class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value.Value): An instance of the Value class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value.Value)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value import Value
         return Value(self)._select()
 
     @property
     def Description(self):
-        """Description of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the tlv
         """
         return self._get_attribute('description')
     @Description.setter
@@ -92,10 +92,10 @@ class SubTlv(Base):
 
     @property
     def IsEditable(self):
-        """Indicates whether this is editable or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this is editable or not
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -104,10 +104,10 @@ class SubTlv(Base):
 
     @property
     def IsRepeatable(self):
-        """Indicates whether this can be multiplied in the TLV definition
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this can be multiplied in the TLV definition
         """
         return self._get_attribute('isRepeatable')
     @IsRepeatable.setter
@@ -116,10 +116,10 @@ class SubTlv(Base):
 
     @property
     def IsRequired(self):
-        """Flag indicating whether this is required or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag indicating whether this is required or not
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -128,10 +128,10 @@ class SubTlv(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -139,79 +139,92 @@ class SubTlv(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Updates a child instance of subTlv on the server.
+        """Updates subTlv resource on the server.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Adds a new subTlv node on the server and retrieves it in this instance.
+        """Adds a new subTlv resource on the server and adds it to the container.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with all currently retrieved subTlv data using find and the newly added subTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved subTlv resources using find and the newly added subTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the subTlv data in this instance from server.
+        """Deletes all the contained subTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Finds and retrieves subTlv data from the server.
+        """Finds and retrieves subTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve subTlv data from the server.
-        By default the find method takes no parameters and will retrieve all subTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve subTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all subTlv resources from the server.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with matching subTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching subTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of subTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the subTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the subTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class PcepXroSubObjectsList(Base):
     """
-    The PcepXroSubObjectsList class encapsulates a list of pcepXroSubObjectsList resources that is managed by the system.
+    The PcepXroSubObjectsList class encapsulates a list of pcepXroSubObjectsList resources that are managed by the system.
     A list of resources can be retrieved from the server using the PcepXroSubObjectsList.find() method.
     """
 
@@ -37,91 +37,98 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Active(self):
-        """Controls whether the XRO sub-object will be sent in the PCRequest message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Controls whether the XRO sub-object will be sent in the PCRequest message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AsNumber(self):
-        """AS Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumber'))
 
     @property
     def Attribute(self):
-        """Indicates how the exclusion subobject is to be indicated
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('attribute')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates how the exclusion subobject is to be indicated
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('attribute'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Exclude_bit(self):
-        """Indicates whether the exclusion is mandatory or desired.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('exclude_bit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether the exclusion is mandatory or desired.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('exclude_bit'))
 
     @property
     def InterfaceId(self):
-        """Interface ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interfaceId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Interface ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interfaceId'))
 
     @property
     def Ipv4Address(self):
-        """IPv4 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4Address'))
 
     @property
     def Ipv6Address(self):
-        """IPv6 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6Address'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -130,112 +137,128 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def PFlagXro(self):
-        """XRO P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagXro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): XRO P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagXro'))
 
     @property
     def PceId128(self):
-        """128 bit PKS ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pceId128')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit PKS ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pceId128'))
 
     @property
     def PceId32(self):
-        """32 bit PKS ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pceId32')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 32 bit PKS ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pceId32'))
 
     @property
     def PrefixLength(self):
-        """Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def RouterId(self):
-        """Router ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routerId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routerId'))
 
     @property
     def SrlgId(self):
-        """SRLG ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srlgId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRLG ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srlgId'))
 
     @property
     def SubObjectType(self):
-        """Using the Sub Object Type control user can configure which sub object needs to be included from the following options: IPv4 Prefix IPv6 Prefix Unnumbered Interface ID AS Number. SRLG
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('subObjectType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Using the Sub Object Type control user can configure which sub object needs to be included from the following options: IPv4 Prefix IPv6 Prefix Unnumbered Interface ID AS Number. SRLG
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('subObjectType'))
 
     def update(self, Name=None):
-        """Updates a child instance of pcepXroSubObjectsList on the server.
+        """Updates pcepXroSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves pcepXroSubObjectsList data from the server.
+        """Finds and retrieves pcepXroSubObjectsList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pcepXroSubObjectsList data from the server.
-        By default the find method takes no parameters and will retrieve all pcepXroSubObjectsList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepXroSubObjectsList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pcepXroSubObjectsList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching pcepXroSubObjectsList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pcepXroSubObjectsList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pcepXroSubObjectsList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pcepXroSubObjectsList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pcepXroSubObjectsList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -244,27 +267,30 @@ class PcepXroSubObjectsList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AsNumber (str): optional regex of asNumber
-            Attribute (str): optional regex of attribute
-            Exclude_bit (str): optional regex of exclude_bit
-            InterfaceId (str): optional regex of interfaceId
-            Ipv4Address (str): optional regex of ipv4Address
-            Ipv6Address (str): optional regex of ipv6Address
-            PFlagXro (str): optional regex of pFlagXro
-            PceId128 (str): optional regex of pceId128
-            PceId32 (str): optional regex of pceId32
-            PrefixLength (str): optional regex of prefixLength
-            RouterId (str): optional regex of routerId
-            SrlgId (str): optional regex of srlgId
-            SubObjectType (str): optional regex of subObjectType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AsNumber (str): optional regex of asNumber
+        - Attribute (str): optional regex of attribute
+        - Exclude_bit (str): optional regex of exclude_bit
+        - InterfaceId (str): optional regex of interfaceId
+        - Ipv4Address (str): optional regex of ipv4Address
+        - Ipv6Address (str): optional regex of ipv6Address
+        - PFlagXro (str): optional regex of pFlagXro
+        - PceId128 (str): optional regex of pceId128
+        - PceId32 (str): optional regex of pceId32
+        - PrefixLength (str): optional regex of prefixLength
+        - RouterId (str): optional regex of routerId
+        - SrlgId (str): optional regex of srlgId
+        - SubObjectType (str): optional regex of subObjectType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

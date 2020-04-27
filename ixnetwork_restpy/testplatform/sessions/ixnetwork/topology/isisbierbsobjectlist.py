@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisBierBSObjectList(Base):
     """Isis BIER Bit String Details
-    The IsisBierBSObjectList class encapsulates a list of isisBierBSObjectList resources that is managed by the system.
+    The IsisBierBSObjectList class encapsulates a list of isisBierBSObjectList resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisBierBSObjectList.find() method.
     """
 
@@ -37,55 +37,58 @@ class IsisBierBSObjectList(Base):
 
     @property
     def BIERBitStringLength(self):
-        """Bit String Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('BIERBitStringLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bit String Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BIERBitStringLength'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def LabelRangeSize(self):
-        """Maximum Set Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelRangeSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Set Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelRangeSize'))
 
     @property
     def LabelStart(self):
-        """Label Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelStart'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -93,50 +96,59 @@ class IsisBierBSObjectList(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of isisBierBSObjectList on the server.
+        """Updates isisBierBSObjectList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves isisBierBSObjectList data from the server.
+        """Finds and retrieves isisBierBSObjectList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisBierBSObjectList data from the server.
-        By default the find method takes no parameters and will retrieve all isisBierBSObjectList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisBierBSObjectList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisBierBSObjectList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching isisBierBSObjectList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisBierBSObjectList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisBierBSObjectList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisBierBSObjectList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisBierBSObjectList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -145,16 +157,19 @@ class IsisBierBSObjectList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BIERBitStringLength (str): optional regex of BIERBitStringLength
-            LabelRangeSize (str): optional regex of labelRangeSize
-            LabelStart (str): optional regex of labelStart
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BIERBitStringLength (str): optional regex of BIERBitStringLength
+        - LabelRangeSize (str): optional regex of labelRangeSize
+        - LabelStart (str): optional regex of labelStart
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

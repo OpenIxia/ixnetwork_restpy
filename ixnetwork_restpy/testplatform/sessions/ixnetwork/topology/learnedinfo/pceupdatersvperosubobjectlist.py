@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class PceUpdateRsvpEroSubObjectList(Base):
     """
-    The PceUpdateRsvpEroSubObjectList class encapsulates a list of pceUpdateRsvpEroSubObjectList resources that is managed by the system.
+    The PceUpdateRsvpEroSubObjectList class encapsulates a list of pceUpdateRsvpEroSubObjectList resources that are managed by the system.
     A list of resources can be retrieved from the server using the PceUpdateRsvpEroSubObjectList.find() method.
     """
 
@@ -37,93 +37,106 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def ActiveThisEro(self):
-        """Controls whether the ERO sub-object will be sent in the PCInitiate message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('activeThisEro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Controls whether the ERO sub-object will be sent in the PCInitiate message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('activeThisEro'))
 
     @property
     def AsNumber(self):
-        """AS Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumber'))
 
     @property
     def Ipv4Prefix(self):
-        """IPv4 Prefix is specified as an IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4Prefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Prefix is specified as an IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4Prefix'))
 
     @property
     def Ipv6Prefix(self):
-        """IPv6 Prefix is specified as an IPv6 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6Prefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Prefix is specified as an IPv6 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6Prefix'))
 
     @property
     def LooseHop(self):
-        """Indicates if user wants to represent a loose-hop sub object in the LSP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('looseHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if user wants to represent a loose-hop sub object in the LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('looseHop'))
 
     @property
     def PrefixLength(self):
-        """Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def SubObjectType(self):
-        """Using the Sub Object Type control user can configure which sub object needs to be included from the following options: Not Applicable IPv4 Prefix IPv6 Prefix AS Number.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('subObjectType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Using the Sub Object Type control user can configure which sub object needs to be included from the following options: Not Applicable IPv4 Prefix IPv6 Prefix AS Number.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('subObjectType'))
 
     def find(self):
-        """Finds and retrieves pceUpdateRsvpEroSubObjectList data from the server.
+        """Finds and retrieves pceUpdateRsvpEroSubObjectList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pceUpdateRsvpEroSubObjectList data from the server.
-        By default the find method takes no parameters and will retrieve all pceUpdateRsvpEroSubObjectList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pceUpdateRsvpEroSubObjectList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pceUpdateRsvpEroSubObjectList resources from the server.
 
-        Returns:
-            self: This instance with matching pceUpdateRsvpEroSubObjectList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pceUpdateRsvpEroSubObjectList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pceUpdateRsvpEroSubObjectList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pceUpdateRsvpEroSubObjectList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pceUpdateRsvpEroSubObjectList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -132,20 +145,23 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ActiveThisEro (str): optional regex of activeThisEro
-            AsNumber (str): optional regex of asNumber
-            Ipv4Prefix (str): optional regex of ipv4Prefix
-            Ipv6Prefix (str): optional regex of ipv6Prefix
-            LooseHop (str): optional regex of looseHop
-            PrefixLength (str): optional regex of prefixLength
-            SubObjectType (str): optional regex of subObjectType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ActiveThisEro (str): optional regex of activeThisEro
+        - AsNumber (str): optional regex of asNumber
+        - Ipv4Prefix (str): optional regex of ipv4Prefix
+        - Ipv6Prefix (str): optional regex of ipv6Prefix
+        - LooseHop (str): optional regex of looseHop
+        - PrefixLength (str): optional regex of prefixLength
+        - SubObjectType (str): optional regex of subObjectType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

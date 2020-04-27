@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NetworkRange(Base):
     """A list of network ranges for the ISIS router.
-    The NetworkRange class encapsulates a list of networkRange resources that is be managed by the user.
+    The NetworkRange class encapsulates a list of networkRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the NetworkRange.find() method.
-    The list can be managed by the user by using the NetworkRange.add() and NetworkRange.remove() methods.
+    The list can be managed by using the NetworkRange.add() and NetworkRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class NetworkRange(Base):
 
     @property
     def EntryTe(self):
-        """An instance of the EntryTe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_4d65db9e66bef4d3058010c987d7fc89.EntryTe): An instance of the EntryTe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_4d65db9e66bef4d3058010c987d7fc89.EntryTe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_4d65db9e66bef4d3058010c987d7fc89 import EntryTe
         return EntryTe(self)._select()
 
     @property
     def RangeTe(self):
-        """An instance of the RangeTe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_83821076c3acb25e4a44c5e70f5380a9.RangeTe): An instance of the RangeTe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_83821076c3acb25e4a44c5e70f5380a9.RangeTe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_83821076c3acb25e4a44c5e70f5380a9 import RangeTe
         return RangeTe(self)._select()
 
     @property
     def EnableHostName(self):
-        """If true, the given dynamic host name is transmitted in all the packets sent from this router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
         return self._get_attribute('enableHostName')
     @EnableHostName.setter
@@ -78,10 +78,10 @@ class NetworkRange(Base):
 
     @property
     def Enabled(self):
-        """If enabled, this route range will be advertised by the nodes in the network range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this route range will be advertised by the nodes in the network range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -90,10 +90,10 @@ class NetworkRange(Base):
 
     @property
     def EntryCol(self):
-        """The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
         """
         return self._get_attribute('entryCol')
     @EntryCol.setter
@@ -102,10 +102,10 @@ class NetworkRange(Base):
 
     @property
     def EntryRow(self):
-        """The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
         """
         return self._get_attribute('entryRow')
     @EntryRow.setter
@@ -114,10 +114,10 @@ class NetworkRange(Base):
 
     @property
     def GridNodeRoutes(self):
-        """The set of advertised networks within the grid to be included in isisGrid.
-
-        Returns:
-            list(dict(arg1:bool,arg2:str[ipAny|ipv4|ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number)): The set of advertised networks within the grid to be included in isisGrid.
         """
         return self._get_attribute('gridNodeRoutes')
     @GridNodeRoutes.setter
@@ -126,10 +126,10 @@ class NetworkRange(Base):
 
     @property
     def GridOutsideExLinks(self):
-        """NOT DEFINED
-
-        Returns:
-            list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number)): NOT DEFINED
         """
         return self._get_attribute('gridOutsideExLinks')
     @GridOutsideExLinks.setter
@@ -138,10 +138,10 @@ class NetworkRange(Base):
 
     @property
     def GridOutsideLinks(self):
-        """DEPRECATED Sets up the outside links between an ISIS grid and another ISIS grid.
-
-        Returns:
-            list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))
+        """DEPRECATED 
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number)): Sets up the outside links between an ISIS grid and another ISIS grid.
         """
         return self._get_attribute('gridOutsideLinks')
     @GridOutsideLinks.setter
@@ -150,10 +150,10 @@ class NetworkRange(Base):
 
     @property
     def HostNamePrefix(self):
-        """Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
         """
         return self._get_attribute('hostNamePrefix')
     @HostNamePrefix.setter
@@ -162,10 +162,10 @@ class NetworkRange(Base):
 
     @property
     def InterfaceIps(self):
-        """The interface IP information for the simulated network.
-
-        Returns:
-            list(dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)): The interface IP information for the simulated network.
         """
         return self._get_attribute('interfaceIps')
     @InterfaceIps.setter
@@ -174,10 +174,10 @@ class NetworkRange(Base):
 
     @property
     def InterfaceMetric(self):
-        """The metric cost associated with this emulated ISIS router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The metric cost associated with this emulated ISIS router.
         """
         return self._get_attribute('interfaceMetric')
     @InterfaceMetric.setter
@@ -186,10 +186,10 @@ class NetworkRange(Base):
 
     @property
     def Ipv6MtMetric(self):
-        """This metric is same as the Interface Metric. If enabled, it allows you to enter data.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This metric is same as the Interface Metric. If enabled, it allows you to enter data.
         """
         return self._get_attribute('ipv6MtMetric')
     @Ipv6MtMetric.setter
@@ -198,10 +198,10 @@ class NetworkRange(Base):
 
     @property
     def LinkType(self):
-        """The type of network link for this emulated ISIS router.
-
-        Returns:
-            str(pointToPoint|broadcast)
+        """
+        Returns
+        -------
+        - str(pointToPoint | broadcast): The type of network link for this emulated ISIS router.
         """
         return self._get_attribute('linkType')
     @LinkType.setter
@@ -210,10 +210,10 @@ class NetworkRange(Base):
 
     @property
     def NoOfCols(self):
-        """The number of columns in the simulated grid. (default = 3)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of columns in the simulated grid. (default = 3)
         """
         return self._get_attribute('noOfCols')
     @NoOfCols.setter
@@ -222,10 +222,10 @@ class NetworkRange(Base):
 
     @property
     def NoOfRows(self):
-        """The number of rows in the simulated grid. (default = 3)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of rows in the simulated grid. (default = 3)
         """
         return self._get_attribute('noOfRows')
     @NoOfRows.setter
@@ -234,10 +234,10 @@ class NetworkRange(Base):
 
     @property
     def RouterId(self):
-        """The router ID for the first emulated ISIS router in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The router ID for the first emulated ISIS router in this network range.
         """
         return self._get_attribute('routerId')
     @RouterId.setter
@@ -246,10 +246,10 @@ class NetworkRange(Base):
 
     @property
     def RouterIdIncrement(self):
-        """The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
         """
         return self._get_attribute('routerIdIncrement')
     @RouterIdIncrement.setter
@@ -258,10 +258,10 @@ class NetworkRange(Base):
 
     @property
     def TePaths(self):
-        """Adds a Traffic Engineering (TE) Path to the list.
-
-        Returns:
-            list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number)): Adds a Traffic Engineering (TE) Path to the list.
         """
         return self._get_attribute('tePaths')
     @TePaths.setter
@@ -270,10 +270,10 @@ class NetworkRange(Base):
 
     @property
     def UseWideMetric(self):
-        """Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
         """
         return self._get_attribute('useWideMetric')
     @UseWideMetric.setter
@@ -281,118 +281,131 @@ class NetworkRange(Base):
         self._set_attribute('useWideMetric', value)
 
     def update(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
-        """Updates a child instance of networkRange on the server.
+        """Updates networkRange resource on the server.
 
-        Args:
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
-            EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
-            EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
-            GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny|ipv4|ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-            GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-            GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
-            HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
-            InterfaceIps (list(dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
-            InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
-            Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
-            LinkType (str(pointToPoint|broadcast)): The type of network link for this emulated ISIS router.
-            NoOfCols (number): The number of columns in the simulated grid. (default = 3)
-            NoOfRows (number): The number of rows in the simulated grid. (default = 3)
-            RouterId (str): The router ID for the first emulated ISIS router in this network range.
-            RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-            TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
-            UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
+        Args
+        ----
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
+        - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
+        - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
+        - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
+        - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
+        - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
+        - Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
+        - LinkType (str(pointToPoint | broadcast)): The type of network link for this emulated ISIS router.
+        - NoOfCols (number): The number of columns in the simulated grid. (default = 3)
+        - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
+        - RouterId (str): The router ID for the first emulated ISIS router in this network range.
+        - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
-        """Adds a new networkRange node on the server and retrieves it in this instance.
+        """Adds a new networkRange resource on the server and adds it to the container.
 
-        Args:
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
-            EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
-            EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
-            GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny|ipv4|ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-            GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-            GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
-            HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
-            InterfaceIps (list(dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
-            InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
-            Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
-            LinkType (str(pointToPoint|broadcast)): The type of network link for this emulated ISIS router.
-            NoOfCols (number): The number of columns in the simulated grid. (default = 3)
-            NoOfRows (number): The number of rows in the simulated grid. (default = 3)
-            RouterId (str): The router ID for the first emulated ISIS router in this network range.
-            RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-            TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
-            UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
+        Args
+        ----
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
+        - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
+        - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
+        - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
+        - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
+        - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
+        - Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
+        - LinkType (str(pointToPoint | broadcast)): The type of network link for this emulated ISIS router.
+        - NoOfCols (number): The number of columns in the simulated grid. (default = 3)
+        - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
+        - RouterId (str): The router ID for the first emulated ISIS router in this network range.
+        - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
-        Returns:
-            self: This instance with all currently retrieved networkRange data using find and the newly added networkRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved networkRange resources using find and the newly added networkRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the networkRange data in this instance from server.
+        """Deletes all the contained networkRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
-        """Finds and retrieves networkRange data from the server.
+        """Finds and retrieves networkRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve networkRange data from the server.
-        By default the find method takes no parameters and will retrieve all networkRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all networkRange resources from the server.
 
-        Args:
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
-            EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
-            EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
-            GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny|ipv4|ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-            GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-            GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
-            HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
-            InterfaceIps (list(dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
-            InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
-            Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
-            LinkType (str(pointToPoint|broadcast)): The type of network link for this emulated ISIS router.
-            NoOfCols (number): The number of columns in the simulated grid. (default = 3)
-            NoOfRows (number): The number of rows in the simulated grid. (default = 3)
-            RouterId (str): The router ID for the first emulated ISIS router in this network range.
-            RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-            TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
-            UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
+        Args
+        ----
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - Enabled (bool): If enabled, this route range will be advertised by the nodes in the network range.
+        - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
+        - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
+        - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
+        - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
+        - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
+        - Ipv6MtMetric (number): This metric is same as the Interface Metric. If enabled, it allows you to enter data.
+        - LinkType (str(pointToPoint | broadcast)): The type of network link for this emulated ISIS router.
+        - NoOfCols (number): The number of columns in the simulated grid. (default = 3)
+        - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
+        - RouterId (str): The router ID for the first emulated ISIS router in this network range.
+        - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
-        Returns:
-            self: This instance with matching networkRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching networkRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of networkRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the networkRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the networkRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

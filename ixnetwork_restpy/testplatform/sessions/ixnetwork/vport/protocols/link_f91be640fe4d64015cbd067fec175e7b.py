@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Link(Base):
     """
-    The Link class encapsulates a list of link resources that is managed by the system.
+    The Link class encapsulates a list of link resources that are managed by the system.
     A list of resources can be retrieved from the server using the Link.find() method.
     """
 
@@ -38,9 +38,9 @@ class Link(Base):
     @property
     def CountLsa(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('countLsa')
     @CountLsa.setter
@@ -50,9 +50,9 @@ class Link(Base):
     @property
     def IncrLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrLinkStateId')
     @IncrLinkStateId.setter
@@ -62,9 +62,9 @@ class Link(Base):
     @property
     def LocalInterfaceAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('localInterfaceAddress')
     @LocalInterfaceAddress.setter
@@ -74,9 +74,9 @@ class Link(Base):
     @property
     def OptBitDc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitDc')
     @OptBitDc.setter
@@ -86,9 +86,9 @@ class Link(Base):
     @property
     def OptBitE(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitE')
     @OptBitE.setter
@@ -98,9 +98,9 @@ class Link(Base):
     @property
     def OptBitMc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMc')
     @OptBitMc.setter
@@ -110,9 +110,9 @@ class Link(Base):
     @property
     def OptBitN(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitN')
     @OptBitN.setter
@@ -122,9 +122,9 @@ class Link(Base):
     @property
     def OptBitR(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitR')
     @OptBitR.setter
@@ -134,9 +134,9 @@ class Link(Base):
     @property
     def OptBitV6(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitV6')
     @OptBitV6.setter
@@ -146,9 +146,9 @@ class Link(Base):
     @property
     def Option(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('option')
     @Option.setter
@@ -158,9 +158,9 @@ class Link(Base):
     @property
     def Prefixes(self):
         """
-
-        Returns:
-            list(dict(arg1:str,arg2:number,arg3:number,arg4:number))
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number)): 
         """
         return self._get_attribute('prefixes')
     @Prefixes.setter
@@ -170,9 +170,9 @@ class Link(Base):
     @property
     def RouterPriority(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('routerPriority')
     @RouterPriority.setter
@@ -180,66 +180,75 @@ class Link(Base):
         self._set_attribute('routerPriority', value)
 
     def update(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
-        """Updates a child instance of link on the server.
+        """Updates link resource on the server.
 
-        Args:
-            CountLsa (number): 
-            IncrLinkStateId (str): 
-            LocalInterfaceAddress (str): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
-            Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
-            RouterPriority (number): 
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - LocalInterfaceAddress (str): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
+        - RouterPriority (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
-        """Finds and retrieves link data from the server.
+        """Finds and retrieves link resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve link data from the server.
-        By default the find method takes no parameters and will retrieve all link data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve link resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all link resources from the server.
 
-        Args:
-            CountLsa (number): 
-            IncrLinkStateId (str): 
-            LocalInterfaceAddress (str): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
-            Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
-            RouterPriority (number): 
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - LocalInterfaceAddress (str): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
+        - RouterPriority (number): 
 
-        Returns:
-            self: This instance with matching link data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching link resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of link data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the link data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the link resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

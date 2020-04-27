@@ -36,10 +36,10 @@ class LinkFeature(Base):
 
     @property
     def OfppfAutoNegotiation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfAutoNegotiation')
     @OfppfAutoNegotiation.setter
@@ -48,10 +48,10 @@ class LinkFeature(Base):
 
     @property
     def OfppfPause(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfPause')
     @OfppfPause.setter
@@ -60,10 +60,10 @@ class LinkFeature(Base):
 
     @property
     def OfppfPauseAsym(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfPauseAsym')
     @OfppfPauseAsym.setter
@@ -71,14 +71,16 @@ class LinkFeature(Base):
         self._set_attribute('ofppfPauseAsym', value)
 
     def update(self, OfppfAutoNegotiation=None, OfppfPause=None, OfppfPauseAsym=None):
-        """Updates a child instance of linkFeature on the server.
+        """Updates linkFeature resource on the server.
 
-        Args:
-            OfppfAutoNegotiation (bool): NOT DEFINED
-            OfppfPause (bool): NOT DEFINED
-            OfppfPauseAsym (bool): NOT DEFINED
+        Args
+        ----
+        - OfppfAutoNegotiation (bool): NOT DEFINED
+        - OfppfPause (bool): NOT DEFINED
+        - OfppfPauseAsym (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

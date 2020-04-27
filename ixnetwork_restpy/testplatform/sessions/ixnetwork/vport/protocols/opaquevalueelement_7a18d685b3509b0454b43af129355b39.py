@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OpaqueValueElement(Base):
     """Configures the opaque value element.
-    The OpaqueValueElement class encapsulates a list of opaqueValueElement resources that is be managed by the user.
+    The OpaqueValueElement class encapsulates a list of opaqueValueElement resources that are managed by the user.
     A list of resources can be retrieved from the server using the OpaqueValueElement.find() method.
-    The list can be managed by the user by using the OpaqueValueElement.add() and OpaqueValueElement.remove() methods.
+    The list can be managed by using the OpaqueValueElement.add() and OpaqueValueElement.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class OpaqueValueElement(Base):
 
     @property
     def Increment(self):
-        """Configures the opaque value element.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Configures the opaque value element.
         """
         return self._get_attribute('increment')
     @Increment.setter
@@ -50,10 +50,10 @@ class OpaqueValueElement(Base):
 
     @property
     def Length(self):
-        """The length of the TLV.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The length of the TLV.
         """
         return self._get_attribute('length')
     @Length.setter
@@ -62,10 +62,10 @@ class OpaqueValueElement(Base):
 
     @property
     def Type(self):
-        """The type of TLV.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of TLV.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -74,10 +74,10 @@ class OpaqueValueElement(Base):
 
     @property
     def Value(self):
-        """The value of the TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The value of the TLV.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -85,76 +85,89 @@ class OpaqueValueElement(Base):
         self._set_attribute('value', value)
 
     def update(self, Increment=None, Length=None, Type=None, Value=None):
-        """Updates a child instance of opaqueValueElement on the server.
+        """Updates opaqueValueElement resource on the server.
 
-        Args:
-            Increment (str): Configures the opaque value element.
-            Length (number): The length of the TLV.
-            Type (number): The type of TLV.
-            Value (str): The value of the TLV.
+        Args
+        ----
+        - Increment (str): Configures the opaque value element.
+        - Length (number): The length of the TLV.
+        - Type (number): The type of TLV.
+        - Value (str): The value of the TLV.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Increment=None, Length=None, Type=None, Value=None):
-        """Adds a new opaqueValueElement node on the server and retrieves it in this instance.
+        """Adds a new opaqueValueElement resource on the server and adds it to the container.
 
-        Args:
-            Increment (str): Configures the opaque value element.
-            Length (number): The length of the TLV.
-            Type (number): The type of TLV.
-            Value (str): The value of the TLV.
+        Args
+        ----
+        - Increment (str): Configures the opaque value element.
+        - Length (number): The length of the TLV.
+        - Type (number): The type of TLV.
+        - Value (str): The value of the TLV.
 
-        Returns:
-            self: This instance with all currently retrieved opaqueValueElement data using find and the newly added opaqueValueElement data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved opaqueValueElement resources using find and the newly added opaqueValueElement resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the opaqueValueElement data in this instance from server.
+        """Deletes all the contained opaqueValueElement resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Increment=None, Length=None, Type=None, Value=None):
-        """Finds and retrieves opaqueValueElement data from the server.
+        """Finds and retrieves opaqueValueElement resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve opaqueValueElement data from the server.
-        By default the find method takes no parameters and will retrieve all opaqueValueElement data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaqueValueElement resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all opaqueValueElement resources from the server.
 
-        Args:
-            Increment (str): Configures the opaque value element.
-            Length (number): The length of the TLV.
-            Type (number): The type of TLV.
-            Value (str): The value of the TLV.
+        Args
+        ----
+        - Increment (str): Configures the opaque value element.
+        - Length (number): The length of the TLV.
+        - Type (number): The type of TLV.
+        - Value (str): The value of the TLV.
 
-        Returns:
-            self: This instance with matching opaqueValueElement data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching opaqueValueElement resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of opaqueValueElement data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the opaqueValueElement data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the opaqueValueElement resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

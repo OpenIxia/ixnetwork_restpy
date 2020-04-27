@@ -36,314 +36,338 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def BgpAsPathSegmentList(self):
-        """An instance of the BgpAsPathSegmentList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList): An instance of the BgpAsPathSegmentList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist import BgpAsPathSegmentList
         return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
-        """An instance of the BgpClusterIdList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList): An instance of the BgpClusterIdList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist import BgpClusterIdList
         return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
-        """An instance of the BgpCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList): An instance of the BgpCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist import BgpCommunitiesList
         return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
-        """An instance of the BgpExtendedCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist import BgpExtendedCommunitiesList
         return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpSRTEPoliciesTunnelEncapsulationListV4(self):
-        """An instance of the BgpSRTEPoliciesTunnelEncapsulationListV4 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4.BgpSRTEPoliciesTunnelEncapsulationListV4): An instance of the BgpSRTEPoliciesTunnelEncapsulationListV4 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4.BgpSRTEPoliciesTunnelEncapsulationListV4)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4 import BgpSRTEPoliciesTunnelEncapsulationListV4
         return BgpSRTEPoliciesTunnelEncapsulationListV4(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AddPathId(self):
-        """BGP ADD Path Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('addPathId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BGP ADD Path Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('addPathId'))
 
     @property
     def AggregatorAs(self):
-        """Aggregator AS
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorAs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorAs'))
 
     @property
     def AggregatorId(self):
-        """Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorId'))
 
     @property
     def AsSetMode(self):
-        """AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asSetMode'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Distinguisher(self):
-        """Distinguisher
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distinguisher')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Distinguisher
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distinguisher'))
 
     @property
     def EnableAddPath(self):
-        """Enable Path ID when ADD Path Capability is enabled in BGP Peer
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAddPath')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Path ID when ADD Path Capability is enabled in BGP Peer
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAddPath'))
 
     @property
     def EnableAggregatorId(self):
-        """Enable Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAggregatorId'))
 
     @property
     def EnableAsPathSegments(self):
-        """Enable AS Path Segments
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAsPathSegments')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAsPathSegments'))
 
     @property
     def EnableAtomicAggregate(self):
-        """Enable Atomic Aggregate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAtomicAggregate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAtomicAggregate'))
 
     @property
     def EnableCluster(self):
-        """Enable Cluster
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCluster')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCluster'))
 
     @property
     def EnableCommunity(self):
-        """Enable Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCommunity'))
 
     @property
     def EnableExtendedCommunity(self):
-        """Enable Extended Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableExtendedCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableExtendedCommunity'))
 
     @property
     def EnableLocalPreference(self):
-        """Enable Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableLocalPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLocalPreference'))
 
     @property
     def EnableMultiExitDiscriminator(self):
-        """Enable Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMultiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMultiExitDiscriminator'))
 
     @property
     def EnableNextHop(self):
-        """Enable Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableNextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableNextHop'))
 
     @property
     def EnableOrigin(self):
-        """Enable Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOrigin'))
 
     @property
     def EnableOriginatorId(self):
-        """Enable Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOriginatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOriginatorId'))
 
     @property
     def EndPointV4(self):
-        """IPv4 End Point
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endPointV4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 End Point
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endPointV4'))
 
     @property
     def EndPointV6(self):
-        """IPv6 End Point
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endPointV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 End Point
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endPointV6'))
 
     @property
     def Ipv4NextHop(self):
-        """IPv4 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4NextHop'))
 
     @property
     def Ipv6NextHop(self):
-        """IPv6 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NextHop'))
 
     @property
     def LocalPreference(self):
-        """Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('localPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('localPreference'))
 
     @property
     def MultiExitDiscriminator(self):
-        """Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('multiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('multiExitDiscriminator'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -352,10 +376,10 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
-        """Number Of AS Path Segments Per Route Range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of AS Path Segments Per Route Range
         """
         return self._get_attribute('noOfASPathSegmentsPerRouteRange')
     @NoOfASPathSegmentsPerRouteRange.setter
@@ -364,10 +388,10 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def NoOfClusters(self):
-        """Number of Clusters
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Clusters
         """
         return self._get_attribute('noOfClusters')
     @NoOfClusters.setter
@@ -376,10 +400,10 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def NoOfCommunities(self):
-        """Number of Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Communities
         """
         return self._get_attribute('noOfCommunities')
     @NoOfCommunities.setter
@@ -388,10 +412,10 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def NoOfExtendedCommunity(self):
-        """Number of Extended Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Extended Communities
         """
         return self._get_attribute('noOfExtendedCommunity')
     @NoOfExtendedCommunity.setter
@@ -400,10 +424,10 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def NumberOfTunnelsV4(self):
-        """Count of Tunnel TLVs Per Policy
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Count of Tunnel TLVs Per Policy
         """
         return self._get_attribute('numberOfTunnelsV4')
     @NumberOfTunnelsV4.setter
@@ -412,139 +436,152 @@ class BgpSRTEPoliciesListV4(Base):
 
     @property
     def Origin(self):
-        """Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('origin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('origin'))
 
     @property
     def OriginatorId(self):
-        """Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('originatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('originatorId'))
 
     @property
     def OverridePeerAsSetMode(self):
-        """Override Peer AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('overridePeerAsSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('overridePeerAsSetMode'))
 
     @property
     def PolicyColor(self):
-        """Policy Color
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('policyColor')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Color
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('policyColor'))
 
     @property
     def PolicyType(self):
-        """Policy Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('policyType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('policyType'))
 
     @property
     def SetNextHop(self):
-        """Set Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('setNextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHop'))
 
     @property
     def SetNextHopIpType(self):
-        """Set Next Hop IP Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('setNextHopIpType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHopIpType'))
 
     @property
     def SrtepolicyName(self):
-        """Policy Name For Reference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srtepolicyName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Name For Reference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srtepolicyName'))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV4=None):
-        """Updates a child instance of bgpSRTEPoliciesListV4 on the server.
+        """Updates bgpSRTEPoliciesListV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
-            NoOfClusters (number): Number of Clusters
-            NoOfCommunities (number): Number of Communities
-            NoOfExtendedCommunity (number): Number of Extended Communities
-            NumberOfTunnelsV4 (number): Count of Tunnel TLVs Per Policy
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExtendedCommunity (number): Number of Extended Communities
+        - NumberOfTunnelsV4 (number): Count of Tunnel TLVs Per Policy
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesListV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AddPathId (str): optional regex of addPathId
-            AggregatorAs (str): optional regex of aggregatorAs
-            AggregatorId (str): optional regex of aggregatorId
-            AsSetMode (str): optional regex of asSetMode
-            Distinguisher (str): optional regex of distinguisher
-            EnableAddPath (str): optional regex of enableAddPath
-            EnableAggregatorId (str): optional regex of enableAggregatorId
-            EnableAsPathSegments (str): optional regex of enableAsPathSegments
-            EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
-            EnableCluster (str): optional regex of enableCluster
-            EnableCommunity (str): optional regex of enableCommunity
-            EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
-            EnableLocalPreference (str): optional regex of enableLocalPreference
-            EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
-            EnableNextHop (str): optional regex of enableNextHop
-            EnableOrigin (str): optional regex of enableOrigin
-            EnableOriginatorId (str): optional regex of enableOriginatorId
-            EndPointV4 (str): optional regex of endPointV4
-            EndPointV6 (str): optional regex of endPointV6
-            Ipv4NextHop (str): optional regex of ipv4NextHop
-            Ipv6NextHop (str): optional regex of ipv6NextHop
-            LocalPreference (str): optional regex of localPreference
-            MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
-            Origin (str): optional regex of origin
-            OriginatorId (str): optional regex of originatorId
-            OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
-            PolicyColor (str): optional regex of policyColor
-            PolicyType (str): optional regex of policyType
-            SetNextHop (str): optional regex of setNextHop
-            SetNextHopIpType (str): optional regex of setNextHopIpType
-            SrtepolicyName (str): optional regex of srtepolicyName
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AddPathId (str): optional regex of addPathId
+        - AggregatorAs (str): optional regex of aggregatorAs
+        - AggregatorId (str): optional regex of aggregatorId
+        - AsSetMode (str): optional regex of asSetMode
+        - Distinguisher (str): optional regex of distinguisher
+        - EnableAddPath (str): optional regex of enableAddPath
+        - EnableAggregatorId (str): optional regex of enableAggregatorId
+        - EnableAsPathSegments (str): optional regex of enableAsPathSegments
+        - EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
+        - EnableCluster (str): optional regex of enableCluster
+        - EnableCommunity (str): optional regex of enableCommunity
+        - EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
+        - EnableLocalPreference (str): optional regex of enableLocalPreference
+        - EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
+        - EnableNextHop (str): optional regex of enableNextHop
+        - EnableOrigin (str): optional regex of enableOrigin
+        - EnableOriginatorId (str): optional regex of enableOriginatorId
+        - EndPointV4 (str): optional regex of endPointV4
+        - EndPointV6 (str): optional regex of endPointV6
+        - Ipv4NextHop (str): optional regex of ipv4NextHop
+        - Ipv6NextHop (str): optional regex of ipv6NextHop
+        - LocalPreference (str): optional regex of localPreference
+        - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
+        - Origin (str): optional regex of origin
+        - OriginatorId (str): optional regex of originatorId
+        - OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
+        - PolicyColor (str): optional regex of policyColor
+        - PolicyType (str): optional regex of policyType
+        - SetNextHop (str): optional regex of setNextHop
+        - SetNextHopIpType (str): optional regex of setNextHopIpType
+        - SrtepolicyName (str): optional regex of srtepolicyName
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

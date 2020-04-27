@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Host(Base):
     """A list of simulated hosts which received multicast traffic.
-    The Host class encapsulates a list of host resources that is be managed by the user.
+    The Host class encapsulates a list of host resources that are managed by the user.
     A list of resources can be retrieved from the server using the Host.find() method.
-    The list can be managed by the user by using the Host.add() and Host.remove() methods.
+    The list can be managed by using the Host.add() and Host.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Host(Base):
 
     @property
     def GroupRange(self):
-        """An instance of the GroupRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_d21b6f3968112c3d19cfbf3e4ff29bff.GroupRange): An instance of the GroupRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_d21b6f3968112c3d19cfbf3e4ff29bff.GroupRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_d21b6f3968112c3d19cfbf3e4ff29bff import GroupRange
         return GroupRange(self)
 
     @property
     def EnableImmediateResp(self):
-        """If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
         """
         return self._get_attribute('enableImmediateResp')
     @EnableImmediateResp.setter
@@ -64,10 +64,10 @@ class Host(Base):
 
     @property
     def EnableQueryResMode(self):
-        """Enables the simulation for the host to respond to general queries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the simulation for the host to respond to general queries.
         """
         return self._get_attribute('enableQueryResMode')
     @EnableQueryResMode.setter
@@ -76,10 +76,10 @@ class Host(Base):
 
     @property
     def EnableRouterAlert(self):
-        """Sets the router alert bit in listener report messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Sets the router alert bit in listener report messages.
         """
         return self._get_attribute('enableRouterAlert')
     @EnableRouterAlert.setter
@@ -88,10 +88,10 @@ class Host(Base):
 
     @property
     def EnableSpecificResMode(self):
-        """Enables the simulation for the host to respond to group specific queries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the simulation for the host to respond to group specific queries.
         """
         return self._get_attribute('enableSpecificResMode')
     @EnableSpecificResMode.setter
@@ -100,10 +100,10 @@ class Host(Base):
 
     @property
     def EnableSuppressReport(self):
-        """Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
         """
         return self._get_attribute('enableSuppressReport')
     @EnableSuppressReport.setter
@@ -112,10 +112,10 @@ class Host(Base):
 
     @property
     def EnableUnsolicitedResMode(self):
-        """If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
         """
         return self._get_attribute('enableUnsolicitedResMode')
     @EnableUnsolicitedResMode.setter
@@ -124,10 +124,10 @@ class Host(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of the host in the MLD simulation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the host in the MLD simulation.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -136,10 +136,10 @@ class Host(Base):
 
     @property
     def InterfaceIndex(self):
-        """The assigned protocol interface ID for this MLD interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The assigned protocol interface ID for this MLD interface.
         """
         return self._get_attribute('interfaceIndex')
     @InterfaceIndex.setter
@@ -148,10 +148,10 @@ class Host(Base):
 
     @property
     def InterfaceType(self):
-        """The type of interface to be selected for this MLD interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of interface to be selected for this MLD interface.
         """
         return self._get_attribute('interfaceType')
     @InterfaceType.setter
@@ -160,10 +160,10 @@ class Host(Base):
 
     @property
     def Interfaces(self):
-        """The interfaces that are associated with the selected interface type.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute('interfaces')
     @Interfaces.setter
@@ -172,10 +172,10 @@ class Host(Base):
 
     @property
     def ProtocolInterface(self):
-        """DEPRECATED The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -184,10 +184,10 @@ class Host(Base):
 
     @property
     def ReportFreq(self):
-        """Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         """
         return self._get_attribute('reportFreq')
     @ReportFreq.setter
@@ -196,10 +196,10 @@ class Host(Base):
 
     @property
     def RobustnessVariable(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('robustnessVariable')
     @RobustnessVariable.setter
@@ -208,10 +208,10 @@ class Host(Base):
 
     @property
     def TrafficGroupId(self):
-        """The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -220,10 +220,10 @@ class Host(Base):
 
     @property
     def Version(self):
-        """Sets the MLD version number that is to be simulated on the host: 1 or 2.
-
-        Returns:
-            str(version1|version2)
+        """
+        Returns
+        -------
+        - str(version1 | version2): Sets the MLD version number that is to be simulated on the host: 1 or 2.
         """
         return self._get_attribute('version')
     @Version.setter
@@ -231,110 +231,123 @@ class Host(Base):
         self._set_attribute('version', value)
 
     def update(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
-        """Updates a child instance of host on the server.
+        """Updates host resource on the server.
 
-        Args:
-            EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
-            EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
-            EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
-            EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
-            EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
-            EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
-            Enabled (bool): Enables the use of the host in the MLD simulation.
-            InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
-            InterfaceType (str): The type of interface to be selected for this MLD interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
-            ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
-            RobustnessVariable (number): NOT DEFINED
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Version (str(version1|version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
+        Args
+        ----
+        - EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
+        - EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
+        - EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
+        - EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
+        - EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
+        - EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
+        - Enabled (bool): Enables the use of the host in the MLD simulation.
+        - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
+        - InterfaceType (str): The type of interface to be selected for this MLD interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
+        - RobustnessVariable (number): NOT DEFINED
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
-        """Adds a new host node on the server and retrieves it in this instance.
+        """Adds a new host resource on the server and adds it to the container.
 
-        Args:
-            EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
-            EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
-            EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
-            EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
-            EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
-            EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
-            Enabled (bool): Enables the use of the host in the MLD simulation.
-            InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
-            InterfaceType (str): The type of interface to be selected for this MLD interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
-            ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
-            RobustnessVariable (number): NOT DEFINED
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Version (str(version1|version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
+        Args
+        ----
+        - EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
+        - EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
+        - EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
+        - EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
+        - EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
+        - EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
+        - Enabled (bool): Enables the use of the host in the MLD simulation.
+        - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
+        - InterfaceType (str): The type of interface to be selected for this MLD interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
+        - RobustnessVariable (number): NOT DEFINED
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
-        Returns:
-            self: This instance with all currently retrieved host data using find and the newly added host data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved host resources using find and the newly added host resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the host data in this instance from server.
+        """Deletes all the contained host resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
-        """Finds and retrieves host data from the server.
+        """Finds and retrieves host resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve host data from the server.
-        By default the find method takes no parameters and will retrieve all host data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve host resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all host resources from the server.
 
-        Args:
-            EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
-            EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
-            EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
-            EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
-            EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
-            EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
-            Enabled (bool): Enables the use of the host in the MLD simulation.
-            InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
-            InterfaceType (str): The type of interface to be selected for this MLD interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
-            ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
-            RobustnessVariable (number): NOT DEFINED
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            Version (str(version1|version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
+        Args
+        ----
+        - EnableImmediateResp (bool): If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
+        - EnableQueryResMode (bool): Enables the simulation for the host to respond to general queries.
+        - EnableRouterAlert (bool): Sets the router alert bit in listener report messages.
+        - EnableSpecificResMode (bool): Enables the simulation for the host to respond to group specific queries.
+        - EnableSuppressReport (bool): Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
+        - EnableUnsolicitedResMode (bool): If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
+        - Enabled (bool): Enables the use of the host in the MLD simulation.
+        - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
+        - InterfaceType (str): The type of interface to be selected for this MLD interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
+        - RobustnessVariable (number): NOT DEFINED
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
-        Returns:
-            self: This instance with matching host data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching host resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of host data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the host data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the host resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -343,12 +356,10 @@ class Host(Base):
 
         Gets the interface accesor Iface list.
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Link(Base):
     """
-    The Link class encapsulates a list of link resources that is be managed by the user.
+    The Link class encapsulates a list of link resources that are managed by the user.
     A list of resources can be retrieved from the server using the Link.find() method.
-    The list can be managed by the user by using the Link.add() and Link.remove() methods.
+    The list can be managed by using the Link.add() and Link.remove() methods.
     """
 
     __slots__ = ()
@@ -38,182 +38,182 @@ class Link(Base):
 
     @property
     def DiscoveredLearnedInfo(self):
-        """An instance of the DiscoveredLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.discoveredlearnedinfo_b56a2aca4fe84bff95997bcd3896e913.DiscoveredLearnedInfo): An instance of the DiscoveredLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.discoveredlearnedinfo_b56a2aca4fe84bff95997bcd3896e913.DiscoveredLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.discoveredlearnedinfo_b56a2aca4fe84bff95997bcd3896e913 import DiscoveredLearnedInfo
         return DiscoveredLearnedInfo(self)
 
     @property
     def ErroredFramePeriodTlv(self):
-        """An instance of the ErroredFramePeriodTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframeperiodtlv_e0b75a878a43d13bc99d292c4e22db12.ErroredFramePeriodTlv): An instance of the ErroredFramePeriodTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframeperiodtlv_e0b75a878a43d13bc99d292c4e22db12.ErroredFramePeriodTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframeperiodtlv_e0b75a878a43d13bc99d292c4e22db12 import ErroredFramePeriodTlv
         return ErroredFramePeriodTlv(self)._select()
 
     @property
     def ErroredFrameSecondsSummaryTlv(self):
-        """An instance of the ErroredFrameSecondsSummaryTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframesecondssummarytlv_ce9b017cc96acf1763368a8d3cbb50d1.ErroredFrameSecondsSummaryTlv): An instance of the ErroredFrameSecondsSummaryTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframesecondssummarytlv_ce9b017cc96acf1763368a8d3cbb50d1.ErroredFrameSecondsSummaryTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframesecondssummarytlv_ce9b017cc96acf1763368a8d3cbb50d1 import ErroredFrameSecondsSummaryTlv
         return ErroredFrameSecondsSummaryTlv(self)._select()
 
     @property
     def ErroredFrameTlv(self):
-        """An instance of the ErroredFrameTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframetlv_6a171db27385d5c6d30115f31435a54f.ErroredFrameTlv): An instance of the ErroredFrameTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframetlv_6a171db27385d5c6d30115f31435a54f.ErroredFrameTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframetlv_6a171db27385d5c6d30115f31435a54f import ErroredFrameTlv
         return ErroredFrameTlv(self)._select()
 
     @property
     def ErroredSymbolPeriodTlv(self):
-        """An instance of the ErroredSymbolPeriodTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredsymbolperiodtlv_be8f4c040056ef7f4e220cf9e6a332a5.ErroredSymbolPeriodTlv): An instance of the ErroredSymbolPeriodTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredsymbolperiodtlv_be8f4c040056ef7f4e220cf9e6a332a5.ErroredSymbolPeriodTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredsymbolperiodtlv_be8f4c040056ef7f4e220cf9e6a332a5 import ErroredSymbolPeriodTlv
         return ErroredSymbolPeriodTlv(self)._select()
 
     @property
     def EventNotificationLearnedInfo(self):
-        """An instance of the EventNotificationLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eventnotificationlearnedinfo_2f41979ec05023054444bb824397a42f.EventNotificationLearnedInfo): An instance of the EventNotificationLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eventnotificationlearnedinfo_2f41979ec05023054444bb824397a42f.EventNotificationLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eventnotificationlearnedinfo_2f41979ec05023054444bb824397a42f import EventNotificationLearnedInfo
         return EventNotificationLearnedInfo(self)
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_21173f93b01472152dbb5ea4d71785b0.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_21173f93b01472152dbb5ea4d71785b0.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_21173f93b01472152dbb5ea4d71785b0 import Interface
         return Interface(self)
 
     @property
     def OrganizationSpecificEventTlv(self):
-        """An instance of the OrganizationSpecificEventTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificeventtlv_5a9473f0f94a55db39816656c6f6331e.OrganizationSpecificEventTlv): An instance of the OrganizationSpecificEventTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificeventtlv_5a9473f0f94a55db39816656c6f6331e.OrganizationSpecificEventTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificeventtlv_5a9473f0f94a55db39816656c6f6331e import OrganizationSpecificEventTlv
         return OrganizationSpecificEventTlv(self)._select()
 
     @property
     def OrganizationSpecificInfoTlv(self):
-        """An instance of the OrganizationSpecificInfoTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificinfotlv_cdbfb68a383cae9df3ba968fba52c095.OrganizationSpecificInfoTlv): An instance of the OrganizationSpecificInfoTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificinfotlv_cdbfb68a383cae9df3ba968fba52c095.OrganizationSpecificInfoTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificinfotlv_cdbfb68a383cae9df3ba968fba52c095 import OrganizationSpecificInfoTlv
         return OrganizationSpecificInfoTlv(self)
 
     @property
     def OrganizationSpecificOamPduData(self):
-        """An instance of the OrganizationSpecificOamPduData class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificoampdudata_583be9df6a7e96b61036baf2444ee057.OrganizationSpecificOamPduData): An instance of the OrganizationSpecificOamPduData class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificoampdudata_583be9df6a7e96b61036baf2444ee057.OrganizationSpecificOamPduData)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificoampdudata_583be9df6a7e96b61036baf2444ee057 import OrganizationSpecificOamPduData
         return OrganizationSpecificOamPduData(self)
 
     @property
     def VarDescriptor(self):
-        """An instance of the VarDescriptor class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vardescriptor_1d3a085a1689a772fd86e7d3543305e2.VarDescriptor): An instance of the VarDescriptor class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vardescriptor_1d3a085a1689a772fd86e7d3543305e2.VarDescriptor)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vardescriptor_1d3a085a1689a772fd86e7d3543305e2 import VarDescriptor
         return VarDescriptor(self)
 
     @property
     def VariableRequestLearnedInfo(self):
-        """An instance of the VariableRequestLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variablerequestlearnedinfo_4a64a0c624744051e77f86bead820a07.VariableRequestLearnedInfo): An instance of the VariableRequestLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variablerequestlearnedinfo_4a64a0c624744051e77f86bead820a07.VariableRequestLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variablerequestlearnedinfo_4a64a0c624744051e77f86bead820a07 import VariableRequestLearnedInfo
         return VariableRequestLearnedInfo(self)
 
     @property
     def VariableResponseDatabase(self):
-        """An instance of the VariableResponseDatabase class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variableresponsedatabase_a78be4271828cdf262f2720a5b9c3ad7.VariableResponseDatabase): An instance of the VariableResponseDatabase class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variableresponsedatabase_a78be4271828cdf262f2720a5b9c3ad7.VariableResponseDatabase)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variableresponsedatabase_a78be4271828cdf262f2720a5b9c3ad7 import VariableResponseDatabase
         return VariableResponseDatabase(self)
@@ -221,9 +221,9 @@ class Link(Base):
     @property
     def DisableInformationPduTx(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('disableInformationPduTx')
     @DisableInformationPduTx.setter
@@ -233,9 +233,9 @@ class Link(Base):
     @property
     def DisableNonInformationPduTx(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('disableNonInformationPduTx')
     @DisableNonInformationPduTx.setter
@@ -245,9 +245,9 @@ class Link(Base):
     @property
     def EnableCriticalEvent(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableCriticalEvent')
     @EnableCriticalEvent.setter
@@ -257,9 +257,9 @@ class Link(Base):
     @property
     def EnableDyingGasp(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableDyingGasp')
     @EnableDyingGasp.setter
@@ -269,9 +269,9 @@ class Link(Base):
     @property
     def EnableLinkFault(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLinkFault')
     @EnableLinkFault.setter
@@ -281,9 +281,9 @@ class Link(Base):
     @property
     def EnableLoopbackResponse(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLoopbackResponse')
     @EnableLoopbackResponse.setter
@@ -293,9 +293,9 @@ class Link(Base):
     @property
     def EnableVariableResponse(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableVariableResponse')
     @EnableVariableResponse.setter
@@ -305,9 +305,9 @@ class Link(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -317,9 +317,9 @@ class Link(Base):
     @property
     def EthernetTypeUsedForDataTraffic(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('ethernetTypeUsedForDataTraffic')
     @EthernetTypeUsedForDataTraffic.setter
@@ -329,9 +329,9 @@ class Link(Base):
     @property
     def EventInterval(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('eventInterval')
     @EventInterval.setter
@@ -341,9 +341,9 @@ class Link(Base):
     @property
     def InformationPduCountPerSecond(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('informationPduCountPerSecond')
     @InformationPduCountPerSecond.setter
@@ -353,45 +353,45 @@ class Link(Base):
     @property
     def IsDiscLearnedInfoRefreshed(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isDiscLearnedInfoRefreshed')
 
     @property
     def IsEventNotificationLearnedInfoRefreshed(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isEventNotificationLearnedInfoRefreshed')
 
     @property
     def IsLoopbackLearnedInfoRefreshed(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isLoopbackLearnedInfoRefreshed')
 
     @property
     def IsVariableRequestLearnedInfoRefreshed(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isVariableRequestLearnedInfoRefreshed')
 
     @property
     def LinkEventTxMode(self):
         """
-
-        Returns:
-            str(single|periodic)
+        Returns
+        -------
+        - str(single | periodic): 
         """
         return self._get_attribute('linkEventTxMode')
     @LinkEventTxMode.setter
@@ -401,9 +401,9 @@ class Link(Base):
     @property
     def LocalLostLinkTimer(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localLostLinkTimer')
     @LocalLostLinkTimer.setter
@@ -413,9 +413,9 @@ class Link(Base):
     @property
     def LoopbackCmd(self):
         """
-
-        Returns:
-            str(disableLoopback|enableLoopback)
+        Returns
+        -------
+        - str(disableLoopback | enableLoopback): 
         """
         return self._get_attribute('loopbackCmd')
     @LoopbackCmd.setter
@@ -425,9 +425,9 @@ class Link(Base):
     @property
     def LoopbackTimeout(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('loopbackTimeout')
     @LoopbackTimeout.setter
@@ -437,9 +437,9 @@ class Link(Base):
     @property
     def MacAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -449,9 +449,9 @@ class Link(Base):
     @property
     def MaxOamPduSize(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxOamPduSize')
     @MaxOamPduSize.setter
@@ -461,9 +461,9 @@ class Link(Base):
     @property
     def OperationMode(self):
         """
-
-        Returns:
-            str(active|passive)
+        Returns
+        -------
+        - str(active | passive): 
         """
         return self._get_attribute('operationMode')
     @OperationMode.setter
@@ -473,9 +473,9 @@ class Link(Base):
     @property
     def Oui(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('oui')
     @Oui.setter
@@ -485,9 +485,9 @@ class Link(Base):
     @property
     def OverrideLocalEvaluating(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideLocalEvaluating')
     @OverrideLocalEvaluating.setter
@@ -497,9 +497,9 @@ class Link(Base):
     @property
     def OverrideLocalSatisfied(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideLocalSatisfied')
     @OverrideLocalSatisfied.setter
@@ -509,9 +509,9 @@ class Link(Base):
     @property
     def OverrideLocalStable(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideLocalStable')
     @OverrideLocalStable.setter
@@ -521,9 +521,9 @@ class Link(Base):
     @property
     def OverrideRemoteEvaluating(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideRemoteEvaluating')
     @OverrideRemoteEvaluating.setter
@@ -533,9 +533,9 @@ class Link(Base):
     @property
     def OverrideRemoteStable(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideRemoteStable')
     @OverrideRemoteStable.setter
@@ -545,9 +545,9 @@ class Link(Base):
     @property
     def OverrideRevision(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideRevision')
     @OverrideRevision.setter
@@ -557,9 +557,9 @@ class Link(Base):
     @property
     def OverrideSequenceNumber(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('overrideSequenceNumber')
     @OverrideSequenceNumber.setter
@@ -569,9 +569,9 @@ class Link(Base):
     @property
     def Revision(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('revision')
     @Revision.setter
@@ -581,9 +581,9 @@ class Link(Base):
     @property
     def SequenceNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('sequenceNumber')
     @SequenceNumber.setter
@@ -593,9 +593,9 @@ class Link(Base):
     @property
     def SupportsInterpretingLinkEvents(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsInterpretingLinkEvents')
     @SupportsInterpretingLinkEvents.setter
@@ -605,9 +605,9 @@ class Link(Base):
     @property
     def SupportsRemoteLoopback(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsRemoteLoopback')
     @SupportsRemoteLoopback.setter
@@ -617,9 +617,9 @@ class Link(Base):
     @property
     def SupportsUnidirectionalMode(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsUnidirectionalMode')
     @SupportsUnidirectionalMode.setter
@@ -629,9 +629,9 @@ class Link(Base):
     @property
     def SupportsVariableRetrieval(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsVariableRetrieval')
     @SupportsVariableRetrieval.setter
@@ -641,18 +641,18 @@ class Link(Base):
     @property
     def UpdateRequired(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('updateRequired')
 
     @property
     def VariableResponseTimeout(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableResponseTimeout')
     @VariableResponseTimeout.setter
@@ -662,9 +662,9 @@ class Link(Base):
     @property
     def VendorSpecificInformation(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('vendorSpecificInformation')
     @VendorSpecificInformation.setter
@@ -674,9 +674,9 @@ class Link(Base):
     @property
     def Version(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('version')
     @Version.setter
@@ -684,187 +684,198 @@ class Link(Base):
         self._set_attribute('version', value)
 
     def update(self, DisableInformationPduTx=None, DisableNonInformationPduTx=None, EnableCriticalEvent=None, EnableDyingGasp=None, EnableLinkFault=None, EnableLoopbackResponse=None, EnableVariableResponse=None, Enabled=None, EthernetTypeUsedForDataTraffic=None, EventInterval=None, InformationPduCountPerSecond=None, LinkEventTxMode=None, LocalLostLinkTimer=None, LoopbackCmd=None, LoopbackTimeout=None, MacAddress=None, MaxOamPduSize=None, OperationMode=None, Oui=None, OverrideLocalEvaluating=None, OverrideLocalSatisfied=None, OverrideLocalStable=None, OverrideRemoteEvaluating=None, OverrideRemoteStable=None, OverrideRevision=None, OverrideSequenceNumber=None, Revision=None, SequenceNumber=None, SupportsInterpretingLinkEvents=None, SupportsRemoteLoopback=None, SupportsUnidirectionalMode=None, SupportsVariableRetrieval=None, VariableResponseTimeout=None, VendorSpecificInformation=None, Version=None):
-        """Updates a child instance of link on the server.
+        """Updates link resource on the server.
 
-        Args:
-            DisableInformationPduTx (bool): 
-            DisableNonInformationPduTx (bool): 
-            EnableCriticalEvent (bool): 
-            EnableDyingGasp (bool): 
-            EnableLinkFault (bool): 
-            EnableLoopbackResponse (bool): 
-            EnableVariableResponse (bool): 
-            Enabled (bool): 
-            EthernetTypeUsedForDataTraffic (number): 
-            EventInterval (number): 
-            InformationPduCountPerSecond (number): 
-            LinkEventTxMode (str(single|periodic)): 
-            LocalLostLinkTimer (number): 
-            LoopbackCmd (str(disableLoopback|enableLoopback)): 
-            LoopbackTimeout (number): 
-            MacAddress (str): 
-            MaxOamPduSize (number): 
-            OperationMode (str(active|passive)): 
-            Oui (str): 
-            OverrideLocalEvaluating (bool): 
-            OverrideLocalSatisfied (bool): 
-            OverrideLocalStable (bool): 
-            OverrideRemoteEvaluating (bool): 
-            OverrideRemoteStable (bool): 
-            OverrideRevision (bool): 
-            OverrideSequenceNumber (bool): 
-            Revision (number): 
-            SequenceNumber (number): 
-            SupportsInterpretingLinkEvents (bool): 
-            SupportsRemoteLoopback (bool): 
-            SupportsUnidirectionalMode (bool): 
-            SupportsVariableRetrieval (bool): 
-            VariableResponseTimeout (number): 
-            VendorSpecificInformation (str): 
-            Version (number): 
+        Args
+        ----
+        - DisableInformationPduTx (bool): 
+        - DisableNonInformationPduTx (bool): 
+        - EnableCriticalEvent (bool): 
+        - EnableDyingGasp (bool): 
+        - EnableLinkFault (bool): 
+        - EnableLoopbackResponse (bool): 
+        - EnableVariableResponse (bool): 
+        - Enabled (bool): 
+        - EthernetTypeUsedForDataTraffic (number): 
+        - EventInterval (number): 
+        - InformationPduCountPerSecond (number): 
+        - LinkEventTxMode (str(single | periodic)): 
+        - LocalLostLinkTimer (number): 
+        - LoopbackCmd (str(disableLoopback | enableLoopback)): 
+        - LoopbackTimeout (number): 
+        - MacAddress (str): 
+        - MaxOamPduSize (number): 
+        - OperationMode (str(active | passive)): 
+        - Oui (str): 
+        - OverrideLocalEvaluating (bool): 
+        - OverrideLocalSatisfied (bool): 
+        - OverrideLocalStable (bool): 
+        - OverrideRemoteEvaluating (bool): 
+        - OverrideRemoteStable (bool): 
+        - OverrideRevision (bool): 
+        - OverrideSequenceNumber (bool): 
+        - Revision (number): 
+        - SequenceNumber (number): 
+        - SupportsInterpretingLinkEvents (bool): 
+        - SupportsRemoteLoopback (bool): 
+        - SupportsUnidirectionalMode (bool): 
+        - SupportsVariableRetrieval (bool): 
+        - VariableResponseTimeout (number): 
+        - VendorSpecificInformation (str): 
+        - Version (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DisableInformationPduTx=None, DisableNonInformationPduTx=None, EnableCriticalEvent=None, EnableDyingGasp=None, EnableLinkFault=None, EnableLoopbackResponse=None, EnableVariableResponse=None, Enabled=None, EthernetTypeUsedForDataTraffic=None, EventInterval=None, InformationPduCountPerSecond=None, LinkEventTxMode=None, LocalLostLinkTimer=None, LoopbackCmd=None, LoopbackTimeout=None, MacAddress=None, MaxOamPduSize=None, OperationMode=None, Oui=None, OverrideLocalEvaluating=None, OverrideLocalSatisfied=None, OverrideLocalStable=None, OverrideRemoteEvaluating=None, OverrideRemoteStable=None, OverrideRevision=None, OverrideSequenceNumber=None, Revision=None, SequenceNumber=None, SupportsInterpretingLinkEvents=None, SupportsRemoteLoopback=None, SupportsUnidirectionalMode=None, SupportsVariableRetrieval=None, VariableResponseTimeout=None, VendorSpecificInformation=None, Version=None):
-        """Adds a new link node on the server and retrieves it in this instance.
+        """Adds a new link resource on the server and adds it to the container.
 
-        Args:
-            DisableInformationPduTx (bool): 
-            DisableNonInformationPduTx (bool): 
-            EnableCriticalEvent (bool): 
-            EnableDyingGasp (bool): 
-            EnableLinkFault (bool): 
-            EnableLoopbackResponse (bool): 
-            EnableVariableResponse (bool): 
-            Enabled (bool): 
-            EthernetTypeUsedForDataTraffic (number): 
-            EventInterval (number): 
-            InformationPduCountPerSecond (number): 
-            LinkEventTxMode (str(single|periodic)): 
-            LocalLostLinkTimer (number): 
-            LoopbackCmd (str(disableLoopback|enableLoopback)): 
-            LoopbackTimeout (number): 
-            MacAddress (str): 
-            MaxOamPduSize (number): 
-            OperationMode (str(active|passive)): 
-            Oui (str): 
-            OverrideLocalEvaluating (bool): 
-            OverrideLocalSatisfied (bool): 
-            OverrideLocalStable (bool): 
-            OverrideRemoteEvaluating (bool): 
-            OverrideRemoteStable (bool): 
-            OverrideRevision (bool): 
-            OverrideSequenceNumber (bool): 
-            Revision (number): 
-            SequenceNumber (number): 
-            SupportsInterpretingLinkEvents (bool): 
-            SupportsRemoteLoopback (bool): 
-            SupportsUnidirectionalMode (bool): 
-            SupportsVariableRetrieval (bool): 
-            VariableResponseTimeout (number): 
-            VendorSpecificInformation (str): 
-            Version (number): 
+        Args
+        ----
+        - DisableInformationPduTx (bool): 
+        - DisableNonInformationPduTx (bool): 
+        - EnableCriticalEvent (bool): 
+        - EnableDyingGasp (bool): 
+        - EnableLinkFault (bool): 
+        - EnableLoopbackResponse (bool): 
+        - EnableVariableResponse (bool): 
+        - Enabled (bool): 
+        - EthernetTypeUsedForDataTraffic (number): 
+        - EventInterval (number): 
+        - InformationPduCountPerSecond (number): 
+        - LinkEventTxMode (str(single | periodic)): 
+        - LocalLostLinkTimer (number): 
+        - LoopbackCmd (str(disableLoopback | enableLoopback)): 
+        - LoopbackTimeout (number): 
+        - MacAddress (str): 
+        - MaxOamPduSize (number): 
+        - OperationMode (str(active | passive)): 
+        - Oui (str): 
+        - OverrideLocalEvaluating (bool): 
+        - OverrideLocalSatisfied (bool): 
+        - OverrideLocalStable (bool): 
+        - OverrideRemoteEvaluating (bool): 
+        - OverrideRemoteStable (bool): 
+        - OverrideRevision (bool): 
+        - OverrideSequenceNumber (bool): 
+        - Revision (number): 
+        - SequenceNumber (number): 
+        - SupportsInterpretingLinkEvents (bool): 
+        - SupportsRemoteLoopback (bool): 
+        - SupportsUnidirectionalMode (bool): 
+        - SupportsVariableRetrieval (bool): 
+        - VariableResponseTimeout (number): 
+        - VendorSpecificInformation (str): 
+        - Version (number): 
 
-        Returns:
-            self: This instance with all currently retrieved link data using find and the newly added link data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved link resources using find and the newly added link resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the link data in this instance from server.
+        """Deletes all the contained link resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DisableInformationPduTx=None, DisableNonInformationPduTx=None, EnableCriticalEvent=None, EnableDyingGasp=None, EnableLinkFault=None, EnableLoopbackResponse=None, EnableVariableResponse=None, Enabled=None, EthernetTypeUsedForDataTraffic=None, EventInterval=None, InformationPduCountPerSecond=None, IsDiscLearnedInfoRefreshed=None, IsEventNotificationLearnedInfoRefreshed=None, IsLoopbackLearnedInfoRefreshed=None, IsVariableRequestLearnedInfoRefreshed=None, LinkEventTxMode=None, LocalLostLinkTimer=None, LoopbackCmd=None, LoopbackTimeout=None, MacAddress=None, MaxOamPduSize=None, OperationMode=None, Oui=None, OverrideLocalEvaluating=None, OverrideLocalSatisfied=None, OverrideLocalStable=None, OverrideRemoteEvaluating=None, OverrideRemoteStable=None, OverrideRevision=None, OverrideSequenceNumber=None, Revision=None, SequenceNumber=None, SupportsInterpretingLinkEvents=None, SupportsRemoteLoopback=None, SupportsUnidirectionalMode=None, SupportsVariableRetrieval=None, UpdateRequired=None, VariableResponseTimeout=None, VendorSpecificInformation=None, Version=None):
-        """Finds and retrieves link data from the server.
+        """Finds and retrieves link resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve link data from the server.
-        By default the find method takes no parameters and will retrieve all link data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve link resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all link resources from the server.
 
-        Args:
-            DisableInformationPduTx (bool): 
-            DisableNonInformationPduTx (bool): 
-            EnableCriticalEvent (bool): 
-            EnableDyingGasp (bool): 
-            EnableLinkFault (bool): 
-            EnableLoopbackResponse (bool): 
-            EnableVariableResponse (bool): 
-            Enabled (bool): 
-            EthernetTypeUsedForDataTraffic (number): 
-            EventInterval (number): 
-            InformationPduCountPerSecond (number): 
-            IsDiscLearnedInfoRefreshed (bool): 
-            IsEventNotificationLearnedInfoRefreshed (bool): 
-            IsLoopbackLearnedInfoRefreshed (bool): 
-            IsVariableRequestLearnedInfoRefreshed (bool): 
-            LinkEventTxMode (str(single|periodic)): 
-            LocalLostLinkTimer (number): 
-            LoopbackCmd (str(disableLoopback|enableLoopback)): 
-            LoopbackTimeout (number): 
-            MacAddress (str): 
-            MaxOamPduSize (number): 
-            OperationMode (str(active|passive)): 
-            Oui (str): 
-            OverrideLocalEvaluating (bool): 
-            OverrideLocalSatisfied (bool): 
-            OverrideLocalStable (bool): 
-            OverrideRemoteEvaluating (bool): 
-            OverrideRemoteStable (bool): 
-            OverrideRevision (bool): 
-            OverrideSequenceNumber (bool): 
-            Revision (number): 
-            SequenceNumber (number): 
-            SupportsInterpretingLinkEvents (bool): 
-            SupportsRemoteLoopback (bool): 
-            SupportsUnidirectionalMode (bool): 
-            SupportsVariableRetrieval (bool): 
-            UpdateRequired (bool): 
-            VariableResponseTimeout (number): 
-            VendorSpecificInformation (str): 
-            Version (number): 
+        Args
+        ----
+        - DisableInformationPduTx (bool): 
+        - DisableNonInformationPduTx (bool): 
+        - EnableCriticalEvent (bool): 
+        - EnableDyingGasp (bool): 
+        - EnableLinkFault (bool): 
+        - EnableLoopbackResponse (bool): 
+        - EnableVariableResponse (bool): 
+        - Enabled (bool): 
+        - EthernetTypeUsedForDataTraffic (number): 
+        - EventInterval (number): 
+        - InformationPduCountPerSecond (number): 
+        - IsDiscLearnedInfoRefreshed (bool): 
+        - IsEventNotificationLearnedInfoRefreshed (bool): 
+        - IsLoopbackLearnedInfoRefreshed (bool): 
+        - IsVariableRequestLearnedInfoRefreshed (bool): 
+        - LinkEventTxMode (str(single | periodic)): 
+        - LocalLostLinkTimer (number): 
+        - LoopbackCmd (str(disableLoopback | enableLoopback)): 
+        - LoopbackTimeout (number): 
+        - MacAddress (str): 
+        - MaxOamPduSize (number): 
+        - OperationMode (str(active | passive)): 
+        - Oui (str): 
+        - OverrideLocalEvaluating (bool): 
+        - OverrideLocalSatisfied (bool): 
+        - OverrideLocalStable (bool): 
+        - OverrideRemoteEvaluating (bool): 
+        - OverrideRemoteStable (bool): 
+        - OverrideRevision (bool): 
+        - OverrideSequenceNumber (bool): 
+        - Revision (number): 
+        - SequenceNumber (number): 
+        - SupportsInterpretingLinkEvents (bool): 
+        - SupportsRemoteLoopback (bool): 
+        - SupportsUnidirectionalMode (bool): 
+        - SupportsVariableRetrieval (bool): 
+        - UpdateRequired (bool): 
+        - VariableResponseTimeout (number): 
+        - VendorSpecificInformation (str): 
+        - Version (number): 
 
-        Returns:
-            self: This instance with matching link data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching link resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of link data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the link data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the link resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
     def RefreshDiscLearnedInfo(self):
         """Executes the refreshDiscLearnedInfo operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshDiscLearnedInfo', payload=payload, response_object=None)
@@ -872,12 +883,10 @@ class Link(Base):
     def RefreshEventNotificationLearnedInfo(self):
         """Executes the refreshEventNotificationLearnedInfo operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshEventNotificationLearnedInfo', payload=payload, response_object=None)
@@ -885,12 +894,10 @@ class Link(Base):
     def RestartDiscovery(self):
         """Executes the restartDiscovery operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('restartDiscovery', payload=payload, response_object=None)
@@ -898,12 +905,10 @@ class Link(Base):
     def SendLoopback(self):
         """Executes the sendLoopback operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendLoopback', payload=payload, response_object=None)
@@ -911,12 +916,10 @@ class Link(Base):
     def SendOrgSpecificPdu(self):
         """Executes the sendOrgSpecificPdu operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendOrgSpecificPdu', payload=payload, response_object=None)
@@ -924,12 +927,10 @@ class Link(Base):
     def SendUpdatedParameters(self):
         """Executes the sendUpdatedParameters operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendUpdatedParameters', payload=payload, response_object=None)
@@ -937,12 +938,10 @@ class Link(Base):
     def SendVariableRequest(self):
         """Executes the sendVariableRequest operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendVariableRequest', payload=payload, response_object=None)
@@ -950,12 +949,10 @@ class Link(Base):
     def StartEventPduTransmission(self):
         """Executes the startEventPduTransmission operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startEventPduTransmission', payload=payload, response_object=None)
@@ -963,12 +960,10 @@ class Link(Base):
     def StopEventPduTransmission(self):
         """Executes the stopEventPduTransmission operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stopEventPduTransmission', payload=payload, response_object=None)

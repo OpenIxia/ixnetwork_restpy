@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BucketAction(Base):
     """Bucket Actions are an ordered list of action buckets, where each action bucket contains a set of actions to execute and associated parameters.
-    The BucketAction class encapsulates a list of bucketAction resources that is be managed by the user.
+    The BucketAction class encapsulates a list of bucketAction resources that are managed by the user.
     A list of resources can be retrieved from the server using the BucketAction.find() method.
-    The list can be managed by the user by using the BucketAction.add() and BucketAction.remove() methods.
+    The list can be managed by using the BucketAction.add() and BucketAction.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class BucketAction(Base):
 
     @property
     def ActionType(self):
-        """It denotes the action type associated with bucket action.
-
-        Returns:
-            str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)
+        """
+        Returns
+        -------
+        - str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter): It denotes the action type associated with bucket action.
         """
         return self._get_attribute('actionType')
     @ActionType.setter
@@ -50,10 +50,10 @@ class BucketAction(Base):
 
     @property
     def ArpDstHwAddr(self):
-        """Set the destination hardware address in the ARP payload.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the destination hardware address in the ARP payload.
         """
         return self._get_attribute('arpDstHwAddr')
     @ArpDstHwAddr.setter
@@ -62,10 +62,10 @@ class BucketAction(Base):
 
     @property
     def ArpDstIpv4Addr(self):
-        """Set the destination IPv4 address in the ARP payload.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the destination IPv4 address in the ARP payload.
         """
         return self._get_attribute('arpDstIpv4Addr')
     @ArpDstIpv4Addr.setter
@@ -74,10 +74,10 @@ class BucketAction(Base):
 
     @property
     def ArpOpcode(self):
-        """Set the ARP Opcode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ARP Opcode.
         """
         return self._get_attribute('arpOpcode')
     @ArpOpcode.setter
@@ -86,10 +86,10 @@ class BucketAction(Base):
 
     @property
     def ArpSrcHwAddr(self):
-        """Set the source hardware address in the ARP payload.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the source hardware address in the ARP payload.
         """
         return self._get_attribute('arpSrcHwAddr')
     @ArpSrcHwAddr.setter
@@ -98,10 +98,10 @@ class BucketAction(Base):
 
     @property
     def ArpSrcIpv4Addr(self):
-        """Set the source IPv4 address in the ARP payload.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the source IPv4 address in the ARP payload.
         """
         return self._get_attribute('arpSrcIpv4Addr')
     @ArpSrcIpv4Addr.setter
@@ -110,10 +110,10 @@ class BucketAction(Base):
 
     @property
     def Enabled(self):
-        """If selected, the bucket action is used in this controller configuration. The default Value is False
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, the bucket action is used in this controller configuration. The default Value is False
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -122,10 +122,10 @@ class BucketAction(Base):
 
     @property
     def EthernetDestination(self):
-        """The destination address of the Ethernet port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The destination address of the Ethernet port.
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -134,10 +134,10 @@ class BucketAction(Base):
 
     @property
     def EthernetSource(self):
-        """The source address of the Ethernet port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The source address of the Ethernet port.
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -146,10 +146,10 @@ class BucketAction(Base):
 
     @property
     def EthernetType(self):
-        """The the type of Ethernet used.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The the type of Ethernet used.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -158,10 +158,10 @@ class BucketAction(Base):
 
     @property
     def Experimenter(self):
-        """Set the Experimenter details.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the Experimenter details.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -170,10 +170,10 @@ class BucketAction(Base):
 
     @property
     def ExperimenterData(self):
-        """The data of the Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Experimenter.
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -182,10 +182,10 @@ class BucketAction(Base):
 
     @property
     def ExperimenterDatalength(self):
-        """The data length of the Experimenter. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Experimenter. The default value is 1.
         """
         return self._get_attribute('experimenterDatalength')
     @ExperimenterDatalength.setter
@@ -194,10 +194,10 @@ class BucketAction(Base):
 
     @property
     def ExperimenterField(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterField')
     @ExperimenterField.setter
@@ -206,10 +206,10 @@ class BucketAction(Base):
 
     @property
     def GroupId(self):
-        """A 32-bit integer uniquely identifying thegroup.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A 32-bit integer uniquely identifying thegroup.
         """
         return self._get_attribute('groupId')
     @GroupId.setter
@@ -218,10 +218,10 @@ class BucketAction(Base):
 
     @property
     def Icmpv4Code(self):
-        """Set the ICMP code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ICMP code.
         """
         return self._get_attribute('icmpv4Code')
     @Icmpv4Code.setter
@@ -230,10 +230,10 @@ class BucketAction(Base):
 
     @property
     def Icmpv4Type(self):
-        """Set the ICMP type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ICMP type.
         """
         return self._get_attribute('icmpv4Type')
     @Icmpv4Type.setter
@@ -242,10 +242,10 @@ class BucketAction(Base):
 
     @property
     def Icmpv6Code(self):
-        """Set the ICMP code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ICMP code.
         """
         return self._get_attribute('icmpv6Code')
     @Icmpv6Code.setter
@@ -254,10 +254,10 @@ class BucketAction(Base):
 
     @property
     def Icmpv6Type(self):
-        """Set the ICMP type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ICMP type.
         """
         return self._get_attribute('icmpv6Type')
     @Icmpv6Type.setter
@@ -266,10 +266,10 @@ class BucketAction(Base):
 
     @property
     def IpDscp(self):
-        """Specify the IP DSCP value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the IP DSCP value.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -278,10 +278,10 @@ class BucketAction(Base):
 
     @property
     def IpEcn(self):
-        """Set the ECN bits of the IP header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the ECN bits of the IP header.
         """
         return self._get_attribute('ipEcn')
     @IpEcn.setter
@@ -290,10 +290,10 @@ class BucketAction(Base):
 
     @property
     def IpProtocol(self):
-        """Specify the IPv4 or IPv6 protocol number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the IPv4 or IPv6 protocol number.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -302,10 +302,10 @@ class BucketAction(Base):
 
     @property
     def Ipv4Destination(self):
-        """Specify the destination IPv4 address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the destination IPv4 address.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -314,10 +314,10 @@ class BucketAction(Base):
 
     @property
     def Ipv4Source(self):
-        """Specify the source IPv4 address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the source IPv4 address.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -326,10 +326,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6Destination(self):
-        """Set the IPv6 destination address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the IPv6 destination address.
         """
         return self._get_attribute('ipv6Destination')
     @Ipv6Destination.setter
@@ -338,10 +338,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6ExtHeader(self):
-        """Set the IPv6 Extension Header pseudo-field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the IPv6 Extension Header pseudo-field.
         """
         return self._get_attribute('ipv6ExtHeader')
     @Ipv6ExtHeader.setter
@@ -350,10 +350,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """Set the IPv6 Flow label.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the IPv6 Flow label.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -362,10 +362,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6NdSll(self):
-        """Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the source link-layer address option in an IPv6 Neighbor Discovery message.
         """
         return self._get_attribute('ipv6NdSll')
     @Ipv6NdSll.setter
@@ -374,10 +374,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6NdTll(self):
-        """Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the target link-layer address option in an IPv6 Neighbor Discovery message.
         """
         return self._get_attribute('ipv6NdTll')
     @Ipv6NdTll.setter
@@ -386,10 +386,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6Source(self):
-        """Set the IPv6 source address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the IPv6 source address.
         """
         return self._get_attribute('ipv6Source')
     @Ipv6Source.setter
@@ -398,10 +398,10 @@ class BucketAction(Base):
 
     @property
     def Ipv6ndTarget(self):
-        """Set the target address in an IPv6 Neighbor Discovery message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the target address in an IPv6 Neighbor Discovery message.
         """
         return self._get_attribute('ipv6ndTarget')
     @Ipv6ndTarget.setter
@@ -410,10 +410,10 @@ class BucketAction(Base):
 
     @property
     def MaxByteLength(self):
-        """Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
         """
         return self._get_attribute('maxByteLength')
     @MaxByteLength.setter
@@ -422,10 +422,10 @@ class BucketAction(Base):
 
     @property
     def MplsBos(self):
-        """Set the BoS bit in the first MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the BoS bit in the first MPLS shim header.
         """
         return self._get_attribute('mplsBos')
     @MplsBos.setter
@@ -434,10 +434,10 @@ class BucketAction(Base):
 
     @property
     def MplsLabel(self):
-        """Set the LABEL in the first MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the LABEL in the first MPLS shim header.
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -446,10 +446,10 @@ class BucketAction(Base):
 
     @property
     def MplsTc(self):
-        """Set the TC in the first MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the TC in the first MPLS shim header.
         """
         return self._get_attribute('mplsTc')
     @MplsTc.setter
@@ -458,10 +458,10 @@ class BucketAction(Base):
 
     @property
     def MplsTtl(self):
-        """Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
         """
         return self._get_attribute('mplsTtl')
     @MplsTtl.setter
@@ -470,10 +470,10 @@ class BucketAction(Base):
 
     @property
     def NwTtl(self):
-        """Set the IP TTL.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the IP TTL.
         """
         return self._get_attribute('nwTtl')
     @NwTtl.setter
@@ -482,10 +482,10 @@ class BucketAction(Base):
 
     @property
     def OutputPort(self):
-        """The Output port number to be used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Output port number to be used.
         """
         return self._get_attribute('outputPort')
     @OutputPort.setter
@@ -494,10 +494,10 @@ class BucketAction(Base):
 
     @property
     def OutputPortType(self):
-        """Specify the Output Port Type for this Instruction
-
-        Returns:
-            str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)
+        """
+        Returns
+        -------
+        - str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal): Specify the Output Port Type for this Instruction
         """
         return self._get_attribute('outputPortType')
     @OutputPortType.setter
@@ -506,10 +506,10 @@ class BucketAction(Base):
 
     @property
     def PbbIsId(self):
-        """Set the I-SID in the first PBB service instance tag.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the I-SID in the first PBB service instance tag.
         """
         return self._get_attribute('pbbIsId')
     @PbbIsId.setter
@@ -518,10 +518,10 @@ class BucketAction(Base):
 
     @property
     def QueueId(self):
-        """Set queue ID when outputting to a port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set queue ID when outputting to a port.
         """
         return self._get_attribute('queueId')
     @QueueId.setter
@@ -530,10 +530,10 @@ class BucketAction(Base):
 
     @property
     def SctpDestination(self):
-        """Specify the SCTP Destination address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the SCTP Destination address.
         """
         return self._get_attribute('sctpDestination')
     @SctpDestination.setter
@@ -542,10 +542,10 @@ class BucketAction(Base):
 
     @property
     def SctpSource(self):
-        """Specify the SCTP Source address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the SCTP Source address.
         """
         return self._get_attribute('sctpSource')
     @SctpSource.setter
@@ -554,10 +554,10 @@ class BucketAction(Base):
 
     @property
     def TcpDestination(self):
-        """Specify the TCP Destination address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the TCP Destination address.
         """
         return self._get_attribute('tcpDestination')
     @TcpDestination.setter
@@ -566,10 +566,10 @@ class BucketAction(Base):
 
     @property
     def TcpSource(self):
-        """Specify the TCP Source address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the TCP Source address.
         """
         return self._get_attribute('tcpSource')
     @TcpSource.setter
@@ -578,10 +578,10 @@ class BucketAction(Base):
 
     @property
     def TunnelId(self):
-        """Set the unique identifier used for the Tunnel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the unique identifier used for the Tunnel.
         """
         return self._get_attribute('tunnelId')
     @TunnelId.setter
@@ -590,10 +590,10 @@ class BucketAction(Base):
 
     @property
     def UdpDestination(self):
-        """Specify the UDP Destination address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the UDP Destination address.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -602,10 +602,10 @@ class BucketAction(Base):
 
     @property
     def UdpSource(self):
-        """Specify the UDP Source address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the UDP Source address.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -614,10 +614,10 @@ class BucketAction(Base):
 
     @property
     def VlanId(self):
-        """The 802.1q VLAN identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The 802.1q VLAN identifier.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -626,10 +626,10 @@ class BucketAction(Base):
 
     @property
     def VlanPriority(self):
-        """Set the 802.1q priority.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the 802.1q priority.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -637,214 +637,227 @@ class BucketAction(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of bucketAction on the server.
+        """Updates bucketAction resource on the server.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): It denotes the action type associated with bucket action.
-            ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
-            ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
-            ArpOpcode (number): Set the ARP Opcode.
-            ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
-            ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
-            Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
-            EthernetDestination (str): The destination address of the Ethernet port.
-            EthernetSource (str): The source address of the Ethernet port.
-            EthernetType (str): The the type of Ethernet used.
-            Experimenter (number): Set the Experimenter details.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): A 32-bit integer uniquely identifying thegroup.
-            Icmpv4Code (number): Set the ICMP code.
-            Icmpv4Type (number): Set the ICMP type.
-            Icmpv6Code (number): Set the ICMP code.
-            Icmpv6Type (number): Set the ICMP type.
-            IpDscp (number): Specify the IP DSCP value.
-            IpEcn (number): Set the ECN bits of the IP header.
-            IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
-            Ipv4Destination (str): Specify the destination IPv4 address.
-            Ipv4Source (str): Specify the source IPv4 address.
-            Ipv6Destination (str): Set the IPv6 destination address.
-            Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
-            Ipv6FlowLabel (number): Set the IPv6 Flow label.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Set the IPv6 source address.
-            Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Set the BoS bit in the first MPLS shim header.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): Set the TC in the first MPLS shim header.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction
-            PbbIsId (number): Set the I-SID in the first PBB service instance tag.
-            QueueId (number): Set queue ID when outputting to a port.
-            SctpDestination (number): Specify the SCTP Destination address.
-            SctpSource (number): Specify the SCTP Source address.
-            TcpDestination (number): Specify the TCP Destination address.
-            TcpSource (number): Specify the TCP Source address.
-            TunnelId (str): Set the unique identifier used for the Tunnel.
-            UdpDestination (number): Specify the UDP Destination address.
-            UdpSource (number): Specify the UDP Source address.
-            VlanId (number): The 802.1q VLAN identifier.
-            VlanPriority (number): Set the 802.1q priority.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): It denotes the action type associated with bucket action.
+        - ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
+        - ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
+        - ArpOpcode (number): Set the ARP Opcode.
+        - ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
+        - ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
+        - Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
+        - EthernetDestination (str): The destination address of the Ethernet port.
+        - EthernetSource (str): The source address of the Ethernet port.
+        - EthernetType (str): The the type of Ethernet used.
+        - Experimenter (number): Set the Experimenter details.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): A 32-bit integer uniquely identifying thegroup.
+        - Icmpv4Code (number): Set the ICMP code.
+        - Icmpv4Type (number): Set the ICMP type.
+        - Icmpv6Code (number): Set the ICMP code.
+        - Icmpv6Type (number): Set the ICMP type.
+        - IpDscp (number): Specify the IP DSCP value.
+        - IpEcn (number): Set the ECN bits of the IP header.
+        - IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
+        - Ipv4Destination (str): Specify the destination IPv4 address.
+        - Ipv4Source (str): Specify the source IPv4 address.
+        - Ipv6Destination (str): Set the IPv6 destination address.
+        - Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
+        - Ipv6FlowLabel (number): Set the IPv6 Flow label.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Set the IPv6 source address.
+        - Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Set the BoS bit in the first MPLS shim header.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): Set the TC in the first MPLS shim header.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction
+        - PbbIsId (number): Set the I-SID in the first PBB service instance tag.
+        - QueueId (number): Set queue ID when outputting to a port.
+        - SctpDestination (number): Specify the SCTP Destination address.
+        - SctpSource (number): Specify the SCTP Source address.
+        - TcpDestination (number): Specify the TCP Destination address.
+        - TcpSource (number): Specify the TCP Source address.
+        - TunnelId (str): Set the unique identifier used for the Tunnel.
+        - UdpDestination (number): Specify the UDP Destination address.
+        - UdpSource (number): Specify the UDP Source address.
+        - VlanId (number): The 802.1q VLAN identifier.
+        - VlanPriority (number): Set the 802.1q priority.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Adds a new bucketAction node on the server and retrieves it in this instance.
+        """Adds a new bucketAction resource on the server and adds it to the container.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): It denotes the action type associated with bucket action.
-            ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
-            ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
-            ArpOpcode (number): Set the ARP Opcode.
-            ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
-            ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
-            Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
-            EthernetDestination (str): The destination address of the Ethernet port.
-            EthernetSource (str): The source address of the Ethernet port.
-            EthernetType (str): The the type of Ethernet used.
-            Experimenter (number): Set the Experimenter details.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): A 32-bit integer uniquely identifying thegroup.
-            Icmpv4Code (number): Set the ICMP code.
-            Icmpv4Type (number): Set the ICMP type.
-            Icmpv6Code (number): Set the ICMP code.
-            Icmpv6Type (number): Set the ICMP type.
-            IpDscp (number): Specify the IP DSCP value.
-            IpEcn (number): Set the ECN bits of the IP header.
-            IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
-            Ipv4Destination (str): Specify the destination IPv4 address.
-            Ipv4Source (str): Specify the source IPv4 address.
-            Ipv6Destination (str): Set the IPv6 destination address.
-            Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
-            Ipv6FlowLabel (number): Set the IPv6 Flow label.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Set the IPv6 source address.
-            Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Set the BoS bit in the first MPLS shim header.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): Set the TC in the first MPLS shim header.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction
-            PbbIsId (number): Set the I-SID in the first PBB service instance tag.
-            QueueId (number): Set queue ID when outputting to a port.
-            SctpDestination (number): Specify the SCTP Destination address.
-            SctpSource (number): Specify the SCTP Source address.
-            TcpDestination (number): Specify the TCP Destination address.
-            TcpSource (number): Specify the TCP Source address.
-            TunnelId (str): Set the unique identifier used for the Tunnel.
-            UdpDestination (number): Specify the UDP Destination address.
-            UdpSource (number): Specify the UDP Source address.
-            VlanId (number): The 802.1q VLAN identifier.
-            VlanPriority (number): Set the 802.1q priority.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): It denotes the action type associated with bucket action.
+        - ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
+        - ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
+        - ArpOpcode (number): Set the ARP Opcode.
+        - ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
+        - ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
+        - Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
+        - EthernetDestination (str): The destination address of the Ethernet port.
+        - EthernetSource (str): The source address of the Ethernet port.
+        - EthernetType (str): The the type of Ethernet used.
+        - Experimenter (number): Set the Experimenter details.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): A 32-bit integer uniquely identifying thegroup.
+        - Icmpv4Code (number): Set the ICMP code.
+        - Icmpv4Type (number): Set the ICMP type.
+        - Icmpv6Code (number): Set the ICMP code.
+        - Icmpv6Type (number): Set the ICMP type.
+        - IpDscp (number): Specify the IP DSCP value.
+        - IpEcn (number): Set the ECN bits of the IP header.
+        - IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
+        - Ipv4Destination (str): Specify the destination IPv4 address.
+        - Ipv4Source (str): Specify the source IPv4 address.
+        - Ipv6Destination (str): Set the IPv6 destination address.
+        - Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
+        - Ipv6FlowLabel (number): Set the IPv6 Flow label.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Set the IPv6 source address.
+        - Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Set the BoS bit in the first MPLS shim header.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): Set the TC in the first MPLS shim header.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction
+        - PbbIsId (number): Set the I-SID in the first PBB service instance tag.
+        - QueueId (number): Set queue ID when outputting to a port.
+        - SctpDestination (number): Specify the SCTP Destination address.
+        - SctpSource (number): Specify the SCTP Source address.
+        - TcpDestination (number): Specify the TCP Destination address.
+        - TcpSource (number): Specify the TCP Source address.
+        - TunnelId (str): Set the unique identifier used for the Tunnel.
+        - UdpDestination (number): Specify the UDP Destination address.
+        - UdpSource (number): Specify the UDP Source address.
+        - VlanId (number): The 802.1q VLAN identifier.
+        - VlanPriority (number): Set the 802.1q priority.
 
-        Returns:
-            self: This instance with all currently retrieved bucketAction data using find and the newly added bucketAction data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bucketAction resources using find and the newly added bucketAction resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bucketAction data in this instance from server.
+        """Deletes all the contained bucketAction resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves bucketAction data from the server.
+        """Finds and retrieves bucketAction resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bucketAction data from the server.
-        By default the find method takes no parameters and will retrieve all bucketAction data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bucketAction resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bucketAction resources from the server.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): It denotes the action type associated with bucket action.
-            ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
-            ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
-            ArpOpcode (number): Set the ARP Opcode.
-            ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
-            ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
-            Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
-            EthernetDestination (str): The destination address of the Ethernet port.
-            EthernetSource (str): The source address of the Ethernet port.
-            EthernetType (str): The the type of Ethernet used.
-            Experimenter (number): Set the Experimenter details.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): A 32-bit integer uniquely identifying thegroup.
-            Icmpv4Code (number): Set the ICMP code.
-            Icmpv4Type (number): Set the ICMP type.
-            Icmpv6Code (number): Set the ICMP code.
-            Icmpv6Type (number): Set the ICMP type.
-            IpDscp (number): Specify the IP DSCP value.
-            IpEcn (number): Set the ECN bits of the IP header.
-            IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
-            Ipv4Destination (str): Specify the destination IPv4 address.
-            Ipv4Source (str): Specify the source IPv4 address.
-            Ipv6Destination (str): Set the IPv6 destination address.
-            Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
-            Ipv6FlowLabel (number): Set the IPv6 Flow label.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Set the IPv6 source address.
-            Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Set the BoS bit in the first MPLS shim header.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): Set the TC in the first MPLS shim header.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction
-            PbbIsId (number): Set the I-SID in the first PBB service instance tag.
-            QueueId (number): Set queue ID when outputting to a port.
-            SctpDestination (number): Specify the SCTP Destination address.
-            SctpSource (number): Specify the SCTP Source address.
-            TcpDestination (number): Specify the TCP Destination address.
-            TcpSource (number): Specify the TCP Source address.
-            TunnelId (str): Set the unique identifier used for the Tunnel.
-            UdpDestination (number): Specify the UDP Destination address.
-            UdpSource (number): Specify the UDP Source address.
-            VlanId (number): The 802.1q VLAN identifier.
-            VlanPriority (number): Set the 802.1q priority.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): It denotes the action type associated with bucket action.
+        - ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
+        - ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
+        - ArpOpcode (number): Set the ARP Opcode.
+        - ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
+        - ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
+        - Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
+        - EthernetDestination (str): The destination address of the Ethernet port.
+        - EthernetSource (str): The source address of the Ethernet port.
+        - EthernetType (str): The the type of Ethernet used.
+        - Experimenter (number): Set the Experimenter details.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): A 32-bit integer uniquely identifying thegroup.
+        - Icmpv4Code (number): Set the ICMP code.
+        - Icmpv4Type (number): Set the ICMP type.
+        - Icmpv6Code (number): Set the ICMP code.
+        - Icmpv6Type (number): Set the ICMP type.
+        - IpDscp (number): Specify the IP DSCP value.
+        - IpEcn (number): Set the ECN bits of the IP header.
+        - IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
+        - Ipv4Destination (str): Specify the destination IPv4 address.
+        - Ipv4Source (str): Specify the source IPv4 address.
+        - Ipv6Destination (str): Set the IPv6 destination address.
+        - Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
+        - Ipv6FlowLabel (number): Set the IPv6 Flow label.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Set the IPv6 source address.
+        - Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Set the BoS bit in the first MPLS shim header.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): Set the TC in the first MPLS shim header.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction
+        - PbbIsId (number): Set the I-SID in the first PBB service instance tag.
+        - QueueId (number): Set queue ID when outputting to a port.
+        - SctpDestination (number): Specify the SCTP Destination address.
+        - SctpSource (number): Specify the SCTP Source address.
+        - TcpDestination (number): Specify the TCP Destination address.
+        - TcpSource (number): Specify the TCP Source address.
+        - TunnelId (str): Set the unique identifier used for the Tunnel.
+        - UdpDestination (number): Specify the UDP Destination address.
+        - UdpSource (number): Specify the UDP Source address.
+        - VlanId (number): The 802.1q VLAN identifier.
+        - VlanPriority (number): Set the 802.1q priority.
 
-        Returns:
-            self: This instance with matching bucketAction data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bucketAction resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bucketAction data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bucketAction data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bucketAction resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

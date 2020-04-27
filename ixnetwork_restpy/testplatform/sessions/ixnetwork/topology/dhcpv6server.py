@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6server(Base):
     """DHCPv6 Server protocol.
-    The Dhcpv6server class encapsulates a list of dhcpv6server resources that is be managed by the user.
+    The Dhcpv6server class encapsulates a list of dhcpv6server resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6server.find() method.
-    The list can be managed by the user by using the Dhcpv6server.add() and Dhcpv6server.remove() methods.
+    The list can be managed by using the Dhcpv6server.add() and Dhcpv6server.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class Dhcpv6server(Base):
 
     @property
     def Dhcp6ServerSessions(self):
-        """An instance of the Dhcp6ServerSessions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions.Dhcp6ServerSessions): An instance of the Dhcp6ServerSessions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions.Dhcp6ServerSessions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions import Dhcp6ServerSessions
         return Dhcp6ServerSessions(self)._select()
 
     @property
     def TlvProfile(self):
-        """An instance of the TlvProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile): An instance of the TlvProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile import TlvProfile
         return TlvProfile(self)
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -78,64 +78,67 @@ class Dhcpv6server(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DnsDomain(self):
-        """The domain name to be searched during name resolution advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dnsDomain')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The domain name to be searched during name resolution advertised in DHCP Offer and Reply messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dnsDomain'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def IpDns1(self):
-        """The first DNS address advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipDns1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The first DNS address advertised in DHCP Offer and Reply messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipDns1'))
 
     @property
     def IpDns2(self):
-        """The second DNS address advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipDns2')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The second DNS address advertised in DHCP Offer and Reply messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipDns2'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -144,10 +147,10 @@ class Dhcpv6server(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -156,10 +159,10 @@ class Dhcpv6server(Base):
 
     @property
     def PoolCount(self):
-        """number of DHCP pools a single server has
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: number of DHCP pools a single server has
         """
         return self._get_attribute('poolCount')
     @PoolCount.setter
@@ -168,37 +171,38 @@ class Dhcpv6server(Base):
 
     @property
     def ReconfviaRelay(self):
-        """If Enabled allows Reconfigure to be sent from server to Client via RelayAgent
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reconfviaRelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Enabled allows Reconfigure to be sent from server to Client via RelayAgent
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reconfviaRelay'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the session state
-
-        Returns:
-            list(str[excessiveTlvs|noAddrsBelow|nonDisjointPools|none|notOneReservedPool|notSameIAType])
+        """
+        Returns
+        -------
+        - list(str[excessiveTlvs | noAddrsBelow | nonDisjointPools | none | notOneReservedPool | notSameIAType]): Logs additional information about the session state
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -207,125 +211,140 @@ class Dhcpv6server(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def SubnetAddrAssign(self):
-        """Enabled DHCPv6 Server to assign IP based on Relay Agent IP Address Subnet.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('subnetAddrAssign')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enabled DHCPv6 Server to assign IP based on Relay Agent IP Address Subnet.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('subnetAddrAssign'))
 
     @property
     def UseRapidCommit(self):
-        """Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useRapidCommit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useRapidCommit'))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, PoolCount=None, StackedLayers=None):
-        """Updates a child instance of dhcpv6server on the server.
+        """Updates dhcpv6server resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PoolCount (number): number of DHCP pools a single server has
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PoolCount (number): number of DHCP pools a single server has
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, PoolCount=None, StackedLayers=None):
-        """Adds a new dhcpv6server node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6server resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PoolCount (number): number of DHCP pools a single server has
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PoolCount (number): number of DHCP pools a single server has
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6server data using find and the newly added dhcpv6server data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6server resources using find and the newly added dhcpv6server resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6server data in this instance from server.
+        """Deletes all the contained dhcpv6server resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, PoolCount=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves dhcpv6server data from the server.
+        """Finds and retrieves dhcpv6server resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6server data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6server data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6server resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6server resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PoolCount (number): number of DHCP pools a single server has
-            SessionInfo (list(str[excessiveTlvs|noAddrsBelow|nonDisjointPools|none|notOneReservedPool|notSameIAType])): Logs additional information about the session state
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PoolCount (number): number of DHCP pools a single server has
+        - SessionInfo (list(str[excessiveTlvs | noAddrsBelow | nonDisjointPools | none | notOneReservedPool | notSameIAType])): Logs additional information about the session state
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching dhcpv6server data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6server resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6server data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6server data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6server resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -334,20 +353,23 @@ class Dhcpv6server(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            DnsDomain (str): optional regex of dnsDomain
-            IpDns1 (str): optional regex of ipDns1
-            IpDns2 (str): optional regex of ipDns2
-            ReconfviaRelay (str): optional regex of reconfviaRelay
-            SubnetAddrAssign (str): optional regex of subnetAddrAssign
-            UseRapidCommit (str): optional regex of useRapidCommit
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - DnsDomain (str): optional regex of dnsDomain
+        - IpDns1 (str): optional regex of ipDns1
+        - IpDns2 (str): optional regex of ipDns2
+        - ReconfviaRelay (str): optional regex of reconfviaRelay
+        - SubnetAddrAssign (str): optional regex of subnetAddrAssign
+        - UseRapidCommit (str): optional regex of useRapidCommit
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -356,31 +378,22 @@ class Dhcpv6server(Base):
 
         Send Reconfigure for selected DHCPv6 Server items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        reconfigure()list
+        reconfigure(SessionIndices=list)list
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        reconfigure(SessionIndices=string)list
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        reconfigure(SessionIndices:list)list
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        reconfigure(SessionIndices:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -392,22 +405,20 @@ class Dhcpv6server(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -419,22 +430,20 @@ class Dhcpv6server(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -446,22 +455,20 @@ class Dhcpv6server(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

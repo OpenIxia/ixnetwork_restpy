@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def BackoffIteration(self):
-        """This enables the test to run an extra iteration for calculating the Backoff Latency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to run an extra iteration for calculating the Backoff Latency.
         """
         return self._get_attribute('backoffIteration')
     @BackoffIteration.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def BinaryBackoff(self):
-        """Specifies the percentage of binary backoff.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the percentage of binary backoff.
         """
         return self._get_attribute('binaryBackoff')
     @BinaryBackoff.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def BinaryFrameLossUnit(self):
-        """The frame loss unit for traffic in binary.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The frame loss unit for traffic in binary.
         """
         return self._get_attribute('binaryFrameLossUnit')
     @BinaryFrameLossUnit.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def BinaryLoadUnit(self):
-        """The load unit value in binary. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The load unit value in binary. Possible values include:
         """
         return self._get_attribute('binaryLoadUnit')
     @BinaryLoadUnit.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolution(self):
-        """Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
         """
         return self._get_attribute('binaryResolution')
     @BinaryResolution.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def BinarySearchType(self):
-        """The binary search type value. Possible values include:
-
-        Returns:
-            str(linear|perFlow|perPort|perTrafficItem)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort | perTrafficItem): The binary search type value. Possible values include:
         """
         return self._get_attribute('binarySearchType')
     @BinarySearchType.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def BinaryTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('binaryTiLoss')
     @BinaryTiLoss.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def BinaryTolerance(self):
-        """The binary tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The binary tolerance level.
         """
         return self._get_attribute('binaryTolerance')
     @BinaryTolerance.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def Binary_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('binary_delay_enableAccLoss')
     @Binary_delay_enableAccLoss.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def Binary_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('binary_delay_modeAccLoss')
     @Binary_delay_modeAccLoss.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def Binary_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('binary_delay_scaleAccLoss')
     @Binary_delay_scaleAccLoss.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def Binary_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binary_delay_thresholdAccLoss')
     @Binary_delay_thresholdAccLoss.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def Binary_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('binary_flooded_enableAccLoss')
     @Binary_flooded_enableAccLoss.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def Binary_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binary_flooded_thresholdAccLoss')
     @Binary_flooded_thresholdAccLoss.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def Binary_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('binary_integrity_enableAccLoss')
     @Binary_integrity_enableAccLoss.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def Binary_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binary_integrity_thresholdAccLoss')
     @Binary_integrity_thresholdAccLoss.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def Binary_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('binary_latency_enableAccLoss')
     @Binary_latency_enableAccLoss.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def Binary_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('binary_latency_modeAccLoss')
     @Binary_latency_modeAccLoss.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def Binary_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('binary_latency_scaleAccLoss')
     @Binary_latency_scaleAccLoss.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def Binary_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binary_latency_thresholdAccLoss')
     @Binary_latency_thresholdAccLoss.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def Binary_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('binary_seq_enableAccLoss')
     @Binary_seq_enableAccLoss.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def Binary_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('binary_seq_modeAccLoss')
     @Binary_seq_modeAccLoss.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def Binary_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binary_seq_thresholdAccLoss')
     @Binary_seq_thresholdAccLoss.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """The number of packets that are sent in a burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of packets that are sent in a burst.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def CalculateJitter(self):
-        """If true, calculates jitter.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates jitter.
         """
         return self._get_attribute('calculateJitter')
     @CalculateJitter.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """If true, calculates the latency.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates the latency.
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def ComboBackoff(self):
-        """The backoff combination of the test configuration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The backoff combination of the test configuration.
         """
         return self._get_attribute('comboBackoff')
     @ComboBackoff.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def ComboFrameLossUnit(self):
-        """The frame loss unit for traffic in binary.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The frame loss unit for traffic in binary.
         """
         return self._get_attribute('comboFrameLossUnit')
     @ComboFrameLossUnit.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def ComboLoadUnit(self):
-        """The combination of load units. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The combination of load units. Possible values include:
         """
         return self._get_attribute('comboLoadUnit')
     @ComboLoadUnit.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def ComboResolution(self):
-        """The combined resolution value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The combined resolution value.
         """
         return self._get_attribute('comboResolution')
     @ComboResolution.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def ComboTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('comboTiLoss')
     @ComboTiLoss.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def ComboTolerance(self):
-        """The combined tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The combined tolerance level.
         """
         return self._get_attribute('comboTolerance')
     @ComboTolerance.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def Combo_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('combo_delay_enableAccLoss')
     @Combo_delay_enableAccLoss.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def Combo_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('combo_delay_modeAccLoss')
     @Combo_delay_modeAccLoss.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def Combo_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('combo_delay_scaleAccLoss')
     @Combo_delay_scaleAccLoss.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def Combo_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('combo_delay_thresholdAccLoss')
     @Combo_delay_thresholdAccLoss.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def Combo_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('combo_flooded_enableAccLoss')
     @Combo_flooded_enableAccLoss.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def Combo_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('combo_flooded_thresholdAccLoss')
     @Combo_flooded_thresholdAccLoss.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def Combo_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('combo_integrity_enableAccLoss')
     @Combo_integrity_enableAccLoss.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def Combo_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('combo_integrity_thresholdAccLoss')
     @Combo_integrity_thresholdAccLoss.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def Combo_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('combo_latency_enableAccLoss')
     @Combo_latency_enableAccLoss.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def Combo_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('combo_latency_modeAccLoss')
     @Combo_latency_modeAccLoss.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def Combo_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('combo_latency_scaleAccLoss')
     @Combo_latency_scaleAccLoss.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def Combo_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('combo_latency_thresholdAccLoss')
     @Combo_latency_thresholdAccLoss.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def Combo_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('combo_seq_enableAccLoss')
     @Combo_seq_enableAccLoss.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def Combo_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('combo_seq_modeAccLoss')
     @Combo_seq_modeAccLoss.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def Combo_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('combo_seq_thresholdAccLoss')
     @Combo_seq_thresholdAccLoss.setter
@@ -600,10 +600,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """Randomly counts the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomly counts the frame size.
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -612,10 +612,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomIpRatio(self):
-        """Sets the count of the random ip ratio loop
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the count of the random ip ratio loop
         """
         return self._get_attribute('countRandomIpRatio')
     @CountRandomIpRatio.setter
@@ -624,10 +624,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomLoadRate(self):
-        """Randomly counts the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomly counts the load rate.
         """
         return self._get_attribute('countRandomLoadRate')
     @CountRandomLoadRate.setter
@@ -636,10 +636,10 @@ class TestConfig(Base):
 
     @property
     def CustomLoadUnit(self):
-        """Specifies the custom load unit. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the custom load unit. Possible values include:
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -648,10 +648,10 @@ class TestConfig(Base):
 
     @property
     def CustomTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('customTiLoss')
     @CustomTiLoss.setter
@@ -660,10 +660,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_binary_delay_enableAccLoss')
     @Custom_binary_delay_enableAccLoss.setter
@@ -672,10 +672,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_binary_delay_modeAccLoss')
     @Custom_binary_delay_modeAccLoss.setter
@@ -684,10 +684,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('custom_binary_delay_scaleAccLoss')
     @Custom_binary_delay_scaleAccLoss.setter
@@ -696,10 +696,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_delay_thresholdAccLoss')
     @Custom_binary_delay_thresholdAccLoss.setter
@@ -708,10 +708,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_binary_flooded_enableAccLoss')
     @Custom_binary_flooded_enableAccLoss.setter
@@ -720,10 +720,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_flooded_thresholdAccLoss')
     @Custom_binary_flooded_thresholdAccLoss.setter
@@ -732,10 +732,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_binary_integrity_enableAccLoss')
     @Custom_binary_integrity_enableAccLoss.setter
@@ -744,10 +744,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_integrity_thresholdAccLoss')
     @Custom_binary_integrity_thresholdAccLoss.setter
@@ -756,10 +756,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_binary_latency_enableAccLoss')
     @Custom_binary_latency_enableAccLoss.setter
@@ -768,10 +768,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_binary_latency_modeAccLoss')
     @Custom_binary_latency_modeAccLoss.setter
@@ -780,10 +780,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('custom_binary_latency_scaleAccLoss')
     @Custom_binary_latency_scaleAccLoss.setter
@@ -792,10 +792,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_latency_thresholdAccLoss')
     @Custom_binary_latency_thresholdAccLoss.setter
@@ -804,10 +804,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_Backoff(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_Backoff')
     @Custom_binary_peak_Backoff.setter
@@ -816,10 +816,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_FrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_FrameLossUnit')
     @Custom_binary_peak_FrameLossUnit.setter
@@ -828,10 +828,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_Resolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_Resolution')
     @Custom_binary_peak_Resolution.setter
@@ -840,10 +840,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_Tolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_Tolerance')
     @Custom_binary_peak_Tolerance.setter
@@ -852,10 +852,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_initialValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_initialValue')
     @Custom_binary_peak_initialValue.setter
@@ -864,10 +864,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_maxValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_maxValue')
     @Custom_binary_peak_maxValue.setter
@@ -876,10 +876,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_peak_minValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_peak_minValue')
     @Custom_binary_peak_minValue.setter
@@ -888,10 +888,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_binary_seq_enableAccLoss')
     @Custom_binary_seq_enableAccLoss.setter
@@ -900,10 +900,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_binary_seq_modeAccLoss')
     @Custom_binary_seq_modeAccLoss.setter
@@ -912,10 +912,10 @@ class TestConfig(Base):
 
     @property
     def Custom_binary_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_binary_seq_thresholdAccLoss')
     @Custom_binary_seq_thresholdAccLoss.setter
@@ -924,10 +924,10 @@ class TestConfig(Base):
 
     @property
     def Custom_peak_loadType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(binary|custom|step)
+        """
+        Returns
+        -------
+        - str(binary | custom | step): NOT DEFINED
         """
         return self._get_attribute('custom_peak_loadType')
     @Custom_peak_loadType.setter
@@ -936,10 +936,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_step_delay_enableAccLoss')
     @Custom_step_delay_enableAccLoss.setter
@@ -948,10 +948,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_step_delay_modeAccLoss')
     @Custom_step_delay_modeAccLoss.setter
@@ -960,10 +960,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('custom_step_delay_scaleAccLoss')
     @Custom_step_delay_scaleAccLoss.setter
@@ -972,10 +972,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_delay_thresholdAccLoss')
     @Custom_step_delay_thresholdAccLoss.setter
@@ -984,10 +984,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_step_flooded_enableAccLoss')
     @Custom_step_flooded_enableAccLoss.setter
@@ -996,10 +996,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_flooded_thresholdAccLoss')
     @Custom_step_flooded_thresholdAccLoss.setter
@@ -1008,10 +1008,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_step_integrity_enableAccLoss')
     @Custom_step_integrity_enableAccLoss.setter
@@ -1020,10 +1020,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_integrity_thresholdAccLoss')
     @Custom_step_integrity_thresholdAccLoss.setter
@@ -1032,10 +1032,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_step_latency_enableAccLoss')
     @Custom_step_latency_enableAccLoss.setter
@@ -1044,10 +1044,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_step_latency_modeAccLoss')
     @Custom_step_latency_modeAccLoss.setter
@@ -1056,10 +1056,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('custom_step_latency_scaleAccLoss')
     @Custom_step_latency_scaleAccLoss.setter
@@ -1068,10 +1068,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_latency_thresholdAccLoss')
     @Custom_step_latency_thresholdAccLoss.setter
@@ -1080,10 +1080,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_peak_FrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('custom_step_peak_FrameLossUnit')
     @Custom_step_peak_FrameLossUnit.setter
@@ -1092,10 +1092,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_peak_initialValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_peak_initialValue')
     @Custom_step_peak_initialValue.setter
@@ -1104,10 +1104,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_peak_maxValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_peak_maxValue')
     @Custom_step_peak_maxValue.setter
@@ -1116,10 +1116,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_peak_stepTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_peak_stepTolerance')
     @Custom_step_peak_stepTolerance.setter
@@ -1128,10 +1128,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_peak_stepValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_peak_stepValue')
     @Custom_step_peak_stepValue.setter
@@ -1140,10 +1140,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('custom_step_seq_enableAccLoss')
     @Custom_step_seq_enableAccLoss.setter
@@ -1152,10 +1152,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('custom_step_seq_modeAccLoss')
     @Custom_step_seq_modeAccLoss.setter
@@ -1164,10 +1164,10 @@ class TestConfig(Base):
 
     @property
     def Custom_step_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('custom_step_seq_thresholdAccLoss')
     @Custom_step_seq_thresholdAccLoss.setter
@@ -1176,10 +1176,10 @@ class TestConfig(Base):
 
     @property
     def CustompeakvalueList(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('custompeakvalueList')
     @CustompeakvalueList.setter
@@ -1188,10 +1188,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """Specifies the amount of delay after every transmit
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the amount of delay after every transmit
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -1200,10 +1200,10 @@ class TestConfig(Base):
 
     @property
     def DetailedResultsEnabled(self):
-        """If true, it enables the detailed results for the fully meshed case
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the detailed results for the fully meshed case
         """
         return self._get_attribute('detailedResultsEnabled')
     @DetailedResultsEnabled.setter
@@ -1212,10 +1212,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """sec
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: sec
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -1224,10 +1224,10 @@ class TestConfig(Base):
 
     @property
     def EnableBackoffIteration(self):
-        """If true, enables back off iteration test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables back off iteration test.
         """
         return self._get_attribute('enableBackoffIteration')
     @EnableBackoffIteration.setter
@@ -1236,10 +1236,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """If true, enables data integrity test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables data integrity test.
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -1248,10 +1248,10 @@ class TestConfig(Base):
 
     @property
     def EnableExtraIterations(self):
-        """If true, more iterations are performed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, more iterations are performed.
         """
         return self._get_attribute('enableExtraIterations')
     @EnableExtraIterations.setter
@@ -1261,9 +1261,9 @@ class TestConfig(Base):
     @property
     def EnableExtraRetriesOnLoss(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableExtraRetriesOnLoss')
     @EnableExtraRetriesOnLoss.setter
@@ -1272,10 +1272,10 @@ class TestConfig(Base):
 
     @property
     def EnableFastConvergence(self):
-        """If true, the test perform iterations using the fast convergence duration configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the test perform iterations using the fast convergence duration configured.
         """
         return self._get_attribute('enableFastConvergence')
     @EnableFastConvergence.setter
@@ -1284,10 +1284,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer1Rate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLayer1Rate')
     @EnableLayer1Rate.setter
@@ -1296,10 +1296,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If Enabled, The minimum size of the frame is used .
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If Enabled, The minimum size of the frame is used .
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -1308,10 +1308,10 @@ class TestConfig(Base):
 
     @property
     def EnableOldStatsForReef(self):
-        """If true, enables old statistics for reef load module.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables old statistics for reef load module.
         """
         return self._get_attribute('enableOldStatsForReef')
     @EnableOldStatsForReef.setter
@@ -1320,10 +1320,10 @@ class TestConfig(Base):
 
     @property
     def EnableSaturationIteration(self):
-        """If true, SaturationIteration in enabled .
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, SaturationIteration in enabled .
         """
         return self._get_attribute('enableSaturationIteration')
     @EnableSaturationIteration.setter
@@ -1332,10 +1332,10 @@ class TestConfig(Base):
 
     @property
     def EnableStopTestOnHighLoss(self):
-        """The test stops in case of a high loss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The test stops in case of a high loss.
         """
         return self._get_attribute('enableStopTestOnHighLoss')
     @EnableStopTestOnHighLoss.setter
@@ -1344,10 +1344,10 @@ class TestConfig(Base):
 
     @property
     def ExtraIterationOffsets(self):
-        """This enables the test to run an extra iteration.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This enables the test to run an extra iteration.
         """
         return self._get_attribute('extraIterationOffsets')
     @ExtraIterationOffsets.setter
@@ -1357,9 +1357,9 @@ class TestConfig(Base):
     @property
     def ExtraRetriesOnLoss(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('extraRetriesOnLoss')
     @ExtraRetriesOnLoss.setter
@@ -1368,10 +1368,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceDuration(self):
-        """sec
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: sec
         """
         return self._get_attribute('fastConvergenceDuration')
     @FastConvergenceDuration.setter
@@ -1380,10 +1380,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceThreshold(self):
-        """This enables the test to perform iterations using the fast convergence threshold configured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to perform iterations using the fast convergence threshold configured.
         """
         return self._get_attribute('fastConvergenceThreshold')
     @FastConvergenceThreshold.setter
@@ -1392,10 +1392,10 @@ class TestConfig(Base):
 
     @property
     def FixedLoadUnit(self):
-        """Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Possible values include:
         """
         return self._get_attribute('fixedLoadUnit')
     @FixedLoadUnit.setter
@@ -1404,10 +1404,10 @@ class TestConfig(Base):
 
     @property
     def FloodedFramesEnabled(self):
-        """If true, it enables the flooded frames statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the flooded frames statistics
         """
         return self._get_attribute('floodedFramesEnabled')
     @FloodedFramesEnabled.setter
@@ -1416,10 +1416,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """Initiates a forced regeneration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Initiates a forced regeneration.
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -1428,10 +1428,10 @@ class TestConfig(Base):
 
     @property
     def FrameLossUnit(self):
-        """The frame loss unit for traffic.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The frame loss unit for traffic.
         """
         return self._get_attribute('frameLossUnit')
     @FrameLossUnit.setter
@@ -1440,10 +1440,10 @@ class TestConfig(Base):
 
     @property
     def FrameOrderingTemp(self):
-        """NOT DEFINED
-
-        Returns:
-            str(noOrdering|peakLoading|unchanged|val2889Ordering)
+        """
+        Returns
+        -------
+        - str(noOrdering | peakLoading | unchanged | val2889Ordering): NOT DEFINED
         """
         return self._get_attribute('frameOrderingTemp')
     @FrameOrderingTemp.setter
@@ -1452,10 +1452,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian. Possible values includes:
-
-        Returns:
-            str(custom|customlist|increment|random|unchanged)
+        """
+        Returns
+        -------
+        - str(custom | customlist | increment | random | unchanged): This attribute is the frame size mode for the Quad Gaussian. Possible values includes:
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -1464,10 +1464,10 @@ class TestConfig(Base):
 
     @property
     def FramesPerBurstGap(self):
-        """The number of frames to be sent after each burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of frames to be sent after each burst.
         """
         return self._get_attribute('framesPerBurstGap')
     @FramesPerBurstGap.setter
@@ -1476,10 +1476,10 @@ class TestConfig(Base):
 
     @property
     def Framesize(self):
-        """Bytes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Bytes
         """
         return self._get_attribute('framesize')
     @Framesize.setter
@@ -1488,10 +1488,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeFixedValue(self):
-        """The fixed value of framesize.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The fixed value of framesize.
         """
         return self._get_attribute('framesizeFixedValue')
     @FramesizeFixedValue.setter
@@ -1500,10 +1500,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeImixList(self):
-        """The list of the available lmix frame size.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of the available lmix frame size.
         """
         return self._get_attribute('framesizeImixList')
     @FramesizeImixList.setter
@@ -1512,10 +1512,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """The list of the available frame size.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of the available frame size.
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -1524,10 +1524,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """The gap in transmission of frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The gap in transmission of frames.
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -1536,10 +1536,10 @@ class TestConfig(Base):
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
-        """If true, enables the tracking option in aggregation files.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the tracking option in aggregation files.
         """
         return self._get_attribute('generateTrackingOptionAggregationFiles')
     @GenerateTrackingOptionAggregationFiles.setter
@@ -1548,10 +1548,10 @@ class TestConfig(Base):
 
     @property
     def ImixAdd(self):
-        """Adds an imix data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Adds an imix data.
         """
         return self._get_attribute('imixAdd')
     @ImixAdd.setter
@@ -1560,10 +1560,10 @@ class TestConfig(Base):
 
     @property
     def ImixData(self):
-        """Displays the imix Data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the imix Data.
         """
         return self._get_attribute('imixData')
     @ImixData.setter
@@ -1572,10 +1572,10 @@ class TestConfig(Base):
 
     @property
     def ImixDelete(self):
-        """Deletes the imix data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Deletes the imix data.
         """
         return self._get_attribute('imixDelete')
     @ImixDelete.setter
@@ -1584,10 +1584,10 @@ class TestConfig(Base):
 
     @property
     def ImixDistribution(self):
-        """Specifies the imix distribution unit.
-
-        Returns:
-            str(bwpercentage|weight)
+        """
+        Returns
+        -------
+        - str(bwpercentage | weight): Specifies the imix distribution unit.
         """
         return self._get_attribute('imixDistribution')
     @ImixDistribution.setter
@@ -1596,10 +1596,10 @@ class TestConfig(Base):
 
     @property
     def ImixEnabled(self):
-        """If True, Enables the imix value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If True, Enables the imix value.
         """
         return self._get_attribute('imixEnabled')
     @ImixEnabled.setter
@@ -1608,10 +1608,10 @@ class TestConfig(Base):
 
     @property
     def ImixTemplates(self):
-        """Specefies the imix templates.
-
-        Returns:
-            str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)
+        """
+        Returns
+        -------
+        - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Specefies the imix templates.
         """
         return self._get_attribute('imixTemplates')
     @ImixTemplates.setter
@@ -1620,10 +1620,10 @@ class TestConfig(Base):
 
     @property
     def ImixTrafficType(self):
-        """Displays the imix traffic type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the imix traffic type.
         """
         return self._get_attribute('imixTrafficType')
     @ImixTrafficType.setter
@@ -1632,10 +1632,10 @@ class TestConfig(Base):
 
     @property
     def IncrementLoadUnit(self):
-        """Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Possible values include:
         """
         return self._get_attribute('incrementLoadUnit')
     @IncrementLoadUnit.setter
@@ -1644,10 +1644,10 @@ class TestConfig(Base):
 
     @property
     def InitialBinaryLoadRate(self):
-        """The initial binary value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial binary value of the load rate.
         """
         return self._get_attribute('initialBinaryLoadRate')
     @InitialBinaryLoadRate.setter
@@ -1656,10 +1656,10 @@ class TestConfig(Base):
 
     @property
     def InitialComboLoadRate(self):
-        """The initial combination value of the load rate .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial combination value of the load rate .
         """
         return self._get_attribute('initialComboLoadRate')
     @InitialComboLoadRate.setter
@@ -1668,10 +1668,10 @@ class TestConfig(Base):
 
     @property
     def InitialIncrementLoadRate(self):
-        """The initial incremental value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial incremental value of the load rate.
         """
         return self._get_attribute('initialIncrementLoadRate')
     @InitialIncrementLoadRate.setter
@@ -1680,10 +1680,10 @@ class TestConfig(Base):
 
     @property
     def InitialStepLoadRate(self):
-        """The initial step value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial step value of the load rate.
         """
         return self._get_attribute('initialStepLoadRate')
     @InitialStepLoadRate.setter
@@ -1692,10 +1692,10 @@ class TestConfig(Base):
 
     @property
     def IpRatioMode(self):
-        """Sets the ip ratio mode
-
-        Returns:
-            str(custom|fixed|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | fixed | increment | random): Sets the ip ratio mode
         """
         return self._get_attribute('ipRatioMode')
     @IpRatioMode.setter
@@ -1704,10 +1704,10 @@ class TestConfig(Base):
 
     @property
     def Ipv4RatioList(self):
-        """Sets the ipv4 ratio list
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the ipv4 ratio list
         """
         return self._get_attribute('ipv4RatioList')
     @Ipv4RatioList.setter
@@ -1716,10 +1716,10 @@ class TestConfig(Base):
 
     @property
     def Ipv4rate(self):
-        """The rate at which IPv4 traffic is sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which IPv4 traffic is sent.
         """
         return self._get_attribute('ipv4rate')
     @Ipv4rate.setter
@@ -1728,10 +1728,10 @@ class TestConfig(Base):
 
     @property
     def Ipv6RatioList(self):
-        """Sets the ipv6 ratio list
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the ipv6 ratio list
         """
         return self._get_attribute('ipv6RatioList')
     @Ipv6RatioList.setter
@@ -1740,10 +1740,10 @@ class TestConfig(Base):
 
     @property
     def Ipv6rate(self):
-        """The rate at which IPv6 traffic is sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which IPv6 traffic is sent.
         """
         return self._get_attribute('ipv6rate')
     @Ipv6rate.setter
@@ -1752,10 +1752,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBins(self):
-        """DEPRECATED Sets the latency bins statistics
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Sets the latency bins statistics
         """
         return self._get_attribute('latencyBins')
     @LatencyBins.setter
@@ -1764,10 +1764,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBinsEnabled(self):
-        """Enables the latency bins statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the latency bins statistics
         """
         return self._get_attribute('latencyBinsEnabled')
     @LatencyBinsEnabled.setter
@@ -1776,10 +1776,10 @@ class TestConfig(Base):
 
     @property
     def LatencyType(self):
-        """The type of latency. Possible values include:
-
-        Returns:
-            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | forwardingDelay | mef | storeForward): The type of latency. Possible values include:
         """
         return self._get_attribute('latencyType')
     @LatencyType.setter
@@ -1788,10 +1788,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateList(self):
-        """The list of Load Rate.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of Load Rate.
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -1800,10 +1800,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateValue(self):
-        """The value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value of the load rate.
         """
         return self._get_attribute('loadRateValue')
     @LoadRateValue.setter
@@ -1812,10 +1812,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """Possible values include:
-
-        Returns:
-            str(binary|combo|custom|quickSearch|random|step|unchanged)
+        """
+        Returns
+        -------
+        - str(binary | combo | custom | quickSearch | random | step | unchanged): Possible values include:
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -1824,10 +1824,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """The mapping type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The mapping type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -1836,10 +1836,10 @@ class TestConfig(Base):
 
     @property
     def MaxBinaryLoadRate(self):
-        """The upper bound of the iteration rates for each frame size during a binary search.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The upper bound of the iteration rates for each frame size during a binary search.
         """
         return self._get_attribute('maxBinaryLoadRate')
     @MaxBinaryLoadRate.setter
@@ -1848,10 +1848,10 @@ class TestConfig(Base):
 
     @property
     def MaxComboLoadRate(self):
-        """The maximum value of the load rate Combo Load Type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum value of the load rate Combo Load Type.
         """
         return self._get_attribute('maxComboLoadRate')
     @MaxComboLoadRate.setter
@@ -1860,10 +1860,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """It signifies the maximum increment frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the maximum increment frame size.
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -1872,10 +1872,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementIpv4Ratio(self):
-        """Sets the maximum increment value for the ipv4 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the maximum increment value for the ipv4 ratio
         """
         return self._get_attribute('maxIncrementIpv4Ratio')
     @MaxIncrementIpv4Ratio.setter
@@ -1884,10 +1884,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementIpv6Ratio(self):
-        """Sets the maximum increment value for the ipv6 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the maximum increment value for the ipv6 ratio
         """
         return self._get_attribute('maxIncrementIpv6Ratio')
     @MaxIncrementIpv6Ratio.setter
@@ -1896,10 +1896,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementLoadRate(self):
-        """It signifies the maximum increment load rate value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the maximum increment load rate value.
         """
         return self._get_attribute('maxIncrementLoadRate')
     @MaxIncrementLoadRate.setter
@@ -1908,10 +1908,10 @@ class TestConfig(Base):
 
     @property
     def MaxQuickSearchLoadRate(self):
-        """Sets the maximum QuickSearch load rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the maximum QuickSearch load rate
         """
         return self._get_attribute('maxQuickSearchLoadRate')
     @MaxQuickSearchLoadRate.setter
@@ -1920,10 +1920,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """It signifies the maximum random frame size value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the maximum random frame size value.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -1932,10 +1932,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomIpv4Ratio(self):
-        """Sets the maximum radom value for the ipv4 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the maximum radom value for the ipv4 ratio
         """
         return self._get_attribute('maxRandomIpv4Ratio')
     @MaxRandomIpv4Ratio.setter
@@ -1944,10 +1944,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomIpv6Ratio(self):
-        """Sets the maximum random value for the ipv6 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the maximum random value for the ipv6 ratio
         """
         return self._get_attribute('maxRandomIpv6Ratio')
     @MaxRandomIpv6Ratio.setter
@@ -1956,10 +1956,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomLoadRate(self):
-        """It signifies the maximum random load rate value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the maximum random load rate value.
         """
         return self._get_attribute('maxRandomLoadRate')
     @MaxRandomLoadRate.setter
@@ -1968,10 +1968,10 @@ class TestConfig(Base):
 
     @property
     def MaxStepLoadRate(self):
-        """It signifies the maximum step value for load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the maximum step value for load rate.
         """
         return self._get_attribute('maxStepLoadRate')
     @MaxStepLoadRate.setter
@@ -1980,10 +1980,10 @@ class TestConfig(Base):
 
     @property
     def MinBinaryLoadRate(self):
-        """Specifies the minimum rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the minimum rate of the binary algorithm.
         """
         return self._get_attribute('minBinaryLoadRate')
     @MinBinaryLoadRate.setter
@@ -1992,10 +1992,10 @@ class TestConfig(Base):
 
     @property
     def MinComboLoadRate(self):
-        """The minimum combination load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum combination load rate.
         """
         return self._get_attribute('minComboLoadRate')
     @MinComboLoadRate.setter
@@ -2004,10 +2004,10 @@ class TestConfig(Base):
 
     @property
     def MinFpsRate(self):
-        """The rate at which minimum frames are sent per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which minimum frames are sent per second.
         """
         return self._get_attribute('minFpsRate')
     @MinFpsRate.setter
@@ -2016,10 +2016,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """It signifies the minimum increment frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the minimum increment frame size.
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -2028,10 +2028,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementIpv4Ratio(self):
-        """Sets the minimum increment value for the ipv4 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the minimum increment value for the ipv4 ratio
         """
         return self._get_attribute('minIncrementIpv4Ratio')
     @MinIncrementIpv4Ratio.setter
@@ -2040,10 +2040,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementIpv6Ratio(self):
-        """Sets the minimum increment value for the ipv6 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the minimum increment value for the ipv6 ratio
         """
         return self._get_attribute('minIncrementIpv6Ratio')
     @MinIncrementIpv6Ratio.setter
@@ -2052,10 +2052,10 @@ class TestConfig(Base):
 
     @property
     def MinKbpsRate(self):
-        """The rate at which minimum frames are sent per kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate at which minimum frames are sent per kbps.
         """
         return self._get_attribute('minKbpsRate')
     @MinKbpsRate.setter
@@ -2064,10 +2064,10 @@ class TestConfig(Base):
 
     @property
     def MinQuickSearchLoadRate(self):
-        """Sets the minum Quick Search load rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the minum Quick Search load rate
         """
         return self._get_attribute('minQuickSearchLoadRate')
     @MinQuickSearchLoadRate.setter
@@ -2076,10 +2076,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The minimum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random frame size to be sent.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -2088,10 +2088,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomIpv4Ratio(self):
-        """Sets the minimum random value for the ipv4 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the minimum random value for the ipv4 ratio
         """
         return self._get_attribute('minRandomIpv4Ratio')
     @MinRandomIpv4Ratio.setter
@@ -2100,10 +2100,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomIpv6Ratio(self):
-        """Sets the minimum random value for the ipv6 ratio
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the minimum random value for the ipv6 ratio
         """
         return self._get_attribute('minRandomIpv6Ratio')
     @MinRandomIpv6Ratio.setter
@@ -2112,10 +2112,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomLoadRate(self):
-        """The minimum random value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random value of the load rate.
         """
         return self._get_attribute('minRandomLoadRate')
     @MinRandomLoadRate.setter
@@ -2124,10 +2124,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The integer value that states the number of trials permitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value that states the number of trials permitted.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -2136,10 +2136,10 @@ class TestConfig(Base):
 
     @property
     def PeakLoadingReplicationCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('peakLoadingReplicationCount')
     @PeakLoadingReplicationCount.setter
@@ -2148,10 +2148,10 @@ class TestConfig(Base):
 
     @property
     def Peak_customLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('peak_customLoadUnit')
     @Peak_customLoadUnit.setter
@@ -2160,10 +2160,10 @@ class TestConfig(Base):
 
     @property
     def Peak_initialStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('peak_initialStepLoadRate')
     @Peak_initialStepLoadRate.setter
@@ -2172,10 +2172,10 @@ class TestConfig(Base):
 
     @property
     def Peak_loadRateList(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('peak_loadRateList')
     @Peak_loadRateList.setter
@@ -2184,10 +2184,10 @@ class TestConfig(Base):
 
     @property
     def Peak_maxStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('peak_maxStepLoadRate')
     @Peak_maxStepLoadRate.setter
@@ -2196,10 +2196,10 @@ class TestConfig(Base):
 
     @property
     def Peak_rate_loadType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(custom|step)
+        """
+        Returns
+        -------
+        - str(custom | step): NOT DEFINED
         """
         return self._get_attribute('peak_rate_loadType')
     @Peak_rate_loadType.setter
@@ -2209,9 +2209,9 @@ class TestConfig(Base):
     @property
     def Peak_stepLoadUnit(self):
         """
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): 
         """
         return self._get_attribute('peak_stepLoadUnit')
     @Peak_stepLoadUnit.setter
@@ -2220,10 +2220,10 @@ class TestConfig(Base):
 
     @property
     def Peak_stepStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('peak_stepStepLoadRate')
     @Peak_stepStepLoadRate.setter
@@ -2233,9 +2233,9 @@ class TestConfig(Base):
     @property
     def PerTrafficResults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('perTrafficResults')
     @PerTrafficResults.setter
@@ -2244,10 +2244,10 @@ class TestConfig(Base):
 
     @property
     def PercentMaxRate(self):
-        """The maximum rate percentage.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum rate percentage.
         """
         return self._get_attribute('percentMaxRate')
     @PercentMaxRate.setter
@@ -2256,10 +2256,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -2268,10 +2268,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -2280,10 +2280,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -2292,10 +2292,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -2304,10 +2304,10 @@ class TestConfig(Base):
 
     @property
     def QuickBackoffIteration(self):
-        """Sets the quicksearch backoff iteration
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quicksearch backoff iteration
         """
         return self._get_attribute('quickBackoffIteration')
     @QuickBackoffIteration.setter
@@ -2316,10 +2316,10 @@ class TestConfig(Base):
 
     @property
     def QuickEnableBackoffIteration(self):
-        """Enables the quick search backoff iteration
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the quick search backoff iteration
         """
         return self._get_attribute('quickEnableBackoffIteration')
     @QuickEnableBackoffIteration.setter
@@ -2328,10 +2328,10 @@ class TestConfig(Base):
 
     @property
     def QuickEnableSaturationIteration(self):
-        """Enables the Quick Search saturation iteration
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the Quick Search saturation iteration
         """
         return self._get_attribute('quickEnableSaturationIteration')
     @QuickEnableSaturationIteration.setter
@@ -2340,10 +2340,10 @@ class TestConfig(Base):
 
     @property
     def QuickSaturationIteration(self):
-        """Sets the quick search saturation iteration
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search saturation iteration
         """
         return self._get_attribute('quickSaturationIteration')
     @QuickSaturationIteration.setter
@@ -2352,10 +2352,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchFrameLossUnit(self):
-        """Sets the quick search frame loss unit
-
-        Returns:
-            str(%)
+        """
+        Returns
+        -------
+        - str(%): Sets the quick search frame loss unit
         """
         return self._get_attribute('quickSearchFrameLossUnit')
     @QuickSearchFrameLossUnit.setter
@@ -2364,10 +2364,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchLoadUnit(self):
-        """Sets the quick search load unit
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Sets the quick search load unit
         """
         return self._get_attribute('quickSearchLoadUnit')
     @QuickSearchLoadUnit.setter
@@ -2376,10 +2376,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchResolution(self):
-        """Sets the quick search resolution
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search resolution
         """
         return self._get_attribute('quickSearchResolution')
     @QuickSearchResolution.setter
@@ -2388,10 +2388,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchSearchType(self):
-        """Sets the quick search type
-
-        Returns:
-            str(linear|perFlow|perPort|perTrafficItem)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort | perTrafficItem): Sets the quick search type
         """
         return self._get_attribute('quickSearchSearchType')
     @QuickSearchSearchType.setter
@@ -2400,10 +2400,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('quickSearchTiLoss')
     @QuickSearchTiLoss.setter
@@ -2412,10 +2412,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchTolerance(self):
-        """Sets the quick search tolerance
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search tolerance
         """
         return self._get_attribute('quickSearchTolerance')
     @QuickSearchTolerance.setter
@@ -2424,10 +2424,10 @@ class TestConfig(Base):
 
     @property
     def RandomLoadUnit(self):
-        """The random values of the load unit. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The random values of the load unit. Possible values include:
         """
         return self._get_attribute('randomLoadUnit')
     @RandomLoadUnit.setter
@@ -2436,10 +2436,10 @@ class TestConfig(Base):
 
     @property
     def RandomTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('randomTiLoss')
     @RandomTiLoss.setter
@@ -2448,10 +2448,10 @@ class TestConfig(Base):
 
     @property
     def RateSelect(self):
-        """Possible values include:
-
-        Returns:
-            str(fpsRate|kbpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(fpsRate | kbpsRate | percentMaxRate): Possible values include:
         """
         return self._get_attribute('rateSelect')
     @RateSelect.setter
@@ -2460,10 +2460,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """Reports sequence errors in the test result.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Reports sequence errors in the test result.
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -2472,10 +2472,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """The reported throughput rate unit values. Possible values include:
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): The reported throughput rate unit values. Possible values include:
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -2484,10 +2484,10 @@ class TestConfig(Base):
 
     @property
     def Resolution(self):
-        """Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops .
         """
         return self._get_attribute('resolution')
     @Resolution.setter
@@ -2496,10 +2496,10 @@ class TestConfig(Base):
 
     @property
     def Rfc2544ImixDataQoS(self):
-        """If true, it uses the same frame data qos
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it uses the same frame data qos
         """
         return self._get_attribute('rfc2544ImixDataQoS')
     @Rfc2544ImixDataQoS.setter
@@ -2508,10 +2508,10 @@ class TestConfig(Base):
 
     @property
     def Rfc2889ordering(self):
-        """If true, indicates frame ordering by Rfc2889.
-
-        Returns:
-            str(noOrdering|peakLoading|unchanged|val2889Ordering)
+        """
+        Returns
+        -------
+        - str(noOrdering | peakLoading | unchanged | val2889Ordering): If true, indicates frame ordering by Rfc2889.
         """
         return self._get_attribute('rfc2889ordering')
     @Rfc2889ordering.setter
@@ -2520,10 +2520,10 @@ class TestConfig(Base):
 
     @property
     def SaturationIteration(self):
-        """This enables the test to run an extra iteration for calculating the Saturation latency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to run an extra iteration for calculating the Saturation latency.
         """
         return self._get_attribute('saturationIteration')
     @SaturationIteration.setter
@@ -2532,10 +2532,10 @@ class TestConfig(Base):
 
     @property
     def SearchBase(self):
-        """NOT DEFINED
-
-        Returns:
-            str(rate|replicationCount)
+        """
+        Returns
+        -------
+        - str(rate | replicationCount): NOT DEFINED
         """
         return self._get_attribute('searchBase')
     @SearchBase.setter
@@ -2544,10 +2544,10 @@ class TestConfig(Base):
 
     @property
     def SendFullyMeshed(self):
-        """Indicates the source group mapping type used for sending data.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates the source group mapping type used for sending data.
         """
         return self._get_attribute('sendFullyMeshed')
     @SendFullyMeshed.setter
@@ -2556,10 +2556,10 @@ class TestConfig(Base):
 
     @property
     def ShowDetailedBinaryResults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('showDetailedBinaryResults')
     @ShowDetailedBinaryResults.setter
@@ -2569,9 +2569,9 @@ class TestConfig(Base):
     @property
     def SpyderFramesizeList(self):
         """
-
-        Returns:
-            list(dict(arg1:number,arg2:str[None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=customImix|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=imix]))
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix])): 
         """
         return self._get_attribute('spyderFramesizeList')
     @SpyderFramesizeList.setter
@@ -2580,10 +2580,10 @@ class TestConfig(Base):
 
     @property
     def StaggeredStart(self):
-        """Starts test with a stagger.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Starts test with a stagger.
         """
         return self._get_attribute('staggeredStart')
     @StaggeredStart.setter
@@ -2592,10 +2592,10 @@ class TestConfig(Base):
 
     @property
     def StepComboLoadRate(self):
-        """The step value of combination load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step value of combination load rate.
         """
         return self._get_attribute('stepComboLoadRate')
     @StepComboLoadRate.setter
@@ -2604,10 +2604,10 @@ class TestConfig(Base):
 
     @property
     def StepFrameLossUnit(self):
-        """The frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The frame loss unit.
         """
         return self._get_attribute('stepFrameLossUnit')
     @StepFrameLossUnit.setter
@@ -2616,10 +2616,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """The traffic step increment frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The traffic step increment frame size.
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -2628,10 +2628,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementIpv4Ratio(self):
-        """The step in which the ipv4 ratio loop is incremented
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The step in which the ipv4 ratio loop is incremented
         """
         return self._get_attribute('stepIncrementIpv4Ratio')
     @StepIncrementIpv4Ratio.setter
@@ -2640,10 +2640,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementIpv6Ratio(self):
-        """The step in which the ipv6 ratio loop is incremented
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The step in which the ipv6 ratio loop is incremented
         """
         return self._get_attribute('stepIncrementIpv6Ratio')
     @StepIncrementIpv6Ratio.setter
@@ -2652,10 +2652,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementLoadRate(self):
-        """The incremental step value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of the load rate.
         """
         return self._get_attribute('stepIncrementLoadRate')
     @StepIncrementLoadRate.setter
@@ -2664,10 +2664,10 @@ class TestConfig(Base):
 
     @property
     def StepLoadUnit(self):
-        """Specifies the step rate of the load unit. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the step rate of the load unit. Possible values include:
         """
         return self._get_attribute('stepLoadUnit')
     @StepLoadUnit.setter
@@ -2676,10 +2676,10 @@ class TestConfig(Base):
 
     @property
     def StepStepLoadRate(self):
-        """The incremental step value of load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of load rate.
         """
         return self._get_attribute('stepStepLoadRate')
     @StepStepLoadRate.setter
@@ -2688,10 +2688,10 @@ class TestConfig(Base):
 
     @property
     def StepTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use loss across Rx Ports
         """
         return self._get_attribute('stepTiLoss')
     @StepTiLoss.setter
@@ -2700,10 +2700,10 @@ class TestConfig(Base):
 
     @property
     def StepTolerance(self):
-        """The step value of the tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step value of the tolerance level.
         """
         return self._get_attribute('stepTolerance')
     @StepTolerance.setter
@@ -2712,10 +2712,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_binary_delay_enableAccLoss')
     @Step_binary_delay_enableAccLoss.setter
@@ -2724,10 +2724,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_binary_delay_modeAccLoss')
     @Step_binary_delay_modeAccLoss.setter
@@ -2736,10 +2736,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_binary_delay_scaleAccLoss')
     @Step_binary_delay_scaleAccLoss.setter
@@ -2748,10 +2748,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_delay_thresholdAccLoss')
     @Step_binary_delay_thresholdAccLoss.setter
@@ -2760,10 +2760,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_binary_flooded_enableAccLoss')
     @Step_binary_flooded_enableAccLoss.setter
@@ -2772,10 +2772,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_flooded_thresholdAccLoss')
     @Step_binary_flooded_thresholdAccLoss.setter
@@ -2784,10 +2784,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_binary_integrity_enableAccLoss')
     @Step_binary_integrity_enableAccLoss.setter
@@ -2796,10 +2796,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_integrity_thresholdAccLoss')
     @Step_binary_integrity_thresholdAccLoss.setter
@@ -2808,10 +2808,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_binary_latency_enableAccLoss')
     @Step_binary_latency_enableAccLoss.setter
@@ -2820,10 +2820,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_binary_latency_modeAccLoss')
     @Step_binary_latency_modeAccLoss.setter
@@ -2832,10 +2832,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_binary_latency_scaleAccLoss')
     @Step_binary_latency_scaleAccLoss.setter
@@ -2844,10 +2844,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_latency_thresholdAccLoss')
     @Step_binary_latency_thresholdAccLoss.setter
@@ -2856,10 +2856,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_Backoff(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_Backoff')
     @Step_binary_peak_Backoff.setter
@@ -2868,10 +2868,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_FrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_FrameLossUnit')
     @Step_binary_peak_FrameLossUnit.setter
@@ -2880,10 +2880,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_Resolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_Resolution')
     @Step_binary_peak_Resolution.setter
@@ -2892,10 +2892,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_Tolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_Tolerance')
     @Step_binary_peak_Tolerance.setter
@@ -2904,10 +2904,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_initialValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_initialValue')
     @Step_binary_peak_initialValue.setter
@@ -2916,10 +2916,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_maxValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_maxValue')
     @Step_binary_peak_maxValue.setter
@@ -2928,10 +2928,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_peak_minValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_peak_minValue')
     @Step_binary_peak_minValue.setter
@@ -2940,10 +2940,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_binary_seq_enableAccLoss')
     @Step_binary_seq_enableAccLoss.setter
@@ -2952,10 +2952,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_binary_seq_modeAccLoss')
     @Step_binary_seq_modeAccLoss.setter
@@ -2964,10 +2964,10 @@ class TestConfig(Base):
 
     @property
     def Step_binary_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_binary_seq_thresholdAccLoss')
     @Step_binary_seq_thresholdAccLoss.setter
@@ -2976,10 +2976,10 @@ class TestConfig(Base):
 
     @property
     def Step_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_delay_enableAccLoss')
     @Step_delay_enableAccLoss.setter
@@ -2988,10 +2988,10 @@ class TestConfig(Base):
 
     @property
     def Step_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_delay_modeAccLoss')
     @Step_delay_modeAccLoss.setter
@@ -3000,10 +3000,10 @@ class TestConfig(Base):
 
     @property
     def Step_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_delay_scaleAccLoss')
     @Step_delay_scaleAccLoss.setter
@@ -3012,10 +3012,10 @@ class TestConfig(Base):
 
     @property
     def Step_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_delay_thresholdAccLoss')
     @Step_delay_thresholdAccLoss.setter
@@ -3024,10 +3024,10 @@ class TestConfig(Base):
 
     @property
     def Step_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_flooded_enableAccLoss')
     @Step_flooded_enableAccLoss.setter
@@ -3036,10 +3036,10 @@ class TestConfig(Base):
 
     @property
     def Step_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_flooded_thresholdAccLoss')
     @Step_flooded_thresholdAccLoss.setter
@@ -3048,10 +3048,10 @@ class TestConfig(Base):
 
     @property
     def Step_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_integrity_enableAccLoss')
     @Step_integrity_enableAccLoss.setter
@@ -3060,10 +3060,10 @@ class TestConfig(Base):
 
     @property
     def Step_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_integrity_thresholdAccLoss')
     @Step_integrity_thresholdAccLoss.setter
@@ -3072,10 +3072,10 @@ class TestConfig(Base):
 
     @property
     def Step_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_latency_enableAccLoss')
     @Step_latency_enableAccLoss.setter
@@ -3084,10 +3084,10 @@ class TestConfig(Base):
 
     @property
     def Step_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_latency_modeAccLoss')
     @Step_latency_modeAccLoss.setter
@@ -3096,10 +3096,10 @@ class TestConfig(Base):
 
     @property
     def Step_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_latency_scaleAccLoss')
     @Step_latency_scaleAccLoss.setter
@@ -3108,10 +3108,10 @@ class TestConfig(Base):
 
     @property
     def Step_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_latency_thresholdAccLoss')
     @Step_latency_thresholdAccLoss.setter
@@ -3120,10 +3120,10 @@ class TestConfig(Base):
 
     @property
     def Step_peak_loadType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(binary|custom|step)
+        """
+        Returns
+        -------
+        - str(binary | custom | step): NOT DEFINED
         """
         return self._get_attribute('step_peak_loadType')
     @Step_peak_loadType.setter
@@ -3132,10 +3132,10 @@ class TestConfig(Base):
 
     @property
     def Step_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_seq_enableAccLoss')
     @Step_seq_enableAccLoss.setter
@@ -3144,10 +3144,10 @@ class TestConfig(Base):
 
     @property
     def Step_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_seq_modeAccLoss')
     @Step_seq_modeAccLoss.setter
@@ -3156,10 +3156,10 @@ class TestConfig(Base):
 
     @property
     def Step_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_seq_thresholdAccLoss')
     @Step_seq_thresholdAccLoss.setter
@@ -3168,10 +3168,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_delay_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_step_delay_enableAccLoss')
     @Step_step_delay_enableAccLoss.setter
@@ -3180,10 +3180,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_delay_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_step_delay_modeAccLoss')
     @Step_step_delay_modeAccLoss.setter
@@ -3192,10 +3192,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_delay_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_step_delay_scaleAccLoss')
     @Step_step_delay_scaleAccLoss.setter
@@ -3204,10 +3204,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_delay_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_delay_thresholdAccLoss')
     @Step_step_delay_thresholdAccLoss.setter
@@ -3216,10 +3216,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_flooded_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_step_flooded_enableAccLoss')
     @Step_step_flooded_enableAccLoss.setter
@@ -3228,10 +3228,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_flooded_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_flooded_thresholdAccLoss')
     @Step_step_flooded_thresholdAccLoss.setter
@@ -3240,10 +3240,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_integrity_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_step_integrity_enableAccLoss')
     @Step_step_integrity_enableAccLoss.setter
@@ -3252,10 +3252,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_integrity_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_integrity_thresholdAccLoss')
     @Step_step_integrity_thresholdAccLoss.setter
@@ -3264,10 +3264,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_latency_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_step_latency_enableAccLoss')
     @Step_step_latency_enableAccLoss.setter
@@ -3276,10 +3276,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_latency_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_step_latency_modeAccLoss')
     @Step_step_latency_modeAccLoss.setter
@@ -3288,10 +3288,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_latency_scaleAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): NOT DEFINED
         """
         return self._get_attribute('step_step_latency_scaleAccLoss')
     @Step_step_latency_scaleAccLoss.setter
@@ -3300,10 +3300,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_latency_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_latency_thresholdAccLoss')
     @Step_step_latency_thresholdAccLoss.setter
@@ -3312,10 +3312,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_peak_FrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('step_step_peak_FrameLossUnit')
     @Step_step_peak_FrameLossUnit.setter
@@ -3324,10 +3324,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_peak_initialValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_peak_initialValue')
     @Step_step_peak_initialValue.setter
@@ -3336,10 +3336,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_peak_maxValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_peak_maxValue')
     @Step_step_peak_maxValue.setter
@@ -3348,10 +3348,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_peak_stepTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_peak_stepTolerance')
     @Step_step_peak_stepTolerance.setter
@@ -3360,10 +3360,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_peak_stepValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_peak_stepValue')
     @Step_step_peak_stepValue.setter
@@ -3372,10 +3372,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_seq_enableAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('step_step_seq_enableAccLoss')
     @Step_step_seq_enableAccLoss.setter
@@ -3384,10 +3384,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_seq_modeAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): NOT DEFINED
         """
         return self._get_attribute('step_step_seq_modeAccLoss')
     @Step_step_seq_modeAccLoss.setter
@@ -3396,10 +3396,10 @@ class TestConfig(Base):
 
     @property
     def Step_step_seq_thresholdAccLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('step_step_seq_thresholdAccLoss')
     @Step_step_seq_thresholdAccLoss.setter
@@ -3408,10 +3408,10 @@ class TestConfig(Base):
 
     @property
     def StopTestOnHighLoss(self):
-        """It stops test on high loss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It stops test on high loss.
         """
         return self._get_attribute('stopTestOnHighLoss')
     @StopTestOnHighLoss.setter
@@ -3420,10 +3420,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """The supported traffic types.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The supported traffic types.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -3432,10 +3432,10 @@ class TestConfig(Base):
 
     @property
     def Tolerance(self):
-        """The tolerance value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The tolerance value.
         """
         return self._get_attribute('tolerance')
     @Tolerance.setter
@@ -3444,10 +3444,10 @@ class TestConfig(Base):
 
     @property
     def TrafficType(self):
-        """It signifies the traffic type for the protocol. Possible values include:
-
-        Returns:
-            str(burstyLoading|constantLoading)
+        """
+        Returns
+        -------
+        - str(burstyLoading | constantLoading): It signifies the traffic type for the protocol. Possible values include:
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -3456,10 +3456,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """The minimum delay between successive packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum delay between successive packets.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -3468,10 +3468,10 @@ class TestConfig(Base):
 
     @property
     def UnchangedInitial(self):
-        """The first value of an unchanged parameter.
-
-        Returns:
-            str(False|True)
+        """
+        Returns
+        -------
+        - str(False | True): The first value of an unchanged parameter.
         """
         return self._get_attribute('unchangedInitial')
     @UnchangedInitial.setter
@@ -3480,10 +3480,10 @@ class TestConfig(Base):
 
     @property
     def UnchangedValueList(self):
-        """A list of variable parameter values that are unchanged.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A list of variable parameter values that are unchanged.
         """
         return self._get_attribute('unchangedValueList')
     @UnchangedValueList.setter
@@ -3492,10 +3492,10 @@ class TestConfig(Base):
 
     @property
     def UsePercentOffsets(self):
-        """If true, sets the offset value in percentage.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, sets the offset value in percentage.
         """
         return self._get_attribute('usePercentOffsets')
     @UsePercentOffsets.setter
@@ -3504,10 +3504,10 @@ class TestConfig(Base):
 
     @property
     def UseTiLoss(self):
-        """Use loss across Rx Ports
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Use loss across Rx Ports
         """
         return self._get_attribute('useTiLoss')
     @UseTiLoss.setter
@@ -3515,313 +3515,316 @@ class TestConfig(Base):
         self._set_attribute('useTiLoss', value)
 
     def update(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTiLoss=None, BinaryTolerance=None, Binary_delay_enableAccLoss=None, Binary_delay_modeAccLoss=None, Binary_delay_scaleAccLoss=None, Binary_delay_thresholdAccLoss=None, Binary_flooded_enableAccLoss=None, Binary_flooded_thresholdAccLoss=None, Binary_integrity_enableAccLoss=None, Binary_integrity_thresholdAccLoss=None, Binary_latency_enableAccLoss=None, Binary_latency_modeAccLoss=None, Binary_latency_scaleAccLoss=None, Binary_latency_thresholdAccLoss=None, Binary_seq_enableAccLoss=None, Binary_seq_modeAccLoss=None, Binary_seq_thresholdAccLoss=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTiLoss=None, ComboTolerance=None, Combo_delay_enableAccLoss=None, Combo_delay_modeAccLoss=None, Combo_delay_scaleAccLoss=None, Combo_delay_thresholdAccLoss=None, Combo_flooded_enableAccLoss=None, Combo_flooded_thresholdAccLoss=None, Combo_integrity_enableAccLoss=None, Combo_integrity_thresholdAccLoss=None, Combo_latency_enableAccLoss=None, Combo_latency_modeAccLoss=None, Combo_latency_scaleAccLoss=None, Combo_latency_thresholdAccLoss=None, Combo_seq_enableAccLoss=None, Combo_seq_modeAccLoss=None, Combo_seq_thresholdAccLoss=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, CustomTiLoss=None, Custom_binary_delay_enableAccLoss=None, Custom_binary_delay_modeAccLoss=None, Custom_binary_delay_scaleAccLoss=None, Custom_binary_delay_thresholdAccLoss=None, Custom_binary_flooded_enableAccLoss=None, Custom_binary_flooded_thresholdAccLoss=None, Custom_binary_integrity_enableAccLoss=None, Custom_binary_integrity_thresholdAccLoss=None, Custom_binary_latency_enableAccLoss=None, Custom_binary_latency_modeAccLoss=None, Custom_binary_latency_scaleAccLoss=None, Custom_binary_latency_thresholdAccLoss=None, Custom_binary_peak_Backoff=None, Custom_binary_peak_FrameLossUnit=None, Custom_binary_peak_Resolution=None, Custom_binary_peak_Tolerance=None, Custom_binary_peak_initialValue=None, Custom_binary_peak_maxValue=None, Custom_binary_peak_minValue=None, Custom_binary_seq_enableAccLoss=None, Custom_binary_seq_modeAccLoss=None, Custom_binary_seq_thresholdAccLoss=None, Custom_peak_loadType=None, Custom_step_delay_enableAccLoss=None, Custom_step_delay_modeAccLoss=None, Custom_step_delay_scaleAccLoss=None, Custom_step_delay_thresholdAccLoss=None, Custom_step_flooded_enableAccLoss=None, Custom_step_flooded_thresholdAccLoss=None, Custom_step_integrity_enableAccLoss=None, Custom_step_integrity_thresholdAccLoss=None, Custom_step_latency_enableAccLoss=None, Custom_step_latency_modeAccLoss=None, Custom_step_latency_scaleAccLoss=None, Custom_step_latency_thresholdAccLoss=None, Custom_step_peak_FrameLossUnit=None, Custom_step_peak_initialValue=None, Custom_step_peak_maxValue=None, Custom_step_peak_stepTolerance=None, Custom_step_peak_stepValue=None, Custom_step_seq_enableAccLoss=None, Custom_step_seq_modeAccLoss=None, Custom_step_seq_thresholdAccLoss=None, CustompeakvalueList=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableExtraRetriesOnLoss=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, ExtraRetriesOnLoss=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FixedLoadUnit=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameLossUnit=None, FrameOrderingTemp=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, Numtrials=None, PeakLoadingReplicationCount=None, Peak_customLoadUnit=None, Peak_initialStepLoadRate=None, Peak_loadRateList=None, Peak_maxStepLoadRate=None, Peak_rate_loadType=None, Peak_stepLoadUnit=None, Peak_stepStepLoadRate=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickBackoffIteration=None, QuickEnableBackoffIteration=None, QuickEnableSaturationIteration=None, QuickSaturationIteration=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTiLoss=None, QuickSearchTolerance=None, RandomLoadUnit=None, RandomTiLoss=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, SaturationIteration=None, SearchBase=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, SpyderFramesizeList=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTiLoss=None, StepTolerance=None, Step_binary_delay_enableAccLoss=None, Step_binary_delay_modeAccLoss=None, Step_binary_delay_scaleAccLoss=None, Step_binary_delay_thresholdAccLoss=None, Step_binary_flooded_enableAccLoss=None, Step_binary_flooded_thresholdAccLoss=None, Step_binary_integrity_enableAccLoss=None, Step_binary_integrity_thresholdAccLoss=None, Step_binary_latency_enableAccLoss=None, Step_binary_latency_modeAccLoss=None, Step_binary_latency_scaleAccLoss=None, Step_binary_latency_thresholdAccLoss=None, Step_binary_peak_Backoff=None, Step_binary_peak_FrameLossUnit=None, Step_binary_peak_Resolution=None, Step_binary_peak_Tolerance=None, Step_binary_peak_initialValue=None, Step_binary_peak_maxValue=None, Step_binary_peak_minValue=None, Step_binary_seq_enableAccLoss=None, Step_binary_seq_modeAccLoss=None, Step_binary_seq_thresholdAccLoss=None, Step_delay_enableAccLoss=None, Step_delay_modeAccLoss=None, Step_delay_scaleAccLoss=None, Step_delay_thresholdAccLoss=None, Step_flooded_enableAccLoss=None, Step_flooded_thresholdAccLoss=None, Step_integrity_enableAccLoss=None, Step_integrity_thresholdAccLoss=None, Step_latency_enableAccLoss=None, Step_latency_modeAccLoss=None, Step_latency_scaleAccLoss=None, Step_latency_thresholdAccLoss=None, Step_peak_loadType=None, Step_seq_enableAccLoss=None, Step_seq_modeAccLoss=None, Step_seq_thresholdAccLoss=None, Step_step_delay_enableAccLoss=None, Step_step_delay_modeAccLoss=None, Step_step_delay_scaleAccLoss=None, Step_step_delay_thresholdAccLoss=None, Step_step_flooded_enableAccLoss=None, Step_step_flooded_thresholdAccLoss=None, Step_step_integrity_enableAccLoss=None, Step_step_integrity_thresholdAccLoss=None, Step_step_latency_enableAccLoss=None, Step_step_latency_modeAccLoss=None, Step_step_latency_scaleAccLoss=None, Step_step_latency_thresholdAccLoss=None, Step_step_peak_FrameLossUnit=None, Step_step_peak_initialValue=None, Step_step_peak_maxValue=None, Step_step_peak_stepTolerance=None, Step_step_peak_stepValue=None, Step_step_seq_enableAccLoss=None, Step_step_seq_modeAccLoss=None, Step_step_seq_thresholdAccLoss=None, StopTestOnHighLoss=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedInitial=None, UnchangedValueList=None, UsePercentOffsets=None, UseTiLoss=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
-            BinaryBackoff (number): Specifies the percentage of binary backoff.
-            BinaryFrameLossUnit (str(%|frames)): The frame loss unit for traffic in binary.
-            BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The load unit value in binary. Possible values include:
-            BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-            BinarySearchType (str(linear|perFlow|perPort|perTrafficItem)): The binary search type value. Possible values include:
-            BinaryTiLoss (bool): Use loss across Rx Ports
-            BinaryTolerance (number): The binary tolerance level.
-            Binary_delay_enableAccLoss (bool): NOT DEFINED
-            Binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Binary_delay_thresholdAccLoss (number): NOT DEFINED
-            Binary_flooded_enableAccLoss (bool): NOT DEFINED
-            Binary_flooded_thresholdAccLoss (number): NOT DEFINED
-            Binary_integrity_enableAccLoss (bool): NOT DEFINED
-            Binary_integrity_thresholdAccLoss (number): NOT DEFINED
-            Binary_latency_enableAccLoss (bool): NOT DEFINED
-            Binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Binary_latency_thresholdAccLoss (number): NOT DEFINED
-            Binary_seq_enableAccLoss (bool): NOT DEFINED
-            Binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Binary_seq_thresholdAccLoss (number): NOT DEFINED
-            BurstSize (number): The number of packets that are sent in a burst.
-            CalculateJitter (bool): If true, calculates jitter.
-            CalculateLatency (bool): If true, calculates the latency.
-            ComboBackoff (number): The backoff combination of the test configuration.
-            ComboFrameLossUnit (str(%|frames)): The frame loss unit for traffic in binary.
-            ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The combination of load units. Possible values include:
-            ComboResolution (number): The combined resolution value.
-            ComboTiLoss (bool): Use loss across Rx Ports
-            ComboTolerance (number): The combined tolerance level.
-            Combo_delay_enableAccLoss (bool): NOT DEFINED
-            Combo_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Combo_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Combo_delay_thresholdAccLoss (number): NOT DEFINED
-            Combo_flooded_enableAccLoss (bool): NOT DEFINED
-            Combo_flooded_thresholdAccLoss (number): NOT DEFINED
-            Combo_integrity_enableAccLoss (bool): NOT DEFINED
-            Combo_integrity_thresholdAccLoss (number): NOT DEFINED
-            Combo_latency_enableAccLoss (bool): NOT DEFINED
-            Combo_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Combo_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Combo_latency_thresholdAccLoss (number): NOT DEFINED
-            Combo_seq_enableAccLoss (bool): NOT DEFINED
-            Combo_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Combo_seq_thresholdAccLoss (number): NOT DEFINED
-            CountRandomFrameSize (number): Randomly counts the frame size.
-            CountRandomIpRatio (number): Sets the count of the random ip ratio loop
-            CountRandomLoadRate (number): Randomly counts the load rate.
-            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit. Possible values include:
-            CustomTiLoss (bool): Use loss across Rx Ports
-            Custom_binary_delay_enableAccLoss (bool): NOT DEFINED
-            Custom_binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Custom_binary_delay_thresholdAccLoss (number): NOT DEFINED
-            Custom_binary_flooded_enableAccLoss (bool): NOT DEFINED
-            Custom_binary_flooded_thresholdAccLoss (number): NOT DEFINED
-            Custom_binary_integrity_enableAccLoss (bool): NOT DEFINED
-            Custom_binary_integrity_thresholdAccLoss (number): NOT DEFINED
-            Custom_binary_latency_enableAccLoss (bool): NOT DEFINED
-            Custom_binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Custom_binary_latency_thresholdAccLoss (number): NOT DEFINED
-            Custom_binary_peak_Backoff (number): NOT DEFINED
-            Custom_binary_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
-            Custom_binary_peak_Resolution (number): NOT DEFINED
-            Custom_binary_peak_Tolerance (number): NOT DEFINED
-            Custom_binary_peak_initialValue (number): NOT DEFINED
-            Custom_binary_peak_maxValue (number): NOT DEFINED
-            Custom_binary_peak_minValue (number): NOT DEFINED
-            Custom_binary_seq_enableAccLoss (bool): NOT DEFINED
-            Custom_binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_binary_seq_thresholdAccLoss (number): NOT DEFINED
-            Custom_peak_loadType (str(binary|custom|step)): NOT DEFINED
-            Custom_step_delay_enableAccLoss (bool): NOT DEFINED
-            Custom_step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Custom_step_delay_thresholdAccLoss (number): NOT DEFINED
-            Custom_step_flooded_enableAccLoss (bool): NOT DEFINED
-            Custom_step_flooded_thresholdAccLoss (number): NOT DEFINED
-            Custom_step_integrity_enableAccLoss (bool): NOT DEFINED
-            Custom_step_integrity_thresholdAccLoss (number): NOT DEFINED
-            Custom_step_latency_enableAccLoss (bool): NOT DEFINED
-            Custom_step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Custom_step_latency_thresholdAccLoss (number): NOT DEFINED
-            Custom_step_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
-            Custom_step_peak_initialValue (number): NOT DEFINED
-            Custom_step_peak_maxValue (number): NOT DEFINED
-            Custom_step_peak_stepTolerance (number): NOT DEFINED
-            Custom_step_peak_stepValue (number): NOT DEFINED
-            Custom_step_seq_enableAccLoss (bool): NOT DEFINED
-            Custom_step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Custom_step_seq_thresholdAccLoss (number): NOT DEFINED
-            CustompeakvalueList (str): NOT DEFINED
-            DelayAfterTransmit (number): Specifies the amount of delay after every transmit
-            DetailedResultsEnabled (bool): If true, it enables the detailed results for the fully meshed case
-            Duration (number): sec
-            EnableBackoffIteration (bool): If true, enables back off iteration test.
-            EnableDataIntegrity (bool): If true, enables data integrity test.
-            EnableExtraIterations (bool): If true, more iterations are performed.
-            EnableExtraRetriesOnLoss (bool): 
-            EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
-            EnableLayer1Rate (bool): NOT DEFINED
-            EnableMinFrameSize (bool): If Enabled, The minimum size of the frame is used .
-            EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
-            EnableSaturationIteration (bool): If true, SaturationIteration in enabled .
-            EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
-            ExtraIterationOffsets (str): This enables the test to run an extra iteration.
-            ExtraRetriesOnLoss (number): 
-            FastConvergenceDuration (number): sec
-            FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
-            FixedLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Possible values include:
-            FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
-            ForceRegenerate (bool): Initiates a forced regeneration.
-            FrameLossUnit (str): The frame loss unit for traffic.
-            FrameOrderingTemp (str(noOrdering|peakLoading|unchanged|val2889Ordering)): NOT DEFINED
-            FrameSizeMode (str(custom|customlist|increment|random|unchanged)): This attribute is the frame size mode for the Quad Gaussian. Possible values includes:
-            FramesPerBurstGap (number): The number of frames to be sent after each burst.
-            Framesize (number): Bytes
-            FramesizeFixedValue (number): The fixed value of framesize.
-            FramesizeImixList (str): The list of the available lmix frame size.
-            FramesizeList (list(str)): The list of the available frame size.
-            Gap (number): The gap in transmission of frames.
-            GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
-            ImixAdd (str): Adds an imix data.
-            ImixData (str): Displays the imix Data.
-            ImixDelete (str): Deletes the imix data.
-            ImixDistribution (str(bwpercentage|weight)): Specifies the imix distribution unit.
-            ImixEnabled (bool): If True, Enables the imix value.
-            ImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Specefies the imix templates.
-            ImixTrafficType (str): Displays the imix traffic type.
-            IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Possible values include:
-            InitialBinaryLoadRate (number): The initial binary value of the load rate.
-            InitialComboLoadRate (number): The initial combination value of the load rate .
-            InitialIncrementLoadRate (number): The initial incremental value of the load rate.
-            InitialStepLoadRate (number): The initial step value of the load rate.
-            IpRatioMode (str(custom|fixed|increment|random)): Sets the ip ratio mode
-            Ipv4RatioList (str): Sets the ipv4 ratio list
-            Ipv4rate (number): The rate at which IPv4 traffic is sent.
-            Ipv6RatioList (str): Sets the ipv6 ratio list
-            Ipv6rate (number): The rate at which IPv6 traffic is sent.
-            LatencyBins (str): Sets the latency bins statistics
-            LatencyBinsEnabled (bool): Enables the latency bins statistics
-            LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): The type of latency. Possible values include:
-            LoadRateList (str): The list of Load Rate.
-            LoadRateValue (number): The value of the load rate.
-            LoadType (str(binary|combo|custom|quickSearch|random|step|unchanged)): Possible values include:
-            MapType (str): The mapping type.
-            MaxBinaryLoadRate (number): The upper bound of the iteration rates for each frame size during a binary search.
-            MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
-            MaxIncrementFrameSize (number): It signifies the maximum increment frame size.
-            MaxIncrementIpv4Ratio (str): Sets the maximum increment value for the ipv4 ratio
-            MaxIncrementIpv6Ratio (str): Sets the maximum increment value for the ipv6 ratio
-            MaxIncrementLoadRate (number): It signifies the maximum increment load rate value.
-            MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
-            MaxRandomFrameSize (number): It signifies the maximum random frame size value.
-            MaxRandomIpv4Ratio (str): Sets the maximum radom value for the ipv4 ratio
-            MaxRandomIpv6Ratio (str): Sets the maximum random value for the ipv6 ratio
-            MaxRandomLoadRate (number): It signifies the maximum random load rate value.
-            MaxStepLoadRate (number): It signifies the maximum step value for load rate.
-            MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
-            MinComboLoadRate (number): The minimum combination load rate.
-            MinFpsRate (number): The rate at which minimum frames are sent per second.
-            MinIncrementFrameSize (number): It signifies the minimum increment frame size.
-            MinIncrementIpv4Ratio (str): Sets the minimum increment value for the ipv4 ratio
-            MinIncrementIpv6Ratio (str): Sets the minimum increment value for the ipv6 ratio
-            MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
-            MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
-            MinRandomFrameSize (number): The minimum random frame size to be sent.
-            MinRandomIpv4Ratio (str): Sets the minimum random value for the ipv4 ratio
-            MinRandomIpv6Ratio (str): Sets the minimum random value for the ipv6 ratio
-            MinRandomLoadRate (number): The minimum random value of the load rate.
-            Numtrials (number): The integer value that states the number of trials permitted.
-            PeakLoadingReplicationCount (number): NOT DEFINED
-            Peak_customLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            Peak_initialStepLoadRate (number): NOT DEFINED
-            Peak_loadRateList (str): NOT DEFINED
-            Peak_maxStepLoadRate (number): NOT DEFINED
-            Peak_rate_loadType (str(custom|step)): NOT DEFINED
-            Peak_stepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
-            Peak_stepStepLoadRate (number): NOT DEFINED
-            PerTrafficResults (bool): 
-            PercentMaxRate (number): The maximum rate percentage.
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
-            PortDelayValue (number): Sets the port delay value
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            QuickBackoffIteration (number): Sets the quicksearch backoff iteration
-            QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
-            QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
-            QuickSaturationIteration (number): Sets the quick search saturation iteration
-            QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
-            QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit
-            QuickSearchResolution (number): Sets the quick search resolution
-            QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): Sets the quick search type
-            QuickSearchTiLoss (bool): Use loss across Rx Ports
-            QuickSearchTolerance (number): Sets the quick search tolerance
-            RandomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The random values of the load unit. Possible values include:
-            RandomTiLoss (bool): Use loss across Rx Ports
-            RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): Possible values include:
-            ReportSequenceError (bool): Reports sequence errors in the test result.
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The reported throughput rate unit values. Possible values include:
-            Resolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops .
-            Rfc2544ImixDataQoS (bool): If true, it uses the same frame data qos
-            Rfc2889ordering (str(noOrdering|peakLoading|unchanged|val2889Ordering)): If true, indicates frame ordering by Rfc2889.
-            SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
-            SearchBase (str(rate|replicationCount)): NOT DEFINED
-            SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
-            ShowDetailedBinaryResults (bool): NOT DEFINED
-            SpyderFramesizeList (list(dict(arg1:number,arg2:str[None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=customImix|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=imix]))): 
-            StaggeredStart (bool): Starts test with a stagger.
-            StepComboLoadRate (number): The step value of combination load rate.
-            StepFrameLossUnit (str(%|frames)): The frame loss unit.
-            StepIncrementFrameSize (number): The traffic step increment frame size.
-            StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented
-            StepIncrementIpv6Ratio (str): The step in which the ipv6 ratio loop is incremented
-            StepIncrementLoadRate (number): The incremental step value of the load rate.
-            StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit. Possible values include:
-            StepStepLoadRate (number): The incremental step value of load rate.
-            StepTiLoss (bool): Use loss across Rx Ports
-            StepTolerance (number): The step value of the tolerance level.
-            Step_binary_delay_enableAccLoss (bool): NOT DEFINED
-            Step_binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_binary_delay_thresholdAccLoss (number): NOT DEFINED
-            Step_binary_flooded_enableAccLoss (bool): NOT DEFINED
-            Step_binary_flooded_thresholdAccLoss (number): NOT DEFINED
-            Step_binary_integrity_enableAccLoss (bool): NOT DEFINED
-            Step_binary_integrity_thresholdAccLoss (number): NOT DEFINED
-            Step_binary_latency_enableAccLoss (bool): NOT DEFINED
-            Step_binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_binary_latency_thresholdAccLoss (number): NOT DEFINED
-            Step_binary_peak_Backoff (number): NOT DEFINED
-            Step_binary_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
-            Step_binary_peak_Resolution (number): NOT DEFINED
-            Step_binary_peak_Tolerance (number): NOT DEFINED
-            Step_binary_peak_initialValue (number): NOT DEFINED
-            Step_binary_peak_maxValue (number): NOT DEFINED
-            Step_binary_peak_minValue (number): NOT DEFINED
-            Step_binary_seq_enableAccLoss (bool): NOT DEFINED
-            Step_binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_binary_seq_thresholdAccLoss (number): NOT DEFINED
-            Step_delay_enableAccLoss (bool): NOT DEFINED
-            Step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_delay_thresholdAccLoss (number): NOT DEFINED
-            Step_flooded_enableAccLoss (bool): NOT DEFINED
-            Step_flooded_thresholdAccLoss (number): NOT DEFINED
-            Step_integrity_enableAccLoss (bool): NOT DEFINED
-            Step_integrity_thresholdAccLoss (number): NOT DEFINED
-            Step_latency_enableAccLoss (bool): NOT DEFINED
-            Step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_latency_thresholdAccLoss (number): NOT DEFINED
-            Step_peak_loadType (str(binary|custom|step)): NOT DEFINED
-            Step_seq_enableAccLoss (bool): NOT DEFINED
-            Step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_seq_thresholdAccLoss (number): NOT DEFINED
-            Step_step_delay_enableAccLoss (bool): NOT DEFINED
-            Step_step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_step_delay_thresholdAccLoss (number): NOT DEFINED
-            Step_step_flooded_enableAccLoss (bool): NOT DEFINED
-            Step_step_flooded_thresholdAccLoss (number): NOT DEFINED
-            Step_step_integrity_enableAccLoss (bool): NOT DEFINED
-            Step_step_integrity_thresholdAccLoss (number): NOT DEFINED
-            Step_step_latency_enableAccLoss (bool): NOT DEFINED
-            Step_step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
-            Step_step_latency_thresholdAccLoss (number): NOT DEFINED
-            Step_step_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
-            Step_step_peak_initialValue (number): NOT DEFINED
-            Step_step_peak_maxValue (number): NOT DEFINED
-            Step_step_peak_stepTolerance (number): NOT DEFINED
-            Step_step_peak_stepValue (number): NOT DEFINED
-            Step_step_seq_enableAccLoss (bool): NOT DEFINED
-            Step_step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
-            Step_step_seq_thresholdAccLoss (number): NOT DEFINED
-            StopTestOnHighLoss (number): It stops test on high loss.
-            SupportedTrafficTypes (str): The supported traffic types.
-            Tolerance (number): The tolerance value.
-            TrafficType (str(burstyLoading|constantLoading)): It signifies the traffic type for the protocol. Possible values include:
-            TxDelay (number): The minimum delay between successive packets.
-            UnchangedInitial (str(False|True)): The first value of an unchanged parameter.
-            UnchangedValueList (str): A list of variable parameter values that are unchanged.
-            UsePercentOffsets (bool): If true, sets the offset value in percentage.
-            UseTiLoss (str): Use loss across Rx Ports
+        Args
+        ----
+        - BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+        - BinaryBackoff (number): Specifies the percentage of binary backoff.
+        - BinaryFrameLossUnit (str(% | frames)): The frame loss unit for traffic in binary.
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The load unit value in binary. Possible values include:
+        - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+        - BinarySearchType (str(linear | perFlow | perPort | perTrafficItem)): The binary search type value. Possible values include:
+        - BinaryTiLoss (bool): Use loss across Rx Ports
+        - BinaryTolerance (number): The binary tolerance level.
+        - Binary_delay_enableAccLoss (bool): NOT DEFINED
+        - Binary_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Binary_delay_thresholdAccLoss (number): NOT DEFINED
+        - Binary_flooded_enableAccLoss (bool): NOT DEFINED
+        - Binary_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Binary_integrity_enableAccLoss (bool): NOT DEFINED
+        - Binary_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Binary_latency_enableAccLoss (bool): NOT DEFINED
+        - Binary_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Binary_latency_thresholdAccLoss (number): NOT DEFINED
+        - Binary_seq_enableAccLoss (bool): NOT DEFINED
+        - Binary_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_seq_thresholdAccLoss (number): NOT DEFINED
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CalculateJitter (bool): If true, calculates jitter.
+        - CalculateLatency (bool): If true, calculates the latency.
+        - ComboBackoff (number): The backoff combination of the test configuration.
+        - ComboFrameLossUnit (str(% | frames)): The frame loss unit for traffic in binary.
+        - ComboLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The combination of load units. Possible values include:
+        - ComboResolution (number): The combined resolution value.
+        - ComboTiLoss (bool): Use loss across Rx Ports
+        - ComboTolerance (number): The combined tolerance level.
+        - Combo_delay_enableAccLoss (bool): NOT DEFINED
+        - Combo_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Combo_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Combo_delay_thresholdAccLoss (number): NOT DEFINED
+        - Combo_flooded_enableAccLoss (bool): NOT DEFINED
+        - Combo_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Combo_integrity_enableAccLoss (bool): NOT DEFINED
+        - Combo_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Combo_latency_enableAccLoss (bool): NOT DEFINED
+        - Combo_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Combo_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Combo_latency_thresholdAccLoss (number): NOT DEFINED
+        - Combo_seq_enableAccLoss (bool): NOT DEFINED
+        - Combo_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Combo_seq_thresholdAccLoss (number): NOT DEFINED
+        - CountRandomFrameSize (number): Randomly counts the frame size.
+        - CountRandomIpRatio (number): Sets the count of the random ip ratio loop
+        - CountRandomLoadRate (number): Randomly counts the load rate.
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit. Possible values include:
+        - CustomTiLoss (bool): Use loss across Rx Ports
+        - Custom_binary_delay_enableAccLoss (bool): NOT DEFINED
+        - Custom_binary_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_binary_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Custom_binary_delay_thresholdAccLoss (number): NOT DEFINED
+        - Custom_binary_flooded_enableAccLoss (bool): NOT DEFINED
+        - Custom_binary_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Custom_binary_integrity_enableAccLoss (bool): NOT DEFINED
+        - Custom_binary_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Custom_binary_latency_enableAccLoss (bool): NOT DEFINED
+        - Custom_binary_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_binary_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Custom_binary_latency_thresholdAccLoss (number): NOT DEFINED
+        - Custom_binary_peak_Backoff (number): NOT DEFINED
+        - Custom_binary_peak_FrameLossUnit (str(% | frames)): NOT DEFINED
+        - Custom_binary_peak_Resolution (number): NOT DEFINED
+        - Custom_binary_peak_Tolerance (number): NOT DEFINED
+        - Custom_binary_peak_initialValue (number): NOT DEFINED
+        - Custom_binary_peak_maxValue (number): NOT DEFINED
+        - Custom_binary_peak_minValue (number): NOT DEFINED
+        - Custom_binary_seq_enableAccLoss (bool): NOT DEFINED
+        - Custom_binary_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_binary_seq_thresholdAccLoss (number): NOT DEFINED
+        - Custom_peak_loadType (str(binary | custom | step)): NOT DEFINED
+        - Custom_step_delay_enableAccLoss (bool): NOT DEFINED
+        - Custom_step_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_step_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Custom_step_delay_thresholdAccLoss (number): NOT DEFINED
+        - Custom_step_flooded_enableAccLoss (bool): NOT DEFINED
+        - Custom_step_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Custom_step_integrity_enableAccLoss (bool): NOT DEFINED
+        - Custom_step_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Custom_step_latency_enableAccLoss (bool): NOT DEFINED
+        - Custom_step_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_step_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Custom_step_latency_thresholdAccLoss (number): NOT DEFINED
+        - Custom_step_peak_FrameLossUnit (str(% | frames)): NOT DEFINED
+        - Custom_step_peak_initialValue (number): NOT DEFINED
+        - Custom_step_peak_maxValue (number): NOT DEFINED
+        - Custom_step_peak_stepTolerance (number): NOT DEFINED
+        - Custom_step_peak_stepValue (number): NOT DEFINED
+        - Custom_step_seq_enableAccLoss (bool): NOT DEFINED
+        - Custom_step_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Custom_step_seq_thresholdAccLoss (number): NOT DEFINED
+        - CustompeakvalueList (str): NOT DEFINED
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit
+        - DetailedResultsEnabled (bool): If true, it enables the detailed results for the fully meshed case
+        - Duration (number): sec
+        - EnableBackoffIteration (bool): If true, enables back off iteration test.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableExtraIterations (bool): If true, more iterations are performed.
+        - EnableExtraRetriesOnLoss (bool): 
+        - EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If Enabled, The minimum size of the frame is used .
+        - EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
+        - EnableSaturationIteration (bool): If true, SaturationIteration in enabled .
+        - EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
+        - ExtraIterationOffsets (str): This enables the test to run an extra iteration.
+        - ExtraRetriesOnLoss (number): 
+        - FastConvergenceDuration (number): sec
+        - FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
+        - FixedLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Possible values include:
+        - FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameLossUnit (str): The frame loss unit for traffic.
+        - FrameOrderingTemp (str(noOrdering | peakLoading | unchanged | val2889Ordering)): NOT DEFINED
+        - FrameSizeMode (str(custom | customlist | increment | random | unchanged)): This attribute is the frame size mode for the Quad Gaussian. Possible values includes:
+        - FramesPerBurstGap (number): The number of frames to be sent after each burst.
+        - Framesize (number): Bytes
+        - FramesizeFixedValue (number): The fixed value of framesize.
+        - FramesizeImixList (str): The list of the available lmix frame size.
+        - FramesizeList (list(str)): The list of the available frame size.
+        - Gap (number): The gap in transmission of frames.
+        - GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+        - ImixAdd (str): Adds an imix data.
+        - ImixData (str): Displays the imix Data.
+        - ImixDelete (str): Deletes the imix data.
+        - ImixDistribution (str(bwpercentage | weight)): Specifies the imix distribution unit.
+        - ImixEnabled (bool): If True, Enables the imix value.
+        - ImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Specefies the imix templates.
+        - ImixTrafficType (str): Displays the imix traffic type.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Possible values include:
+        - InitialBinaryLoadRate (number): The initial binary value of the load rate.
+        - InitialComboLoadRate (number): The initial combination value of the load rate .
+        - InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+        - InitialStepLoadRate (number): The initial step value of the load rate.
+        - IpRatioMode (str(custom | fixed | increment | random)): Sets the ip ratio mode
+        - Ipv4RatioList (str): Sets the ipv4 ratio list
+        - Ipv4rate (number): The rate at which IPv4 traffic is sent.
+        - Ipv6RatioList (str): Sets the ipv6 ratio list
+        - Ipv6rate (number): The rate at which IPv6 traffic is sent.
+        - LatencyBins (str): Sets the latency bins statistics
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): The type of latency. Possible values include:
+        - LoadRateList (str): The list of Load Rate.
+        - LoadRateValue (number): The value of the load rate.
+        - LoadType (str(binary | combo | custom | quickSearch | random | step | unchanged)): Possible values include:
+        - MapType (str): The mapping type.
+        - MaxBinaryLoadRate (number): The upper bound of the iteration rates for each frame size during a binary search.
+        - MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
+        - MaxIncrementFrameSize (number): It signifies the maximum increment frame size.
+        - MaxIncrementIpv4Ratio (str): Sets the maximum increment value for the ipv4 ratio
+        - MaxIncrementIpv6Ratio (str): Sets the maximum increment value for the ipv6 ratio
+        - MaxIncrementLoadRate (number): It signifies the maximum increment load rate value.
+        - MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
+        - MaxRandomFrameSize (number): It signifies the maximum random frame size value.
+        - MaxRandomIpv4Ratio (str): Sets the maximum radom value for the ipv4 ratio
+        - MaxRandomIpv6Ratio (str): Sets the maximum random value for the ipv6 ratio
+        - MaxRandomLoadRate (number): It signifies the maximum random load rate value.
+        - MaxStepLoadRate (number): It signifies the maximum step value for load rate.
+        - MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+        - MinComboLoadRate (number): The minimum combination load rate.
+        - MinFpsRate (number): The rate at which minimum frames are sent per second.
+        - MinIncrementFrameSize (number): It signifies the minimum increment frame size.
+        - MinIncrementIpv4Ratio (str): Sets the minimum increment value for the ipv4 ratio
+        - MinIncrementIpv6Ratio (str): Sets the minimum increment value for the ipv6 ratio
+        - MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+        - MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - MinRandomIpv4Ratio (str): Sets the minimum random value for the ipv4 ratio
+        - MinRandomIpv6Ratio (str): Sets the minimum random value for the ipv6 ratio
+        - MinRandomLoadRate (number): The minimum random value of the load rate.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - PeakLoadingReplicationCount (number): NOT DEFINED
+        - Peak_customLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - Peak_initialStepLoadRate (number): NOT DEFINED
+        - Peak_loadRateList (str): NOT DEFINED
+        - Peak_maxStepLoadRate (number): NOT DEFINED
+        - Peak_rate_loadType (str(custom | step)): NOT DEFINED
+        - Peak_stepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
+        - Peak_stepStepLoadRate (number): NOT DEFINED
+        - PerTrafficResults (bool): 
+        - PercentMaxRate (number): The maximum rate percentage.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - QuickBackoffIteration (number): Sets the quicksearch backoff iteration
+        - QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
+        - QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
+        - QuickSaturationIteration (number): Sets the quick search saturation iteration
+        - QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
+        - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Sets the quick search load unit
+        - QuickSearchResolution (number): Sets the quick search resolution
+        - QuickSearchSearchType (str(linear | perFlow | perPort | perTrafficItem)): Sets the quick search type
+        - QuickSearchTiLoss (bool): Use loss across Rx Ports
+        - QuickSearchTolerance (number): Sets the quick search tolerance
+        - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The random values of the load unit. Possible values include:
+        - RandomTiLoss (bool): Use loss across Rx Ports
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): Possible values include:
+        - ReportSequenceError (bool): Reports sequence errors in the test result.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The reported throughput rate unit values. Possible values include:
+        - Resolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops .
+        - Rfc2544ImixDataQoS (bool): If true, it uses the same frame data qos
+        - Rfc2889ordering (str(noOrdering | peakLoading | unchanged | val2889Ordering)): If true, indicates frame ordering by Rfc2889.
+        - SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
+        - SearchBase (str(rate | replicationCount)): NOT DEFINED
+        - SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix]))): 
+        - StaggeredStart (bool): Starts test with a stagger.
+        - StepComboLoadRate (number): The step value of combination load rate.
+        - StepFrameLossUnit (str(% | frames)): The frame loss unit.
+        - StepIncrementFrameSize (number): The traffic step increment frame size.
+        - StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented
+        - StepIncrementIpv6Ratio (str): The step in which the ipv6 ratio loop is incremented
+        - StepIncrementLoadRate (number): The incremental step value of the load rate.
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit. Possible values include:
+        - StepStepLoadRate (number): The incremental step value of load rate.
+        - StepTiLoss (bool): Use loss across Rx Ports
+        - StepTolerance (number): The step value of the tolerance level.
+        - Step_binary_delay_enableAccLoss (bool): NOT DEFINED
+        - Step_binary_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_binary_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_binary_delay_thresholdAccLoss (number): NOT DEFINED
+        - Step_binary_flooded_enableAccLoss (bool): NOT DEFINED
+        - Step_binary_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Step_binary_integrity_enableAccLoss (bool): NOT DEFINED
+        - Step_binary_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Step_binary_latency_enableAccLoss (bool): NOT DEFINED
+        - Step_binary_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_binary_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_binary_latency_thresholdAccLoss (number): NOT DEFINED
+        - Step_binary_peak_Backoff (number): NOT DEFINED
+        - Step_binary_peak_FrameLossUnit (str(% | frames)): NOT DEFINED
+        - Step_binary_peak_Resolution (number): NOT DEFINED
+        - Step_binary_peak_Tolerance (number): NOT DEFINED
+        - Step_binary_peak_initialValue (number): NOT DEFINED
+        - Step_binary_peak_maxValue (number): NOT DEFINED
+        - Step_binary_peak_minValue (number): NOT DEFINED
+        - Step_binary_seq_enableAccLoss (bool): NOT DEFINED
+        - Step_binary_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_binary_seq_thresholdAccLoss (number): NOT DEFINED
+        - Step_delay_enableAccLoss (bool): NOT DEFINED
+        - Step_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_delay_thresholdAccLoss (number): NOT DEFINED
+        - Step_flooded_enableAccLoss (bool): NOT DEFINED
+        - Step_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Step_integrity_enableAccLoss (bool): NOT DEFINED
+        - Step_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Step_latency_enableAccLoss (bool): NOT DEFINED
+        - Step_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_latency_thresholdAccLoss (number): NOT DEFINED
+        - Step_peak_loadType (str(binary | custom | step)): NOT DEFINED
+        - Step_seq_enableAccLoss (bool): NOT DEFINED
+        - Step_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_seq_thresholdAccLoss (number): NOT DEFINED
+        - Step_step_delay_enableAccLoss (bool): NOT DEFINED
+        - Step_step_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_step_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_step_delay_thresholdAccLoss (number): NOT DEFINED
+        - Step_step_flooded_enableAccLoss (bool): NOT DEFINED
+        - Step_step_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Step_step_integrity_enableAccLoss (bool): NOT DEFINED
+        - Step_step_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Step_step_latency_enableAccLoss (bool): NOT DEFINED
+        - Step_step_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_step_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Step_step_latency_thresholdAccLoss (number): NOT DEFINED
+        - Step_step_peak_FrameLossUnit (str(% | frames)): NOT DEFINED
+        - Step_step_peak_initialValue (number): NOT DEFINED
+        - Step_step_peak_maxValue (number): NOT DEFINED
+        - Step_step_peak_stepTolerance (number): NOT DEFINED
+        - Step_step_peak_stepValue (number): NOT DEFINED
+        - Step_step_seq_enableAccLoss (bool): NOT DEFINED
+        - Step_step_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Step_step_seq_thresholdAccLoss (number): NOT DEFINED
+        - StopTestOnHighLoss (number): It stops test on high loss.
+        - SupportedTrafficTypes (str): The supported traffic types.
+        - Tolerance (number): The tolerance value.
+        - TrafficType (str(burstyLoading | constantLoading)): It signifies the traffic type for the protocol. Possible values include:
+        - TxDelay (number): The minimum delay between successive packets.
+        - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.
+        - UnchangedValueList (str): A list of variable parameter values that are unchanged.
+        - UsePercentOffsets (bool): If true, sets the offset value in percentage.
+        - UseTiLoss (str): Use loss across Rx Ports
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -3829,9 +3832,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -3839,12 +3843,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -3854,9 +3856,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -3866,12 +3869,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -3881,24 +3882,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -3910,18 +3904,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -3933,9 +3925,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -3945,12 +3938,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

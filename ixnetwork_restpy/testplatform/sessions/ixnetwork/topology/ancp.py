@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ancp(Base):
     """ANCP plugin
-    The Ancp class encapsulates a list of ancp resources that is be managed by the user.
+    The Ancp class encapsulates a list of ancp resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ancp.find() method.
-    The list can be managed by the user by using the Ancp.add() and Ancp.remove() methods.
+    The list can be managed by using the Ancp.add() and Ancp.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Ancp(Base):
 
     @property
     def TlvProfile(self):
-        """An instance of the TlvProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile): An instance of the TlvProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile import TlvProfile
         return TlvProfile(self)
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -64,82 +64,87 @@ class Ancp(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DynamicTopologyDiscovery(self):
-        """Enable/Disable Dynamic Topology Discovery capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dynamicTopologyDiscovery')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable Dynamic Topology Discovery capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dynamicTopologyDiscovery'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def KeepAliveRetries(self):
-        """Number of times ANCP adjacency mechanism send ANCP keep-alive packets before closing the TCP connections
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('keepAliveRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times ANCP adjacency mechanism send ANCP keep-alive packets before closing the TCP connections
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('keepAliveRetries'))
 
     @property
     def KeepAliveTimeout(self):
-        """Timer value in units of 100ms used in the adjacency protocol with the peer
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('keepAliveTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timer value in units of 100ms used in the adjacency protocol with the peer
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('keepAliveTimeout'))
 
     @property
     def LineConfiguration(self):
-        """Enable/Disable DSL Line Configuration capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lineConfiguration')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable DSL Line Configuration capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lineConfiguration'))
 
     @property
     def MaxRedialAttempts(self):
-        """Number of attempts to establish ANCP adjacency in case connection is lost
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxRedialAttempts')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of attempts to establish ANCP adjacency in case connection is lost
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxRedialAttempts'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -148,10 +153,10 @@ class Ancp(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -160,55 +165,59 @@ class Ancp(Base):
 
     @property
     def NasIp(self):
-        """Ip address of BRAS listening for ANCP connections
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nasIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Ip address of BRAS listening for ANCP connections
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nasIp'))
 
     @property
     def NasServicePort(self):
-        """BRAS TCP port number used to listen for ANCP connections
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nasServicePort')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BRAS TCP port number used to listen for ANCP connections
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nasServicePort'))
 
     @property
     def PartitionId(self):
-        """Partition ID to be used in adjacency negotiation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('partitionId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Partition ID to be used in adjacency negotiation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('partitionId'))
 
     @property
     def RemoteLoopback(self):
-        """Enable/Disable DSL Remote Line Conectivity Testing Capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteLoopback')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable DSL Remote Line Conectivity Testing Capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteLoopback'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -217,139 +226,156 @@ class Ancp(Base):
 
     @property
     def Standard(self):
-        """Define ANCP Standard to be used.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('standard')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Define ANCP Standard to be used.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('standard'))
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TransactionalMulticast(self):
-        """Enable/Disable advertise Transactional Multicast capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('transactionalMulticast')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable advertise Transactional Multicast capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('transactionalMulticast'))
 
     @property
     def TriggerAccessLoopEvents(self):
-        """Enable sending Port Up/ Port Down events when AN is Started / Stopped. Does not apply if flapping is enabled on the Access Loop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('triggerAccessLoopEvents')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable sending Port Up/ Port Down events when AN is Started / Stopped. Does not apply if flapping is enabled on the Access Loop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('triggerAccessLoopEvents'))
 
     @property
     def UnlimitedRedial(self):
-        """Limit the Number of attempts to establish ANCP adjacency in case connection is lost
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unlimitedRedial')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Limit the Number of attempts to establish ANCP adjacency in case connection is lost
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unlimitedRedial'))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of ancp on the server.
+        """Updates ancp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new ancp node on the server and retrieves it in this instance.
+        """Adds a new ancp resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved ancp data using find and the newly added ancp data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ancp resources using find and the newly added ancp resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ancp data in this instance from server.
+        """Deletes all the contained ancp resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves ancp data from the server.
+        """Finds and retrieves ancp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ancp data from the server.
-        By default the find method takes no parameters and will retrieve all ancp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ancp resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching ancp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ancp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ancp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ancp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ancp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -358,27 +384,30 @@ class Ancp(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            DynamicTopologyDiscovery (str): optional regex of dynamicTopologyDiscovery
-            KeepAliveRetries (str): optional regex of keepAliveRetries
-            KeepAliveTimeout (str): optional regex of keepAliveTimeout
-            LineConfiguration (str): optional regex of lineConfiguration
-            MaxRedialAttempts (str): optional regex of maxRedialAttempts
-            NasIp (str): optional regex of nasIp
-            NasServicePort (str): optional regex of nasServicePort
-            PartitionId (str): optional regex of partitionId
-            RemoteLoopback (str): optional regex of remoteLoopback
-            Standard (str): optional regex of standard
-            TransactionalMulticast (str): optional regex of transactionalMulticast
-            TriggerAccessLoopEvents (str): optional regex of triggerAccessLoopEvents
-            UnlimitedRedial (str): optional regex of unlimitedRedial
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - DynamicTopologyDiscovery (str): optional regex of dynamicTopologyDiscovery
+        - KeepAliveRetries (str): optional regex of keepAliveRetries
+        - KeepAliveTimeout (str): optional regex of keepAliveTimeout
+        - LineConfiguration (str): optional regex of lineConfiguration
+        - MaxRedialAttempts (str): optional regex of maxRedialAttempts
+        - NasIp (str): optional regex of nasIp
+        - NasServicePort (str): optional regex of nasServicePort
+        - PartitionId (str): optional regex of partitionId
+        - RemoteLoopback (str): optional regex of remoteLoopback
+        - Standard (str): optional regex of standard
+        - TransactionalMulticast (str): optional regex of transactionalMulticast
+        - TriggerAccessLoopEvents (str): optional regex of triggerAccessLoopEvents
+        - UnlimitedRedial (str): optional regex of unlimitedRedial
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -387,22 +416,20 @@ class Ancp(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -414,22 +441,20 @@ class Ancp(Base):
 
         Send RSTACK from selected Access Node.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendRstack()
+        sendRstack(SessionIndices=list)
+        -------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendRstack(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendRstack(SessionIndices=string)
+        ---------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendRstack(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -441,22 +466,20 @@ class Ancp(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -468,22 +491,20 @@ class Ancp(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

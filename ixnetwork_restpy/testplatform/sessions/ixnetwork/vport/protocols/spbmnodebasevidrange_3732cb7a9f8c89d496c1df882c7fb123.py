@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbmNodeBaseVidRange(Base):
     """The SPBM Node Base VLAN ID Range.
-    The SpbmNodeBaseVidRange class encapsulates a list of spbmNodeBaseVidRange resources that is be managed by the user.
+    The SpbmNodeBaseVidRange class encapsulates a list of spbmNodeBaseVidRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbmNodeBaseVidRange.find() method.
-    The list can be managed by the user by using the SpbmNodeBaseVidRange.add() and SpbmNodeBaseVidRange.remove() methods.
+    The list can be managed by using the SpbmNodeBaseVidRange.add() and SpbmNodeBaseVidRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SpbmNodeBaseVidRange(Base):
 
     @property
     def SpbmNodeIsIdRange(self):
-        """An instance of the SpbmNodeIsIdRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_66a4e09ee9e28a4afee3fbd813597d20.SpbmNodeIsIdRange): An instance of the SpbmNodeIsIdRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_66a4e09ee9e28a4afee3fbd813597d20.SpbmNodeIsIdRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_66a4e09ee9e28a4afee3fbd813597d20 import SpbmNodeIsIdRange
         return SpbmNodeIsIdRange(self)
 
     @property
     def BVlanPriority(self):
-        """The user priority of the Base VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user priority of the Base VLAN.
         """
         return self._get_attribute('bVlanPriority')
     @BVlanPriority.setter
@@ -64,10 +64,10 @@ class SpbmNodeBaseVidRange(Base):
 
     @property
     def BVlanTpId(self):
-        """The tag priority identifier for base VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The tag priority identifier for base VLAN.
         """
         return self._get_attribute('bVlanTpId')
     @BVlanTpId.setter
@@ -76,10 +76,10 @@ class SpbmNodeBaseVidRange(Base):
 
     @property
     def BaseVid(self):
-        """The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
         """
         return self._get_attribute('baseVid')
     @BaseVid.setter
@@ -88,10 +88,10 @@ class SpbmNodeBaseVidRange(Base):
 
     @property
     def EctAlgorithm(self):
-        """The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
         """
         return self._get_attribute('ectAlgorithm')
     @EctAlgorithm.setter
@@ -100,10 +100,10 @@ class SpbmNodeBaseVidRange(Base):
 
     @property
     def UseFlag(self):
-        """Set to true to activate the user flag.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set to true to activate the user flag.
         """
         return self._get_attribute('useFlag')
     @UseFlag.setter
@@ -111,79 +111,92 @@ class SpbmNodeBaseVidRange(Base):
         self._set_attribute('useFlag', value)
 
     def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
-        """Updates a child instance of spbmNodeBaseVidRange on the server.
+        """Updates spbmNodeBaseVidRange resource on the server.
 
-        Args:
-            BVlanPriority (number): The user priority of the Base VLAN.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
-            UseFlag (bool): Set to true to activate the user flag.
+        Args
+        ----
+        - BVlanPriority (number): The user priority of the Base VLAN.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
+        - UseFlag (bool): Set to true to activate the user flag.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
-        """Adds a new spbmNodeBaseVidRange node on the server and retrieves it in this instance.
+        """Adds a new spbmNodeBaseVidRange resource on the server and adds it to the container.
 
-        Args:
-            BVlanPriority (number): The user priority of the Base VLAN.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
-            UseFlag (bool): Set to true to activate the user flag.
+        Args
+        ----
+        - BVlanPriority (number): The user priority of the Base VLAN.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
+        - UseFlag (bool): Set to true to activate the user flag.
 
-        Returns:
-            self: This instance with all currently retrieved spbmNodeBaseVidRange data using find and the newly added spbmNodeBaseVidRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbmNodeBaseVidRange resources using find and the newly added spbmNodeBaseVidRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbmNodeBaseVidRange data in this instance from server.
+        """Deletes all the contained spbmNodeBaseVidRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
-        """Finds and retrieves spbmNodeBaseVidRange data from the server.
+        """Finds and retrieves spbmNodeBaseVidRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbmNodeBaseVidRange data from the server.
-        By default the find method takes no parameters and will retrieve all spbmNodeBaseVidRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbmNodeBaseVidRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbmNodeBaseVidRange resources from the server.
 
-        Args:
-            BVlanPriority (number): The user priority of the Base VLAN.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
-            UseFlag (bool): Set to true to activate the user flag.
+        Args
+        ----
+        - BVlanPriority (number): The user priority of the Base VLAN.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
+        - UseFlag (bool): Set to true to activate the user flag.
 
-        Returns:
-            self: This instance with matching spbmNodeBaseVidRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbmNodeBaseVidRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbmNodeBaseVidRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbmNodeBaseVidRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbmNodeBaseVidRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -14,16 +14,14 @@ For more information on containers read the following:
   https://docs.python.org/2.7/library/stdtypes.html#typeiter
 
 """
+from ixnetwork_restpy import SessionAssistant
 
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
-
-# connect to a test platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # create x number of vports
 vport_count = 3

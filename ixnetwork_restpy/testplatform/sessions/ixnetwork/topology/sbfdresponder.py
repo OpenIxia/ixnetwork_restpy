@@ -36,46 +36,58 @@ class SbfdResponder(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
-    def MinRxInterval(self):
-        """Minimum Rx Interval in ms supported by the Responder
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def EnableLearnedInformation(self):
         """
-        return self._get_attribute('minRxInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the Responder will store all S-BFD sessions responded to based on requests from remote Initiators. Selected sessions can be paused and resumed by user. Enabling this will reduce supported scale by some amount.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLearnedInformation'))
+
+    @property
+    def MinRxInterval(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Rx Interval in ms supported by the Responder.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('minRxInterval'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -84,52 +96,93 @@ class SbfdResponder(Base):
 
     @property
     def SBFDDiscriminator(self):
-        """Configures the local S-BFD discriminator
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sBFDDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the local S-BFD discriminator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sBFDDiscriminator'))
 
     @property
     def SBFDState(self):
-        """Configures the S-BFD session state to be sent in Response Packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sBFDState')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the S-BFD session state to be sent in Response Packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sBFDState'))
 
     def update(self, Name=None):
-        """Updates a child instance of sbfdResponder on the server.
+        """Updates sbfdResponder resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def get_device_ids(self, PortNames=None, Active=None, MinRxInterval=None, SBFDDiscriminator=None, SBFDState=None):
+    def get_device_ids(self, PortNames=None, Active=None, EnableLearnedInformation=None, MinRxInterval=None, SBFDDiscriminator=None, SBFDState=None):
         """Base class infrastructure that gets a list of sbfdResponder device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            MinRxInterval (str): optional regex of minRxInterval
-            SBFDDiscriminator (str): optional regex of sBFDDiscriminator
-            SBFDState (str): optional regex of sBFDState
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - EnableLearnedInformation (str): optional regex of enableLearnedInformation
+        - MinRxInterval (str): optional regex of minRxInterval
+        - SBFDDiscriminator (str): optional regex of sBFDDiscriminator
+        - SBFDState (str): optional regex of sBFDState
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def ClearSbfdResponderLearnedInfo(self):
+        """Executes the clearSbfdResponderLearnedInfo operation on the server.
+
+        Clears SBFD Responder Learned Information.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('clearSbfdResponderLearnedInfo', payload=payload, response_object=None)
+
+    def GetSbfdResponderLearnedInfo(self, *args, **kwargs):
+        """Executes the getSbfdResponderLearnedInfo operation on the server.
+
+        Get SBFD Responder Learned Information. Pause/Resume can be done on SBFD LSPs in this learned information.
+
+        getSbfdResponderLearnedInfo(Arg2=list)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getSbfdResponderLearnedInfo', payload=payload, response_object=None)

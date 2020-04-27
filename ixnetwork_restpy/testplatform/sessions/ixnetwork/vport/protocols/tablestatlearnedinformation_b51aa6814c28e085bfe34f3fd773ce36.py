@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class TableStatLearnedInformation(Base):
     """This object allows to configure the table statistics trigger parameters.
-    The TableStatLearnedInformation class encapsulates a list of tableStatLearnedInformation resources that is managed by the system.
+    The TableStatLearnedInformation class encapsulates a list of tableStatLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the TableStatLearnedInformation.find() method.
     """
 
@@ -37,191 +37,198 @@ class TableStatLearnedInformation(Base):
 
     @property
     def ActiveCount(self):
-        """Indicates the number of active entries.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of active entries.
         """
         return self._get_attribute('activeCount')
 
     @property
     def DataPathId(self):
-        """Indicates the Datapath ID of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID of the switch.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """Indicates the Datapath ID, in hexadecimal format, of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def ErrorCode(self):
-        """Signifies the error code of the error received
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the error code of the error received
         """
         return self._get_attribute('errorCode')
 
     @property
     def ErrorType(self):
-        """Signifies the type of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the type of the error received.
         """
         return self._get_attribute('errorType')
 
     @property
     def Latency(self):
-        """Indicates the duration elapsed (in microsecond) between the learned info request and response.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
         return self._get_attribute('latency')
 
     @property
     def LocalIp(self):
-        """Indicates the local IP of the Controller.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP of the Controller.
         """
         return self._get_attribute('localIp')
 
     @property
     def LookupCount(self):
-        """Indicates the number of packets looked up in table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the number of packets looked up in table.
         """
         return self._get_attribute('lookupCount')
 
     @property
     def MatchedCount(self):
-        """Indicates the number of packets that hit table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the number of packets that hit table.
         """
         return self._get_attribute('matchedCount')
 
     @property
     def MaxEntries(self):
-        """Indicates the maximum number of entries supported.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum number of entries supported.
         """
         return self._get_attribute('maxEntries')
 
     @property
     def NegotiatedVersion(self):
-        """Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
         return self._get_attribute('negotiatedVersion')
 
     @property
     def RemoteIp(self):
-        """Indicates the IP of the remote end of the OF Channel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IP of the remote end of the OF Channel.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def ReplyState(self):
-        """Indicates the reply state of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the reply state of the switch.
         """
         return self._get_attribute('replyState')
 
     @property
     def TableId(self):
-        """Indicates the Identifier of table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Identifier of table.
         """
         return self._get_attribute('tableId')
 
     @property
     def TableName(self):
-        """Indicates a name of the table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates a name of the table.
         """
         return self._get_attribute('tableName')
 
     @property
     def Wildcards(self):
-        """Indicates the Wildcards that are supported by the table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Wildcards that are supported by the table.
         """
         return self._get_attribute('wildcards')
 
     def find(self, ActiveCount=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, LookupCount=None, MatchedCount=None, MaxEntries=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, TableId=None, TableName=None, Wildcards=None):
-        """Finds and retrieves tableStatLearnedInformation data from the server.
+        """Finds and retrieves tableStatLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tableStatLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all tableStatLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tableStatLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tableStatLearnedInformation resources from the server.
 
-        Args:
-            ActiveCount (number): Indicates the number of active entries.
-            DataPathId (str): Indicates the Datapath ID of the switch.
-            DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
-            ErrorCode (str): Signifies the error code of the error received
-            ErrorType (str): Signifies the type of the error received.
-            Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
-            LocalIp (str): Indicates the local IP of the Controller.
-            LookupCount (str): Indicates the number of packets looked up in table.
-            MatchedCount (str): Indicates the number of packets that hit table.
-            MaxEntries (number): Indicates the maximum number of entries supported.
-            NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-            RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
-            ReplyState (str): Indicates the reply state of the switch.
-            TableId (str): Indicates the Identifier of table.
-            TableName (str): Indicates a name of the table.
-            Wildcards (str): Indicates the Wildcards that are supported by the table.
+        Args
+        ----
+        - ActiveCount (number): Indicates the number of active entries.
+        - DataPathId (str): Indicates the Datapath ID of the switch.
+        - DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
+        - ErrorCode (str): Signifies the error code of the error received
+        - ErrorType (str): Signifies the type of the error received.
+        - Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
+        - LocalIp (str): Indicates the local IP of the Controller.
+        - LookupCount (str): Indicates the number of packets looked up in table.
+        - MatchedCount (str): Indicates the number of packets that hit table.
+        - MaxEntries (number): Indicates the maximum number of entries supported.
+        - NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+        - RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
+        - ReplyState (str): Indicates the reply state of the switch.
+        - TableId (str): Indicates the Identifier of table.
+        - TableName (str): Indicates a name of the table.
+        - Wildcards (str): Indicates the Wildcards that are supported by the table.
 
-        Returns:
-            self: This instance with matching tableStatLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tableStatLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tableStatLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tableStatLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tableStatLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

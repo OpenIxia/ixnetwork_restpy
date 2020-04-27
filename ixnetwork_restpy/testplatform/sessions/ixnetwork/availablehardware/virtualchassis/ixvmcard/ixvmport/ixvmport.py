@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IxVmPort(Base):
     """Retrieves the list of ports from an IxVM card
-    The IxVmPort class encapsulates a list of ixVmPort resources that is be managed by the user.
+    The IxVmPort class encapsulates a list of ixVmPort resources that are managed by the user.
     A list of resources can be retrieved from the server using the IxVmPort.find() method.
-    The list can be managed by the user by using the IxVmPort.add() and IxVmPort.remove() methods.
+    The list can be managed by using the IxVmPort.add() and IxVmPort.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IxVmPort(Base):
 
     @property
     def Interface(self):
-        """Represents the interface name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the interface name
         """
         return self._get_attribute('interface')
     @Interface.setter
@@ -50,10 +50,10 @@ class IxVmPort(Base):
 
     @property
     def IpAddress(self):
-        """Represents the IP address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the IP address
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -62,10 +62,10 @@ class IxVmPort(Base):
 
     @property
     def MacAddress(self):
-        """Represents the MAC address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the MAC address
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -74,10 +74,10 @@ class IxVmPort(Base):
 
     @property
     def Mtu(self):
-        """Represents MTU
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Represents MTU
         """
         return self._get_attribute('mtu')
     @Mtu.setter
@@ -86,19 +86,19 @@ class IxVmPort(Base):
 
     @property
     def Owner(self):
-        """Represents the user owning the port
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the user owning the port
         """
         return self._get_attribute('owner')
 
     @property
     def PortId(self):
-        """Represents a slot on the card
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents a slot on the card
         """
         return self._get_attribute('portId')
     @PortId.setter
@@ -107,10 +107,10 @@ class IxVmPort(Base):
 
     @property
     def PortName(self):
-        """Represents a port name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents a port name
         """
         return self._get_attribute('portName')
     @PortName.setter
@@ -119,19 +119,19 @@ class IxVmPort(Base):
 
     @property
     def PortState(self):
-        """Represents the port State
-
-        Returns:
-            str(invalidNIC|ixVmPortUnitialized|portLicenseNotFound|portNotAdded|portOK|portRemoved|portUnconnectedCard|portUnknownError)
+        """
+        Returns
+        -------
+        - str(invalidNIC | ixVmPortUnitialized | portLicenseNotFound | portNotAdded | portOK | portRemoved | portUnconnectedCard | portUnknownError): Represents the port State
         """
         return self._get_attribute('portState')
 
     @property
     def PromiscMode(self):
-        """Represents the promiscuos Mode
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Represents the promiscuos Mode
         """
         return self._get_attribute('promiscMode')
     @PromiscMode.setter
@@ -139,87 +139,100 @@ class IxVmPort(Base):
         self._set_attribute('promiscMode', value)
 
     def update(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
-        """Updates a child instance of ixVmPort on the server.
+        """Updates ixVmPort resource on the server.
 
-        Args:
-            Interface (str): Represents the interface name
-            IpAddress (str): Represents the IP address
-            MacAddress (str): Represents the MAC address
-            Mtu (number): Represents MTU
-            PortId (str): Represents a slot on the card
-            PortName (str): Represents a port name
-            PromiscMode (bool): Represents the promiscuos Mode
+        Args
+        ----
+        - Interface (str): Represents the interface name
+        - IpAddress (str): Represents the IP address
+        - MacAddress (str): Represents the MAC address
+        - Mtu (number): Represents MTU
+        - PortId (str): Represents a slot on the card
+        - PortName (str): Represents a port name
+        - PromiscMode (bool): Represents the promiscuos Mode
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
-        """Adds a new ixVmPort node on the server and retrieves it in this instance.
+        """Adds a new ixVmPort resource on the server and adds it to the container.
 
-        Args:
-            Interface (str): Represents the interface name
-            IpAddress (str): Represents the IP address
-            MacAddress (str): Represents the MAC address
-            Mtu (number): Represents MTU
-            PortId (str): Represents a slot on the card
-            PortName (str): Represents a port name
-            PromiscMode (bool): Represents the promiscuos Mode
+        Args
+        ----
+        - Interface (str): Represents the interface name
+        - IpAddress (str): Represents the IP address
+        - MacAddress (str): Represents the MAC address
+        - Mtu (number): Represents MTU
+        - PortId (str): Represents a slot on the card
+        - PortName (str): Represents a port name
+        - PromiscMode (bool): Represents the promiscuos Mode
 
-        Returns:
-            self: This instance with all currently retrieved ixVmPort data using find and the newly added ixVmPort data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ixVmPort resources using find and the newly added ixVmPort resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ixVmPort data in this instance from server.
+        """Deletes all the contained ixVmPort resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, Owner=None, PortId=None, PortName=None, PortState=None, PromiscMode=None):
-        """Finds and retrieves ixVmPort data from the server.
+        """Finds and retrieves ixVmPort resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ixVmPort data from the server.
-        By default the find method takes no parameters and will retrieve all ixVmPort data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ixVmPort resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ixVmPort resources from the server.
 
-        Args:
-            Interface (str): Represents the interface name
-            IpAddress (str): Represents the IP address
-            MacAddress (str): Represents the MAC address
-            Mtu (number): Represents MTU
-            Owner (str): Represents the user owning the port
-            PortId (str): Represents a slot on the card
-            PortName (str): Represents a port name
-            PortState (str(invalidNIC|ixVmPortUnitialized|portLicenseNotFound|portNotAdded|portOK|portRemoved|portUnconnectedCard|portUnknownError)): Represents the port State
-            PromiscMode (bool): Represents the promiscuos Mode
+        Args
+        ----
+        - Interface (str): Represents the interface name
+        - IpAddress (str): Represents the IP address
+        - MacAddress (str): Represents the MAC address
+        - Mtu (number): Represents MTU
+        - Owner (str): Represents the user owning the port
+        - PortId (str): Represents a slot on the card
+        - PortName (str): Represents a port name
+        - PortState (str(invalidNIC | ixVmPortUnitialized | portLicenseNotFound | portNotAdded | portOK | portRemoved | portUnconnectedCard | portUnknownError)): Represents the port State
+        - PromiscMode (bool): Represents the promiscuos Mode
 
-        Returns:
-            self: This instance with matching ixVmPort data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ixVmPort resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ixVmPort data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ixVmPort data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ixVmPort resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

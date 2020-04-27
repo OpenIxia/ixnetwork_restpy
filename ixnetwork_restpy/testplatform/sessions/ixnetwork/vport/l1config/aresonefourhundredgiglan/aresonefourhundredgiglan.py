@@ -37,9 +37,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def AutoInstrumentation(self):
         """
-
-        Returns:
-            str(endOfFrame|floating)
+        Returns
+        -------
+        - str(endOfFrame | floating): 
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -49,9 +49,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def BadBlocksNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('badBlocksNumber')
     @BadBlocksNumber.setter
@@ -61,9 +61,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def EnableAutoNegotiation(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableAutoNegotiation')
     @EnableAutoNegotiation.setter
@@ -73,9 +73,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def EnablePPM(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -85,9 +85,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def EnableRsFec(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRsFec')
     @EnableRsFec.setter
@@ -97,9 +97,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def EnableRsFecStats(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRsFecStats')
     @EnableRsFecStats.setter
@@ -109,9 +109,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def EnabledFlowControl(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -121,9 +121,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def FirecodeAdvertise(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeAdvertise')
     @FirecodeAdvertise.setter
@@ -133,9 +133,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def FirecodeForceOff(self):
         """DEPRECATED 
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeForceOff')
     @FirecodeForceOff.setter
@@ -145,9 +145,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def FirecodeForceOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeForceOn')
     @FirecodeForceOn.setter
@@ -157,9 +157,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def FirecodeRequest(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeRequest')
     @FirecodeRequest.setter
@@ -169,9 +169,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def FlowControlDirectedAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -181,9 +181,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def ForceDisableFEC(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('forceDisableFEC')
     @ForceDisableFEC.setter
@@ -193,9 +193,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def GoodBlocksNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('goodBlocksNumber')
     @GoodBlocksNumber.setter
@@ -205,18 +205,18 @@ class AresOneFourHundredGigLan(Base):
     @property
     def IeeeL1Defaults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('ieeeL1Defaults')
 
     @property
     def LaserOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('laserOn')
     @LaserOn.setter
@@ -226,9 +226,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def LinkTraining(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('linkTraining')
     @LinkTraining.setter
@@ -238,9 +238,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def LoopContinuously(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('loopContinuously')
     @LoopContinuously.setter
@@ -250,9 +250,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def LoopCountNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('loopCountNumber')
     @LoopCountNumber.setter
@@ -262,9 +262,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def Loopback(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -274,9 +274,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def LoopbackMode(self):
         """
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): 
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -286,9 +286,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def Ppm(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -298,9 +298,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def RsFecAdvertise(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecAdvertise')
     @RsFecAdvertise.setter
@@ -310,9 +310,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def RsFecForceOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecForceOn')
     @RsFecForceOn.setter
@@ -322,9 +322,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def RsFecRequest(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecRequest')
     @RsFecRequest.setter
@@ -334,9 +334,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def SendSetsMode(self):
         """
-
-        Returns:
-            str(alternate|typeAOnly|typeBOnly)
+        Returns
+        -------
+        - str(alternate | typeAOnly | typeBOnly): 
         """
         return self._get_attribute('sendSetsMode')
     @SendSetsMode.setter
@@ -346,9 +346,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def Speed(self):
         """
-
-        Returns:
-            str(speed100g|speed200g|speed400g|speed50g)
+        Returns
+        -------
+        - str(speed100g | speed200g | speed400g | speed50g): 
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -358,9 +358,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def StartErrorInsertion(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('startErrorInsertion')
     @StartErrorInsertion.setter
@@ -370,9 +370,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def TxIgnoreRxLinkFaults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -382,9 +382,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def TypeAOrderedSets(self):
         """
-
-        Returns:
-            str(localFault|remoteFault)
+        Returns
+        -------
+        - str(localFault | remoteFault): 
         """
         return self._get_attribute('typeAOrderedSets')
     @TypeAOrderedSets.setter
@@ -394,9 +394,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def TypeBOrderedSets(self):
         """
-
-        Returns:
-            str(localFault|remoteFault)
+        Returns
+        -------
+        - str(localFault | remoteFault): 
         """
         return self._get_attribute('typeBOrderedSets')
     @TypeBOrderedSets.setter
@@ -406,9 +406,9 @@ class AresOneFourHundredGigLan(Base):
     @property
     def UseANResults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('useANResults')
     @UseANResults.setter
@@ -416,42 +416,44 @@ class AresOneFourHundredGigLan(Base):
         self._set_attribute('useANResults', value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
-        """Updates a child instance of aresOneFourHundredGigLan on the server.
+        """Updates aresOneFourHundredGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): 
-            BadBlocksNumber (number): 
-            EnableAutoNegotiation (bool): 
-            EnablePPM (bool): 
-            EnableRsFec (bool): 
-            EnableRsFecStats (bool): 
-            EnabledFlowControl (bool): 
-            FirecodeAdvertise (bool): 
-            FirecodeForceOff (bool): 
-            FirecodeForceOn (bool): 
-            FirecodeRequest (bool): 
-            FlowControlDirectedAddress (str): 
-            ForceDisableFEC (bool): 
-            GoodBlocksNumber (number): 
-            LaserOn (bool): 
-            LinkTraining (bool): 
-            LoopContinuously (bool): 
-            LoopCountNumber (number): 
-            Loopback (bool): 
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): 
-            Ppm (number): 
-            RsFecAdvertise (bool): 
-            RsFecForceOn (bool): 
-            RsFecRequest (bool): 
-            SendSetsMode (str(alternate|typeAOnly|typeBOnly)): 
-            Speed (str(speed100g|speed200g|speed400g|speed50g)): 
-            StartErrorInsertion (bool): 
-            TxIgnoreRxLinkFaults (bool): 
-            TypeAOrderedSets (str(localFault|remoteFault)): 
-            TypeBOrderedSets (str(localFault|remoteFault)): 
-            UseANResults (bool): 
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): 
+        - BadBlocksNumber (number): 
+        - EnableAutoNegotiation (bool): 
+        - EnablePPM (bool): 
+        - EnableRsFec (bool): 
+        - EnableRsFecStats (bool): 
+        - EnabledFlowControl (bool): 
+        - FirecodeAdvertise (bool): 
+        - FirecodeForceOff (bool): 
+        - FirecodeForceOn (bool): 
+        - FirecodeRequest (bool): 
+        - FlowControlDirectedAddress (str): 
+        - ForceDisableFEC (bool): 
+        - GoodBlocksNumber (number): 
+        - LaserOn (bool): 
+        - LinkTraining (bool): 
+        - LoopContinuously (bool): 
+        - LoopCountNumber (number): 
+        - Loopback (bool): 
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): 
+        - Ppm (number): 
+        - RsFecAdvertise (bool): 
+        - RsFecForceOn (bool): 
+        - RsFecRequest (bool): 
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): 
+        - Speed (str(speed100g | speed200g | speed400g | speed50g)): 
+        - StartErrorInsertion (bool): 
+        - TxIgnoreRxLinkFaults (bool): 
+        - TypeAOrderedSets (str(localFault | remoteFault)): 
+        - TypeBOrderedSets (str(localFault | remoteFault)): 
+        - UseANResults (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

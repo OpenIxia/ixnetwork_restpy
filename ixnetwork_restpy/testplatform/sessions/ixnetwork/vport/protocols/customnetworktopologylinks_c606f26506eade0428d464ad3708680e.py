@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomNetworkTopologyLinks(Base):
     """NOT DEFINED
-    The CustomNetworkTopologyLinks class encapsulates a list of customNetworkTopologyLinks resources that is be managed by the user.
+    The CustomNetworkTopologyLinks class encapsulates a list of customNetworkTopologyLinks resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomNetworkTopologyLinks.find() method.
-    The list can be managed by the user by using the CustomNetworkTopologyLinks.add() and CustomNetworkTopologyLinks.remove() methods.
+    The list can be managed by using the CustomNetworkTopologyLinks.add() and CustomNetworkTopologyLinks.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomNetworkTopologyLinks(Base):
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class CustomNetworkTopologyLinks(Base):
 
     @property
     def LinkMetric(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('linkMetric')
     @LinkMetric.setter
@@ -62,10 +62,10 @@ class CustomNetworkTopologyLinks(Base):
 
     @property
     def LinkNodeSystemId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('linkNodeSystemId')
     @LinkNodeSystemId.setter
@@ -73,73 +73,86 @@ class CustomNetworkTopologyLinks(Base):
         self._set_attribute('linkNodeSystemId', value)
 
     def update(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Updates a child instance of customNetworkTopologyLinks on the server.
+        """Updates customNetworkTopologyLinks resource on the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Adds a new customNetworkTopologyLinks node on the server and retrieves it in this instance.
+        """Adds a new customNetworkTopologyLinks resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customNetworkTopologyLinks data using find and the newly added customNetworkTopologyLinks data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customNetworkTopologyLinks resources using find and the newly added customNetworkTopologyLinks resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customNetworkTopologyLinks data in this instance from server.
+        """Deletes all the contained customNetworkTopologyLinks resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Finds and retrieves customNetworkTopologyLinks data from the server.
+        """Finds and retrieves customNetworkTopologyLinks resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customNetworkTopologyLinks data from the server.
-        By default the find method takes no parameters and will retrieve all customNetworkTopologyLinks data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customNetworkTopologyLinks resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customNetworkTopologyLinks resources from the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customNetworkTopologyLinks data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customNetworkTopologyLinks resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customNetworkTopologyLinks data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customNetworkTopologyLinks data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customNetworkTopologyLinks resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

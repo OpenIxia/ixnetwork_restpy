@@ -36,38 +36,38 @@ class Lacp(Base):
 
     @property
     def LearnedInfo(self):
-        """An instance of the LearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_afcaffc285bf12a56518f1d49a1e639f.LearnedInfo): An instance of the LearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_afcaffc285bf12a56518f1d49a1e639f.LearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_afcaffc285bf12a56518f1d49a1e639f import LearnedInfo
         return LearnedInfo(self)
 
     @property
     def Link(self):
-        """An instance of the Link class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_89e0d24baf9d998642d0c6408d0473f7.Link): An instance of the Link class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_89e0d24baf9d998642d0c6408d0473f7.Link)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_89e0d24baf9d998642d0c6408d0473f7 import Link
         return Link(self)
 
     @property
     def EnablePreservePartnerInfo(self):
-        """If true, the fields of previous link are updatedw
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the fields of previous link are updatedw
         """
         return self._get_attribute('enablePreservePartnerInfo')
     @EnablePreservePartnerInfo.setter
@@ -76,10 +76,10 @@ class Lacp(Base):
 
     @property
     def Enabled(self):
-        """If true, the Link Aggregation Control Protocol (LACP) is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the Link Aggregation Control Protocol (LACP) is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,42 +88,45 @@ class Lacp(Base):
 
     @property
     def IsLacpPortLearnedInfoRefreshed(self):
-        """(read only) If true, the learned port information is up to date.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned port information is up to date.
         """
         return self._get_attribute('isLacpPortLearnedInfoRefreshed')
 
     @property
     def RunningState(self):
-        """The current running state of LACP.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of LACP.
         """
         return self._get_attribute('runningState')
 
     def update(self, EnablePreservePartnerInfo=None, Enabled=None):
-        """Updates a child instance of lacp on the server.
+        """Updates lacp resource on the server.
 
-        Args:
-            EnablePreservePartnerInfo (bool): If true, the fields of previous link are updatedw
-            Enabled (bool): If true, the Link Aggregation Control Protocol (LACP) is enabled.
+        Args
+        ----
+        - EnablePreservePartnerInfo (bool): If true, the fields of previous link are updatedw
+        - Enabled (bool): If true, the Link Aggregation Control Protocol (LACP) is enabled.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def RefreshLacpPortLearnedInfo(self):
         """Executes the refreshLacpPortLearnedInfo operation on the server.
 
         This exec refreshes the LACP port learned information.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshLacpPortLearnedInfo', payload=payload, response_object=None)
@@ -133,9 +136,10 @@ class Lacp(Base):
 
         This sends a marker request. The contents of the marker PDU contain the current view of partner (which can be defaulted if no partner is present). The marker will be sent regardless of which state the link is in.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendMarkerRequest', payload=payload, response_object=None)
@@ -145,9 +149,10 @@ class Lacp(Base):
 
         This exec sends an update to the actor's partners after a change has been made to the link's parameters.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendUpdate', payload=payload, response_object=None)
@@ -157,9 +162,10 @@ class Lacp(Base):
 
         This exec starts the LACP protocol.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -169,9 +175,10 @@ class Lacp(Base):
 
         This exec starts PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startPdu', payload=payload, response_object=None)
@@ -181,9 +188,10 @@ class Lacp(Base):
 
         This exec stops the LACP protocol.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -193,9 +201,10 @@ class Lacp(Base):
 
         This exec stops PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stopPdu', payload=payload, response_object=None)

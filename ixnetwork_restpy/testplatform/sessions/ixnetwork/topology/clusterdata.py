@@ -36,46 +36,49 @@ class ClusterData(Base):
 
     @property
     def ActionTriggered(self):
-        """Displays what Action Triggered for each Binding. Possible values: No Action, Attach, Detach
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actionTriggered')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Displays what Action Triggered for each Binding. Possible values: No Action, Attach, Detach
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actionTriggered'))
 
     @property
     def AttachAtStart(self):
-        """Attach at Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('attachAtStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Attach at Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('attachAtStart'))
 
     @property
     def AutoSyncAtStart(self):
-        """Synchronize TOR Database at Start.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('autoSyncAtStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Synchronize TOR Database at Start.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('autoSyncAtStart'))
 
     @property
     def BindingStatus(self):
-        """Additional information about the Binding's state
-
-        Returns:
-            list(str[attached|attaching|detached|detaching|disconnected])
+        """
+        Returns
+        -------
+        - list(str[attached | attaching | detached | detaching | disconnected]): Additional information about the Binding's state
         """
         return self._get_attribute('bindingStatus')
 
     @property
     def BindingsCount(self):
-        """Bindings Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Bindings Count
         """
         return self._get_attribute('bindingsCount')
     @BindingsCount.setter
@@ -84,55 +87,56 @@ class ClusterData(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def CurrentRetryCount(self):
-        """This field will Show current retry count value Controller is doing to Synchronize TOR Database Automatically when TOR is reconnecting while doing the action.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This field will Show current retry count value Controller is doing to Synchronize TOR Database Automatically when TOR is reconnecting while doing the action.
         """
         return self._get_attribute('currentRetryCount')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def ErrorStatus(self):
-        """Error information about the Binding
-
-        Returns:
-            list(str[deleteBindingError|deleteBindingTimeout|deleteLsError|deleteLsTimeout|differentLsName|duplicateVlanLsPort|insertBindingError|insertBindingTimeout|insertLsError|insertLsTimeout|none|vlanMappedToDifferentLSs])
+        """
+        Returns
+        -------
+        - list(str[deleteBindingError | deleteBindingTimeout | deleteLsError | deleteLsTimeout | differentLsName | duplicateVlanLsPort | insertBindingError | insertBindingTimeout | insertLsError | insertLsTimeout | none | vlanMappedToDifferentLSs]): Error information about the Binding
         """
         return self._get_attribute('errorStatus')
 
     @property
     def LogicalSwitchName(self):
-        """Logical_Switch Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('logicalSwitchName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Logical_Switch Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('logicalSwitchName'))
 
     @property
     def MaxRetryCount(self):
-        """Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
         """
         return self._get_attribute('maxRetryCount')
     @MaxRetryCount.setter
@@ -141,10 +145,10 @@ class ClusterData(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -153,95 +157,104 @@ class ClusterData(Base):
 
     @property
     def PhysicalPortName(self):
-        """Physical_Port name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('physicalPortName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Physical_Port name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('physicalPortName'))
 
     @property
     def PhysicalSwitchName(self):
-        """Physical_Switch name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('physicalSwitchName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Physical_Switch name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('physicalSwitchName'))
 
     @property
     def ProgressStatus(self):
-        """Gives info Controller is busy doing some actions. There are 3 states: 1. None - Default State. 2. In Progress - Processing is in Progress. 3. Done - Controller is done processing all requests.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Gives info Controller is busy doing some actions. There are 3 states: 1. None - Default State. 2. In Progress - Processing is in Progress. 3. Done - Controller is done processing all requests.
         """
         return self._get_attribute('progressStatus')
 
     @property
     def RetryStatus(self):
-        """This field will Show if Controller has failed to complete the entire action even after Max Retry Count attempts There are 2 states: 1. None - Default State. 2. Retry Failed - Controller has done Max Retry Count attempts to complete the action, but failed
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This field will Show if Controller has failed to complete the entire action even after Max Retry Count attempts There are 2 states: 1. None - Default State. 2. Retry Failed - Controller has done Max Retry Count attempts to complete the action, but failed
         """
         return self._get_attribute('retryStatus')
 
     @property
     def Vlan(self):
-        """VLAN ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vlan')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vlan'))
 
     @property
     def Vni(self):
-        """VNI
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vni')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VNI
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vni'))
 
     def update(self, BindingsCount=None, MaxRetryCount=None, Name=None):
-        """Updates a child instance of clusterData on the server.
+        """Updates clusterData resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            BindingsCount (number): Bindings Count
-            MaxRetryCount (number): Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - BindingsCount (number): Bindings Count
+        - MaxRetryCount (number): Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, ActionTriggered=None, AttachAtStart=None, AutoSyncAtStart=None, LogicalSwitchName=None, PhysicalPortName=None, PhysicalSwitchName=None, Vlan=None, Vni=None):
         """Base class infrastructure that gets a list of clusterData device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ActionTriggered (str): optional regex of actionTriggered
-            AttachAtStart (str): optional regex of attachAtStart
-            AutoSyncAtStart (str): optional regex of autoSyncAtStart
-            LogicalSwitchName (str): optional regex of logicalSwitchName
-            PhysicalPortName (str): optional regex of physicalPortName
-            PhysicalSwitchName (str): optional regex of physicalSwitchName
-            Vlan (str): optional regex of vlan
-            Vni (str): optional regex of vni
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ActionTriggered (str): optional regex of actionTriggered
+        - AttachAtStart (str): optional regex of attachAtStart
+        - AutoSyncAtStart (str): optional regex of autoSyncAtStart
+        - LogicalSwitchName (str): optional regex of logicalSwitchName
+        - PhysicalPortName (str): optional regex of physicalPortName
+        - PhysicalSwitchName (str): optional regex of physicalSwitchName
+        - Vlan (str): optional regex of vlan
+        - Vni (str): optional regex of vni
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -250,16 +263,15 @@ class ClusterData(Base):
 
         Attach.
 
-        attach(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Attach.
+        attach(Arg2=list)list
+        ---------------------
+        - Arg2 (list(number)): List of indices for which to Attach.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -271,16 +283,15 @@ class ClusterData(Base):
 
         Detach.
 
-        detach(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Detach.
+        detach(Arg2=list)list
+        ---------------------
+        - Arg2 (list(number)): List of indices for which to Detach.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -292,16 +303,15 @@ class ClusterData(Base):
 
         This method will reset Current Retry Count to 0 and Retry Status to None.
 
-        resetRetryStatus(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Reset Retry Status fields.
+        resetRetryStatus(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices for which to Reset Retry Status fields.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -313,16 +323,15 @@ class ClusterData(Base):
 
         This method will insert missing UMR and MMR table entries for specified Logical Switches.
 
-        syncUmrMmrTables(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Sync UMR and MMR tables.
+        syncUmrMmrTables(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices for which to Sync UMR and MMR tables.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

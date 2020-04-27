@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DslProfileAllocationTable(Base):
     """Percentage of how much this DSL Profile will be used
-    The DslProfileAllocationTable class encapsulates a list of dslProfileAllocationTable resources that is be managed by the user.
+    The DslProfileAllocationTable class encapsulates a list of dslProfileAllocationTable resources that are managed by the user.
     A list of resources can be retrieved from the server using the DslProfileAllocationTable.find() method.
-    The list can be managed by the user by using the DslProfileAllocationTable.add() and DslProfileAllocationTable.remove() methods.
+    The list can be managed by using the DslProfileAllocationTable.add() and DslProfileAllocationTable.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DslProfileAllocationTable(Base):
 
     @property
     def DslProfile(self):
-        """The DSL profile.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=ancpDslProfile)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile): The DSL profile.
         """
         return self._get_attribute('dslProfile')
     @DslProfile.setter
@@ -50,19 +50,19 @@ class DslProfileAllocationTable(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Percentage(self):
-        """Percentage of this profile.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Percentage of this profile.
         """
         return self._get_attribute('percentage')
     @Percentage.setter
@@ -70,72 +70,85 @@ class DslProfileAllocationTable(Base):
         self._set_attribute('percentage', value)
 
     def update(self, DslProfile=None, Percentage=None):
-        """Updates a child instance of dslProfileAllocationTable on the server.
+        """Updates dslProfileAllocationTable resource on the server.
 
-        Args:
-            DslProfile (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=ancpDslProfile)): The DSL profile.
-            Percentage (number): Percentage of this profile.
+        Args
+        ----
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - Percentage (number): Percentage of this profile.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DslProfile=None, Percentage=None):
-        """Adds a new dslProfileAllocationTable node on the server and retrieves it in this instance.
+        """Adds a new dslProfileAllocationTable resource on the server and adds it to the container.
 
-        Args:
-            DslProfile (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=ancpDslProfile)): The DSL profile.
-            Percentage (number): Percentage of this profile.
+        Args
+        ----
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - Percentage (number): Percentage of this profile.
 
-        Returns:
-            self: This instance with all currently retrieved dslProfileAllocationTable data using find and the newly added dslProfileAllocationTable data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dslProfileAllocationTable resources using find and the newly added dslProfileAllocationTable resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dslProfileAllocationTable data in this instance from server.
+        """Deletes all the contained dslProfileAllocationTable resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DslProfile=None, ObjectId=None, Percentage=None):
-        """Finds and retrieves dslProfileAllocationTable data from the server.
+        """Finds and retrieves dslProfileAllocationTable resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dslProfileAllocationTable data from the server.
-        By default the find method takes no parameters and will retrieve all dslProfileAllocationTable data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dslProfileAllocationTable resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dslProfileAllocationTable resources from the server.
 
-        Args:
-            DslProfile (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=ancpDslProfile)): The DSL profile.
-            ObjectId (str): Unique identifier for this object
-            Percentage (number): Percentage of this profile.
+        Args
+        ----
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - ObjectId (str): Unique identifier for this object
+        - Percentage (number): Percentage of this profile.
 
-        Returns:
-            self: This instance with matching dslProfileAllocationTable data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dslProfileAllocationTable resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dslProfileAllocationTable data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dslProfileAllocationTable data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dslProfileAllocationTable resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -144,14 +157,15 @@ class DslProfileAllocationTable(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -163,16 +177,15 @@ class DslProfileAllocationTable(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -184,16 +197,15 @@ class DslProfileAllocationTable(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

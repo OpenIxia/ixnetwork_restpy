@@ -36,10 +36,10 @@ class FilterPalette(Base):
 
     @property
     def DestinationAddress1(self):
-        """Destination address 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Destination address 1.
         """
         return self._get_attribute('destinationAddress1')
     @DestinationAddress1.setter
@@ -48,10 +48,10 @@ class FilterPalette(Base):
 
     @property
     def DestinationAddress1Mask(self):
-        """The destination address mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The destination address mask.
         """
         return self._get_attribute('destinationAddress1Mask')
     @DestinationAddress1Mask.setter
@@ -60,10 +60,10 @@ class FilterPalette(Base):
 
     @property
     def DestinationAddress2(self):
-        """Destination address 2.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Destination address 2.
         """
         return self._get_attribute('destinationAddress2')
     @DestinationAddress2.setter
@@ -72,10 +72,10 @@ class FilterPalette(Base):
 
     @property
     def DestinationAddress2Mask(self):
-        """Destination address to mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Destination address to mask.
         """
         return self._get_attribute('destinationAddress2Mask')
     @DestinationAddress2Mask.setter
@@ -84,10 +84,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern1(self):
-        """Pattern 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Pattern 1.
         """
         return self._get_attribute('pattern1')
     @Pattern1.setter
@@ -96,10 +96,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern1Mask(self):
-        """Pattern 1 mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Pattern 1 mask.
         """
         return self._get_attribute('pattern1Mask')
     @Pattern1Mask.setter
@@ -108,10 +108,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern1Offset(self):
-        """Pattern 1 offset.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Pattern 1 offset.
         """
         return self._get_attribute('pattern1Offset')
     @Pattern1Offset.setter
@@ -120,10 +120,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern1OffsetType(self):
-        """The pattern offset type.
-
-        Returns:
-            str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)
+        """
+        Returns
+        -------
+        - str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet): The pattern offset type.
         """
         return self._get_attribute('pattern1OffsetType')
     @Pattern1OffsetType.setter
@@ -132,10 +132,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern2(self):
-        """Patternt 2.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Patternt 2.
         """
         return self._get_attribute('pattern2')
     @Pattern2.setter
@@ -144,10 +144,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern2Mask(self):
-        """The pattern mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The pattern mask.
         """
         return self._get_attribute('pattern2Mask')
     @Pattern2Mask.setter
@@ -156,10 +156,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern2Offset(self):
-        """The offset at which the pattern is located in the packet.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The offset at which the pattern is located in the packet.
         """
         return self._get_attribute('pattern2Offset')
     @Pattern2Offset.setter
@@ -168,10 +168,10 @@ class FilterPalette(Base):
 
     @property
     def Pattern2OffsetType(self):
-        """Pattern 2 offset type
-
-        Returns:
-            str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)
+        """
+        Returns
+        -------
+        - str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet): Pattern 2 offset type
         """
         return self._get_attribute('pattern2OffsetType')
     @Pattern2OffsetType.setter
@@ -180,10 +180,10 @@ class FilterPalette(Base):
 
     @property
     def SourceAddress1(self):
-        """Source address 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Source address 1.
         """
         return self._get_attribute('sourceAddress1')
     @SourceAddress1.setter
@@ -192,10 +192,10 @@ class FilterPalette(Base):
 
     @property
     def SourceAddress1Mask(self):
-        """Source address 1 mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Source address 1 mask.
         """
         return self._get_attribute('sourceAddress1Mask')
     @SourceAddress1Mask.setter
@@ -204,10 +204,10 @@ class FilterPalette(Base):
 
     @property
     def SourceAddress2(self):
-        """Source address 2.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Source address 2.
         """
         return self._get_attribute('sourceAddress2')
     @SourceAddress2.setter
@@ -216,10 +216,10 @@ class FilterPalette(Base):
 
     @property
     def SourceAddress2Mask(self):
-        """Source address to mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Source address to mask.
         """
         return self._get_attribute('sourceAddress2Mask')
     @SourceAddress2Mask.setter
@@ -227,27 +227,29 @@ class FilterPalette(Base):
         self._set_attribute('sourceAddress2Mask', value)
 
     def update(self, DestinationAddress1=None, DestinationAddress1Mask=None, DestinationAddress2=None, DestinationAddress2Mask=None, Pattern1=None, Pattern1Mask=None, Pattern1Offset=None, Pattern1OffsetType=None, Pattern2=None, Pattern2Mask=None, Pattern2Offset=None, Pattern2OffsetType=None, SourceAddress1=None, SourceAddress1Mask=None, SourceAddress2=None, SourceAddress2Mask=None):
-        """Updates a child instance of filterPalette on the server.
+        """Updates filterPalette resource on the server.
 
-        Args:
-            DestinationAddress1 (str): Destination address 1.
-            DestinationAddress1Mask (str): The destination address mask.
-            DestinationAddress2 (str): Destination address 2.
-            DestinationAddress2Mask (str): Destination address to mask.
-            Pattern1 (str): Pattern 1.
-            Pattern1Mask (str): Pattern 1 mask.
-            Pattern1Offset (number): Pattern 1 offset.
-            Pattern1OffsetType (str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)): The pattern offset type.
-            Pattern2 (str): Patternt 2.
-            Pattern2Mask (str): The pattern mask.
-            Pattern2Offset (number): The offset at which the pattern is located in the packet.
-            Pattern2OffsetType (str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)): Pattern 2 offset type
-            SourceAddress1 (str): Source address 1.
-            SourceAddress1Mask (str): Source address 1 mask.
-            SourceAddress2 (str): Source address 2.
-            SourceAddress2Mask (str): Source address to mask.
+        Args
+        ----
+        - DestinationAddress1 (str): Destination address 1.
+        - DestinationAddress1Mask (str): The destination address mask.
+        - DestinationAddress2 (str): Destination address 2.
+        - DestinationAddress2Mask (str): Destination address to mask.
+        - Pattern1 (str): Pattern 1.
+        - Pattern1Mask (str): Pattern 1 mask.
+        - Pattern1Offset (number): Pattern 1 offset.
+        - Pattern1OffsetType (str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet)): The pattern offset type.
+        - Pattern2 (str): Patternt 2.
+        - Pattern2Mask (str): The pattern mask.
+        - Pattern2Offset (number): The offset at which the pattern is located in the packet.
+        - Pattern2OffsetType (str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet)): Pattern 2 offset type
+        - SourceAddress1 (str): Source address 1.
+        - SourceAddress1Mask (str): Source address 1 mask.
+        - SourceAddress2 (str): Source address 2.
+        - SourceAddress2Mask (str): Source address to mask.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

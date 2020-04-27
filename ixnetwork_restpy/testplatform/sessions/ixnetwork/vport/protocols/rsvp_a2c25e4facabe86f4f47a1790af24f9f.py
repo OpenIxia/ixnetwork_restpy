@@ -36,24 +36,24 @@ class Rsvp(Base):
 
     @property
     def NeighborPair(self):
-        """An instance of the NeighborPair class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_7848e99525f474295d09ccdad3ed309e.NeighborPair): An instance of the NeighborPair class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_7848e99525f474295d09ccdad3ed309e.NeighborPair)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_7848e99525f474295d09ccdad3ed309e import NeighborPair
         return NeighborPair(self)
 
     @property
     def EnableBgpOverLsp(self):
-        """DEPRECATED Enables the ability to exchange labels over LSP for VPNs.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Enables the ability to exchange labels over LSP for VPNs.
         """
         return self._get_attribute('enableBgpOverLsp')
     @EnableBgpOverLsp.setter
@@ -62,10 +62,10 @@ class Rsvp(Base):
 
     @property
     def EnableControlLspInitiationRate(self):
-        """Controls the LSP initiation rate.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Controls the LSP initiation rate.
         """
         return self._get_attribute('enableControlLspInitiationRate')
     @EnableControlLspInitiationRate.setter
@@ -74,10 +74,10 @@ class Rsvp(Base):
 
     @property
     def EnableShowTimeValue(self):
-        """If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
         """
         return self._get_attribute('enableShowTimeValue')
     @EnableShowTimeValue.setter
@@ -86,10 +86,10 @@ class Rsvp(Base):
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
-        """If true, enables VPN label exchange over LSP
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables VPN label exchange over LSP
         """
         return self._get_attribute('enableVpnLabelExchangeOverLsp')
     @EnableVpnLabelExchangeOverLsp.setter
@@ -98,10 +98,10 @@ class Rsvp(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class Rsvp(Base):
 
     @property
     def MaxLspInitiationsPerSec(self):
-        """The maximum number of LSP Initiations sent per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of LSP Initiations sent per second.
         """
         return self._get_attribute('maxLspInitiationsPerSec')
     @MaxLspInitiationsPerSec.setter
@@ -122,19 +122,19 @@ class Rsvp(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the RSVP server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the RSVP server.
         """
         return self._get_attribute('runningState')
 
     @property
     def UseTransportLabelsForMplsOam(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('useTransportLabelsForMplsOam')
     @UseTransportLabelsForMplsOam.setter
@@ -142,30 +142,33 @@ class Rsvp(Base):
         self._set_attribute('useTransportLabelsForMplsOam', value)
 
     def update(self, EnableBgpOverLsp=None, EnableControlLspInitiationRate=None, EnableShowTimeValue=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, MaxLspInitiationsPerSec=None, UseTransportLabelsForMplsOam=None):
-        """Updates a child instance of rsvp on the server.
+        """Updates rsvp resource on the server.
 
-        Args:
-            EnableBgpOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
-            EnableControlLspInitiationRate (bool): Controls the LSP initiation rate.
-            EnableShowTimeValue (bool): If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
-            EnableVpnLabelExchangeOverLsp (bool): If true, enables VPN label exchange over LSP
-            Enabled (bool): Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
-            MaxLspInitiationsPerSec (number): The maximum number of LSP Initiations sent per second.
-            UseTransportLabelsForMplsOam (bool): NOT DEFINED
+        Args
+        ----
+        - EnableBgpOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+        - EnableControlLspInitiationRate (bool): Controls the LSP initiation rate.
+        - EnableShowTimeValue (bool): If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
+        - EnableVpnLabelExchangeOverLsp (bool): If true, enables VPN label exchange over LSP
+        - Enabled (bool): Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
+        - MaxLspInitiationsPerSec (number): The maximum number of LSP Initiations sent per second.
+        - UseTransportLabelsForMplsOam (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts RSVP on a port or a group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -175,9 +178,10 @@ class Rsvp(Base):
 
         Stops RSVP on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

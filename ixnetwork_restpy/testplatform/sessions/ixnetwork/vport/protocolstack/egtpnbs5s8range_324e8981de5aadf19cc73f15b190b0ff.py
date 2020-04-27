@@ -36,10 +36,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def ECI(self):
-        """EUTRAN Cell Identifier
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: EUTRAN Cell Identifier
         """
         return self._get_attribute('eCI')
     @ECI.setter
@@ -48,10 +48,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def MCC(self):
-        """Mobile Country Code
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Mobile Country Code
         """
         return self._get_attribute('mCC')
     @MCC.setter
@@ -72,10 +72,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def MNC(self):
-        """Mobile Network Code
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Mobile Network Code
         """
         return self._get_attribute('mNC')
     @MNC.setter
@@ -84,10 +84,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -96,19 +96,19 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def ParentMme(self):
-        """Id of parent MME range
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mmeS5S8SecondaryRange)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange): Id of parent MME range
         """
         return self._get_attribute('parentMme')
     @ParentMme.setter
@@ -117,10 +117,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def ParentSgw(self):
-        """Id of parent SGW range
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Id of parent SGW range
         """
         return self._get_attribute('parentSgw')
     @ParentSgw.setter
@@ -129,10 +129,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAILAC(self):
-        """LAC for UEs (Hexa value)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: LAC for UEs (Hexa value)
         """
         return self._get_attribute('rAILAC')
     @RAILAC.setter
@@ -141,10 +141,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMCC1(self):
-        """First digit of MCC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: First digit of MCC location for UEs
         """
         return self._get_attribute('rAIMCC1')
     @RAIMCC1.setter
@@ -153,10 +153,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMCC2(self):
-        """Second digit of MCC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Second digit of MCC location for UEs
         """
         return self._get_attribute('rAIMCC2')
     @RAIMCC2.setter
@@ -165,10 +165,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMCC3(self):
-        """3rd digit of MCC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: 3rd digit of MCC location for UEs
         """
         return self._get_attribute('rAIMCC3')
     @RAIMCC3.setter
@@ -177,10 +177,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMNC1(self):
-        """first digit of MNC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: first digit of MNC location for UEs
         """
         return self._get_attribute('rAIMNC1')
     @RAIMNC1.setter
@@ -189,10 +189,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMNC2(self):
-        """Second digit of MNC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Second digit of MNC location for UEs
         """
         return self._get_attribute('rAIMNC2')
     @RAIMNC2.setter
@@ -201,10 +201,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIMNC3(self):
-        """Third digit of MNC location for UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Third digit of MNC location for UEs
         """
         return self._get_attribute('rAIMNC3')
     @RAIMNC3.setter
@@ -213,10 +213,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def RAIRAC(self):
-        """RAC for UEs (Hexa value)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: RAC for UEs (Hexa value)
         """
         return self._get_attribute('rAIRAC')
     @RAIRAC.setter
@@ -225,10 +225,10 @@ class EgtpNbS5S8Range(Base):
 
     @property
     def TAC(self):
-        """Tracking Area Code
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Tracking Area Code
         """
         return self._get_attribute('tAC')
     @TAC.setter
@@ -236,44 +236,47 @@ class EgtpNbS5S8Range(Base):
         self._set_attribute('tAC', value)
 
     def update(self, ECI=None, Enabled=None, MCC=None, MNC=None, Name=None, ParentMme=None, ParentSgw=None, RAILAC=None, RAIMCC1=None, RAIMCC2=None, RAIMCC3=None, RAIMNC1=None, RAIMNC2=None, RAIMNC3=None, RAIRAC=None, TAC=None):
-        """Updates a child instance of egtpNbS5S8Range on the server.
+        """Updates egtpNbS5S8Range resource on the server.
 
-        Args:
-            ECI (str): EUTRAN Cell Identifier
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            MCC (str): Mobile Country Code
-            MNC (str): Mobile Network Code
-            Name (str): Name of range
-            ParentMme (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mmeS5S8SecondaryRange)): Id of parent MME range
-            ParentSgw (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Id of parent SGW range
-            RAILAC (str): LAC for UEs (Hexa value)
-            RAIMCC1 (number): First digit of MCC location for UEs
-            RAIMCC2 (number): Second digit of MCC location for UEs
-            RAIMCC3 (number): 3rd digit of MCC location for UEs
-            RAIMNC1 (number): first digit of MNC location for UEs
-            RAIMNC2 (number): Second digit of MNC location for UEs
-            RAIMNC3 (number): Third digit of MNC location for UEs
-            RAIRAC (str): RAC for UEs (Hexa value)
-            TAC (str): Tracking Area Code
+        Args
+        ----
+        - ECI (str): EUTRAN Cell Identifier
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - MCC (str): Mobile Country Code
+        - MNC (str): Mobile Network Code
+        - Name (str): Name of range
+        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange)): Id of parent MME range
+        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent SGW range
+        - RAILAC (str): LAC for UEs (Hexa value)
+        - RAIMCC1 (number): First digit of MCC location for UEs
+        - RAIMCC2 (number): Second digit of MCC location for UEs
+        - RAIMCC3 (number): 3rd digit of MCC location for UEs
+        - RAIMNC1 (number): first digit of MNC location for UEs
+        - RAIMNC2 (number): Second digit of MNC location for UEs
+        - RAIMNC3 (number): Third digit of MNC location for UEs
+        - RAIRAC (str): RAC for UEs (Hexa value)
+        - TAC (str): Tracking Area Code
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -285,16 +288,15 @@ class EgtpNbS5S8Range(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -306,16 +308,15 @@ class EgtpNbS5S8Range(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,10 +36,10 @@ class FrameSize(Base):
 
     @property
     def FixedSize(self):
-        """Sets all frames to a constant specified size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets all frames to a constant specified size.
         """
         return self._get_attribute('fixedSize')
     @FixedSize.setter
@@ -48,10 +48,10 @@ class FrameSize(Base):
 
     @property
     def IncrementFrom(self):
-        """Specifies the Start Value if the Frame Size is incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Start Value if the Frame Size is incremented.
         """
         return self._get_attribute('incrementFrom')
     @IncrementFrom.setter
@@ -60,10 +60,10 @@ class FrameSize(Base):
 
     @property
     def IncrementStep(self):
-        """Specifies the Step Value if the Frame Size is Increment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Step Value if the Frame Size is Increment.
         """
         return self._get_attribute('incrementStep')
     @IncrementStep.setter
@@ -72,10 +72,10 @@ class FrameSize(Base):
 
     @property
     def IncrementTo(self):
-        """Specifies the Final Value if the Frame Size is Increment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Final Value if the Frame Size is Increment.
         """
         return self._get_attribute('incrementTo')
     @IncrementTo.setter
@@ -84,10 +84,10 @@ class FrameSize(Base):
 
     @property
     def PresetDistribution(self):
-        """If set, Frame Size is set to IMIX.
-
-        Returns:
-            str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)
+        """
+        Returns
+        -------
+        - str(cisco | imix | ipSecImix | ipV6Imix | rprQuar | rprTri | standardImix | tcpImix | tolly): If set, Frame Size is set to IMIX.
         """
         return self._get_attribute('presetDistribution')
     @PresetDistribution.setter
@@ -96,10 +96,10 @@ class FrameSize(Base):
 
     @property
     def QuadGaussian(self):
-        """This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
         """
         return self._get_attribute('quadGaussian')
     @QuadGaussian.setter
@@ -108,10 +108,10 @@ class FrameSize(Base):
 
     @property
     def RandomMax(self):
-        """Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         """
         return self._get_attribute('randomMax')
     @RandomMax.setter
@@ -120,10 +120,10 @@ class FrameSize(Base):
 
     @property
     def RandomMin(self):
-        """Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
         """
         return self._get_attribute('randomMin')
     @RandomMin.setter
@@ -132,10 +132,10 @@ class FrameSize(Base):
 
     @property
     def Type(self):
-        """Sets the type of Frame Size.
-
-        Returns:
-            str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)
+        """
+        Returns
+        -------
+        - str(auto | fixed | increment | presetDistribution | quadGaussian | random | weightedPairs): Sets the type of Frame Size.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -144,10 +144,10 @@ class FrameSize(Base):
 
     @property
     def WeightedPairs(self):
-        """Defines the values for the weight pairs.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Defines the values for the weight pairs.
         """
         return self._get_attribute('weightedPairs')
     @WeightedPairs.setter
@@ -156,10 +156,10 @@ class FrameSize(Base):
 
     @property
     def WeightedRangePairs(self):
-        """A list of structures that define the weighted range.
-
-        Returns:
-            list(dict(arg1:number,arg2:number,arg3:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:number,arg3:number)): A list of structures that define the weighted range.
         """
         return self._get_attribute('weightedRangePairs')
     @WeightedRangePairs.setter
@@ -167,22 +167,24 @@ class FrameSize(Base):
         self._set_attribute('weightedRangePairs', value)
 
     def update(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
-        """Updates a child instance of frameSize on the server.
+        """Updates frameSize resource on the server.
 
-        Args:
-            FixedSize (number): Sets all frames to a constant specified size.
-            IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
-            IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
-            IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
-            PresetDistribution (str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)): If set, Frame Size is set to IMIX.
-            QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
-            RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
-            RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-            Type (str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)): Sets the type of Frame Size.
-            WeightedPairs (list(number)): Defines the values for the weight pairs.
-            WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
+        Args
+        ----
+        - FixedSize (number): Sets all frames to a constant specified size.
+        - IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
+        - IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
+        - IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
+        - PresetDistribution (str(cisco | imix | ipSecImix | ipV6Imix | rprQuar | rprTri | standardImix | tcpImix | tolly)): If set, Frame Size is set to IMIX.
+        - QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
+        - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+        - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+        - Type (str(auto | fixed | increment | presetDistribution | quadGaussian | random | weightedPairs)): Sets the type of Frame Size.
+        - WeightedPairs (list(number)): Defines the values for the weight pairs.
+        - WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

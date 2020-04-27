@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IptvChannels(Base):
     """
-    The IptvChannels class encapsulates a list of iptvChannels resources that is be managed by the user.
+    The IptvChannels class encapsulates a list of iptvChannels resources that are managed by the user.
     A list of resources can be retrieved from the server using the IptvChannels.find() method.
-    The list can be managed by the user by using the IptvChannels.add() and IptvChannels.remove() methods.
+    The list can be managed by using the IptvChannels.add() and IptvChannels.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IptvChannels(Base):
 
     @property
     def ChannelList(self):
-        """Reference to the channel list from the global settings
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalChannelList)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList): Reference to the channel list from the global settings
         """
         return self._get_attribute('channelList')
     @ChannelList.setter
@@ -50,77 +50,90 @@ class IptvChannels(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, ChannelList=None):
-        """Updates a child instance of iptvChannels on the server.
+        """Updates iptvChannels resource on the server.
 
-        Args:
-            ChannelList (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalChannelList)): Reference to the channel list from the global settings
+        Args
+        ----
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ChannelList=None):
-        """Adds a new iptvChannels node on the server and retrieves it in this instance.
+        """Adds a new iptvChannels resource on the server and adds it to the container.
 
-        Args:
-            ChannelList (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalChannelList)): Reference to the channel list from the global settings
+        Args
+        ----
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
 
-        Returns:
-            self: This instance with all currently retrieved iptvChannels data using find and the newly added iptvChannels data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved iptvChannels resources using find and the newly added iptvChannels resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the iptvChannels data in this instance from server.
+        """Deletes all the contained iptvChannels resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ChannelList=None, ObjectId=None):
-        """Finds and retrieves iptvChannels data from the server.
+        """Finds and retrieves iptvChannels resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve iptvChannels data from the server.
-        By default the find method takes no parameters and will retrieve all iptvChannels data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve iptvChannels resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all iptvChannels resources from the server.
 
-        Args:
-            ChannelList (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalChannelList)): Reference to the channel list from the global settings
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching iptvChannels data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching iptvChannels resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of iptvChannels data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the iptvChannels data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the iptvChannels resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -129,14 +142,15 @@ class IptvChannels(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -148,16 +162,15 @@ class IptvChannels(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -169,16 +182,15 @@ class IptvChannels(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

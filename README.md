@@ -25,20 +25,23 @@ from ixnetwork_restpy import SessionAssistant
 
 
 # create a test tool session
-session = SessionAssistant(IpAddress='127.0.0.1', Username='admin', Password='admin', ClearConfig=True)
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # create tx and rx port resources
-port_map = session.PortMapAssistant()
+port_map = session_assistant.PortMapAssistant()
 port_map.Map('10.36.74.26', 2, 13, Name='Tx')
 port_map.Map('10.36.74.26', 2, 14, Name='Rx')
 
 # create a TrafficItem resource
 # TrafficItem acts a a high level container for ConfigElement resources
 # ConfigElement is a high level container for individual HighLevelStream resources
-traffic_item = session.Ixnetwork.Traffic.TrafficItem.add(Name='Traffic Test', TrafficType='raw')
+traffic_item = ixnetwork.Traffic.TrafficItem.add(Name='Traffic Test', TrafficType='raw')
 traffic_item.EndpointSet.add(
-    Sources=session.Ixnetwork.Vport.find(Name='^Tx').Protocols.find(), 
-    Destinations=session.Ixnetwork.Vport.find(Name='^Rx').Protocols.find())
+    Sources=ixnetwork.Vport.find(Name='^Tx').Protocols.find(), 
+    Destinations=ixnetwork.Vport.find(Name='^Rx').Protocols.find())
 
 # using the traffic ConfigElement resource
 # update the frame rate
@@ -58,16 +61,16 @@ traffic_item.Generate()
 # apply traffic to hardware
 # start traffic
 port_map.Connect(ForceOwnership=True)
-session.Ixnetwork.Traffic.Apply()
-session.Ixnetwork.Traffic.StartStatelessTrafficBlocking()
+ixnetwork.Traffic.Apply()
+ixnetwork.Traffic.StartStatelessTrafficBlocking()
 
 # print statistics
-print(session.StatViewAssistant('Port Statistics'))
-print(session.StatViewAssistant('Traffic Item Statistics'))
-print(session.StatViewAssistant('Flow Statistics'))
+print(session_assistant.StatViewAssistant('Port Statistics'))
+print(session_assistant.StatViewAssistant('Traffic Item Statistics'))
+print(session_assistant.StatViewAssistant('Flow Statistics'))
 
 # stop traffic
-session.Ixnetwork.Traffic.StopStatelessTrafficBlocking()
+ixnetwork.Traffic.StopStatelessTrafficBlocking()
 ```
 
 ## Supported Server Versions

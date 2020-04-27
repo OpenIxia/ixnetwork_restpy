@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ipv6(Base):
     """Controls the general IPv6 interface properties.
-    The Ipv6 class encapsulates a list of ipv6 resources that is be managed by the user.
+    The Ipv6 class encapsulates a list of ipv6 resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ipv6.find() method.
-    The list can be managed by the user by using the Ipv6.add() and Ipv6.remove() methods.
+    The list can be managed by using the Ipv6.add() and Ipv6.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Ipv6(Base):
 
     @property
     def Gateway(self):
-        """The IPv6 address of the Gateway to the network,typically an interface on the DUT.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv6 address of the Gateway to the network,typically an interface on the DUT.
         """
         return self._get_attribute('gateway')
     @Gateway.setter
@@ -50,10 +50,10 @@ class Ipv6(Base):
 
     @property
     def Ip(self):
-        """The 128-bit IPv6 address assigned to this unconnected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 128-bit IPv6 address assigned to this unconnected interface.
         """
         return self._get_attribute('ip')
     @Ip.setter
@@ -62,10 +62,10 @@ class Ipv6(Base):
 
     @property
     def PrefixLength(self):
-        """A learned/allocated IPv4 address prefix length (mask) for this interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A learned/allocated IPv4 address prefix length (mask) for this interface.
         """
         return self._get_attribute('prefixLength')
     @PrefixLength.setter
@@ -74,10 +74,10 @@ class Ipv6(Base):
 
     @property
     def TargetLinkLayerAddressOption(self):
-        """Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
         """
         return self._get_attribute('targetLinkLayerAddressOption')
     @TargetLinkLayerAddressOption.setter
@@ -86,10 +86,10 @@ class Ipv6(Base):
 
     @property
     def TrafficClass(self):
-        """This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
         """
         return self._get_attribute('trafficClass')
     @TrafficClass.setter
@@ -97,79 +97,92 @@ class Ipv6(Base):
         self._set_attribute('trafficClass', value)
 
     def update(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
-        """Updates a child instance of ipv6 on the server.
+        """Updates ipv6 resource on the server.
 
-        Args:
-            Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
-            Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
-            PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
-            TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
-            TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
+        Args
+        ----
+        - Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
+        - Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
+        - PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
+        - TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
+        - TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
-        """Adds a new ipv6 node on the server and retrieves it in this instance.
+        """Adds a new ipv6 resource on the server and adds it to the container.
 
-        Args:
-            Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
-            Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
-            PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
-            TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
-            TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
+        Args
+        ----
+        - Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
+        - Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
+        - PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
+        - TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
+        - TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
 
-        Returns:
-            self: This instance with all currently retrieved ipv6 data using find and the newly added ipv6 data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv6 resources using find and the newly added ipv6 resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipv6 data in this instance from server.
+        """Deletes all the contained ipv6 resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
-        """Finds and retrieves ipv6 data from the server.
+        """Finds and retrieves ipv6 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv6 data from the server.
-        By default the find method takes no parameters and will retrieve all ipv6 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv6 resources from the server.
 
-        Args:
-            Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
-            Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
-            PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
-            TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
-            TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
+        Args
+        ----
+        - Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
+        - Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
+        - PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
+        - TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
+        - TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
 
-        Returns:
-            self: This instance with matching ipv6 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv6 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv6 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv6 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv6 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

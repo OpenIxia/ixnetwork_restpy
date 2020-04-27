@@ -36,10 +36,10 @@ class EthernetImpairment(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -48,10 +48,10 @@ class EthernetImpairment(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -59,13 +59,15 @@ class EthernetImpairment(Base):
         self._set_attribute('ppm', value)
 
     def update(self, EnablePPM=None, Ppm=None):
-        """Updates a child instance of ethernetImpairment on the server.
+        """Updates ethernetImpairment resource on the server.
 
-        Args:
-            EnablePPM (bool): If true, enables the portsppm.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        Args
+        ----
+        - EnablePPM (bool): If true, enables the portsppm.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

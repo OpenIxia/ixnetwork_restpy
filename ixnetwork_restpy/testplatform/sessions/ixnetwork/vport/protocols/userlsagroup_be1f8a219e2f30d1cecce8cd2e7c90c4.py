@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class UserLsaGroup(Base):
     """This object configures a user LSA group for use in OSPF.
-    The UserLsaGroup class encapsulates a list of userLsaGroup resources that is be managed by the user.
+    The UserLsaGroup class encapsulates a list of userLsaGroup resources that are managed by the user.
     A list of resources can be retrieved from the server using the UserLsaGroup.find() method.
-    The list can be managed by the user by using the UserLsaGroup.add() and UserLsaGroup.remove() methods.
+    The list can be managed by using the UserLsaGroup.add() and UserLsaGroup.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class UserLsaGroup(Base):
 
     @property
     def UserLsa(self):
-        """An instance of the UserLsa class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_9feb6200989fad4a8f6e2a0e90c844c0.UserLsa): An instance of the UserLsa class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_9feb6200989fad4a8f6e2a0e90c844c0.UserLsa)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_9feb6200989fad4a8f6e2a0e90c844c0 import UserLsa
         return UserLsa(self)
 
     @property
     def AreaId(self):
-        """The area ID for the LSA group. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The area ID for the LSA group. (default = 0)
         """
         return self._get_attribute('areaId')
     @AreaId.setter
@@ -64,10 +64,10 @@ class UserLsaGroup(Base):
 
     @property
     def Description(self):
-        """A commentary description for the user LSA group.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A commentary description for the user LSA group.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -76,10 +76,10 @@ class UserLsaGroup(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of this router in the simulated OSPF network.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this router in the simulated OSPF network.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -87,73 +87,86 @@ class UserLsaGroup(Base):
         self._set_attribute('enabled', value)
 
     def update(self, AreaId=None, Description=None, Enabled=None):
-        """Updates a child instance of userLsaGroup on the server.
+        """Updates userLsaGroup resource on the server.
 
-        Args:
-            AreaId (number): The area ID for the LSA group. (default = 0)
-            Description (str): A commentary description for the user LSA group.
-            Enabled (bool): Enables the use of this router in the simulated OSPF network.
+        Args
+        ----
+        - AreaId (number): The area ID for the LSA group. (default = 0)
+        - Description (str): A commentary description for the user LSA group.
+        - Enabled (bool): Enables the use of this router in the simulated OSPF network.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AreaId=None, Description=None, Enabled=None):
-        """Adds a new userLsaGroup node on the server and retrieves it in this instance.
+        """Adds a new userLsaGroup resource on the server and adds it to the container.
 
-        Args:
-            AreaId (number): The area ID for the LSA group. (default = 0)
-            Description (str): A commentary description for the user LSA group.
-            Enabled (bool): Enables the use of this router in the simulated OSPF network.
+        Args
+        ----
+        - AreaId (number): The area ID for the LSA group. (default = 0)
+        - Description (str): A commentary description for the user LSA group.
+        - Enabled (bool): Enables the use of this router in the simulated OSPF network.
 
-        Returns:
-            self: This instance with all currently retrieved userLsaGroup data using find and the newly added userLsaGroup data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved userLsaGroup resources using find and the newly added userLsaGroup resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the userLsaGroup data in this instance from server.
+        """Deletes all the contained userLsaGroup resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AreaId=None, Description=None, Enabled=None):
-        """Finds and retrieves userLsaGroup data from the server.
+        """Finds and retrieves userLsaGroup resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve userLsaGroup data from the server.
-        By default the find method takes no parameters and will retrieve all userLsaGroup data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsaGroup resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all userLsaGroup resources from the server.
 
-        Args:
-            AreaId (number): The area ID for the LSA group. (default = 0)
-            Description (str): A commentary description for the user LSA group.
-            Enabled (bool): Enables the use of this router in the simulated OSPF network.
+        Args
+        ----
+        - AreaId (number): The area ID for the LSA group. (default = 0)
+        - Description (str): A commentary description for the user LSA group.
+        - Enabled (bool): Enables the use of this router in the simulated OSPF network.
 
-        Returns:
-            self: This instance with matching userLsaGroup data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching userLsaGroup resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of userLsaGroup data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the userLsaGroup data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the userLsaGroup resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

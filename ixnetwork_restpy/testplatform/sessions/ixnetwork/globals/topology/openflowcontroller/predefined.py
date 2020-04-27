@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Predefined(Base):
     """Default template and profile for Flow Range.
-    The Predefined class encapsulates a list of predefined resources that is be managed by the user.
+    The Predefined class encapsulates a list of predefined resources that are managed by the user.
     A list of resources can be retrieved from the server using the Predefined.find() method.
-    The list can be managed by the user by using the Predefined.add() and Predefined.remove() methods.
+    The list can be managed by using the Predefined.add() and Predefined.remove() methods.
     """
 
     __slots__ = ()
@@ -38,91 +38,100 @@ class Predefined(Base):
 
     @property
     def FlowTemplate(self):
-        """An instance of the FlowTemplate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowtemplate.FlowTemplate): An instance of the FlowTemplate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowtemplate.FlowTemplate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowtemplate import FlowTemplate
         return FlowTemplate(self)
 
     @property
     def SupportedAction(self):
-        """An instance of the SupportedAction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedaction.SupportedAction): An instance of the SupportedAction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedaction.SupportedAction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedaction import SupportedAction
         return SupportedAction(self)
 
     @property
     def SupportedInstruction(self):
-        """An instance of the SupportedInstruction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedinstruction.SupportedInstruction): An instance of the SupportedInstruction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedinstruction.SupportedInstruction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.supportedinstruction import SupportedInstruction
         return SupportedInstruction(self)
 
     def add(self):
-        """Adds a new predefined node on the server and retrieves it in this instance.
+        """Adds a new predefined resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved predefined data using find and the newly added predefined data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved predefined resources using find and the newly added predefined resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the predefined data in this instance from server.
+        """Deletes all the contained predefined resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self):
-        """Finds and retrieves predefined data from the server.
+        """Finds and retrieves predefined resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve predefined data from the server.
-        By default the find method takes no parameters and will retrieve all predefined data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve predefined resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all predefined resources from the server.
 
-        Returns:
-            self: This instance with matching predefined data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching predefined resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of predefined data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the predefined data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the predefined resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,102 +36,104 @@ class Pppoxclient(Base):
 
     @property
     def SessionLifetime(self):
-        """An instance of the SessionLifetime class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime.SessionLifetime): An instance of the SessionLifetime class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime.SessionLifetime)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime import SessionLifetime
         return SessionLifetime(self)._select()
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
-        """An instance of the TlvEditor class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor): An instance of the TlvEditor class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
         return TlvEditor(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def CreateInterfaces(self):
-        """Enable echo request/reply. This command applies only for PPPv4 clients.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('createInterfaces')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable echo request/reply. This command applies only for PPPv4 clients.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('createInterfaces'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Ipv6GlobalAddressMode(self):
-        """When PPP/L2TP is stacked under DHCP, this option selects the protocol used to set the IPv6 global address on the PPP/L2TP-IPv6CP interfaces.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6GlobalAddressMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When PPP/L2TP is stacked under DHCP, this option selects the protocol used to set the IPv6 global address on the PPP/L2TP-IPv6CP interfaces.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6GlobalAddressMode'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -140,51 +142,57 @@ class Pppoxclient(Base):
 
     @property
     def RaTimeout(self):
-        """Time to wait (in seconds) for Router Advertisment before NCP up.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('raTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time to wait (in seconds) for Router Advertisment before NCP up.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('raTimeout'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     def update(self, Name=None):
-        """Updates a child instance of pppoxclient on the server.
+        """Updates pppoxclient resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, CreateInterfaces=None, Ipv6GlobalAddressMode=None, RaTimeout=None):
         """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            CreateInterfaces (str): optional regex of createInterfaces
-            Ipv6GlobalAddressMode (str): optional regex of ipv6GlobalAddressMode
-            RaTimeout (str): optional regex of raTimeout
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - CreateInterfaces (str): optional regex of createInterfaces
+        - Ipv6GlobalAddressMode (str): optional regex of ipv6GlobalAddressMode
+        - RaTimeout (str): optional regex of raTimeout
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

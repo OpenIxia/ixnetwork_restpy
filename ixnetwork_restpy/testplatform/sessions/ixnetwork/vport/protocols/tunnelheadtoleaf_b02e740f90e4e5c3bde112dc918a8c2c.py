@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TunnelHeadToLeaf(Base):
     """It is introduced for the enhanced functionality of ERO and SERO configuration for the head range.
-    The TunnelHeadToLeaf class encapsulates a list of tunnelHeadToLeaf resources that is be managed by the user.
+    The TunnelHeadToLeaf class encapsulates a list of tunnelHeadToLeaf resources that are managed by the user.
     A list of resources can be retrieved from the server using the TunnelHeadToLeaf.find() method.
-    The list can be managed by the user by using the TunnelHeadToLeaf.add() and TunnelHeadToLeaf.remove() methods.
+    The list can be managed by using the TunnelHeadToLeaf.add() and TunnelHeadToLeaf.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def DutHopType(self):
-        """Based on the input, the corresponding L bit in the packet is set.
-
-        Returns:
-            str(strict|loose)
+        """
+        Returns
+        -------
+        - str(strict | loose): Based on the input, the corresponding L bit in the packet is set.
         """
         return self._get_attribute('dutHopType')
     @DutHopType.setter
@@ -50,10 +50,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def DutPrefixLength(self):
-        """Prefix length of DUT.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Prefix length of DUT.
         """
         return self._get_attribute('dutPrefixLength')
     @DutPrefixLength.setter
@@ -62,10 +62,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def Enabled(self):
-        """It enables or disables the ERO/SERO specific configuration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It enables or disables the ERO/SERO specific configuration.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,19 +74,19 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def HeadIpStart(self):
-        """It is the tunnel head IP address for which the ERO/SERO is being configured.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It is the tunnel head IP address for which the ERO/SERO is being configured.
         """
         return self._get_attribute('headIpStart')
 
     @property
     def IsAppendTunnelLeaf(self):
-        """If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
         """
         return self._get_attribute('isAppendTunnelLeaf')
     @IsAppendTunnelLeaf.setter
@@ -95,10 +95,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def IsPrependDut(self):
-        """Enables prepend DUT to the ERO/SERO list.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables prepend DUT to the ERO/SERO list.
         """
         return self._get_attribute('isPrependDut')
     @IsPrependDut.setter
@@ -107,10 +107,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def IsSendingAsEro(self):
-        """If enabled, the entire configuration would go as ERO.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the entire configuration would go as ERO.
         """
         return self._get_attribute('isSendingAsEro')
     @IsSendingAsEro.setter
@@ -119,10 +119,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def IsSendingAsSero(self):
-        """If enabled, the entire configuration would go as SERO.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the entire configuration would go as SERO.
         """
         return self._get_attribute('isSendingAsSero')
     @IsSendingAsSero.setter
@@ -131,10 +131,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def SubObjectList(self):
-        """The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
         """
         return self._get_attribute('subObjectList')
     @SubObjectList.setter
@@ -143,10 +143,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def TunnelLeafCount(self):
-        """The count of tunnel leaf.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of tunnel leaf.
         """
         return self._get_attribute('tunnelLeafCount')
     @TunnelLeafCount.setter
@@ -155,10 +155,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def TunnelLeafHopType(self):
-        """It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
-
-        Returns:
-            str(strict|loose)
+        """
+        Returns
+        -------
+        - str(strict | loose): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
         """
         return self._get_attribute('tunnelLeafHopType')
     @TunnelLeafHopType.setter
@@ -167,10 +167,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def TunnelLeafIpStart(self):
-        """It contains the start IP address of leaf for which the ERO/SERO will be configured.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It contains the start IP address of leaf for which the ERO/SERO will be configured.
         """
         return self._get_attribute('tunnelLeafIpStart')
     @TunnelLeafIpStart.setter
@@ -179,10 +179,10 @@ class TunnelHeadToLeaf(Base):
 
     @property
     def TunnelLeafPrefixLength(self):
-        """Prefix length of tunnel leaf.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Prefix length of tunnel leaf.
         """
         return self._get_attribute('tunnelLeafPrefixLength')
     @TunnelLeafPrefixLength.setter
@@ -190,101 +190,114 @@ class TunnelHeadToLeaf(Base):
         self._set_attribute('tunnelLeafPrefixLength', value)
 
     def update(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
-        """Updates a child instance of tunnelHeadToLeaf on the server.
+        """Updates tunnelHeadToLeaf resource on the server.
 
-        Args:
-            DutHopType (str(strict|loose)): Based on the input, the corresponding L bit in the packet is set.
-            DutPrefixLength (number): Prefix length of DUT.
-            Enabled (bool): It enables or disables the ERO/SERO specific configuration.
-            IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
-            IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
-            IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
-            IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
-            SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
-            TunnelLeafCount (number): The count of tunnel leaf.
-            TunnelLeafHopType (str(strict|loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
-            TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
-            TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
+        Args
+        ----
+        - DutHopType (str(strict | loose)): Based on the input, the corresponding L bit in the packet is set.
+        - DutPrefixLength (number): Prefix length of DUT.
+        - Enabled (bool): It enables or disables the ERO/SERO specific configuration.
+        - IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
+        - IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
+        - IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
+        - IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
+        - SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
+        - TunnelLeafCount (number): The count of tunnel leaf.
+        - TunnelLeafHopType (str(strict | loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
+        - TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
+        - TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
-        """Adds a new tunnelHeadToLeaf node on the server and retrieves it in this instance.
+        """Adds a new tunnelHeadToLeaf resource on the server and adds it to the container.
 
-        Args:
-            DutHopType (str(strict|loose)): Based on the input, the corresponding L bit in the packet is set.
-            DutPrefixLength (number): Prefix length of DUT.
-            Enabled (bool): It enables or disables the ERO/SERO specific configuration.
-            IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
-            IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
-            IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
-            IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
-            SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
-            TunnelLeafCount (number): The count of tunnel leaf.
-            TunnelLeafHopType (str(strict|loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
-            TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
-            TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
+        Args
+        ----
+        - DutHopType (str(strict | loose)): Based on the input, the corresponding L bit in the packet is set.
+        - DutPrefixLength (number): Prefix length of DUT.
+        - Enabled (bool): It enables or disables the ERO/SERO specific configuration.
+        - IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
+        - IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
+        - IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
+        - IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
+        - SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
+        - TunnelLeafCount (number): The count of tunnel leaf.
+        - TunnelLeafHopType (str(strict | loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
+        - TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
+        - TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
 
-        Returns:
-            self: This instance with all currently retrieved tunnelHeadToLeaf data using find and the newly added tunnelHeadToLeaf data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved tunnelHeadToLeaf resources using find and the newly added tunnelHeadToLeaf resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the tunnelHeadToLeaf data in this instance from server.
+        """Deletes all the contained tunnelHeadToLeaf resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DutHopType=None, DutPrefixLength=None, Enabled=None, HeadIpStart=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
-        """Finds and retrieves tunnelHeadToLeaf data from the server.
+        """Finds and retrieves tunnelHeadToLeaf resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tunnelHeadToLeaf data from the server.
-        By default the find method takes no parameters and will retrieve all tunnelHeadToLeaf data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tunnelHeadToLeaf resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tunnelHeadToLeaf resources from the server.
 
-        Args:
-            DutHopType (str(strict|loose)): Based on the input, the corresponding L bit in the packet is set.
-            DutPrefixLength (number): Prefix length of DUT.
-            Enabled (bool): It enables or disables the ERO/SERO specific configuration.
-            HeadIpStart (str): It is the tunnel head IP address for which the ERO/SERO is being configured.
-            IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
-            IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
-            IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
-            IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
-            SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
-            TunnelLeafCount (number): The count of tunnel leaf.
-            TunnelLeafHopType (str(strict|loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
-            TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
-            TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
+        Args
+        ----
+        - DutHopType (str(strict | loose)): Based on the input, the corresponding L bit in the packet is set.
+        - DutPrefixLength (number): Prefix length of DUT.
+        - Enabled (bool): It enables or disables the ERO/SERO specific configuration.
+        - HeadIpStart (str): It is the tunnel head IP address for which the ERO/SERO is being configured.
+        - IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
+        - IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
+        - IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
+        - IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
+        - SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
+        - TunnelLeafCount (number): The count of tunnel leaf.
+        - TunnelLeafHopType (str(strict | loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
+        - TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
+        - TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
 
-        Returns:
-            self: This instance with matching tunnelHeadToLeaf data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tunnelHeadToLeaf resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tunnelHeadToLeaf data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tunnelHeadToLeaf data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tunnelHeadToLeaf resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

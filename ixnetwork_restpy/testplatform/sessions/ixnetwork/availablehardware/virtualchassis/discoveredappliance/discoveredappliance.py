@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class DiscoveredAppliance(Base):
     """Retrieves the list of appliances that were discovered with Discovery Server
-    The DiscoveredAppliance class encapsulates a list of discoveredAppliance resources that is managed by the system.
+    The DiscoveredAppliance class encapsulates a list of discoveredAppliance resources that are managed by the system.
     A list of resources can be retrieved from the server using the DiscoveredAppliance.find() method.
     """
 
@@ -37,85 +37,92 @@ class DiscoveredAppliance(Base):
 
     @property
     def DiscoveredInterface(self):
-        """An instance of the DiscoveredInterface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface.DiscoveredInterface): An instance of the DiscoveredInterface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface.DiscoveredInterface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface import DiscoveredInterface
         return DiscoveredInterface(self)
 
     @property
     def ApplianceName(self):
-        """Represents the appliance Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the appliance Name
         """
         return self._get_attribute('applianceName')
 
     @property
     def ApplianceType(self):
-        """Represents the appliance host type
-
-        Returns:
-            str(qemu|vCenter|vmware)
+        """
+        Returns
+        -------
+        - str(qemu | vCenter | vmware): Represents the appliance host type
         """
         return self._get_attribute('applianceType')
 
     @property
     def InterfacesNumber(self):
-        """Represents the number of test interfaces
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Represents the number of test interfaces
         """
         return self._get_attribute('interfacesNumber')
 
     @property
     def ManagementIp(self):
-        """Represents the management Ip
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the management Ip
         """
         return self._get_attribute('managementIp')
 
     def find(self, ApplianceName=None, ApplianceType=None, InterfacesNumber=None, ManagementIp=None):
-        """Finds and retrieves discoveredAppliance data from the server.
+        """Finds and retrieves discoveredAppliance resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve discoveredAppliance data from the server.
-        By default the find method takes no parameters and will retrieve all discoveredAppliance data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredAppliance resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all discoveredAppliance resources from the server.
 
-        Args:
-            ApplianceName (str): Represents the appliance Name
-            ApplianceType (str(qemu|vCenter|vmware)): Represents the appliance host type
-            InterfacesNumber (number): Represents the number of test interfaces
-            ManagementIp (str): Represents the management Ip
+        Args
+        ----
+        - ApplianceName (str): Represents the appliance Name
+        - ApplianceType (str(qemu | vCenter | vmware)): Represents the appliance host type
+        - InterfacesNumber (number): Represents the number of test interfaces
+        - ManagementIp (str): Represents the management Ip
 
-        Returns:
-            self: This instance with matching discoveredAppliance data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching discoveredAppliance resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of discoveredAppliance data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the discoveredAppliance data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the discoveredAppliance resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

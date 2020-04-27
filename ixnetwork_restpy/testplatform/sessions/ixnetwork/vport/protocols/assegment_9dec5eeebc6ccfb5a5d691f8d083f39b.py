@@ -36,10 +36,10 @@ class AsSegment(Base):
 
     @property
     def AsSegments(self):
-        """Used to construct AS list related items.
-
-        Returns:
-            list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number])): Used to construct AS list related items.
         """
         return self._get_attribute('asSegments')
     @AsSegments.setter
@@ -47,12 +47,14 @@ class AsSegment(Base):
         self._set_attribute('asSegments', value)
 
     def update(self, AsSegments=None):
-        """Updates a child instance of asSegment on the server.
+        """Updates asSegment resource on the server.
 
-        Args:
-            AsSegments (list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))): Used to construct AS list related items.
+        Args
+        ----
+        - AsSegments (list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number]))): Used to construct AS list related items.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

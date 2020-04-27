@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IntraAreaPrefix(Base):
     """Simulated Router Information
-    The IntraAreaPrefix class encapsulates a list of intraAreaPrefix resources that is managed by the system.
+    The IntraAreaPrefix class encapsulates a list of intraAreaPrefix resources that are managed by the system.
     A list of resources can be retrieved from the server using the IntraAreaPrefix.find() method.
     """
 
@@ -37,91 +37,148 @@ class IntraAreaPrefix(Base):
 
     @property
     def Active(self):
-        """Whether this is to be advertised or not
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
+
+    @property
+    def Algorithm(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
+
+    @property
+    def ConfigureSIDIndexLabel(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Lets the corresponding router send Prefix SID. By default, it is selected
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('configureSIDIndexLabel'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
-    def LABit(self):
-        """Options-LA Bit(Local Address)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def EFlag(self):
         """
-        return self._get_attribute('lABit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
+
+    @property
+    def LABit(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-LA Bit(Local Address)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lABit'))
+
+    @property
+    def LFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def LinkStateId(self):
-        """Link State Id of the simulated IPv6 network
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('linkStateId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id of the simulated IPv6 network
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('linkStateId'))
 
     @property
     def LinkStateIdStep(self):
-        """Link State Id Step for the LSAs to be generated for this set of IPv6 Inter-Area networks.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('linkStateIdStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id Step for the LSAs to be generated for this set of IPv6 Inter-Area networks.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('linkStateIdStep'))
 
     @property
     def MCBit(self):
-        """Options-MC Bit(Multicast)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mCBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-MC Bit(Multicast)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mCBit'))
+
+    @property
+    def MFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mFlag'))
 
     @property
     def Metric(self):
-        """Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def NUBit(self):
-        """Options-NU Bit(No Unicast)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nUBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-NU Bit(No Unicast)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nUBit'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -130,182 +187,243 @@ class IntraAreaPrefix(Base):
 
     @property
     def NetworkAddress(self):
-        """Prefixes of the simulated IPv6 network
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefixes of the simulated IPv6 network
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkAddress'))
+
+    @property
+    def NpFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('npFlag'))
 
     @property
     def PBit(self):
-        """Options-P Bit(Propagate)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-P Bit(Propagate)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pBit'))
 
     @property
     def Prefix(self):
-        """Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefix'))
 
     @property
     def RangeSize(self):
-        """Range Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rangeSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rangeSize'))
 
     @property
     def RefLSType(self):
-        """Reference LS Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('refLSType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reference LS Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('refLSType'))
 
     @property
     def ReferencedLinkStateId(self):
-        """Referenced Link State Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('referencedLinkStateId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Referenced Link State Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('referencedLinkStateId'))
 
     @property
     def ReferencedRouterId(self):
-        """Referenced Advertising Router Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('referencedRouterId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Referenced Advertising Router Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('referencedRouterId'))
+
+    @property
+    def SidIndexLabel(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sidIndexLabel'))
 
     @property
     def UnusedBit4(self):
-        """Options-(4)Unused
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unusedBit4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(4)Unused
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unusedBit4'))
 
     @property
     def UnusedBit5(self):
-        """Options-(5)Unused
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unusedBit5')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(5)Unused
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unusedBit5'))
 
     @property
     def UnusedBit6(self):
-        """Options-(6)Unused
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unusedBit6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(6)Unused
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unusedBit6'))
 
     @property
     def UnusedBit7(self):
-        """Options-(7)Unused
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unusedBit7')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(7)Unused
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unusedBit7'))
+
+    @property
+    def VFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
     def update(self, Name=None):
-        """Updates a child instance of intraAreaPrefix on the server.
+        """Updates intraAreaPrefix resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves intraAreaPrefix data from the server.
+        """Finds and retrieves intraAreaPrefix resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve intraAreaPrefix data from the server.
-        By default the find method takes no parameters and will retrieve all intraAreaPrefix data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve intraAreaPrefix resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all intraAreaPrefix resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching intraAreaPrefix data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching intraAreaPrefix resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of intraAreaPrefix data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the intraAreaPrefix data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the intraAreaPrefix resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, LABit=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, Metric=None, NUBit=None, NetworkAddress=None, PBit=None, Prefix=None, RangeSize=None, RefLSType=None, ReferencedLinkStateId=None, ReferencedRouterId=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None):
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, LABit=None, LFlag=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, MFlag=None, Metric=None, NUBit=None, NetworkAddress=None, NpFlag=None, PBit=None, Prefix=None, RangeSize=None, RefLSType=None, ReferencedLinkStateId=None, ReferencedRouterId=None, SidIndexLabel=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None, VFlag=None):
         """Base class infrastructure that gets a list of intraAreaPrefix device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            LABit (str): optional regex of lABit
-            LinkStateId (str): optional regex of linkStateId
-            LinkStateIdStep (str): optional regex of linkStateIdStep
-            MCBit (str): optional regex of mCBit
-            Metric (str): optional regex of metric
-            NUBit (str): optional regex of nUBit
-            NetworkAddress (str): optional regex of networkAddress
-            PBit (str): optional regex of pBit
-            Prefix (str): optional regex of prefix
-            RangeSize (str): optional regex of rangeSize
-            RefLSType (str): optional regex of refLSType
-            ReferencedLinkStateId (str): optional regex of referencedLinkStateId
-            ReferencedRouterId (str): optional regex of referencedRouterId
-            UnusedBit4 (str): optional regex of unusedBit4
-            UnusedBit5 (str): optional regex of unusedBit5
-            UnusedBit6 (str): optional regex of unusedBit6
-            UnusedBit7 (str): optional regex of unusedBit7
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - Algorithm (str): optional regex of algorithm
+        - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - EFlag (str): optional regex of eFlag
+        - LABit (str): optional regex of lABit
+        - LFlag (str): optional regex of lFlag
+        - LinkStateId (str): optional regex of linkStateId
+        - LinkStateIdStep (str): optional regex of linkStateIdStep
+        - MCBit (str): optional regex of mCBit
+        - MFlag (str): optional regex of mFlag
+        - Metric (str): optional regex of metric
+        - NUBit (str): optional regex of nUBit
+        - NetworkAddress (str): optional regex of networkAddress
+        - NpFlag (str): optional regex of npFlag
+        - PBit (str): optional regex of pBit
+        - Prefix (str): optional regex of prefix
+        - RangeSize (str): optional regex of rangeSize
+        - RefLSType (str): optional regex of refLSType
+        - ReferencedLinkStateId (str): optional regex of referencedLinkStateId
+        - ReferencedRouterId (str): optional regex of referencedRouterId
+        - SidIndexLabel (str): optional regex of sidIndexLabel
+        - UnusedBit4 (str): optional regex of unusedBit4
+        - UnusedBit5 (str): optional regex of unusedBit5
+        - UnusedBit6 (str): optional regex of unusedBit6
+        - UnusedBit7 (str): optional regex of unusedBit7
+        - VFlag (str): optional regex of vFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -314,22 +432,20 @@ class IntraAreaPrefix(Base):
 
         Advertise selected routes
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        advertise()
+        advertise(SessionIndices=list)
+        ------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        advertise(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        advertise(SessionIndices=string)
+        --------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        advertise(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -341,9 +457,10 @@ class IntraAreaPrefix(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -353,9 +470,10 @@ class IntraAreaPrefix(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)
@@ -365,22 +483,20 @@ class IntraAreaPrefix(Base):
 
         Withdraw selected routes
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        withdraw()
+        withdraw(SessionIndices=list)
+        -----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        withdraw(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        withdraw(SessionIndices=string)
+        -------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        withdraw(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

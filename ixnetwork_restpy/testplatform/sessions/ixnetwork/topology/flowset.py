@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class FlowSet(Base):
     """Flow Set Configuration
-    The FlowSet class encapsulates a list of flowSet resources that is managed by the system.
+    The FlowSet class encapsulates a list of flowSet resources that are managed by the system.
     A list of resources can be retrieved from the server using the FlowSet.find() method.
     """
 
@@ -37,69 +37,72 @@ class FlowSet(Base):
 
     @property
     def FlowProfile(self):
-        """An instance of the FlowProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile.FlowProfile): An instance of the FlowProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile.FlowProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile import FlowProfile
         return FlowProfile(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Cookie(self):
-        """Cookie of the flow entry that was looked up. This is the opaque controller-issued identifier.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('cookie')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Cookie of the flow entry that was looked up. This is the opaque controller-issued identifier.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('cookie'))
 
     @property
     def CookieMask(self):
-        """The mask used to restrict the cookie bits.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('cookieMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The mask used to restrict the cookie bits.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('cookieMask'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FlowAdvertise(self):
-        """If selected, the flows are advertised by the OF Channel.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, the flows are advertised by the OF Channel.
         """
         return self._get_attribute('flowAdvertise')
     @FlowAdvertise.setter
@@ -108,28 +111,30 @@ class FlowSet(Base):
 
     @property
     def FlowFlags(self):
-        """Allows to configure the Flow Flags. Options are: 1) Send Flow Removed 2) Check Overlap 3) Reset Counts 4) No Packet Count 5) No Byte Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flowFlags')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Allows to configure the Flow Flags. Options are: 1) Send Flow Removed 2) Check Overlap 3) Reset Counts 4) No Packet Count 5) No Byte Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flowFlags'))
 
     @property
     def FlowMatchType(self):
-        """The type of match to be configured. Options include the following: 1) Strict 2) Loose
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flowMatchType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of match to be configured. Options include the following: 1) Strict 2) Loose
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flowMatchType'))
 
     @property
     def FlowSetId(self):
-        """Specify the controller Flow Set identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the controller Flow Set identifier.
         """
         return self._get_attribute('flowSetId')
     @FlowSetId.setter
@@ -138,28 +143,30 @@ class FlowSet(Base):
 
     @property
     def HardTimeout(self):
-        """The inactive time in seconds after which the Flow range will hard timeout and close.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hardTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The inactive time in seconds after which the Flow range will hard timeout and close.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hardTimeout'))
 
     @property
     def IdleTimeout(self):
-        """The inactive time in seconds after which the Flow range will timeout and become idle.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('idleTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The inactive time in seconds after which the Flow range will timeout and become idle.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('idleTimeout'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -168,10 +175,10 @@ class FlowSet(Base):
 
     @property
     def NumberOfFlows(self):
-        """The number of flows to be configured for the controller table.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of flows to be configured for the controller table.
         """
         return self._get_attribute('numberOfFlows')
     @NumberOfFlows.setter
@@ -180,64 +187,74 @@ class FlowSet(Base):
 
     @property
     def Priority(self):
-        """The priority level for the Flow Range.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('priority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The priority level for the Flow Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('priority'))
 
     def update(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
-        """Updates a child instance of flowSet on the server.
+        """Updates flowSet resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
-            FlowSetId (str): Specify the controller Flow Set identifier.
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfFlows (number): The number of flows to be configured for the controller table.
+        Args
+        ----
+        - FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
+        - FlowSetId (str): Specify the controller Flow Set identifier.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFlows (number): The number of flows to be configured for the controller table.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
-        """Finds and retrieves flowSet data from the server.
+        """Finds and retrieves flowSet resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve flowSet data from the server.
-        By default the find method takes no parameters and will retrieve all flowSet data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowSet resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flowSet resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
-            FlowSetId (str): Specify the controller Flow Set identifier.
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfFlows (number): The number of flows to be configured for the controller table.
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
+        - FlowSetId (str): Specify the controller Flow Set identifier.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFlows (number): The number of flows to be configured for the controller table.
 
-        Returns:
-            self: This instance with matching flowSet data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching flowSet resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of flowSet data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the flowSet data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the flowSet resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -246,21 +263,24 @@ class FlowSet(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            Cookie (str): optional regex of cookie
-            CookieMask (str): optional regex of cookieMask
-            FlowFlags (str): optional regex of flowFlags
-            FlowMatchType (str): optional regex of flowMatchType
-            HardTimeout (str): optional regex of hardTimeout
-            IdleTimeout (str): optional regex of idleTimeout
-            Priority (str): optional regex of priority
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - Cookie (str): optional regex of cookie
+        - CookieMask (str): optional regex of cookieMask
+        - FlowFlags (str): optional regex of flowFlags
+        - FlowMatchType (str): optional regex of flowMatchType
+        - HardTimeout (str): optional regex of hardTimeout
+        - IdleTimeout (str): optional regex of idleTimeout
+        - Priority (str): optional regex of priority
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

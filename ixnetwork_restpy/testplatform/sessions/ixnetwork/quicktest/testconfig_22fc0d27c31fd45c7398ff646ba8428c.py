@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def ApplyMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('applyMode')
     @ApplyMode.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def AssignGroupType(self):
-        """It assigns the group type.
-
-        Returns:
-            str(accumulated|distributed)
+        """
+        Returns
+        -------
+        - str(accumulated | distributed): It assigns the group type.
         """
         return self._get_attribute('assignGroupType')
     @AssignGroupType.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def BidirectionalOptionEnabled(self):
-        """If true, the bidirectional option is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the bidirectional option is enabled.
         """
         return self._get_attribute('bidirectionalOptionEnabled')
     @BidirectionalOptionEnabled.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """The number of packets that are sent in a burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of packets that are sent in a burst.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def CalculateJitter(self):
-        """If true, the jitter is calculated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the jitter is calculated.
         """
         return self._get_attribute('calculateJitter')
     @CalculateJitter.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """If true, the latency is calculated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the latency is calculated.
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """If true, randomly counts the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, randomly counts the frame size.
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """The amount of delay after every transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of delay after every transmit.
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """The duration of the test in hours, which is used to calculate the number of frames to transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The duration of the test in hours, which is used to calculate the number of frames to transmit.
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """If true, enables data integrity test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables data integrity test.
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer1Rate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLayer1Rate')
     @EnableLayer1Rate.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def EnableLeaveGroup(self):
-        """If true, enables leave group.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables leave group.
         """
         return self._get_attribute('enableLeaveGroup')
     @EnableLeaveGroup.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, enables minimum frame size.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables minimum frame size.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def EnableMulticastQuerier(self):
-        """Enable Multicast Querier Settings
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Multicast Querier Settings
         """
         return self._get_attribute('enableMulticastQuerier')
     @EnableMulticastQuerier.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def EnableOldStatsForReef(self):
-        """It enables the old statistics for reef.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It enables the old statistics for reef.
         """
         return self._get_attribute('enableOldStatsForReef')
     @EnableOldStatsForReef.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def FirstMulticastDestMACAddress(self):
-        """The first multicast destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first multicast destination MAC address.
         """
         return self._get_attribute('firstMulticastDestMACAddress')
     @FirstMulticastDestMACAddress.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def FloodedFramesEnabled(self):
-        """If true, it enables the flooded frames statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the flooded frames statistics
         """
         return self._get_attribute('floodedFramesEnabled')
     @FloodedFramesEnabled.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """Initiates a forced regeneration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Initiates a forced regeneration.
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
-
-        Returns:
-            str(custom|fixed|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | fixed | increment | random): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """The list of the available frame size.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of the available frame size.
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """The gap in transmission of frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The gap in transmission of frames.
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def GroupCapacityGreaterThan(self):
-        """The integer that distinguishes the group capacity that could be greater than the specified integer.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that distinguishes the group capacity that could be greater than the specified integer.
         """
         return self._get_attribute('groupCapacityGreaterThan')
     @GroupCapacityGreaterThan.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def GroupDistributionType(self):
-        """It signifies group distribution type.
-
-        Returns:
-            str(acrossHosts|acrossPorts)
+        """
+        Returns
+        -------
+        - str(acrossHosts | acrossPorts): It signifies group distribution type.
         """
         return self._get_attribute('groupDistributionType')
     @GroupDistributionType.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def IgmpV1Timeout(self):
-        """It signifies the timeout of version 1 of IGMP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the timeout of version 1 of IGMP.
         """
         return self._get_attribute('igmpV1Timeout')
     @IgmpV1Timeout.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def IgmpVersion(self):
-        """It signifies the version of IGMP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the version of IGMP.
         """
         return self._get_attribute('igmpVersion')
     @IgmpVersion.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def Igmpv3MessageType(self):
-        """It gives details about the igmpv3 message type in the test configuration
-
-        Returns:
-            str(exclude|include)
+        """
+        Returns
+        -------
+        - str(exclude | include): It gives details about the igmpv3 message type in the test configuration
         """
         return self._get_attribute('igmpv3MessageType')
     @Igmpv3MessageType.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def Igmpv3SourceAddrList(self):
-        """It gives details about the igmpv3 source address list in the test configuration
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the igmpv3 source address list in the test configuration
         """
         return self._get_attribute('igmpv3SourceAddrList')
     @Igmpv3SourceAddrList.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def IncMulticastDestMACAddress(self):
-        """The incrementing multicast destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incrementing multicast destination MAC address.
         """
         return self._get_attribute('incMulticastDestMACAddress')
     @IncMulticastDestMACAddress.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def IncPortMACAddress(self):
-        """The incrementing MAC address of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incrementing MAC address of the port.
         """
         return self._get_attribute('incPortMACAddress')
     @IncPortMACAddress.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def IncrAddresses(self):
-        """If true, the MAC address is incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, the MAC address is incremented.
         """
         return self._get_attribute('incrAddresses')
     @IncrAddresses.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def InitialRate(self):
-        """The first rate of transmission.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first rate of transmission.
         """
         return self._get_attribute('initialRate')
     @InitialRate.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def InitialStepLoadRate(self):
-        """The initial step value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial step value of the load rate.
         """
         return self._get_attribute('initialStepLoadRate')
     @InitialStepLoadRate.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def Ipv4Address(self):
-        """It signifies the IP address for version 4.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the IP address for version 4.
         """
         return self._get_attribute('ipv4Address')
     @Ipv4Address.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def Ipv6Address(self):
-        """It signifies the IP address for version 6.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the IP address for version 6.
         """
         return self._get_attribute('ipv6Address')
     @Ipv6Address.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def IsIPv6(self):
-        """If true, configures IPv6 address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, configures IPv6 address.
         """
         return self._get_attribute('isIPv6')
     @IsIPv6.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def IsMulticastAutomaticFrameData(self):
-        """If true, configures multicast automatic frame data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, configures multicast automatic frame data.
         """
         return self._get_attribute('isMulticastAutomaticFrameData')
     @IsMulticastAutomaticFrameData.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveMultiplier(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('joinLeaveMultiplier')
     @JoinLeaveMultiplier.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveRate(self):
-        """It signifies the join and leave rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the join and leave rate.
         """
         return self._get_attribute('joinLeaveRate')
     @JoinLeaveRate.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveWaitTime(self):
-        """The wait time for the leave.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The wait time for the leave.
         """
         return self._get_attribute('joinLeaveWaitTime')
     @JoinLeaveWaitTime.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBins(self):
-        """DEPRECATED Sets the latency bins statistics
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Sets the latency bins statistics
         """
         return self._get_attribute('latencyBins')
     @LatencyBins.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBinsEnabled(self):
-        """Enables the latency bins statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the latency bins statistics
         """
         return self._get_attribute('latencyBinsEnabled')
     @LatencyBinsEnabled.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def LatencyType(self):
-        """The type of latency required by the DUT to forward frames.
-
-        Returns:
-            str(cutThrough|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | storeForward): The type of latency required by the DUT to forward frames.
         """
         return self._get_attribute('latencyType')
     @LatencyType.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def LoadInitialRate(self):
-        """The initial rate of the load.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial rate of the load.
         """
         return self._get_attribute('loadInitialRate')
     @LoadInitialRate.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateList(self):
-        """The list of Load Rate.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of Load Rate.
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """The type of the payload setting.
-
-        Returns:
-            str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)
+        """
+        Returns
+        -------
+        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): The type of the payload setting.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """The POS traffic map type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The POS traffic map type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """The maximum incremental value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum incremental value of the frame size.
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -600,10 +600,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """The maximum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random frame size to be sent.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -612,10 +612,10 @@ class TestConfig(Base):
 
     @property
     def MaxStepLoadRate(self):
-        """The maximum step load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum step load rate.
         """
         return self._get_attribute('maxStepLoadRate')
     @MaxStepLoadRate.setter
@@ -624,10 +624,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """The minimum incremental value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum incremental value of the frame size.
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -636,10 +636,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The minimum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random frame size to be sent.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -648,10 +648,10 @@ class TestConfig(Base):
 
     @property
     def MixedClassMulticast(self):
-        """The mixed multicast class.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The mixed multicast class.
         """
         return self._get_attribute('mixedClassMulticast')
     @MixedClassMulticast.setter
@@ -660,10 +660,10 @@ class TestConfig(Base):
 
     @property
     def MldVersion(self):
-        """It signifies the MLD version.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the MLD version.
         """
         return self._get_attribute('mldVersion')
     @MldVersion.setter
@@ -672,10 +672,10 @@ class TestConfig(Base):
 
     @property
     def NumAddresses(self):
-        """The integer value for the number of addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value for the number of addresses.
         """
         return self._get_attribute('numAddresses')
     @NumAddresses.setter
@@ -684,10 +684,10 @@ class TestConfig(Base):
 
     @property
     def NumIterations(self):
-        """The number of iterations.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of iterations.
         """
         return self._get_attribute('numIterations')
     @NumIterations.setter
@@ -696,10 +696,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The integer value that states the number of trials permitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value that states the number of trials permitted.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -708,10 +708,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -720,10 +720,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -732,10 +732,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -744,10 +744,10 @@ class TestConfig(Base):
 
     @property
     def PortMACAddress(self):
-        """The MAC address of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the port.
         """
         return self._get_attribute('portMACAddress')
     @PortMACAddress.setter
@@ -756,10 +756,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -768,10 +768,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """Reports sequence errors in the test result
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Reports sequence errors in the test result
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -780,10 +780,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """Report identifying the unit for measuring the throughput rate in frames per second.
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): Report identifying the unit for measuring the throughput rate in frames per second.
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -792,10 +792,10 @@ class TestConfig(Base):
 
     @property
     def RouterAlert(self):
-        """The router alert selected from the Hop-by-hop Options.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The router alert selected from the Hop-by-hop Options.
         """
         return self._get_attribute('routerAlert')
     @RouterAlert.setter
@@ -804,10 +804,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """The incremental step value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of the frame size.
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -816,10 +816,10 @@ class TestConfig(Base):
 
     @property
     def StepLoadUnit(self):
-        """Specifies the step rate of the load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the step rate of the load unit.
         """
         return self._get_attribute('stepLoadUnit')
     @StepLoadUnit.setter
@@ -828,10 +828,10 @@ class TestConfig(Base):
 
     @property
     def StepStepLoadRate(self):
-        """The incremental step value of load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of load rate.
         """
         return self._get_attribute('stepStepLoadRate')
     @StepStepLoadRate.setter
@@ -840,10 +840,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """The traffic types supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The traffic types supported.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -852,10 +852,10 @@ class TestConfig(Base):
 
     @property
     def TestTrafficType(self):
-        """It signifies the test traffic type value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the test traffic type value.
         """
         return self._get_attribute('testTrafficType')
     @TestTrafficType.setter
@@ -864,10 +864,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """Specifies the amount of delay after every transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the amount of delay after every transmit.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -875,93 +875,96 @@ class TestConfig(Base):
         self._set_attribute('txDelay', value)
 
     def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, FirstMulticastDestMACAddress=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, Gap=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncMulticastDestMACAddress=None, IncPortMACAddress=None, IncrAddresses=None, InitialRate=None, InitialStepLoadRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadInitialRate=None, LoadRateList=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MaxStepLoadRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MixedClassMulticast=None, MldVersion=None, NumAddresses=None, NumIterations=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortMACAddress=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, RouterAlert=None, StepIncrementFrameSize=None, StepLoadUnit=None, StepStepLoadRate=None, SupportedTrafficTypes=None, TestTrafficType=None, TxDelay=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            ApplyMode (str): NOT DEFINED
-            AssignGroupType (str(accumulated|distributed)): It assigns the group type.
-            BidirectionalOptionEnabled (bool): If true, the bidirectional option is enabled.
-            BurstSize (number): The number of packets that are sent in a burst.
-            CalculateJitter (bool): If true, the jitter is calculated.
-            CalculateLatency (bool): If true, the latency is calculated.
-            CountRandomFrameSize (number): If true, randomly counts the frame size.
-            DelayAfterTransmit (number): The amount of delay after every transmit.
-            Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
-            EnableDataIntegrity (bool): If true, enables data integrity test.
-            EnableLayer1Rate (bool): NOT DEFINED
-            EnableLeaveGroup (bool): If true, enables leave group.
-            EnableMinFrameSize (bool): If true, enables minimum frame size.
-            EnableMulticastQuerier (bool): Enable Multicast Querier Settings
-            EnableOldStatsForReef (bool): It enables the old statistics for reef.
-            FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
-            FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
-            ForceRegenerate (bool): Initiates a forced regeneration.
-            FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
-            FramesizeList (list(str)): The list of the available frame size.
-            Gap (number): The gap in transmission of frames.
-            GroupCapacityGreaterThan (number): The integer that distinguishes the group capacity that could be greater than the specified integer.
-            GroupDistributionType (str(acrossHosts|acrossPorts)): It signifies group distribution type.
-            IgmpV1Timeout (number): It signifies the timeout of version 1 of IGMP.
-            IgmpVersion (number): It signifies the version of IGMP.
-            Igmpv3MessageType (str(exclude|include)): It gives details about the igmpv3 message type in the test configuration
-            Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
-            IncMulticastDestMACAddress (str): The incrementing multicast destination MAC address.
-            IncPortMACAddress (str): The incrementing MAC address of the port.
-            IncrAddresses (number): If true, the MAC address is incremented.
-            InitialRate (str): The first rate of transmission.
-            InitialStepLoadRate (number): The initial step value of the load rate.
-            Ipv4Address (str): It signifies the IP address for version 4.
-            Ipv6Address (str): It signifies the IP address for version 6.
-            IsIPv6 (str): If true, configures IPv6 address.
-            IsMulticastAutomaticFrameData (str): If true, configures multicast automatic frame data.
-            JoinLeaveMultiplier (number): NOT DEFINED
-            JoinLeaveRate (number): It signifies the join and leave rate.
-            JoinLeaveWaitTime (number): The wait time for the leave.
-            LatencyBins (str): Sets the latency bins statistics
-            LatencyBinsEnabled (bool): Enables the latency bins statistics
-            LatencyType (str(cutThrough|storeForward)): The type of latency required by the DUT to forward frames.
-            LoadInitialRate (number): The initial rate of the load.
-            LoadRateList (str): The list of Load Rate.
-            LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): The type of the payload setting.
-            MapType (str): The POS traffic map type.
-            MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
-            MaxRandomFrameSize (number): The maximum random frame size to be sent.
-            MaxStepLoadRate (number): The maximum step load rate.
-            MinIncrementFrameSize (number): The minimum incremental value of the frame size.
-            MinRandomFrameSize (number): The minimum random frame size to be sent.
-            MixedClassMulticast (str): The mixed multicast class.
-            MldVersion (number): It signifies the MLD version.
-            NumAddresses (number): The integer value for the number of addresses.
-            NumIterations (number): The number of iterations.
-            Numtrials (number): The integer value that states the number of trials permitted.
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
-            PortDelayValue (number): Sets the port delay value
-            PortMACAddress (str): The MAC address of the port.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            ReportSequenceError (bool): Reports sequence errors in the test result
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
-            RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
-            StepIncrementFrameSize (number): The incremental step value of the frame size.
-            StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
-            StepStepLoadRate (number): The incremental step value of load rate.
-            SupportedTrafficTypes (str): The traffic types supported.
-            TestTrafficType (str): It signifies the test traffic type value.
-            TxDelay (number): Specifies the amount of delay after every transmit.
+        Args
+        ----
+        - ApplyMode (str): NOT DEFINED
+        - AssignGroupType (str(accumulated | distributed)): It assigns the group type.
+        - BidirectionalOptionEnabled (bool): If true, the bidirectional option is enabled.
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CalculateJitter (bool): If true, the jitter is calculated.
+        - CalculateLatency (bool): If true, the latency is calculated.
+        - CountRandomFrameSize (number): If true, randomly counts the frame size.
+        - DelayAfterTransmit (number): The amount of delay after every transmit.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableLeaveGroup (bool): If true, enables leave group.
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+        - EnableOldStatsForReef (bool): It enables the old statistics for reef.
+        - FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
+        - FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
+        - FramesizeList (list(str)): The list of the available frame size.
+        - Gap (number): The gap in transmission of frames.
+        - GroupCapacityGreaterThan (number): The integer that distinguishes the group capacity that could be greater than the specified integer.
+        - GroupDistributionType (str(acrossHosts | acrossPorts)): It signifies group distribution type.
+        - IgmpV1Timeout (number): It signifies the timeout of version 1 of IGMP.
+        - IgmpVersion (number): It signifies the version of IGMP.
+        - Igmpv3MessageType (str(exclude | include)): It gives details about the igmpv3 message type in the test configuration
+        - Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+        - IncMulticastDestMACAddress (str): The incrementing multicast destination MAC address.
+        - IncPortMACAddress (str): The incrementing MAC address of the port.
+        - IncrAddresses (number): If true, the MAC address is incremented.
+        - InitialRate (str): The first rate of transmission.
+        - InitialStepLoadRate (number): The initial step value of the load rate.
+        - Ipv4Address (str): It signifies the IP address for version 4.
+        - Ipv6Address (str): It signifies the IP address for version 6.
+        - IsIPv6 (str): If true, configures IPv6 address.
+        - IsMulticastAutomaticFrameData (str): If true, configures multicast automatic frame data.
+        - JoinLeaveMultiplier (number): NOT DEFINED
+        - JoinLeaveRate (number): It signifies the join and leave rate.
+        - JoinLeaveWaitTime (number): The wait time for the leave.
+        - LatencyBins (str): Sets the latency bins statistics
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics
+        - LatencyType (str(cutThrough | storeForward)): The type of latency required by the DUT to forward frames.
+        - LoadInitialRate (number): The initial rate of the load.
+        - LoadRateList (str): The list of Load Rate.
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): The type of the payload setting.
+        - MapType (str): The POS traffic map type.
+        - MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MaxStepLoadRate (number): The maximum step load rate.
+        - MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - MixedClassMulticast (str): The mixed multicast class.
+        - MldVersion (number): It signifies the MLD version.
+        - NumAddresses (number): The integer value for the number of addresses.
+        - NumIterations (number): The number of iterations.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - PortMACAddress (str): The MAC address of the port.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportSequenceError (bool): Reports sequence errors in the test result
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
+        - RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
+        - StepIncrementFrameSize (number): The incremental step value of the frame size.
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
+        - StepStepLoadRate (number): The incremental step value of load rate.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TestTrafficType (str): It signifies the test traffic type value.
+        - TxDelay (number): Specifies the amount of delay after every transmit.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -969,9 +972,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -979,12 +983,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -994,9 +996,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -1006,12 +1009,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -1021,24 +1022,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1050,18 +1044,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1073,9 +1065,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -1085,12 +1078,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

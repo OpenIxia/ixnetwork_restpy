@@ -36,10 +36,10 @@ class AppCodeRef(Base):
 
     @property
     def Name(self):
-        """AppCode Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AppCode Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -48,19 +48,19 @@ class AppCodeRef(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """AppCode ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: AppCode ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -68,13 +68,15 @@ class AppCodeRef(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of appCodeRef on the server.
+        """Updates appCodeRef resource on the server.
 
-        Args:
-            Name (str): AppCode Name.
-            Value (number): AppCode ID.
+        Args
+        ----
+        - Name (str): AppCode Name.
+        - Value (number): AppCode ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

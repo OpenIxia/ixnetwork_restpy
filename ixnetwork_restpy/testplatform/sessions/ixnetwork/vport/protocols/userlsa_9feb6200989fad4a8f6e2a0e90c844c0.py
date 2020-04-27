@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class UserLsa(Base):
     """
-    The UserLsa class encapsulates a list of userLsa resources that is be managed by the user.
+    The UserLsa class encapsulates a list of userLsa resources that are managed by the user.
     A list of resources can be retrieved from the server using the UserLsa.find() method.
-    The list can be managed by the user by using the UserLsa.add() and UserLsa.remove() methods.
+    The list can be managed by using the UserLsa.add() and UserLsa.remove() methods.
     """
 
     __slots__ = ()
@@ -38,84 +38,84 @@ class UserLsa(Base):
 
     @property
     def External(self):
-        """An instance of the External class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_c8f0f8dfa91ae61417c8460990eaaf34.External): An instance of the External class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_c8f0f8dfa91ae61417c8460990eaaf34.External)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_c8f0f8dfa91ae61417c8460990eaaf34 import External
         return External(self)
 
     @property
     def Network(self):
-        """An instance of the Network class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_df74ae08ef32cceebd1557cb14a886f6.Network): An instance of the Network class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_df74ae08ef32cceebd1557cb14a886f6.Network)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_df74ae08ef32cceebd1557cb14a886f6 import Network
         return Network(self)
 
     @property
     def Nssa(self):
-        """An instance of the Nssa class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_3472cfd434e430f4a9005794568e8428.Nssa): An instance of the Nssa class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_3472cfd434e430f4a9005794568e8428.Nssa)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_3472cfd434e430f4a9005794568e8428 import Nssa
         return Nssa(self)
 
     @property
     def Opaque(self):
-        """An instance of the Opaque class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_a749eaab4b2b429186d37979e66176dc.Opaque): An instance of the Opaque class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_a749eaab4b2b429186d37979e66176dc.Opaque)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_a749eaab4b2b429186d37979e66176dc import Opaque
         return Opaque(self)
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c239f37788b02e160fef8291b7695edd.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c239f37788b02e160fef8291b7695edd.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c239f37788b02e160fef8291b7695edd import Router
         return Router(self)
 
     @property
     def SummaryIp(self):
-        """An instance of the SummaryIp class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_ad0cb5ce031eb1c0ac2f7a96edf8f81a.SummaryIp): An instance of the SummaryIp class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_ad0cb5ce031eb1c0ac2f7a96edf8f81a.SummaryIp)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_ad0cb5ce031eb1c0ac2f7a96edf8f81a import SummaryIp
         return SummaryIp(self)
@@ -123,9 +123,9 @@ class UserLsa(Base):
     @property
     def AdvertisingRouterId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('advertisingRouterId')
     @AdvertisingRouterId.setter
@@ -135,9 +135,9 @@ class UserLsa(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -147,9 +147,9 @@ class UserLsa(Base):
     @property
     def ExpandIntoLinksOrAttachedRouters(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('expandIntoLinksOrAttachedRouters')
     @ExpandIntoLinksOrAttachedRouters.setter
@@ -159,9 +159,9 @@ class UserLsa(Base):
     @property
     def LinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('linkStateId')
     @LinkStateId.setter
@@ -171,9 +171,9 @@ class UserLsa(Base):
     @property
     def LsaType(self):
         """
-
-        Returns:
-            str(router|network|areaSummary|externalSummary|external|nssa|opaqueLocalScope|opaqueAreaScope|opaqueAsScope)
+        Returns
+        -------
+        - str(router | network | areaSummary | externalSummary | external | nssa | opaqueLocalScope | opaqueAreaScope | opaqueAsScope): 
         """
         return self._get_attribute('lsaType')
     @LsaType.setter
@@ -183,9 +183,9 @@ class UserLsa(Base):
     @property
     def OptBitDemandCircuit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitDemandCircuit')
     @OptBitDemandCircuit.setter
@@ -195,9 +195,9 @@ class UserLsa(Base):
     @property
     def OptBitExternalAttributes(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitExternalAttributes')
     @OptBitExternalAttributes.setter
@@ -207,9 +207,9 @@ class UserLsa(Base):
     @property
     def OptBitExternalRouting(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitExternalRouting')
     @OptBitExternalRouting.setter
@@ -219,9 +219,9 @@ class UserLsa(Base):
     @property
     def OptBitLsaNoForward(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitLsaNoForward')
     @OptBitLsaNoForward.setter
@@ -231,9 +231,9 @@ class UserLsa(Base):
     @property
     def OptBitMulticast(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMulticast')
     @OptBitMulticast.setter
@@ -243,9 +243,9 @@ class UserLsa(Base):
     @property
     def OptBitNssaCapability(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitNssaCapability')
     @OptBitNssaCapability.setter
@@ -255,9 +255,9 @@ class UserLsa(Base):
     @property
     def OptBitTypeOfService(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitTypeOfService')
     @OptBitTypeOfService.setter
@@ -267,9 +267,9 @@ class UserLsa(Base):
     @property
     def Option(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('option')
     @Option.setter
@@ -277,103 +277,116 @@ class UserLsa(Base):
         self._set_attribute('option', value)
 
     def update(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
-        """Updates a child instance of userLsa on the server.
+        """Updates userLsa resource on the server.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|areaSummary|externalSummary|external|nssa|opaqueLocalScope|opaqueAreaScope|opaqueAsScope)): 
-            OptBitDemandCircuit (bool): 
-            OptBitExternalAttributes (bool): 
-            OptBitExternalRouting (bool): 
-            OptBitLsaNoForward (bool): 
-            OptBitMulticast (bool): 
-            OptBitNssaCapability (bool): 
-            OptBitTypeOfService (bool): 
-            Option (number): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | areaSummary | externalSummary | external | nssa | opaqueLocalScope | opaqueAreaScope | opaqueAsScope)): 
+        - OptBitDemandCircuit (bool): 
+        - OptBitExternalAttributes (bool): 
+        - OptBitExternalRouting (bool): 
+        - OptBitLsaNoForward (bool): 
+        - OptBitMulticast (bool): 
+        - OptBitNssaCapability (bool): 
+        - OptBitTypeOfService (bool): 
+        - Option (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
-        """Adds a new userLsa node on the server and retrieves it in this instance.
+        """Adds a new userLsa resource on the server and adds it to the container.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|areaSummary|externalSummary|external|nssa|opaqueLocalScope|opaqueAreaScope|opaqueAsScope)): 
-            OptBitDemandCircuit (bool): 
-            OptBitExternalAttributes (bool): 
-            OptBitExternalRouting (bool): 
-            OptBitLsaNoForward (bool): 
-            OptBitMulticast (bool): 
-            OptBitNssaCapability (bool): 
-            OptBitTypeOfService (bool): 
-            Option (number): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | areaSummary | externalSummary | external | nssa | opaqueLocalScope | opaqueAreaScope | opaqueAsScope)): 
+        - OptBitDemandCircuit (bool): 
+        - OptBitExternalAttributes (bool): 
+        - OptBitExternalRouting (bool): 
+        - OptBitLsaNoForward (bool): 
+        - OptBitMulticast (bool): 
+        - OptBitNssaCapability (bool): 
+        - OptBitTypeOfService (bool): 
+        - Option (number): 
 
-        Returns:
-            self: This instance with all currently retrieved userLsa data using find and the newly added userLsa data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved userLsa resources using find and the newly added userLsa resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the userLsa data in this instance from server.
+        """Deletes all the contained userLsa resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
-        """Finds and retrieves userLsa data from the server.
+        """Finds and retrieves userLsa resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve userLsa data from the server.
-        By default the find method takes no parameters and will retrieve all userLsa data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsa resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all userLsa resources from the server.
 
-        Args:
-            AdvertisingRouterId (str): 
-            Enabled (bool): 
-            ExpandIntoLinksOrAttachedRouters (bool): 
-            LinkStateId (str): 
-            LsaType (str(router|network|areaSummary|externalSummary|external|nssa|opaqueLocalScope|opaqueAreaScope|opaqueAsScope)): 
-            OptBitDemandCircuit (bool): 
-            OptBitExternalAttributes (bool): 
-            OptBitExternalRouting (bool): 
-            OptBitLsaNoForward (bool): 
-            OptBitMulticast (bool): 
-            OptBitNssaCapability (bool): 
-            OptBitTypeOfService (bool): 
-            Option (number): 
+        Args
+        ----
+        - AdvertisingRouterId (str): 
+        - Enabled (bool): 
+        - ExpandIntoLinksOrAttachedRouters (bool): 
+        - LinkStateId (str): 
+        - LsaType (str(router | network | areaSummary | externalSummary | external | nssa | opaqueLocalScope | opaqueAreaScope | opaqueAsScope)): 
+        - OptBitDemandCircuit (bool): 
+        - OptBitExternalAttributes (bool): 
+        - OptBitExternalRouting (bool): 
+        - OptBitLsaNoForward (bool): 
+        - OptBitMulticast (bool): 
+        - OptBitNssaCapability (bool): 
+        - OptBitTypeOfService (bool): 
+        - Option (number): 
 
-        Returns:
-            self: This instance with matching userLsa data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching userLsa resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of userLsa data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the userLsa data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the userLsa resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

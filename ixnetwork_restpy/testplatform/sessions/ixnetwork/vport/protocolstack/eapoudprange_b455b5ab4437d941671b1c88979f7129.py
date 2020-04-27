@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EapoUdpRange(Base):
     """
-    The EapoUdpRange class encapsulates a list of eapoUdpRange resources that is be managed by the user.
+    The EapoUdpRange class encapsulates a list of eapoUdpRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the EapoUdpRange.find() method.
-    The list can be managed by the user by using the EapoUdpRange.add() and EapoUdpRange.remove() methods.
+    The list can be managed by using the EapoUdpRange.add() and EapoUdpRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EapoUdpRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class EapoUdpRange(Base):
 
     @property
     def ExpectedSystemToken(self):
-        """Expected System Token.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Expected System Token.
         """
         return self._get_attribute('expectedSystemToken')
     @ExpectedSystemToken.setter
@@ -62,10 +62,10 @@ class EapoUdpRange(Base):
 
     @property
     def FastInnerMethod(self):
-        """FAST Inner Method.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Inner Method.
         """
         return self._get_attribute('fastInnerMethod')
     @FastInnerMethod.setter
@@ -74,10 +74,10 @@ class EapoUdpRange(Base):
 
     @property
     def FastProvisionMode(self):
-        """FAST Provision Mode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Provision Mode.
         """
         return self._get_attribute('fastProvisionMode')
     @FastProvisionMode.setter
@@ -86,10 +86,10 @@ class EapoUdpRange(Base):
 
     @property
     def FastStatelessResume(self):
-        """FAST Stateless Resume.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Stateless Resume.
         """
         return self._get_attribute('fastStatelessResume')
     @FastStatelessResume.setter
@@ -98,10 +98,10 @@ class EapoUdpRange(Base):
 
     @property
     def NacSequence(self):
-        """Nac Sequence used by this range.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
         """
         return self._get_attribute('nacSequence')
     @NacSequence.setter
@@ -110,10 +110,10 @@ class EapoUdpRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -122,19 +122,19 @@ class EapoUdpRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Protocol(self):
-        """Authentification Protocol.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Authentification Protocol.
         """
         return self._get_attribute('protocol')
     @Protocol.setter
@@ -143,10 +143,10 @@ class EapoUdpRange(Base):
 
     @property
     def ResponseType(self):
-        """Messages types to responde.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Messages types to responde.
         """
         return self._get_attribute('responseType')
     @ResponseType.setter
@@ -155,10 +155,10 @@ class EapoUdpRange(Base):
 
     @property
     def UserName(self):
-        """The UserName used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UserName used to authentificate the port.
         """
         return self._get_attribute('userName')
     @UserName.setter
@@ -167,10 +167,10 @@ class EapoUdpRange(Base):
 
     @property
     def UserPassword(self):
-        """The UserPassword used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UserPassword used to authentificate the port.
         """
         return self._get_attribute('userPassword')
     @UserPassword.setter
@@ -178,99 +178,112 @@ class EapoUdpRange(Base):
         self._set_attribute('userPassword', value)
 
     def update(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
-        """Updates a child instance of eapoUdpRange on the server.
+        """Updates eapoUdpRange resource on the server.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ExpectedSystemToken (str): Expected System Token.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            Protocol (str): Authentification Protocol.
-            ResponseType (str): Messages types to responde.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ExpectedSystemToken (str): Expected System Token.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - Protocol (str): Authentification Protocol.
+        - ResponseType (str): Messages types to responde.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
-        """Adds a new eapoUdpRange node on the server and retrieves it in this instance.
+        """Adds a new eapoUdpRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ExpectedSystemToken (str): Expected System Token.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            Protocol (str): Authentification Protocol.
-            ResponseType (str): Messages types to responde.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ExpectedSystemToken (str): Expected System Token.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - Protocol (str): Authentification Protocol.
+        - ResponseType (str): Messages types to responde.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
 
-        Returns:
-            self: This instance with all currently retrieved eapoUdpRange data using find and the newly added eapoUdpRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved eapoUdpRange resources using find and the newly added eapoUdpRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the eapoUdpRange data in this instance from server.
+        """Deletes all the contained eapoUdpRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, ObjectId=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
-        """Finds and retrieves eapoUdpRange data from the server.
+        """Finds and retrieves eapoUdpRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve eapoUdpRange data from the server.
-        By default the find method takes no parameters and will retrieve all eapoUdpRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eapoUdpRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all eapoUdpRange resources from the server.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ExpectedSystemToken (str): Expected System Token.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            Protocol (str): Authentification Protocol.
-            ResponseType (str): Messages types to responde.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ExpectedSystemToken (str): Expected System Token.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Protocol (str): Authentification Protocol.
+        - ResponseType (str): Messages types to responde.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
 
-        Returns:
-            self: This instance with matching eapoUdpRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching eapoUdpRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of eapoUdpRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the eapoUdpRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the eapoUdpRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -279,14 +292,15 @@ class EapoUdpRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -298,16 +312,15 @@ class EapoUdpRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -319,16 +332,15 @@ class EapoUdpRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

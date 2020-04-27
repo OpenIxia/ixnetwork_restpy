@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Stack(Base):
     """This object specifies the stack properties.
-    The Stack class encapsulates a list of stack resources that is managed by the system.
+    The Stack class encapsulates a list of stack resources that are managed by the system.
     A list of resources can be retrieved from the server using the Stack.find() method.
     """
 
@@ -37,55 +37,62 @@ class Stack(Base):
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.field.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.field.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.field.field import Field
         return Field(self)
 
     @property
     def DisplayName(self):
-        """Refers to the name of the stack.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Refers to the name of the stack.
         """
         return self._get_attribute('displayName')
 
     def find(self, DisplayName=None):
-        """Finds and retrieves stack data from the server.
+        """Finds and retrieves stack resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve stack data from the server.
-        By default the find method takes no parameters and will retrieve all stack data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stack resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all stack resources from the server.
 
-        Args:
-            DisplayName (str): Refers to the name of the stack.
+        Args
+        ----
+        - DisplayName (str): Refers to the name of the stack.
 
-        Returns:
-            self: This instance with matching stack data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching stack resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of stack data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the stack data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the stack resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

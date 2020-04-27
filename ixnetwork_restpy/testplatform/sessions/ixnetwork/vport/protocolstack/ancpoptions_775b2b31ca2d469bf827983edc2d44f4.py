@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AncpOptions(Base):
     """Portgroup settings placeholder for AncpPlugin.
-    The AncpOptions class encapsulates a list of ancpOptions resources that is be managed by the user.
+    The AncpOptions class encapsulates a list of ancpOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the AncpOptions.find() method.
-    The list can be managed by the user by using the AncpOptions.add() and AncpOptions.remove() methods.
+    The list can be managed by using the AncpOptions.add() and AncpOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,19 +38,19 @@ class AncpOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRate(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalRate')
     @OverrideGlobalRate.setter
@@ -59,10 +59,10 @@ class AncpOptions(Base):
 
     @property
     def PortDownRate(self):
-        """PORT-DOWN rate is the number of clients to stop in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: PORT-DOWN rate is the number of clients to stop in each second.
         """
         return self._get_attribute('portDownRate')
     @PortDownRate.setter
@@ -71,10 +71,10 @@ class AncpOptions(Base):
 
     @property
     def PortUpRate(self):
-        """PORT-UP rate is the number of clients to start in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: PORT-UP rate is the number of clients to start in each second.
         """
         return self._get_attribute('portUpRate')
     @PortUpRate.setter
@@ -83,10 +83,10 @@ class AncpOptions(Base):
 
     @property
     def ResyncRate(self):
-        """RESYNC rate is the number of clients to stop in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RESYNC rate is the number of clients to stop in each second.
         """
         return self._get_attribute('resyncRate')
     @ResyncRate.setter
@@ -94,78 +94,91 @@ class AncpOptions(Base):
         self._set_attribute('resyncRate', value)
 
     def update(self, OverrideGlobalRate=None, PortDownRate=None, PortUpRate=None, ResyncRate=None):
-        """Updates a child instance of ancpOptions on the server.
+        """Updates ancpOptions resource on the server.
 
-        Args:
-            OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
-            PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
-            ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
+        Args
+        ----
+        - OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
+        - PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
+        - ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, OverrideGlobalRate=None, PortDownRate=None, PortUpRate=None, ResyncRate=None):
-        """Adds a new ancpOptions node on the server and retrieves it in this instance.
+        """Adds a new ancpOptions resource on the server and adds it to the container.
 
-        Args:
-            OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
-            PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
-            ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
+        Args
+        ----
+        - OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
+        - PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
+        - ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
 
-        Returns:
-            self: This instance with all currently retrieved ancpOptions data using find and the newly added ancpOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ancpOptions resources using find and the newly added ancpOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ancpOptions data in this instance from server.
+        """Deletes all the contained ancpOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ObjectId=None, OverrideGlobalRate=None, PortDownRate=None, PortUpRate=None, ResyncRate=None):
-        """Finds and retrieves ancpOptions data from the server.
+        """Finds and retrieves ancpOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ancpOptions data from the server.
-        By default the find method takes no parameters and will retrieve all ancpOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ancpOptions resources from the server.
 
-        Args:
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
-            PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
-            ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
+        Args
+        ----
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PortDownRate (number): PORT-DOWN rate is the number of clients to stop in each second.
+        - PortUpRate (number): PORT-UP rate is the number of clients to start in each second.
+        - ResyncRate (number): RESYNC rate is the number of clients to stop in each second.
 
-        Returns:
-            self: This instance with matching ancpOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ancpOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ancpOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ancpOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ancpOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -174,14 +187,15 @@ class AncpOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -193,16 +207,15 @@ class AncpOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -214,16 +227,15 @@ class AncpOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

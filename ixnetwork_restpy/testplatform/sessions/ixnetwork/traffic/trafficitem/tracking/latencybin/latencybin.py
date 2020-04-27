@@ -36,10 +36,10 @@ class LatencyBin(Base):
 
     @property
     def BinLimits(self):
-        """Specifies the upper limit of each Time Bins for Latency Bin Tracking.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
         """
         return self._get_attribute('binLimits')
     @BinLimits.setter
@@ -48,10 +48,10 @@ class LatencyBin(Base):
 
     @property
     def Enabled(self):
-        """If true, Latency Bin Tracking is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Latency Bin Tracking is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class LatencyBin(Base):
 
     @property
     def NumberOfBins(self):
-        """Specifies the number of Time Bins for Latency Bin Tracking.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of Time Bins for Latency Bin Tracking.
         """
         return self._get_attribute('numberOfBins')
     @NumberOfBins.setter
@@ -71,14 +71,16 @@ class LatencyBin(Base):
         self._set_attribute('numberOfBins', value)
 
     def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
-        """Updates a child instance of latencyBin on the server.
+        """Updates latencyBin resource on the server.
 
-        Args:
-            BinLimits (list(number)): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
-            Enabled (bool): If true, Latency Bin Tracking is enabled.
-            NumberOfBins (number): Specifies the number of Time Bins for Latency Bin Tracking.
+        Args
+        ----
+        - BinLimits (list(number)): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
+        - Enabled (bool): If true, Latency Bin Tracking is enabled.
+        - NumberOfBins (number): Specifies the number of Time Bins for Latency Bin Tracking.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,64 +36,68 @@ class Link(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FromMp(self):
-        """From MP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fromMp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): From MP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fromMp'))
 
     @property
     def FromMpIndex(self):
-        """From MP Index
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fromMpIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): From MP Index
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fromMpIndex'))
 
     @property
     def LinkType(self):
-        """Link Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('linkType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('linkType'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -102,54 +106,61 @@ class Link(Base):
 
     @property
     def ToMp(self):
-        """To MP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('toMp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): To MP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('toMp'))
 
     @property
     def ToMpIndex(self):
-        """To MP Index
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('toMpIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): To MP Index
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('toMpIndex'))
 
     def update(self, Name=None):
-        """Updates a child instance of link on the server.
+        """Updates link resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, FromMp=None, FromMpIndex=None, LinkType=None, ToMp=None, ToMpIndex=None):
         """Base class infrastructure that gets a list of link device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            FromMp (str): optional regex of fromMp
-            FromMpIndex (str): optional regex of fromMpIndex
-            LinkType (str): optional regex of linkType
-            ToMp (str): optional regex of toMp
-            ToMpIndex (str): optional regex of toMpIndex
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - FromMp (str): optional regex of fromMp
+        - FromMpIndex (str): optional regex of fromMpIndex
+        - LinkType (str): optional regex of linkType
+        - ToMp (str): optional regex of toMp
+        - ToMpIndex (str): optional regex of toMpIndex
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

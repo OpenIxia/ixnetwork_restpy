@@ -36,10 +36,10 @@ class Flapping(Base):
 
     @property
     def Delay(self):
-        """The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
         """
         return self._get_attribute('delay')
     @Delay.setter
@@ -48,10 +48,10 @@ class Flapping(Base):
 
     @property
     def DownTime(self):
-        """During flapping, the amount of time during which the routes in the route range are withdrawn/down.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: During flapping, the amount of time during which the routes in the route range are withdrawn/down.
         """
         return self._get_attribute('downTime')
     @DownTime.setter
@@ -60,10 +60,10 @@ class Flapping(Base):
 
     @property
     def EnablePartialFlap(self):
-        """Enables partial flapping, based on the Flap From and To Route Index settings.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables partial flapping, based on the Flap From and To Route Index settings.
         """
         return self._get_attribute('enablePartialFlap')
     @EnablePartialFlap.setter
@@ -72,10 +72,10 @@ class Flapping(Base):
 
     @property
     def Enabled(self):
-        """If true, enables route flapping.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables route flapping.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -84,10 +84,10 @@ class Flapping(Base):
 
     @property
     def RoutesToFlapFrom(self):
-        """The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
         """
         return self._get_attribute('routesToFlapFrom')
     @RoutesToFlapFrom.setter
@@ -96,10 +96,10 @@ class Flapping(Base):
 
     @property
     def RoutesToFlapTo(self):
-        """The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
         """
         return self._get_attribute('routesToFlapTo')
     @RoutesToFlapTo.setter
@@ -108,10 +108,10 @@ class Flapping(Base):
 
     @property
     def UpTime(self):
-        """During flapping, the amount of time during which the routes in the route range are up.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: During flapping, the amount of time during which the routes in the route range are up.
         """
         return self._get_attribute('upTime')
     @UpTime.setter
@@ -119,18 +119,20 @@ class Flapping(Base):
         self._set_attribute('upTime', value)
 
     def update(self, Delay=None, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
-        """Updates a child instance of flapping on the server.
+        """Updates flapping resource on the server.
 
-        Args:
-            Delay (number): The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
-            DownTime (number): During flapping, the amount of time during which the routes in the route range are withdrawn/down.
-            EnablePartialFlap (bool): Enables partial flapping, based on the Flap From and To Route Index settings.
-            Enabled (bool): If true, enables route flapping.
-            RoutesToFlapFrom (number): The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
-            RoutesToFlapTo (number): The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
-            UpTime (number): During flapping, the amount of time during which the routes in the route range are up.
+        Args
+        ----
+        - Delay (number): The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
+        - DownTime (number): During flapping, the amount of time during which the routes in the route range are withdrawn/down.
+        - EnablePartialFlap (bool): Enables partial flapping, based on the Flap From and To Route Index settings.
+        - Enabled (bool): If true, enables route flapping.
+        - RoutesToFlapFrom (number): The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
+        - RoutesToFlapTo (number): The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
+        - UpTime (number): During flapping, the amount of time during which the routes in the route range are up.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

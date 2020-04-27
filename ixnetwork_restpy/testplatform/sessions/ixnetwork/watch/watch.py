@@ -36,56 +36,56 @@ class Watch(Base):
 
     @property
     def AttributeWatch(self):
-        """An instance of the AttributeWatch class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.attributewatch.attributewatch.AttributeWatch): An instance of the AttributeWatch class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.attributewatch.attributewatch.AttributeWatch)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.attributewatch.attributewatch import AttributeWatch
         return AttributeWatch(self)
 
     @property
     def ExecWatch(self):
-        """An instance of the ExecWatch class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.execwatch.execwatch.ExecWatch): An instance of the ExecWatch class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.execwatch.execwatch.ExecWatch)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.execwatch.execwatch import ExecWatch
         return ExecWatch(self)
 
     @property
     def ListWatch(self):
-        """An instance of the ListWatch class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.listwatch.listwatch.ListWatch): An instance of the ListWatch class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.listwatch.listwatch.ListWatch)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.listwatch.listwatch import ListWatch
         return ListWatch(self)
 
     @property
     def SelectWatch(self):
-        """An instance of the SelectWatch class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.selectwatch.selectwatch.SelectWatch): An instance of the SelectWatch class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.selectwatch.selectwatch.SelectWatch)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.selectwatch.selectwatch import SelectWatch
         return SelectWatch(self)
@@ -93,27 +93,26 @@ class Watch(Base):
     @property
     def DisabledWatches(self):
         """
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('disabledWatches')
 
     def AddAttributeWatch(self, *args, **kwargs):
         """Executes the addAttributeWatch operation on the server.
 
-        addAttributeWatch(Arg2:href, Arg3:list, Arg4:string)object
-            Args:
-                args[0] is Arg2 (str(None)): 
-                args[1] is Arg3 (list(str)): 
-                args[2] is Arg4 (str): 
+        addAttributeWatch(Arg2=href, Arg3=list, Arg4=string)object
+        ----------------------------------------------------------
+        - Arg2 (str(None)): 
+        - Arg3 (list(str)): 
+        - Arg4 (str): 
+        - Returns dict(arg1:str,arg2:number): 
 
-            Returns:
-                dict(arg1:str,arg2:number): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -123,17 +122,16 @@ class Watch(Base):
     def AddExecWatch(self, *args, **kwargs):
         """Executes the addExecWatch operation on the server.
 
-        addExecWatch(Arg2:string, Arg3:string)object
-            Args:
-                args[0] is Arg2 (str): 
-                args[1] is Arg3 (str): 
+        addExecWatch(Arg2=string, Arg3=string)object
+        --------------------------------------------
+        - Arg2 (str): 
+        - Arg3 (str): 
+        - Returns dict(arg1:str,arg2:number): 
 
-            Returns:
-                dict(arg1:str,arg2:number): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -143,18 +141,17 @@ class Watch(Base):
     def AddListWatch(self, *args, **kwargs):
         """Executes the addListWatch operation on the server.
 
-        addListWatch(Arg2:href, Arg3:list, Arg4:string)object
-            Args:
-                args[0] is Arg2 (str(None)): 
-                args[1] is Arg3 (list(str)): 
-                args[2] is Arg4 (str): 
+        addListWatch(Arg2=href, Arg3=list, Arg4=string)object
+        -----------------------------------------------------
+        - Arg2 (str(None)): 
+        - Arg3 (list(str)): 
+        - Arg4 (str): 
+        - Returns dict(arg1:str,arg2:number): 
 
-            Returns:
-                dict(arg1:str,arg2:number): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -164,17 +161,16 @@ class Watch(Base):
     def AddSelectWatch(self, *args, **kwargs):
         """Executes the addSelectWatch operation on the server.
 
-        addSelectWatch(Selects:list, WatchTopic:string)object
-            Args:
-                args[0] is Selects (list(dict(from:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): 
-                args[1] is WatchTopic (str): 
+        addSelectWatch(Selects=list, WatchTopic=string)object
+        -----------------------------------------------------
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): 
+        - WatchTopic (str): 
+        - Returns dict(arg1:str,arg2:number): 
 
-            Returns:
-                dict(arg1:str,arg2:number): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -184,13 +180,14 @@ class Watch(Base):
     def RemoveWatches(self, *args, **kwargs):
         """Executes the removeWatches operation on the server.
 
-        removeWatches(WatchIds:list)
-            Args:
-                args[0] is WatchIds (list(number)): 
+        removeWatches(WatchIds=list)
+        ----------------------------
+        - WatchIds (list(number)): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

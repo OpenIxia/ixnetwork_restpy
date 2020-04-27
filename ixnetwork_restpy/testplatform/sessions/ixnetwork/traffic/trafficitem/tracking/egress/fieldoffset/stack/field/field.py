@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Field(Base):
     """
-    The Field class encapsulates a list of field resources that is managed by the system.
+    The Field class encapsulates a list of field resources that are managed by the system.
     A list of resources can be retrieved from the server using the Field.find() method.
     """
 
@@ -38,18 +38,18 @@ class Field(Base):
     @property
     def __id__(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('__id__')
 
     @property
     def ActiveFieldChoice(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('activeFieldChoice')
     @ActiveFieldChoice.setter
@@ -59,9 +59,9 @@ class Field(Base):
     @property
     def Auto(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('auto')
     @Auto.setter
@@ -71,9 +71,9 @@ class Field(Base):
     @property
     def CountValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('countValue')
     @CountValue.setter
@@ -83,54 +83,54 @@ class Field(Base):
     @property
     def DefaultValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('defaultValue')
 
     @property
     def DisplayName(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('displayName')
 
     @property
     def EnumValues(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('enumValues')
 
     @property
     def FieldChoice(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('fieldChoice')
 
     @property
     def FieldTypeId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('fieldTypeId')
 
     @property
     def FieldValue(self):
         """DEPRECATED 
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('fieldValue')
     @FieldValue.setter
@@ -140,9 +140,9 @@ class Field(Base):
     @property
     def FixedBits(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('fixedBits')
     @FixedBits.setter
@@ -152,18 +152,18 @@ class Field(Base):
     @property
     def FormattedFieldValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('formattedFieldValue')
 
     @property
     def FullMesh(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('fullMesh')
     @FullMesh.setter
@@ -173,27 +173,27 @@ class Field(Base):
     @property
     def Length(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('length')
 
     @property
     def Level(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('level')
 
     @property
     def MaxValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('maxValue')
     @MaxValue.setter
@@ -203,9 +203,9 @@ class Field(Base):
     @property
     def MinValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('minValue')
     @MinValue.setter
@@ -215,36 +215,36 @@ class Field(Base):
     @property
     def Name(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('name')
 
     @property
     def Offset(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('offset')
 
     @property
     def OffsetFromRoot(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('offsetFromRoot')
 
     @property
     def OnTheFlyMask(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('onTheFlyMask')
     @OnTheFlyMask.setter
@@ -254,18 +254,18 @@ class Field(Base):
     @property
     def Optional(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optional')
 
     @property
     def OptionalEnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optionalEnabled')
     @OptionalEnabled.setter
@@ -275,9 +275,9 @@ class Field(Base):
     @property
     def RandomMask(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('randomMask')
     @RandomMask.setter
@@ -287,36 +287,36 @@ class Field(Base):
     @property
     def RateVaried(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rateVaried')
 
     @property
     def ReadOnly(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('readOnly')
 
     @property
     def RequiresUdf(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('requiresUdf')
 
     @property
     def Seed(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('seed')
     @Seed.setter
@@ -326,9 +326,9 @@ class Field(Base):
     @property
     def SingleValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('singleValue')
     @SingleValue.setter
@@ -338,9 +338,9 @@ class Field(Base):
     @property
     def StartValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('startValue')
     @StartValue.setter
@@ -350,9 +350,9 @@ class Field(Base):
     @property
     def StepValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('stepValue')
     @StepValue.setter
@@ -362,45 +362,45 @@ class Field(Base):
     @property
     def SupportsAuto(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsAuto')
 
     @property
     def SupportsNonRepeatableRandom(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsNonRepeatableRandom')
 
     @property
     def SupportsOnTheFlyMask(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsOnTheFlyMask')
 
     @property
     def SupportsRepeatableRandomRange(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportsRepeatableRandomRange')
 
     @property
     def TrackingEnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('trackingEnabled')
     @TrackingEnabled.setter
@@ -410,18 +410,18 @@ class Field(Base):
     @property
     def ValueFormat(self):
         """
-
-        Returns:
-            str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
+        Returns
+        -------
+        - str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex): 
         """
         return self._get_attribute('valueFormat')
 
     @property
     def ValueList(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('valueList')
     @ValueList.setter
@@ -431,9 +431,9 @@ class Field(Base):
     @property
     def ValueType(self):
         """
-
-        Returns:
-            str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)
+        Returns
+        -------
+        - str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList): 
         """
         return self._get_attribute('valueType')
     @ValueType.setter
@@ -441,100 +441,109 @@ class Field(Base):
         self._set_attribute('valueType', value)
 
     def update(self, ActiveFieldChoice=None, Auto=None, CountValue=None, FieldValue=None, FixedBits=None, FullMesh=None, MaxValue=None, MinValue=None, OnTheFlyMask=None, OptionalEnabled=None, RandomMask=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, TrackingEnabled=None, ValueList=None, ValueType=None):
-        """Updates a child instance of field on the server.
+        """Updates field resource on the server.
 
-        Args:
-            ActiveFieldChoice (bool): 
-            Auto (bool): 
-            CountValue (str): 
-            FieldValue (str): 
-            FixedBits (str): 
-            FullMesh (bool): 
-            MaxValue (str): 
-            MinValue (str): 
-            OnTheFlyMask (str): 
-            OptionalEnabled (bool): 
-            RandomMask (str): 
-            Seed (str): 
-            SingleValue (str): 
-            StartValue (str): 
-            StepValue (str): 
-            TrackingEnabled (bool): 
-            ValueList (list(str)): 
-            ValueType (str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)): 
+        Args
+        ----
+        - ActiveFieldChoice (bool): 
+        - Auto (bool): 
+        - CountValue (str): 
+        - FieldValue (str): 
+        - FixedBits (str): 
+        - FullMesh (bool): 
+        - MaxValue (str): 
+        - MinValue (str): 
+        - OnTheFlyMask (str): 
+        - OptionalEnabled (bool): 
+        - RandomMask (str): 
+        - Seed (str): 
+        - SingleValue (str): 
+        - StartValue (str): 
+        - StepValue (str): 
+        - TrackingEnabled (bool): 
+        - ValueList (list(str)): 
+        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
-        """Finds and retrieves field data from the server.
+        """Finds and retrieves field resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve field data from the server.
-        By default the find method takes no parameters and will retrieve all field data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all field resources from the server.
 
-        Args:
-            __id__ (str): 
-            ActiveFieldChoice (bool): 
-            Auto (bool): 
-            CountValue (str): 
-            DefaultValue (str): 
-            DisplayName (str): 
-            EnumValues (list(str)): 
-            FieldChoice (bool): 
-            FieldTypeId (str): 
-            FieldValue (str): 
-            FixedBits (str): 
-            FormattedFieldValue (str): 
-            FullMesh (bool): 
-            Length (number): 
-            Level (bool): 
-            MaxValue (str): 
-            MinValue (str): 
-            Name (str): 
-            Offset (number): 
-            OffsetFromRoot (number): 
-            OnTheFlyMask (str): 
-            Optional (bool): 
-            OptionalEnabled (bool): 
-            RandomMask (str): 
-            RateVaried (bool): 
-            ReadOnly (bool): 
-            RequiresUdf (bool): 
-            Seed (str): 
-            SingleValue (str): 
-            StartValue (str): 
-            StepValue (str): 
-            SupportsAuto (bool): 
-            SupportsNonRepeatableRandom (bool): 
-            SupportsOnTheFlyMask (bool): 
-            SupportsRepeatableRandomRange (bool): 
-            TrackingEnabled (bool): 
-            ValueFormat (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): 
-            ValueList (list(str)): 
-            ValueType (str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)): 
+        Args
+        ----
+        - __id__ (str): 
+        - ActiveFieldChoice (bool): 
+        - Auto (bool): 
+        - CountValue (str): 
+        - DefaultValue (str): 
+        - DisplayName (str): 
+        - EnumValues (list(str)): 
+        - FieldChoice (bool): 
+        - FieldTypeId (str): 
+        - FieldValue (str): 
+        - FixedBits (str): 
+        - FormattedFieldValue (str): 
+        - FullMesh (bool): 
+        - Length (number): 
+        - Level (bool): 
+        - MaxValue (str): 
+        - MinValue (str): 
+        - Name (str): 
+        - Offset (number): 
+        - OffsetFromRoot (number): 
+        - OnTheFlyMask (str): 
+        - Optional (bool): 
+        - OptionalEnabled (bool): 
+        - RandomMask (str): 
+        - RateVaried (bool): 
+        - ReadOnly (bool): 
+        - RequiresUdf (bool): 
+        - Seed (str): 
+        - SingleValue (str): 
+        - StartValue (str): 
+        - StepValue (str): 
+        - SupportsAuto (bool): 
+        - SupportsNonRepeatableRandom (bool): 
+        - SupportsOnTheFlyMask (bool): 
+        - SupportsRepeatableRandomRange (bool): 
+        - TrackingEnabled (bool): 
+        - ValueFormat (str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex)): 
+        - ValueList (list(str)): 
+        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): 
 
-        Returns:
-            self: This instance with matching field data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching field resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the field data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the field resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -543,12 +552,10 @@ class Field(Base):
 
         Add a level to the current field.
 
-            Returns:
-                str: The new level that has been added.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('addLevel', payload=payload, response_object=None)
@@ -558,9 +565,10 @@ class Field(Base):
 
         Remove a level.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('removeLevel', payload=payload, response_object=None)

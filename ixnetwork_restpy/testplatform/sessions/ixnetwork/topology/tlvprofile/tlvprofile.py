@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class TlvProfile(Base):
     """Tlv profile functionality is contained under this node
-    The TlvProfile class encapsulates a list of tlvProfile resources that is managed by the system.
+    The TlvProfile class encapsulates a list of tlvProfile resources that are managed by the system.
     A list of resources can be retrieved from the server using the TlvProfile.find() method.
     """
 
@@ -37,58 +37,64 @@ class TlvProfile(Base):
 
     @property
     def DefaultTlv(self):
-        """An instance of the DefaultTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv.DefaultTlv): An instance of the DefaultTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv.DefaultTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv import DefaultTlv
         return DefaultTlv(self)
 
     @property
     def Tlv(self):
-        """An instance of the Tlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv.Tlv): An instance of the Tlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv.Tlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv import Tlv
         return Tlv(self)
 
     def find(self):
-        """Finds and retrieves tlvProfile data from the server.
+        """Finds and retrieves tlvProfile resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tlvProfile data from the server.
-        By default the find method takes no parameters and will retrieve all tlvProfile data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tlvProfile resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tlvProfile resources from the server.
 
-        Returns:
-            self: This instance with matching tlvProfile data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tlvProfile resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tlvProfile data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tlvProfile data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tlvProfile resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -97,16 +103,15 @@ class TlvProfile(Base):
 
         Copy a template tlv to a topology tlv profile
 
-        copyTlv(Arg2:href)href
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=topology)): An object reference to a source template tlv
+        copyTlv(Arg2=href)href
+        ----------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/globals/.../topology)): An object reference to a source template tlv
+        - Returns str(None): An object reference to the newly created topology tlv as a result of the copy operation
 
-            Returns:
-                str(None): An object reference to the newly created topology tlv as a result of the copy operation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OfChannel(Base):
     """Signifies the OF Channel used in this protocol configuration.
-    The OfChannel class encapsulates a list of ofChannel resources that is be managed by the user.
+    The OfChannel class encapsulates a list of ofChannel resources that are managed by the user.
     A list of resources can be retrieved from the server using the OfChannel.find() method.
-    The list can be managed by the user by using the OfChannel.add() and OfChannel.remove() methods.
+    The list can be managed by using the OfChannel.add() and OfChannel.remove() methods.
     """
 
     __slots__ = ()
@@ -38,136 +38,136 @@ class OfChannel(Base):
 
     @property
     def Capabilities(self):
-        """An instance of the Capabilities class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_1a0619d7508f1d1f20abc05725d1c184.Capabilities): An instance of the Capabilities class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_1a0619d7508f1d1f20abc05725d1c184.Capabilities)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_1a0619d7508f1d1f20abc05725d1c184 import Capabilities
         return Capabilities(self)._select()
 
     @property
     def ControllerTables(self):
-        """An instance of the ControllerTables class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_52158f37bd446e1485e6aede1509717b.ControllerTables): An instance of the ControllerTables class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_52158f37bd446e1485e6aede1509717b.ControllerTables)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_52158f37bd446e1485e6aede1509717b import ControllerTables
         return ControllerTables(self)
 
     @property
     def FlowRange(self):
-        """An instance of the FlowRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_798e340f4a4995ed80ccf60bc89a0cda.FlowRange): An instance of the FlowRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_798e340f4a4995ed80ccf60bc89a0cda.FlowRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_798e340f4a4995ed80ccf60bc89a0cda import FlowRange
         return FlowRange(self)
 
     @property
     def Group(self):
-        """An instance of the Group class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_35180f1dc6dec0522d6ddc3fa3ea80f2.Group): An instance of the Group class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_35180f1dc6dec0522d6ddc3fa3ea80f2.Group)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_35180f1dc6dec0522d6ddc3fa3ea80f2 import Group
         return Group(self)
 
     @property
     def Meter(self):
-        """An instance of the Meter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_da68b7c16796411cc3f527552467fbba.Meter): An instance of the Meter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_da68b7c16796411cc3f527552467fbba.Meter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_da68b7c16796411cc3f527552467fbba import Meter
         return Meter(self)
 
     @property
     def SupportedActions(self):
-        """An instance of the SupportedActions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_c4844246a6355ace90b8ed0877bb2b06.SupportedActions): An instance of the SupportedActions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_c4844246a6355ace90b8ed0877bb2b06.SupportedActions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_c4844246a6355ace90b8ed0877bb2b06 import SupportedActions
         return SupportedActions(self)._select()
 
     @property
     def SwitchPacketIn(self):
-        """An instance of the SwitchPacketIn class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_1a9a9aab92b2a211158ff03d5f1e6e00.SwitchPacketIn): An instance of the SwitchPacketIn class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_1a9a9aab92b2a211158ff03d5f1e6e00.SwitchPacketIn)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_1a9a9aab92b2a211158ff03d5f1e6e00 import SwitchPacketIn
         return SwitchPacketIn(self)
 
     @property
     def SwitchPorts(self):
-        """An instance of the SwitchPorts class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_56d807b61677f8ba5c05603f473b858d.SwitchPorts): An instance of the SwitchPorts class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_56d807b61677f8ba5c05603f473b858d.SwitchPorts)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_56d807b61677f8ba5c05603f473b858d import SwitchPorts
         return SwitchPorts(self)
 
     @property
     def SwitchTables(self):
-        """An instance of the SwitchTables class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_3a0a5bfd815ff10901882ee34a34fb0b.SwitchTables): An instance of the SwitchTables class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_3a0a5bfd815ff10901882ee34a34fb0b.SwitchTables)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_3a0a5bfd815ff10901882ee34a34fb0b import SwitchTables
         return SwitchTables(self)
 
     @property
     def CalculateFlows(self):
-        """If true, calculates the rate at which flows are transmitted by the controller.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates the rate at which flows are transmitted by the controller.
         """
         return self._get_attribute('calculateFlows')
     @CalculateFlows.setter
@@ -176,10 +176,10 @@ class OfChannel(Base):
 
     @property
     def CalculatePacketInReplyDelay(self):
-        """DEPRECATED If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
         """
         return self._get_attribute('calculatePacketInReplyDelay')
     @CalculatePacketInReplyDelay.setter
@@ -188,10 +188,10 @@ class OfChannel(Base):
 
     @property
     def DataPathId(self):
-        """Indicates the Datapath ID of the OpenFlow switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID of the OpenFlow switch.
         """
         return self._get_attribute('dataPathId')
     @DataPathId.setter
@@ -200,10 +200,10 @@ class OfChannel(Base):
 
     @property
     def DataPathIdInHex(self):
-        """Indicates the Datapath ID in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID in hexadecimal format.
         """
         return self._get_attribute('dataPathIdInHex')
     @DataPathIdInHex.setter
@@ -212,10 +212,10 @@ class OfChannel(Base):
 
     @property
     def DatapathDescritpion(self):
-        """DEPRECATED Indicates a description of the datapath.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Indicates a description of the datapath.
         """
         return self._get_attribute('datapathDescritpion')
     @DatapathDescritpion.setter
@@ -224,10 +224,10 @@ class OfChannel(Base):
 
     @property
     def Description(self):
-        """A description of the OF Channel used to identify it.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A description of the OF Channel used to identify it.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -236,10 +236,10 @@ class OfChannel(Base):
 
     @property
     def EnableCalculateFlowsPerSecondUsingBarrierReq(self):
-        """If true, enables flow rate Calculation using Barrier request message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables flow rate Calculation using Barrier request message.
         """
         return self._get_attribute('enableCalculateFlowsPerSecondUsingBarrierReq')
     @EnableCalculateFlowsPerSecondUsingBarrierReq.setter
@@ -248,10 +248,10 @@ class OfChannel(Base):
 
     @property
     def EnableHelloElement(self):
-        """Enables Hello element for version negotiation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables Hello element for version negotiation.
         """
         return self._get_attribute('enableHelloElement')
     @EnableHelloElement.setter
@@ -260,10 +260,10 @@ class OfChannel(Base):
 
     @property
     def EnableStartupEmptyTableFeatureRequest(self):
-        """If true, the Table Feature Request is sent at start up. The default value is false
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the Table Feature Request is sent at start up. The default value is false
         """
         return self._get_attribute('enableStartupEmptyTableFeatureRequest')
     @EnableStartupEmptyTableFeatureRequest.setter
@@ -272,10 +272,10 @@ class OfChannel(Base):
 
     @property
     def Enabled(self):
-        """If true, the OF Channel is used in the OpenFlow configuration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the OF Channel is used in the OpenFlow configuration.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -284,10 +284,10 @@ class OfChannel(Base):
 
     @property
     def FlowTxBurstSize(self):
-        """Indicates the number of flows sent in a single burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of flows sent in a single burst.
         """
         return self._get_attribute('flowTxBurstSize')
     @FlowTxBurstSize.setter
@@ -296,10 +296,10 @@ class OfChannel(Base):
 
     @property
     def HardwareDescription(self):
-        """DEPRECATED Indicates the hardware description of the switch.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Indicates the hardware description of the switch.
         """
         return self._get_attribute('hardwareDescription')
     @HardwareDescription.setter
@@ -308,10 +308,10 @@ class OfChannel(Base):
 
     @property
     def InterFlowBurstGap(self):
-        """Indicates the duration, in milliseconds, to wait between successive flow bursts.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the duration, in milliseconds, to wait between successive flow bursts.
         """
         return self._get_attribute('interFlowBurstGap')
     @InterFlowBurstGap.setter
@@ -320,10 +320,10 @@ class OfChannel(Base):
 
     @property
     def InterPacketInBurstGap(self):
-        """DEPRECATED Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
         """
         return self._get_attribute('interPacketInBurstGap')
     @InterPacketInBurstGap.setter
@@ -332,19 +332,19 @@ class OfChannel(Base):
 
     @property
     def LocalIp(self):
-        """Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
         """
         return self._get_attribute('localIp')
 
     @property
     def ManufacturerDescription(self):
-        """DEPRECATED Indicates the description of the switch manufacturer.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Indicates the description of the switch manufacturer.
         """
         return self._get_attribute('manufacturerDescription')
     @ManufacturerDescription.setter
@@ -353,10 +353,10 @@ class OfChannel(Base):
 
     @property
     def MaximumNumberOfFlowsProcessed(self):
-        """Indicates the maximum number of flows that the controller can advertise before backing off.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum number of flows that the controller can advertise before backing off.
         """
         return self._get_attribute('maximumNumberOfFlowsProcessed')
     @MaximumNumberOfFlowsProcessed.setter
@@ -365,10 +365,10 @@ class OfChannel(Base):
 
     @property
     def MaximumPacketInBytes(self):
-        """DEPRECATED Indicates the maximum size of data in a Packet-In a message.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Indicates the maximum size of data in a Packet-In a message.
         """
         return self._get_attribute('maximumPacketInBytes')
     @MaximumPacketInBytes.setter
@@ -377,10 +377,10 @@ class OfChannel(Base):
 
     @property
     def NumberOfBuffers(self):
-        """DEPRECATED Indicates the maximum number of packets that can be stored in the buffered at a time.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Indicates the maximum number of packets that can be stored in the buffered at a time.
         """
         return self._get_attribute('numberOfBuffers')
     @NumberOfBuffers.setter
@@ -389,10 +389,10 @@ class OfChannel(Base):
 
     @property
     def PacketInReplyTimeout(self):
-        """DEPRECATED Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
         """
         return self._get_attribute('packetInReplyTimeout')
     @PacketInReplyTimeout.setter
@@ -401,10 +401,10 @@ class OfChannel(Base):
 
     @property
     def PacketInTxBurstSize(self):
-        """DEPRECATED Indicates the number of packets in messages sent in a single burst.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Indicates the number of packets in messages sent in a single burst.
         """
         return self._get_attribute('packetInTxBurstSize')
     @PacketInTxBurstSize.setter
@@ -413,10 +413,10 @@ class OfChannel(Base):
 
     @property
     def RemoteIp(self):
-        """Indicates the IP address of the DUT at the other end of OF channel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IP address of the DUT at the other end of OF channel.
         """
         return self._get_attribute('remoteIp')
     @RemoteIp.setter
@@ -425,10 +425,10 @@ class OfChannel(Base):
 
     @property
     def SerialNumber(self):
-        """DEPRECATED Indicates the Serial Number of the switch.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Indicates the Serial Number of the switch.
         """
         return self._get_attribute('serialNumber')
     @SerialNumber.setter
@@ -437,10 +437,10 @@ class OfChannel(Base):
 
     @property
     def SoftwareDescription(self):
-        """DEPRECATED Indicates the description of the software installed on the switch.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Indicates the description of the software installed on the switch.
         """
         return self._get_attribute('softwareDescription')
     @SoftwareDescription.setter
@@ -449,10 +449,10 @@ class OfChannel(Base):
 
     @property
     def StartUpGenerationId(self):
-        """A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
         """
         return self._get_attribute('startUpGenerationId')
     @StartUpGenerationId.setter
@@ -461,10 +461,10 @@ class OfChannel(Base):
 
     @property
     def StartUpRoleRequest(self):
-        """If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
-
-        Returns:
-            str(noRoleRequest|master|slave)
+        """
+        Returns
+        -------
+        - str(noRoleRequest | master | slave): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
         """
         return self._get_attribute('startUpRoleRequest')
     @StartUpRoleRequest.setter
@@ -473,10 +473,10 @@ class OfChannel(Base):
 
     @property
     def StartupFeatureRequest(self):
-        """If true, a feature request is sent at startup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a feature request is sent at startup.
         """
         return self._get_attribute('startupFeatureRequest')
     @StartupFeatureRequest.setter
@@ -485,10 +485,10 @@ class OfChannel(Base):
 
     @property
     def StoreFlows(self):
-        """DEPRECATED If true, the switch will store the flows advertised by the controller in its tables.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, the switch will store the flows advertised by the controller in its tables.
         """
         return self._get_attribute('storeFlows')
     @StoreFlows.setter
@@ -497,10 +497,10 @@ class OfChannel(Base):
 
     @property
     def UseDataPathIdAsChannelIdentifier(self):
-        """DEPRECATED If true, the Datapath ID of the switch is used.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, the Datapath ID of the switch is used.
         """
         return self._get_attribute('useDataPathIdAsChannelIdentifier')
     @UseDataPathIdAsChannelIdentifier.setter
@@ -509,10 +509,10 @@ class OfChannel(Base):
 
     @property
     def UseDatapathId(self):
-        """Use datapath Id that is configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use datapath Id that is configured.
         """
         return self._get_attribute('useDatapathId')
     @UseDatapathId.setter
@@ -520,153 +520,166 @@ class OfChannel(Base):
         self._set_attribute('useDatapathId', value)
 
     def update(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
-        """Updates a child instance of ofChannel on the server.
+        """Updates ofChannel resource on the server.
 
-        Args:
-            CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
-            CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
-            DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
-            DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
-            DatapathDescritpion (str): Indicates a description of the datapath.
-            Description (str): A description of the OF Channel used to identify it.
-            EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
-            EnableHelloElement (bool): Enables Hello element for version negotiation.
-            EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
-            Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
-            FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
-            HardwareDescription (str): Indicates the hardware description of the switch.
-            InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
-            InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
-            ManufacturerDescription (str): Indicates the description of the switch manufacturer.
-            MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
-            MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
-            NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
-            PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
-            PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
-            RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
-            SerialNumber (str): Indicates the Serial Number of the switch.
-            SoftwareDescription (str): Indicates the description of the software installed on the switch.
-            StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
-            StartUpRoleRequest (str(noRoleRequest|master|slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
-            StartupFeatureRequest (bool): If true, a feature request is sent at startup.
-            StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
-            UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
-            UseDatapathId (bool): Use datapath Id that is configured.
+        Args
+        ----
+        - CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
+        - CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
+        - DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
+        - DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
+        - DatapathDescritpion (str): Indicates a description of the datapath.
+        - Description (str): A description of the OF Channel used to identify it.
+        - EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
+        - EnableHelloElement (bool): Enables Hello element for version negotiation.
+        - EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
+        - Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
+        - FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
+        - HardwareDescription (str): Indicates the hardware description of the switch.
+        - InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
+        - InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
+        - ManufacturerDescription (str): Indicates the description of the switch manufacturer.
+        - MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
+        - MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
+        - NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
+        - PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
+        - PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
+        - RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
+        - SerialNumber (str): Indicates the Serial Number of the switch.
+        - SoftwareDescription (str): Indicates the description of the software installed on the switch.
+        - StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
+        - StartUpRoleRequest (str(noRoleRequest | master | slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
+        - StartupFeatureRequest (bool): If true, a feature request is sent at startup.
+        - StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
+        - UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
+        - UseDatapathId (bool): Use datapath Id that is configured.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
-        """Adds a new ofChannel node on the server and retrieves it in this instance.
+        """Adds a new ofChannel resource on the server and adds it to the container.
 
-        Args:
-            CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
-            CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
-            DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
-            DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
-            DatapathDescritpion (str): Indicates a description of the datapath.
-            Description (str): A description of the OF Channel used to identify it.
-            EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
-            EnableHelloElement (bool): Enables Hello element for version negotiation.
-            EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
-            Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
-            FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
-            HardwareDescription (str): Indicates the hardware description of the switch.
-            InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
-            InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
-            ManufacturerDescription (str): Indicates the description of the switch manufacturer.
-            MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
-            MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
-            NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
-            PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
-            PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
-            RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
-            SerialNumber (str): Indicates the Serial Number of the switch.
-            SoftwareDescription (str): Indicates the description of the software installed on the switch.
-            StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
-            StartUpRoleRequest (str(noRoleRequest|master|slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
-            StartupFeatureRequest (bool): If true, a feature request is sent at startup.
-            StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
-            UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
-            UseDatapathId (bool): Use datapath Id that is configured.
+        Args
+        ----
+        - CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
+        - CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
+        - DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
+        - DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
+        - DatapathDescritpion (str): Indicates a description of the datapath.
+        - Description (str): A description of the OF Channel used to identify it.
+        - EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
+        - EnableHelloElement (bool): Enables Hello element for version negotiation.
+        - EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
+        - Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
+        - FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
+        - HardwareDescription (str): Indicates the hardware description of the switch.
+        - InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
+        - InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
+        - ManufacturerDescription (str): Indicates the description of the switch manufacturer.
+        - MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
+        - MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
+        - NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
+        - PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
+        - PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
+        - RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
+        - SerialNumber (str): Indicates the Serial Number of the switch.
+        - SoftwareDescription (str): Indicates the description of the software installed on the switch.
+        - StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
+        - StartUpRoleRequest (str(noRoleRequest | master | slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
+        - StartupFeatureRequest (bool): If true, a feature request is sent at startup.
+        - StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
+        - UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
+        - UseDatapathId (bool): Use datapath Id that is configured.
 
-        Returns:
-            self: This instance with all currently retrieved ofChannel data using find and the newly added ofChannel data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofChannel resources using find and the newly added ofChannel resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ofChannel data in this instance from server.
+        """Deletes all the contained ofChannel resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, LocalIp=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
-        """Finds and retrieves ofChannel data from the server.
+        """Finds and retrieves ofChannel resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ofChannel data from the server.
-        By default the find method takes no parameters and will retrieve all ofChannel data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannel resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ofChannel resources from the server.
 
-        Args:
-            CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
-            CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
-            DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
-            DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
-            DatapathDescritpion (str): Indicates a description of the datapath.
-            Description (str): A description of the OF Channel used to identify it.
-            EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
-            EnableHelloElement (bool): Enables Hello element for version negotiation.
-            EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
-            Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
-            FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
-            HardwareDescription (str): Indicates the hardware description of the switch.
-            InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
-            InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
-            LocalIp (str): Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
-            ManufacturerDescription (str): Indicates the description of the switch manufacturer.
-            MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
-            MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
-            NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
-            PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
-            PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
-            RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
-            SerialNumber (str): Indicates the Serial Number of the switch.
-            SoftwareDescription (str): Indicates the description of the software installed on the switch.
-            StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
-            StartUpRoleRequest (str(noRoleRequest|master|slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
-            StartupFeatureRequest (bool): If true, a feature request is sent at startup.
-            StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
-            UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
-            UseDatapathId (bool): Use datapath Id that is configured.
+        Args
+        ----
+        - CalculateFlows (bool): If true, calculates the rate at which flows are transmitted by the controller.
+        - CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
+        - DataPathId (str): Indicates the Datapath ID of the OpenFlow switch.
+        - DataPathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
+        - DatapathDescritpion (str): Indicates a description of the datapath.
+        - Description (str): A description of the OF Channel used to identify it.
+        - EnableCalculateFlowsPerSecondUsingBarrierReq (bool): If true, enables flow rate Calculation using Barrier request message.
+        - EnableHelloElement (bool): Enables Hello element for version negotiation.
+        - EnableStartupEmptyTableFeatureRequest (bool): If true, the Table Feature Request is sent at start up. The default value is false
+        - Enabled (bool): If true, the OF Channel is used in the OpenFlow configuration.
+        - FlowTxBurstSize (number): Indicates the number of flows sent in a single burst.
+        - HardwareDescription (str): Indicates the hardware description of the switch.
+        - InterFlowBurstGap (number): Indicates the duration, in milliseconds, to wait between successive flow bursts.
+        - InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
+        - LocalIp (str): Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
+        - ManufacturerDescription (str): Indicates the description of the switch manufacturer.
+        - MaximumNumberOfFlowsProcessed (number): Indicates the maximum number of flows that the controller can advertise before backing off.
+        - MaximumPacketInBytes (number): Indicates the maximum size of data in a Packet-In a message.
+        - NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
+        - PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
+        - PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
+        - RemoteIp (str): Indicates the IP address of the DUT at the other end of OF channel.
+        - SerialNumber (str): Indicates the Serial Number of the switch.
+        - SoftwareDescription (str): Indicates the description of the software installed on the switch.
+        - StartUpGenerationId (str): A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
+        - StartUpRoleRequest (str(noRoleRequest | master | slave)): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
+        - StartupFeatureRequest (bool): If true, a feature request is sent at startup.
+        - StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
+        - UseDataPathIdAsChannelIdentifier (bool): If true, the Datapath ID of the switch is used.
+        - UseDatapathId (bool): Use datapath Id that is configured.
 
-        Returns:
-            self: This instance with matching ofChannel data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ofChannel resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ofChannel data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ofChannel data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ofChannel resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -675,12 +688,10 @@ class OfChannel(Base):
 
         NOT DEFINED
 
-            Returns:
-                number: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('updateRole', payload=payload, response_object=None)

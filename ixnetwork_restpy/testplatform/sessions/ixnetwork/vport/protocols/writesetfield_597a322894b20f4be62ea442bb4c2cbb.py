@@ -36,28 +36,28 @@ class WriteSetField(Base):
 
     @property
     def Fields(self):
-        """An instance of the Fields class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_a900870f36f8631028d0e8e0ff3dad04.Fields): An instance of the Fields class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_a900870f36f8631028d0e8e0ff3dad04.Fields)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_a900870f36f8631028d0e8e0ff3dad04 import Fields
         return Fields(self)._select()
 
     @property
     def MissFields(self):
-        """An instance of the MissFields class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_695471b5c10097e03d0544b56db5a35b.MissFields): An instance of the MissFields class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_695471b5c10097e03d0544b56db5a35b.MissFields)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_695471b5c10097e03d0544b56db5a35b import MissFields
         return MissFields(self)._select()

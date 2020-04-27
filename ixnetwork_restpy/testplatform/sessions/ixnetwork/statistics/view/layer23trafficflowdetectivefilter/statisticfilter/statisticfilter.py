@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class StatisticFilter(Base):
     """Statistic filter specification.
-    The StatisticFilter class encapsulates a list of statisticFilter resources that is be managed by the user.
+    The StatisticFilter class encapsulates a list of statisticFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the StatisticFilter.find() method.
-    The list can be managed by the user by using the StatisticFilter.add() and StatisticFilter.remove() methods.
+    The list can be managed by using the StatisticFilter.add() and StatisticFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class StatisticFilter(Base):
 
     @property
     def Operator(self):
-        """The logical operation to be performed.
-
-        Returns:
-            str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isLike|isNotLike|isSmaller)
+        """
+        Returns
+        -------
+        - str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller): The logical operation to be performed.
         """
         return self._get_attribute('operator')
     @Operator.setter
@@ -50,10 +50,10 @@ class StatisticFilter(Base):
 
     @property
     def StatisticFilterId(self):
-        """Selected statistic filters from the availableStatisticFilter list.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): Selected statistic filters from the availableStatisticFilter list.
         """
         return self._get_attribute('statisticFilterId')
     @StatisticFilterId.setter
@@ -62,10 +62,10 @@ class StatisticFilter(Base):
 
     @property
     def Value(self):
-        """Value of statistic to be matched based on operator.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of statistic to be matched based on operator.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -73,73 +73,86 @@ class StatisticFilter(Base):
         self._set_attribute('value', value)
 
     def update(self, Operator=None, StatisticFilterId=None, Value=None):
-        """Updates a child instance of statisticFilter on the server.
+        """Updates statisticFilter resource on the server.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isLike|isNotLike|isSmaller)): The logical operation to be performed.
-            StatisticFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-            Value (str): Value of statistic to be matched based on operator.
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of statistic to be matched based on operator.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Operator=None, StatisticFilterId=None, Value=None):
-        """Adds a new statisticFilter node on the server and retrieves it in this instance.
+        """Adds a new statisticFilter resource on the server and adds it to the container.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isLike|isNotLike|isSmaller)): The logical operation to be performed.
-            StatisticFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-            Value (str): Value of statistic to be matched based on operator.
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of statistic to be matched based on operator.
 
-        Returns:
-            self: This instance with all currently retrieved statisticFilter data using find and the newly added statisticFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved statisticFilter resources using find and the newly added statisticFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the statisticFilter data in this instance from server.
+        """Deletes all the contained statisticFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Operator=None, StatisticFilterId=None, Value=None):
-        """Finds and retrieves statisticFilter data from the server.
+        """Finds and retrieves statisticFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve statisticFilter data from the server.
-        By default the find method takes no parameters and will retrieve all statisticFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statisticFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statisticFilter resources from the server.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isLike|isNotLike|isSmaller)): The logical operation to be performed.
-            StatisticFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-            Value (str): Value of statistic to be matched based on operator.
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of statistic to be matched based on operator.
 
-        Returns:
-            self: This instance with matching statisticFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching statisticFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of statisticFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the statisticFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the statisticFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomValue(Base):
     """List of custom values.
-    The CustomValue class encapsulates a list of customValue resources that is be managed by the user.
+    The CustomValue class encapsulates a list of customValue resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomValue.find() method.
-    The list can be managed by the user by using the CustomValue.add() and CustomValue.remove() methods.
+    The list can be managed by using the CustomValue.add() and CustomValue.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomValue(Base):
 
     @property
     def Percentage(self):
-        """How often this value occurs, as a percentage.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How often this value occurs, as a percentage.
         """
         return self._get_attribute('percentage')
     @Percentage.setter
@@ -50,10 +50,10 @@ class CustomValue(Base):
 
     @property
     def Value(self):
-        """Delay value, in microseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Delay value, in microseconds.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -61,70 +61,83 @@ class CustomValue(Base):
         self._set_attribute('value', value)
 
     def update(self, Percentage=None, Value=None):
-        """Updates a child instance of customValue on the server.
+        """Updates customValue resource on the server.
 
-        Args:
-            Percentage (number): How often this value occurs, as a percentage.
-            Value (number): Delay value, in microseconds.
+        Args
+        ----
+        - Percentage (number): How often this value occurs, as a percentage.
+        - Value (number): Delay value, in microseconds.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Percentage=None, Value=None):
-        """Adds a new customValue node on the server and retrieves it in this instance.
+        """Adds a new customValue resource on the server and adds it to the container.
 
-        Args:
-            Percentage (number): How often this value occurs, as a percentage.
-            Value (number): Delay value, in microseconds.
+        Args
+        ----
+        - Percentage (number): How often this value occurs, as a percentage.
+        - Value (number): Delay value, in microseconds.
 
-        Returns:
-            self: This instance with all currently retrieved customValue data using find and the newly added customValue data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customValue resources using find and the newly added customValue resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customValue data in this instance from server.
+        """Deletes all the contained customValue resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Percentage=None, Value=None):
-        """Finds and retrieves customValue data from the server.
+        """Finds and retrieves customValue resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customValue data from the server.
-        By default the find method takes no parameters and will retrieve all customValue data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customValue resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customValue resources from the server.
 
-        Args:
-            Percentage (number): How often this value occurs, as a percentage.
-            Value (number): Delay value, in microseconds.
+        Args
+        ----
+        - Percentage (number): How often this value occurs, as a percentage.
+        - Value (number): Delay value, in microseconds.
 
-        Returns:
-            self: This instance with matching customValue data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customValue resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customValue data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customValue data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customValue resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

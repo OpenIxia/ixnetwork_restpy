@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class InstructionActions(Base):
     """This object allows to configure the instruction actions in Controller Table Flow Ranges.
-    The InstructionActions class encapsulates a list of instructionActions resources that is be managed by the user.
+    The InstructionActions class encapsulates a list of instructionActions resources that are managed by the user.
     A list of resources can be retrieved from the server using the InstructionActions.find() method.
-    The list can be managed by the user by using the InstructionActions.add() and InstructionActions.remove() methods.
+    The list can be managed by using the InstructionActions.add() and InstructionActions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class InstructionActions(Base):
 
     @property
     def ActionType(self):
-        """The action type associated with this instruction.
-
-        Returns:
-            str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)
+        """
+        Returns
+        -------
+        - str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter): The action type associated with this instruction.
         """
         return self._get_attribute('actionType')
     @ActionType.setter
@@ -50,10 +50,10 @@ class InstructionActions(Base):
 
     @property
     def ArpDstHwAddr(self):
-        """Value of the ARP destination hardware address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the ARP destination hardware address.
         """
         return self._get_attribute('arpDstHwAddr')
     @ArpDstHwAddr.setter
@@ -62,10 +62,10 @@ class InstructionActions(Base):
 
     @property
     def ArpDstIpv4Addr(self):
-        """The ARP destination IPv4 address field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The ARP destination IPv4 address field value.
         """
         return self._get_attribute('arpDstIpv4Addr')
     @ArpDstIpv4Addr.setter
@@ -74,10 +74,10 @@ class InstructionActions(Base):
 
     @property
     def ArpOpcode(self):
-        """Value of the ARP opcode field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the ARP opcode field.
         """
         return self._get_attribute('arpOpcode')
     @ArpOpcode.setter
@@ -86,10 +86,10 @@ class InstructionActions(Base):
 
     @property
     def ArpSrcHwAddr(self):
-        """Value of the ARP source hardware address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the ARP source hardware address.
         """
         return self._get_attribute('arpSrcHwAddr')
     @ArpSrcHwAddr.setter
@@ -98,10 +98,10 @@ class InstructionActions(Base):
 
     @property
     def ArpSrcIpv4Addr(self):
-        """The ARP source IPv4 address field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The ARP source IPv4 address field value.
         """
         return self._get_attribute('arpSrcIpv4Addr')
     @ArpSrcIpv4Addr.setter
@@ -110,10 +110,10 @@ class InstructionActions(Base):
 
     @property
     def EthernetDestination(self):
-        """The Ethernet destination address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Ethernet destination address.
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -122,10 +122,10 @@ class InstructionActions(Base):
 
     @property
     def EthernetSource(self):
-        """The Ethernet source address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Ethernet source address.
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -134,10 +134,10 @@ class InstructionActions(Base):
 
     @property
     def EthernetType(self):
-        """The type of Ethernet port used.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of Ethernet port used.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -146,10 +146,10 @@ class InstructionActions(Base):
 
     @property
     def Experimenter(self):
-        """The unique Experimenter identifier. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique Experimenter identifier. The default value is 1.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -158,10 +158,10 @@ class InstructionActions(Base):
 
     @property
     def ExperimenterData(self):
-        """The experimenter data field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The experimenter data field value.
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -170,10 +170,10 @@ class InstructionActions(Base):
 
     @property
     def ExperimenterDatalength(self):
-        """Value of the Experimenter data length field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the Experimenter data length field.
         """
         return self._get_attribute('experimenterDatalength')
     @ExperimenterDatalength.setter
@@ -182,10 +182,10 @@ class InstructionActions(Base):
 
     @property
     def ExperimenterField(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterField')
     @ExperimenterField.setter
@@ -194,10 +194,10 @@ class InstructionActions(Base):
 
     @property
     def GroupId(self):
-        """Set the Group identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the Group identifier.
         """
         return self._get_attribute('groupId')
     @GroupId.setter
@@ -206,10 +206,10 @@ class InstructionActions(Base):
 
     @property
     def Icmpv4Code(self):
-        """The code of ICMPv4 port used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The code of ICMPv4 port used.
         """
         return self._get_attribute('icmpv4Code')
     @Icmpv4Code.setter
@@ -218,10 +218,10 @@ class InstructionActions(Base):
 
     @property
     def Icmpv4Type(self):
-        """The type of ICMPv4 port used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of ICMPv4 port used.
         """
         return self._get_attribute('icmpv4Type')
     @Icmpv4Type.setter
@@ -230,10 +230,10 @@ class InstructionActions(Base):
 
     @property
     def Icmpv6Code(self):
-        """Value of the ICMPv6 code field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the ICMPv6 code field.
         """
         return self._get_attribute('icmpv6Code')
     @Icmpv6Code.setter
@@ -242,10 +242,10 @@ class InstructionActions(Base):
 
     @property
     def Icmpv6Type(self):
-        """Value of the ICMPv6 type field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the ICMPv6 type field.
         """
         return self._get_attribute('icmpv6Type')
     @Icmpv6Type.setter
@@ -254,10 +254,10 @@ class InstructionActions(Base):
 
     @property
     def IpDscp(self):
-        """The IP DSCP value for advertising.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The IP DSCP value for advertising.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -266,10 +266,10 @@ class InstructionActions(Base):
 
     @property
     def IpEcn(self):
-        """The IP ECN field value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The IP ECN field value.
         """
         return self._get_attribute('ipEcn')
     @IpEcn.setter
@@ -278,10 +278,10 @@ class InstructionActions(Base):
 
     @property
     def IpProtocol(self):
-        """The IP protocol used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The IP protocol used.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -290,10 +290,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv4Destination(self):
-        """The IPv4 destination address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 destination address.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -302,10 +302,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv4Source(self):
-        """The IPv4 source address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 source address.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -314,10 +314,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6Destination(self):
-        """Value of the IPv6 destination field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the IPv6 destination field.
         """
         return self._get_attribute('ipv6Destination')
     @Ipv6Destination.setter
@@ -326,10 +326,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6ExtHeader(self):
-        """The Ipv6 extension header field value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Ipv6 extension header field value.
         """
         return self._get_attribute('ipv6ExtHeader')
     @Ipv6ExtHeader.setter
@@ -338,10 +338,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """Value of the IPv6 flow label field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the IPv6 flow label field.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -350,10 +350,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6NdSll(self):
-        """Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the source link-layer address option in an IPv6 Neighbor Discovery message.
         """
         return self._get_attribute('ipv6NdSll')
     @Ipv6NdSll.setter
@@ -362,10 +362,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6NdTll(self):
-        """Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Set the target link-layer address option in an IPv6 Neighbor Discovery message.
         """
         return self._get_attribute('ipv6NdTll')
     @Ipv6NdTll.setter
@@ -374,10 +374,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6Source(self):
-        """Value of the IPv6 source field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the IPv6 source field.
         """
         return self._get_attribute('ipv6Source')
     @Ipv6Source.setter
@@ -386,10 +386,10 @@ class InstructionActions(Base):
 
     @property
     def Ipv6ndTarget(self):
-        """The IPv6 ND target field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv6 ND target field value.
         """
         return self._get_attribute('ipv6ndTarget')
     @Ipv6ndTarget.setter
@@ -398,10 +398,10 @@ class InstructionActions(Base):
 
     @property
     def MaxByteLength(self):
-        """Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
         """
         return self._get_attribute('maxByteLength')
     @MaxByteLength.setter
@@ -410,10 +410,10 @@ class InstructionActions(Base):
 
     @property
     def MplsBos(self):
-        """Value of the MPLS BoS field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the MPLS BoS field.
         """
         return self._get_attribute('mplsBos')
     @MplsBos.setter
@@ -422,10 +422,10 @@ class InstructionActions(Base):
 
     @property
     def MplsLabel(self):
-        """Set the LABEL in the first MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the LABEL in the first MPLS shim header.
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -434,10 +434,10 @@ class InstructionActions(Base):
 
     @property
     def MplsTc(self):
-        """The MPLS TC field value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The MPLS TC field value.
         """
         return self._get_attribute('mplsTc')
     @MplsTc.setter
@@ -446,10 +446,10 @@ class InstructionActions(Base):
 
     @property
     def MplsTtl(self):
-        """Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
         """
         return self._get_attribute('mplsTtl')
     @MplsTtl.setter
@@ -458,10 +458,10 @@ class InstructionActions(Base):
 
     @property
     def NwTtl(self):
-        """Set the IP TTL.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Set the IP TTL.
         """
         return self._get_attribute('nwTtl')
     @NwTtl.setter
@@ -470,10 +470,10 @@ class InstructionActions(Base):
 
     @property
     def OutputPort(self):
-        """The Output port number to be used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Output port number to be used.
         """
         return self._get_attribute('outputPort')
     @OutputPort.setter
@@ -482,10 +482,10 @@ class InstructionActions(Base):
 
     @property
     def OutputPortType(self):
-        """Specify the Output Port Type for this Instruction.
-
-        Returns:
-            str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)
+        """
+        Returns
+        -------
+        - str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal): Specify the Output Port Type for this Instruction.
         """
         return self._get_attribute('outputPortType')
     @OutputPortType.setter
@@ -494,10 +494,10 @@ class InstructionActions(Base):
 
     @property
     def PbbIsId(self):
-        """Value of the PBB I-SID field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the PBB I-SID field.
         """
         return self._get_attribute('pbbIsId')
     @PbbIsId.setter
@@ -506,10 +506,10 @@ class InstructionActions(Base):
 
     @property
     def QueueId(self):
-        """The identifier of the Queue.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier of the Queue.
         """
         return self._get_attribute('queueId')
     @QueueId.setter
@@ -518,10 +518,10 @@ class InstructionActions(Base):
 
     @property
     def SctpDestination(self):
-        """The SCTP destination field value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The SCTP destination field value.
         """
         return self._get_attribute('sctpDestination')
     @SctpDestination.setter
@@ -530,10 +530,10 @@ class InstructionActions(Base):
 
     @property
     def SctpSource(self):
-        """Value of the SCTP source field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the SCTP source field.
         """
         return self._get_attribute('sctpSource')
     @SctpSource.setter
@@ -542,10 +542,10 @@ class InstructionActions(Base):
 
     @property
     def TcpDestination(self):
-        """The Transport destination address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Transport destination address.
         """
         return self._get_attribute('tcpDestination')
     @TcpDestination.setter
@@ -554,10 +554,10 @@ class InstructionActions(Base):
 
     @property
     def TcpSource(self):
-        """Value of the TCP source field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the TCP source field.
         """
         return self._get_attribute('tcpSource')
     @TcpSource.setter
@@ -566,10 +566,10 @@ class InstructionActions(Base):
 
     @property
     def TunnelId(self):
-        """Value of the tunnel ID field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the tunnel ID field.
         """
         return self._get_attribute('tunnelId')
     @TunnelId.setter
@@ -578,10 +578,10 @@ class InstructionActions(Base):
 
     @property
     def UdpDestination(self):
-        """Value of the UDP destination field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the UDP destination field.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -590,10 +590,10 @@ class InstructionActions(Base):
 
     @property
     def UdpSource(self):
-        """Value of the UDP source field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the UDP source field.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -602,10 +602,10 @@ class InstructionActions(Base):
 
     @property
     def VlanId(self):
-        """The unique VLAN Identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique VLAN Identifier.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -614,10 +614,10 @@ class InstructionActions(Base):
 
     @property
     def VlanPriority(self):
-        """The User Priority for this VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The User Priority for this VLAN.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -625,211 +625,224 @@ class InstructionActions(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of instructionActions on the server.
+        """Updates instructionActions resource on the server.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): The action type associated with this instruction.
-            ArpDstHwAddr (str): Value of the ARP destination hardware address.
-            ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
-            ArpOpcode (number): Value of the ARP opcode field.
-            ArpSrcHwAddr (str): Value of the ARP source hardware address.
-            ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
-            EthernetDestination (str): The Ethernet destination address.
-            EthernetSource (str): The Ethernet source address.
-            EthernetType (str): The type of Ethernet port used.
-            Experimenter (number): The unique Experimenter identifier. The default value is 1.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDatalength (number): Value of the Experimenter data length field.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): Set the Group identifier.
-            Icmpv4Code (number): The code of ICMPv4 port used.
-            Icmpv4Type (number): The type of ICMPv4 port used.
-            Icmpv6Code (number): Value of the ICMPv6 code field.
-            Icmpv6Type (number): Value of the ICMPv6 type field.
-            IpDscp (number): The IP DSCP value for advertising.
-            IpEcn (number): The IP ECN field value.
-            IpProtocol (number): The IP protocol used.
-            Ipv4Destination (str): The IPv4 destination address.
-            Ipv4Source (str): The IPv4 source address.
-            Ipv6Destination (str): Value of the IPv6 destination field.
-            Ipv6ExtHeader (number): The Ipv6 extension header field value.
-            Ipv6FlowLabel (number): Value of the IPv6 flow label field.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Value of the IPv6 source field.
-            Ipv6ndTarget (str): The IPv6 ND target field value.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Value of the MPLS BoS field.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): The MPLS TC field value.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction.
-            PbbIsId (number): Value of the PBB I-SID field.
-            QueueId (number): The identifier of the Queue.
-            SctpDestination (number): The SCTP destination field value.
-            SctpSource (number): Value of the SCTP source field.
-            TcpDestination (number): The Transport destination address.
-            TcpSource (number): Value of the TCP source field.
-            TunnelId (str): Value of the tunnel ID field.
-            UdpDestination (number): Value of the UDP destination field.
-            UdpSource (number): Value of the UDP source field.
-            VlanId (number): The unique VLAN Identifier.
-            VlanPriority (number): The User Priority for this VLAN.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): The action type associated with this instruction.
+        - ArpDstHwAddr (str): Value of the ARP destination hardware address.
+        - ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
+        - ArpOpcode (number): Value of the ARP opcode field.
+        - ArpSrcHwAddr (str): Value of the ARP source hardware address.
+        - ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
+        - EthernetDestination (str): The Ethernet destination address.
+        - EthernetSource (str): The Ethernet source address.
+        - EthernetType (str): The type of Ethernet port used.
+        - Experimenter (number): The unique Experimenter identifier. The default value is 1.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDatalength (number): Value of the Experimenter data length field.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): Set the Group identifier.
+        - Icmpv4Code (number): The code of ICMPv4 port used.
+        - Icmpv4Type (number): The type of ICMPv4 port used.
+        - Icmpv6Code (number): Value of the ICMPv6 code field.
+        - Icmpv6Type (number): Value of the ICMPv6 type field.
+        - IpDscp (number): The IP DSCP value for advertising.
+        - IpEcn (number): The IP ECN field value.
+        - IpProtocol (number): The IP protocol used.
+        - Ipv4Destination (str): The IPv4 destination address.
+        - Ipv4Source (str): The IPv4 source address.
+        - Ipv6Destination (str): Value of the IPv6 destination field.
+        - Ipv6ExtHeader (number): The Ipv6 extension header field value.
+        - Ipv6FlowLabel (number): Value of the IPv6 flow label field.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Value of the IPv6 source field.
+        - Ipv6ndTarget (str): The IPv6 ND target field value.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Value of the MPLS BoS field.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): The MPLS TC field value.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction.
+        - PbbIsId (number): Value of the PBB I-SID field.
+        - QueueId (number): The identifier of the Queue.
+        - SctpDestination (number): The SCTP destination field value.
+        - SctpSource (number): Value of the SCTP source field.
+        - TcpDestination (number): The Transport destination address.
+        - TcpSource (number): Value of the TCP source field.
+        - TunnelId (str): Value of the tunnel ID field.
+        - UdpDestination (number): Value of the UDP destination field.
+        - UdpSource (number): Value of the UDP source field.
+        - VlanId (number): The unique VLAN Identifier.
+        - VlanPriority (number): The User Priority for this VLAN.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Adds a new instructionActions node on the server and retrieves it in this instance.
+        """Adds a new instructionActions resource on the server and adds it to the container.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): The action type associated with this instruction.
-            ArpDstHwAddr (str): Value of the ARP destination hardware address.
-            ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
-            ArpOpcode (number): Value of the ARP opcode field.
-            ArpSrcHwAddr (str): Value of the ARP source hardware address.
-            ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
-            EthernetDestination (str): The Ethernet destination address.
-            EthernetSource (str): The Ethernet source address.
-            EthernetType (str): The type of Ethernet port used.
-            Experimenter (number): The unique Experimenter identifier. The default value is 1.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDatalength (number): Value of the Experimenter data length field.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): Set the Group identifier.
-            Icmpv4Code (number): The code of ICMPv4 port used.
-            Icmpv4Type (number): The type of ICMPv4 port used.
-            Icmpv6Code (number): Value of the ICMPv6 code field.
-            Icmpv6Type (number): Value of the ICMPv6 type field.
-            IpDscp (number): The IP DSCP value for advertising.
-            IpEcn (number): The IP ECN field value.
-            IpProtocol (number): The IP protocol used.
-            Ipv4Destination (str): The IPv4 destination address.
-            Ipv4Source (str): The IPv4 source address.
-            Ipv6Destination (str): Value of the IPv6 destination field.
-            Ipv6ExtHeader (number): The Ipv6 extension header field value.
-            Ipv6FlowLabel (number): Value of the IPv6 flow label field.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Value of the IPv6 source field.
-            Ipv6ndTarget (str): The IPv6 ND target field value.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Value of the MPLS BoS field.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): The MPLS TC field value.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction.
-            PbbIsId (number): Value of the PBB I-SID field.
-            QueueId (number): The identifier of the Queue.
-            SctpDestination (number): The SCTP destination field value.
-            SctpSource (number): Value of the SCTP source field.
-            TcpDestination (number): The Transport destination address.
-            TcpSource (number): Value of the TCP source field.
-            TunnelId (str): Value of the tunnel ID field.
-            UdpDestination (number): Value of the UDP destination field.
-            UdpSource (number): Value of the UDP source field.
-            VlanId (number): The unique VLAN Identifier.
-            VlanPriority (number): The User Priority for this VLAN.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): The action type associated with this instruction.
+        - ArpDstHwAddr (str): Value of the ARP destination hardware address.
+        - ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
+        - ArpOpcode (number): Value of the ARP opcode field.
+        - ArpSrcHwAddr (str): Value of the ARP source hardware address.
+        - ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
+        - EthernetDestination (str): The Ethernet destination address.
+        - EthernetSource (str): The Ethernet source address.
+        - EthernetType (str): The type of Ethernet port used.
+        - Experimenter (number): The unique Experimenter identifier. The default value is 1.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDatalength (number): Value of the Experimenter data length field.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): Set the Group identifier.
+        - Icmpv4Code (number): The code of ICMPv4 port used.
+        - Icmpv4Type (number): The type of ICMPv4 port used.
+        - Icmpv6Code (number): Value of the ICMPv6 code field.
+        - Icmpv6Type (number): Value of the ICMPv6 type field.
+        - IpDscp (number): The IP DSCP value for advertising.
+        - IpEcn (number): The IP ECN field value.
+        - IpProtocol (number): The IP protocol used.
+        - Ipv4Destination (str): The IPv4 destination address.
+        - Ipv4Source (str): The IPv4 source address.
+        - Ipv6Destination (str): Value of the IPv6 destination field.
+        - Ipv6ExtHeader (number): The Ipv6 extension header field value.
+        - Ipv6FlowLabel (number): Value of the IPv6 flow label field.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Value of the IPv6 source field.
+        - Ipv6ndTarget (str): The IPv6 ND target field value.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Value of the MPLS BoS field.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): The MPLS TC field value.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction.
+        - PbbIsId (number): Value of the PBB I-SID field.
+        - QueueId (number): The identifier of the Queue.
+        - SctpDestination (number): The SCTP destination field value.
+        - SctpSource (number): Value of the SCTP source field.
+        - TcpDestination (number): The Transport destination address.
+        - TcpSource (number): Value of the TCP source field.
+        - TunnelId (str): Value of the tunnel ID field.
+        - UdpDestination (number): Value of the UDP destination field.
+        - UdpSource (number): Value of the UDP source field.
+        - VlanId (number): The unique VLAN Identifier.
+        - VlanPriority (number): The User Priority for this VLAN.
 
-        Returns:
-            self: This instance with all currently retrieved instructionActions data using find and the newly added instructionActions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved instructionActions resources using find and the newly added instructionActions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the instructionActions data in this instance from server.
+        """Deletes all the contained instructionActions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves instructionActions data from the server.
+        """Finds and retrieves instructionActions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve instructionActions data from the server.
-        By default the find method takes no parameters and will retrieve all instructionActions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instructionActions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all instructionActions resources from the server.
 
-        Args:
-            ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): The action type associated with this instruction.
-            ArpDstHwAddr (str): Value of the ARP destination hardware address.
-            ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
-            ArpOpcode (number): Value of the ARP opcode field.
-            ArpSrcHwAddr (str): Value of the ARP source hardware address.
-            ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
-            EthernetDestination (str): The Ethernet destination address.
-            EthernetSource (str): The Ethernet source address.
-            EthernetType (str): The type of Ethernet port used.
-            Experimenter (number): The unique Experimenter identifier. The default value is 1.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDatalength (number): Value of the Experimenter data length field.
-            ExperimenterField (number): NOT DEFINED
-            GroupId (number): Set the Group identifier.
-            Icmpv4Code (number): The code of ICMPv4 port used.
-            Icmpv4Type (number): The type of ICMPv4 port used.
-            Icmpv6Code (number): Value of the ICMPv6 code field.
-            Icmpv6Type (number): Value of the ICMPv6 type field.
-            IpDscp (number): The IP DSCP value for advertising.
-            IpEcn (number): The IP ECN field value.
-            IpProtocol (number): The IP protocol used.
-            Ipv4Destination (str): The IPv4 destination address.
-            Ipv4Source (str): The IPv4 source address.
-            Ipv6Destination (str): Value of the IPv6 destination field.
-            Ipv6ExtHeader (number): The Ipv6 extension header field value.
-            Ipv6FlowLabel (number): Value of the IPv6 flow label field.
-            Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
-            Ipv6Source (str): Value of the IPv6 source field.
-            Ipv6ndTarget (str): The IPv6 ND target field value.
-            MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
-            MplsBos (number): Value of the MPLS BoS field.
-            MplsLabel (number): Set the LABEL in the first MPLS shim header.
-            MplsTc (number): The MPLS TC field value.
-            MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-            NwTtl (number): Set the IP TTL.
-            OutputPort (number): The Output port number to be used.
-            OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction.
-            PbbIsId (number): Value of the PBB I-SID field.
-            QueueId (number): The identifier of the Queue.
-            SctpDestination (number): The SCTP destination field value.
-            SctpSource (number): Value of the SCTP source field.
-            TcpDestination (number): The Transport destination address.
-            TcpSource (number): Value of the TCP source field.
-            TunnelId (str): Value of the tunnel ID field.
-            UdpDestination (number): Value of the UDP destination field.
-            UdpSource (number): Value of the UDP source field.
-            VlanId (number): The unique VLAN Identifier.
-            VlanPriority (number): The User Priority for this VLAN.
+        Args
+        ----
+        - ActionType (str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter)): The action type associated with this instruction.
+        - ArpDstHwAddr (str): Value of the ARP destination hardware address.
+        - ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
+        - ArpOpcode (number): Value of the ARP opcode field.
+        - ArpSrcHwAddr (str): Value of the ARP source hardware address.
+        - ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
+        - EthernetDestination (str): The Ethernet destination address.
+        - EthernetSource (str): The Ethernet source address.
+        - EthernetType (str): The type of Ethernet port used.
+        - Experimenter (number): The unique Experimenter identifier. The default value is 1.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDatalength (number): Value of the Experimenter data length field.
+        - ExperimenterField (number): NOT DEFINED
+        - GroupId (number): Set the Group identifier.
+        - Icmpv4Code (number): The code of ICMPv4 port used.
+        - Icmpv4Type (number): The type of ICMPv4 port used.
+        - Icmpv6Code (number): Value of the ICMPv6 code field.
+        - Icmpv6Type (number): Value of the ICMPv6 type field.
+        - IpDscp (number): The IP DSCP value for advertising.
+        - IpEcn (number): The IP ECN field value.
+        - IpProtocol (number): The IP protocol used.
+        - Ipv4Destination (str): The IPv4 destination address.
+        - Ipv4Source (str): The IPv4 source address.
+        - Ipv6Destination (str): Value of the IPv6 destination field.
+        - Ipv6ExtHeader (number): The Ipv6 extension header field value.
+        - Ipv6FlowLabel (number): Value of the IPv6 flow label field.
+        - Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+        - Ipv6Source (str): Value of the IPv6 source field.
+        - Ipv6ndTarget (str): The IPv6 ND target field value.
+        - MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+        - MplsBos (number): Value of the MPLS BoS field.
+        - MplsLabel (number): Set the LABEL in the first MPLS shim header.
+        - MplsTc (number): The MPLS TC field value.
+        - MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - NwTtl (number): Set the IP TTL.
+        - OutputPort (number): The Output port number to be used.
+        - OutputPortType (str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal)): Specify the Output Port Type for this Instruction.
+        - PbbIsId (number): Value of the PBB I-SID field.
+        - QueueId (number): The identifier of the Queue.
+        - SctpDestination (number): The SCTP destination field value.
+        - SctpSource (number): Value of the SCTP source field.
+        - TcpDestination (number): The Transport destination address.
+        - TcpSource (number): Value of the TCP source field.
+        - TunnelId (str): Value of the tunnel ID field.
+        - UdpDestination (number): Value of the UDP destination field.
+        - UdpSource (number): Value of the UDP source field.
+        - VlanId (number): The unique VLAN Identifier.
+        - VlanPriority (number): The User Priority for this VLAN.
 
-        Returns:
-            self: This instance with matching instructionActions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching instructionActions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of instructionActions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the instructionActions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the instructionActions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

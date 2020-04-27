@@ -1,15 +1,14 @@
 """Demonstrates adding interfaces to virtual ports.
 
 """
+from ixnetwork_restpy import SessionAssistant
 
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # add a virtual port and get the interface object
 interfaces = ixnetwork.Vport.add(Name='Test Port 1').Interface

@@ -1,7 +1,23 @@
 # Release Notes
 
+### Apr 2020
+* 1.0.52
+  * classes generated from IxNetwork build 9.00.1915.16
+  * TestPlatform.Sessions.find(Id=) fixed when using connection_manager 
+  * TlvProfile sample demonstrates creating and copying a template tlv to a protocol tlvprofile
+  * CollectLogs sample demonstrates collecting diagnostic logs and downloading them
+  * samples use SessionAssistant when relevant
+  * PortMapAssistant has user configurable option to timeout on chassis configuration
+  * Testplatform("ipv6 address") is escaped
+  * .update() method returns self
+  * Multivalue class/methods/properties included in IDE intellisense
+  * documentation site updates:
+    * API Reference readibility enhancement for inline class/method/property documentation
+    * release notes included in documentation
+ 
 ### Mar 2020
 * 1.0.51
+  * classes generated from IxNetwork build 9.01.1911.7 
   * New SessionAssistant class
     * combines TestPlatform, Session, logging, authentication and NewConfig functionality into constructor
     * reduces number of import statements and complexity
@@ -12,11 +28,12 @@
     * see examples in the class documentation
   * proxy bypass fix
   * generated quickTest...testConfig attributes
-  * package generated from IxNetwork build 9.01.1911.7 
+  
 ### Jan 2020
 * 1.0.48
   * support ipv6 address with no square brackets in TestPlatform init
   * MultiValue.Steps.find() support 
+
 ### Nov 2019
 * 1.0.47
   * fixed class generation for invalid property names, invalid docstrings and normalized line endings

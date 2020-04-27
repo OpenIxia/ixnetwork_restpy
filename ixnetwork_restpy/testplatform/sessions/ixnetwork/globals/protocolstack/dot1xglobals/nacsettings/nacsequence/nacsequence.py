@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NacSequence(Base):
     """NAC Sequence settings
-    The NacSequence class encapsulates a list of nacSequence resources that is be managed by the user.
+    The NacSequence class encapsulates a list of nacSequence resources that are managed by the user.
     A list of resources can be retrieved from the server using the NacSequence.find() method.
-    The list can be managed by the user by using the NacSequence.add() and NacSequence.remove() methods.
+    The list can be managed by using the NacSequence.add() and NacSequence.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class NacSequence(Base):
 
     @property
     def NacPostures(self):
-        """List of NacPostures.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacPosture])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture]): List of NacPostures.
         """
         return self._get_attribute('nacPostures')
     @NacPostures.setter
@@ -50,10 +50,10 @@ class NacSequence(Base):
 
     @property
     def Name(self):
-        """Unique name for this NAC Sequence.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique name for this NAC Sequence.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -62,79 +62,92 @@ class NacSequence(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, NacPostures=None, Name=None):
-        """Updates a child instance of nacSequence on the server.
+        """Updates nacSequence resource on the server.
 
-        Args:
-            NacPostures (list(str[None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacPosture])): List of NacPostures.
-            Name (str): Unique name for this NAC Sequence.
+        Args
+        ----
+        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - Name (str): Unique name for this NAC Sequence.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, NacPostures=None, Name=None):
-        """Adds a new nacSequence node on the server and retrieves it in this instance.
+        """Adds a new nacSequence resource on the server and adds it to the container.
 
-        Args:
-            NacPostures (list(str[None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacPosture])): List of NacPostures.
-            Name (str): Unique name for this NAC Sequence.
+        Args
+        ----
+        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - Name (str): Unique name for this NAC Sequence.
 
-        Returns:
-            self: This instance with all currently retrieved nacSequence data using find and the newly added nacSequence data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved nacSequence resources using find and the newly added nacSequence resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the nacSequence data in this instance from server.
+        """Deletes all the contained nacSequence resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, NacPostures=None, Name=None, ObjectId=None):
-        """Finds and retrieves nacSequence data from the server.
+        """Finds and retrieves nacSequence resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nacSequence data from the server.
-        By default the find method takes no parameters and will retrieve all nacSequence data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacSequence resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nacSequence resources from the server.
 
-        Args:
-            NacPostures (list(str[None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacPosture])): List of NacPostures.
-            Name (str): Unique name for this NAC Sequence.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - Name (str): Unique name for this NAC Sequence.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching nacSequence data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nacSequence resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nacSequence data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nacSequence data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nacSequence resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

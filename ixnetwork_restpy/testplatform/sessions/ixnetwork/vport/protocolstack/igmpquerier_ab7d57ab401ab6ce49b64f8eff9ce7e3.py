@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IgmpQuerier(Base):
     """
-    The IgmpQuerier class encapsulates a list of igmpQuerier resources that is be managed by the user.
+    The IgmpQuerier class encapsulates a list of igmpQuerier resources that are managed by the user.
     A list of resources can be retrieved from the server using the IgmpQuerier.find() method.
-    The list can be managed by the user by using the IgmpQuerier.add() and IgmpQuerier.remove() methods.
+    The list can be managed by using the IgmpQuerier.add() and IgmpQuerier.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IgmpQuerier(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -50,77 +50,90 @@ class IgmpQuerier(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, Name=None):
-        """Updates a child instance of igmpQuerier on the server.
+        """Updates igmpQuerier resource on the server.
 
-        Args:
-            Name (str): Name of range
+        Args
+        ----
+        - Name (str): Name of range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None):
-        """Adds a new igmpQuerier node on the server and retrieves it in this instance.
+        """Adds a new igmpQuerier resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of range
+        Args
+        ----
+        - Name (str): Name of range
 
-        Returns:
-            self: This instance with all currently retrieved igmpQuerier data using find and the newly added igmpQuerier data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved igmpQuerier resources using find and the newly added igmpQuerier resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the igmpQuerier data in this instance from server.
+        """Deletes all the contained igmpQuerier resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
-        """Finds and retrieves igmpQuerier data from the server.
+        """Finds and retrieves igmpQuerier resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve igmpQuerier data from the server.
-        By default the find method takes no parameters and will retrieve all igmpQuerier data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpQuerier resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all igmpQuerier resources from the server.
 
-        Args:
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching igmpQuerier data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching igmpQuerier resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of igmpQuerier data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the igmpQuerier data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the igmpQuerier resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -129,14 +142,15 @@ class IgmpQuerier(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -148,16 +162,15 @@ class IgmpQuerier(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -169,16 +182,15 @@ class IgmpQuerier(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -190,18 +202,16 @@ class IgmpQuerier(Base):
 
         Start IGMP/MLD Querier on selected plugins
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldQuerierStart()
+        igmpMldQuerierStart(Arg2=enum)
+        ------------------------------
+        - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
 
-        igmpMldQuerierStart(Arg2:enum)
-            Args:
-                args[0] is Arg2 (str(async|sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -213,18 +223,16 @@ class IgmpQuerier(Base):
 
         Stop IGMP/MLD Querier on selected plugins
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldQuerierStop()
+        igmpMldQuerierStop(Arg2=enum)
+        -----------------------------
+        - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
 
-        igmpMldQuerierStop(Arg2:enum)
-            Args:
-                args[0] is Arg2 (str(async|sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

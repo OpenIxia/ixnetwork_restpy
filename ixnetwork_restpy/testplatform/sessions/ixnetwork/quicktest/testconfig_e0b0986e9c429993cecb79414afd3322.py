@@ -37,9 +37,9 @@ class TestConfig(Base):
     @property
     def AlgorithmType(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('algorithmType')
     @AlgorithmType.setter
@@ -49,9 +49,9 @@ class TestConfig(Base):
     @property
     def Duration(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -61,9 +61,9 @@ class TestConfig(Base):
     @property
     def InitialStepIntegerValues(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('initialStepIntegerValues')
     @InitialStepIntegerValues.setter
@@ -73,9 +73,9 @@ class TestConfig(Base):
     @property
     def LeaveSessionsUp(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('leaveSessionsUp')
     @LeaveSessionsUp.setter
@@ -85,9 +85,9 @@ class TestConfig(Base):
     @property
     def LoadRateList(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -97,9 +97,9 @@ class TestConfig(Base):
     @property
     def MaxOutstandingRequests(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -109,9 +109,9 @@ class TestConfig(Base):
     @property
     def MaxStepIntegerValues(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxStepIntegerValues')
     @MaxStepIntegerValues.setter
@@ -121,9 +121,9 @@ class TestConfig(Base):
     @property
     def Numtrials(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -145,9 +145,9 @@ class TestConfig(Base):
     @property
     def RequestRate(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('requestRate')
     @RequestRate.setter
@@ -157,9 +157,9 @@ class TestConfig(Base):
     @property
     def StepStepIntegerValues(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('stepStepIntegerValues')
     @StepStepIntegerValues.setter
@@ -169,9 +169,9 @@ class TestConfig(Base):
     @property
     def Step_failedsession_enableAccLoss(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('step_failedsession_enableAccLoss')
     @Step_failedsession_enableAccLoss.setter
@@ -181,9 +181,9 @@ class TestConfig(Base):
     @property
     def Step_failedsession_thresholdAccLoss(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('step_failedsession_thresholdAccLoss')
     @Step_failedsession_thresholdAccLoss.setter
@@ -191,36 +191,39 @@ class TestConfig(Base):
         self._set_attribute('step_failedsession_thresholdAccLoss', value)
 
     def update(self, AlgorithmType=None, Duration=None, InitialStepIntegerValues=None, LeaveSessionsUp=None, LoadRateList=None, MaxOutstandingRequests=None, MaxStepIntegerValues=None, Numtrials=None, ProtocolItem=None, RequestRate=None, StepStepIntegerValues=None, Step_failedsession_enableAccLoss=None, Step_failedsession_thresholdAccLoss=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            AlgorithmType (str): 
-            Duration (number): 
-            InitialStepIntegerValues (number): 
-            LeaveSessionsUp (bool): 
-            LoadRateList (str): 
-            MaxOutstandingRequests (number): 
-            MaxStepIntegerValues (number): 
-            Numtrials (number): 
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            RequestRate (number): 
-            StepStepIntegerValues (number): 
-            Step_failedsession_enableAccLoss (bool): 
-            Step_failedsession_thresholdAccLoss (number): 
+        Args
+        ----
+        - AlgorithmType (str): 
+        - Duration (number): 
+        - InitialStepIntegerValues (number): 
+        - LeaveSessionsUp (bool): 
+        - LoadRateList (str): 
+        - MaxOutstandingRequests (number): 
+        - MaxStepIntegerValues (number): 
+        - Numtrials (number): 
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RequestRate (number): 
+        - StepStepIntegerValues (number): 
+        - Step_failedsession_enableAccLoss (bool): 
+        - Step_failedsession_thresholdAccLoss (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -228,9 +231,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -238,12 +242,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -253,9 +255,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -265,12 +268,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -280,24 +281,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -309,18 +303,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -332,9 +324,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -344,12 +337,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

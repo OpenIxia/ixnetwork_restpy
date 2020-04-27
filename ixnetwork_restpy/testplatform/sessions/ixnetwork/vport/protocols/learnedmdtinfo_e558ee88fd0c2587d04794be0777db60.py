@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedMdtInfo(Base):
     """Learned information associated with a PIM-SM interface.
-    The LearnedMdtInfo class encapsulates a list of learnedMdtInfo resources that is managed by the system.
+    The LearnedMdtInfo class encapsulates a list of learnedMdtInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedMdtInfo.find() method.
     """
 
@@ -37,81 +37,88 @@ class LearnedMdtInfo(Base):
 
     @property
     def Age(self):
-        """The amount of time (in seconds) remaining before this TLV times out.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time (in seconds) remaining before this TLV times out.
         """
         return self._get_attribute('age')
 
     @property
     def CeGroupAddress(self):
-        """The CE group address contained in this data MDT TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The CE group address contained in this data MDT TLV.
         """
         return self._get_attribute('ceGroupAddress')
 
     @property
     def CeSourceAddress(self):
-        """The CE source address contained in this data MDT TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The CE source address contained in this data MDT TLV.
         """
         return self._get_attribute('ceSourceAddress')
 
     @property
     def MdtGroupAddress(self):
-        """The MDT (PE) group address contained in this data MDT TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MDT (PE) group address contained in this data MDT TLV.
         """
         return self._get_attribute('mdtGroupAddress')
 
     @property
     def MdtSourceAddress(self):
-        """The MDT (PE) source address contained in this data MDT TLV.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MDT (PE) source address contained in this data MDT TLV.
         """
         return self._get_attribute('mdtSourceAddress')
 
     def find(self, Age=None, CeGroupAddress=None, CeSourceAddress=None, MdtGroupAddress=None, MdtSourceAddress=None):
-        """Finds and retrieves learnedMdtInfo data from the server.
+        """Finds and retrieves learnedMdtInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedMdtInfo data from the server.
-        By default the find method takes no parameters and will retrieve all learnedMdtInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedMdtInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedMdtInfo resources from the server.
 
-        Args:
-            Age (number): The amount of time (in seconds) remaining before this TLV times out.
-            CeGroupAddress (str): The CE group address contained in this data MDT TLV.
-            CeSourceAddress (str): The CE source address contained in this data MDT TLV.
-            MdtGroupAddress (str): The MDT (PE) group address contained in this data MDT TLV.
-            MdtSourceAddress (str): The MDT (PE) source address contained in this data MDT TLV.
+        Args
+        ----
+        - Age (number): The amount of time (in seconds) remaining before this TLV times out.
+        - CeGroupAddress (str): The CE group address contained in this data MDT TLV.
+        - CeSourceAddress (str): The CE source address contained in this data MDT TLV.
+        - MdtGroupAddress (str): The MDT (PE) group address contained in this data MDT TLV.
+        - MdtSourceAddress (str): The MDT (PE) source address contained in this data MDT TLV.
 
-        Returns:
-            self: This instance with matching learnedMdtInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedMdtInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedMdtInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedMdtInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedMdtInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

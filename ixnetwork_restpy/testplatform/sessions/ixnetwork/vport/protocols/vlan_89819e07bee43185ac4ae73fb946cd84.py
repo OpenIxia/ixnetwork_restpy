@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Vlan(Base):
     """This object represents a set of STP VLANs for use with PVST+/RPVST.
-    The Vlan class encapsulates a list of vlan resources that is be managed by the user.
+    The Vlan class encapsulates a list of vlan resources that are managed by the user.
     A list of resources can be retrieved from the server using the Vlan.find() method.
-    The list can be managed by the user by using the Vlan.add() and Vlan.remove() methods.
+    The list can be managed by using the Vlan.add() and Vlan.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class Vlan(Base):
 
     @property
     def LearnedInfo(self):
-        """An instance of the LearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0ffd1cfcd4defe469b53d9a5b2243a18.LearnedInfo): An instance of the LearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0ffd1cfcd4defe469b53d9a5b2243a18.LearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0ffd1cfcd4defe469b53d9a5b2243a18 import LearnedInfo
         return LearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
-        """An instance of the LearnedInterface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_bf498997dfff41f7245f452d42eb3f99.LearnedInterface): An instance of the LearnedInterface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_bf498997dfff41f7245f452d42eb3f99.LearnedInterface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_bf498997dfff41f7245f452d42eb3f99 import LearnedInterface
         return LearnedInterface(self)
 
     @property
     def Enabled(self):
-        """Enables the use of this STP VLAN. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this STP VLAN. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -78,10 +78,10 @@ class Vlan(Base):
 
     @property
     def InternalRootPathCost(self):
-        """Administrative path cost to the root bridge. The default is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Administrative path cost to the root bridge. The default is 0.
         """
         return self._get_attribute('internalRootPathCost')
     @InternalRootPathCost.setter
@@ -90,10 +90,10 @@ class Vlan(Base):
 
     @property
     def Mac(self):
-        """The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
         """
         return self._get_attribute('mac')
     @Mac.setter
@@ -102,10 +102,10 @@ class Vlan(Base):
 
     @property
     def PortPriority(self):
-        """The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
         """
         return self._get_attribute('portPriority')
     @PortPriority.setter
@@ -114,10 +114,10 @@ class Vlan(Base):
 
     @property
     def Priority(self):
-        """The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
-
-        Returns:
-            str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)
+        """
+        Returns
+        -------
+        - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -126,10 +126,10 @@ class Vlan(Base):
 
     @property
     def UpdateRequired(self):
-        """If true, cause the VLAN to update.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, cause the VLAN to update.
         """
         return self._get_attribute('updateRequired')
     @UpdateRequired.setter
@@ -138,10 +138,10 @@ class Vlan(Base):
 
     @property
     def VlanId(self):
-        """The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -149,86 +149,99 @@ class Vlan(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
-        """Updates a child instance of vlan on the server.
+        """Updates vlan resource on the server.
 
-        Args:
-            Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
-            InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
-            Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
-            PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
-            Priority (str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
-            UpdateRequired (bool): If true, cause the VLAN to update.
-            VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
+        Args
+        ----
+        - Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
+        - InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
+        - Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
+        - PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
+        - Priority (str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
+        - UpdateRequired (bool): If true, cause the VLAN to update.
+        - VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
-        """Adds a new vlan node on the server and retrieves it in this instance.
+        """Adds a new vlan resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
-            InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
-            Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
-            PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
-            Priority (str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
-            UpdateRequired (bool): If true, cause the VLAN to update.
-            VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
+        Args
+        ----
+        - Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
+        - InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
+        - Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
+        - PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
+        - Priority (str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
+        - UpdateRequired (bool): If true, cause the VLAN to update.
+        - VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
 
-        Returns:
-            self: This instance with all currently retrieved vlan data using find and the newly added vlan data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vlan resources using find and the newly added vlan resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vlan data in this instance from server.
+        """Deletes all the contained vlan resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
-        """Finds and retrieves vlan data from the server.
+        """Finds and retrieves vlan resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vlan data from the server.
-        By default the find method takes no parameters and will retrieve all vlan data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vlan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vlan resources from the server.
 
-        Args:
-            Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
-            InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
-            Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
-            PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
-            Priority (str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
-            UpdateRequired (bool): If true, cause the VLAN to update.
-            VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
+        Args
+        ----
+        - Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
+        - InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
+        - Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
+        - PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
+        - Priority (str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
+        - UpdateRequired (bool): If true, cause the VLAN to update.
+        - VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
 
-        Returns:
-            self: This instance with matching vlan data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vlan resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vlan data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vlan data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vlan resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -237,12 +250,10 @@ class Vlan(Base):
 
         This commands checks to see if there has been a topology change for the specified STP VLAN.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('topologyChange', payload=payload, response_object=None)
@@ -252,12 +263,10 @@ class Vlan(Base):
 
         Updates the current STP VLAN parameters.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('updateParameters', payload=payload, response_object=None)

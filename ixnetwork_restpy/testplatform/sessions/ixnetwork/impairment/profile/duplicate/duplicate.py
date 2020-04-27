@@ -36,10 +36,10 @@ class Duplicate(Base):
 
     @property
     def ClusterSize(self):
-        """Number of packets to duplicate on each occurrence.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of packets to duplicate on each occurrence.
         """
         return self._get_attribute('clusterSize')
     @ClusterSize.setter
@@ -48,10 +48,10 @@ class Duplicate(Base):
 
     @property
     def DuplicateCount(self):
-        """Number of times to duplicate each packet.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of times to duplicate each packet.
         """
         return self._get_attribute('duplicateCount')
     @DuplicateCount.setter
@@ -60,10 +60,10 @@ class Duplicate(Base):
 
     @property
     def Enabled(self):
-        """If true, periodically duplicate received packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, periodically duplicate received packets.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -72,10 +72,10 @@ class Duplicate(Base):
 
     @property
     def PercentRate(self):
-        """How often to duplicate packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How often to duplicate packets.
         """
         return self._get_attribute('percentRate')
     @PercentRate.setter
@@ -83,15 +83,17 @@ class Duplicate(Base):
         self._set_attribute('percentRate', value)
 
     def update(self, ClusterSize=None, DuplicateCount=None, Enabled=None, PercentRate=None):
-        """Updates a child instance of duplicate on the server.
+        """Updates duplicate resource on the server.
 
-        Args:
-            ClusterSize (number): Number of packets to duplicate on each occurrence.
-            DuplicateCount (number): Number of times to duplicate each packet.
-            Enabled (bool): If true, periodically duplicate received packets.
-            PercentRate (number): How often to duplicate packets.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to duplicate on each occurrence.
+        - DuplicateCount (number): Number of times to duplicate each packet.
+        - Enabled (bool): If true, periodically duplicate received packets.
+        - PercentRate (number): How often to duplicate packets.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,10 +36,10 @@ class WildcardsMask(Base):
 
     @property
     def ArpDestinationIpv4AddressMask(self):
-        """If selected, ARP Destination IPv4 Address Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Destination IPv4 Address Mask wildcard is supported.
         """
         return self._get_attribute('arpDestinationIpv4AddressMask')
     @ArpDestinationIpv4AddressMask.setter
@@ -48,10 +48,10 @@ class WildcardsMask(Base):
 
     @property
     def ArpDstHwAddressMask(self):
-        """If selected, ARP Destination Hardware Address Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Destination Hardware Address Mask wildcard is supported.
         """
         return self._get_attribute('arpDstHwAddressMask')
     @ArpDstHwAddressMask.setter
@@ -60,10 +60,10 @@ class WildcardsMask(Base):
 
     @property
     def ArpSourceIpv4AddressMask(self):
-        """If selected, ARP Source IPv4 Address Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Source IPv4 Address Mask wildcard is supported.
         """
         return self._get_attribute('arpSourceIpv4AddressMask')
     @ArpSourceIpv4AddressMask.setter
@@ -72,10 +72,10 @@ class WildcardsMask(Base):
 
     @property
     def ArpSrcHwAddressMask(self):
-        """If selected, ARP Source Hardware Address Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP Source Hardware Address Mask wildcard is supported.
         """
         return self._get_attribute('arpSrcHwAddressMask')
     @ArpSrcHwAddressMask.setter
@@ -84,10 +84,10 @@ class WildcardsMask(Base):
 
     @property
     def EthernetDestinationMask(self):
-        """If selected, Ethernet Destination Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Ethernet Destination Mask wildcard is supported.
         """
         return self._get_attribute('ethernetDestinationMask')
     @EthernetDestinationMask.setter
@@ -96,10 +96,10 @@ class WildcardsMask(Base):
 
     @property
     def EthernetSourceMask(self):
-        """If selected, Ethernet Source Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Ethernet Source Mask wildcard is supported.
         """
         return self._get_attribute('ethernetSourceMask')
     @EthernetSourceMask.setter
@@ -108,10 +108,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv4DestinationMask(self):
-        """If selected, IPv4 Destination Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv4 Destination Mask wildcard is supported.
         """
         return self._get_attribute('ipv4DestinationMask')
     @Ipv4DestinationMask.setter
@@ -120,10 +120,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv4SourceMask(self):
-        """If selected, IPv4 Source Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv4 Source Mask wildcard is supported.
         """
         return self._get_attribute('ipv4SourceMask')
     @Ipv4SourceMask.setter
@@ -132,10 +132,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv6DestinationMask(self):
-        """If selected, IPv6 Destination Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Destination Mask wildcard is supported.
         """
         return self._get_attribute('ipv6DestinationMask')
     @Ipv6DestinationMask.setter
@@ -144,10 +144,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv6ExtHeaderMask(self):
-        """If selected, IPv6 Ext Header Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Ext Header Mask wildcard is supported.
         """
         return self._get_attribute('ipv6ExtHeaderMask')
     @Ipv6ExtHeaderMask.setter
@@ -156,10 +156,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv6FlowLabelMask(self):
-        """If selected, IPv6 Flow Label Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Flow Label Mask wildcard is supported.
         """
         return self._get_attribute('ipv6FlowLabelMask')
     @Ipv6FlowLabelMask.setter
@@ -168,10 +168,10 @@ class WildcardsMask(Base):
 
     @property
     def Ipv6SourceMask(self):
-        """If selected, IPv6 Source Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, IPv6 Source Mask wildcard is supported.
         """
         return self._get_attribute('ipv6SourceMask')
     @Ipv6SourceMask.setter
@@ -180,10 +180,10 @@ class WildcardsMask(Base):
 
     @property
     def MetadataMask(self):
-        """If selected, MetaData Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, MetaData Mask wildcard is supported.
         """
         return self._get_attribute('metadataMask')
     @MetadataMask.setter
@@ -192,10 +192,10 @@ class WildcardsMask(Base):
 
     @property
     def PbbIsidMask(self):
-        """If selected, Tunnel ID Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Tunnel ID Mask wildcard is supported.
         """
         return self._get_attribute('pbbIsidMask')
     @PbbIsidMask.setter
@@ -204,10 +204,10 @@ class WildcardsMask(Base):
 
     @property
     def TunnelIdMask(self):
-        """If selected, Tunnel ID Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Tunnel ID Mask wildcard is supported.
         """
         return self._get_attribute('tunnelIdMask')
     @TunnelIdMask.setter
@@ -216,10 +216,10 @@ class WildcardsMask(Base):
 
     @property
     def VlanMask(self):
-        """If selected, VLAN Mask wildcard is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, VLAN Mask wildcard is supported.
         """
         return self._get_attribute('vlanMask')
     @VlanMask.setter
@@ -227,27 +227,29 @@ class WildcardsMask(Base):
         self._set_attribute('vlanMask', value)
 
     def update(self, ArpDestinationIpv4AddressMask=None, ArpDstHwAddressMask=None, ArpSourceIpv4AddressMask=None, ArpSrcHwAddressMask=None, EthernetDestinationMask=None, EthernetSourceMask=None, Ipv4DestinationMask=None, Ipv4SourceMask=None, Ipv6DestinationMask=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabelMask=None, Ipv6SourceMask=None, MetadataMask=None, PbbIsidMask=None, TunnelIdMask=None, VlanMask=None):
-        """Updates a child instance of wildcardsMask on the server.
+        """Updates wildcardsMask resource on the server.
 
-        Args:
-            ArpDestinationIpv4AddressMask (bool): If selected, ARP Destination IPv4 Address Mask wildcard is supported.
-            ArpDstHwAddressMask (bool): If selected, ARP Destination Hardware Address Mask wildcard is supported.
-            ArpSourceIpv4AddressMask (bool): If selected, ARP Source IPv4 Address Mask wildcard is supported.
-            ArpSrcHwAddressMask (bool): If selected, ARP Source Hardware Address Mask wildcard is supported.
-            EthernetDestinationMask (bool): If selected, Ethernet Destination Mask wildcard is supported.
-            EthernetSourceMask (bool): If selected, Ethernet Source Mask wildcard is supported.
-            Ipv4DestinationMask (bool): If selected, IPv4 Destination Mask wildcard is supported.
-            Ipv4SourceMask (bool): If selected, IPv4 Source Mask wildcard is supported.
-            Ipv6DestinationMask (bool): If selected, IPv6 Destination Mask wildcard is supported.
-            Ipv6ExtHeaderMask (bool): If selected, IPv6 Ext Header Mask wildcard is supported.
-            Ipv6FlowLabelMask (bool): If selected, IPv6 Flow Label Mask wildcard is supported.
-            Ipv6SourceMask (bool): If selected, IPv6 Source Mask wildcard is supported.
-            MetadataMask (bool): If selected, MetaData Mask wildcard is supported.
-            PbbIsidMask (bool): If selected, Tunnel ID Mask wildcard is supported.
-            TunnelIdMask (bool): If selected, Tunnel ID Mask wildcard is supported.
-            VlanMask (bool): If selected, VLAN Mask wildcard is supported.
+        Args
+        ----
+        - ArpDestinationIpv4AddressMask (bool): If selected, ARP Destination IPv4 Address Mask wildcard is supported.
+        - ArpDstHwAddressMask (bool): If selected, ARP Destination Hardware Address Mask wildcard is supported.
+        - ArpSourceIpv4AddressMask (bool): If selected, ARP Source IPv4 Address Mask wildcard is supported.
+        - ArpSrcHwAddressMask (bool): If selected, ARP Source Hardware Address Mask wildcard is supported.
+        - EthernetDestinationMask (bool): If selected, Ethernet Destination Mask wildcard is supported.
+        - EthernetSourceMask (bool): If selected, Ethernet Source Mask wildcard is supported.
+        - Ipv4DestinationMask (bool): If selected, IPv4 Destination Mask wildcard is supported.
+        - Ipv4SourceMask (bool): If selected, IPv4 Source Mask wildcard is supported.
+        - Ipv6DestinationMask (bool): If selected, IPv6 Destination Mask wildcard is supported.
+        - Ipv6ExtHeaderMask (bool): If selected, IPv6 Ext Header Mask wildcard is supported.
+        - Ipv6FlowLabelMask (bool): If selected, IPv6 Flow Label Mask wildcard is supported.
+        - Ipv6SourceMask (bool): If selected, IPv6 Source Mask wildcard is supported.
+        - MetadataMask (bool): If selected, MetaData Mask wildcard is supported.
+        - PbbIsidMask (bool): If selected, Tunnel ID Mask wildcard is supported.
+        - TunnelIdMask (bool): If selected, Tunnel ID Mask wildcard is supported.
+        - VlanMask (bool): If selected, VLAN Mask wildcard is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

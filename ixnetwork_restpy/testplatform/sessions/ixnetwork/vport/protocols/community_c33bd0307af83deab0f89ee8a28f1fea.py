@@ -36,10 +36,10 @@ class Community(Base):
 
     @property
     def Val(self):
-        """The value of the community attribute represented as a 32 bit integer. The first 16 bits of the value encode the AS number of the network that originated the community, while the last 16 bits carry a unique number assigned by the AS.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The value of the community attribute represented as a 32 bit integer. The first 16 bits of the value encode the AS number of the network that originated the community, while the last 16 bits carry a unique number assigned by the AS.
         """
         return self._get_attribute('val')
     @Val.setter
@@ -47,12 +47,14 @@ class Community(Base):
         self._set_attribute('val', value)
 
     def update(self, Val=None):
-        """Updates a child instance of community on the server.
+        """Updates community resource on the server.
 
-        Args:
-            Val (list(number)): The value of the community attribute represented as a 32 bit integer. The first 16 bits of the value encode the AS number of the network that originated the community, while the last 16 bits carry a unique number assigned by the AS.
+        Args
+        ----
+        - Val (list(number)): The value of the community attribute represented as a 32 bit integer. The first 16 bits of the value encode the AS number of the network that originated the community, while the last 16 bits carry a unique number assigned by the AS.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

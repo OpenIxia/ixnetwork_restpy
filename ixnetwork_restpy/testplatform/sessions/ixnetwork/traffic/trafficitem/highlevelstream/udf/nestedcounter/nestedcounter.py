@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class NestedCounter(Base):
     """This object provides different options for UDF in Nested Counter Type.
-    The NestedCounter class encapsulates a list of nestedCounter resources that is managed by the system.
+    The NestedCounter class encapsulates a list of nestedCounter resources that are managed by the system.
     A list of resources can be retrieved from the server using the NestedCounter.find() method.
     """
 
@@ -37,19 +37,19 @@ class NestedCounter(Base):
 
     @property
     def AvailableWidths(self):
-        """Species all the possible widths available for a UDF in particular Type.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Species all the possible widths available for a UDF in particular Type.
         """
         return self._get_attribute('availableWidths')
 
     @property
     def BitOffset(self):
-        """Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
         return self._get_attribute('bitOffset')
     @BitOffset.setter
@@ -58,10 +58,10 @@ class NestedCounter(Base):
 
     @property
     def InnerLoopIncrementBy(self):
-        """Specifies the Step Value by which the Inner Loop will be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Step Value by which the Inner Loop will be incremented.
         """
         return self._get_attribute('innerLoopIncrementBy')
     @InnerLoopIncrementBy.setter
@@ -70,10 +70,10 @@ class NestedCounter(Base):
 
     @property
     def InnerLoopLoopCount(self):
-        """Specifies the no. of times the inner loop will occur.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the no. of times the inner loop will occur.
         """
         return self._get_attribute('innerLoopLoopCount')
     @InnerLoopLoopCount.setter
@@ -82,10 +82,10 @@ class NestedCounter(Base):
 
     @property
     def InnerLoopRepeatValue(self):
-        """Specifies the number of times the UDF Value will be repeated in inner loop.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of times the UDF Value will be repeated in inner loop.
         """
         return self._get_attribute('innerLoopRepeatValue')
     @InnerLoopRepeatValue.setter
@@ -94,10 +94,10 @@ class NestedCounter(Base):
 
     @property
     def OuterLoopIncrementBy(self):
-        """Specifies the Step Value by which the outer loop will be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Step Value by which the outer loop will be incremented.
         """
         return self._get_attribute('outerLoopIncrementBy')
     @OuterLoopIncrementBy.setter
@@ -106,10 +106,10 @@ class NestedCounter(Base):
 
     @property
     def OuterLoopLoopCount(self):
-        """Specifies the number of times the outer loop will occur.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of times the outer loop will occur.
         """
         return self._get_attribute('outerLoopLoopCount')
     @OuterLoopLoopCount.setter
@@ -118,10 +118,10 @@ class NestedCounter(Base):
 
     @property
     def StartValue(self):
-        """Specifies the Start Value of the UDF.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Start Value of the UDF.
         """
         return self._get_attribute('startValue')
     @StartValue.setter
@@ -130,10 +130,10 @@ class NestedCounter(Base):
 
     @property
     def Width(self):
-        """Specifies the width of the UDF.
-
-        Returns:
-            str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)
+        """
+        Returns
+        -------
+        - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
         return self._get_attribute('width')
     @Width.setter
@@ -141,59 +141,68 @@ class NestedCounter(Base):
         self._set_attribute('width', value)
 
     def update(self, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
-        """Updates a child instance of nestedCounter on the server.
+        """Updates nestedCounter resource on the server.
 
-        Args:
-            BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-            InnerLoopRepeatValue (number): Specifies the number of times the UDF Value will be repeated in inner loop.
-            OuterLoopIncrementBy (number): Specifies the Step Value by which the outer loop will be incremented.
-            OuterLoopLoopCount (number): Specifies the number of times the outer loop will occur.
-            StartValue (number): Specifies the Start Value of the UDF.
-            Width (str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)): Specifies the width of the UDF.
+        Args
+        ----
+        - BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
+        - InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+        - InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+        - InnerLoopRepeatValue (number): Specifies the number of times the UDF Value will be repeated in inner loop.
+        - OuterLoopIncrementBy (number): Specifies the Step Value by which the outer loop will be incremented.
+        - OuterLoopLoopCount (number): Specifies the number of times the outer loop will occur.
+        - StartValue (number): Specifies the Start Value of the UDF.
+        - Width (str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9)): Specifies the width of the UDF.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableWidths=None, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
-        """Finds and retrieves nestedCounter data from the server.
+        """Finds and retrieves nestedCounter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nestedCounter data from the server.
-        By default the find method takes no parameters and will retrieve all nestedCounter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nestedCounter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nestedCounter resources from the server.
 
-        Args:
-            AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
-            BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-            InnerLoopRepeatValue (number): Specifies the number of times the UDF Value will be repeated in inner loop.
-            OuterLoopIncrementBy (number): Specifies the Step Value by which the outer loop will be incremented.
-            OuterLoopLoopCount (number): Specifies the number of times the outer loop will occur.
-            StartValue (number): Specifies the Start Value of the UDF.
-            Width (str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)): Specifies the width of the UDF.
+        Args
+        ----
+        - AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
+        - BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
+        - InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+        - InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+        - InnerLoopRepeatValue (number): Specifies the number of times the UDF Value will be repeated in inner loop.
+        - OuterLoopIncrementBy (number): Specifies the Step Value by which the outer loop will be incremented.
+        - OuterLoopLoopCount (number): Specifies the number of times the outer loop will occur.
+        - StartValue (number): Specifies the Start Value of the UDF.
+        - Width (str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9)): Specifies the width of the UDF.
 
-        Returns:
-            self: This instance with matching nestedCounter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nestedCounter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nestedCounter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nestedCounter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nestedCounter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

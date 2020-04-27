@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AdvancedFilter(Base):
     """Allows you to configure an advanced filter for drill down views.
-    The AdvancedFilter class encapsulates a list of advancedFilter resources that is be managed by the user.
+    The AdvancedFilter class encapsulates a list of advancedFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the AdvancedFilter.find() method.
-    The list can be managed by the user by using the AdvancedFilter.add() and AdvancedFilter.remove() methods.
+    The list can be managed by using the AdvancedFilter.add() and AdvancedFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AdvancedFilter(Base):
 
     @property
     def Expression(self):
-        """Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         """
         return self._get_attribute('expression')
     @Expression.setter
@@ -50,10 +50,10 @@ class AdvancedFilter(Base):
 
     @property
     def Name(self):
-        """Specifies the filter name. It must be unique per view.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the filter name. It must be unique per view.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -62,10 +62,10 @@ class AdvancedFilter(Base):
 
     @property
     def SortingStats(self):
-        """Specifies the list of statistics by which the view will be sorted.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the list of statistics by which the view will be sorted.
         """
         return self._get_attribute('sortingStats')
     @SortingStats.setter
@@ -74,10 +74,10 @@ class AdvancedFilter(Base):
 
     @property
     def TrackingFilterId(self):
-        """Gets the id of the filter, which is used to add the filter to a view.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Gets the id of the filter, which is used to add the filter to a view.
         """
         return self._get_attribute('trackingFilterId')
     @TrackingFilterId.setter
@@ -85,76 +85,89 @@ class AdvancedFilter(Base):
         self._set_attribute('trackingFilterId', value)
 
     def update(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
-        """Updates a child instance of advancedFilter on the server.
+        """Updates advancedFilter resource on the server.
 
-        Args:
-            Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
-            Name (str): Specifies the filter name. It must be unique per view.
-            SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        Args
+        ----
+        - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
+        - Name (str): Specifies the filter name. It must be unique per view.
+        - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
-        """Adds a new advancedFilter node on the server and retrieves it in this instance.
+        """Adds a new advancedFilter resource on the server and adds it to the container.
 
-        Args:
-            Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
-            Name (str): Specifies the filter name. It must be unique per view.
-            SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        Args
+        ----
+        - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
+        - Name (str): Specifies the filter name. It must be unique per view.
+        - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
-        Returns:
-            self: This instance with all currently retrieved advancedFilter data using find and the newly added advancedFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved advancedFilter resources using find and the newly added advancedFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the advancedFilter data in this instance from server.
+        """Deletes all the contained advancedFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
-        """Finds and retrieves advancedFilter data from the server.
+        """Finds and retrieves advancedFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve advancedFilter data from the server.
-        By default the find method takes no parameters and will retrieve all advancedFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve advancedFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all advancedFilter resources from the server.
 
-        Args:
-            Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
-            Name (str): Specifies the filter name. It must be unique per view.
-            SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        Args
+        ----
+        - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
+        - Name (str): Specifies the filter name. It must be unique per view.
+        - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
-        Returns:
-            self: This instance with matching advancedFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching advancedFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of advancedFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the advancedFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the advancedFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

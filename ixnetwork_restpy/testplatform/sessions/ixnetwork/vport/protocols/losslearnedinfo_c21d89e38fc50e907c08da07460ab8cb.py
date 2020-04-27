@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LossLearnedInfo(Base):
     """NOT DEFINED
-    The LossLearnedInfo class encapsulates a list of lossLearnedInfo resources that is managed by the system.
+    The LossLearnedInfo class encapsulates a list of lossLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the LossLearnedInfo.find() method.
     """
 
@@ -37,151 +37,158 @@ class LossLearnedInfo(Base):
 
     @property
     def BVlan(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('bVlan')
 
     @property
     def CVlan(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('cVlan')
 
     @property
     def DestinationMacAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationMacAddress')
 
     @property
     def FarEndLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('farEndLoss')
 
     @property
     def FarEndLossRatio(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('farEndLossRatio')
 
     @property
     def LmrReceived(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('lmrReceived')
 
     @property
     def MdLevel(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('mdLevel')
 
     @property
     def NearEndLoss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('nearEndLoss')
 
     @property
     def NearEndLossRatio(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nearEndLossRatio')
 
     @property
     def SVlan(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sVlan')
 
     @property
     def SourceMacAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sourceMacAddress')
 
     @property
     def SourceMepId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('sourceMepId')
 
     def find(self, BVlan=None, CVlan=None, DestinationMacAddress=None, FarEndLoss=None, FarEndLossRatio=None, LmrReceived=None, MdLevel=None, NearEndLoss=None, NearEndLossRatio=None, SVlan=None, SourceMacAddress=None, SourceMepId=None):
-        """Finds and retrieves lossLearnedInfo data from the server.
+        """Finds and retrieves lossLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lossLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all lossLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lossLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lossLearnedInfo resources from the server.
 
-        Args:
-            BVlan (str): NOT DEFINED
-            CVlan (str): NOT DEFINED
-            DestinationMacAddress (str): NOT DEFINED
-            FarEndLoss (number): NOT DEFINED
-            FarEndLossRatio (str): NOT DEFINED
-            LmrReceived (bool): NOT DEFINED
-            MdLevel (number): NOT DEFINED
-            NearEndLoss (number): NOT DEFINED
-            NearEndLossRatio (str): NOT DEFINED
-            SVlan (str): NOT DEFINED
-            SourceMacAddress (str): NOT DEFINED
-            SourceMepId (number): NOT DEFINED
+        Args
+        ----
+        - BVlan (str): NOT DEFINED
+        - CVlan (str): NOT DEFINED
+        - DestinationMacAddress (str): NOT DEFINED
+        - FarEndLoss (number): NOT DEFINED
+        - FarEndLossRatio (str): NOT DEFINED
+        - LmrReceived (bool): NOT DEFINED
+        - MdLevel (number): NOT DEFINED
+        - NearEndLoss (number): NOT DEFINED
+        - NearEndLossRatio (str): NOT DEFINED
+        - SVlan (str): NOT DEFINED
+        - SourceMacAddress (str): NOT DEFINED
+        - SourceMepId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching lossLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lossLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lossLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lossLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lossLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

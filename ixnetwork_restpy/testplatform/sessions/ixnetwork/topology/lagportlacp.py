@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Lagportlacp(Base):
     """
-    The Lagportlacp class encapsulates a list of lagportlacp resources that is be managed by the user.
+    The Lagportlacp class encapsulates a list of lagportlacp resources that are managed by the user.
     A list of resources can be retrieved from the server using the Lagportlacp.find() method.
-    The list can be managed by the user by using the Lagportlacp.add() and Lagportlacp.remove() methods.
+    The list can be managed by using the Lagportlacp.add() and Lagportlacp.remove() methods.
     """
 
     __slots__ = ()
@@ -38,100 +38,110 @@ class Lagportlacp(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ActorKey(self):
-        """Actor Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actorKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actorKey'))
 
     @property
     def ActorPortNumber(self):
-        """Actor Port Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actorPortNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Port Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actorPortNumber'))
 
     @property
     def ActorPortPriority(self):
-        """Actor Port Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actorPortPriority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Port Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actorPortPriority'))
 
     @property
     def ActorSystemId(self):
-        """Actor System Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actorSystemId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actor System Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actorSystemId'))
 
     @property
     def ActorSystemPriority(self):
-        """Actor System Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actorSystemPriority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actor System Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actorSystemPriority'))
 
     @property
     def AdministrativeKey(self):
-        """Administrative Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('administrativeKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Administrative Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('administrativeKey'))
 
     @property
     def AggregationFlagState(self):
-        """Aggregation Flag State
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregationFlagState')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregation Flag State
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregationFlagState'))
 
     @property
     def CollectingFlag(self):
-        """Collecting Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('collectingFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Collecting Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('collectingFlag'))
 
     @property
     def CollectorsMaxdelay(self):
-        """Collectors Maximum Delay
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('collectorsMaxdelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Collectors Maximum Delay
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('collectorsMaxdelay'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -140,118 +150,127 @@ class Lagportlacp(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DistributingFlag(self):
-        """Distributing Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distributingFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Distributing Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distributingFlag'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def InterMarkerPDUDelay(self):
-        """Inter Marker PDU Delay (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interMarkerPDUDelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interMarkerPDUDelay'))
 
     @property
     def InterMarkerPDUDelayRandomMax(self):
-        """Inter Marker PDU Delay Random Max (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interMarkerPDUDelayRandomMax')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay Random Max (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interMarkerPDUDelayRandomMax'))
 
     @property
     def InterMarkerPDUDelayRandomMin(self):
-        """Inter Marker PDU Delay Random Min (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interMarkerPDUDelayRandomMin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay Random Min (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interMarkerPDUDelayRandomMin'))
 
     @property
     def LacpActivity(self):
-        """LACP Actvity
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lacpActivity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LACP Actvity
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lacpActivity'))
 
     @property
     def LacpduPeriodicTimeInterval(self):
-        """Lacp PDU Periodic Time Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lacpduPeriodicTimeInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Lacp PDU Periodic Time Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lacpduPeriodicTimeInterval'))
 
     @property
     def LacpduTimeout(self):
-        """Lacp PDU Timeout
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lacpduTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Lacp PDU Timeout
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lacpduTimeout'))
 
     @property
     def MarkerRequestMode(self):
-        """Marker Request Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('markerRequestMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Marker Request Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('markerRequestMode'))
 
     @property
     def MarkerResponseWaitTime(self):
-        """Marker Response Wait Time (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('markerResponseWaitTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Marker Response Wait Time (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('markerResponseWaitTime'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -260,10 +279,10 @@ class Lagportlacp(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -272,46 +291,48 @@ class Lagportlacp(Base):
 
     @property
     def PeriodicSendingOfMarkerRequest(self):
-        """Periodic Sending Of Marker Request
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('periodicSendingOfMarkerRequest')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Periodic Sending Of Marker Request
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('periodicSendingOfMarkerRequest'))
 
     @property
     def SendMarkerRequestOnLagChange(self):
-        """Send Marker Request On Lag Change
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendMarkerRequestOnLagChange')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send Marker Request On Lag Change
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendMarkerRequestOnLagChange'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def SourceMac(self):
-        """Source MAC
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Source MAC
         """
         return self._get_attribute('sourceMac')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -320,122 +341,137 @@ class Lagportlacp(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def SupportRespondingToMarker(self):
-        """Support Responding To Marker
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('supportRespondingToMarker')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Support Responding To Marker
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('supportRespondingToMarker'))
 
     @property
     def SynchronizationFlag(self):
-        """Synchronization Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('synchronizationFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Synchronization Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('synchronizationFlag'))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of lagportlacp on the server.
+        """Updates lagportlacp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new lagportlacp node on the server and retrieves it in this instance.
+        """Adds a new lagportlacp resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved lagportlacp data using find and the newly added lagportlacp data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved lagportlacp resources using find and the newly added lagportlacp resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the lagportlacp data in this instance from server.
+        """Deletes all the contained lagportlacp resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, SourceMac=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves lagportlacp data from the server.
+        """Finds and retrieves lagportlacp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lagportlacp data from the server.
-        By default the find method takes no parameters and will retrieve all lagportlacp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lagportlacp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lagportlacp resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            SourceMac (list(str)): Source MAC
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - SourceMac (list(str)): Source MAC
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching lagportlacp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lagportlacp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lagportlacp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lagportlacp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lagportlacp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -444,37 +480,40 @@ class Lagportlacp(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            ActorKey (str): optional regex of actorKey
-            ActorPortNumber (str): optional regex of actorPortNumber
-            ActorPortPriority (str): optional regex of actorPortPriority
-            ActorSystemId (str): optional regex of actorSystemId
-            ActorSystemPriority (str): optional regex of actorSystemPriority
-            AdministrativeKey (str): optional regex of administrativeKey
-            AggregationFlagState (str): optional regex of aggregationFlagState
-            CollectingFlag (str): optional regex of collectingFlag
-            CollectorsMaxdelay (str): optional regex of collectorsMaxdelay
-            DistributingFlag (str): optional regex of distributingFlag
-            InterMarkerPDUDelay (str): optional regex of interMarkerPDUDelay
-            InterMarkerPDUDelayRandomMax (str): optional regex of interMarkerPDUDelayRandomMax
-            InterMarkerPDUDelayRandomMin (str): optional regex of interMarkerPDUDelayRandomMin
-            LacpActivity (str): optional regex of lacpActivity
-            LacpduPeriodicTimeInterval (str): optional regex of lacpduPeriodicTimeInterval
-            LacpduTimeout (str): optional regex of lacpduTimeout
-            MarkerRequestMode (str): optional regex of markerRequestMode
-            MarkerResponseWaitTime (str): optional regex of markerResponseWaitTime
-            PeriodicSendingOfMarkerRequest (str): optional regex of periodicSendingOfMarkerRequest
-            SendMarkerRequestOnLagChange (str): optional regex of sendMarkerRequestOnLagChange
-            SupportRespondingToMarker (str): optional regex of supportRespondingToMarker
-            SynchronizationFlag (str): optional regex of synchronizationFlag
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ActorKey (str): optional regex of actorKey
+        - ActorPortNumber (str): optional regex of actorPortNumber
+        - ActorPortPriority (str): optional regex of actorPortPriority
+        - ActorSystemId (str): optional regex of actorSystemId
+        - ActorSystemPriority (str): optional regex of actorSystemPriority
+        - AdministrativeKey (str): optional regex of administrativeKey
+        - AggregationFlagState (str): optional regex of aggregationFlagState
+        - CollectingFlag (str): optional regex of collectingFlag
+        - CollectorsMaxdelay (str): optional regex of collectorsMaxdelay
+        - DistributingFlag (str): optional regex of distributingFlag
+        - InterMarkerPDUDelay (str): optional regex of interMarkerPDUDelay
+        - InterMarkerPDUDelayRandomMax (str): optional regex of interMarkerPDUDelayRandomMax
+        - InterMarkerPDUDelayRandomMin (str): optional regex of interMarkerPDUDelayRandomMin
+        - LacpActivity (str): optional regex of lacpActivity
+        - LacpduPeriodicTimeInterval (str): optional regex of lacpduPeriodicTimeInterval
+        - LacpduTimeout (str): optional regex of lacpduTimeout
+        - MarkerRequestMode (str): optional regex of markerRequestMode
+        - MarkerResponseWaitTime (str): optional regex of markerResponseWaitTime
+        - PeriodicSendingOfMarkerRequest (str): optional regex of periodicSendingOfMarkerRequest
+        - SendMarkerRequestOnLagChange (str): optional regex of sendMarkerRequestOnLagChange
+        - SupportRespondingToMarker (str): optional regex of supportRespondingToMarker
+        - SynchronizationFlag (str): optional regex of synchronizationFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -483,22 +522,20 @@ class Lagportlacp(Base):
 
         LACP Start PDU
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        lacpStartPDU()
+        lacpStartPDU(SessionIndices=list)
+        ---------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        lacpStartPDU(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        lacpStartPDU(SessionIndices=string)
+        -----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        lacpStartPDU(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -510,22 +547,20 @@ class Lagportlacp(Base):
 
         LACP Stop PDU
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        lacpStopPDU()
+        lacpStopPDU(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        lacpStopPDU(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        lacpStopPDU(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        lacpStopPDU(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -537,22 +572,20 @@ class Lagportlacp(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -564,22 +597,20 @@ class Lagportlacp(Base):
 
         Send Marker
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMarker()
+        sendMarker(SessionIndices=list)
+        -------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendMarker(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendMarker(SessionIndices=string)
+        ---------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendMarker(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -591,16 +622,15 @@ class Lagportlacp(Base):
 
         Send MArker on the Lacp Link.
 
-        sendMarkerRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        sendMarkerRequest(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -612,22 +642,20 @@ class Lagportlacp(Base):
 
         Start LACP
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -639,16 +667,15 @@ class Lagportlacp(Base):
 
         Starts PDU on the Lacp Link.
 
-        startPDU(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        startPDU(Arg2=list)list
+        -----------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -660,22 +687,20 @@ class Lagportlacp(Base):
 
         Stop LACP
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -687,16 +712,15 @@ class Lagportlacp(Base):
 
         Stop PDU on the Lacp Link.
 
-        stopPDU(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        stopPDU(Arg2=list)list
+        ----------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

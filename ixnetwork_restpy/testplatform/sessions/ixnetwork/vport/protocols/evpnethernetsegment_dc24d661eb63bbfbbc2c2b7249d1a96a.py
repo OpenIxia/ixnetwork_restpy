@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class EvpnEthernetSegment(Base):
     """(Read Only) EVPN Ethernet Segment route type.
-    The EvpnEthernetSegment class encapsulates a list of evpnEthernetSegment resources that is managed by the system.
+    The EvpnEthernetSegment class encapsulates a list of evpnEthernetSegment resources that are managed by the system.
     A list of resources can be retrieved from the server using the EvpnEthernetSegment.find() method.
     """
 
@@ -37,65 +37,72 @@ class EvpnEthernetSegment(Base):
 
     @property
     def OriginIpInfo(self):
-        """An instance of the OriginIpInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_8610f04f24673e5f1702e2fd1e0eb196.OriginIpInfo): An instance of the OriginIpInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_8610f04f24673e5f1702e2fd1e0eb196.OriginIpInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_8610f04f24673e5f1702e2fd1e0eb196 import OriginIpInfo
         return OriginIpInfo(self)
 
     @property
     def Esi(self):
-        """(Read Only) Learned Ethernet Segment Id.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Learned Ethernet Segment Id.
         """
         return self._get_attribute('esi')
 
     @property
     def Neighbor(self):
-        """(Read Only) Neighbor IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Neighbor IP.
         """
         return self._get_attribute('neighbor')
 
     def find(self, Esi=None, Neighbor=None):
-        """Finds and retrieves evpnEthernetSegment data from the server.
+        """Finds and retrieves evpnEthernetSegment resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve evpnEthernetSegment data from the server.
-        By default the find method takes no parameters and will retrieve all evpnEthernetSegment data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnEthernetSegment resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all evpnEthernetSegment resources from the server.
 
-        Args:
-            Esi (str): (Read Only) Learned Ethernet Segment Id.
-            Neighbor (str): (Read Only) Neighbor IP.
+        Args
+        ----
+        - Esi (str): (Read Only) Learned Ethernet Segment Id.
+        - Neighbor (str): (Read Only) Neighbor IP.
 
-        Returns:
-            self: This instance with matching evpnEthernetSegment data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching evpnEthernetSegment resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of evpnEthernetSegment data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the evpnEthernetSegment data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the evpnEthernetSegment resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

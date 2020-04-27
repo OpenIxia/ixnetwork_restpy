@@ -36,9 +36,9 @@ class LocalNodeId(Base):
 
     @property
     def Count(self):
-        """total number of values
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: total number of values
         """
         return self._get_attribute('count')

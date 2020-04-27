@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DcbxAppPriorityAtt(Base):
     """Application Priority mapping for 802.1Qaz Application Priority TLV.
-    The DcbxAppPriorityAtt class encapsulates a list of dcbxAppPriorityAtt resources that is be managed by the user.
+    The DcbxAppPriorityAtt class encapsulates a list of dcbxAppPriorityAtt resources that are managed by the user.
     A list of resources can be retrieved from the server using the DcbxAppPriorityAtt.find() method.
-    The list can be managed by the user by using the DcbxAppPriorityAtt.add() and DcbxAppPriorityAtt.remove() methods.
+    The list can be managed by using the DcbxAppPriorityAtt.add() and DcbxAppPriorityAtt.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DcbxAppPriorityAtt(Base):
 
     @property
     def Enabled(self):
-        """Include or exclude the mapping.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Include or exclude the mapping.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,19 +50,19 @@ class DcbxAppPriorityAtt(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Priority(self):
-        """Priority value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Priority value
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -71,10 +71,10 @@ class DcbxAppPriorityAtt(Base):
 
     @property
     def ProtocolId(self):
-        """Protocol ID.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Protocol ID.
         """
         return self._get_attribute('protocolId')
     @ProtocolId.setter
@@ -84,9 +84,9 @@ class DcbxAppPriorityAtt(Base):
     @property
     def Sel(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('sel')
     @Sel.setter
@@ -94,78 +94,91 @@ class DcbxAppPriorityAtt(Base):
         self._set_attribute('sel', value)
 
     def update(self, Enabled=None, Priority=None, ProtocolId=None, Sel=None):
-        """Updates a child instance of dcbxAppPriorityAtt on the server.
+        """Updates dcbxAppPriorityAtt resource on the server.
 
-        Args:
-            Enabled (bool): Include or exclude the mapping.
-            Priority (number): Priority value
-            ProtocolId (str): Protocol ID.
-            Sel (number): 
+        Args
+        ----
+        - Enabled (bool): Include or exclude the mapping.
+        - Priority (number): Priority value
+        - ProtocolId (str): Protocol ID.
+        - Sel (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, Priority=None, ProtocolId=None, Sel=None):
-        """Adds a new dcbxAppPriorityAtt node on the server and retrieves it in this instance.
+        """Adds a new dcbxAppPriorityAtt resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Include or exclude the mapping.
-            Priority (number): Priority value
-            ProtocolId (str): Protocol ID.
-            Sel (number): 
+        Args
+        ----
+        - Enabled (bool): Include or exclude the mapping.
+        - Priority (number): Priority value
+        - ProtocolId (str): Protocol ID.
+        - Sel (number): 
 
-        Returns:
-            self: This instance with all currently retrieved dcbxAppPriorityAtt data using find and the newly added dcbxAppPriorityAtt data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dcbxAppPriorityAtt resources using find and the newly added dcbxAppPriorityAtt resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dcbxAppPriorityAtt data in this instance from server.
+        """Deletes all the contained dcbxAppPriorityAtt resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, ObjectId=None, Priority=None, ProtocolId=None, Sel=None):
-        """Finds and retrieves dcbxAppPriorityAtt data from the server.
+        """Finds and retrieves dcbxAppPriorityAtt resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dcbxAppPriorityAtt data from the server.
-        By default the find method takes no parameters and will retrieve all dcbxAppPriorityAtt data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxAppPriorityAtt resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dcbxAppPriorityAtt resources from the server.
 
-        Args:
-            Enabled (bool): Include or exclude the mapping.
-            ObjectId (str): Unique identifier for this object
-            Priority (number): Priority value
-            ProtocolId (str): Protocol ID.
-            Sel (number): 
+        Args
+        ----
+        - Enabled (bool): Include or exclude the mapping.
+        - ObjectId (str): Unique identifier for this object
+        - Priority (number): Priority value
+        - ProtocolId (str): Protocol ID.
+        - Sel (number): 
 
-        Returns:
-            self: This instance with matching dcbxAppPriorityAtt data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dcbxAppPriorityAtt resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dcbxAppPriorityAtt data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dcbxAppPriorityAtt data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dcbxAppPriorityAtt resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -174,14 +187,15 @@ class DcbxAppPriorityAtt(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -193,16 +207,15 @@ class DcbxAppPriorityAtt(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -214,16 +227,15 @@ class DcbxAppPriorityAtt(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

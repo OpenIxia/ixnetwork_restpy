@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class StackLink(Base):
     """This is a list of stack objects that can be linked
-    The StackLink class encapsulates a list of stackLink resources that is managed by the system.
+    The StackLink class encapsulates a list of stackLink resources that are managed by the system.
     A list of resources can be retrieved from the server using the StackLink.find() method.
     """
 
@@ -37,10 +37,10 @@ class StackLink(Base):
 
     @property
     def LinkedTo(self):
-        """Indicates which stack item this is linked to.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stackLink)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink): Indicates which stack item this is linked to.
         """
         return self._get_attribute('linkedTo')
     @LinkedTo.setter
@@ -48,44 +48,53 @@ class StackLink(Base):
         self._set_attribute('linkedTo', value)
 
     def update(self, LinkedTo=None):
-        """Updates a child instance of stackLink on the server.
+        """Updates stackLink resource on the server.
 
-        Args:
-            LinkedTo (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stackLink)): Indicates which stack item this is linked to.
+        Args
+        ----
+        - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, LinkedTo=None):
-        """Finds and retrieves stackLink data from the server.
+        """Finds and retrieves stackLink resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve stackLink data from the server.
-        By default the find method takes no parameters and will retrieve all stackLink data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stackLink resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all stackLink resources from the server.
 
-        Args:
-            LinkedTo (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stackLink)): Indicates which stack item this is linked to.
+        Args
+        ----
+        - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
 
-        Returns:
-            self: This instance with matching stackLink data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching stackLink resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of stackLink data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the stackLink data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the stackLink resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

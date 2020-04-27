@@ -36,36 +36,36 @@ class LearnedInfo(Base):
 
     @property
     def BridgeMac(self):
-        """The MAC address of the bridge advertising information on this link.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the bridge advertising information on this link.
         """
         return self._get_attribute('bridgeMac')
 
     @property
     def RootCost(self):
-        """The cost for the shortest path from this bridge to the root bridge.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The cost for the shortest path from this bridge to the root bridge.
         """
         return self._get_attribute('rootCost')
 
     @property
     def RootMac(self):
-        """The root bridge MAC address being advertised by the bridge.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The root bridge MAC address being advertised by the bridge.
         """
         return self._get_attribute('rootMac')
 
     @property
     def RootPriority(self):
-        """The priority for the root bridge.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The priority for the root bridge.
         """
         return self._get_attribute('rootPriority')

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dot1xRange(Base):
     """
-    The Dot1xRange class encapsulates a list of dot1xRange resources that is be managed by the user.
+    The Dot1xRange class encapsulates a list of dot1xRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dot1xRange.find() method.
-    The list can be managed by the user by using the Dot1xRange.add() and Dot1xRange.remove() methods.
+    The list can be managed by using the Dot1xRange.add() and Dot1xRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Dot1xRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class Dot1xRange(Base):
 
     @property
     def FastInnerMethod(self):
-        """FAST Inner Method.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Inner Method.
         """
         return self._get_attribute('fastInnerMethod')
     @FastInnerMethod.setter
@@ -62,10 +62,10 @@ class Dot1xRange(Base):
 
     @property
     def FastProvisionMode(self):
-        """FAST Provision Mode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Provision Mode.
         """
         return self._get_attribute('fastProvisionMode')
     @FastProvisionMode.setter
@@ -74,10 +74,10 @@ class Dot1xRange(Base):
 
     @property
     def FastStatelessResume(self):
-        """FAST Stateless Resume.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: FAST Stateless Resume.
         """
         return self._get_attribute('fastStatelessResume')
     @FastStatelessResume.setter
@@ -86,10 +86,10 @@ class Dot1xRange(Base):
 
     @property
     def HostAuthMode(self):
-        """Machine Authentification Method.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Machine Authentification Method.
         """
         return self._get_attribute('hostAuthMode')
     @HostAuthMode.setter
@@ -98,10 +98,10 @@ class Dot1xRange(Base):
 
     @property
     def HostName(self):
-        """The MachineName used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MachineName used to authentificate the port.
         """
         return self._get_attribute('hostName')
     @HostName.setter
@@ -110,10 +110,10 @@ class Dot1xRange(Base):
 
     @property
     def HostPassword(self):
-        """The MachinePassword used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MachinePassword used to authentificate the port.
         """
         return self._get_attribute('hostPassword')
     @HostPassword.setter
@@ -122,10 +122,10 @@ class Dot1xRange(Base):
 
     @property
     def NacSequence(self):
-        """Nac Sequence used by this range.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
         """
         return self._get_attribute('nacSequence')
     @NacSequence.setter
@@ -134,10 +134,10 @@ class Dot1xRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -146,19 +146,19 @@ class Dot1xRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Protocol(self):
-        """Authentification Protocol.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Authentification Protocol.
         """
         return self._get_attribute('protocol')
     @Protocol.setter
@@ -167,10 +167,10 @@ class Dot1xRange(Base):
 
     @property
     def UserName(self):
-        """The UserName used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UserName used to authentificate the port.
         """
         return self._get_attribute('userName')
     @UserName.setter
@@ -179,10 +179,10 @@ class Dot1xRange(Base):
 
     @property
     def UserPassword(self):
-        """The UserPassword used to authentificate the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UserPassword used to authentificate the port.
         """
         return self._get_attribute('userPassword')
     @UserPassword.setter
@@ -191,10 +191,10 @@ class Dot1xRange(Base):
 
     @property
     def WaitId(self):
-        """This value is true if supplicant is waiting for RequestId from DUT part.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This value is true if supplicant is waiting for RequestId from DUT part.
         """
         return self._get_attribute('waitId')
     @WaitId.setter
@@ -202,105 +202,118 @@ class Dot1xRange(Base):
         self._set_attribute('waitId', value)
 
     def update(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
-        """Updates a child instance of dot1xRange on the server.
+        """Updates dot1xRange resource on the server.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            HostAuthMode (str): Machine Authentification Method.
-            HostName (str): The MachineName used to authentificate the port.
-            HostPassword (str): The MachinePassword used to authentificate the port.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            Protocol (str): Authentification Protocol.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
-            WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - HostAuthMode (str): Machine Authentification Method.
+        - HostName (str): The MachineName used to authentificate the port.
+        - HostPassword (str): The MachinePassword used to authentificate the port.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - Protocol (str): Authentification Protocol.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
+        - WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
-        """Adds a new dot1xRange node on the server and retrieves it in this instance.
+        """Adds a new dot1xRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            HostAuthMode (str): Machine Authentification Method.
-            HostName (str): The MachineName used to authentificate the port.
-            HostPassword (str): The MachinePassword used to authentificate the port.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            Protocol (str): Authentification Protocol.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
-            WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - HostAuthMode (str): Machine Authentification Method.
+        - HostName (str): The MachineName used to authentificate the port.
+        - HostPassword (str): The MachinePassword used to authentificate the port.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - Protocol (str): Authentification Protocol.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
+        - WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
 
-        Returns:
-            self: This instance with all currently retrieved dot1xRange data using find and the newly added dot1xRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dot1xRange resources using find and the newly added dot1xRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dot1xRange data in this instance from server.
+        """Deletes all the contained dot1xRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, ObjectId=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
-        """Finds and retrieves dot1xRange data from the server.
+        """Finds and retrieves dot1xRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dot1xRange data from the server.
-        By default the find method takes no parameters and will retrieve all dot1xRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dot1xRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dot1xRange resources from the server.
 
-        Args:
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FastInnerMethod (str): FAST Inner Method.
-            FastProvisionMode (str): FAST Provision Mode.
-            FastStatelessResume (str): FAST Stateless Resume.
-            HostAuthMode (str): Machine Authentification Method.
-            HostName (str): The MachineName used to authentificate the port.
-            HostPassword (str): The MachinePassword used to authentificate the port.
-            NacSequence (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=nacSequence)): Nac Sequence used by this range.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            Protocol (str): Authentification Protocol.
-            UserName (str): The UserName used to authentificate the port.
-            UserPassword (str): The UserPassword used to authentificate the port.
-            WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FastInnerMethod (str): FAST Inner Method.
+        - FastProvisionMode (str): FAST Provision Mode.
+        - FastStatelessResume (str): FAST Stateless Resume.
+        - HostAuthMode (str): Machine Authentification Method.
+        - HostName (str): The MachineName used to authentificate the port.
+        - HostPassword (str): The MachinePassword used to authentificate the port.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Protocol (str): Authentification Protocol.
+        - UserName (str): The UserName used to authentificate the port.
+        - UserPassword (str): The UserPassword used to authentificate the port.
+        - WaitId (bool): This value is true if supplicant is waiting for RequestId from DUT part.
 
-        Returns:
-            self: This instance with matching dot1xRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dot1xRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dot1xRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dot1xRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dot1xRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -309,14 +322,15 @@ class Dot1xRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -328,16 +342,15 @@ class Dot1xRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -349,16 +362,15 @@ class Dot1xRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

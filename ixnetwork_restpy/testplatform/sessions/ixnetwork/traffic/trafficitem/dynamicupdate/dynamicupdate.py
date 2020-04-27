@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class DynamicUpdate(Base):
     """Contains attributes that help IxNetwork update the corresponding traffic packet labels on the fly based on the information from the configured protocol.
-    The DynamicUpdate class encapsulates a list of dynamicUpdate resources that is managed by the system.
+    The DynamicUpdate class encapsulates a list of dynamicUpdate resources that are managed by the system.
     A list of resources can be retrieved from the server using the DynamicUpdate.find() method.
     """
 
@@ -37,28 +37,28 @@ class DynamicUpdate(Base):
 
     @property
     def AvailableDynamicUpdateFields(self):
-        """(Read only) Specifies the available Dynamic Updates support.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read only) Specifies the available Dynamic Updates support.
         """
         return self._get_attribute('availableDynamicUpdateFields')
 
     @property
     def AvailableSessionAwareTrafficFields(self):
-        """(Read only) Specifies the available Kill Bit support.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read only) Specifies the available Kill Bit support.
         """
         return self._get_attribute('availableSessionAwareTrafficFields')
 
     @property
     def EnabledDynamicUpdateFields(self):
-        """If true, enables the Dynamic Updates support.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): If true, enables the Dynamic Updates support.
         """
         return self._get_attribute('enabledDynamicUpdateFields')
     @EnabledDynamicUpdateFields.setter
@@ -67,19 +67,19 @@ class DynamicUpdate(Base):
 
     @property
     def EnabledDynamicUpdateFieldsDisplayNames(self):
-        """Returns user friendly list of dynamic update fields
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Returns user friendly list of dynamic update fields
         """
         return self._get_attribute('enabledDynamicUpdateFieldsDisplayNames')
 
     @property
     def EnabledSessionAwareTrafficFields(self):
-        """If true, enables the Kill Bit support.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): If true, enables the Kill Bit support.
         """
         return self._get_attribute('enabledSessionAwareTrafficFields')
     @EnabledSessionAwareTrafficFields.setter
@@ -87,49 +87,58 @@ class DynamicUpdate(Base):
         self._set_attribute('enabledSessionAwareTrafficFields', value)
 
     def update(self, EnabledDynamicUpdateFields=None, EnabledSessionAwareTrafficFields=None):
-        """Updates a child instance of dynamicUpdate on the server.
+        """Updates dynamicUpdate resource on the server.
 
-        Args:
-            EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
-            EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
+        Args
+        ----
+        - EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
+        - EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableDynamicUpdateFields=None, AvailableSessionAwareTrafficFields=None, EnabledDynamicUpdateFields=None, EnabledDynamicUpdateFieldsDisplayNames=None, EnabledSessionAwareTrafficFields=None):
-        """Finds and retrieves dynamicUpdate data from the server.
+        """Finds and retrieves dynamicUpdate resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dynamicUpdate data from the server.
-        By default the find method takes no parameters and will retrieve all dynamicUpdate data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dynamicUpdate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dynamicUpdate resources from the server.
 
-        Args:
-            AvailableDynamicUpdateFields (list(str)): (Read only) Specifies the available Dynamic Updates support.
-            AvailableSessionAwareTrafficFields (list(str)): (Read only) Specifies the available Kill Bit support.
-            EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
-            EnabledDynamicUpdateFieldsDisplayNames (list(str)): Returns user friendly list of dynamic update fields
-            EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
+        Args
+        ----
+        - AvailableDynamicUpdateFields (list(str)): (Read only) Specifies the available Dynamic Updates support.
+        - AvailableSessionAwareTrafficFields (list(str)): (Read only) Specifies the available Kill Bit support.
+        - EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
+        - EnabledDynamicUpdateFieldsDisplayNames (list(str)): Returns user friendly list of dynamic update fields
+        - EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
 
-        Returns:
-            self: This instance with matching dynamicUpdate data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dynamicUpdate resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dynamicUpdate data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dynamicUpdate data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dynamicUpdate resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

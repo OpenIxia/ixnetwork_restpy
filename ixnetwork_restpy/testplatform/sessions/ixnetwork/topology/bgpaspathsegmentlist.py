@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class BgpAsPathSegmentList(Base):
     """Bgp Non VPN RR AS Path segments
-    The BgpAsPathSegmentList class encapsulates a list of bgpAsPathSegmentList resources that is managed by the system.
+    The BgpAsPathSegmentList class encapsulates a list of bgpAsPathSegmentList resources that are managed by the system.
     A list of resources can be retrieved from the server using the BgpAsPathSegmentList.find() method.
     """
 
@@ -37,51 +37,52 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def BgpAsNumberList(self):
-        """An instance of the BgpAsNumberList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist.BgpAsNumberList): An instance of the BgpAsNumberList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist.BgpAsNumberList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist import BgpAsNumberList
         return BgpAsNumberList(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableASPathSegment(self):
-        """Enable AS Path Segment
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableASPathSegment')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segment
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableASPathSegment'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -90,10 +91,10 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def NumberOfAsNumberInSegment(self):
-        """Number of AS Number In Segment
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of AS Number In Segment
         """
         return self._get_attribute('numberOfAsNumberInSegment')
     @NumberOfAsNumberInSegment.setter
@@ -102,60 +103,70 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def SegmentType(self):
-        """SegmentType
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('segmentType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SegmentType
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('segmentType'))
 
     def update(self, Name=None, NumberOfAsNumberInSegment=None):
-        """Updates a child instance of bgpAsPathSegmentList on the server.
+        """Updates bgpAsPathSegmentList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAsNumberInSegment (number): Number of AS Number In Segment
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAsNumberInSegment (number): Number of AS Number In Segment
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfAsNumberInSegment=None):
-        """Finds and retrieves bgpAsPathSegmentList data from the server.
+        """Finds and retrieves bgpAsPathSegmentList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bgpAsPathSegmentList data from the server.
-        By default the find method takes no parameters and will retrieve all bgpAsPathSegmentList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpAsPathSegmentList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpAsPathSegmentList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAsNumberInSegment (number): Number of AS Number In Segment
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAsNumberInSegment (number): Number of AS Number In Segment
 
-        Returns:
-            self: This instance with matching bgpAsPathSegmentList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bgpAsPathSegmentList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bgpAsPathSegmentList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bgpAsPathSegmentList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bgpAsPathSegmentList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -164,15 +175,18 @@ class BgpAsPathSegmentList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            EnableASPathSegment (str): optional regex of enableASPathSegment
-            SegmentType (str): optional regex of segmentType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - EnableASPathSegment (str): optional regex of enableASPathSegment
+        - SegmentType (str): optional regex of segmentType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

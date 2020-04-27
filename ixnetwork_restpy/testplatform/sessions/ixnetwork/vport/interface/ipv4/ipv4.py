@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ipv4(Base):
     """Controls the general IPv4 interface properties.
-    The Ipv4 class encapsulates a list of ipv4 resources that is be managed by the user.
+    The Ipv4 class encapsulates a list of ipv4 resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ipv4.find() method.
-    The list can be managed by the user by using the Ipv4.add() and Ipv4.remove() methods.
+    The list can be managed by using the Ipv4.add() and Ipv4.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Ipv4(Base):
 
     @property
     def Gateway(self):
-        """The IPv4 address of the Gateway to the network, typically an interface on the DUT.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address of the Gateway to the network, typically an interface on the DUT.
         """
         return self._get_attribute('gateway')
     @Gateway.setter
@@ -50,10 +50,10 @@ class Ipv4(Base):
 
     @property
     def Ip(self):
-        """The 32-bit IPv4 address assigned to this unconnected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 32-bit IPv4 address assigned to this unconnected interface.
         """
         return self._get_attribute('ip')
     @Ip.setter
@@ -62,10 +62,10 @@ class Ipv4(Base):
 
     @property
     def MaskWidth(self):
-        """The number of bits in the mask used with the IPv4 address. The default is 24 bits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the mask used with the IPv4 address. The default is 24 bits.
         """
         return self._get_attribute('maskWidth')
     @MaskWidth.setter
@@ -73,73 +73,86 @@ class Ipv4(Base):
         self._set_attribute('maskWidth', value)
 
     def update(self, Gateway=None, Ip=None, MaskWidth=None):
-        """Updates a child instance of ipv4 on the server.
+        """Updates ipv4 resource on the server.
 
-        Args:
-            Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
-            Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
-            MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
+        Args
+        ----
+        - Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
+        - Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
+        - MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Gateway=None, Ip=None, MaskWidth=None):
-        """Adds a new ipv4 node on the server and retrieves it in this instance.
+        """Adds a new ipv4 resource on the server and adds it to the container.
 
-        Args:
-            Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
-            Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
-            MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
+        Args
+        ----
+        - Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
+        - Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
+        - MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
 
-        Returns:
-            self: This instance with all currently retrieved ipv4 data using find and the newly added ipv4 data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4 resources using find and the newly added ipv4 resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipv4 data in this instance from server.
+        """Deletes all the contained ipv4 resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Gateway=None, Ip=None, MaskWidth=None):
-        """Finds and retrieves ipv4 data from the server.
+        """Finds and retrieves ipv4 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv4 data from the server.
-        By default the find method takes no parameters and will retrieve all ipv4 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv4 resources from the server.
 
-        Args:
-            Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
-            Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
-            MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
+        Args
+        ----
+        - Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
+        - Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
+        - MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
 
-        Returns:
-            self: This instance with matching ipv4 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv4 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv4 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv4 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv4 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv3PseudoInterface(Base):
     """Information for Simulated Router Interfaces
-    The Ospfv3PseudoInterface class encapsulates a list of ospfv3PseudoInterface resources that is managed by the system.
+    The Ospfv3PseudoInterface class encapsulates a list of ospfv3PseudoInterface resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ospfv3PseudoInterface.find() method.
     """
 
@@ -36,106 +36,207 @@ class Ospfv3PseudoInterface(Base):
         super(Ospfv3PseudoInterface, self).__init__(parent)
 
     @property
-    def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    def AdjSID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): An Adjacency Segment Identifier (Adj-SID) represents a router adjacency in Segment Routing
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('adjSID'))
 
-        Returns:
-            number
+    @property
+    def BFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B Flag: Backup Flag: If set, the Adj-SID refers to an adjacency that is eligible for protection
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bFlag'))
+
+    @property
+    def Count(self):
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
-    def Metric(self):
-        """Link Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def EnableAdjSID(self):
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Makes the Adjacency Segment Identifier (Adj-SID) available
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAdjSID'))
+
+    @property
+    def GFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): G-Flag: Group Flag: If set, the G-Flag indicates that the Adj-SID refers to a group of adjacencies where it may be assigned
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('gFlag'))
+
+    @property
+    def LFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
+
+    @property
+    def Metric(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
     def Name(self, value):
         self._set_attribute('name', value)
 
+    @property
+    def PFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag:Persistent Flag: If set, the SID is persistently allocated. The SID value remains consistent across router restart and session/interface flap
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
+
+    @property
+    def VFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
+
+    @property
+    def Weight(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of the SID for the purpose of load balancing
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
+
     def update(self, Name=None):
-        """Updates a child instance of ospfv3PseudoInterface on the server.
+        """Updates ospfv3PseudoInterface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves ospfv3PseudoInterface data from the server.
+        """Finds and retrieves ospfv3PseudoInterface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfv3PseudoInterface data from the server.
-        By default the find method takes no parameters and will retrieve all ospfv3PseudoInterface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv3PseudoInterface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfv3PseudoInterface resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching ospfv3PseudoInterface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfv3PseudoInterface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfv3PseudoInterface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfv3PseudoInterface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfv3PseudoInterface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Metric=None):
+    def get_device_ids(self, PortNames=None, AdjSID=None, BFlag=None, EnableAdjSID=None, GFlag=None, LFlag=None, Metric=None, PFlag=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of ospfv3PseudoInterface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Metric (str): optional regex of metric
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AdjSID (str): optional regex of adjSID
+        - BFlag (str): optional regex of bFlag
+        - EnableAdjSID (str): optional regex of enableAdjSID
+        - GFlag (str): optional regex of gFlag
+        - LFlag (str): optional regex of lFlag
+        - Metric (str): optional regex of metric
+        - PFlag (str): optional regex of pFlag
+        - VFlag (str): optional regex of vFlag
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -144,22 +245,20 @@ class Ospfv3PseudoInterface(Base):
 
         Disconnect Simulated Interface
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        disconnect()
+        disconnect(SessionIndices=list)
+        -------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        disconnect(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        disconnect(SessionIndices=string)
+        ---------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        disconnect(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -171,22 +270,20 @@ class Ospfv3PseudoInterface(Base):
 
         Reconnect Simulated Interface
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        reconnect()
+        reconnect(SessionIndices=list)
+        ------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        reconnect(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        reconnect(SessionIndices=string)
+        --------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        reconnect(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -198,9 +295,10 @@ class Ospfv3PseudoInterface(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -210,9 +308,10 @@ class Ospfv3PseudoInterface(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

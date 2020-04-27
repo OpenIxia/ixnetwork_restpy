@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BMacMappedIp(Base):
     """This objects holds all the IP (V4/V6) addresses associated with a B-MAC of an ethernet segment.
-    The BMacMappedIp class encapsulates a list of bMacMappedIp resources that is be managed by the user.
+    The BMacMappedIp class encapsulates a list of bMacMappedIp resources that are managed by the user.
     A list of resources can be retrieved from the server using the BMacMappedIp.find() method.
-    The list can be managed by the user by using the BMacMappedIp.add() and BMacMappedIp.remove() methods.
+    The list can be managed by using the BMacMappedIp.add() and BMacMappedIp.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class BMacMappedIp(Base):
 
     @property
     def Enabled(self):
-        """If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class BMacMappedIp(Base):
 
     @property
     def IpAddress(self):
-        """IP address value is given here depending on the IP Type. Default value is all zero.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IP address value is given here depending on the IP Type. Default value is all zero.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -62,10 +62,10 @@ class BMacMappedIp(Base):
 
     @property
     def IpType(self):
-        """Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
-
-        Returns:
-            str(ipV4|ipV6)
+        """
+        Returns
+        -------
+        - str(ipV4 | ipV6): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -73,73 +73,86 @@ class BMacMappedIp(Base):
         self._set_attribute('ipType', value)
 
     def update(self, Enabled=None, IpAddress=None, IpType=None):
-        """Updates a child instance of bMacMappedIp on the server.
+        """Updates bMacMappedIp resource on the server.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpType (str(ipV4|ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpType (str(ipV4 | ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, IpAddress=None, IpType=None):
-        """Adds a new bMacMappedIp node on the server and retrieves it in this instance.
+        """Adds a new bMacMappedIp resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpType (str(ipV4|ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpType (str(ipV4 | ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Returns:
-            self: This instance with all currently retrieved bMacMappedIp data using find and the newly added bMacMappedIp data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bMacMappedIp resources using find and the newly added bMacMappedIp resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bMacMappedIp data in this instance from server.
+        """Deletes all the contained bMacMappedIp resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, IpAddress=None, IpType=None):
-        """Finds and retrieves bMacMappedIp data from the server.
+        """Finds and retrieves bMacMappedIp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bMacMappedIp data from the server.
-        By default the find method takes no parameters and will retrieve all bMacMappedIp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bMacMappedIp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bMacMappedIp resources from the server.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpType (str(ipV4|ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpType (str(ipV4 | ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Returns:
-            self: This instance with matching bMacMappedIp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bMacMappedIp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bMacMappedIp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bMacMappedIp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bMacMappedIp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

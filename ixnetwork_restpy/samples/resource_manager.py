@@ -3,16 +3,15 @@
 """
 
 import json
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.files import Files
+from ixnetwork_restpy import SessionAssistant, Files
 
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+# create a test tool session
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin', 
+    LogLevel=SessionAssistant.LOGLEVEL_INFO,
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # create a configuration fragment of two virtual ports
 vports = [

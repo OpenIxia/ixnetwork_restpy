@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AmtGlobals(Base):
     """Global settings placeholder for AMTPlugin.
-    The AmtGlobals class encapsulates a list of amtGlobals resources that is be managed by the user.
+    The AmtGlobals class encapsulates a list of amtGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the AmtGlobals.find() method.
-    The list can be managed by the user by using the AmtGlobals.add() and AmtGlobals.remove() methods.
+    The list can be managed by using the AmtGlobals.add() and AmtGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AmtGlobals(Base):
 
     @property
     def DiscoveryTimeout(self):
-        """Initial time to wait for a response to a Relay Discovery message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial time to wait for a response to a Relay Discovery message.
         """
         return self._get_attribute('discoveryTimeout')
     @DiscoveryTimeout.setter
@@ -50,10 +50,10 @@ class AmtGlobals(Base):
 
     @property
     def MaxOutstandingSessions(self):
-        """This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
         """
         return self._get_attribute('maxOutstandingSessions')
     @MaxOutstandingSessions.setter
@@ -62,10 +62,10 @@ class AmtGlobals(Base):
 
     @property
     def MaxRelayDiscoveryRetransmissionCount(self):
-        """Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
         """
         return self._get_attribute('maxRelayDiscoveryRetransmissionCount')
     @MaxRelayDiscoveryRetransmissionCount.setter
@@ -74,10 +74,10 @@ class AmtGlobals(Base):
 
     @property
     def MaxRequestRetransmissionCount(self):
-        """Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
         """
         return self._get_attribute('maxRequestRetransmissionCount')
     @MaxRequestRetransmissionCount.setter
@@ -86,19 +86,19 @@ class AmtGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RequestTimeout(self):
-        """Initial time to wait for a response to a Request message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial time to wait for a response to a Request message.
         """
         return self._get_attribute('requestTimeout')
     @RequestTimeout.setter
@@ -107,10 +107,10 @@ class AmtGlobals(Base):
 
     @property
     def RetransmissionHolddown(self):
-        """Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
         """
         return self._get_attribute('retransmissionHolddown')
     @RetransmissionHolddown.setter
@@ -119,10 +119,10 @@ class AmtGlobals(Base):
 
     @property
     def SetupRate(self):
-        """Request Rate is the number of AMT Discovery packets to send in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Request Rate is the number of AMT Discovery packets to send in each second.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -131,10 +131,10 @@ class AmtGlobals(Base):
 
     @property
     def TeardownRate(self):
-        """Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -142,89 +142,102 @@ class AmtGlobals(Base):
         self._set_attribute('teardownRate', value)
 
     def update(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
-        """Updates a child instance of amtGlobals on the server.
+        """Updates amtGlobals resource on the server.
 
-        Args:
-            DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
-            MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
-            MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
-            MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
-            RequestTimeout (number): Initial time to wait for a response to a Request message.
-            RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
-            SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
-            TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
+        Args
+        ----
+        - DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
+        - MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
+        - MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
+        - MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
+        - RequestTimeout (number): Initial time to wait for a response to a Request message.
+        - RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
+        - SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
+        - TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
-        """Adds a new amtGlobals node on the server and retrieves it in this instance.
+        """Adds a new amtGlobals resource on the server and adds it to the container.
 
-        Args:
-            DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
-            MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
-            MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
-            MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
-            RequestTimeout (number): Initial time to wait for a response to a Request message.
-            RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
-            SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
-            TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
+        Args
+        ----
+        - DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
+        - MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
+        - MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
+        - MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
+        - RequestTimeout (number): Initial time to wait for a response to a Request message.
+        - RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
+        - SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
+        - TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
 
-        Returns:
-            self: This instance with all currently retrieved amtGlobals data using find and the newly added amtGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved amtGlobals resources using find and the newly added amtGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the amtGlobals data in this instance from server.
+        """Deletes all the contained amtGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, ObjectId=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
-        """Finds and retrieves amtGlobals data from the server.
+        """Finds and retrieves amtGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve amtGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all amtGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve amtGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all amtGlobals resources from the server.
 
-        Args:
-            DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
-            MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
-            MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
-            MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
-            ObjectId (str): Unique identifier for this object
-            RequestTimeout (number): Initial time to wait for a response to a Request message.
-            RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
-            SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
-            TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
+        Args
+        ----
+        - DiscoveryTimeout (number): Initial time to wait for a response to a Relay Discovery message.
+        - MaxOutstandingSessions (number): This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
+        - MaxRelayDiscoveryRetransmissionCount (number): Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
+        - MaxRequestRetransmissionCount (number): Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
+        - ObjectId (str): Unique identifier for this object
+        - RequestTimeout (number): Initial time to wait for a response to a Request message.
+        - RetransmissionHolddown (number): Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
+        - SetupRate (number): Request Rate is the number of AMT Discovery packets to send in each second.
+        - TeardownRate (number): Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
 
-        Returns:
-            self: This instance with matching amtGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching amtGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of amtGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the amtGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the amtGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

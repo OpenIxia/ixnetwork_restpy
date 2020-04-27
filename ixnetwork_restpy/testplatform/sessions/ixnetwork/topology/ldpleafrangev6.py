@@ -36,87 +36,92 @@ class LdpLeafRangeV6(Base):
 
     @property
     def LdpTLVList(self):
-        """An instance of the LdpTLVList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist.LdpTLVList): An instance of the LdpTLVList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist.LdpTLVList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist import LdpTLVList
         return LdpTLVList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ContinuousIncrementOVAcrossRoot(self):
-        """Continuous Increment Opaque Value Across Root
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('continuousIncrementOVAcrossRoot')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Continuous Increment Opaque Value Across Root
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('continuousIncrementOVAcrossRoot'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def GroupAddressV4(self):
-        """IPv4 Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupAddressV4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupAddressV4'))
 
     @property
     def GroupAddressV6(self):
-        """IPv6 Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupAddressV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupAddressV6'))
 
     @property
     def GroupCountPerLsp(self):
-        """Group Count per LSP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupCountPerLsp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Group Count per LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupCountPerLsp'))
 
     @property
     def LSPType(self):
-        """LSP Type
-
-        Returns:
-            str(p2MP)
+        """
+        Returns
+        -------
+        - str(p2MP): LSP Type
         """
         return self._get_attribute('lSPType')
     @LSPType.setter
@@ -125,37 +130,40 @@ class LdpLeafRangeV6(Base):
 
     @property
     def LabelValueStart(self):
-        """Label Value Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelValueStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Value Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelValueStart'))
 
     @property
     def LabelValueStep(self):
-        """Label Value Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelValueStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Value Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelValueStep'))
 
     @property
     def LspCountPerRoot(self):
-        """LSP Count Per Root
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lspCountPerRoot')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Count Per Root
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lspCountPerRoot'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -164,10 +172,10 @@ class LdpLeafRangeV6(Base):
 
     @property
     def NumberOfTLVs(self):
-        """Number Of TLVs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of TLVs
         """
         return self._get_attribute('numberOfTLVs')
     @NumberOfTLVs.setter
@@ -176,71 +184,79 @@ class LdpLeafRangeV6(Base):
 
     @property
     def RootAddress(self):
-        """Root Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddress'))
 
     @property
     def RootAddressCount(self):
-        """Root Address Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddressCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddressCount'))
 
     @property
     def RootAddressStep(self):
-        """Root Address Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddressStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddressStep'))
 
     def update(self, LSPType=None, Name=None, NumberOfTLVs=None):
-        """Updates a child instance of ldpLeafRangeV6 on the server.
+        """Updates ldpLeafRangeV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            LSPType (str(p2MP)): LSP Type
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfTLVs (number): Number Of TLVs
+        Args
+        ----
+        - LSPType (str(p2MP)): LSP Type
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfTLVs (number): Number Of TLVs
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, ContinuousIncrementOVAcrossRoot=None, GroupAddressV4=None, GroupAddressV6=None, GroupCountPerLsp=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None):
         """Base class infrastructure that gets a list of ldpLeafRangeV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            ContinuousIncrementOVAcrossRoot (str): optional regex of continuousIncrementOVAcrossRoot
-            GroupAddressV4 (str): optional regex of groupAddressV4
-            GroupAddressV6 (str): optional regex of groupAddressV6
-            GroupCountPerLsp (str): optional regex of groupCountPerLsp
-            LabelValueStart (str): optional regex of labelValueStart
-            LabelValueStep (str): optional regex of labelValueStep
-            LspCountPerRoot (str): optional regex of lspCountPerRoot
-            RootAddress (str): optional regex of rootAddress
-            RootAddressCount (str): optional regex of rootAddressCount
-            RootAddressStep (str): optional regex of rootAddressStep
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ContinuousIncrementOVAcrossRoot (str): optional regex of continuousIncrementOVAcrossRoot
+        - GroupAddressV4 (str): optional regex of groupAddressV4
+        - GroupAddressV6 (str): optional regex of groupAddressV6
+        - GroupCountPerLsp (str): optional regex of groupCountPerLsp
+        - LabelValueStart (str): optional regex of labelValueStart
+        - LabelValueStep (str): optional regex of labelValueStep
+        - LspCountPerRoot (str): optional regex of lspCountPerRoot
+        - RootAddress (str): optional regex of rootAddress
+        - RootAddressCount (str): optional regex of rootAddressCount
+        - RootAddressStep (str): optional regex of rootAddressStep
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -249,29 +265,25 @@ class LdpLeafRangeV6(Base):
 
         Activate Multicast Leaf Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        activateLeafRange()
+        activateLeafRange(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        activateLeafRange(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        activateLeafRange(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        activateLeafRange(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        activateLeafRange(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        activateLeafRange(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -283,29 +295,25 @@ class LdpLeafRangeV6(Base):
 
         Deactivate Multicast Leaf Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        deactivateLeafRange()
+        deactivateLeafRange(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        deactivateLeafRange(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        deactivateLeafRange(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        deactivateLeafRange(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        deactivateLeafRange(Arg2=list)list
+        ----------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        deactivateLeafRange(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

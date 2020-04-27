@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OpaqueValueElement(Base):
     """Configures the opaque value element.
-    The OpaqueValueElement class encapsulates a list of opaqueValueElement resources that is managed by the system.
+    The OpaqueValueElement class encapsulates a list of opaqueValueElement resources that are managed by the system.
     A list of resources can be retrieved from the server using the OpaqueValueElement.find() method.
     """
 
@@ -37,61 +37,68 @@ class OpaqueValueElement(Base):
 
     @property
     def Length(self):
-        """Signifies the length.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the length.
         """
         return self._get_attribute('length')
 
     @property
     def Type(self):
-        """Signifies teh type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies teh type.
         """
         return self._get_attribute('type')
 
     @property
     def Value(self):
-        """Signifies the value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the value.
         """
         return self._get_attribute('value')
 
     def find(self, Length=None, Type=None, Value=None):
-        """Finds and retrieves opaqueValueElement data from the server.
+        """Finds and retrieves opaqueValueElement resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve opaqueValueElement data from the server.
-        By default the find method takes no parameters and will retrieve all opaqueValueElement data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaqueValueElement resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all opaqueValueElement resources from the server.
 
-        Args:
-            Length (number): Signifies the length.
-            Type (number): Signifies teh type.
-            Value (str): Signifies the value.
+        Args
+        ----
+        - Length (number): Signifies the length.
+        - Type (number): Signifies teh type.
+        - Value (str): Signifies the value.
 
-        Returns:
-            self: This instance with matching opaqueValueElement data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching opaqueValueElement resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of opaqueValueElement data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the opaqueValueElement data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the opaqueValueElement resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

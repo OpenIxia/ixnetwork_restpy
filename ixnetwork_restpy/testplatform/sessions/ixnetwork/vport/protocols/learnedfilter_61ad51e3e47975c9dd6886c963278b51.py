@@ -36,10 +36,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableFilter(self):
-        """Enables the use of the LDP learned labels filter.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the LDP learned labels filter.
         """
         return self._get_attribute('enableFilter')
     @EnableFilter.setter
@@ -48,10 +48,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableIpv4FecAddress(self):
-        """If enabled, uses the network address associated with the FEC.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, uses the network address associated with the FEC.
         """
         return self._get_attribute('enableIpv4FecAddress')
     @EnableIpv4FecAddress.setter
@@ -60,10 +60,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableIpv4FecMask(self):
-        """(FEC Mask Match must be enabled for this option to be active.)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (FEC Mask Match must be enabled for this option to be active.)
         """
         return self._get_attribute('enableIpv4FecMask')
     @EnableIpv4FecMask.setter
@@ -72,10 +72,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableIpv4RootAddress(self):
-        """If enabled, it signifies the IP version 4 root address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, it signifies the IP version 4 root address.
         """
         return self._get_attribute('enableIpv4RootAddress')
     @EnableIpv4RootAddress.setter
@@ -84,10 +84,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableLabel(self):
-        """If enabled, uses the label value added to the packet(s) by the upstream LDP peer.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, uses the label value added to the packet(s) by the upstream LDP peer.
         """
         return self._get_attribute('enableLabel')
     @EnableLabel.setter
@@ -96,10 +96,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableMartiniDescription(self):
-        """An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
         """
         return self._get_attribute('enableMartiniDescription')
     @EnableMartiniDescription.setter
@@ -108,10 +108,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableMartiniGroupId(self):
-        """An arbitrary 32-bit value used to identify a group of VCs.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: An arbitrary 32-bit value used to identify a group of VCs.
         """
         return self._get_attribute('enableMartiniGroupId')
     @EnableMartiniGroupId.setter
@@ -120,10 +120,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableMartiniVcId(self):
-        """The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
         """
         return self._get_attribute('enableMartiniVcId')
     @EnableMartiniVcId.setter
@@ -132,10 +132,10 @@ class LearnedFilter(Base):
 
     @property
     def EnableMartiniVcType(self):
-        """Enables the type of martini virtual circuit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the type of martini virtual circuit.
         """
         return self._get_attribute('enableMartiniVcType')
     @EnableMartiniVcType.setter
@@ -144,10 +144,10 @@ class LearnedFilter(Base):
 
     @property
     def EnablePeerAddress(self):
-        """Uses the IP address of the LDP peer.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Uses the IP address of the LDP peer.
         """
         return self._get_attribute('enablePeerAddress')
     @EnablePeerAddress.setter
@@ -156,10 +156,10 @@ class LearnedFilter(Base):
 
     @property
     def EnablePeerMask(self):
-        """(Peer address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (Peer address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
         """
         return self._get_attribute('enablePeerMask')
     @EnablePeerMask.setter
@@ -168,10 +168,10 @@ class LearnedFilter(Base):
 
     @property
     def Ipv4FecAddress(self):
-        """The IPv4 address component of the FEC. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address component of the FEC. (default = 0.0.0.0)
         """
         return self._get_attribute('ipv4FecAddress')
     @Ipv4FecAddress.setter
@@ -180,10 +180,10 @@ class LearnedFilter(Base):
 
     @property
     def Ipv4FecMask(self):
-        """The prefix length of the network IPv4 address. (default = 24)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The prefix length of the network IPv4 address. (default = 24)
         """
         return self._get_attribute('ipv4FecMask')
     @Ipv4FecMask.setter
@@ -192,10 +192,10 @@ class LearnedFilter(Base):
 
     @property
     def Ipv4FecMaskMatch(self):
-        """FEC Mask Match must be enabled for this option to be active.
-
-        Returns:
-            str(exactMatch|looseMatch)
+        """
+        Returns
+        -------
+        - str(exactMatch | looseMatch): FEC Mask Match must be enabled for this option to be active.
         """
         return self._get_attribute('ipv4FecMaskMatch')
     @Ipv4FecMaskMatch.setter
@@ -204,10 +204,10 @@ class LearnedFilter(Base):
 
     @property
     def Label(self):
-        """The first label to be assigned to the FEC.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first label to be assigned to the FEC.
         """
         return self._get_attribute('label')
     @Label.setter
@@ -216,10 +216,10 @@ class LearnedFilter(Base):
 
     @property
     def MartiniDescription(self):
-        """An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
         """
         return self._get_attribute('martiniDescription')
     @MartiniDescription.setter
@@ -228,10 +228,10 @@ class LearnedFilter(Base):
 
     @property
     def MartiniGroupId(self):
-        """An arbitrary 32-bit value used to identify a group of VCs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: An arbitrary 32-bit value used to identify a group of VCs.
         """
         return self._get_attribute('martiniGroupId')
     @MartiniGroupId.setter
@@ -240,10 +240,10 @@ class LearnedFilter(Base):
 
     @property
     def MartiniVcId(self):
-        """The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
         """
         return self._get_attribute('martiniVcId')
     @MartiniVcId.setter
@@ -252,10 +252,10 @@ class LearnedFilter(Base):
 
     @property
     def MartiniVcType(self):
-        """The type of L2 VC depends on the Layer 2 protocol types.
-
-        Returns:
-            str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip)
+        """
+        Returns
+        -------
+        - str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip): The type of L2 VC depends on the Layer 2 protocol types.
         """
         return self._get_attribute('martiniVcType')
     @MartiniVcType.setter
@@ -264,10 +264,10 @@ class LearnedFilter(Base):
 
     @property
     def PeerAddress(self):
-        """If enabled, uses the IP address of the LDP peer.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, uses the IP address of the LDP peer.
         """
         return self._get_attribute('peerAddress')
     @PeerAddress.setter
@@ -276,10 +276,10 @@ class LearnedFilter(Base):
 
     @property
     def PeerMask(self):
-        """(Peer Address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Peer Address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
         """
         return self._get_attribute('peerMask')
     @PeerMask.setter
@@ -288,10 +288,10 @@ class LearnedFilter(Base):
 
     @property
     def RootAddress(self):
-        """Indicates the root address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the root address.
         """
         return self._get_attribute('rootAddress')
     @RootAddress.setter
@@ -299,33 +299,35 @@ class LearnedFilter(Base):
         self._set_attribute('rootAddress', value)
 
     def update(self, EnableFilter=None, EnableIpv4FecAddress=None, EnableIpv4FecMask=None, EnableIpv4RootAddress=None, EnableLabel=None, EnableMartiniDescription=None, EnableMartiniGroupId=None, EnableMartiniVcId=None, EnableMartiniVcType=None, EnablePeerAddress=None, EnablePeerMask=None, Ipv4FecAddress=None, Ipv4FecMask=None, Ipv4FecMaskMatch=None, Label=None, MartiniDescription=None, MartiniGroupId=None, MartiniVcId=None, MartiniVcType=None, PeerAddress=None, PeerMask=None, RootAddress=None):
-        """Updates a child instance of learnedFilter on the server.
+        """Updates learnedFilter resource on the server.
 
-        Args:
-            EnableFilter (bool): Enables the use of the LDP learned labels filter.
-            EnableIpv4FecAddress (bool): If enabled, uses the network address associated with the FEC.
-            EnableIpv4FecMask (bool): (FEC Mask Match must be enabled for this option to be active.)
-            EnableIpv4RootAddress (bool): If enabled, it signifies the IP version 4 root address.
-            EnableLabel (bool): If enabled, uses the label value added to the packet(s) by the upstream LDP peer.
-            EnableMartiniDescription (bool): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
-            EnableMartiniGroupId (bool): An arbitrary 32-bit value used to identify a group of VCs.
-            EnableMartiniVcId (bool): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
-            EnableMartiniVcType (bool): Enables the type of martini virtual circuit.
-            EnablePeerAddress (bool): Uses the IP address of the LDP peer.
-            EnablePeerMask (bool): (Peer address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
-            Ipv4FecAddress (str): The IPv4 address component of the FEC. (default = 0.0.0.0)
-            Ipv4FecMask (number): The prefix length of the network IPv4 address. (default = 24)
-            Ipv4FecMaskMatch (str(exactMatch|looseMatch)): FEC Mask Match must be enabled for this option to be active.
-            Label (number): The first label to be assigned to the FEC.
-            MartiniDescription (str): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
-            MartiniGroupId (number): An arbitrary 32-bit value used to identify a group of VCs.
-            MartiniVcId (number): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
-            MartiniVcType (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip)): The type of L2 VC depends on the Layer 2 protocol types.
-            PeerAddress (str): If enabled, uses the IP address of the LDP peer.
-            PeerMask (number): (Peer Address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
-            RootAddress (str): Indicates the root address.
+        Args
+        ----
+        - EnableFilter (bool): Enables the use of the LDP learned labels filter.
+        - EnableIpv4FecAddress (bool): If enabled, uses the network address associated with the FEC.
+        - EnableIpv4FecMask (bool): (FEC Mask Match must be enabled for this option to be active.)
+        - EnableIpv4RootAddress (bool): If enabled, it signifies the IP version 4 root address.
+        - EnableLabel (bool): If enabled, uses the label value added to the packet(s) by the upstream LDP peer.
+        - EnableMartiniDescription (bool): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
+        - EnableMartiniGroupId (bool): An arbitrary 32-bit value used to identify a group of VCs.
+        - EnableMartiniVcId (bool): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
+        - EnableMartiniVcType (bool): Enables the type of martini virtual circuit.
+        - EnablePeerAddress (bool): Uses the IP address of the LDP peer.
+        - EnablePeerMask (bool): (Peer address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
+        - Ipv4FecAddress (str): The IPv4 address component of the FEC. (default = 0.0.0.0)
+        - Ipv4FecMask (number): The prefix length of the network IPv4 address. (default = 24)
+        - Ipv4FecMaskMatch (str(exactMatch | looseMatch)): FEC Mask Match must be enabled for this option to be active.
+        - Label (number): The first label to be assigned to the FEC.
+        - MartiniDescription (str): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
+        - MartiniGroupId (number): An arbitrary 32-bit value used to identify a group of VCs.
+        - MartiniVcId (number): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
+        - MartiniVcType (str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip)): The type of L2 VC depends on the Layer 2 protocol types.
+        - PeerAddress (str): If enabled, uses the IP address of the LDP peer.
+        - PeerMask (number): (Peer Address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
+        - RootAddress (str): Indicates the root address.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

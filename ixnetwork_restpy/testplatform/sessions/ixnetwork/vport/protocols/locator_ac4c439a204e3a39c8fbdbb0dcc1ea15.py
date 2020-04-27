@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Locator(Base):
     """It gives details about the locator
-    The Locator class encapsulates a list of locator resources that is be managed by the user.
+    The Locator class encapsulates a list of locator resources that are managed by the user.
     A list of resources can be retrieved from the server using the Locator.find() method.
-    The list can be managed by the user by using the Locator.add() and Locator.remove() methods.
+    The list can be managed by using the Locator.add() and Locator.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Locator(Base):
 
     @property
     def Address(self):
-        """It gives details about the Ip
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the Ip
         """
         return self._get_attribute('address')
     @Address.setter
@@ -50,10 +50,10 @@ class Locator(Base):
 
     @property
     def Enabled(self):
-        """It True, it enables the protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It True, it enables the protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class Locator(Base):
 
     @property
     def Family(self):
-        """It gives details about the family
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): It gives details about the family
         """
         return self._get_attribute('family')
     @Family.setter
@@ -74,10 +74,10 @@ class Locator(Base):
 
     @property
     def LispInterfaceId(self):
-        """It gives details about the LISP interface id
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the LISP interface id
         """
         return self._get_attribute('lispInterfaceId')
     @LispInterfaceId.setter
@@ -86,10 +86,10 @@ class Locator(Base):
 
     @property
     def LocalLocator(self):
-        """If True, It gives the address of the local locator
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If True, It gives the address of the local locator
         """
         return self._get_attribute('localLocator')
     @LocalLocator.setter
@@ -98,10 +98,10 @@ class Locator(Base):
 
     @property
     def MPriority(self):
-        """It denotes the m priority
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It denotes the m priority
         """
         return self._get_attribute('mPriority')
     @MPriority.setter
@@ -110,10 +110,10 @@ class Locator(Base):
 
     @property
     def MWeight(self):
-        """It denotes the m weight
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It denotes the m weight
         """
         return self._get_attribute('mWeight')
     @MWeight.setter
@@ -122,10 +122,10 @@ class Locator(Base):
 
     @property
     def Priority(self):
-        """It gives the priority
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives the priority
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -134,10 +134,10 @@ class Locator(Base):
 
     @property
     def ProtocolInterfaceIpItemId(self):
-        """It gives details about the protocol interface ip item id
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the protocol interface ip item id
         """
         return self._get_attribute('protocolInterfaceIpItemId')
     @ProtocolInterfaceIpItemId.setter
@@ -146,10 +146,10 @@ class Locator(Base):
 
     @property
     def Reachability(self):
-        """If true, it defines the reachability
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it defines the reachability
         """
         return self._get_attribute('reachability')
     @Reachability.setter
@@ -158,10 +158,10 @@ class Locator(Base):
 
     @property
     def Weight(self):
-        """It gives details about the weight
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the weight
         """
         return self._get_attribute('weight')
     @Weight.setter
@@ -169,97 +169,110 @@ class Locator(Base):
         self._set_attribute('weight', value)
 
     def update(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
-        """Updates a child instance of locator on the server.
+        """Updates locator resource on the server.
 
-        Args:
-            Address (str): It gives details about the Ip
-            Enabled (bool): It True, it enables the protocol
-            Family (str(ipv4|ipv6)): It gives details about the family
-            LispInterfaceId (number): It gives details about the LISP interface id
-            LocalLocator (bool): If True, It gives the address of the local locator
-            MPriority (number): It denotes the m priority
-            MWeight (number): It denotes the m weight
-            Priority (number): It gives the priority
-            ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
-            Reachability (bool): If true, it defines the reachability
-            Weight (number): It gives details about the weight
+        Args
+        ----
+        - Address (str): It gives details about the Ip
+        - Enabled (bool): It True, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the family
+        - LispInterfaceId (number): It gives details about the LISP interface id
+        - LocalLocator (bool): If True, It gives the address of the local locator
+        - MPriority (number): It denotes the m priority
+        - MWeight (number): It denotes the m weight
+        - Priority (number): It gives the priority
+        - ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
+        - Reachability (bool): If true, it defines the reachability
+        - Weight (number): It gives details about the weight
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
-        """Adds a new locator node on the server and retrieves it in this instance.
+        """Adds a new locator resource on the server and adds it to the container.
 
-        Args:
-            Address (str): It gives details about the Ip
-            Enabled (bool): It True, it enables the protocol
-            Family (str(ipv4|ipv6)): It gives details about the family
-            LispInterfaceId (number): It gives details about the LISP interface id
-            LocalLocator (bool): If True, It gives the address of the local locator
-            MPriority (number): It denotes the m priority
-            MWeight (number): It denotes the m weight
-            Priority (number): It gives the priority
-            ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
-            Reachability (bool): If true, it defines the reachability
-            Weight (number): It gives details about the weight
+        Args
+        ----
+        - Address (str): It gives details about the Ip
+        - Enabled (bool): It True, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the family
+        - LispInterfaceId (number): It gives details about the LISP interface id
+        - LocalLocator (bool): If True, It gives the address of the local locator
+        - MPriority (number): It denotes the m priority
+        - MWeight (number): It denotes the m weight
+        - Priority (number): It gives the priority
+        - ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
+        - Reachability (bool): If true, it defines the reachability
+        - Weight (number): It gives details about the weight
 
-        Returns:
-            self: This instance with all currently retrieved locator data using find and the newly added locator data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved locator resources using find and the newly added locator resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the locator data in this instance from server.
+        """Deletes all the contained locator resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
-        """Finds and retrieves locator data from the server.
+        """Finds and retrieves locator resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve locator data from the server.
-        By default the find method takes no parameters and will retrieve all locator data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locator resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all locator resources from the server.
 
-        Args:
-            Address (str): It gives details about the Ip
-            Enabled (bool): It True, it enables the protocol
-            Family (str(ipv4|ipv6)): It gives details about the family
-            LispInterfaceId (number): It gives details about the LISP interface id
-            LocalLocator (bool): If True, It gives the address of the local locator
-            MPriority (number): It denotes the m priority
-            MWeight (number): It denotes the m weight
-            Priority (number): It gives the priority
-            ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
-            Reachability (bool): If true, it defines the reachability
-            Weight (number): It gives details about the weight
+        Args
+        ----
+        - Address (str): It gives details about the Ip
+        - Enabled (bool): It True, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the family
+        - LispInterfaceId (number): It gives details about the LISP interface id
+        - LocalLocator (bool): If True, It gives the address of the local locator
+        - MPriority (number): It denotes the m priority
+        - MWeight (number): It denotes the m weight
+        - Priority (number): It gives the priority
+        - ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
+        - Reachability (bool): If true, it defines the reachability
+        - Weight (number): It gives details about the weight
 
-        Returns:
-            self: This instance with matching locator data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching locator resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of locator data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the locator data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the locator resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Range(Base):
     """This specifies the range parameter of the properties.
-    The Range class encapsulates a list of range resources that is managed by the system.
+    The Range class encapsulates a list of range resources that are managed by the system.
     A list of resources can be retrieved from the server using the Range.find() method.
     """
 
@@ -37,10 +37,10 @@ class Range(Base):
 
     @property
     def From(self):
-        """Start range value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Start range value.
         """
         return self._get_attribute('from')
     @From.setter
@@ -49,28 +49,28 @@ class Range(Base):
 
     @property
     def MaxValue(self):
-        """(Read only) Maximum supported value for parameter range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) Maximum supported value for parameter range.
         """
         return self._get_attribute('maxValue')
 
     @property
     def MinValue(self):
-        """(Read only) Minimum supported value for parameter range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) Minimum supported value for parameter range.
         """
         return self._get_attribute('minValue')
 
     @property
     def To(self):
-        """End range value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: End range value.
         """
         return self._get_attribute('to')
     @To.setter
@@ -78,48 +78,57 @@ class Range(Base):
         self._set_attribute('to', value)
 
     def update(self, From=None, To=None):
-        """Updates a child instance of range on the server.
+        """Updates range resource on the server.
 
-        Args:
-            From (number): Start range value.
-            To (number): End range value.
+        Args
+        ----
+        - From (number): Start range value.
+        - To (number): End range value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, From=None, MaxValue=None, MinValue=None, To=None):
-        """Finds and retrieves range data from the server.
+        """Finds and retrieves range resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve range data from the server.
-        By default the find method takes no parameters and will retrieve all range data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve range resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all range resources from the server.
 
-        Args:
-            From (number): Start range value.
-            MaxValue (number): (Read only) Maximum supported value for parameter range.
-            MinValue (number): (Read only) Minimum supported value for parameter range.
-            To (number): End range value.
+        Args
+        ----
+        - From (number): Start range value.
+        - MaxValue (number): (Read only) Maximum supported value for parameter range.
+        - MinValue (number): (Read only) Minimum supported value for parameter range.
+        - To (number): End range value.
 
-        Returns:
-            self: This instance with matching range data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching range resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of range data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the range data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the range resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

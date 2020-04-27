@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class GlobalChannelList(Base):
     """
-    The GlobalChannelList class encapsulates a list of globalChannelList resources that is be managed by the user.
+    The GlobalChannelList class encapsulates a list of globalChannelList resources that are managed by the user.
     A list of resources can be retrieved from the server using the GlobalChannelList.find() method.
-    The list can be managed by the user by using the GlobalChannelList.add() and GlobalChannelList.remove() methods.
+    The list can be managed by using the GlobalChannelList.add() and GlobalChannelList.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class GlobalChannelList(Base):
 
     @property
     def FirstChannel(self):
-        """The first channel from the multicast group range included in the current list.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first channel from the multicast group range included in the current list.
         """
         return self._get_attribute('firstChannel')
     @FirstChannel.setter
@@ -50,10 +50,10 @@ class GlobalChannelList(Base):
 
     @property
     def Increment(self):
-        """The increment step between first and last channels describing available channels.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step between first and last channels describing available channels.
         """
         return self._get_attribute('increment')
     @Increment.setter
@@ -62,10 +62,10 @@ class GlobalChannelList(Base):
 
     @property
     def InitialChannel(self):
-        """The first channel to be joined by the first host.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first channel to be joined by the first host.
         """
         return self._get_attribute('initialChannel')
     @InitialChannel.setter
@@ -74,10 +74,10 @@ class GlobalChannelList(Base):
 
     @property
     def InitialIncrement(self):
-        """The increment step between consecutive hosts joining the channels.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step between consecutive hosts joining the channels.
         """
         return self._get_attribute('initialIncrement')
     @InitialIncrement.setter
@@ -86,10 +86,10 @@ class GlobalChannelList(Base):
 
     @property
     def LastChannel(self):
-        """The last channel from the multicast group range included in the current list.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The last channel from the multicast group range included in the current list.
         """
         return self._get_attribute('lastChannel')
     @LastChannel.setter
@@ -98,10 +98,10 @@ class GlobalChannelList(Base):
 
     @property
     def MulticastGroup(self):
-        """The associated multicast group range for defining the channels.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): The associated multicast group range for defining the channels.
         """
         return self._get_attribute('multicastGroup')
     @MulticastGroup.setter
@@ -110,10 +110,10 @@ class GlobalChannelList(Base):
 
     @property
     def Name(self):
-        """The name of the channel list.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the channel list.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -122,94 +122,107 @@ class GlobalChannelList(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None):
-        """Updates a child instance of globalChannelList on the server.
+        """Updates globalChannelList resource on the server.
 
-        Args:
-            FirstChannel (number): The first channel from the multicast group range included in the current list.
-            Increment (number): The increment step between first and last channels describing available channels.
-            InitialChannel (number): The first channel to be joined by the first host.
-            InitialIncrement (number): The increment step between consecutive hosts joining the channels.
-            LastChannel (number): The last channel from the multicast group range included in the current list.
-            MulticastGroup (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): The associated multicast group range for defining the channels.
-            Name (str): The name of the channel list.
+        Args
+        ----
+        - FirstChannel (number): The first channel from the multicast group range included in the current list.
+        - Increment (number): The increment step between first and last channels describing available channels.
+        - InitialChannel (number): The first channel to be joined by the first host.
+        - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
+        - LastChannel (number): The last channel from the multicast group range included in the current list.
+        - MulticastGroup (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - Name (str): The name of the channel list.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None):
-        """Adds a new globalChannelList node on the server and retrieves it in this instance.
+        """Adds a new globalChannelList resource on the server and adds it to the container.
 
-        Args:
-            FirstChannel (number): The first channel from the multicast group range included in the current list.
-            Increment (number): The increment step between first and last channels describing available channels.
-            InitialChannel (number): The first channel to be joined by the first host.
-            InitialIncrement (number): The increment step between consecutive hosts joining the channels.
-            LastChannel (number): The last channel from the multicast group range included in the current list.
-            MulticastGroup (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): The associated multicast group range for defining the channels.
-            Name (str): The name of the channel list.
+        Args
+        ----
+        - FirstChannel (number): The first channel from the multicast group range included in the current list.
+        - Increment (number): The increment step between first and last channels describing available channels.
+        - InitialChannel (number): The first channel to be joined by the first host.
+        - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
+        - LastChannel (number): The last channel from the multicast group range included in the current list.
+        - MulticastGroup (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - Name (str): The name of the channel list.
 
-        Returns:
-            self: This instance with all currently retrieved globalChannelList data using find and the newly added globalChannelList data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved globalChannelList resources using find and the newly added globalChannelList resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the globalChannelList data in this instance from server.
+        """Deletes all the contained globalChannelList resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None, ObjectId=None):
-        """Finds and retrieves globalChannelList data from the server.
+        """Finds and retrieves globalChannelList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve globalChannelList data from the server.
-        By default the find method takes no parameters and will retrieve all globalChannelList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globalChannelList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all globalChannelList resources from the server.
 
-        Args:
-            FirstChannel (number): The first channel from the multicast group range included in the current list.
-            Increment (number): The increment step between first and last channels describing available channels.
-            InitialChannel (number): The first channel to be joined by the first host.
-            InitialIncrement (number): The increment step between consecutive hosts joining the channels.
-            LastChannel (number): The last channel from the multicast group range included in the current list.
-            MulticastGroup (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): The associated multicast group range for defining the channels.
-            Name (str): The name of the channel list.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - FirstChannel (number): The first channel from the multicast group range included in the current list.
+        - Increment (number): The increment step between first and last channels describing available channels.
+        - InitialChannel (number): The first channel to be joined by the first host.
+        - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
+        - LastChannel (number): The last channel from the multicast group range included in the current list.
+        - MulticastGroup (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - Name (str): The name of the channel list.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching globalChannelList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching globalChannelList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of globalChannelList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the globalChannelList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the globalChannelList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

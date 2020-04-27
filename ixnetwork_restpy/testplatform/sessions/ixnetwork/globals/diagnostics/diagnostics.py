@@ -36,14 +36,14 @@ class Diagnostics(Base):
 
     @property
     def Cleanup(self):
-        """An instance of the Cleanup class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup.Cleanup): An instance of the Cleanup class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup.Cleanup)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup import Cleanup
         return Cleanup(self)._select()

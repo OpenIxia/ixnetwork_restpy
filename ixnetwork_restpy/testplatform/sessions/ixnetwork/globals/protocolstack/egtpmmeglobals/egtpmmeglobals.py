@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgtpMmeGlobals(Base):
     """
-    The EgtpMmeGlobals class encapsulates a list of egtpMmeGlobals resources that is be managed by the user.
+    The EgtpMmeGlobals class encapsulates a list of egtpMmeGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgtpMmeGlobals.find() method.
-    The list can be managed by the user by using the EgtpMmeGlobals.add() and EgtpMmeGlobals.remove() methods.
+    The list can be managed by using the EgtpMmeGlobals.add() and EgtpMmeGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class EgtpMmeGlobals(Base):
 
     @property
     def GlobalEgtpApn(self):
-        """An instance of the GlobalEgtpApn class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globalegtpapn.globalegtpapn.GlobalEgtpApn): An instance of the GlobalEgtpApn class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globalegtpapn.globalegtpapn.GlobalEgtpApn)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globalegtpapn.globalegtpapn import GlobalEgtpApn
         return GlobalEgtpApn(self)
 
     @property
     def GlobalTrafficProfiles(self):
-        """An instance of the GlobalTrafficProfiles class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globaltrafficprofiles.globaltrafficprofiles.GlobalTrafficProfiles): An instance of the GlobalTrafficProfiles class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globaltrafficprofiles.globaltrafficprofiles.GlobalTrafficProfiles)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.globaltrafficprofiles.globaltrafficprofiles import GlobalTrafficProfiles
         return GlobalTrafficProfiles(self)
 
     @property
     def EnableDynamicQosCtrl(self):
-        """Enable Dynamic QoS Enforcement
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Dynamic QoS Enforcement
         """
         return self._get_attribute('enableDynamicQosCtrl')
     @EnableDynamicQosCtrl.setter
@@ -78,10 +78,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def EnableGatewayArp(self):
-        """When enabled, every IP address will ARP the specified gateway.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, every IP address will ARP the specified gateway.
         """
         return self._get_attribute('enableGatewayArp')
     @EnableGatewayArp.setter
@@ -91,9 +91,9 @@ class EgtpMmeGlobals(Base):
     @property
     def EnablePartialNegotiation(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enablePartialNegotiation')
     @EnablePartialNegotiation.setter
@@ -102,10 +102,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def GatewayArpRequestRate(self):
-        """Maximum ARP request rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum ARP request rate
         """
         return self._get_attribute('gatewayArpRequestRate')
     @GatewayArpRequestRate.setter
@@ -115,9 +115,9 @@ class EgtpMmeGlobals(Base):
     @property
     def MaxMbrUAndD(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxMbrUAndD')
     @MaxMbrUAndD.setter
@@ -126,10 +126,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
-        """Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
         """
         return self._get_attribute('maxOutstandingGatewayArpRequests')
     @MaxOutstandingGatewayArpRequests.setter
@@ -139,9 +139,9 @@ class EgtpMmeGlobals(Base):
     @property
     def MaxOutstandingReleases(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -151,9 +151,9 @@ class EgtpMmeGlobals(Base):
     @property
     def MaxOutstandingRequests(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -162,19 +162,19 @@ class EgtpMmeGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SendOneArpFromEachInterface(self):
-        """When set, each interface will send one ARP request.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When set, each interface will send one ARP request.
         """
         return self._get_attribute('sendOneArpFromEachInterface')
     @SendOneArpFromEachInterface.setter
@@ -183,10 +183,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def SetupRateInitial(self):
-        """Initial setup rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial setup rate
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -195,10 +195,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def TeardownRateInitial(self):
-        """Initial teardown rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial teardown rate
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -208,9 +208,9 @@ class EgtpMmeGlobals(Base):
     @property
     def TsSpec(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('tsSpec')
     @TsSpec.setter
@@ -219,10 +219,10 @@ class EgtpMmeGlobals(Base):
 
     @property
     def UseMaxRatesForDcp(self):
-        """Use default rates (DCP mode)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use default rates (DCP mode)
         """
         return self._get_attribute('useMaxRatesForDcp')
     @UseMaxRatesForDcp.setter
@@ -230,104 +230,117 @@ class EgtpMmeGlobals(Base):
         self._set_attribute('useMaxRatesForDcp', value)
 
     def update(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
-        """Updates a child instance of egtpMmeGlobals on the server.
+        """Updates egtpMmeGlobals resource on the server.
 
-        Args:
-            EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            EnablePartialNegotiation (bool): 
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxMbrUAndD (number): 
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            MaxOutstandingReleases (number): 
-            MaxOutstandingRequests (number): 
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
-            TsSpec (str): 
-            UseMaxRatesForDcp (bool): Use default rates (DCP mode)
+        Args
+        ----
+        - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - EnablePartialNegotiation (bool): 
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxMbrUAndD (number): 
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - MaxOutstandingReleases (number): 
+        - MaxOutstandingRequests (number): 
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
+        - TsSpec (str): 
+        - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
-        """Adds a new egtpMmeGlobals node on the server and retrieves it in this instance.
+        """Adds a new egtpMmeGlobals resource on the server and adds it to the container.
 
-        Args:
-            EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            EnablePartialNegotiation (bool): 
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxMbrUAndD (number): 
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            MaxOutstandingReleases (number): 
-            MaxOutstandingRequests (number): 
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
-            TsSpec (str): 
-            UseMaxRatesForDcp (bool): Use default rates (DCP mode)
+        Args
+        ----
+        - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - EnablePartialNegotiation (bool): 
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxMbrUAndD (number): 
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - MaxOutstandingReleases (number): 
+        - MaxOutstandingRequests (number): 
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
+        - TsSpec (str): 
+        - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
-        Returns:
-            self: This instance with all currently retrieved egtpMmeGlobals data using find and the newly added egtpMmeGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egtpMmeGlobals resources using find and the newly added egtpMmeGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egtpMmeGlobals data in this instance from server.
+        """Deletes all the contained egtpMmeGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
-        """Finds and retrieves egtpMmeGlobals data from the server.
+        """Finds and retrieves egtpMmeGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egtpMmeGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all egtpMmeGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpMmeGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpMmeGlobals resources from the server.
 
-        Args:
-            EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            EnablePartialNegotiation (bool): 
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxMbrUAndD (number): 
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            MaxOutstandingReleases (number): 
-            MaxOutstandingRequests (number): 
-            ObjectId (str): Unique identifier for this object
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
-            TsSpec (str): 
-            UseMaxRatesForDcp (bool): Use default rates (DCP mode)
+        Args
+        ----
+        - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - EnablePartialNegotiation (bool): 
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxMbrUAndD (number): 
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - MaxOutstandingReleases (number): 
+        - MaxOutstandingRequests (number): 
+        - ObjectId (str): Unique identifier for this object
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
+        - TsSpec (str): 
+        - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
-        Returns:
-            self: This instance with matching egtpMmeGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egtpMmeGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egtpMmeGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egtpMmeGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egtpMmeGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,55 +36,58 @@ class OfSwitchQueues(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def MaxRate(self):
-        """Specify the maximum data rate guaranteed.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the maximum data rate guaranteed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxRate'))
 
     @property
     def MinRate(self):
-        """Specify the minimum data rate guaranteed.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('minRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the minimum data rate guaranteed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('minRate'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -93,73 +96,82 @@ class OfSwitchQueues(Base):
 
     @property
     def ParentPort(self):
-        """Parent port index.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('parentPort')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Parent port index.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('parentPort'))
 
     @property
     def QueueId(self):
-        """Specify the queue identifier for the packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('queueId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the queue identifier for the packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('queueId'))
 
     @property
     def QueueProperty(self):
-        """Configure the queue property from the options
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('queueProperty')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure the queue property from the options
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('queueProperty'))
 
     @property
     def SwitchIndex(self):
-        """Index of the OF Switch.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('switchIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Index of the OF Switch.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('switchIndex'))
 
     def update(self, Name=None):
-        """Updates a child instance of ofSwitchQueues on the server.
+        """Updates ofSwitchQueues resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, MaxRate=None, MinRate=None, ParentPort=None, QueueId=None, QueueProperty=None, SwitchIndex=None):
         """Base class infrastructure that gets a list of ofSwitchQueues device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            MaxRate (str): optional regex of maxRate
-            MinRate (str): optional regex of minRate
-            ParentPort (str): optional regex of parentPort
-            QueueId (str): optional regex of queueId
-            QueueProperty (str): optional regex of queueProperty
-            SwitchIndex (str): optional regex of switchIndex
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - MaxRate (str): optional regex of maxRate
+        - MinRate (str): optional regex of minRate
+        - ParentPort (str): optional regex of parentPort
+        - QueueId (str): optional regex of queueId
+        - QueueProperty (str): optional regex of queueProperty
+        - SwitchIndex (str): optional regex of switchIndex
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

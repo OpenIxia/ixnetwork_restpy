@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ActionSet(Base):
     """Action prototype.
-    The ActionSet class encapsulates a list of actionSet resources that is be managed by the user.
+    The ActionSet class encapsulates a list of actionSet resources that are managed by the user.
     A list of resources can be retrieved from the server using the ActionSet.find() method.
-    The list can be managed by the user by using the ActionSet.add() and ActionSet.remove() methods.
+    The list can be managed by using the ActionSet.add() and ActionSet.remove() methods.
     """
 
     __slots__ = ()
@@ -38,33 +38,33 @@ class ActionSet(Base):
 
     @property
     def Action(self):
-        """An instance of the Action class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.action.Action): An instance of the Action class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.action.Action)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.action import Action
         return Action(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Description(self):
-        """Description of the TLV prototype.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the TLV prototype.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -73,10 +73,10 @@ class ActionSet(Base):
 
     @property
     def IsEditable(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -85,10 +85,10 @@ class ActionSet(Base):
 
     @property
     def IsRepeatable(self):
-        """Information if the field can be multiplied in the tlv definition.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information if the field can be multiplied in the tlv definition.
         """
         return self._get_attribute('isRepeatable')
     @IsRepeatable.setter
@@ -97,10 +97,10 @@ class ActionSet(Base):
 
     @property
     def IsRequired(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -109,10 +109,10 @@ class ActionSet(Base):
 
     @property
     def Name(self):
-        """Name of the TLV field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the TLV field.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -120,80 +120,93 @@ class ActionSet(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Updates a child instance of actionSet on the server.
+        """Updates actionSet resource on the server.
 
-        Args:
-            Description (str): Description of the TLV prototype.
-            IsEditable (bool): Information on the requirement of the field.
-            IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of the TLV field.
+        Args
+        ----
+        - Description (str): Description of the TLV prototype.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of the TLV field.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Adds a new actionSet node on the server and retrieves it in this instance.
+        """Adds a new actionSet resource on the server and adds it to the container.
 
-        Args:
-            Description (str): Description of the TLV prototype.
-            IsEditable (bool): Information on the requirement of the field.
-            IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of the TLV field.
+        Args
+        ----
+        - Description (str): Description of the TLV prototype.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of the TLV field.
 
-        Returns:
-            self: This instance with all currently retrieved actionSet data using find and the newly added actionSet data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved actionSet resources using find and the newly added actionSet resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the actionSet data in this instance from server.
+        """Deletes all the contained actionSet resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Finds and retrieves actionSet data from the server.
+        """Finds and retrieves actionSet resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve actionSet data from the server.
-        By default the find method takes no parameters and will retrieve all actionSet data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actionSet resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all actionSet resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            Description (str): Description of the TLV prototype.
-            IsEditable (bool): Information on the requirement of the field.
-            IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of the TLV field.
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - Description (str): Description of the TLV prototype.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of the TLV field.
 
-        Returns:
-            self: This instance with matching actionSet data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching actionSet resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of actionSet data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the actionSet data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the actionSet resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

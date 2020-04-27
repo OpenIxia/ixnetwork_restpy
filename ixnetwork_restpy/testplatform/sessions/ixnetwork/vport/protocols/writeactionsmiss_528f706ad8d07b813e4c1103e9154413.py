@@ -36,10 +36,10 @@ class WriteActionsMiss(Base):
 
     @property
     def CopyTtlIn(self):
-        """If selected, Copy TTL In Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Copy TTL In Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('copyTtlIn')
     @CopyTtlIn.setter
@@ -48,10 +48,10 @@ class WriteActionsMiss(Base):
 
     @property
     def CopyTtlOut(self):
-        """If selected, Copy TTL Out Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Copy TTL Out Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('copyTtlOut')
     @CopyTtlOut.setter
@@ -60,10 +60,10 @@ class WriteActionsMiss(Base):
 
     @property
     def DecrementMplsTtl(self):
-        """If selected, Decrement MPLS TTL Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Decrement MPLS TTL Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('decrementMplsTtl')
     @DecrementMplsTtl.setter
@@ -72,10 +72,10 @@ class WriteActionsMiss(Base):
 
     @property
     def DecrementNetworkTtl(self):
-        """If selected, Decrement Network TTL Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Decrement Network TTL Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('decrementNetworkTtl')
     @DecrementNetworkTtl.setter
@@ -84,10 +84,10 @@ class WriteActionsMiss(Base):
 
     @property
     def Group(self):
-        """If selected, Group Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Group Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('group')
     @Group.setter
@@ -96,10 +96,10 @@ class WriteActionsMiss(Base):
 
     @property
     def Output(self):
-        """If selected, Output Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Output Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('output')
     @Output.setter
@@ -108,10 +108,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PopMpls(self):
-        """If selected, Pop MPLS Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop MPLS Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popMpls')
     @PopMpls.setter
@@ -120,10 +120,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PopPbb(self):
-        """If selected, Pop PBB Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop PBB Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popPbb')
     @PopPbb.setter
@@ -132,10 +132,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PopVlan(self):
-        """If selected, Pop VLAN Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop VLAN Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popVlan')
     @PopVlan.setter
@@ -144,10 +144,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PushMpls(self):
-        """If selected, Push MPLS Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Push MPLS Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushMpls')
     @PushMpls.setter
@@ -156,10 +156,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PushPbb(self):
-        """If selected, Push PBB Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Push PBB Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushPbb')
     @PushPbb.setter
@@ -168,10 +168,10 @@ class WriteActionsMiss(Base):
 
     @property
     def PushVlan(self):
-        """If selected, Push VLAN Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Push VLAN Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushVlan')
     @PushVlan.setter
@@ -180,10 +180,10 @@ class WriteActionsMiss(Base):
 
     @property
     def SetField(self):
-        """If selected, Set Field Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Field Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setField')
     @SetField.setter
@@ -192,10 +192,10 @@ class WriteActionsMiss(Base):
 
     @property
     def SetMplsTtl(self):
-        """If selected, Set MPLS TTL Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set MPLS TTL Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setMplsTtl')
     @SetMplsTtl.setter
@@ -204,10 +204,10 @@ class WriteActionsMiss(Base):
 
     @property
     def SetNetworkTtl(self):
-        """If selected, Set Network TTL Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Network TTL Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setNetworkTtl')
     @SetNetworkTtl.setter
@@ -216,10 +216,10 @@ class WriteActionsMiss(Base):
 
     @property
     def SetQueue(self):
-        """If selected, Set Queue Write Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Queue Write Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setQueue')
     @SetQueue.setter
@@ -227,27 +227,29 @@ class WriteActionsMiss(Base):
         self._set_attribute('setQueue', value)
 
     def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Updates a child instance of writeActionsMiss on the server.
+        """Updates writeActionsMiss resource on the server.
 
-        Args:
-            CopyTtlIn (bool): If selected, Copy TTL In Write Actions is supported for table miss flow entries.
-            CopyTtlOut (bool): If selected, Copy TTL Out Write Actions is supported for table miss flow entries.
-            DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Write Actions is supported for table miss flow entries.
-            DecrementNetworkTtl (bool): If selected, Decrement Network TTL Write Actions is supported for table miss flow entries.
-            Group (bool): If selected, Group Write Actions is supported for table miss flow entries.
-            Output (bool): If selected, Output Write Actions is supported for table miss flow entries.
-            PopMpls (bool): If selected, Pop MPLS Write Actions is supported for table miss flow entries.
-            PopPbb (bool): If selected, Pop PBB Write Actions is supported for table miss flow entries.
-            PopVlan (bool): If selected, Pop VLAN Write Actions is supported for table miss flow entries.
-            PushMpls (bool): If selected, Push MPLS Write Actions is supported for table miss flow entries.
-            PushPbb (bool): If selected, Push PBB Write Actions is supported for table miss flow entries.
-            PushVlan (bool): If selected, Push VLAN Write Actions is supported for table miss flow entries.
-            SetField (bool): If selected, Set Field Write Actions is supported for table miss flow entries.
-            SetMplsTtl (bool): If selected, Set MPLS TTL Write Actions is supported for table miss flow entries.
-            SetNetworkTtl (bool): If selected, Set Network TTL Write Actions is supported for table miss flow entries.
-            SetQueue (bool): If selected, Set Queue Write Actions is supported for table miss flow entries.
+        Args
+        ----
+        - CopyTtlIn (bool): If selected, Copy TTL In Write Actions is supported for table miss flow entries.
+        - CopyTtlOut (bool): If selected, Copy TTL Out Write Actions is supported for table miss flow entries.
+        - DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Write Actions is supported for table miss flow entries.
+        - DecrementNetworkTtl (bool): If selected, Decrement Network TTL Write Actions is supported for table miss flow entries.
+        - Group (bool): If selected, Group Write Actions is supported for table miss flow entries.
+        - Output (bool): If selected, Output Write Actions is supported for table miss flow entries.
+        - PopMpls (bool): If selected, Pop MPLS Write Actions is supported for table miss flow entries.
+        - PopPbb (bool): If selected, Pop PBB Write Actions is supported for table miss flow entries.
+        - PopVlan (bool): If selected, Pop VLAN Write Actions is supported for table miss flow entries.
+        - PushMpls (bool): If selected, Push MPLS Write Actions is supported for table miss flow entries.
+        - PushPbb (bool): If selected, Push PBB Write Actions is supported for table miss flow entries.
+        - PushVlan (bool): If selected, Push VLAN Write Actions is supported for table miss flow entries.
+        - SetField (bool): If selected, Set Field Write Actions is supported for table miss flow entries.
+        - SetMplsTtl (bool): If selected, Set MPLS TTL Write Actions is supported for table miss flow entries.
+        - SetNetworkTtl (bool): If selected, Set Network TTL Write Actions is supported for table miss flow entries.
+        - SetQueue (bool): If selected, Set Queue Write Actions is supported for table miss flow entries.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

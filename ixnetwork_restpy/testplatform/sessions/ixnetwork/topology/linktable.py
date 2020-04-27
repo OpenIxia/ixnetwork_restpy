@@ -36,10 +36,10 @@ class LinkTable(Base):
 
     @property
     def FromNodeIndex(self):
-        """from node index.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): from node index.
         """
         return self._get_attribute('fromNodeIndex')
     @FromNodeIndex.setter
@@ -48,10 +48,10 @@ class LinkTable(Base):
 
     @property
     def ToNodeIndex(self):
-        """to node index.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): to node index.
         """
         return self._get_attribute('toNodeIndex')
     @ToNodeIndex.setter
@@ -59,13 +59,15 @@ class LinkTable(Base):
         self._set_attribute('toNodeIndex', value)
 
     def update(self, FromNodeIndex=None, ToNodeIndex=None):
-        """Updates a child instance of linkTable on the server.
+        """Updates linkTable resource on the server.
 
-        Args:
-            FromNodeIndex (list(str)): from node index.
-            ToNodeIndex (list(str)): to node index.
+        Args
+        ----
+        - FromNodeIndex (list(str)): from node index.
+        - ToNodeIndex (list(str)): to node index.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,64 +36,68 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AfiValue(self):
-        """User Defined AFI value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('afiValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined AFI value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('afiValue'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DataValue(self):
-        """Hex Dump to be used in NLRI field of MP_REACH_NLRI of update packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dataValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hex Dump to be used in NLRI field of MP_REACH_NLRI of update packet
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dataValue'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def LengthOfData(self):
-        """Length (in Bytes) of NLRI corresponding to AFI,SAFI configured
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lengthOfData')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Length (in Bytes) of NLRI corresponding to AFI,SAFI configured
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lengthOfData'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -102,44 +106,50 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def SafiValue(self):
-        """User Defined SAFI value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('safiValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined SAFI value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('safiValue'))
 
     def update(self, Name=None):
-        """Updates a child instance of bgpCustomAfiSafiv6 on the server.
+        """Updates bgpCustomAfiSafiv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AfiValue=None, DataValue=None, LengthOfData=None, SafiValue=None):
         """Base class infrastructure that gets a list of bgpCustomAfiSafiv6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AfiValue (str): optional regex of afiValue
-            DataValue (str): optional regex of dataValue
-            LengthOfData (str): optional regex of lengthOfData
-            SafiValue (str): optional regex of safiValue
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AfiValue (str): optional regex of afiValue
+        - DataValue (str): optional regex of dataValue
+        - LengthOfData (str): optional regex of lengthOfData
+        - SafiValue (str): optional regex of safiValue
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

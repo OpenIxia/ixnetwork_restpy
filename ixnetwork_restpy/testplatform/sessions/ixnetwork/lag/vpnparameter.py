@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VpnParameter(Base):
     """VPN
-    The VpnParameter class encapsulates a list of vpnParameter resources that is be managed by the user.
+    The VpnParameter class encapsulates a list of vpnParameter resources that are managed by the user.
     A list of resources can be retrieved from the server using the VpnParameter.find() method.
-    The list can be managed by the user by using the VpnParameter.add() and VpnParameter.remove() methods.
+    The list can be managed by using the VpnParameter.add() and VpnParameter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,28 +38,29 @@ class VpnParameter(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def SiteId(self):
-        """VPN Site Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('siteId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VPN Site Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('siteId'))
 
     @property
     def UseVpnParameters(self):
-        """Flag to determine whether optional VPN parameters are provided.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to determine whether optional VPN parameters are provided.
         """
         return self._get_attribute('useVpnParameters')
     @UseVpnParameters.setter
@@ -67,72 +68,85 @@ class VpnParameter(Base):
         self._set_attribute('useVpnParameters', value)
 
     def update(self, UseVpnParameters=None):
-        """Updates a child instance of vpnParameter on the server.
+        """Updates vpnParameter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
+        Args
+        ----
+        - UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, UseVpnParameters=None):
-        """Adds a new vpnParameter node on the server and retrieves it in this instance.
+        """Adds a new vpnParameter resource on the server and adds it to the container.
 
-        Args:
-            UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
+        Args
+        ----
+        - UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
 
-        Returns:
-            self: This instance with all currently retrieved vpnParameter data using find and the newly added vpnParameter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vpnParameter resources using find and the newly added vpnParameter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vpnParameter data in this instance from server.
+        """Deletes all the contained vpnParameter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, UseVpnParameters=None):
-        """Finds and retrieves vpnParameter data from the server.
+        """Finds and retrieves vpnParameter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vpnParameter data from the server.
-        By default the find method takes no parameters and will retrieve all vpnParameter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vpnParameter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vpnParameter resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
 
-        Returns:
-            self: This instance with matching vpnParameter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vpnParameter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vpnParameter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vpnParameter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vpnParameter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -141,14 +155,17 @@ class VpnParameter(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            SiteId (str): optional regex of siteId
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - SiteId (str): optional regex of siteId
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

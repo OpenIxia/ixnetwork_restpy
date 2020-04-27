@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Hops(Base):
     """This object holds attributes for Trace Route Hops view.
-    The Hops class encapsulates a list of hops resources that is managed by the system.
+    The Hops class encapsulates a list of hops resources that are managed by the system.
     A list of resources can be retrieved from the server using the Hops.find() method.
     """
 
@@ -37,71 +37,78 @@ class Hops(Base):
 
     @property
     def ReturnCode(self):
-        """This signifies the return code to be specified in the trace route hop.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the return code to be specified in the trace route hop.
         """
         return self._get_attribute('returnCode')
 
     @property
     def ReturnSubCode(self):
-        """This signifies the return sub-code to be specified in the trace route hop.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the return sub-code to be specified in the trace route hop.
         """
         return self._get_attribute('returnSubCode')
 
     @property
     def SrcIp(self):
-        """This signifies the source IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the source IP address.
         """
         return self._get_attribute('srcIp')
 
     @property
     def Ttl(self):
-        """This signifies the MPLS time to live value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the MPLS time to live value.
         """
         return self._get_attribute('ttl')
 
     def find(self, ReturnCode=None, ReturnSubCode=None, SrcIp=None, Ttl=None):
-        """Finds and retrieves hops data from the server.
+        """Finds and retrieves hops resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve hops data from the server.
-        By default the find method takes no parameters and will retrieve all hops data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve hops resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all hops resources from the server.
 
-        Args:
-            ReturnCode (str): This signifies the return code to be specified in the trace route hop.
-            ReturnSubCode (number): This signifies the return sub-code to be specified in the trace route hop.
-            SrcIp (str): This signifies the source IP address.
-            Ttl (number): This signifies the MPLS time to live value.
+        Args
+        ----
+        - ReturnCode (str): This signifies the return code to be specified in the trace route hop.
+        - ReturnSubCode (number): This signifies the return sub-code to be specified in the trace route hop.
+        - SrcIp (str): This signifies the source IP address.
+        - Ttl (number): This signifies the MPLS time to live value.
 
-        Returns:
-            self: This instance with matching hops data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching hops resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of hops data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the hops data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the hops resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

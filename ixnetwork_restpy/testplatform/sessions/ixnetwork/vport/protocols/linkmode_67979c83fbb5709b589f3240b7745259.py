@@ -36,10 +36,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf100GbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf100GbFd')
     @Ofppf100GbFd.setter
@@ -48,10 +48,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf100MbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf100MbFd')
     @Ofppf100MbFd.setter
@@ -60,10 +60,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf100MbHd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf100MbHd')
     @Ofppf100MbHd.setter
@@ -72,10 +72,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf10GbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf10GbFd')
     @Ofppf10GbFd.setter
@@ -84,10 +84,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf10MbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf10MbFd')
     @Ofppf10MbFd.setter
@@ -96,10 +96,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf10MbHd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf10MbHd')
     @Ofppf10MbHd.setter
@@ -108,10 +108,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf1GbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf1GbFd')
     @Ofppf1GbFd.setter
@@ -120,10 +120,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf1GbHd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf1GbHd')
     @Ofppf1GbHd.setter
@@ -132,10 +132,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf1TbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf1TbFd')
     @Ofppf1TbFd.setter
@@ -144,10 +144,10 @@ class LinkMode(Base):
 
     @property
     def Ofppf40GbFd(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppf40GbFd')
     @Ofppf40GbFd.setter
@@ -156,10 +156,10 @@ class LinkMode(Base):
 
     @property
     def OfppfOther(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfOther')
     @OfppfOther.setter
@@ -167,22 +167,24 @@ class LinkMode(Base):
         self._set_attribute('ofppfOther', value)
 
     def update(self, Ofppf100GbFd=None, Ofppf100MbFd=None, Ofppf100MbHd=None, Ofppf10GbFd=None, Ofppf10MbFd=None, Ofppf10MbHd=None, Ofppf1GbFd=None, Ofppf1GbHd=None, Ofppf1TbFd=None, Ofppf40GbFd=None, OfppfOther=None):
-        """Updates a child instance of linkMode on the server.
+        """Updates linkMode resource on the server.
 
-        Args:
-            Ofppf100GbFd (bool): NOT DEFINED
-            Ofppf100MbFd (bool): NOT DEFINED
-            Ofppf100MbHd (bool): NOT DEFINED
-            Ofppf10GbFd (bool): NOT DEFINED
-            Ofppf10MbFd (bool): NOT DEFINED
-            Ofppf10MbHd (bool): NOT DEFINED
-            Ofppf1GbFd (bool): NOT DEFINED
-            Ofppf1GbHd (bool): NOT DEFINED
-            Ofppf1TbFd (bool): NOT DEFINED
-            Ofppf40GbFd (bool): NOT DEFINED
-            OfppfOther (bool): NOT DEFINED
+        Args
+        ----
+        - Ofppf100GbFd (bool): NOT DEFINED
+        - Ofppf100MbFd (bool): NOT DEFINED
+        - Ofppf100MbHd (bool): NOT DEFINED
+        - Ofppf10GbFd (bool): NOT DEFINED
+        - Ofppf10MbFd (bool): NOT DEFINED
+        - Ofppf10MbHd (bool): NOT DEFINED
+        - Ofppf1GbFd (bool): NOT DEFINED
+        - Ofppf1GbHd (bool): NOT DEFINED
+        - Ofppf1TbFd (bool): NOT DEFINED
+        - Ofppf40GbFd (bool): NOT DEFINED
+        - OfppfOther (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

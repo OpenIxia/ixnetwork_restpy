@@ -36,38 +36,38 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MobilePathEntriesS5S8Sgw(self):
-        """An instance of the MobilePathEntriesS5S8Sgw class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_871186fdc26ad5130add7dca1b1e2751.MobilePathEntriesS5S8Sgw): An instance of the MobilePathEntriesS5S8Sgw class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_871186fdc26ad5130add7dca1b1e2751.MobilePathEntriesS5S8Sgw)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_871186fdc26ad5130add7dca1b1e2751 import MobilePathEntriesS5S8Sgw
         return MobilePathEntriesS5S8Sgw(self)
 
     @property
     def TrafficProfileProxiesS5S8Sgw(self):
-        """An instance of the TrafficProfileProxiesS5S8Sgw class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_d8a5cac9d2fce78ffec005142081ffb1.TrafficProfileProxiesS5S8Sgw): An instance of the TrafficProfileProxiesS5S8Sgw class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_d8a5cac9d2fce78ffec005142081ffb1.TrafficProfileProxiesS5S8Sgw)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_d8a5cac9d2fce78ffec005142081ffb1 import TrafficProfileProxiesS5S8Sgw
         return TrafficProfileProxiesS5S8Sgw(self)
 
     @property
     def APNRestriction(self):
-        """Authorization to access another APN
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Authorization to access another APN
         """
         return self._get_attribute('aPNRestriction')
     @APNRestriction.setter
@@ -76,10 +76,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def Count(self):
-        """The total number of UEs to be created for this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of UEs to be created for this range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -88,10 +88,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def EnableLifetime(self):
-        """Enable UE lifetime control. The UE will disconnect after the specified time.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable UE lifetime control. The UE will disconnect after the specified time.
         """
         return self._get_attribute('enableLifetime')
     @EnableLifetime.setter
@@ -100,10 +100,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def EnableMobility(self):
-        """Perform a mobility test
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Perform a mobility test
         """
         return self._get_attribute('enableMobility')
     @EnableMobility.setter
@@ -112,10 +112,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def EnableSV(self):
-        """Use Software Version to generate IMEISV
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use Software Version to generate IMEISV
         """
         return self._get_attribute('enableSV')
     @EnableSV.setter
@@ -124,10 +124,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -136,10 +136,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def IMSI(self):
-        """International Mobile Subscriber Identity
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: International Mobile Subscriber Identity
         """
         return self._get_attribute('iMSI')
     @IMSI.setter
@@ -148,10 +148,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def IncrementBy(self):
-        """Increment by this amount
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment by this amount
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -160,10 +160,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def Lifetime(self):
-        """Amount of time (in seconds) to wait after attach procedure completes before scheduling forced detach.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Amount of time (in seconds) to wait after attach procedure completes before scheduling forced detach.
         """
         return self._get_attribute('lifetime')
     @Lifetime.setter
@@ -172,10 +172,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MEI(self):
-        """International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
         """
         return self._get_attribute('mEI')
     @MEI.setter
@@ -184,10 +184,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MSISDN(self):
-        """Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
         """
         return self._get_attribute('mSISDN')
     @MSISDN.setter
@@ -196,10 +196,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MaxDelayVariation(self):
-        """Randomize Start delay by max +/- X%
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomize Start delay by max +/- X%
         """
         return self._get_attribute('maxDelayVariation')
     @MaxDelayVariation.setter
@@ -208,10 +208,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MaxIntervalVariation(self):
-        """Randomize Mobility interval by max +/- X%
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomize Mobility interval by max +/- X%
         """
         return self._get_attribute('maxIntervalVariation')
     @MaxIntervalVariation.setter
@@ -220,10 +220,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def MobilityInterval(self):
-        """The total time (seconds) it will take the mobile to return to the starting node
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total time (seconds) it will take the mobile to return to the starting node
         """
         return self._get_attribute('mobilityInterval')
     @MobilityInterval.setter
@@ -232,10 +232,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -244,19 +244,19 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def ParentRange(self):
-        """Parent range
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=enbS5S8SecondaryRange)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange): Parent range
         """
         return self._get_attribute('parentRange')
     @ParentRange.setter
@@ -265,10 +265,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def SV(self):
-        """The software version number to be appended to the IMEI in order to generate IMEISV
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The software version number to be appended to the IMEI in order to generate IMEISV
         """
         return self._get_attribute('sV')
     @SV.setter
@@ -277,10 +277,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def SelectionMode(self):
-        """Indicates the origin of the APN in the message
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the origin of the APN in the message
         """
         return self._get_attribute('selectionMode')
     @SelectionMode.setter
@@ -289,10 +289,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def StartDelay(self):
-        """How many seconds to wait before starting to move the UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many seconds to wait before starting to move the UEs
         """
         return self._get_attribute('startDelay')
     @StartDelay.setter
@@ -301,10 +301,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def UpdateAmbrEnable(self):
-        """Update APN-AMBR for this UE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Update APN-AMBR for this UE
         """
         return self._get_attribute('updateAmbrEnable')
     @UpdateAmbrEnable.setter
@@ -313,10 +313,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def UpdateAmbrIncrement(self):
-        """Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
         """
         return self._get_attribute('updateAmbrIncrement')
     @UpdateAmbrIncrement.setter
@@ -325,10 +325,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def UpdateAmbrIterations(self):
-        """How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
         """
         return self._get_attribute('updateAmbrIterations')
     @UpdateAmbrIterations.setter
@@ -337,10 +337,10 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def UpdateAmbrTimeout(self):
-        """Time to wait (in seconds) since the session was created until sending the update
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait (in seconds) since the session was created until sending the update
         """
         return self._get_attribute('updateAmbrTimeout')
     @UpdateAmbrTimeout.setter
@@ -348,51 +348,54 @@ class EgtpUeS5S8Range(Base):
         self._set_attribute('updateAmbrTimeout', value)
 
     def update(self, APNRestriction=None, Count=None, EnableLifetime=None, EnableMobility=None, EnableSV=None, Enabled=None, IMSI=None, IncrementBy=None, Lifetime=None, MEI=None, MSISDN=None, MaxDelayVariation=None, MaxIntervalVariation=None, MobilityInterval=None, Name=None, ParentRange=None, SV=None, SelectionMode=None, StartDelay=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None):
-        """Updates a child instance of egtpUeS5S8Range on the server.
+        """Updates egtpUeS5S8Range resource on the server.
 
-        Args:
-            APNRestriction (number): Authorization to access another APN
-            Count (number): The total number of UEs to be created for this range.
-            EnableLifetime (bool): Enable UE lifetime control. The UE will disconnect after the specified time.
-            EnableMobility (bool): Perform a mobility test
-            EnableSV (bool): Use Software Version to generate IMEISV
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IMSI (str): International Mobile Subscriber Identity
-            IncrementBy (number): Increment by this amount
-            Lifetime (number): Amount of time (in seconds) to wait after attach procedure completes before scheduling forced detach.
-            MEI (str): International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
-            MSISDN (str): Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
-            MaxDelayVariation (number): Randomize Start delay by max +/- X%
-            MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
-            MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
-            Name (str): Name of range
-            ParentRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=enbS5S8SecondaryRange)): Parent range
-            SV (str): The software version number to be appended to the IMEI in order to generate IMEISV
-            SelectionMode (number): Indicates the origin of the APN in the message
-            StartDelay (number): How many seconds to wait before starting to move the UEs
-            UpdateAmbrEnable (bool): Update APN-AMBR for this UE
-            UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-            UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-            UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
+        Args
+        ----
+        - APNRestriction (number): Authorization to access another APN
+        - Count (number): The total number of UEs to be created for this range.
+        - EnableLifetime (bool): Enable UE lifetime control. The UE will disconnect after the specified time.
+        - EnableMobility (bool): Perform a mobility test
+        - EnableSV (bool): Use Software Version to generate IMEISV
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IMSI (str): International Mobile Subscriber Identity
+        - IncrementBy (number): Increment by this amount
+        - Lifetime (number): Amount of time (in seconds) to wait after attach procedure completes before scheduling forced detach.
+        - MEI (str): International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
+        - MSISDN (str): Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
+        - MaxDelayVariation (number): Randomize Start delay by max +/- X%
+        - MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
+        - MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
+        - Name (str): Name of range
+        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)): Parent range
+        - SV (str): The software version number to be appended to the IMEI in order to generate IMEISV
+        - SelectionMode (number): Indicates the origin of the APN in the message
+        - StartDelay (number): How many seconds to wait before starting to move the UEs
+        - UpdateAmbrEnable (bool): Update APN-AMBR for this UE
+        - UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
+        - UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
+        - UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -404,16 +407,15 @@ class EgtpUeS5S8Range(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -425,16 +427,15 @@ class EgtpUeS5S8Range(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

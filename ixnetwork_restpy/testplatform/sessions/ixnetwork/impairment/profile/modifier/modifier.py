@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Modifier(Base):
     """Modify a field in incoming packets before sending them.
-    The Modifier class encapsulates a list of modifier resources that is be managed by the user.
+    The Modifier class encapsulates a list of modifier resources that are managed by the user.
     A list of resources can be retrieved from the server using the Modifier.find() method.
-    The list can be managed by the user by using the Modifier.add() and Modifier.remove() methods.
+    The list can be managed by using the Modifier.add() and Modifier.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Modifier(Base):
 
     @property
     def ClusterSize(self):
-        """Number of packets to modify on each occurrence. Default: 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of packets to modify on each occurrence. Default: 1.
         """
         return self._get_attribute('clusterSize')
     @ClusterSize.setter
@@ -50,10 +50,10 @@ class Modifier(Base):
 
     @property
     def Enabled(self):
-        """If true, modify incoming packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, modify incoming packets.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class Modifier(Base):
 
     @property
     def L3MatchEtherType(self):
-        """EtherType value to match.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: EtherType value to match.
         """
         return self._get_attribute('l3MatchEtherType')
     @L3MatchEtherType.setter
@@ -74,10 +74,10 @@ class Modifier(Base):
 
     @property
     def L3MatchMode(self):
-        """For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
-
-        Returns:
-            str(matchAny|matchBottomMplsLabel|matchEtherType)
+        """
+        Returns
+        -------
+        - str(matchAny | matchBottomMplsLabel | matchEtherType): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
         """
         return self._get_attribute('l3MatchMode')
     @L3MatchMode.setter
@@ -86,10 +86,10 @@ class Modifier(Base):
 
     @property
     def L3MatchMplsLabel(self):
-        """MPLS label to match.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: MPLS label to match.
         """
         return self._get_attribute('l3MatchMplsLabel')
     @L3MatchMplsLabel.setter
@@ -98,10 +98,10 @@ class Modifier(Base):
 
     @property
     def L4MatchEncapsulation(self):
-        """For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
-
-        Returns:
-            str(matchIpv4|matchIpv4OrIpv6|matchIpv6)
+        """
+        Returns
+        -------
+        - str(matchIpv4 | matchIpv4OrIpv6 | matchIpv6): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
         """
         return self._get_attribute('l4MatchEncapsulation')
     @L4MatchEncapsulation.setter
@@ -110,10 +110,10 @@ class Modifier(Base):
 
     @property
     def L4MatchMode(self):
-        """For an L4 offset, specify whether to modify only packets with a specific protocol number.
-
-        Returns:
-            str(matchAny|matchProtocolNumber)
+        """
+        Returns
+        -------
+        - str(matchAny | matchProtocolNumber): For an L4 offset, specify whether to modify only packets with a specific protocol number.
         """
         return self._get_attribute('l4MatchMode')
     @L4MatchMode.setter
@@ -122,10 +122,10 @@ class Modifier(Base):
 
     @property
     def L4MatchProtocolNumber(self):
-        """Protocol number to match.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Protocol number to match.
         """
         return self._get_attribute('l4MatchProtocolNumber')
     @L4MatchProtocolNumber.setter
@@ -134,10 +134,10 @@ class Modifier(Base):
 
     @property
     def L5MatchEncapsulation(self):
-        """For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
-
-        Returns:
-            str(matchTcp|matchUdp)
+        """
+        Returns
+        -------
+        - str(matchTcp | matchUdp): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
         """
         return self._get_attribute('l5MatchEncapsulation')
     @L5MatchEncapsulation.setter
@@ -146,10 +146,10 @@ class Modifier(Base):
 
     @property
     def L5MatchMode(self):
-        """For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
-
-        Returns:
-            str(matchAny|matchDestinationPort|matchSourceOrDestinationPort|matchSourcePort)
+        """
+        Returns
+        -------
+        - str(matchAny | matchDestinationPort | matchSourceOrDestinationPort | matchSourcePort): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
         """
         return self._get_attribute('l5MatchMode')
     @L5MatchMode.setter
@@ -158,10 +158,10 @@ class Modifier(Base):
 
     @property
     def L5MatchPortNumber(self):
-        """Port number to match.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Port number to match.
         """
         return self._get_attribute('l5MatchPortNumber')
     @L5MatchPortNumber.setter
@@ -170,10 +170,10 @@ class Modifier(Base):
 
     @property
     def Mask(self):
-        """Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
         """
         return self._get_attribute('mask')
     @Mask.setter
@@ -182,10 +182,10 @@ class Modifier(Base):
 
     @property
     def MatchValue(self):
-        """Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
         """
         return self._get_attribute('matchValue')
     @MatchValue.setter
@@ -194,10 +194,10 @@ class Modifier(Base):
 
     @property
     def MatchValueEnabled(self):
-        """Only modify packets if the existing field value matches a specified value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Only modify packets if the existing field value matches a specified value.
         """
         return self._get_attribute('matchValueEnabled')
     @MatchValueEnabled.setter
@@ -206,10 +206,10 @@ class Modifier(Base):
 
     @property
     def Name(self):
-        """Name of the modifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the modifier.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -218,10 +218,10 @@ class Modifier(Base):
 
     @property
     def Offset(self):
-        """The position of the field to be modified, as an offset in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The position of the field to be modified, as an offset in bytes.
         """
         return self._get_attribute('offset')
     @Offset.setter
@@ -230,10 +230,10 @@ class Modifier(Base):
 
     @property
     def OffsetStart(self):
-        """Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
-
-        Returns:
-            str(l2Offset|l3Offset|l4Offset|l5Offset)
+        """
+        Returns
+        -------
+        - str(l2Offset | l3Offset | l4Offset | l5Offset): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
         """
         return self._get_attribute('offsetStart')
     @OffsetStart.setter
@@ -242,10 +242,10 @@ class Modifier(Base):
 
     @property
     def PercentRate(self):
-        """How often to modify matching packets. Default: 100%.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How often to modify matching packets. Default: 100%.
         """
         return self._get_attribute('percentRate')
     @PercentRate.setter
@@ -254,10 +254,10 @@ class Modifier(Base):
 
     @property
     def ReplaceFixedValue(self):
-        """Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
         """
         return self._get_attribute('replaceFixedValue')
     @ReplaceFixedValue.setter
@@ -266,10 +266,10 @@ class Modifier(Base):
 
     @property
     def ReplaceMode(self):
-        """Replace field with a fixed value or a range of values.
-
-        Returns:
-            str(fixedValue|range)
+        """
+        Returns
+        -------
+        - str(fixedValue | range): Replace field with a fixed value or a range of values.
         """
         return self._get_attribute('replaceMode')
     @ReplaceMode.setter
@@ -278,10 +278,10 @@ class Modifier(Base):
 
     @property
     def ReplaceRangeCount(self):
-        """Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
         """
         return self._get_attribute('replaceRangeCount')
     @ReplaceRangeCount.setter
@@ -290,10 +290,10 @@ class Modifier(Base):
 
     @property
     def ReplaceRangeDecrement(self):
-        """Decrement instead of incrementing. Default: false.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Decrement instead of incrementing. Default: false.
         """
         return self._get_attribute('replaceRangeDecrement')
     @ReplaceRangeDecrement.setter
@@ -302,10 +302,10 @@ class Modifier(Base):
 
     @property
     def ReplaceRangeFirst(self):
-        """Start of range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Start of range.
         """
         return self._get_attribute('replaceRangeFirst')
     @ReplaceRangeFirst.setter
@@ -314,10 +314,10 @@ class Modifier(Base):
 
     @property
     def ReplaceRangeStep(self):
-        """Step to be added or subtracted for each modified packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Step to be added or subtracted for each modified packet.
         """
         return self._get_attribute('replaceRangeStep')
     @ReplaceRangeStep.setter
@@ -325,136 +325,149 @@ class Modifier(Base):
         self._set_attribute('replaceRangeStep', value)
 
     def update(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
-        """Updates a child instance of modifier on the server.
+        """Updates modifier resource on the server.
 
-        Args:
-            ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
-            Enabled (bool): If true, modify incoming packets.
-            L3MatchEtherType (str): EtherType value to match.
-            L3MatchMode (str(matchAny|matchBottomMplsLabel|matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
-            L3MatchMplsLabel (number): MPLS label to match.
-            L4MatchEncapsulation (str(matchIpv4|matchIpv4OrIpv6|matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
-            L4MatchMode (str(matchAny|matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
-            L4MatchProtocolNumber (number): Protocol number to match.
-            L5MatchEncapsulation (str(matchTcp|matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
-            L5MatchMode (str(matchAny|matchDestinationPort|matchSourceOrDestinationPort|matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
-            L5MatchPortNumber (number): Port number to match.
-            Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
-            MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
-            Name (str): Name of the modifier.
-            Offset (number): The position of the field to be modified, as an offset in bytes.
-            OffsetStart (str(l2Offset|l3Offset|l4Offset|l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
-            PercentRate (number): How often to modify matching packets. Default: 100%.
-            ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            ReplaceMode (str(fixedValue|range)): Replace field with a fixed value or a range of values.
-            ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
-            ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
-            ReplaceRangeFirst (str): Start of range.
-            ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
+        - Enabled (bool): If true, modify incoming packets.
+        - L3MatchEtherType (str): EtherType value to match.
+        - L3MatchMode (str(matchAny | matchBottomMplsLabel | matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
+        - L3MatchMplsLabel (number): MPLS label to match.
+        - L4MatchEncapsulation (str(matchIpv4 | matchIpv4OrIpv6 | matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
+        - L4MatchMode (str(matchAny | matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
+        - L4MatchProtocolNumber (number): Protocol number to match.
+        - L5MatchEncapsulation (str(matchTcp | matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
+        - L5MatchMode (str(matchAny | matchDestinationPort | matchSourceOrDestinationPort | matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
+        - L5MatchPortNumber (number): Port number to match.
+        - Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
+        - MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
+        - Name (str): Name of the modifier.
+        - Offset (number): The position of the field to be modified, as an offset in bytes.
+        - OffsetStart (str(l2Offset | l3Offset | l4Offset | l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
+        - PercentRate (number): How often to modify matching packets. Default: 100%.
+        - ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - ReplaceMode (str(fixedValue | range)): Replace field with a fixed value or a range of values.
+        - ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
+        - ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
+        - ReplaceRangeFirst (str): Start of range.
+        - ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
-        """Adds a new modifier node on the server and retrieves it in this instance.
+        """Adds a new modifier resource on the server and adds it to the container.
 
-        Args:
-            ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
-            Enabled (bool): If true, modify incoming packets.
-            L3MatchEtherType (str): EtherType value to match.
-            L3MatchMode (str(matchAny|matchBottomMplsLabel|matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
-            L3MatchMplsLabel (number): MPLS label to match.
-            L4MatchEncapsulation (str(matchIpv4|matchIpv4OrIpv6|matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
-            L4MatchMode (str(matchAny|matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
-            L4MatchProtocolNumber (number): Protocol number to match.
-            L5MatchEncapsulation (str(matchTcp|matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
-            L5MatchMode (str(matchAny|matchDestinationPort|matchSourceOrDestinationPort|matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
-            L5MatchPortNumber (number): Port number to match.
-            Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
-            MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
-            Name (str): Name of the modifier.
-            Offset (number): The position of the field to be modified, as an offset in bytes.
-            OffsetStart (str(l2Offset|l3Offset|l4Offset|l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
-            PercentRate (number): How often to modify matching packets. Default: 100%.
-            ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            ReplaceMode (str(fixedValue|range)): Replace field with a fixed value or a range of values.
-            ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
-            ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
-            ReplaceRangeFirst (str): Start of range.
-            ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
+        - Enabled (bool): If true, modify incoming packets.
+        - L3MatchEtherType (str): EtherType value to match.
+        - L3MatchMode (str(matchAny | matchBottomMplsLabel | matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
+        - L3MatchMplsLabel (number): MPLS label to match.
+        - L4MatchEncapsulation (str(matchIpv4 | matchIpv4OrIpv6 | matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
+        - L4MatchMode (str(matchAny | matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
+        - L4MatchProtocolNumber (number): Protocol number to match.
+        - L5MatchEncapsulation (str(matchTcp | matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
+        - L5MatchMode (str(matchAny | matchDestinationPort | matchSourceOrDestinationPort | matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
+        - L5MatchPortNumber (number): Port number to match.
+        - Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
+        - MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
+        - Name (str): Name of the modifier.
+        - Offset (number): The position of the field to be modified, as an offset in bytes.
+        - OffsetStart (str(l2Offset | l3Offset | l4Offset | l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
+        - PercentRate (number): How often to modify matching packets. Default: 100%.
+        - ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - ReplaceMode (str(fixedValue | range)): Replace field with a fixed value or a range of values.
+        - ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
+        - ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
+        - ReplaceRangeFirst (str): Start of range.
+        - ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
 
-        Returns:
-            self: This instance with all currently retrieved modifier data using find and the newly added modifier data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved modifier resources using find and the newly added modifier resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the modifier data in this instance from server.
+        """Deletes all the contained modifier resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
-        """Finds and retrieves modifier data from the server.
+        """Finds and retrieves modifier resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve modifier data from the server.
-        By default the find method takes no parameters and will retrieve all modifier data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve modifier resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all modifier resources from the server.
 
-        Args:
-            ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
-            Enabled (bool): If true, modify incoming packets.
-            L3MatchEtherType (str): EtherType value to match.
-            L3MatchMode (str(matchAny|matchBottomMplsLabel|matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
-            L3MatchMplsLabel (number): MPLS label to match.
-            L4MatchEncapsulation (str(matchIpv4|matchIpv4OrIpv6|matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
-            L4MatchMode (str(matchAny|matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
-            L4MatchProtocolNumber (number): Protocol number to match.
-            L5MatchEncapsulation (str(matchTcp|matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
-            L5MatchMode (str(matchAny|matchDestinationPort|matchSourceOrDestinationPort|matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
-            L5MatchPortNumber (number): Port number to match.
-            Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
-            MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
-            Name (str): Name of the modifier.
-            Offset (number): The position of the field to be modified, as an offset in bytes.
-            OffsetStart (str(l2Offset|l3Offset|l4Offset|l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
-            PercentRate (number): How often to modify matching packets. Default: 100%.
-            ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
-            ReplaceMode (str(fixedValue|range)): Replace field with a fixed value or a range of values.
-            ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
-            ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
-            ReplaceRangeFirst (str): Start of range.
-            ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to modify on each occurrence. Default: 1.
+        - Enabled (bool): If true, modify incoming packets.
+        - L3MatchEtherType (str): EtherType value to match.
+        - L3MatchMode (str(matchAny | matchBottomMplsLabel | matchEtherType)): For an L3 offset, specify whether to modify only packets with a specific EtherType or bottom MPLS label.
+        - L3MatchMplsLabel (number): MPLS label to match.
+        - L4MatchEncapsulation (str(matchIpv4 | matchIpv4OrIpv6 | matchIpv6)): For an L4 offset, specify whether to modify IPv4 packets, IPv6 packets, or both.
+        - L4MatchMode (str(matchAny | matchProtocolNumber)): For an L4 offset, specify whether to modify only packets with a specific protocol number.
+        - L4MatchProtocolNumber (number): Protocol number to match.
+        - L5MatchEncapsulation (str(matchTcp | matchUdp)): For an L5 offset, specify whether to modify TCP packets only or UDP packets only.
+        - L5MatchMode (str(matchAny | matchDestinationPort | matchSourceOrDestinationPort | matchSourcePort)): For an L5 offset, specify whether to modify only packets with a specific source or destination port number.
+        - L5MatchPortNumber (number): Port number to match.
+        - Mask (str): Mask identifying the bits of the field to be modified, as a hex string with prefix 0x (e.g. 0xFF FF). The bits of the mask must be contiguous.
+        - MatchValue (str): Value to be matched. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - MatchValueEnabled (bool): Only modify packets if the existing field value matches a specified value.
+        - Name (str): Name of the modifier.
+        - Offset (number): The position of the field to be modified, as an offset in bytes.
+        - OffsetStart (str(l2Offset | l3Offset | l4Offset | l5Offset)): Define the position of the field to be modified, as an offset from a specified position. Default is from the start of the L2 header.
+        - PercentRate (number): How often to modify matching packets. Default: 100%.
+        - ReplaceFixedValue (str): Fixed replacement value. Format: MAC address, IPv4 address, IPv6 address, decimal value, binary string with prefix 0b (e.g. 0b0100), or a hex string with prefix 0x (e.g. 0xFF FF).
+        - ReplaceMode (str(fixedValue | range)): Replace field with a fixed value or a range of values.
+        - ReplaceRangeCount (str): Number of values in range. Can be any value up to ceiling(2^width / step), where width is the width of the field mask.
+        - ReplaceRangeDecrement (bool): Decrement instead of incrementing. Default: false.
+        - ReplaceRangeFirst (str): Start of range.
+        - ReplaceRangeStep (str): Step to be added or subtracted for each modified packet.
 
-        Returns:
-            self: This instance with matching modifier data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching modifier resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of modifier data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the modifier data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the modifier resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

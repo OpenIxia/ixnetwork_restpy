@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Router(Base):
     """A container used to hold the list of route ranges associated with the simulated router.
-    The Router class encapsulates a list of router resources that is be managed by the user.
+    The Router class encapsulates a list of router resources that are managed by the user.
     A list of resources can be retrieved from the server using the Router.find() method.
-    The list can be managed by the user by using the Router.add() and Router.remove() methods.
+    The list can be managed by using the Router.add() and Router.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Router(Base):
 
     @property
     def RouteRange(self):
-        """An instance of the RouteRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_fe345ad8452ea6211ada0ca59e48820c.RouteRange): An instance of the RouteRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_fe345ad8452ea6211ada0ca59e48820c.RouteRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_fe345ad8452ea6211ada0ca59e48820c import RouteRange
         return RouteRange(self)
 
     @property
     def AuthorizationPassword(self):
-        """If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
         """
         return self._get_attribute('authorizationPassword')
     @AuthorizationPassword.setter
@@ -64,10 +64,10 @@ class Router(Base):
 
     @property
     def EnableAuthorization(self):
-        """Indicates whether authorization is included in update messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether authorization is included in update messages.
         """
         return self._get_attribute('enableAuthorization')
     @EnableAuthorization.setter
@@ -76,10 +76,10 @@ class Router(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the simulated router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the simulated router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,10 +88,10 @@ class Router(Base):
 
     @property
     def InterfaceId(self):
-        """The ID associated with the simulated interface.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The ID associated with the simulated interface.
         """
         return self._get_attribute('interfaceId')
     @InterfaceId.setter
@@ -100,10 +100,10 @@ class Router(Base):
 
     @property
     def ReceiveType(self):
-        """Filters the RIP version of messages this router will receive.
-
-        Returns:
-            str(receiveVersion1|receiveVersion2|receiveVersion1And2)
+        """
+        Returns
+        -------
+        - str(receiveVersion1 | receiveVersion2 | receiveVersion1And2): Filters the RIP version of messages this router will receive.
         """
         return self._get_attribute('receiveType')
     @ReceiveType.setter
@@ -112,10 +112,10 @@ class Router(Base):
 
     @property
     def ResponseMode(self):
-        """Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
-
-        Returns:
-            str(default|splitHorizon|poisonReverse|splitHorizonSpaceSaver|silent)
+        """
+        Returns
+        -------
+        - str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
         """
         return self._get_attribute('responseMode')
     @ResponseMode.setter
@@ -124,10 +124,10 @@ class Router(Base):
 
     @property
     def SendType(self):
-        """The method for sending RIP packets.
-
-        Returns:
-            str(multicast|broadcastV1|broadcastV2)
+        """
+        Returns
+        -------
+        - str(multicast | broadcastV1 | broadcastV2): The method for sending RIP packets.
         """
         return self._get_attribute('sendType')
     @SendType.setter
@@ -136,10 +136,10 @@ class Router(Base):
 
     @property
     def TrafficGroupId(self):
-        """The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -148,10 +148,10 @@ class Router(Base):
 
     @property
     def UpdateInterval(self):
-        """The time, in seconds, between transmitted update messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time, in seconds, between transmitted update messages.
         """
         return self._get_attribute('updateInterval')
     @UpdateInterval.setter
@@ -160,10 +160,10 @@ class Router(Base):
 
     @property
     def UpdateIntervalOffset(self):
-        """A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
         """
         return self._get_attribute('updateIntervalOffset')
     @UpdateIntervalOffset.setter
@@ -171,94 +171,107 @@ class Router(Base):
         self._set_attribute('updateIntervalOffset', value)
 
     def update(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
-        """Updates a child instance of router on the server.
+        """Updates router resource on the server.
 
-        Args:
-            AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
-            EnableAuthorization (bool): Indicates whether authorization is included in update messages.
-            Enabled (bool): Enables or disables the simulated router.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The ID associated with the simulated interface.
-            ReceiveType (str(receiveVersion1|receiveVersion2|receiveVersion1And2)): Filters the RIP version of messages this router will receive.
-            ResponseMode (str(default|splitHorizon|poisonReverse|splitHorizonSpaceSaver|silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
-            SendType (str(multicast|broadcastV1|broadcastV2)): The method for sending RIP packets.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            UpdateInterval (number): The time, in seconds, between transmitted update messages.
-            UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
+        Args
+        ----
+        - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
+        - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
+        - Enabled (bool): Enables or disables the simulated router.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
+        - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
+        - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - UpdateInterval (number): The time, in seconds, between transmitted update messages.
+        - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
-        """Adds a new router node on the server and retrieves it in this instance.
+        """Adds a new router resource on the server and adds it to the container.
 
-        Args:
-            AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
-            EnableAuthorization (bool): Indicates whether authorization is included in update messages.
-            Enabled (bool): Enables or disables the simulated router.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The ID associated with the simulated interface.
-            ReceiveType (str(receiveVersion1|receiveVersion2|receiveVersion1And2)): Filters the RIP version of messages this router will receive.
-            ResponseMode (str(default|splitHorizon|poisonReverse|splitHorizonSpaceSaver|silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
-            SendType (str(multicast|broadcastV1|broadcastV2)): The method for sending RIP packets.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            UpdateInterval (number): The time, in seconds, between transmitted update messages.
-            UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
+        Args
+        ----
+        - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
+        - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
+        - Enabled (bool): Enables or disables the simulated router.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
+        - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
+        - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - UpdateInterval (number): The time, in seconds, between transmitted update messages.
+        - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 
-        Returns:
-            self: This instance with all currently retrieved router data using find and the newly added router data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved router resources using find and the newly added router resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the router data in this instance from server.
+        """Deletes all the contained router resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
-        """Finds and retrieves router data from the server.
+        """Finds and retrieves router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve router data from the server.
-        By default the find method takes no parameters and will retrieve all router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all router resources from the server.
 
-        Args:
-            AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
-            EnableAuthorization (bool): Indicates whether authorization is included in update messages.
-            Enabled (bool): Enables or disables the simulated router.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The ID associated with the simulated interface.
-            ReceiveType (str(receiveVersion1|receiveVersion2|receiveVersion1And2)): Filters the RIP version of messages this router will receive.
-            ResponseMode (str(default|splitHorizon|poisonReverse|splitHorizonSpaceSaver|silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
-            SendType (str(multicast|broadcastV1|broadcastV2)): The method for sending RIP packets.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-            UpdateInterval (number): The time, in seconds, between transmitted update messages.
-            UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
+        Args
+        ----
+        - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
+        - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
+        - Enabled (bool): Enables or disables the simulated router.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
+        - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
+        - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - UpdateInterval (number): The time, in seconds, between transmitted update messages.
+        - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 
-        Returns:
-            self: This instance with matching router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

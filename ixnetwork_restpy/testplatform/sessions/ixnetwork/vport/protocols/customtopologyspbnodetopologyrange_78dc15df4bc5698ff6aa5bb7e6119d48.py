@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologySpbNodeTopologyRange(Base):
     """NOT DEFINED
-    The CustomTopologySpbNodeTopologyRange class encapsulates a list of customTopologySpbNodeTopologyRange resources that is be managed by the user.
+    The CustomTopologySpbNodeTopologyRange class encapsulates a list of customTopologySpbNodeTopologyRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologySpbNodeTopologyRange.find() method.
-    The list can be managed by the user by using the CustomTopologySpbNodeTopologyRange.add() and CustomTopologySpbNodeTopologyRange.remove() methods.
+    The list can be managed by using the CustomTopologySpbNodeTopologyRange.add() and CustomTopologySpbNodeTopologyRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class CustomTopologySpbNodeTopologyRange(Base):
 
     @property
     def CustomTopologySpbNodeBaseVidRange(self):
-        """An instance of the CustomTopologySpbNodeBaseVidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodebasevidrange_60c0a73ff48528fb2f301519c2446bb6.CustomTopologySpbNodeBaseVidRange): An instance of the CustomTopologySpbNodeBaseVidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodebasevidrange_60c0a73ff48528fb2f301519c2446bb6.CustomTopologySpbNodeBaseVidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodebasevidrange_60c0a73ff48528fb2f301519c2446bb6 import CustomTopologySpbNodeBaseVidRange
         return CustomTopologySpbNodeBaseVidRange(self)
 
     @property
     def CistExternalRootCost(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('cistExternalRootCost')
     @CistExternalRootCost.setter
@@ -64,10 +64,10 @@ class CustomTopologySpbNodeTopologyRange(Base):
 
     @property
     def CistRootIdentifier(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('cistRootIdentifier')
     @CistRootIdentifier.setter
@@ -76,10 +76,10 @@ class CustomTopologySpbNodeTopologyRange(Base):
 
     @property
     def EnableVbit(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableVbit')
     @EnableVbit.setter
@@ -88,10 +88,10 @@ class CustomTopologySpbNodeTopologyRange(Base):
 
     @property
     def NoOfPorts(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('noOfPorts')
     @NoOfPorts.setter
@@ -100,10 +100,10 @@ class CustomTopologySpbNodeTopologyRange(Base):
 
     @property
     def PortIdentifier(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('portIdentifier')
     @PortIdentifier.setter
@@ -111,79 +111,92 @@ class CustomTopologySpbNodeTopologyRange(Base):
         self._set_attribute('portIdentifier', value)
 
     def update(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
-        """Updates a child instance of customTopologySpbNodeTopologyRange on the server.
+        """Updates customTopologySpbNodeTopologyRange resource on the server.
 
-        Args:
-            CistExternalRootCost (number): NOT DEFINED
-            CistRootIdentifier (str): NOT DEFINED
-            EnableVbit (bool): NOT DEFINED
-            NoOfPorts (number): NOT DEFINED
-            PortIdentifier (number): NOT DEFINED
+        Args
+        ----
+        - CistExternalRootCost (number): NOT DEFINED
+        - CistRootIdentifier (str): NOT DEFINED
+        - EnableVbit (bool): NOT DEFINED
+        - NoOfPorts (number): NOT DEFINED
+        - PortIdentifier (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
-        """Adds a new customTopologySpbNodeTopologyRange node on the server and retrieves it in this instance.
+        """Adds a new customTopologySpbNodeTopologyRange resource on the server and adds it to the container.
 
-        Args:
-            CistExternalRootCost (number): NOT DEFINED
-            CistRootIdentifier (str): NOT DEFINED
-            EnableVbit (bool): NOT DEFINED
-            NoOfPorts (number): NOT DEFINED
-            PortIdentifier (number): NOT DEFINED
+        Args
+        ----
+        - CistExternalRootCost (number): NOT DEFINED
+        - CistRootIdentifier (str): NOT DEFINED
+        - EnableVbit (bool): NOT DEFINED
+        - NoOfPorts (number): NOT DEFINED
+        - PortIdentifier (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologySpbNodeTopologyRange data using find and the newly added customTopologySpbNodeTopologyRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologySpbNodeTopologyRange resources using find and the newly added customTopologySpbNodeTopologyRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologySpbNodeTopologyRange data in this instance from server.
+        """Deletes all the contained customTopologySpbNodeTopologyRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
-        """Finds and retrieves customTopologySpbNodeTopologyRange data from the server.
+        """Finds and retrieves customTopologySpbNodeTopologyRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologySpbNodeTopologyRange data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologySpbNodeTopologyRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologySpbNodeTopologyRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologySpbNodeTopologyRange resources from the server.
 
-        Args:
-            CistExternalRootCost (number): NOT DEFINED
-            CistRootIdentifier (str): NOT DEFINED
-            EnableVbit (bool): NOT DEFINED
-            NoOfPorts (number): NOT DEFINED
-            PortIdentifier (number): NOT DEFINED
+        Args
+        ----
+        - CistExternalRootCost (number): NOT DEFINED
+        - CistRootIdentifier (str): NOT DEFINED
+        - EnableVbit (bool): NOT DEFINED
+        - NoOfPorts (number): NOT DEFINED
+        - PortIdentifier (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologySpbNodeTopologyRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologySpbNodeTopologyRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologySpbNodeTopologyRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologySpbNodeTopologyRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologySpbNodeTopologyRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

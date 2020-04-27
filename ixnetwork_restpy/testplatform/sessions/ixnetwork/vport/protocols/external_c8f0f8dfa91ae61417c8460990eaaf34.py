@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class External(Base):
     """
-    The External class encapsulates a list of external resources that is managed by the system.
+    The External class encapsulates a list of external resources that are managed by the system.
     A list of resources can be retrieved from the server using the External.find() method.
     """
 
@@ -38,9 +38,9 @@ class External(Base):
     @property
     def EBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('eBit')
     @EBit.setter
@@ -50,9 +50,9 @@ class External(Base):
     @property
     def ForwardingAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('forwardingAddress')
     @ForwardingAddress.setter
@@ -62,9 +62,9 @@ class External(Base):
     @property
     def IncrementLinkStateIdBy(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrementLinkStateIdBy')
     @IncrementLinkStateIdBy.setter
@@ -74,9 +74,9 @@ class External(Base):
     @property
     def Metric(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('metric')
     @Metric.setter
@@ -86,9 +86,9 @@ class External(Base):
     @property
     def NetworkMask(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('networkMask')
     @NetworkMask.setter
@@ -98,9 +98,9 @@ class External(Base):
     @property
     def NumberOfLsa(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('numberOfLsa')
     @NumberOfLsa.setter
@@ -110,9 +110,9 @@ class External(Base):
     @property
     def RouteTag(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('routeTag')
     @RouteTag.setter
@@ -120,56 +120,65 @@ class External(Base):
         self._set_attribute('routeTag', value)
 
     def update(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
-        """Updates a child instance of external on the server.
+        """Updates external resource on the server.
 
-        Args:
-            EBit (bool): 
-            ForwardingAddress (str): 
-            IncrementLinkStateIdBy (str): 
-            Metric (number): 
-            NetworkMask (str): 
-            NumberOfLsa (number): 
-            RouteTag (str): 
+        Args
+        ----
+        - EBit (bool): 
+        - ForwardingAddress (str): 
+        - IncrementLinkStateIdBy (str): 
+        - Metric (number): 
+        - NetworkMask (str): 
+        - NumberOfLsa (number): 
+        - RouteTag (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
-        """Finds and retrieves external data from the server.
+        """Finds and retrieves external resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve external data from the server.
-        By default the find method takes no parameters and will retrieve all external data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve external resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all external resources from the server.
 
-        Args:
-            EBit (bool): 
-            ForwardingAddress (str): 
-            IncrementLinkStateIdBy (str): 
-            Metric (number): 
-            NetworkMask (str): 
-            NumberOfLsa (number): 
-            RouteTag (str): 
+        Args
+        ----
+        - EBit (bool): 
+        - ForwardingAddress (str): 
+        - IncrementLinkStateIdBy (str): 
+        - Metric (number): 
+        - NetworkMask (str): 
+        - NumberOfLsa (number): 
+        - RouteTag (str): 
 
-        Returns:
-            self: This instance with matching external data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching external resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of external data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the external data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the external resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

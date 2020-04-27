@@ -36,10 +36,10 @@ class Interfaces(Base):
 
     @property
     def ArpOnLinkup(self):
-        """If true, automatically enables ARP and PING when the interfaces is associated with a port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, automatically enables ARP and PING when the interfaces is associated with a port.
         """
         return self._get_attribute('arpOnLinkup')
     @ArpOnLinkup.setter
@@ -48,10 +48,10 @@ class Interfaces(Base):
 
     @property
     def NsOnLinkup(self):
-        """If true, automatically enables NS when the interfaces is associated with a port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, automatically enables NS when the interfaces is associated with a port.
         """
         return self._get_attribute('nsOnLinkup')
     @NsOnLinkup.setter
@@ -60,10 +60,10 @@ class Interfaces(Base):
 
     @property
     def SendSingleArpPerGateway(self):
-        """If true, only a single ARP is sent via each defined gateway address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, only a single ARP is sent via each defined gateway address.
         """
         return self._get_attribute('sendSingleArpPerGateway')
     @SendSingleArpPerGateway.setter
@@ -72,10 +72,10 @@ class Interfaces(Base):
 
     @property
     def SendSingleNsPerGateway(self):
-        """If true, only a single NS is sent via each defined gateway address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, only a single NS is sent via each defined gateway address.
         """
         return self._get_attribute('sendSingleNsPerGateway')
     @SendSingleNsPerGateway.setter
@@ -83,15 +83,17 @@ class Interfaces(Base):
         self._set_attribute('sendSingleNsPerGateway', value)
 
     def update(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
-        """Updates a child instance of interfaces on the server.
+        """Updates interfaces resource on the server.
 
-        Args:
-            ArpOnLinkup (bool): If true, automatically enables ARP and PING when the interfaces is associated with a port.
-            NsOnLinkup (bool): If true, automatically enables NS when the interfaces is associated with a port.
-            SendSingleArpPerGateway (bool): If true, only a single ARP is sent via each defined gateway address.
-            SendSingleNsPerGateway (bool): If true, only a single NS is sent via each defined gateway address.
+        Args
+        ----
+        - ArpOnLinkup (bool): If true, automatically enables ARP and PING when the interfaces is associated with a port.
+        - NsOnLinkup (bool): If true, automatically enables NS when the interfaces is associated with a port.
+        - SendSingleArpPerGateway (bool): If true, only a single ARP is sent via each defined gateway address.
+        - SendSingleNsPerGateway (bool): If true, only a single NS is sent via each defined gateway address.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

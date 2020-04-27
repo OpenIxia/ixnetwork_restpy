@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DhcpOptionTlv(Base):
     """A single DHCP option.
-    The DhcpOptionTlv class encapsulates a list of dhcpOptionTlv resources that is be managed by the user.
+    The DhcpOptionTlv class encapsulates a list of dhcpOptionTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the DhcpOptionTlv.find() method.
-    The list can be managed by the user by using the DhcpOptionTlv.add() and DhcpOptionTlv.remove() methods.
+    The list can be managed by using the DhcpOptionTlv.add() and DhcpOptionTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DhcpOptionTlv(Base):
 
     @property
     def Code(self):
-        """Option code.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Option code.
         """
         return self._get_attribute('code')
     @Code.setter
@@ -50,10 +50,10 @@ class DhcpOptionTlv(Base):
 
     @property
     def Name(self):
-        """Option name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -62,19 +62,19 @@ class DhcpOptionTlv(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Rfc(self):
-        """True if defined in RFC documents.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: True if defined in RFC documents.
         """
         return self._get_attribute('rfc')
     @Rfc.setter
@@ -83,10 +83,10 @@ class DhcpOptionTlv(Base):
 
     @property
     def Type(self):
-        """Option value type.
-
-        Returns:
-            str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)
+        """
+        Returns
+        -------
+        - str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength): Option value type.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -95,10 +95,10 @@ class DhcpOptionTlv(Base):
 
     @property
     def Value(self):
-        """Option value represented as string.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option value represented as string.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -106,80 +106,93 @@ class DhcpOptionTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
-        """Updates a child instance of dhcpOptionTlv on the server.
+        """Updates dhcpOptionTlv resource on the server.
 
-        Args:
-            Code (number): Option code.
-            Name (str): Option name.
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Name (str): Option name.
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
-        """Adds a new dhcpOptionTlv node on the server and retrieves it in this instance.
+        """Adds a new dhcpOptionTlv resource on the server and adds it to the container.
 
-        Args:
-            Code (number): Option code.
-            Name (str): Option name.
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Name (str): Option name.
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpOptionTlv data using find and the newly added dhcpOptionTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpOptionTlv resources using find and the newly added dhcpOptionTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpOptionTlv data in this instance from server.
+        """Deletes all the contained dhcpOptionTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Code=None, Name=None, ObjectId=None, Rfc=None, Type=None, Value=None):
-        """Finds and retrieves dhcpOptionTlv data from the server.
+        """Finds and retrieves dhcpOptionTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpOptionTlv data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpOptionTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpOptionTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpOptionTlv resources from the server.
 
-        Args:
-            Code (number): Option code.
-            Name (str): Option name.
-            ObjectId (str): Unique identifier for this object
-            Rfc (bool): True if defined in RFC documents.
-            Type (str(boolean|domainName|hexadecimal|integer16|integer16List|integer32|integer32List|integer8|integer8List|ipv4Address|ipv4AddressList|ipv4Prefix|ipv6Address|ipv6AddressList|ipv6Prefix|string|zeroLength)): Option value type.
-            Value (str): Option value represented as string.
+        Args
+        ----
+        - Code (number): Option code.
+        - Name (str): Option name.
+        - ObjectId (str): Unique identifier for this object
+        - Rfc (bool): True if defined in RFC documents.
+        - Type (str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength)): Option value type.
+        - Value (str): Option value represented as string.
 
-        Returns:
-            self: This instance with matching dhcpOptionTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpOptionTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpOptionTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpOptionTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpOptionTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

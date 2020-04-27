@@ -36,38 +36,38 @@ class Stp(Base):
 
     @property
     def Bridge(self):
-        """An instance of the Bridge class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_533d557d2921bcc4dd6f66f6a8b8182a.Bridge): An instance of the Bridge class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_533d557d2921bcc4dd6f66f6a8b8182a.Bridge)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_533d557d2921bcc4dd6f66f6a8b8182a import Bridge
         return Bridge(self)
 
     @property
     def Lan(self):
-        """An instance of the Lan class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_9e659dabb5c20b22becaaf3de1a62277.Lan): An instance of the Lan class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_9e659dabb5c20b22becaaf3de1a62277.Lan)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_9e659dabb5c20b22becaaf3de1a62277 import Lan
         return Lan(self)
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -76,32 +76,35 @@ class Stp(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the STP server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the STP server.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None):
-        """Updates a child instance of stp on the server.
+        """Updates stp resource on the server.
 
-        Args:
-            Enabled (bool): Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
+        Args
+        ----
+        - Enabled (bool): Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts STP on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -111,9 +114,10 @@ class Stp(Base):
 
         Stops STP on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

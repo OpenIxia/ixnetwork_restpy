@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceNodeTopologyRange(Base):
     """Sets the DCE Node Topology of a particular DCE ISIS Topology Range.
-    The DceNodeTopologyRange class encapsulates a list of dceNodeTopologyRange resources that is be managed by the user.
+    The DceNodeTopologyRange class encapsulates a list of dceNodeTopologyRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceNodeTopologyRange.find() method.
-    The list can be managed by the user by using the DceNodeTopologyRange.add() and DceNodeTopologyRange.remove() methods.
+    The list can be managed by using the DceNodeTopologyRange.add() and DceNodeTopologyRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class DceNodeTopologyRange(Base):
 
     @property
     def DceNodeInterestedVlanRange(self):
-        """An instance of the DceNodeInterestedVlanRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_ccc130cf7873f28872578c6035d2617d.DceNodeInterestedVlanRange): An instance of the DceNodeInterestedVlanRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_ccc130cf7873f28872578c6035d2617d.DceNodeInterestedVlanRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_ccc130cf7873f28872578c6035d2617d import DceNodeInterestedVlanRange
         return DceNodeInterestedVlanRange(self)
 
     @property
     def BroadcastPriority(self):
-        """Sets the priority in which the topology is broadcast.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the priority in which the topology is broadcast.
         """
         return self._get_attribute('broadcastPriority')
     @BroadcastPriority.setter
@@ -64,10 +64,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def IncludeL2Topology(self):
-        """If true, includes the L2 topology.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, includes the L2 topology.
         """
         return self._get_attribute('includeL2Topology')
     @IncludeL2Topology.setter
@@ -76,10 +76,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def InternodeNicknameIncrement(self):
-        """The increment step to be used for creating the internode increment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step to be used for creating the internode increment.
         """
         return self._get_attribute('internodeNicknameIncrement')
     @InternodeNicknameIncrement.setter
@@ -88,10 +88,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def NicknameCount(self):
-        """The count of the nickname.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of the nickname.
         """
         return self._get_attribute('nicknameCount')
     @NicknameCount.setter
@@ -100,10 +100,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def NoOfTreesToCompute(self):
-        """The number of trees to compute.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of trees to compute.
         """
         return self._get_attribute('noOfTreesToCompute')
     @NoOfTreesToCompute.setter
@@ -112,10 +112,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def StartNickname(self):
-        """If true, uses the nickname.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, uses the nickname.
         """
         return self._get_attribute('startNickname')
     @StartNickname.setter
@@ -124,10 +124,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def TopologyCount(self):
-        """The count of the topology.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of the topology.
         """
         return self._get_attribute('topologyCount')
     @TopologyCount.setter
@@ -136,10 +136,10 @@ class DceNodeTopologyRange(Base):
 
     @property
     def TopologyId(self):
-        """The unique identification number of the topology range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identification number of the topology range.
         """
         return self._get_attribute('topologyId')
     @TopologyId.setter
@@ -147,88 +147,101 @@ class DceNodeTopologyRange(Base):
         self._set_attribute('topologyId', value)
 
     def update(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
-        """Updates a child instance of dceNodeTopologyRange on the server.
+        """Updates dceNodeTopologyRange resource on the server.
 
-        Args:
-            BroadcastPriority (number): Sets the priority in which the topology is broadcast.
-            IncludeL2Topology (bool): If true, includes the L2 topology.
-            InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
-            NicknameCount (number): The count of the nickname.
-            NoOfTreesToCompute (number): The number of trees to compute.
-            StartNickname (number): If true, uses the nickname.
-            TopologyCount (number): The count of the topology.
-            TopologyId (number): The unique identification number of the topology range.
+        Args
+        ----
+        - BroadcastPriority (number): Sets the priority in which the topology is broadcast.
+        - IncludeL2Topology (bool): If true, includes the L2 topology.
+        - InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
+        - NicknameCount (number): The count of the nickname.
+        - NoOfTreesToCompute (number): The number of trees to compute.
+        - StartNickname (number): If true, uses the nickname.
+        - TopologyCount (number): The count of the topology.
+        - TopologyId (number): The unique identification number of the topology range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
-        """Adds a new dceNodeTopologyRange node on the server and retrieves it in this instance.
+        """Adds a new dceNodeTopologyRange resource on the server and adds it to the container.
 
-        Args:
-            BroadcastPriority (number): Sets the priority in which the topology is broadcast.
-            IncludeL2Topology (bool): If true, includes the L2 topology.
-            InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
-            NicknameCount (number): The count of the nickname.
-            NoOfTreesToCompute (number): The number of trees to compute.
-            StartNickname (number): If true, uses the nickname.
-            TopologyCount (number): The count of the topology.
-            TopologyId (number): The unique identification number of the topology range.
+        Args
+        ----
+        - BroadcastPriority (number): Sets the priority in which the topology is broadcast.
+        - IncludeL2Topology (bool): If true, includes the L2 topology.
+        - InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
+        - NicknameCount (number): The count of the nickname.
+        - NoOfTreesToCompute (number): The number of trees to compute.
+        - StartNickname (number): If true, uses the nickname.
+        - TopologyCount (number): The count of the topology.
+        - TopologyId (number): The unique identification number of the topology range.
 
-        Returns:
-            self: This instance with all currently retrieved dceNodeTopologyRange data using find and the newly added dceNodeTopologyRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceNodeTopologyRange resources using find and the newly added dceNodeTopologyRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceNodeTopologyRange data in this instance from server.
+        """Deletes all the contained dceNodeTopologyRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
-        """Finds and retrieves dceNodeTopologyRange data from the server.
+        """Finds and retrieves dceNodeTopologyRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceNodeTopologyRange data from the server.
-        By default the find method takes no parameters and will retrieve all dceNodeTopologyRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceNodeTopologyRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceNodeTopologyRange resources from the server.
 
-        Args:
-            BroadcastPriority (number): Sets the priority in which the topology is broadcast.
-            IncludeL2Topology (bool): If true, includes the L2 topology.
-            InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
-            NicknameCount (number): The count of the nickname.
-            NoOfTreesToCompute (number): The number of trees to compute.
-            StartNickname (number): If true, uses the nickname.
-            TopologyCount (number): The count of the topology.
-            TopologyId (number): The unique identification number of the topology range.
+        Args
+        ----
+        - BroadcastPriority (number): Sets the priority in which the topology is broadcast.
+        - IncludeL2Topology (bool): If true, includes the L2 topology.
+        - InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
+        - NicknameCount (number): The count of the nickname.
+        - NoOfTreesToCompute (number): The number of trees to compute.
+        - StartNickname (number): If true, uses the nickname.
+        - TopologyCount (number): The count of the topology.
+        - TopologyId (number): The unique identification number of the topology range.
 
-        Returns:
-            self: This instance with matching dceNodeTopologyRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceNodeTopologyRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceNodeTopologyRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceNodeTopologyRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceNodeTopologyRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

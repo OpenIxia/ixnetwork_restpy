@@ -36,52 +36,52 @@ class TenGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def Oam(self):
-        """An instance of the Oam class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.oam.oam.Oam): An instance of the Oam class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.oam.oam.Oam)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.oam.oam import Oam
         return Oam(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -90,10 +90,10 @@ class TenGigLan(Base):
 
     @property
     def AutoNegotiate(self):
-        """NOT DEFINED
-
-        Returns:
-            str(asymmetric|both|fullDuplex|none)
+        """
+        Returns
+        -------
+        - str(asymmetric | both | fullDuplex | none): NOT DEFINED
         """
         return self._get_attribute('autoNegotiate')
     @AutoNegotiate.setter
@@ -102,10 +102,10 @@ class TenGigLan(Base):
 
     @property
     def EnableLASIMonitoring(self):
-        """If selected, enables LASI monitoring.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, enables LASI monitoring.
         """
         return self._get_attribute('enableLASIMonitoring')
     @EnableLASIMonitoring.setter
@@ -114,10 +114,10 @@ class TenGigLan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -126,10 +126,10 @@ class TenGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -138,10 +138,10 @@ class TenGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """This is the 48-bit MAC address that the port will listen on for a directed pause message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -150,10 +150,10 @@ class TenGigLan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -162,10 +162,10 @@ class TenGigLan(Base):
 
     @property
     def LoopbackMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        """
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -174,10 +174,10 @@ class TenGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -186,10 +186,10 @@ class TenGigLan(Base):
 
     @property
     def TransmitClocking(self):
-        """The transmit clocking type for the 10G LAN port.
-
-        Returns:
-            str(external|internal|recovered)
+        """
+        Returns
+        -------
+        - str(external | internal | recovered): The transmit clocking type for the 10G LAN port.
         """
         return self._get_attribute('transmitClocking')
     @TransmitClocking.setter
@@ -198,10 +198,10 @@ class TenGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If enabled, will allow transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -209,22 +209,24 @@ class TenGigLan(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of tenGigLan on the server.
+        """Updates tenGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            AutoNegotiate (str(asymmetric|both|fullDuplex|none)): NOT DEFINED
-            EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            TransmitClocking (str(external|internal|recovered)): The transmit clocking type for the 10G LAN port.
-            TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiate (str(asymmetric | both | fullDuplex | none)): NOT DEFINED
+        - EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - TransmitClocking (str(external | internal | recovered)): The transmit clocking type for the 10G LAN port.
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

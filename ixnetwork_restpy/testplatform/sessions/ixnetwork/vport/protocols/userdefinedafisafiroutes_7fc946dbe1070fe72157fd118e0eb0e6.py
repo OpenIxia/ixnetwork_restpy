@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class UserDefinedAfiSafiRoutes(Base):
     """Configures the user defined afi/safi routes.
-    The UserDefinedAfiSafiRoutes class encapsulates a list of userDefinedAfiSafiRoutes resources that is be managed by the user.
+    The UserDefinedAfiSafiRoutes class encapsulates a list of userDefinedAfiSafiRoutes resources that are managed by the user.
     A list of resources can be retrieved from the server using the UserDefinedAfiSafiRoutes.find() method.
-    The list can be managed by the user by using the UserDefinedAfiSafiRoutes.add() and UserDefinedAfiSafiRoutes.remove() methods.
+    The list can be managed by using the UserDefinedAfiSafiRoutes.add() and UserDefinedAfiSafiRoutes.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class UserDefinedAfiSafiRoutes(Base):
 
     @property
     def Data(self):
-        """Data to be transmitted for AFI/SAFI, and regular enable-disable.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Data to be transmitted for AFI/SAFI, and regular enable-disable.
         """
         return self._get_attribute('data')
     @Data.setter
@@ -50,10 +50,10 @@ class UserDefinedAfiSafiRoutes(Base):
 
     @property
     def Enabled(self):
-        """If true, the user-defined afi/safi is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the user-defined afi/safi is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class UserDefinedAfiSafiRoutes(Base):
 
     @property
     def Length(self):
-        """The data is padded up to length with left alignment otherwise chopped till length.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data is padded up to length with left alignment otherwise chopped till length.
         """
         return self._get_attribute('length')
     @Length.setter
@@ -73,73 +73,86 @@ class UserDefinedAfiSafiRoutes(Base):
         self._set_attribute('length', value)
 
     def update(self, Data=None, Enabled=None, Length=None):
-        """Updates a child instance of userDefinedAfiSafiRoutes on the server.
+        """Updates userDefinedAfiSafiRoutes resource on the server.
 
-        Args:
-            Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
-            Enabled (bool): If true, the user-defined afi/safi is enabled.
-            Length (number): The data is padded up to length with left alignment otherwise chopped till length.
+        Args
+        ----
+        - Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
+        - Enabled (bool): If true, the user-defined afi/safi is enabled.
+        - Length (number): The data is padded up to length with left alignment otherwise chopped till length.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Data=None, Enabled=None, Length=None):
-        """Adds a new userDefinedAfiSafiRoutes node on the server and retrieves it in this instance.
+        """Adds a new userDefinedAfiSafiRoutes resource on the server and adds it to the container.
 
-        Args:
-            Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
-            Enabled (bool): If true, the user-defined afi/safi is enabled.
-            Length (number): The data is padded up to length with left alignment otherwise chopped till length.
+        Args
+        ----
+        - Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
+        - Enabled (bool): If true, the user-defined afi/safi is enabled.
+        - Length (number): The data is padded up to length with left alignment otherwise chopped till length.
 
-        Returns:
-            self: This instance with all currently retrieved userDefinedAfiSafiRoutes data using find and the newly added userDefinedAfiSafiRoutes data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved userDefinedAfiSafiRoutes resources using find and the newly added userDefinedAfiSafiRoutes resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the userDefinedAfiSafiRoutes data in this instance from server.
+        """Deletes all the contained userDefinedAfiSafiRoutes resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Data=None, Enabled=None, Length=None):
-        """Finds and retrieves userDefinedAfiSafiRoutes data from the server.
+        """Finds and retrieves userDefinedAfiSafiRoutes resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve userDefinedAfiSafiRoutes data from the server.
-        By default the find method takes no parameters and will retrieve all userDefinedAfiSafiRoutes data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userDefinedAfiSafiRoutes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all userDefinedAfiSafiRoutes resources from the server.
 
-        Args:
-            Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
-            Enabled (bool): If true, the user-defined afi/safi is enabled.
-            Length (number): The data is padded up to length with left alignment otherwise chopped till length.
+        Args
+        ----
+        - Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
+        - Enabled (bool): If true, the user-defined afi/safi is enabled.
+        - Length (number): The data is padded up to length with left alignment otherwise chopped till length.
 
-        Returns:
-            self: This instance with matching userDefinedAfiSafiRoutes data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching userDefinedAfiSafiRoutes resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of userDefinedAfiSafiRoutes data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the userDefinedAfiSafiRoutes data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the userDefinedAfiSafiRoutes resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

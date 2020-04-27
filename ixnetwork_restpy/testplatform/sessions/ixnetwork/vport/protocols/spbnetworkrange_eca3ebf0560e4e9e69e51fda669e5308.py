@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbNetworkRange(Base):
     """The SPB Network Range.
-    The SpbNetworkRange class encapsulates a list of spbNetworkRange resources that is be managed by the user.
+    The SpbNetworkRange class encapsulates a list of spbNetworkRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbNetworkRange.find() method.
-    The list can be managed by the user by using the SpbNetworkRange.add() and SpbNetworkRange.remove() methods.
+    The list can be managed by using the SpbNetworkRange.add() and SpbNetworkRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class SpbNetworkRange(Base):
 
     @property
     def SpbOutsideLinks(self):
-        """An instance of the SpbOutsideLinks class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_1a31bebcd7d09c250b68c5561149a41e.SpbOutsideLinks): An instance of the SpbOutsideLinks class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_1a31bebcd7d09c250b68c5561149a41e.SpbOutsideLinks)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_1a31bebcd7d09c250b68c5561149a41e import SpbOutsideLinks
         return SpbOutsideLinks(self)
 
     @property
     def SpbmNodeTopologyRange(self):
-        """An instance of the SpbmNodeTopologyRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_247496f8375c3331ec8a00501ca1b3a0.SpbmNodeTopologyRange): An instance of the SpbmNodeTopologyRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_247496f8375c3331ec8a00501ca1b3a0.SpbmNodeTopologyRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_247496f8375c3331ec8a00501ca1b3a0 import SpbmNodeTopologyRange
         return SpbmNodeTopologyRange(self)
 
     @property
     def EnableAdvertiseNetworkRange(self):
-        """If true, this SPB ISIS Network Range is advertised.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this SPB ISIS Network Range is advertised.
         """
         return self._get_attribute('enableAdvertiseNetworkRange')
     @EnableAdvertiseNetworkRange.setter
@@ -78,10 +78,10 @@ class SpbNetworkRange(Base):
 
     @property
     def EnableHostName(self):
-        """If true, the host name of the router is activated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the host name of the router is activated.
         """
         return self._get_attribute('enableHostName')
     @EnableHostName.setter
@@ -90,10 +90,10 @@ class SpbNetworkRange(Base):
 
     @property
     def EntryColumn(self):
-        """The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
         return self._get_attribute('entryColumn')
     @EntryColumn.setter
@@ -102,10 +102,10 @@ class SpbNetworkRange(Base):
 
     @property
     def EntryRow(self):
-        """The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
         return self._get_attribute('entryRow')
     @EntryRow.setter
@@ -114,10 +114,10 @@ class SpbNetworkRange(Base):
 
     @property
     def HostNamePrefix(self):
-        """The host name prefix information.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The host name prefix information.
         """
         return self._get_attribute('hostNamePrefix')
     @HostNamePrefix.setter
@@ -126,10 +126,10 @@ class SpbNetworkRange(Base):
 
     @property
     def InterfaceMetric(self):
-        """The metric cost associated with this emulated SPB ISIS router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The metric cost associated with this emulated SPB ISIS router.
         """
         return self._get_attribute('interfaceMetric')
     @InterfaceMetric.setter
@@ -138,10 +138,10 @@ class SpbNetworkRange(Base):
 
     @property
     def NoOfColumns(self):
-        """The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
         """
         return self._get_attribute('noOfColumns')
     @NoOfColumns.setter
@@ -150,10 +150,10 @@ class SpbNetworkRange(Base):
 
     @property
     def NoOfRows(self):
-        """The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
         """
         return self._get_attribute('noOfRows')
     @NoOfRows.setter
@@ -162,10 +162,10 @@ class SpbNetworkRange(Base):
 
     @property
     def StartSystemId(self):
-        """The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
         """
         return self._get_attribute('startSystemId')
     @StartSystemId.setter
@@ -174,10 +174,10 @@ class SpbNetworkRange(Base):
 
     @property
     def SystemIdIncrementBy(self):
-        """This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
         """
         return self._get_attribute('systemIdIncrementBy')
     @SystemIdIncrementBy.setter
@@ -185,94 +185,107 @@ class SpbNetworkRange(Base):
         self._set_attribute('systemIdIncrementBy', value)
 
     def update(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
-        """Updates a child instance of spbNetworkRange on the server.
+        """Updates spbNetworkRange resource on the server.
 
-        Args:
-            EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
-            EnableHostName (bool): If true, the host name of the router is activated.
-            EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): The host name prefix information.
-            InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
-            NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
-            SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
+        - EnableHostName (bool): If true, the host name of the router is activated.
+        - EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): The host name prefix information.
+        - InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
+        - NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
+        - SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
-        """Adds a new spbNetworkRange node on the server and retrieves it in this instance.
+        """Adds a new spbNetworkRange resource on the server and adds it to the container.
 
-        Args:
-            EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
-            EnableHostName (bool): If true, the host name of the router is activated.
-            EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): The host name prefix information.
-            InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
-            NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
-            SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
+        - EnableHostName (bool): If true, the host name of the router is activated.
+        - EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): The host name prefix information.
+        - InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
+        - NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
+        - SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Returns:
-            self: This instance with all currently retrieved spbNetworkRange data using find and the newly added spbNetworkRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbNetworkRange resources using find and the newly added spbNetworkRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbNetworkRange data in this instance from server.
+        """Deletes all the contained spbNetworkRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
-        """Finds and retrieves spbNetworkRange data from the server.
+        """Finds and retrieves spbNetworkRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbNetworkRange data from the server.
-        By default the find method takes no parameters and will retrieve all spbNetworkRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbNetworkRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbNetworkRange resources from the server.
 
-        Args:
-            EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
-            EnableHostName (bool): If true, the host name of the router is activated.
-            EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): The host name prefix information.
-            InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
-            NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
-            StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
-            SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
+        - EnableHostName (bool): If true, the host name of the router is activated.
+        - EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): The host name prefix information.
+        - InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
+        - NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+        - StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
+        - SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Returns:
-            self: This instance with matching spbNetworkRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbNetworkRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbNetworkRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbNetworkRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbNetworkRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

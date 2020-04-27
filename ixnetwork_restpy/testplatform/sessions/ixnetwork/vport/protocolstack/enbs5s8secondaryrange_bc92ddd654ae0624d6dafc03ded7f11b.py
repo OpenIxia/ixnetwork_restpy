@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EnbS5S8SecondaryRange(Base):
     """
-    The EnbS5S8SecondaryRange class encapsulates a list of enbS5S8SecondaryRange resources that is be managed by the user.
+    The EnbS5S8SecondaryRange class encapsulates a list of enbS5S8SecondaryRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the EnbS5S8SecondaryRange.find() method.
-    The list can be managed by the user by using the EnbS5S8SecondaryRange.add() and EnbS5S8SecondaryRange.remove() methods.
+    The list can be managed by using the EnbS5S8SecondaryRange.add() and EnbS5S8SecondaryRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,64 +38,73 @@ class EnbS5S8SecondaryRange(Base):
 
     @property
     def EgtpNbS5S8Range(self):
-        """An instance of the EgtpNbS5S8Range class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpnbs5s8range_ba676a692db3df529e744d22530164f3.EgtpNbS5S8Range): An instance of the EgtpNbS5S8Range class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpnbs5s8range_ba676a692db3df529e744d22530164f3.EgtpNbS5S8Range)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpnbs5s8range_ba676a692db3df529e744d22530164f3 import EgtpNbS5S8Range
         return EgtpNbS5S8Range(self)._select()
 
     def add(self):
-        """Adds a new enbS5S8SecondaryRange node on the server and retrieves it in this instance.
+        """Adds a new enbS5S8SecondaryRange resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved enbS5S8SecondaryRange data using find and the newly added enbS5S8SecondaryRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved enbS5S8SecondaryRange resources using find and the newly added enbS5S8SecondaryRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the enbS5S8SecondaryRange data in this instance from server.
+        """Deletes all the contained enbS5S8SecondaryRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self):
-        """Finds and retrieves enbS5S8SecondaryRange data from the server.
+        """Finds and retrieves enbS5S8SecondaryRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve enbS5S8SecondaryRange data from the server.
-        By default the find method takes no parameters and will retrieve all enbS5S8SecondaryRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve enbS5S8SecondaryRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all enbS5S8SecondaryRange resources from the server.
 
-        Returns:
-            self: This instance with matching enbS5S8SecondaryRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching enbS5S8SecondaryRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of enbS5S8SecondaryRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the enbS5S8SecondaryRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the enbS5S8SecondaryRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -104,14 +113,15 @@ class EnbS5S8SecondaryRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -123,16 +133,15 @@ class EnbS5S8SecondaryRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -144,16 +153,15 @@ class EnbS5S8SecondaryRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

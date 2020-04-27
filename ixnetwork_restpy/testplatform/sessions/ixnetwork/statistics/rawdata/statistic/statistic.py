@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Statistic(Base):
     """
-    The Statistic class encapsulates a list of statistic resources that is managed by the system.
+    The Statistic class encapsulates a list of statistic resources that are managed by the system.
     A list of resources can be retrieved from the server using the Statistic.find() method.
     """
 
@@ -38,18 +38,18 @@ class Statistic(Base):
     @property
     def Caption(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('caption')
 
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -57,45 +57,54 @@ class Statistic(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of statistic on the server.
+        """Updates statistic resource on the server.
 
-        Args:
-            Enabled (bool): 
+        Args
+        ----
+        - Enabled (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Caption=None, Enabled=None):
-        """Finds and retrieves statistic data from the server.
+        """Finds and retrieves statistic resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve statistic data from the server.
-        By default the find method takes no parameters and will retrieve all statistic data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistic resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statistic resources from the server.
 
-        Args:
-            Caption (str): 
-            Enabled (bool): 
+        Args
+        ----
+        - Caption (str): 
+        - Enabled (bool): 
 
-        Returns:
-            self: This instance with matching statistic data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching statistic resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the statistic data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the statistic resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

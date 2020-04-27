@@ -20,11 +20,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
-from ixnetwork_restpy.steps import Steps
 
 
 class Multivalue(Base):
+    """Multivalue class
+    """
     def __init__(self, parent, href):
+        """Multivalue constructor
+
+        Encapsulates a multivalue property. 
+        """
         super(Multivalue, self).__init__(parent)
         self._href = href
         self._pattern = None
@@ -36,9 +41,10 @@ class Multivalue(Base):
 
     @property
     def Pattern(self):
-        """The current pattern represented as a string.
-
-        Returns: str
+        """
+        Returns
+        -------
+        - str: the current pattern
         """
         if self._pattern is None:
             self._custom_select()
@@ -105,6 +111,11 @@ class Multivalue(Base):
 
     @property
     def Info(self):
+        """
+        Returns
+        -------
+        - str: a formatted string of information for this multivalue 
+        """
         info = 'Multivalue: %s\n' % self.Source
         info += '\tFormat: %s\n' % self.Format
         info += '\tCount: %s\n' % self.Count
@@ -113,22 +124,41 @@ class Multivalue(Base):
 
     @property
     def Format(self):
+        """
+        Returns
+        -------
+        - str: the format of any values that are inputs to other multivalue methods
+        """
         self.Pattern
         return self._properties['format']
 
     @property
     def Source(self):
+        """
+        Returns
+        -------
+        - str: the source property the multivalue encapsulates
+        """
         self.Pattern
         return self._properties['source']
 
     @property
     def Count(self):
+        """
+        Returns
+        -------
+        - number: the number of values that the multivalue encapsulates
+        """
         self.Pattern
         return self._properties['count']
 
     @property
     def AvailablePatterns(self):
-        """list(str): returns a list of methods in this class that are valid for setting a pattern for this multivalue"""
+        """
+        Returns
+        -------
+        - list(str): a list of patterns that indicate what methods can be used for this multivalue
+        """
         self.Pattern
         for unsupported in ['shared', 'subset']:
             self._properties['availablePatterns'].remove(unsupported)
@@ -136,13 +166,20 @@ class Multivalue(Base):
 
     @property
     def AvailableEnums(self):
-        """list(str): if the format of the multivalue is enum this will return a list of possible enum choices that can be used when setting patterns"""
+        """
+        Returns
+        -------
+        - list(str): if the format of the multivalue is enum this will return a list of possible enum choices that can be used when setting patterns
+        """
         self.Pattern
         return self._properties['enums']
 
     @property
     def Values(self):
-        """list(str): returns a list of the values encapsulated by the pattern, format and count"""
+        """
+        Returns
+        -------
+        - list(str): a list of the str values which is dictated by the pattern, format and count properties"""
         payload = {
             'arg1': self._href,
             'arg2': 0,
@@ -151,15 +188,31 @@ class Multivalue(Base):
         return self._execute('getValues', payload=payload)
 
     def Single(self, value):
-        """Set the pattern to a single value"""
+        """Sets the multivalue to a single value pattern
+        
+        Args
+        ----
+        - value (str): The single value according to the format property
+        """
         self._set_pattern('singleValue', {'value': value})
 
     def Alternate(self, alternating_value):
-        """Set the pattern to alternating"""
+        """Sets the multivalue pattern to an alternating pattern
+        
+        Args
+        ----
+        - alternating_value (str): An alternating pattern can only be a boolean.
+        """
         self._set_pattern('alternate', {'value': alternating_value})
 
     def Increment(self, start_value=None, step_value=None):
-        """Set the pattern to incrementing"""
+        """Sets the multivalue to an incrementing pattern
+        
+        Args
+        ----
+        - start_value (str): The value at which to begin incrementing
+        - step_value (str): The value to increment by
+        """
         payload = {
             'direction': 'increment'
         }
@@ -170,7 +223,13 @@ class Multivalue(Base):
         self._set_pattern('counter', payload)
 
     def Decrement(self, start_value=None, step_value=None):
-        """Set the pattern to decrementing"""
+        """Sets the multivalue to a decrementing pattern
+        
+        Args
+        ----
+        - start_value (str): The value at which to begin decrementing
+        - step_value (str): The value to decrement by
+        """
         payload = {
             'direction': 'decrement'
         }
@@ -181,17 +240,23 @@ class Multivalue(Base):
         self._set_pattern('counter', payload)
 
     def ValueList(self, values):
-        """Set the pattern to valueList"""
+        """Sets the multivalue to a value list pattern
+        
+        Args
+        ----
+        - values (list(str)): List of string values. Each value must be according to the format property
+        """
         self._set_pattern('valueList', {'values': values})
 
     def RandomRange(self, min_value=None, max_value=None, step_value=None, seed=None):
-        """Set the repeatable random range pattern
+        """Sets the multivalue to a repeatable random range pattern
 
-        Args:
-            min_value (str): Minimum value according to the format property
-            max_value (str): Maximum value according to the format property
-            step_value (str): Step value accoroding to the format property
-            seed (int): Seed value
+        Args
+        ----
+        - min_value (str): Minimum value according to the format property
+        - max_value (str): Maximum value according to the format property
+        - step_value (str): Step value accoroding to the format property
+        - seed (int): Seed value
         """
         payload = {
             'min': min_value,
@@ -202,13 +267,14 @@ class Multivalue(Base):
         self._set_pattern('repeatableRandomRange', payload)
 
     def RandomMask(self, fixed_value=None, mask_value=None, seed=None, count=None):
-        """Set the repeatable random pattern
+        """Sets the multivalue to a repeatable random pattern
 
-        Args:
-            fixed_value (str): Minimum value according to the format property
-            mask_value (str): Maximum value according to the format property
-            seed (int): Seed value 
-            count (int): Count value
+        Args
+        ----
+        - fixed_value (str): Minimum value according to the format property
+        - mask_value (str): Maximum value according to the format property
+        - seed (int): Seed value 
+        - count (int): Count value
         """
         payload = {
             'fixed': fixed_value,
@@ -219,15 +285,18 @@ class Multivalue(Base):
         self._set_pattern('repeatableRandom', payload)
 
     def Random(self):
+        """Sets the multivalue to a non-repeatable random pattern
+        """
         self._set_pattern('random')
 
     def Distributed(self, algorithm=None, mode=None, values=None):
-        """Set the pattern to customDistributed
+        """Sets the multivalue to a custom distributed pattern
 
-        Args:
-            algorithm (str[enum:percentage|weighted|autoEven|autoGeometric]): The algorithm of the distribution
-            mode (str[enum:perDevice|perTopology|perPort]): The mode of the distribution
-            values (list[tuple(value, weight)]): A list of values and weights
+        Args
+        ----
+        - algorithm (str[percentage | weighted | autoEven | autoGeometric]): The algorithm of the distribution
+        - mode (str[perDevice | perTopology | perPort]): The mode indicates across what the the distribution is allocated
+        - values (list[tuple(value, weight)]): A list of tuples. Each tuple is a value and and it's corresponding weight in the distribution
         """
         formatted_values = None
         if values is not None:
@@ -247,15 +316,18 @@ class Multivalue(Base):
         self._set_pattern('customDistributed', payload)
 
     def String(self, string_pattern=None):
-        """Set the pattern to a string pattern
+        """Sets the multivalue to a string pattern
 
-        Args:
-            string_pattern (str): A string pattern
-                Examples:
-                    Test-{Inc:1,1}
-                    Test-{"A", "B", "C"}
-                    hex_{Dec:0xFFFF}
-                    Test-{Inc:100}-{"A", "B"}-{Dec:3, 1, 3}
+        Args
+        ----
+        - string_pattern (str): A string pattern
+        
+        Examples
+        --------
+        - Test-{Inc:1,1}
+        - Test-{"A", "B", "C"}
+        - hex_{Dec:0xFFFF}
+        - Test-{Inc:100}-{"A", "B"}-{Dec:3, 1, 3}
         """
         payload = {
             'pattern': string_pattern
@@ -263,20 +335,24 @@ class Multivalue(Base):
         self._set_pattern('string', payload)
 
     def Custom(self, start_value=None, step_value=None, increments=None):
-        """Set the pattern to custom
+        """Sets the mutivalue to a custom pattern
 
-        Args:
-            start_value (str): A start value according to the format
-            step_value (str): A step value according to the format
-            increments (list[tuple(value, count, list[increments])]): The structure of increments is such that after creating a custom multivalue with an initial start_value and step_value further sibling and/or nested child counters can be added using the increments parameter. Each value in increments is a tuple that consists of a value according to the multivalue format, a count and a list of any child increments. 
-                Examples:
-                    - two siblings, no children
-                        - increment=[('1.1.1.1', 10, []), ('1.1.2.1', 5, [])]
-                    - two siblings, one child per each sibling
-                        increment=[('1.1.1.1', 10, [('1.1.3.1', 3, [])]), ('1.1.2.1', 5, [('1.1.4.1', 4, [])])]  
+        Args
+        ----
+        - start_value (str): A start value according to the format
+        - step_value (str):: A step value according to the format
+        - increments (list[tuple(value, count, list[increments])]): The structure of increments is such that after creating a custom multivalue with an initial start_value and step_value further sibling and/or nested child counters can be added using the increments parameter. Each value in increments is a tuple that consists of a value according to the multivalue format, a count and a list of any child increments. 
+        
+        Examples
+        --------
+        - two siblings, no children:
+          increment=[('1.1.1.1', 10, []), ('1.1.2.1', 5, [])]
+        - two siblings, one child per each sibling:
+          increment=[('1.1.1.1', 10, [('1.1.3.1', 3, [])]), ('1.1.2.1', 5, [('1.1.4.1', 4, [])])]
 
-        Raises:
-            ValueError: if increments is incorrectly formatted              
+        Raises
+        ------
+        - ValueError: if increments is incorrectly formatted or if start_value, step_value are in the incorrect format              
         """
         payload = {
             'start': start_value,
@@ -303,11 +379,14 @@ class Multivalue(Base):
 
     @property
     def Steps(self):
-        """Get the Steps for this multivalue.
-        A Steps object provides the ability to enable/disable multivalue steps and provide a step value.
-        The most common step is the port step which 'steps' the multivalue pattern by a value as it crosses from port to port.
+        """Get the Step resources for this multivalue.
+        
+        A Steps class provides the ability to enable/disable multivalue steps and provide a step value.
+        The most common step is the port step which 'steps' the multivalue pattern by a value across each port.
 
-        Returns: obj(ixnetwork_restpy.steps.Steps): A Steps object
+        Returns
+        -------
+        - obj(ixnetwork_restpy.steps.Steps): A multivalue step object
         """
         self.Pattern
         from ixnetwork_restpy.steps import Steps
@@ -354,15 +433,15 @@ class Multivalue(Base):
 
     def Overlay(self, index, value):
         """Add an overlay at a specific device index in a pattern.
+
         This is meant to overwrite an existing pattern with a few non-contiguous, random values.
         If the intent is to overwrite an entire pattern or most of a pattern with random values consider
         using the more performant random or valueList patterns.
 
-        Args:
-            index (int): 1 based device index
-            value (str): the overlay value
-
-        Raises:
+        Args
+        ----
+        - index (int): 1 based device index
+        - value (str): the overlay value
         """
         href = '%s/overlay' % (self._href)
         payload = {

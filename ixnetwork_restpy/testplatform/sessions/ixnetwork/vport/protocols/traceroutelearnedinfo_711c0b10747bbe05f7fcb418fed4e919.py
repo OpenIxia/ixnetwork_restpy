@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class TraceRouteLearnedInfo(Base):
     """This object holds lists of the trace route learned information.
-    The TraceRouteLearnedInfo class encapsulates a list of traceRouteLearnedInfo resources that is managed by the system.
+    The TraceRouteLearnedInfo class encapsulates a list of traceRouteLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the TraceRouteLearnedInfo.find() method.
     """
 
@@ -37,105 +37,112 @@ class TraceRouteLearnedInfo(Base):
 
     @property
     def Hops(self):
-        """An instance of the Hops class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8.Hops): An instance of the Hops class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8.Hops)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8 import Hops
         return Hops(self)
 
     @property
     def IncomingLabelOuterInner(self):
-        """This signifies the incoming label information.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the incoming label information.
         """
         return self._get_attribute('incomingLabelOuterInner')
 
     @property
     def NumberOfReplyingHops(self):
-        """This signifies the total number of replying hops.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the total number of replying hops.
         """
         return self._get_attribute('numberOfReplyingHops')
 
     @property
     def OutgoingLabelOuterInner(self):
-        """This signifies the Outgoing Label information.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the Outgoing Label information.
         """
         return self._get_attribute('outgoingLabelOuterInner')
 
     @property
     def Reachability(self):
-        """This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
         """
         return self._get_attribute('reachability')
 
     @property
     def SenderHandle(self):
-        """This signifies the sender handle details.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the sender handle details.
         """
         return self._get_attribute('senderHandle')
 
     @property
     def Type(self):
-        """This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
         """
         return self._get_attribute('type')
 
     def find(self, IncomingLabelOuterInner=None, NumberOfReplyingHops=None, OutgoingLabelOuterInner=None, Reachability=None, SenderHandle=None, Type=None):
-        """Finds and retrieves traceRouteLearnedInfo data from the server.
+        """Finds and retrieves traceRouteLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve traceRouteLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all traceRouteLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve traceRouteLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all traceRouteLearnedInfo resources from the server.
 
-        Args:
-            IncomingLabelOuterInner (str): This signifies the incoming label information.
-            NumberOfReplyingHops (number): This signifies the total number of replying hops.
-            OutgoingLabelOuterInner (str): This signifies the Outgoing Label information.
-            Reachability (str): This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
-            SenderHandle (number): This signifies the sender handle details.
-            Type (str): This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
+        Args
+        ----
+        - IncomingLabelOuterInner (str): This signifies the incoming label information.
+        - NumberOfReplyingHops (number): This signifies the total number of replying hops.
+        - OutgoingLabelOuterInner (str): This signifies the Outgoing Label information.
+        - Reachability (str): This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
+        - SenderHandle (number): This signifies the sender handle details.
+        - Type (str): This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
 
-        Returns:
-            self: This instance with matching traceRouteLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching traceRouteLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of traceRouteLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the traceRouteLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the traceRouteLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

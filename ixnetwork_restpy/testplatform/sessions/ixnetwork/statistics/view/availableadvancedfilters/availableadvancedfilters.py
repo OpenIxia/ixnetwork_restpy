@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableAdvancedFilters(Base):
     """Represents the id of an advanced filter.
-    The AvailableAdvancedFilters class encapsulates a list of availableAdvancedFilters resources that is managed by the system.
+    The AvailableAdvancedFilters class encapsulates a list of availableAdvancedFilters resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableAdvancedFilters.find() method.
     """
 
@@ -37,51 +37,58 @@ class AvailableAdvancedFilters(Base):
 
     @property
     def Expression(self):
-        """Allows you to get the filter expression or the body from the id.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Allows you to get the filter expression or the body from the id.
         """
         return self._get_attribute('expression')
 
     @property
     def Name(self):
-        """Allows you to get the filter name from the id.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Allows you to get the filter name from the id.
         """
         return self._get_attribute('name')
 
     def find(self, Expression=None, Name=None):
-        """Finds and retrieves availableAdvancedFilters data from the server.
+        """Finds and retrieves availableAdvancedFilters resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableAdvancedFilters data from the server.
-        By default the find method takes no parameters and will retrieve all availableAdvancedFilters data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableAdvancedFilters resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableAdvancedFilters resources from the server.
 
-        Args:
-            Expression (str): Allows you to get the filter expression or the body from the id.
-            Name (str): Allows you to get the filter name from the id.
+        Args
+        ----
+        - Expression (str): Allows you to get the filter expression or the body from the id.
+        - Name (str): Allows you to get the filter name from the id.
 
-        Returns:
-            self: This instance with matching availableAdvancedFilters data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableAdvancedFilters resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableAdvancedFilters data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableAdvancedFilters data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableAdvancedFilters resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

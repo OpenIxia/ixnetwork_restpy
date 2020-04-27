@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ldpvplsbgpad(Base):
     """LDP FEC129 Configuration
-    The Ldpvplsbgpad class encapsulates a list of ldpvplsbgpad resources that is be managed by the user.
+    The Ldpvplsbgpad class encapsulates a list of ldpvplsbgpad resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ldpvplsbgpad.find() method.
-    The list can be managed by the user by using the Ldpvplsbgpad.add() and Ldpvplsbgpad.remove() methods.
+    The list can be managed by using the Ldpvplsbgpad.add() and Ldpvplsbgpad.remove() methods.
     """
 
     __slots__ = ()
@@ -38,172 +38,176 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def Ethernet(self):
-        """An instance of the Ethernet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet.Ethernet): An instance of the Ethernet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet.Ethernet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet import Ethernet
         return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
-        """An instance of the Ipv4Loopback class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback.Ipv4Loopback): An instance of the Ipv4Loopback class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback.Ipv4Loopback)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback import Ipv4Loopback
         return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
-        """An instance of the Ipv6Loopback class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback.Ipv6Loopback): An instance of the Ipv6Loopback class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback.Ipv6Loopback)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback import Ipv6Loopback
         return Ipv6Loopback(self)
 
     @property
     def LdpBasicRouter(self):
-        """An instance of the LdpBasicRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter.LdpBasicRouter): An instance of the LdpBasicRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter.LdpBasicRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter import LdpBasicRouter
         return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
-        """An instance of the LdpBasicRouterV6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6.LdpBasicRouterV6): An instance of the LdpBasicRouterV6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6.LdpBasicRouterV6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6 import LdpBasicRouterV6
         return LdpBasicRouterV6(self)
 
     @property
     def LdpTargetedRouter(self):
-        """An instance of the LdpTargetedRouter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter.LdpTargetedRouter): An instance of the LdpTargetedRouter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter.LdpTargetedRouter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter import LdpTargetedRouter
         return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
-        """An instance of the LdpTargetedRouterV6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6.LdpTargetedRouterV6): An instance of the LdpTargetedRouterV6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6.LdpTargetedRouterV6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6 import LdpTargetedRouterV6
         return LdpTargetedRouterV6(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AsNumberVplsId(self):
-        """The AS number of the VPLS Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumberVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The AS number of the VPLS Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumberVplsId'))
 
     @property
     def AssignedNumberVplsId(self):
-        """The assigned number for the VPLS Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumberVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The assigned number for the VPLS Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumberVplsId'))
 
     @property
     def AutoPeerID(self):
-        """DEPRECATED If selected, LDP Peer IP would be taken from LDP router's peer configuration.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
         """
-        return self._get_attribute('autoPeerID')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('autoPeerID'))
 
     @property
     def AutoPeerId(self):
-        """If selected, LDP Peer IP would be taken from LDP router's peer configuration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, LDP Peer IP would be taken from LDP router's peer configuration.
         """
         return self._get_attribute('autoPeerId')
     @AutoPeerId.setter
@@ -212,37 +216,40 @@ class Ldpvplsbgpad(Base):
 
     @property
     def BfdPwCV(self):
-        """BFD PW-ACH CV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bfdPwCV')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BFD PW-ACH CV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bfdPwCV'))
 
     @property
     def BfdUdpCV(self):
-        """BFD IP/UDP CV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bfdUdpCV')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BFD IP/UDP CV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bfdUdpCV'))
 
     @property
     def CBitEnabled(self):
-        """If selected, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('cBitEnabled')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('cBitEnabled'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -251,163 +258,176 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescEnabled(self):
-        """If selected, indicates that an optional Interface Description is present
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('descEnabled')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, indicates that an optional Interface Description is present
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('descEnabled'))
 
     @property
     def Description(self):
-        """An optional user-defined Interface Description. It may be used with ALL VC types. Valid length is 0 to 80 octets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('description')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): An optional user-defined Interface Description. It may be used with ALL VC types. Valid length is 0 to 80 octets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('description'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DownInterval(self):
-        """Time interval for which the PW status will remain down
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('downInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval for which the PW status will remain down
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('downInterval'))
 
     @property
     def DownStart(self):
-        """The duration in time after session becomes up and a notification message being sent to make the session down
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('downStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The duration in time after session becomes up and a notification message being sent to make the session down
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('downStart'))
 
     @property
     def EnableCCCVNegotiation(self):
-        """If selected, indicates that CCCV Negotiation is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCCCVNegotiation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, indicates that CCCV Negotiation is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCCCVNegotiation'))
 
     @property
     def EnablePWStatus(self):
-        """If selected, this enables the use of PW Status TLV in notification messages to notify the PW status
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enablePWStatus')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, this enables the use of PW Status TLV in notification messages to notify the PW status
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enablePWStatus'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def GroupId(self):
-        """A user-defined 32-bit value used to identify a group of VCs
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A user-defined 32-bit value used to identify a group of VCs
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupId'))
 
     @property
     def InterfaceType(self):
-        """The 15-bit VC Type used in the VC FEC element.It depends on the Layer 2 protocol used on the interface
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interfaceType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The 15-bit VC Type used in the VC FEC element.It depends on the Layer 2 protocol used on the interface
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interfaceType'))
 
     @property
     def IpAddressVplsId(self):
-        """The IP address of the VPLS id.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipAddressVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the VPLS id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipAddressVplsId'))
 
     @property
     def Ipv6PeerId(self):
-        """The 128-bit IPv6 address of the LDP Peer.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6PeerId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The 128-bit IPv6 address of the LDP Peer.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6PeerId'))
 
     @property
     def LSPPingCV(self):
-        """LSP Ping CV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPPingCV')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Ping CV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPPingCV'))
 
     @property
     def Label(self):
-        """Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('label')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('label'))
 
     @property
     def LocalRouterID(self):
-        """Router ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Router ID
         """
         return self._get_attribute('localRouterID')
 
     @property
     def Mtu(self):
-        """The 2-octet value for the maximum Transmission Unit (MTU).
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mtu')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The 2-octet value for the maximum Transmission Unit (MTU).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mtu'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -416,10 +436,10 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -428,109 +448,119 @@ class Ldpvplsbgpad(Base):
 
     @property
     def PWACHCC(self):
-        """PW-ACH CC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pWACHCC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PW-ACH CC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pWACHCC'))
 
     @property
     def PWStatusCode(self):
-        """PW Status Code to be sent when to transition to down state if PW Status Send Notification is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pWStatusCode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PW Status Code to be sent when to transition to down state if PW Status Send Notification is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pWStatusCode'))
 
     @property
     def PeerId(self):
-        """The 32-bit IPv4 address of the LDP Peer.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('peerId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The 32-bit IPv4 address of the LDP Peer.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('peerId'))
 
     @property
     def ProvisioningModelType(self):
-        """Provisioning Model Type. Manual or BGP Autodiscovery
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('provisioningModelType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Provisioning Model Type. Manual or BGP Autodiscovery
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('provisioningModelType'))
 
     @property
     def PwStatusSendNotification(self):
-        """If selected, it signifies whether to send a notification message with a PW status for the corresponding PW
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pwStatusSendNotification')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, it signifies whether to send a notification message with a PW status for the corresponding PW
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pwStatusSendNotification'))
 
     @property
     def RepeatCount(self):
-        """The number of times to repeat the Up/Down status of the PW. '0' means keep toggling the Up/Down state indefinitely.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('repeatCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of times to repeat the Up/Down status of the PW. '0' means keep toggling the Up/Down state indefinitely.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('repeatCount'))
 
     @property
     def RouterAlertCC(self):
-        """Router Alert CC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routerAlertCC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router Alert CC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routerAlertCC'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def SourceAIIType(self):
-        """Source AII Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAIIType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source AII Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAIIType'))
 
     @property
     def SourceAIIasIP(self):
-        """Source AII as IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAIIasIP')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source AII as IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAIIasIP'))
 
     @property
     def SourceAIIasNumber(self):
-        """Source AII as Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAIIasNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source AII as Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAIIasNumber'))
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -539,152 +569,170 @@ class Ldpvplsbgpad(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TargetAIIType(self):
-        """Target AII Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('targetAIIType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target AII Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('targetAIIType'))
 
     @property
     def TargetAIIasIP(self):
-        """Target AII as IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('targetAIIasIP')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target AII as IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('targetAIIasIP'))
 
     @property
     def TargetAIIasNumber(self):
-        """Target AII as Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('targetAIIasNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target AII as Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('targetAIIasNumber'))
 
     @property
     def TypeVplsId(self):
-        """The VPLS Id format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The VPLS Id format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeVplsId'))
 
     @property
     def UpInterval(self):
-        """Time Interval for which the PW status will remain in Up state before transitioning again to Down state.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('upInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time Interval for which the PW status will remain in Up state before transitioning again to Down state.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('upInterval'))
 
     def update(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of ldpvplsbgpad on the server.
+        """Updates ldpvplsbgpad resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new ldpvplsbgpad node on the server and retrieves it in this instance.
+        """Adds a new ldpvplsbgpad resource on the server and adds it to the container.
 
-        Args:
-            AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved ldpvplsbgpad data using find and the newly added ldpvplsbgpad data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ldpvplsbgpad resources using find and the newly added ldpvplsbgpad resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ldpvplsbgpad data in this instance from server.
+        """Deletes all the contained ldpvplsbgpad resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AutoPeerId=None, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LocalRouterID=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves ldpvplsbgpad data from the server.
+        """Finds and retrieves ldpvplsbgpad resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ldpvplsbgpad data from the server.
-        By default the find method takes no parameters and will retrieve all ldpvplsbgpad data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ldpvplsbgpad resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ldpvplsbgpad resources from the server.
 
-        Args:
-            AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LocalRouterID (list(str)): Router ID
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - AutoPeerId (bool): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LocalRouterID (list(str)): Router ID
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching ldpvplsbgpad data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ldpvplsbgpad resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ldpvplsbgpad data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ldpvplsbgpad data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ldpvplsbgpad resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -693,49 +741,52 @@ class Ldpvplsbgpad(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AsNumberVplsId (str): optional regex of asNumberVplsId
-            AssignedNumberVplsId (str): optional regex of assignedNumberVplsId
-            AutoPeerID (str): optional regex of autoPeerID
-            BfdPwCV (str): optional regex of bfdPwCV
-            BfdUdpCV (str): optional regex of bfdUdpCV
-            CBitEnabled (str): optional regex of cBitEnabled
-            DescEnabled (str): optional regex of descEnabled
-            Description (str): optional regex of description
-            DownInterval (str): optional regex of downInterval
-            DownStart (str): optional regex of downStart
-            EnableCCCVNegotiation (str): optional regex of enableCCCVNegotiation
-            EnablePWStatus (str): optional regex of enablePWStatus
-            GroupId (str): optional regex of groupId
-            InterfaceType (str): optional regex of interfaceType
-            IpAddressVplsId (str): optional regex of ipAddressVplsId
-            Ipv6PeerId (str): optional regex of ipv6PeerId
-            LSPPingCV (str): optional regex of lSPPingCV
-            Label (str): optional regex of label
-            Mtu (str): optional regex of mtu
-            PWACHCC (str): optional regex of pWACHCC
-            PWStatusCode (str): optional regex of pWStatusCode
-            PeerId (str): optional regex of peerId
-            ProvisioningModelType (str): optional regex of provisioningModelType
-            PwStatusSendNotification (str): optional regex of pwStatusSendNotification
-            RepeatCount (str): optional regex of repeatCount
-            RouterAlertCC (str): optional regex of routerAlertCC
-            SourceAIIType (str): optional regex of sourceAIIType
-            SourceAIIasIP (str): optional regex of sourceAIIasIP
-            SourceAIIasNumber (str): optional regex of sourceAIIasNumber
-            TargetAIIType (str): optional regex of targetAIIType
-            TargetAIIasIP (str): optional regex of targetAIIasIP
-            TargetAIIasNumber (str): optional regex of targetAIIasNumber
-            TypeVplsId (str): optional regex of typeVplsId
-            UpInterval (str): optional regex of upInterval
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AsNumberVplsId (str): optional regex of asNumberVplsId
+        - AssignedNumberVplsId (str): optional regex of assignedNumberVplsId
+        - AutoPeerID (str): optional regex of autoPeerID
+        - BfdPwCV (str): optional regex of bfdPwCV
+        - BfdUdpCV (str): optional regex of bfdUdpCV
+        - CBitEnabled (str): optional regex of cBitEnabled
+        - DescEnabled (str): optional regex of descEnabled
+        - Description (str): optional regex of description
+        - DownInterval (str): optional regex of downInterval
+        - DownStart (str): optional regex of downStart
+        - EnableCCCVNegotiation (str): optional regex of enableCCCVNegotiation
+        - EnablePWStatus (str): optional regex of enablePWStatus
+        - GroupId (str): optional regex of groupId
+        - InterfaceType (str): optional regex of interfaceType
+        - IpAddressVplsId (str): optional regex of ipAddressVplsId
+        - Ipv6PeerId (str): optional regex of ipv6PeerId
+        - LSPPingCV (str): optional regex of lSPPingCV
+        - Label (str): optional regex of label
+        - Mtu (str): optional regex of mtu
+        - PWACHCC (str): optional regex of pWACHCC
+        - PWStatusCode (str): optional regex of pWStatusCode
+        - PeerId (str): optional regex of peerId
+        - ProvisioningModelType (str): optional regex of provisioningModelType
+        - PwStatusSendNotification (str): optional regex of pwStatusSendNotification
+        - RepeatCount (str): optional regex of repeatCount
+        - RouterAlertCC (str): optional regex of routerAlertCC
+        - SourceAIIType (str): optional regex of sourceAIIType
+        - SourceAIIasIP (str): optional regex of sourceAIIasIP
+        - SourceAIIasNumber (str): optional regex of sourceAIIasNumber
+        - TargetAIIType (str): optional regex of targetAIIType
+        - TargetAIIasIP (str): optional regex of targetAIIasIP
+        - TargetAIIasNumber (str): optional regex of targetAIIasNumber
+        - TypeVplsId (str): optional regex of typeVplsId
+        - UpInterval (str): optional regex of upInterval
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -744,22 +795,20 @@ class Ldpvplsbgpad(Base):
 
         Purge VC Ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        purgeVCRanges()
+        purgeVCRanges(SessionIndices=list)
+        ----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        purgeVCRanges(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        purgeVCRanges(SessionIndices=string)
+        ------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        purgeVCRanges(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -771,16 +820,15 @@ class Ldpvplsbgpad(Base):
 
         Purge Ethernet VC. Sends Address Withdraw message to purge all MACs learnt for this VC. Applicable for Ethernet Type VC only ( not VLAN).
 
-        purgevcranges(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): Purge VC Ranges.
+        purgevcranges(Arg2=list)list
+        ----------------------------
+        - Arg2 (list(number)): Purge VC Ranges.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -792,38 +840,36 @@ class Ldpvplsbgpad(Base):
 
         Purge VPLS MAC
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        purgeVPLSMac(Mac_count:number, Mac:string)
-            Args:
-                args[0] is Mac_count (number): This parameter requires a mac_count of type kInteger
-                args[1] is Mac (str): This parameter requires a mac of type kString
+        purgeVPLSMac(Mac_count=number, Mac=string)
+        ------------------------------------------
+        - Mac_count (number): This parameter requires a mac_count of type kInteger
+        - Mac (str): This parameter requires a mac of type kString
 
-        purgeVPLSMac(Mac_count:number, Mac:string, SessionIndices:list)
-            Args:
-                args[0] is Mac_count (number): This parameter requires a mac_count of type kInteger
-                args[1] is Mac (str): This parameter requires a mac of type kString
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        purgeVPLSMac(Mac_count=number, Mac=string, SessionIndices=list)
+        ---------------------------------------------------------------
+        - Mac_count (number): This parameter requires a mac_count of type kInteger
+        - Mac (str): This parameter requires a mac of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        purgeVPLSMac(SessionIndices:string, Mac_count:number, Mac:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a mac_count of type kInteger
-                args[1] is Mac_count (number): This parameter requires a mac of type kString
-                args[2] is Mac (str): This parameter requires a string of session numbers 1-4;6;7-12
+        purgeVPLSMac(SessionIndices=string, Mac_count=number, Mac=string)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a mac_count of type kInteger
+        - Mac_count (number): This parameter requires a mac of type kString
+        - Mac (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        purgeVPLSMac(Arg2:list, Arg3:number, Arg4:string)list
-            Args:
-                args[0] is Arg2 (list(number)): Purge Ethernet MAC.
-                args[1] is Arg3 (number): Number of Mac addresses to purge
-                args[2] is Arg4 (str): Mac addresses start
+        purgeVPLSMac(Arg2=list, Arg3=number, Arg4=string)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): Purge Ethernet MAC.
+        - Arg3 (number): Number of Mac addresses to purge
+        - Arg4 (str): Mac addresses start
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -835,22 +881,20 @@ class Ldpvplsbgpad(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -862,22 +906,20 @@ class Ldpvplsbgpad(Base):
 
         Activate VC
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -889,22 +931,20 @@ class Ldpvplsbgpad(Base):
 
         Deactivate VC
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

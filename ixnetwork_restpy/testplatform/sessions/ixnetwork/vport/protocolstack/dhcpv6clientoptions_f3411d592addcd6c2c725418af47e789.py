@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6ClientOptions(Base):
     """Portgroup settings placeholder for DHCPv6ClientPlugin.
-    The Dhcpv6ClientOptions class encapsulates a list of dhcpv6ClientOptions resources that is be managed by the user.
+    The Dhcpv6ClientOptions class encapsulates a list of dhcpv6ClientOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6ClientOptions.find() method.
-    The list can be managed by the user by using the Dhcpv6ClientOptions.add() and Dhcpv6ClientOptions.remove() methods.
+    The list can be managed by using the Dhcpv6ClientOptions.add() and Dhcpv6ClientOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def Associates(self):
-        """The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
         return self._get_attribute('associates')
     @Associates.setter
@@ -50,10 +50,10 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -62,19 +62,19 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalSetupRate(self):
-        """If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalSetupRate')
     @OverrideGlobalSetupRate.setter
@@ -83,10 +83,10 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def SetupRateIncrement(self):
-        """This value represents the increment value for setup rate.This value is applied every second and can be negative.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the increment value for setup rate.This value is applied every second and can be negative.
         """
         return self._get_attribute('setupRateIncrement')
     @SetupRateIncrement.setter
@@ -95,10 +95,10 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def SetupRateInitial(self):
-        """Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -107,10 +107,10 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def SetupRateMax(self):
-        """This value represents the final value for setup rate.The setup rate will not change after this value is reached.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the final value for setup rate.The setup rate will not change after this value is reached.
         """
         return self._get_attribute('setupRateMax')
     @SetupRateMax.setter
@@ -118,84 +118,97 @@ class Dhcpv6ClientOptions(Base):
         self._set_attribute('setupRateMax', value)
 
     def update(self, Associates=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Updates a child instance of dhcpv6ClientOptions on the server.
+        """Updates dhcpv6ClientOptions resource on the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Associates=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Adds a new dhcpv6ClientOptions node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6ClientOptions resource on the server and adds it to the container.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6ClientOptions data using find and the newly added dhcpv6ClientOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6ClientOptions resources using find and the newly added dhcpv6ClientOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6ClientOptions data in this instance from server.
+        """Deletes all the contained dhcpv6ClientOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Associates=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Finds and retrieves dhcpv6ClientOptions data from the server.
+        """Finds and retrieves dhcpv6ClientOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6ClientOptions data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6ClientOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6ClientOptions resources from the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
 
-        Returns:
-            self: This instance with matching dhcpv6ClientOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6ClientOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6ClientOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6ClientOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6ClientOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -204,14 +217,15 @@ class Dhcpv6ClientOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -223,16 +237,15 @@ class Dhcpv6ClientOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -244,16 +257,15 @@ class Dhcpv6ClientOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

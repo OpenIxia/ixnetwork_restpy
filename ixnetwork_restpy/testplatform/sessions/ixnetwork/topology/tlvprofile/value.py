@@ -36,24 +36,24 @@ class Value(Base):
 
     @property
     def Object(self):
-        """An instance of the Object class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object): An instance of the Object class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object import Object
         return Object(self)
 
     @property
     def Name(self):
-        """The name of the object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the object
         """
         return self._get_attribute('name')
     @Name.setter
@@ -61,27 +61,27 @@ class Value(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of value on the server.
+        """Updates value resource on the server.
 
-        Args:
-            Name (str): The name of the object
+        Args
+        ----
+        - Name (str): The name of the object
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def GetMVPropertyCandidatesToSharePatternWith(self):
         """Executes the getMVPropertyCandidatesToSharePatternWith operation on the server.
 
         Returns a list of MVProperties this pattern can be shared with.
 
-            Returns:
-                list(list[str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*]]): list of MVProperties this pattern can be shared with
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getMVPropertyCandidatesToSharePatternWith', payload=payload, response_object=None)
@@ -91,12 +91,10 @@ class Value(Base):
 
         Returns a list of shared pattern candidates.
 
-            Returns:
-                list(list[str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*]]): list of patterns may be shared
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getSharedPatternCandidates', payload=payload, response_object=None)

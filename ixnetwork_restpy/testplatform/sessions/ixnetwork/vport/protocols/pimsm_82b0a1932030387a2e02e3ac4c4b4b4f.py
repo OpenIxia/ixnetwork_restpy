@@ -36,24 +36,24 @@ class Pimsm(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5cf3dd8e34d68ebf92d00a0bfed1eed0.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5cf3dd8e34d68ebf92d00a0bfed1eed0.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5cf3dd8e34d68ebf92d00a0bfed1eed0 import Router
         return Router(self)
 
     @property
     def BsmFramePerInterval(self):
-        """Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
         """
         return self._get_attribute('bsmFramePerInterval')
     @BsmFramePerInterval.setter
@@ -62,10 +62,10 @@ class Pimsm(Base):
 
     @property
     def CrpFramePerInterval(self):
-        """Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
         """
         return self._get_attribute('crpFramePerInterval')
     @CrpFramePerInterval.setter
@@ -74,10 +74,10 @@ class Pimsm(Base):
 
     @property
     def DataMdtFramePerInterval(self):
-        """The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
         """
         return self._get_attribute('dataMdtFramePerInterval')
     @DataMdtFramePerInterval.setter
@@ -86,10 +86,10 @@ class Pimsm(Base):
 
     @property
     def DenyGrePimIpPrefix(self):
-        """Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
         """
         return self._get_attribute('denyGrePimIpPrefix')
     @DenyGrePimIpPrefix.setter
@@ -98,10 +98,10 @@ class Pimsm(Base):
 
     @property
     def EnableDiscardJoinPruneProcessing(self):
-        """If enabled, discards the join/prune messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, discards the join/prune messages.
         """
         return self._get_attribute('enableDiscardJoinPruneProcessing')
     @EnableDiscardJoinPruneProcessing.setter
@@ -110,10 +110,10 @@ class Pimsm(Base):
 
     @property
     def EnableRateControl(self):
-        """Rate control (flow control) is enabled on this PIM-SM port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Rate control (flow control) is enabled on this PIM-SM port.
         """
         return self._get_attribute('enableRateControl')
     @EnableRateControl.setter
@@ -122,10 +122,10 @@ class Pimsm(Base):
 
     @property
     def Enabled(self):
-        """Enables the emulated PIM-SM router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the emulated PIM-SM router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -134,10 +134,10 @@ class Pimsm(Base):
 
     @property
     def GreFilterType(self):
-        """Specifies type of filter for GRE.
-
-        Returns:
-            str(noDataMdt|dataMdtIpv4)
+        """
+        Returns
+        -------
+        - str(noDataMdt | dataMdtIpv4): Specifies type of filter for GRE.
         """
         return self._get_attribute('greFilterType')
     @GreFilterType.setter
@@ -146,10 +146,10 @@ class Pimsm(Base):
 
     @property
     def HelloMsgsPerInterval(self):
-        """The total hello messages received per interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total hello messages received per interval.
         """
         return self._get_attribute('helloMsgsPerInterval')
     @HelloMsgsPerInterval.setter
@@ -158,10 +158,10 @@ class Pimsm(Base):
 
     @property
     def Interval(self):
-        """The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
         """
         return self._get_attribute('interval')
     @Interval.setter
@@ -170,10 +170,10 @@ class Pimsm(Base):
 
     @property
     def JoinPruneMessagesPerInterval(self):
-        """The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
         """
         return self._get_attribute('joinPruneMessagesPerInterval')
     @JoinPruneMessagesPerInterval.setter
@@ -182,10 +182,10 @@ class Pimsm(Base):
 
     @property
     def OverrideSourceIpForSmInterface(self):
-        """If enabled, it will override source ip for SM interfaces.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, it will override source ip for SM interfaces.
         """
         return self._get_attribute('overrideSourceIpForSmInterface')
     @OverrideSourceIpForSmInterface.setter
@@ -194,10 +194,10 @@ class Pimsm(Base):
 
     @property
     def RegisterMessagesPerInterval(self):
-        """The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
         """
         return self._get_attribute('registerMessagesPerInterval')
     @RegisterMessagesPerInterval.setter
@@ -206,10 +206,10 @@ class Pimsm(Base):
 
     @property
     def RegisterStopMessagesPerInterval(self):
-        """The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
         """
         return self._get_attribute('registerStopMessagesPerInterval')
     @RegisterStopMessagesPerInterval.setter
@@ -218,45 +218,48 @@ class Pimsm(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the PIM-SM server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the PIM-SM server.
         """
         return self._get_attribute('runningState')
 
     def update(self, BsmFramePerInterval=None, CrpFramePerInterval=None, DataMdtFramePerInterval=None, DenyGrePimIpPrefix=None, EnableDiscardJoinPruneProcessing=None, EnableRateControl=None, Enabled=None, GreFilterType=None, HelloMsgsPerInterval=None, Interval=None, JoinPruneMessagesPerInterval=None, OverrideSourceIpForSmInterface=None, RegisterMessagesPerInterval=None, RegisterStopMessagesPerInterval=None):
-        """Updates a child instance of pimsm on the server.
+        """Updates pimsm resource on the server.
 
-        Args:
-            BsmFramePerInterval (number): Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
-            CrpFramePerInterval (number): Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
-            DataMdtFramePerInterval (number): The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
-            DenyGrePimIpPrefix (str): Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
-            EnableDiscardJoinPruneProcessing (bool): If enabled, discards the join/prune messages.
-            EnableRateControl (bool): Rate control (flow control) is enabled on this PIM-SM port.
-            Enabled (bool): Enables the emulated PIM-SM router.
-            GreFilterType (str(noDataMdt|dataMdtIpv4)): Specifies type of filter for GRE.
-            HelloMsgsPerInterval (number): The total hello messages received per interval.
-            Interval (number): The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
-            JoinPruneMessagesPerInterval (number): The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
-            OverrideSourceIpForSmInterface (bool): If enabled, it will override source ip for SM interfaces.
-            RegisterMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
-            RegisterStopMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        Args
+        ----
+        - BsmFramePerInterval (number): Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+        - CrpFramePerInterval (number): Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+        - DataMdtFramePerInterval (number): The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        - DenyGrePimIpPrefix (str): Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
+        - EnableDiscardJoinPruneProcessing (bool): If enabled, discards the join/prune messages.
+        - EnableRateControl (bool): Rate control (flow control) is enabled on this PIM-SM port.
+        - Enabled (bool): Enables the emulated PIM-SM router.
+        - GreFilterType (str(noDataMdt | dataMdtIpv4)): Specifies type of filter for GRE.
+        - HelloMsgsPerInterval (number): The total hello messages received per interval.
+        - Interval (number): The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
+        - JoinPruneMessagesPerInterval (number): The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
+        - OverrideSourceIpForSmInterface (bool): If enabled, it will override source ip for SM interfaces.
+        - RegisterMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        - RegisterStopMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the PIMSM protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -266,9 +269,10 @@ class Pimsm(Base):
 
         Stops the PIMSM protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

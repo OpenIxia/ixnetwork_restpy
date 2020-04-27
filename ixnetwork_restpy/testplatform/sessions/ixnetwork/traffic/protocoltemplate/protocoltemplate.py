@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class ProtocolTemplate(Base):
     """This object provides different options for Protocol Template.
-    The ProtocolTemplate class encapsulates a list of protocolTemplate resources that is managed by the system.
+    The ProtocolTemplate class encapsulates a list of protocolTemplate resources that are managed by the system.
     A list of resources can be retrieved from the server using the ProtocolTemplate.find() method.
     """
 
@@ -37,75 +37,82 @@ class ProtocolTemplate(Base):
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.field.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.field.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.field.field import Field
         return Field(self)
 
     @property
     def DisplayName(self):
-        """The display name of the template.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The display name of the template.
         """
         return self._get_attribute('displayName')
 
     @property
     def StackTypeId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('stackTypeId')
 
     @property
     def TemplateName(self):
-        """Indicates the protocol template name that is added to a packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the protocol template name that is added to a packet.
         """
         return self._get_attribute('templateName')
 
     def find(self, DisplayName=None, StackTypeId=None, TemplateName=None):
-        """Finds and retrieves protocolTemplate data from the server.
+        """Finds and retrieves protocolTemplate resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve protocolTemplate data from the server.
-        By default the find method takes no parameters and will retrieve all protocolTemplate data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve protocolTemplate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all protocolTemplate resources from the server.
 
-        Args:
-            DisplayName (str): The display name of the template.
-            StackTypeId (str): 
-            TemplateName (str): Indicates the protocol template name that is added to a packet.
+        Args
+        ----
+        - DisplayName (str): The display name of the template.
+        - StackTypeId (str): 
+        - TemplateName (str): Indicates the protocol template name that is added to a packet.
 
-        Returns:
-            self: This instance with matching protocolTemplate data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching protocolTemplate resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of protocolTemplate data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the protocolTemplate data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the protocolTemplate resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

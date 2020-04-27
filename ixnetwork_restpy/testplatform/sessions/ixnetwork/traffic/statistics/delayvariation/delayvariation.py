@@ -36,10 +36,10 @@ class DelayVariation(Base):
 
     @property
     def Enabled(self):
-        """If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class DelayVariation(Base):
 
     @property
     def LargeSequenceNumberErrorThreshold(self):
-        """The value for the large sequence number error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value for the large sequence number error.
         """
         return self._get_attribute('largeSequenceNumberErrorThreshold')
     @LargeSequenceNumberErrorThreshold.setter
@@ -60,10 +60,10 @@ class DelayVariation(Base):
 
     @property
     def LatencyMode(self):
-        """If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
-
-        Returns:
-            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | forwardingDelay | mef | storeForward): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
         """
         return self._get_attribute('latencyMode')
     @LatencyMode.setter
@@ -72,10 +72,10 @@ class DelayVariation(Base):
 
     @property
     def StatisticsMode(self):
-        """If enabled, allows to receive delay variation statistics with sequence error measurements.
-
-        Returns:
-            str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)
+        """
+        Returns
+        -------
+        - str(rxDelayVariationAverage | rxDelayVariationErrorsAndRate | rxDelayVariationMinMaxAndRate): If enabled, allows to receive delay variation statistics with sequence error measurements.
         """
         return self._get_attribute('statisticsMode')
     @StatisticsMode.setter
@@ -83,15 +83,17 @@ class DelayVariation(Base):
         self._set_attribute('statisticsMode', value)
 
     def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
-        """Updates a child instance of delayVariation on the server.
+        """Updates delayVariation resource on the server.
 
-        Args:
-            Enabled (bool): If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
-            LargeSequenceNumberErrorThreshold (number): The value for the large sequence number error.
-            LatencyMode (str(cutThrough|forwardingDelay|mef|storeForward)): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
-            StatisticsMode (str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)): If enabled, allows to receive delay variation statistics with sequence error measurements.
+        Args
+        ----
+        - Enabled (bool): If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
+        - LargeSequenceNumberErrorThreshold (number): The value for the large sequence number error.
+        - LatencyMode (str(cutThrough | forwardingDelay | mef | storeForward)): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
+        - StatisticsMode (str(rxDelayVariationAverage | rxDelayVariationErrorsAndRate | rxDelayVariationMinMaxAndRate)): If enabled, allows to receive delay variation statistics with sequence error measurements.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

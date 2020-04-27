@@ -36,24 +36,24 @@ class Cfm(Base):
 
     @property
     def Bridge(self):
-        """An instance of the Bridge class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_d8b0c3589e6175e046e1a83cbe6f36b6.Bridge): An instance of the Bridge class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_d8b0c3589e6175e046e1a83cbe6f36b6.Bridge)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_d8b0c3589e6175e046e1a83cbe6f36b6 import Bridge
         return Bridge(self)
 
     @property
     def EnableOptionalLmFunctionality(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableOptionalLmFunctionality')
     @EnableOptionalLmFunctionality.setter
@@ -62,10 +62,10 @@ class Cfm(Base):
 
     @property
     def EnableOptionalTlvValidation(self):
-        """If true, the CFM protocol will validate optional TLVs present in CFM packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the CFM protocol will validate optional TLVs present in CFM packets.
         """
         return self._get_attribute('enableOptionalTlvValidation')
     @EnableOptionalTlvValidation.setter
@@ -74,10 +74,10 @@ class Cfm(Base):
 
     @property
     def Enabled(self):
-        """If true, the CFM protcol is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the CFM protcol is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -86,10 +86,10 @@ class Cfm(Base):
 
     @property
     def ReceiveCcm(self):
-        """If true, the CFM protocol can receive CFM CCMs on this port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the CFM protocol can receive CFM CCMs on this port.
         """
         return self._get_attribute('receiveCcm')
     @ReceiveCcm.setter
@@ -98,19 +98,19 @@ class Cfm(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the CFM protocol.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the CFM protocol.
         """
         return self._get_attribute('runningState')
 
     @property
     def SendCcm(self):
-        """If true, the CFM protocol can send CFM CCMs from this port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the CFM protocol can send CFM CCMs from this port.
         """
         return self._get_attribute('sendCcm')
     @SendCcm.setter
@@ -119,10 +119,10 @@ class Cfm(Base):
 
     @property
     def SuppressErrorsOnAis(self):
-        """If true, the errors on AIS are suopressed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the errors on AIS are suopressed.
         """
         return self._get_attribute('suppressErrorsOnAis')
     @SuppressErrorsOnAis.setter
@@ -130,29 +130,32 @@ class Cfm(Base):
         self._set_attribute('suppressErrorsOnAis', value)
 
     def update(self, EnableOptionalLmFunctionality=None, EnableOptionalTlvValidation=None, Enabled=None, ReceiveCcm=None, SendCcm=None, SuppressErrorsOnAis=None):
-        """Updates a child instance of cfm on the server.
+        """Updates cfm resource on the server.
 
-        Args:
-            EnableOptionalLmFunctionality (bool): NOT DEFINED
-            EnableOptionalTlvValidation (bool): If true, the CFM protocol will validate optional TLVs present in CFM packets.
-            Enabled (bool): If true, the CFM protcol is enabled.
-            ReceiveCcm (bool): If true, the CFM protocol can receive CFM CCMs on this port.
-            SendCcm (bool): If true, the CFM protocol can send CFM CCMs from this port.
-            SuppressErrorsOnAis (bool): If true, the errors on AIS are suopressed.
+        Args
+        ----
+        - EnableOptionalLmFunctionality (bool): NOT DEFINED
+        - EnableOptionalTlvValidation (bool): If true, the CFM protocol will validate optional TLVs present in CFM packets.
+        - Enabled (bool): If true, the CFM protcol is enabled.
+        - ReceiveCcm (bool): If true, the CFM protocol can receive CFM CCMs on this port.
+        - SendCcm (bool): If true, the CFM protocol can send CFM CCMs from this port.
+        - SuppressErrorsOnAis (bool): If true, the errors on AIS are suopressed.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the CFM protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -162,9 +165,10 @@ class Cfm(Base):
 
         Stops the CFM protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

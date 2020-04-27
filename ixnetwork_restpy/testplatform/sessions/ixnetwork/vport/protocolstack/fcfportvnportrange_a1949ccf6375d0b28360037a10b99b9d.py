@@ -36,10 +36,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def B2bRxSize(self):
-        """The buffer-to-buffer receive data field size in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The buffer-to-buffer receive data field size in bytes.
         """
         return self._get_attribute('b2bRxSize')
     @B2bRxSize.setter
@@ -48,10 +48,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def Count(self):
-        """The number of N_Ports allocated by this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of N_Ports allocated by this range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -60,10 +60,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -72,10 +72,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -84,10 +84,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def NodeWwnIncrement(self):
-        """The Node Name incrementing value for this N_Port range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Node Name incrementing value for this N_Port range.
         """
         return self._get_attribute('nodeWwnIncrement')
     @NodeWwnIncrement.setter
@@ -96,10 +96,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def NodeWwnStart(self):
-        """The Node Name starting value for this N_Port range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Node Name starting value for this N_Port range.
         """
         return self._get_attribute('nodeWwnStart')
     @NodeWwnStart.setter
@@ -108,19 +108,19 @@ class FcFportVnPortRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PlogiDestId(self):
-        """Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
         """
         return self._get_attribute('plogiDestId')
     @PlogiDestId.setter
@@ -129,10 +129,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PlogiEnabled(self):
-        """Enables these N_Ports to attempt a PLOGI connection with specified destinations.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables these N_Ports to attempt a PLOGI connection with specified destinations.
         """
         return self._get_attribute('plogiEnabled')
     @PlogiEnabled.setter
@@ -141,10 +141,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PlogiMeshMode(self):
-        """The association mode between PLOGI initiators and targets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The association mode between PLOGI initiators and targets.
         """
         return self._get_attribute('plogiMeshMode')
     @PlogiMeshMode.setter
@@ -153,10 +153,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PlogiTargetName(self):
-        """Indicates the N_Port range used as destination for PLOGI requests.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the N_Port range used as destination for PLOGI requests.
         """
         return self._get_attribute('plogiTargetName')
     @PlogiTargetName.setter
@@ -165,10 +165,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PortIdIncrement(self):
-        """The increment value used to generate new FC_ID values.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value used to generate new FC_ID values.
         """
         return self._get_attribute('portIdIncrement')
     @PortIdIncrement.setter
@@ -177,10 +177,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PortIdStart(self):
-        """The FC_ID value assigned to first N_Port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The FC_ID value assigned to first N_Port.
         """
         return self._get_attribute('portIdStart')
     @PortIdStart.setter
@@ -189,10 +189,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PortWwnIncrement(self):
-        """The Port Name incrementing value for this N_Port range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Port Name incrementing value for this N_Port range.
         """
         return self._get_attribute('portWwnIncrement')
     @PortWwnIncrement.setter
@@ -201,10 +201,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def PortWwnStart(self):
-        """The Port Name starting value for this N_Port range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Port Name starting value for this N_Port range.
         """
         return self._get_attribute('portWwnStart')
     @PortWwnStart.setter
@@ -213,10 +213,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def Simulated(self):
-        """Enables these N_Ports to be simulated behind F_Port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables these N_Ports to be simulated behind F_Port.
         """
         return self._get_attribute('simulated')
     @Simulated.setter
@@ -225,10 +225,10 @@ class FcFportVnPortRange(Base):
 
     @property
     def VxPortName(self):
-        """The F_Port interface associated with this range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The F_Port interface associated with this range
         """
         return self._get_attribute('vxPortName')
     @VxPortName.setter
@@ -236,44 +236,47 @@ class FcFportVnPortRange(Base):
         self._set_attribute('vxPortName', value)
 
     def update(self, B2bRxSize=None, Count=None, Enabled=None, Name=None, NodeWwnIncrement=None, NodeWwnStart=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortIdIncrement=None, PortIdStart=None, PortWwnIncrement=None, PortWwnStart=None, Simulated=None, VxPortName=None):
-        """Updates a child instance of fcFportVnPortRange on the server.
+        """Updates fcFportVnPortRange resource on the server.
 
-        Args:
-            B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
-            Count (number): The number of N_Ports allocated by this range.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): Name of range
-            NodeWwnIncrement (str): The Node Name incrementing value for this N_Port range.
-            NodeWwnStart (str): The Node Name starting value for this N_Port range.
-            PlogiDestId (str): Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
-            PlogiEnabled (bool): Enables these N_Ports to attempt a PLOGI connection with specified destinations.
-            PlogiMeshMode (str): The association mode between PLOGI initiators and targets.
-            PlogiTargetName (str): Indicates the N_Port range used as destination for PLOGI requests.
-            PortIdIncrement (str): The increment value used to generate new FC_ID values.
-            PortIdStart (str): The FC_ID value assigned to first N_Port.
-            PortWwnIncrement (str): The Port Name incrementing value for this N_Port range.
-            PortWwnStart (str): The Port Name starting value for this N_Port range.
-            Simulated (bool): Enables these N_Ports to be simulated behind F_Port.
-            VxPortName (str): The F_Port interface associated with this range
+        Args
+        ----
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - Count (number): The number of N_Ports allocated by this range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - NodeWwnIncrement (str): The Node Name incrementing value for this N_Port range.
+        - NodeWwnStart (str): The Node Name starting value for this N_Port range.
+        - PlogiDestId (str): Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
+        - PlogiEnabled (bool): Enables these N_Ports to attempt a PLOGI connection with specified destinations.
+        - PlogiMeshMode (str): The association mode between PLOGI initiators and targets.
+        - PlogiTargetName (str): Indicates the N_Port range used as destination for PLOGI requests.
+        - PortIdIncrement (str): The increment value used to generate new FC_ID values.
+        - PortIdStart (str): The FC_ID value assigned to first N_Port.
+        - PortWwnIncrement (str): The Port Name incrementing value for this N_Port range.
+        - PortWwnStart (str): The Port Name starting value for this N_Port range.
+        - Simulated (bool): Enables these N_Ports to be simulated behind F_Port.
+        - VxPortName (str): The F_Port interface associated with this range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -285,16 +288,15 @@ class FcFportVnPortRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -306,16 +308,15 @@ class FcFportVnPortRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

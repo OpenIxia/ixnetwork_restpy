@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Lac(Base):
     """L2TP Access Concentrator protocol.
-    The Lac class encapsulates a list of lac resources that is be managed by the user.
+    The Lac class encapsulates a list of lac resources that are managed by the user.
     A list of resources can be retrieved from the server using the Lac.find() method.
-    The list can be managed by the user by using the Lac.add() and Lac.remove() methods.
+    The list can be managed by using the Lac.add() and Lac.remove() methods.
     """
 
     __slots__ = ()
@@ -38,65 +38,68 @@ class Lac(Base):
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def BaseLnsIp(self):
-        """Defines the base address to be used by the L2TP tunnel
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('baseLnsIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Defines the base address to be used by the L2TP tunnel
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('baseLnsIp'))
 
     @property
     def BearerCapability(self):
-        """Indicates to the DUT the bearer device types from which incoming calls will be accepted.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bearerCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates to the DUT the bearer device types from which incoming calls will be accepted.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bearerCapability'))
 
     @property
     def BearerType(self):
-        """The bearer type.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bearerType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The bearer type.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bearerType'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -105,55 +108,58 @@ class Lac(Base):
 
     @property
     def ControlMsgsRetryCounter(self):
-        """Number of L2TP retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('controlMsgsRetryCounter')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of L2TP retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('controlMsgsRetryCounter'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableControlChecksum(self):
-        """If checked, UDP checksum is enabled on control plane packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableControlChecksum')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on control plane packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableControlChecksum'))
 
     @property
     def EnableDataChecksum(self):
-        """If checked, UDP checksum is enabled on data plane packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableDataChecksum')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on data plane packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableDataChecksum'))
 
     @property
     def EnableExcludeHdlc(self):
-        """If checked, HDLC header is not encoded in the L2TP packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If checked, HDLC header is not encoded in the L2TP packets.
         """
         return self._get_attribute('enableExcludeHdlc')
     @EnableExcludeHdlc.setter
@@ -162,100 +168,109 @@ class Lac(Base):
 
     @property
     def EnableHelloRequest(self):
-        """If checked, L2TP hello request is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHelloRequest')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, L2TP hello request is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHelloRequest'))
 
     @property
     def EnableRedial(self):
-        """If checked, L2TP redial is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRedial')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, L2TP redial is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRedial'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def FramingCapability(self):
-        """Designates sync or async framing
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('framingCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Designates sync or async framing
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('framingCapability'))
 
     @property
     def HelloRequestInterval(self):
-        """Timeout for L2TP hello request, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloRequestInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for L2TP hello request, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloRequestInterval'))
 
     @property
     def InitRetransmitInterval(self):
-        """The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('initRetransmitInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('initRetransmitInterval'))
 
     @property
     def LacHostName(self):
-        """LAC Hostname used for tunnel authentication.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lacHostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LAC Hostname used for tunnel authentication.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lacHostName'))
 
     @property
     def LacSecret(self):
-        """Secret value used for tunnel authentication.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lacSecret')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Secret value used for tunnel authentication.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lacSecret'))
 
     @property
     def MaxRedialAttempts(self):
-        """Maximum number of L2TP redial attempts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxRedialAttempts')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of L2TP redial attempts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxRedialAttempts'))
 
     @property
     def MaxRetransmitInterval(self):
-        """The maximum amount of time that can elapse for receiving a reply for a control message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxRetransmitInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum amount of time that can elapse for receiving a reply for a control message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxRetransmitInterval'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -264,10 +279,10 @@ class Lac(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -276,55 +291,59 @@ class Lac(Base):
 
     @property
     def OffsetByte(self):
-        """L2TP offset byte. Applicable only if offset bit is set.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('offsetByte')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset byte. Applicable only if offset bit is set.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('offsetByte'))
 
     @property
     def OffsetLength(self):
-        """L2TP offset length in bytes. Applicable only if offset bit set.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('offsetLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset length in bytes. Applicable only if offset bit set.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('offsetLength'))
 
     @property
     def ReceiveWindowSize(self):
-        """L2TP Receive Window Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('receiveWindowSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP Receive Window Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('receiveWindowSize'))
 
     @property
     def RedialInterval(self):
-        """L2TP redial timeout, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redialInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP redial timeout, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redialInterval'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -333,37 +352,38 @@ class Lac(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TunnelAuthentication(self):
-        """Enables or disables L2TP tunnel authentication
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tunnelAuthentication')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables or disables L2TP tunnel authentication
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tunnelAuthentication'))
 
     @property
     def TunnelsPerInterfaceMultiplier(self):
-        """Number of tunnels per interface (multiplier).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of tunnels per interface (multiplier).
         """
         return self._get_attribute('tunnelsPerInterfaceMultiplier')
     @TunnelsPerInterfaceMultiplier.setter
@@ -372,145 +392,164 @@ class Lac(Base):
 
     @property
     def UdpDestinationPort(self):
-        """UDP port to employ for tunneling destinations
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('udpDestinationPort')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling destinations
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('udpDestinationPort'))
 
     @property
     def UdpSourcePort(self):
-        """UDP port to employ for tunneling sources
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('udpSourcePort')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling sources
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('udpSourcePort'))
 
     @property
     def UseHiddenAVPs(self):
-        """If checked, Attribute Value Pair hiding is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useHiddenAVPs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, Attribute Value Pair hiding is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useHiddenAVPs'))
 
     @property
     def UseLengthBitInPayload(self):
-        """If checked, length bit is set in L2TP data packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useLengthBitInPayload')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, length bit is set in L2TP data packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useLengthBitInPayload'))
 
     @property
     def UseOffsetBitInPayload(self):
-        """If checked, offset bit is enabled in L2TP data packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useOffsetBitInPayload')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, offset bit is enabled in L2TP data packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useOffsetBitInPayload'))
 
     @property
     def UseSequenceNoInPayload(self):
-        """If checked, sequence bit is set in L2TP data packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useSequenceNoInPayload')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, sequence bit is set in L2TP data packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useSequenceNoInPayload'))
 
     def update(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
-        """Updates a child instance of lac on the server.
+        """Updates lac resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
-        """Adds a new lac node on the server and retrieves it in this instance.
+        """Adds a new lac resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
-        Returns:
-            self: This instance with all currently retrieved lac data using find and the newly added lac data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved lac resources using find and the newly added lac resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the lac data in this instance from server.
+        """Deletes all the contained lac resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableExcludeHdlc=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TunnelsPerInterfaceMultiplier=None):
-        """Finds and retrieves lac data from the server.
+        """Finds and retrieves lac resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lac data from the server.
-        By default the find method takes no parameters and will retrieve all lac data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lac resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lac resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-            TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
-        Returns:
-            self: This instance with matching lac data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lac resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lac data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lac data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lac resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -519,40 +558,43 @@ class Lac(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BaseLnsIp (str): optional regex of baseLnsIp
-            BearerCapability (str): optional regex of bearerCapability
-            BearerType (str): optional regex of bearerType
-            ControlMsgsRetryCounter (str): optional regex of controlMsgsRetryCounter
-            EnableControlChecksum (str): optional regex of enableControlChecksum
-            EnableDataChecksum (str): optional regex of enableDataChecksum
-            EnableHelloRequest (str): optional regex of enableHelloRequest
-            EnableRedial (str): optional regex of enableRedial
-            FramingCapability (str): optional regex of framingCapability
-            HelloRequestInterval (str): optional regex of helloRequestInterval
-            InitRetransmitInterval (str): optional regex of initRetransmitInterval
-            LacHostName (str): optional regex of lacHostName
-            LacSecret (str): optional regex of lacSecret
-            MaxRedialAttempts (str): optional regex of maxRedialAttempts
-            MaxRetransmitInterval (str): optional regex of maxRetransmitInterval
-            OffsetByte (str): optional regex of offsetByte
-            OffsetLength (str): optional regex of offsetLength
-            ReceiveWindowSize (str): optional regex of receiveWindowSize
-            RedialInterval (str): optional regex of redialInterval
-            TunnelAuthentication (str): optional regex of tunnelAuthentication
-            UdpDestinationPort (str): optional regex of udpDestinationPort
-            UdpSourcePort (str): optional regex of udpSourcePort
-            UseHiddenAVPs (str): optional regex of useHiddenAVPs
-            UseLengthBitInPayload (str): optional regex of useLengthBitInPayload
-            UseOffsetBitInPayload (str): optional regex of useOffsetBitInPayload
-            UseSequenceNoInPayload (str): optional regex of useSequenceNoInPayload
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BaseLnsIp (str): optional regex of baseLnsIp
+        - BearerCapability (str): optional regex of bearerCapability
+        - BearerType (str): optional regex of bearerType
+        - ControlMsgsRetryCounter (str): optional regex of controlMsgsRetryCounter
+        - EnableControlChecksum (str): optional regex of enableControlChecksum
+        - EnableDataChecksum (str): optional regex of enableDataChecksum
+        - EnableHelloRequest (str): optional regex of enableHelloRequest
+        - EnableRedial (str): optional regex of enableRedial
+        - FramingCapability (str): optional regex of framingCapability
+        - HelloRequestInterval (str): optional regex of helloRequestInterval
+        - InitRetransmitInterval (str): optional regex of initRetransmitInterval
+        - LacHostName (str): optional regex of lacHostName
+        - LacSecret (str): optional regex of lacSecret
+        - MaxRedialAttempts (str): optional regex of maxRedialAttempts
+        - MaxRetransmitInterval (str): optional regex of maxRetransmitInterval
+        - OffsetByte (str): optional regex of offsetByte
+        - OffsetLength (str): optional regex of offsetLength
+        - ReceiveWindowSize (str): optional regex of receiveWindowSize
+        - RedialInterval (str): optional regex of redialInterval
+        - TunnelAuthentication (str): optional regex of tunnelAuthentication
+        - UdpDestinationPort (str): optional regex of udpDestinationPort
+        - UdpSourcePort (str): optional regex of udpSourcePort
+        - UseHiddenAVPs (str): optional regex of useHiddenAVPs
+        - UseLengthBitInPayload (str): optional regex of useLengthBitInPayload
+        - UseOffsetBitInPayload (str): optional regex of useOffsetBitInPayload
+        - UseSequenceNoInPayload (str): optional regex of useSequenceNoInPayload
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -561,22 +603,20 @@ class Lac(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -588,22 +628,20 @@ class Lac(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -615,22 +653,20 @@ class Lac(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

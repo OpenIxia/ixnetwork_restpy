@@ -36,38 +36,38 @@ class EgtpSgwRange(Base):
 
     @property
     def DedicatedBearer(self):
-        """An instance of the DedicatedBearer class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_0fd914c6c0a4c68bd7282d6b46b573ce.DedicatedBearer): An instance of the DedicatedBearer class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_0fd914c6c0a4c68bd7282d6b46b573ce.DedicatedBearer)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_0fd914c6c0a4c68bd7282d6b46b573ce import DedicatedBearer
         return DedicatedBearer(self)
 
     @property
     def TrafficProfileProxiesSgw(self):
-        """An instance of the TrafficProfileProxiesSgw class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_811b5862a1be310ee2dd14076c47f3a3.TrafficProfileProxiesSgw): An instance of the TrafficProfileProxiesSgw class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_811b5862a1be310ee2dd14076c47f3a3.TrafficProfileProxiesSgw)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_811b5862a1be310ee2dd14076c47f3a3 import TrafficProfileProxiesSgw
         return TrafficProfileProxiesSgw(self)
 
     @property
     def Apn(self):
-        """Access Point Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Access Point Name
         """
         return self._get_attribute('apn')
     @Apn.setter
@@ -76,10 +76,10 @@ class EgtpSgwRange(Base):
 
     @property
     def ApnAmbrd(self):
-        """APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
         return self._get_attribute('apnAmbrd')
     @ApnAmbrd.setter
@@ -88,10 +88,10 @@ class EgtpSgwRange(Base):
 
     @property
     def ApnAmbru(self):
-        """APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
         return self._get_attribute('apnAmbru')
     @ApnAmbru.setter
@@ -100,10 +100,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbMbrd(self):
-        """Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('dbMbrd')
     @DbMbrd.setter
@@ -112,10 +112,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbMbru(self):
-        """Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('dbMbru')
     @DbMbru.setter
@@ -124,10 +124,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbPci(self):
-        """ARP Preemption Capability
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: ARP Preemption Capability
         """
         return self._get_attribute('dbPci')
     @DbPci.setter
@@ -136,10 +136,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbPl(self):
-        """ARP Priority Level
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: ARP Priority Level
         """
         return self._get_attribute('dbPl')
     @DbPl.setter
@@ -148,10 +148,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbPvi(self):
-        """ARP Preemption Vulnerability
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: ARP Preemption Vulnerability
         """
         return self._get_attribute('dbPvi')
     @DbPvi.setter
@@ -160,10 +160,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DbQci(self):
-        """QoS Class Identifier
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: QoS Class Identifier
         """
         return self._get_attribute('dbQci')
     @DbQci.setter
@@ -172,10 +172,10 @@ class EgtpSgwRange(Base):
 
     @property
     def DefaultBearerLifetimeTimer(self):
-        """The time, in seconds, after which the default bearer is deleted
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time, in seconds, after which the default bearer is deleted
         """
         return self._get_attribute('defaultBearerLifetimeTimer')
     @DefaultBearerLifetimeTimer.setter
@@ -184,10 +184,10 @@ class EgtpSgwRange(Base):
 
     @property
     def EnableDefaultBearerLifetime(self):
-        """If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
         """
         return self._get_attribute('enableDefaultBearerLifetime')
     @EnableDefaultBearerLifetime.setter
@@ -196,10 +196,10 @@ class EgtpSgwRange(Base):
 
     @property
     def EnableNidbCreationDelay(self):
-        """Delay Network Initiated Dedicated Bearer(NIDB) Creation
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Delay Network Initiated Dedicated Bearer(NIDB) Creation
         """
         return self._get_attribute('enableNidbCreationDelay')
     @EnableNidbCreationDelay.setter
@@ -208,10 +208,10 @@ class EgtpSgwRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -220,10 +220,10 @@ class EgtpSgwRange(Base):
 
     @property
     def Ims_apn(self):
-        """IMS APN
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: IMS APN
         """
         return self._get_attribute('ims_apn')
     @Ims_apn.setter
@@ -232,10 +232,10 @@ class EgtpSgwRange(Base):
 
     @property
     def Imsi(self):
-        """The first International Mobile Subscriber Identifier that will be accepted.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first International Mobile Subscriber Identifier that will be accepted.
         """
         return self._get_attribute('imsi')
     @Imsi.setter
@@ -244,10 +244,10 @@ class EgtpSgwRange(Base):
 
     @property
     def IpType(self):
-        """The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -256,10 +256,10 @@ class EgtpSgwRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -268,10 +268,10 @@ class EgtpSgwRange(Base):
 
     @property
     def NidbCreationDelay(self):
-        """Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
         """
         return self._get_attribute('nidbCreationDelay')
     @NidbCreationDelay.setter
@@ -280,19 +280,19 @@ class EgtpSgwRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PoolSize(self):
-        """The number of UEs that will be accepted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of UEs that will be accepted.
         """
         return self._get_attribute('poolSize')
     @PoolSize.setter
@@ -301,10 +301,10 @@ class EgtpSgwRange(Base):
 
     @property
     def PoolStartIp(self):
-        """Obsolete - use poolStartIPv4 or poolStartIPv6
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Obsolete - use poolStartIPv4 or poolStartIPv6
         """
         return self._get_attribute('poolStartIp')
     @PoolStartIp.setter
@@ -313,10 +313,10 @@ class EgtpSgwRange(Base):
 
     @property
     def PoolStartIpv4(self):
-        """The first IPv4 address to be assigned to an UE.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IPv4 address to be assigned to an UE.
         """
         return self._get_attribute('poolStartIpv4')
     @PoolStartIpv4.setter
@@ -325,10 +325,10 @@ class EgtpSgwRange(Base):
 
     @property
     def PoolStartIpv6(self):
-        """The first IPv6 address to be assigned to an UE.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IPv6 address to be assigned to an UE.
         """
         return self._get_attribute('poolStartIpv6')
     @PoolStartIpv6.setter
@@ -337,10 +337,10 @@ class EgtpSgwRange(Base):
 
     @property
     def TotalCount(self):
-        """Layer 7 Server Count On All Ports
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Layer 7 Server Count On All Ports
         """
         return self._get_attribute('totalCount')
     @TotalCount.setter
@@ -349,10 +349,10 @@ class EgtpSgwRange(Base):
 
     @property
     def UserPlaneIpAddress(self):
-        """Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
         """
         return self._get_attribute('userPlaneIpAddress')
     @UserPlaneIpAddress.setter
@@ -361,10 +361,10 @@ class EgtpSgwRange(Base):
 
     @property
     def UserPlaneIpCount(self):
-        """Layer 7 Server Count Per Port
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Layer 7 Server Count Per Port
         """
         return self._get_attribute('userPlaneIpCount')
     @UserPlaneIpCount.setter
@@ -373,10 +373,10 @@ class EgtpSgwRange(Base):
 
     @property
     def UserPlaneIpv4Address(self):
-        """The first IPv4 address to be used by the L4-7 server activies.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IPv4 address to be used by the L4-7 server activies.
         """
         return self._get_attribute('userPlaneIpv4Address')
     @UserPlaneIpv4Address.setter
@@ -385,10 +385,10 @@ class EgtpSgwRange(Base):
 
     @property
     def UserPlaneIpv6Address(self):
-        """The first IPv6 address to be used by the L4-7 server activies.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IPv6 address to be used by the L4-7 server activies.
         """
         return self._get_attribute('userPlaneIpv6Address')
     @UserPlaneIpv6Address.setter
@@ -396,55 +396,58 @@ class EgtpSgwRange(Base):
         self._set_attribute('userPlaneIpv6Address', value)
 
     def update(self, Apn=None, ApnAmbrd=None, ApnAmbru=None, DbMbrd=None, DbMbru=None, DbPci=None, DbPl=None, DbPvi=None, DbQci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNidbCreationDelay=None, Enabled=None, Ims_apn=None, Imsi=None, IpType=None, Name=None, NidbCreationDelay=None, PoolSize=None, PoolStartIp=None, PoolStartIpv4=None, PoolStartIpv6=None, TotalCount=None, UserPlaneIpAddress=None, UserPlaneIpCount=None, UserPlaneIpv4Address=None, UserPlaneIpv6Address=None):
-        """Updates a child instance of egtpSgwRange on the server.
+        """Updates egtpSgwRange resource on the server.
 
-        Args:
-            Apn (str): Access Point Name
-            ApnAmbrd (number): APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            ApnAmbru (number): APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            DbMbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            DbMbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            DbPci (bool): ARP Preemption Capability
-            DbPl (number): ARP Priority Level
-            DbPvi (bool): ARP Preemption Vulnerability
-            DbQci (number): QoS Class Identifier
-            DefaultBearerLifetimeTimer (number): The time, in seconds, after which the default bearer is deleted
-            EnableDefaultBearerLifetime (bool): If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
-            EnableNidbCreationDelay (bool): Delay Network Initiated Dedicated Bearer(NIDB) Creation
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Ims_apn (bool): IMS APN
-            Imsi (str): The first International Mobile Subscriber Identifier that will be accepted.
-            IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
-            Name (str): Name of range
-            NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
-            PoolSize (number): The number of UEs that will be accepted.
-            PoolStartIp (str): Obsolete - use poolStartIPv4 or poolStartIPv6
-            PoolStartIpv4 (str): The first IPv4 address to be assigned to an UE.
-            PoolStartIpv6 (str): The first IPv6 address to be assigned to an UE.
-            TotalCount (number): Layer 7 Server Count On All Ports
-            UserPlaneIpAddress (str): Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
-            UserPlaneIpCount (number): Layer 7 Server Count Per Port
-            UserPlaneIpv4Address (str): The first IPv4 address to be used by the L4-7 server activies.
-            UserPlaneIpv6Address (str): The first IPv6 address to be used by the L4-7 server activies.
+        Args
+        ----
+        - Apn (str): Access Point Name
+        - ApnAmbrd (number): APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - ApnAmbru (number): APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - DbMbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - DbMbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - DbPci (bool): ARP Preemption Capability
+        - DbPl (number): ARP Priority Level
+        - DbPvi (bool): ARP Preemption Vulnerability
+        - DbQci (number): QoS Class Identifier
+        - DefaultBearerLifetimeTimer (number): The time, in seconds, after which the default bearer is deleted
+        - EnableDefaultBearerLifetime (bool): If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
+        - EnableNidbCreationDelay (bool): Delay Network Initiated Dedicated Bearer(NIDB) Creation
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Ims_apn (bool): IMS APN
+        - Imsi (str): The first International Mobile Subscriber Identifier that will be accepted.
+        - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
+        - Name (str): Name of range
+        - NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
+        - PoolSize (number): The number of UEs that will be accepted.
+        - PoolStartIp (str): Obsolete - use poolStartIPv4 or poolStartIPv6
+        - PoolStartIpv4 (str): The first IPv4 address to be assigned to an UE.
+        - PoolStartIpv6 (str): The first IPv6 address to be assigned to an UE.
+        - TotalCount (number): Layer 7 Server Count On All Ports
+        - UserPlaneIpAddress (str): Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
+        - UserPlaneIpCount (number): Layer 7 Server Count Per Port
+        - UserPlaneIpv4Address (str): The first IPv4 address to be used by the L4-7 server activies.
+        - UserPlaneIpv6Address (str): The first IPv6 address to be used by the L4-7 server activies.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -456,16 +459,15 @@ class EgtpSgwRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -477,16 +479,15 @@ class EgtpSgwRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

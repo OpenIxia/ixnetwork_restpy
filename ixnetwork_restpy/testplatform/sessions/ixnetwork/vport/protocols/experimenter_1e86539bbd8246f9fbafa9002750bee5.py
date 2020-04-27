@@ -36,10 +36,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -48,10 +48,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -60,10 +60,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterDataLengthMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLengthMiss')
     @ExperimenterDataLengthMiss.setter
@@ -72,10 +72,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterDataMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterDataMiss')
     @ExperimenterDataMiss.setter
@@ -84,10 +84,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterField(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterField')
     @ExperimenterField.setter
@@ -96,10 +96,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterFieldMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterFieldMiss')
     @ExperimenterFieldMiss.setter
@@ -108,10 +108,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -120,10 +120,10 @@ class Experimenter(Base):
 
     @property
     def ExperimenterIdMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterIdMiss')
     @ExperimenterIdMiss.setter
@@ -131,19 +131,21 @@ class Experimenter(Base):
         self._set_attribute('experimenterIdMiss', value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
-        """Updates a child instance of experimenter on the server.
+        """Updates experimenter resource on the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterDataLengthMiss (number): NOT DEFINED
-            ExperimenterDataMiss (str): NOT DEFINED
-            ExperimenterField (number): NOT DEFINED
-            ExperimenterFieldMiss (number): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            ExperimenterIdMiss (number): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterDataLengthMiss (number): NOT DEFINED
+        - ExperimenterDataMiss (str): NOT DEFINED
+        - ExperimenterField (number): NOT DEFINED
+        - ExperimenterFieldMiss (number): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - ExperimenterIdMiss (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgtpMmeOptions(Base):
     """
-    The EgtpMmeOptions class encapsulates a list of egtpMmeOptions resources that is be managed by the user.
+    The EgtpMmeOptions class encapsulates a list of egtpMmeOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgtpMmeOptions.find() method.
-    The list can be managed by the user by using the EgtpMmeOptions.add() and EgtpMmeOptions.remove() methods.
+    The list can be managed by using the EgtpMmeOptions.add() and EgtpMmeOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def AlwaysIncludeRecoveryIe(self):
-        """Always include recovery IE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Always include recovery IE
         """
         return self._get_attribute('alwaysIncludeRecoveryIe')
     @AlwaysIncludeRecoveryIe.setter
@@ -50,10 +50,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def Associates(self):
-        """The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
         return self._get_attribute('associates')
     @Associates.setter
@@ -62,10 +62,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def DeleteIdleBearers(self):
-        """Delete Idle Bearers
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Delete Idle Bearers
         """
         return self._get_attribute('deleteIdleBearers')
     @DeleteIdleBearers.setter
@@ -75,9 +75,9 @@ class EgtpMmeOptions(Base):
     @property
     def EnableDifferentTeidPerENodeB(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableDifferentTeidPerENodeB')
     @EnableDifferentTeidPerENodeB.setter
@@ -87,9 +87,9 @@ class EgtpMmeOptions(Base):
     @property
     def EnableIPDefragmentation(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableIPDefragmentation')
     @EnableIPDefragmentation.setter
@@ -98,10 +98,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def MaxOutstandingReleases(self):
-        """- The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -110,10 +110,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """- The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -122,19 +122,19 @@ class EgtpMmeOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRateControls(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalRateControls')
     @OverrideGlobalRateControls.setter
@@ -143,10 +143,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def PcpuLogLevel(self):
-        """PCPU log level
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PCPU log level
         """
         return self._get_attribute('pcpuLogLevel')
     @PcpuLogLevel.setter
@@ -155,10 +155,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def S5s8InterfaceType(self):
-        """S5/S8 Interface Type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: S5/S8 Interface Type
         """
         return self._get_attribute('s5s8InterfaceType')
     @S5s8InterfaceType.setter
@@ -167,10 +167,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def SetupRateInitial(self):
-        """- The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -179,10 +179,10 @@ class EgtpMmeOptions(Base):
 
     @property
     def TeardownRateInitial(self):
-        """- The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -190,102 +190,115 @@ class EgtpMmeOptions(Base):
         self._set_attribute('teardownRateInitial', value)
 
     def update(self, AlwaysIncludeRecoveryIe=None, Associates=None, DeleteIdleBearers=None, EnableDifferentTeidPerENodeB=None, EnableIPDefragmentation=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, S5s8InterfaceType=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Updates a child instance of egtpMmeOptions on the server.
+        """Updates egtpMmeOptions resource on the server.
 
-        Args:
-            AlwaysIncludeRecoveryIe (bool): Always include recovery IE
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            EnableDifferentTeidPerENodeB (bool): 
-            EnableIPDefragmentation (bool): 
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            S5s8InterfaceType (str): S5/S8 Interface Type
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIe (bool): Always include recovery IE
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - EnableDifferentTeidPerENodeB (bool): 
+        - EnableIPDefragmentation (bool): 
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - S5s8InterfaceType (str): S5/S8 Interface Type
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AlwaysIncludeRecoveryIe=None, Associates=None, DeleteIdleBearers=None, EnableDifferentTeidPerENodeB=None, EnableIPDefragmentation=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, S5s8InterfaceType=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Adds a new egtpMmeOptions node on the server and retrieves it in this instance.
+        """Adds a new egtpMmeOptions resource on the server and adds it to the container.
 
-        Args:
-            AlwaysIncludeRecoveryIe (bool): Always include recovery IE
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            EnableDifferentTeidPerENodeB (bool): 
-            EnableIPDefragmentation (bool): 
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            S5s8InterfaceType (str): S5/S8 Interface Type
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIe (bool): Always include recovery IE
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - EnableDifferentTeidPerENodeB (bool): 
+        - EnableIPDefragmentation (bool): 
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - S5s8InterfaceType (str): S5/S8 Interface Type
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Returns:
-            self: This instance with all currently retrieved egtpMmeOptions data using find and the newly added egtpMmeOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egtpMmeOptions resources using find and the newly added egtpMmeOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egtpMmeOptions data in this instance from server.
+        """Deletes all the contained egtpMmeOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AlwaysIncludeRecoveryIe=None, Associates=None, DeleteIdleBearers=None, EnableDifferentTeidPerENodeB=None, EnableIPDefragmentation=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, S5s8InterfaceType=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Finds and retrieves egtpMmeOptions data from the server.
+        """Finds and retrieves egtpMmeOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egtpMmeOptions data from the server.
-        By default the find method takes no parameters and will retrieve all egtpMmeOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpMmeOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpMmeOptions resources from the server.
 
-        Args:
-            AlwaysIncludeRecoveryIe (bool): Always include recovery IE
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            EnableDifferentTeidPerENodeB (bool): 
-            EnableIPDefragmentation (bool): 
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            S5s8InterfaceType (str): S5/S8 Interface Type
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIe (bool): Always include recovery IE
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - EnableDifferentTeidPerENodeB (bool): 
+        - EnableIPDefragmentation (bool): 
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - S5s8InterfaceType (str): S5/S8 Interface Type
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Returns:
-            self: This instance with matching egtpMmeOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egtpMmeOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egtpMmeOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egtpMmeOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egtpMmeOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -294,14 +307,15 @@ class EgtpMmeOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -313,16 +327,15 @@ class EgtpMmeOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -334,16 +347,15 @@ class EgtpMmeOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

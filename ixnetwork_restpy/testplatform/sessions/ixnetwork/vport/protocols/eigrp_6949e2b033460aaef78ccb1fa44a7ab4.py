@@ -36,24 +36,24 @@ class Eigrp(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b76a1ef4aa362f08dc78c65720b2136a.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b76a1ef4aa362f08dc78c65720b2136a.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b76a1ef4aa362f08dc78c65720b2136a import Router
         return Router(self)
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated EIGRP router in the emulated EIGRP network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated EIGRP router in the emulated EIGRP network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,32 +62,35 @@ class Eigrp(Base):
 
     @property
     def RunningState(self):
-        """The running state of the EIGRP server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The running state of the EIGRP server.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None):
-        """Updates a child instance of eigrp on the server.
+        """Updates eigrp resource on the server.
 
-        Args:
-            Enabled (bool): Enables or disables the use of this emulated EIGRP router in the emulated EIGRP network. (default = disabled)
+        Args
+        ----
+        - Enabled (bool): Enables or disables the use of this emulated EIGRP router in the emulated EIGRP network. (default = disabled)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the EIGRP protocol on a group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -97,9 +100,10 @@ class Eigrp(Base):
 
         Stops the EIGRP protocol on a group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

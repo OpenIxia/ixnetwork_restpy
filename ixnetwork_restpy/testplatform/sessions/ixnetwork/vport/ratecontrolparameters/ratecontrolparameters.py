@@ -36,10 +36,10 @@ class RateControlParameters(Base):
 
     @property
     def ArpRefreshInterval(self):
-        """Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
         """
         return self._get_attribute('arpRefreshInterval')
     @ArpRefreshInterval.setter
@@ -48,10 +48,10 @@ class RateControlParameters(Base):
 
     @property
     def MaxRequestsPerBurst(self):
-        """Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
         """
         return self._get_attribute('maxRequestsPerBurst')
     @MaxRequestsPerBurst.setter
@@ -60,10 +60,10 @@ class RateControlParameters(Base):
 
     @property
     def MaxRequestsPerSec(self):
-        """The maximum requests per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum requests per second.
         """
         return self._get_attribute('maxRequestsPerSec')
     @MaxRequestsPerSec.setter
@@ -72,10 +72,10 @@ class RateControlParameters(Base):
 
     @property
     def MinRetryInterval(self):
-        """Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
         """
         return self._get_attribute('minRetryInterval')
     @MinRetryInterval.setter
@@ -84,10 +84,10 @@ class RateControlParameters(Base):
 
     @property
     def RetryCount(self):
-        """Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
         """
         return self._get_attribute('retryCount')
     @RetryCount.setter
@@ -96,10 +96,10 @@ class RateControlParameters(Base):
 
     @property
     def SendInBursts(self):
-        """Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
         """
         return self._get_attribute('sendInBursts')
     @SendInBursts.setter
@@ -108,10 +108,10 @@ class RateControlParameters(Base):
 
     @property
     def SendRequestsAsFastAsPossible(self):
-        """If enabled, allows to send ARP/NS requests immediately without any rate control.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, allows to send ARP/NS requests immediately without any rate control.
         """
         return self._get_attribute('sendRequestsAsFastAsPossible')
     @SendRequestsAsFastAsPossible.setter
@@ -119,18 +119,20 @@ class RateControlParameters(Base):
         self._set_attribute('sendRequestsAsFastAsPossible', value)
 
     def update(self, ArpRefreshInterval=None, MaxRequestsPerBurst=None, MaxRequestsPerSec=None, MinRetryInterval=None, RetryCount=None, SendInBursts=None, SendRequestsAsFastAsPossible=None):
-        """Updates a child instance of rateControlParameters on the server.
+        """Updates rateControlParameters resource on the server.
 
-        Args:
-            ArpRefreshInterval (number): Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
-            MaxRequestsPerBurst (number): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
-            MaxRequestsPerSec (number): The maximum requests per second.
-            MinRetryInterval (number): Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
-            RetryCount (number): Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
-            SendInBursts (bool): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
-            SendRequestsAsFastAsPossible (bool): If enabled, allows to send ARP/NS requests immediately without any rate control.
+        Args
+        ----
+        - ArpRefreshInterval (number): Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
+        - MaxRequestsPerBurst (number): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
+        - MaxRequestsPerSec (number): The maximum requests per second.
+        - MinRetryInterval (number): Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
+        - RetryCount (number): Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
+        - SendInBursts (bool): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
+        - SendRequestsAsFastAsPossible (bool): If enabled, allows to send ARP/NS requests immediately without any rate control.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,127 +36,138 @@ class BgpSRTEPoliciesSegmentsCollectionV4(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def BottomOfStack(self):
-        """Bottom Of Stack
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bottomOfStack')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bottom Of Stack
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bottomOfStack'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def InterfaceIndex(self):
-        """Interface Index
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interfaceIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Interface Index
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interfaceIndex'))
 
     @property
     def Ipv4LocalAddress(self):
-        """IPv4 Local Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4LocalAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Local Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4LocalAddress'))
 
     @property
     def Ipv4NodeAddress(self):
-        """IPv4 Node Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4NodeAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Node Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4NodeAddress'))
 
     @property
     def Ipv4RemoteAddress(self):
-        """IPv4 Remote Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4RemoteAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Remote Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4RemoteAddress'))
 
     @property
     def Ipv6LocalAddress(self):
-        """IPv6 Local Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6LocalAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Local Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6LocalAddress'))
 
     @property
     def Ipv6NodeAddress(self):
-        """IPv6 Node Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6NodeAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Node Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NodeAddress'))
 
     @property
     def Ipv6RemoteAddress(self):
-        """IPv6 Remote Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6RemoteAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Remote Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6RemoteAddress'))
 
     @property
     def Ipv6SID(self):
-        """IPv6 SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6SID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6SID'))
 
     @property
     def Label(self):
-        """Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('label')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('label'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -165,149 +176,163 @@ class BgpSRTEPoliciesSegmentsCollectionV4(Base):
 
     @property
     def OptionalBottomOfStack(self):
-        """Bottom Of Stack
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalBottomOfStack')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bottom Of Stack
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalBottomOfStack'))
 
     @property
     def OptionalIpv6SID(self):
-        """IPv6 SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalIpv6SID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalIpv6SID'))
 
     @property
     def OptionalLabel(self):
-        """Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalLabel'))
 
     @property
     def OptionalTLVType(self):
-        """Optional TLV Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalTLVType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Optional TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalTLVType'))
 
     @property
     def OptionalTimeToLive(self):
-        """TTL
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalTimeToLive')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TTL
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalTimeToLive'))
 
     @property
     def OptionalTrafficClass(self):
-        """Traffic Class
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('optionalTrafficClass')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Class
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('optionalTrafficClass'))
 
     @property
     def SegmentListNumber(self):
-        """Segment List Number For Reference
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Segment List Number For Reference
         """
         return self._get_attribute('segmentListNumber')
 
     @property
     def SegmentType(self):
-        """Segment Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('segmentType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Segment Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('segmentType'))
 
     @property
     def SrtepolicyName(self):
-        """Policy Name For Reference
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Policy Name For Reference
         """
         return self._get_attribute('srtepolicyName')
 
     @property
     def TimeToLive(self):
-        """TTL
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('timeToLive')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TTL
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('timeToLive'))
 
     @property
     def TrafficClass(self):
-        """Traffic Class
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('trafficClass')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Class
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('trafficClass'))
 
     def update(self, Name=None):
-        """Updates a child instance of bgpSRTEPoliciesSegmentsCollectionV4 on the server.
+        """Updates bgpSRTEPoliciesSegmentsCollectionV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, BottomOfStack=None, InterfaceIndex=None, Ipv4LocalAddress=None, Ipv4NodeAddress=None, Ipv4RemoteAddress=None, Ipv6LocalAddress=None, Ipv6NodeAddress=None, Ipv6RemoteAddress=None, Ipv6SID=None, Label=None, OptionalBottomOfStack=None, OptionalIpv6SID=None, OptionalLabel=None, OptionalTLVType=None, OptionalTimeToLive=None, OptionalTrafficClass=None, SegmentType=None, TimeToLive=None, TrafficClass=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesSegmentsCollectionV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            BottomOfStack (str): optional regex of bottomOfStack
-            InterfaceIndex (str): optional regex of interfaceIndex
-            Ipv4LocalAddress (str): optional regex of ipv4LocalAddress
-            Ipv4NodeAddress (str): optional regex of ipv4NodeAddress
-            Ipv4RemoteAddress (str): optional regex of ipv4RemoteAddress
-            Ipv6LocalAddress (str): optional regex of ipv6LocalAddress
-            Ipv6NodeAddress (str): optional regex of ipv6NodeAddress
-            Ipv6RemoteAddress (str): optional regex of ipv6RemoteAddress
-            Ipv6SID (str): optional regex of ipv6SID
-            Label (str): optional regex of label
-            OptionalBottomOfStack (str): optional regex of optionalBottomOfStack
-            OptionalIpv6SID (str): optional regex of optionalIpv6SID
-            OptionalLabel (str): optional regex of optionalLabel
-            OptionalTLVType (str): optional regex of optionalTLVType
-            OptionalTimeToLive (str): optional regex of optionalTimeToLive
-            OptionalTrafficClass (str): optional regex of optionalTrafficClass
-            SegmentType (str): optional regex of segmentType
-            TimeToLive (str): optional regex of timeToLive
-            TrafficClass (str): optional regex of trafficClass
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - BottomOfStack (str): optional regex of bottomOfStack
+        - InterfaceIndex (str): optional regex of interfaceIndex
+        - Ipv4LocalAddress (str): optional regex of ipv4LocalAddress
+        - Ipv4NodeAddress (str): optional regex of ipv4NodeAddress
+        - Ipv4RemoteAddress (str): optional regex of ipv4RemoteAddress
+        - Ipv6LocalAddress (str): optional regex of ipv6LocalAddress
+        - Ipv6NodeAddress (str): optional regex of ipv6NodeAddress
+        - Ipv6RemoteAddress (str): optional regex of ipv6RemoteAddress
+        - Ipv6SID (str): optional regex of ipv6SID
+        - Label (str): optional regex of label
+        - OptionalBottomOfStack (str): optional regex of optionalBottomOfStack
+        - OptionalIpv6SID (str): optional regex of optionalIpv6SID
+        - OptionalLabel (str): optional regex of optionalLabel
+        - OptionalTLVType (str): optional regex of optionalTLVType
+        - OptionalTimeToLive (str): optional regex of optionalTimeToLive
+        - OptionalTrafficClass (str): optional regex of optionalTrafficClass
+        - SegmentType (str): optional regex of segmentType
+        - TimeToLive (str): optional regex of timeToLive
+        - TrafficClass (str): optional regex of trafficClass
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

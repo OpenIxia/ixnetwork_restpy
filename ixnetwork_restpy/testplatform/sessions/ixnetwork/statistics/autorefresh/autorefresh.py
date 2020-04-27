@@ -36,10 +36,10 @@ class AutoRefresh(Base):
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class AutoRefresh(Base):
 
     @property
     def MinRefreshInterval(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minRefreshInterval')
     @MinRefreshInterval.setter
@@ -59,13 +59,15 @@ class AutoRefresh(Base):
         self._set_attribute('minRefreshInterval', value)
 
     def update(self, Enabled=None, MinRefreshInterval=None):
-        """Updates a child instance of autoRefresh on the server.
+        """Updates autoRefresh resource on the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            MinRefreshInterval (number): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - MinRefreshInterval (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,10 +36,10 @@ class MeasurementMode(Base):
 
     @property
     def MeasurementMode(self):
-        """Mode of the measurement
-
-        Returns:
-            str(cumulativeMode|instantaneousMode|mixedMode)
+        """
+        Returns
+        -------
+        - str(cumulativeMode | instantaneousMode | mixedMode): Mode of the measurement
         """
         return self._get_attribute('measurementMode')
     @MeasurementMode.setter
@@ -47,12 +47,14 @@ class MeasurementMode(Base):
         self._set_attribute('measurementMode', value)
 
     def update(self, MeasurementMode=None):
-        """Updates a child instance of measurementMode on the server.
+        """Updates measurementMode resource on the server.
 
-        Args:
-            MeasurementMode (str(cumulativeMode|instantaneousMode|mixedMode)): Mode of the measurement
+        Args
+        ----
+        - MeasurementMode (str(cumulativeMode | instantaneousMode | mixedMode)): Mode of the measurement
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

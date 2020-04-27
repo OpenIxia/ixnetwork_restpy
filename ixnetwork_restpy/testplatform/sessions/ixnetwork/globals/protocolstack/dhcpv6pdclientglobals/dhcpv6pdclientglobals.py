@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6PdClientGlobals(Base):
     """Global settings placeholder for DHCPPlugin.
-    The Dhcpv6PdClientGlobals class encapsulates a list of dhcpv6PdClientGlobals resources that is be managed by the user.
+    The Dhcpv6PdClientGlobals class encapsulates a list of dhcpv6PdClientGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6PdClientGlobals.find() method.
-    The list can be managed by the user by using the Dhcpv6PdClientGlobals.add() and Dhcpv6PdClientGlobals.remove() methods.
+    The list can be managed by using the Dhcpv6PdClientGlobals.add() and Dhcpv6PdClientGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcpv6PdOptionSet(self):
-        """An instance of the Dhcpv6PdOptionSet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptionset.Dhcpv6PdOptionSet): An instance of the Dhcpv6PdOptionSet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptionset.Dhcpv6PdOptionSet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptionset import Dhcpv6PdOptionSet
         return Dhcpv6PdOptionSet(self)
 
     @property
     def AcceptPartialConfig(self):
-        """This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
         """
         return self._get_attribute('acceptPartialConfig')
     @AcceptPartialConfig.setter
@@ -64,10 +64,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6EchoIaInfo(self):
-        """If set, the DHCPv6 client will request the exact address as advertised by server.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set, the DHCPv6 client will request the exact address as advertised by server.
         """
         return self._get_attribute('dhcp6EchoIaInfo')
     @Dhcp6EchoIaInfo.setter
@@ -76,10 +76,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6InfMaxRc(self):
-        """The maximum information-request retry attempts.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum information-request retry attempts.
         """
         return self._get_attribute('dhcp6InfMaxRc')
     @Dhcp6InfMaxRc.setter
@@ -88,10 +88,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6InfMaxRt(self):
-        """RFC 3315 maximum information-request timeout value, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 maximum information-request timeout value, in seconds.
         """
         return self._get_attribute('dhcp6InfMaxRt')
     @Dhcp6InfMaxRt.setter
@@ -100,10 +100,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6InfTimeout(self):
-        """RFC 3315 Initial information-request timeout, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial information-request timeout, in seconds.
         """
         return self._get_attribute('dhcp6InfTimeout')
     @Dhcp6InfTimeout.setter
@@ -112,10 +112,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RebMaxRt(self):
-        """RFC 3315 Max Rebind timeout value in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Rebind timeout value in seconds
         """
         return self._get_attribute('dhcp6RebMaxRt')
     @Dhcp6RebMaxRt.setter
@@ -124,10 +124,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RebTimeout(self):
-        """RFC 3315 Initial Rebind timeout seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial Rebind timeout seconds
         """
         return self._get_attribute('dhcp6RebTimeout')
     @Dhcp6RebTimeout.setter
@@ -136,10 +136,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RelMaxRc(self):
-        """RFC 3315 Release attempts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Release attempts
         """
         return self._get_attribute('dhcp6RelMaxRc')
     @Dhcp6RelMaxRc.setter
@@ -148,10 +148,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RelTimeout(self):
-        """RFC 3315 Initial Release timeout in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial Release timeout in seconds
         """
         return self._get_attribute('dhcp6RelTimeout')
     @Dhcp6RelTimeout.setter
@@ -160,10 +160,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RenMaxRt(self):
-        """RFC 3315 Max Renew timeout value in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Renew timeout value in seconds
         """
         return self._get_attribute('dhcp6RenMaxRt')
     @Dhcp6RenMaxRt.setter
@@ -172,10 +172,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6RenTimeout(self):
-        """RFC 3315 Initial Renew timeout in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial Renew timeout in seconds
         """
         return self._get_attribute('dhcp6RenTimeout')
     @Dhcp6RenTimeout.setter
@@ -184,10 +184,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6ReqMaxRc(self):
-        """RFC 3315 Max Request retry attempts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Request retry attempts
         """
         return self._get_attribute('dhcp6ReqMaxRc')
     @Dhcp6ReqMaxRc.setter
@@ -196,10 +196,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6ReqMaxRt(self):
-        """RFC 3315 Max Request timeout value in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Request timeout value in seconds
         """
         return self._get_attribute('dhcp6ReqMaxRt')
     @Dhcp6ReqMaxRt.setter
@@ -208,10 +208,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6ReqTimeout(self):
-        """RFC 3315 Initial Request timeout in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial Request timeout in seconds
         """
         return self._get_attribute('dhcp6ReqTimeout')
     @Dhcp6ReqTimeout.setter
@@ -220,10 +220,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6SolMaxRc(self):
-        """RFC 3315 Max Solicit retry attempts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Solicit retry attempts
         """
         return self._get_attribute('dhcp6SolMaxRc')
     @Dhcp6SolMaxRc.setter
@@ -232,10 +232,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6SolMaxRt(self):
-        """RFC 3315 Max Solicit timeout value in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Max Solicit timeout value in seconds
         """
         return self._get_attribute('dhcp6SolMaxRt')
     @Dhcp6SolMaxRt.setter
@@ -244,10 +244,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def Dhcp6SolTimeout(self):
-        """RFC 3315 Initial Solicit timeout in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial Solicit timeout in seconds
         """
         return self._get_attribute('dhcp6SolTimeout')
     @Dhcp6SolTimeout.setter
@@ -256,10 +256,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def MaxOutstandingReleases(self):
-        """This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -268,10 +268,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -280,19 +280,19 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RenewOnLinkUp(self):
-        """Indicate to renew the active DHCP sessions after link status goes down and up.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicate to renew the active DHCP sessions after link status goes down and up.
         """
         return self._get_attribute('renewOnLinkUp')
     @RenewOnLinkUp.setter
@@ -301,10 +301,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def SetupRateIncrement(self):
-        """This value represents the increment value for setup rate.This value is applied every second and can be negative.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the increment value for setup rate.This value is applied every second and can be negative.
         """
         return self._get_attribute('setupRateIncrement')
     @SetupRateIncrement.setter
@@ -313,10 +313,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def SetupRateInitial(self):
-        """Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -325,10 +325,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def SetupRateMax(self):
-        """This value represents the final value for setup rate.The setup rate will not change after this value is reached.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the final value for setup rate.The setup rate will not change after this value is reached.
         """
         return self._get_attribute('setupRateMax')
     @SetupRateMax.setter
@@ -337,10 +337,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def TeardownRateIncrement(self):
-        """This value represents the increment value for teardown rate.This value is applied every second and can be negative.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the increment value for teardown rate.This value is applied every second and can be negative.
         """
         return self._get_attribute('teardownRateIncrement')
     @TeardownRateIncrement.setter
@@ -349,10 +349,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def TeardownRateInitial(self):
-        """Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -361,10 +361,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def TeardownRateMax(self):
-        """This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
         """
         return self._get_attribute('teardownRateMax')
     @TeardownRateMax.setter
@@ -373,10 +373,10 @@ class Dhcpv6PdClientGlobals(Base):
 
     @property
     def WaitForCompletion(self):
-        """If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
         """
         return self._get_attribute('waitForCompletion')
     @WaitForCompletion.setter
@@ -384,146 +384,159 @@ class Dhcpv6PdClientGlobals(Base):
         self._set_attribute('waitForCompletion', value)
 
     def update(self, AcceptPartialConfig=None, Dhcp6EchoIaInfo=None, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
-        """Updates a child instance of dhcpv6PdClientGlobals on the server.
+        """Updates dhcpv6PdClientGlobals resource on the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
-            Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
-            Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
-            Dhcp6RelMaxRc (number): RFC 3315 Release attempts
-            Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
-            Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
-            Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
-            Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
-            Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
-            Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
-            Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
-            Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
-            Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
-            MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
-            TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
-            TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
-            TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
-            WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
+        - Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
+        - Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
+        - Dhcp6RelMaxRc (number): RFC 3315 Release attempts
+        - Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
+        - Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
+        - Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
+        - Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
+        - Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
+        - Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
+        - Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
+        - Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
+        - Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
+        - MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        - TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
+        - TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
+        - TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
+        - WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AcceptPartialConfig=None, Dhcp6EchoIaInfo=None, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
-        """Adds a new dhcpv6PdClientGlobals node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6PdClientGlobals resource on the server and adds it to the container.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
-            Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
-            Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
-            Dhcp6RelMaxRc (number): RFC 3315 Release attempts
-            Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
-            Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
-            Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
-            Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
-            Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
-            Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
-            Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
-            Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
-            Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
-            MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
-            TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
-            TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
-            TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
-            WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
+        - Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
+        - Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
+        - Dhcp6RelMaxRc (number): RFC 3315 Release attempts
+        - Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
+        - Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
+        - Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
+        - Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
+        - Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
+        - Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
+        - Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
+        - Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
+        - Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
+        - MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        - TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
+        - TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
+        - TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
+        - WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6PdClientGlobals data using find and the newly added dhcpv6PdClientGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6PdClientGlobals resources using find and the newly added dhcpv6PdClientGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6PdClientGlobals data in this instance from server.
+        """Deletes all the contained dhcpv6PdClientGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AcceptPartialConfig=None, Dhcp6EchoIaInfo=None, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
-        """Finds and retrieves dhcpv6PdClientGlobals data from the server.
+        """Finds and retrieves dhcpv6PdClientGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6PdClientGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6PdClientGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6PdClientGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6PdClientGlobals resources from the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
-            Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
-            Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
-            Dhcp6RelMaxRc (number): RFC 3315 Release attempts
-            Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
-            Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
-            Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
-            Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
-            Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
-            Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
-            Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
-            Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
-            Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
-            MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            ObjectId (str): Unique identifier for this object
-            RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
-            SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
-            TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
-            TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
-            TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
-            WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
+        - Dhcp6EchoIaInfo (bool): If set, the DHCPv6 client will request the exact address as advertised by server.
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - Dhcp6RebMaxRt (number): RFC 3315 Max Rebind timeout value in seconds
+        - Dhcp6RebTimeout (number): RFC 3315 Initial Rebind timeout seconds
+        - Dhcp6RelMaxRc (number): RFC 3315 Release attempts
+        - Dhcp6RelTimeout (number): RFC 3315 Initial Release timeout in seconds
+        - Dhcp6RenMaxRt (number): RFC 3315 Max Renew timeout value in seconds
+        - Dhcp6RenTimeout (number): RFC 3315 Initial Renew timeout in seconds
+        - Dhcp6ReqMaxRc (number): RFC 3315 Max Request retry attempts
+        - Dhcp6ReqMaxRt (number): RFC 3315 Max Request timeout value in seconds
+        - Dhcp6ReqTimeout (number): RFC 3315 Initial Request timeout in seconds
+        - Dhcp6SolMaxRc (number): RFC 3315 Max Solicit retry attempts
+        - Dhcp6SolMaxRt (number): RFC 3315 Max Solicit timeout value in seconds
+        - Dhcp6SolTimeout (number): RFC 3315 Initial Solicit timeout in seconds
+        - MaxOutstandingReleases (number): This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - ObjectId (str): Unique identifier for this object
+        - RenewOnLinkUp (bool): Indicate to renew the active DHCP sessions after link status goes down and up.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate.This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate.The setup rate will not change after this value is reached.
+        - TeardownRateIncrement (number): This value represents the increment value for teardown rate.This value is applied every second and can be negative.
+        - TeardownRateInitial (number): Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
+        - TeardownRateMax (number): This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
+        - WaitForCompletion (bool): If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
 
-        Returns:
-            self: This instance with matching dhcpv6PdClientGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6PdClientGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6PdClientGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6PdClientGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6PdClientGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

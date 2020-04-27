@@ -36,38 +36,38 @@ class WriteAction(Base):
 
     @property
     def WriteActionMissType(self):
-        """An instance of the WriteActionMissType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_7991505493933f665a66bb797d9e2345.WriteActionMissType): An instance of the WriteActionMissType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_7991505493933f665a66bb797d9e2345.WriteActionMissType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_7991505493933f665a66bb797d9e2345 import WriteActionMissType
         return WriteActionMissType(self)._select()
 
     @property
     def WriteActionType(self):
-        """An instance of the WriteActionType class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_6469640af98a9d2c8cb6f168ee4e59a1.WriteActionType): An instance of the WriteActionType class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_6469640af98a9d2c8cb6f168ee4e59a1.WriteActionType)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_6469640af98a9d2c8cb6f168ee4e59a1 import WriteActionType
         return WriteActionType(self)._select()
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -76,10 +76,10 @@ class WriteAction(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -88,10 +88,10 @@ class WriteAction(Base):
 
     @property
     def ExperimenterDataLengthMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLengthMiss')
     @ExperimenterDataLengthMiss.setter
@@ -100,10 +100,10 @@ class WriteAction(Base):
 
     @property
     def ExperimenterDataMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterDataMiss')
     @ExperimenterDataMiss.setter
@@ -112,10 +112,10 @@ class WriteAction(Base):
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -124,10 +124,10 @@ class WriteAction(Base):
 
     @property
     def ExperimenterIdMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterIdMiss')
     @ExperimenterIdMiss.setter
@@ -135,17 +135,19 @@ class WriteAction(Base):
         self._set_attribute('experimenterIdMiss', value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
-        """Updates a child instance of writeAction on the server.
+        """Updates writeAction resource on the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterDataLengthMiss (number): NOT DEFINED
-            ExperimenterDataMiss (str): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            ExperimenterIdMiss (number): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterDataLengthMiss (number): NOT DEFINED
+        - ExperimenterDataMiss (str): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - ExperimenterIdMiss (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

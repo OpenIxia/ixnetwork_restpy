@@ -36,118 +36,127 @@ class IsisMappingServerIPV6List(Base):
 
     @property
     def AFlag(self):
-        """Attached flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Attached flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aFlag'))
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('algorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DFlag(self):
-        """When the SID/Label Binding TLV is leaked from level-2 to level-1, this flag MUST be set, else it should be clear
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When the SID/Label Binding TLV is leaked from level-2 to level-1, this flag MUST be set, else it should be clear
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dFlag'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EFlag(self):
-        """Explicit NULL flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
 
     @property
     def FECPrefix(self):
-        """IPv6 FEC Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fECPrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 FEC Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fECPrefix'))
 
     @property
     def LFlag(self):
-        """Local Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def LastFECAddress(self):
-        """Last IPv6 FEC Address
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Last IPv6 FEC Address
         """
         return self._get_attribute('lastFECAddress')
 
     @property
     def MFlag(self):
-        """Mirror Context flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mirror Context flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mFlag'))
 
     @property
     def NFlag(self):
-        """N Flag: Indicates the nodal prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): N Flag: Indicates the nodal prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nFlag'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -156,120 +165,133 @@ class IsisMappingServerIPV6List(Base):
 
     @property
     def PFlag(self):
-        """P Flag: Indicates that to reach to a prefix, this router would be penultimate hop.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P Flag: Indicates that to reach to a prefix, this router would be penultimate hop.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
 
     @property
     def PrefixLength(self):
-        """Length of the IPv4 FEC prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Length of the IPv4 FEC prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def RFlag(self):
-        """Redistribution flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rFlag'))
 
     @property
     def Range(self):
-        """This the count of continuous FEC IPv6 prefixes and their respective continuous SID/labels
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('range')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This the count of continuous FEC IPv6 prefixes and their respective continuous SID/labels
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('range'))
 
     @property
     def SFlag(self):
-        """Enabling this flag lets the SID/Label Binding TLV to get flooded across the entire routing domain, else this TLV should not be leaked between levels
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enabling this flag lets the SID/Label Binding TLV to get flooded across the entire routing domain, else this TLV should not be leaked between levels
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sFlag'))
 
     @property
     def StartSIDLabel(self):
-        """Starting value of SID/ Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startSIDLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Starting value of SID/ Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startSIDLabel'))
 
     @property
     def VFlag(self):
-        """Value Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
     @property
     def Weight(self):
-        """Weight
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
 
     def update(self, Name=None):
-        """Updates a child instance of isisMappingServerIPV6List on the server.
+        """Updates isisMappingServerIPV6List resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, AFlag=None, Active=None, Algorithm=None, DFlag=None, EFlag=None, FECPrefix=None, LFlag=None, MFlag=None, NFlag=None, PFlag=None, PrefixLength=None, RFlag=None, Range=None, SFlag=None, StartSIDLabel=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of isisMappingServerIPV6List device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            AFlag (str): optional regex of aFlag
-            Active (str): optional regex of active
-            Algorithm (str): optional regex of algorithm
-            DFlag (str): optional regex of dFlag
-            EFlag (str): optional regex of eFlag
-            FECPrefix (str): optional regex of fECPrefix
-            LFlag (str): optional regex of lFlag
-            MFlag (str): optional regex of mFlag
-            NFlag (str): optional regex of nFlag
-            PFlag (str): optional regex of pFlag
-            PrefixLength (str): optional regex of prefixLength
-            RFlag (str): optional regex of rFlag
-            Range (str): optional regex of range
-            SFlag (str): optional regex of sFlag
-            StartSIDLabel (str): optional regex of startSIDLabel
-            VFlag (str): optional regex of vFlag
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AFlag (str): optional regex of aFlag
+        - Active (str): optional regex of active
+        - Algorithm (str): optional regex of algorithm
+        - DFlag (str): optional regex of dFlag
+        - EFlag (str): optional regex of eFlag
+        - FECPrefix (str): optional regex of fECPrefix
+        - LFlag (str): optional regex of lFlag
+        - MFlag (str): optional regex of mFlag
+        - NFlag (str): optional regex of nFlag
+        - PFlag (str): optional regex of pFlag
+        - PrefixLength (str): optional regex of prefixLength
+        - RFlag (str): optional regex of rFlag
+        - Range (str): optional regex of range
+        - SFlag (str): optional regex of sFlag
+        - StartSIDLabel (str): optional regex of startSIDLabel
+        - VFlag (str): optional regex of vFlag
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -278,16 +300,15 @@ class IsisMappingServerIPV6List(Base):
 
         Advertise the V6 Mapping Server Range TLVs
 
-        advertise(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        advertise(Arg2=list)list
+        ------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -299,16 +320,15 @@ class IsisMappingServerIPV6List(Base):
 
         Withdraw the V6 Mapping Server Range TLVs
 
-        withdraw(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        withdraw(Arg2=list)list
+        -----------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

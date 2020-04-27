@@ -36,88 +36,90 @@ class Ipv4(Base):
 
     @property
     def ArpRate(self):
-        """An instance of the ArpRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate.ArpRate): An instance of the ArpRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate.ArpRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate import ArpRate
         return ArpRate(self)._select()
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def GratarpTransmitCount(self):
-        """Number of times GRATARP packet is sent per source IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('gratarpTransmitCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times GRATARP packet is sent per source IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('gratarpTransmitCount'))
 
     @property
     def GratarpTransmitInterval(self):
-        """Time interval to calculate next GRATARP packet transmission for each source IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('gratarpTransmitInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval to calculate next GRATARP packet transmission for each source IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('gratarpTransmitInterval'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -126,91 +128,101 @@ class Ipv4(Base):
 
     @property
     def PermanentMacForGateway(self):
-        """When enabled, adds permanent entries for Gateways with manual MAC.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('permanentMacForGateway')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When enabled, adds permanent entries for Gateways with manual MAC.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('permanentMacForGateway'))
 
     @property
     def RarpTransmitCount(self):
-        """Number of times RARP packet is sent per source IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rarpTransmitCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times RARP packet is sent per source IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rarpTransmitCount'))
 
     @property
     def RarpTransmitInterval(self):
-        """Time interval to calculate next RARP packet transmission for each source IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rarpTransmitInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval to calculate next RARP packet transmission for each source IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rarpTransmitInterval'))
 
     @property
     def ReSendArpOnLinkUp(self):
-        """Resends ARP after link up.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reSendArpOnLinkUp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Resends ARP after link up.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reSendArpOnLinkUp'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     @property
     def SuppressArpForDuplicateGateway(self):
-        """Optimizes the gateway MAC discovery by sending a single ARP request for each unique destination.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('suppressArpForDuplicateGateway')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Optimizes the gateway MAC discovery by sending a single ARP request for each unique destination.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('suppressArpForDuplicateGateway'))
 
     def update(self, Name=None):
-        """Updates a child instance of ipv4 on the server.
+        """Updates ipv4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, GratarpTransmitCount=None, GratarpTransmitInterval=None, PermanentMacForGateway=None, RarpTransmitCount=None, RarpTransmitInterval=None, ReSendArpOnLinkUp=None, SuppressArpForDuplicateGateway=None):
         """Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            GratarpTransmitCount (str): optional regex of gratarpTransmitCount
-            GratarpTransmitInterval (str): optional regex of gratarpTransmitInterval
-            PermanentMacForGateway (str): optional regex of permanentMacForGateway
-            RarpTransmitCount (str): optional regex of rarpTransmitCount
-            RarpTransmitInterval (str): optional regex of rarpTransmitInterval
-            ReSendArpOnLinkUp (str): optional regex of reSendArpOnLinkUp
-            SuppressArpForDuplicateGateway (str): optional regex of suppressArpForDuplicateGateway
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - GratarpTransmitCount (str): optional regex of gratarpTransmitCount
+        - GratarpTransmitInterval (str): optional regex of gratarpTransmitInterval
+        - PermanentMacForGateway (str): optional regex of permanentMacForGateway
+        - RarpTransmitCount (str): optional regex of rarpTransmitCount
+        - RarpTransmitInterval (str): optional regex of rarpTransmitInterval
+        - ReSendArpOnLinkUp (str): optional regex of reSendArpOnLinkUp
+        - SuppressArpForDuplicateGateway (str): optional regex of suppressArpForDuplicateGateway
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

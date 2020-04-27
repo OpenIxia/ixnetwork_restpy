@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RouterTlv(Base):
     """
-    The RouterTlv class encapsulates a list of routerTlv resources that is managed by the system.
+    The RouterTlv class encapsulates a list of routerTlv resources that are managed by the system.
     A list of resources can be retrieved from the server using the RouterTlv.find() method.
     """
 
@@ -38,9 +38,9 @@ class RouterTlv(Base):
     @property
     def RouterAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('routerAddress')
     @RouterAddress.setter
@@ -48,44 +48,53 @@ class RouterTlv(Base):
         self._set_attribute('routerAddress', value)
 
     def update(self, RouterAddress=None):
-        """Updates a child instance of routerTlv on the server.
+        """Updates routerTlv resource on the server.
 
-        Args:
-            RouterAddress (str): 
+        Args
+        ----
+        - RouterAddress (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, RouterAddress=None):
-        """Finds and retrieves routerTlv data from the server.
+        """Finds and retrieves routerTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve routerTlv data from the server.
-        By default the find method takes no parameters and will retrieve all routerTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routerTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all routerTlv resources from the server.
 
-        Args:
-            RouterAddress (str): 
+        Args
+        ----
+        - RouterAddress (str): 
 
-        Returns:
-            self: This instance with matching routerTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching routerTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of routerTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the routerTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the routerTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class EthernetTagInfo(Base):
     """(Read Only) List of Ethernet Tags.
-    The EthernetTagInfo class encapsulates a list of ethernetTagInfo resources that is managed by the system.
+    The EthernetTagInfo class encapsulates a list of ethernetTagInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the EthernetTagInfo.find() method.
     """
 
@@ -37,61 +37,68 @@ class EthernetTagInfo(Base):
 
     @property
     def EthernetTag(self):
-        """(Read Only) Ethernet Tag Id in hex format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Ethernet Tag Id in hex format.
         """
         return self._get_attribute('ethernetTag')
 
     @property
     def IpList(self):
-        """(Read Only) A list of mapped IP strings.
-
-        Returns:
-            list(dict(arg1:str,arg2:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:str)): (Read Only) A list of mapped IP strings.
         """
         return self._get_attribute('ipList')
 
     @property
     def Labels(self):
-        """(Read Only) Labels learned for the C-MAC/B-MAC.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Labels learned for the C-MAC/B-MAC.
         """
         return self._get_attribute('labels')
 
     def find(self, EthernetTag=None, IpList=None, Labels=None):
-        """Finds and retrieves ethernetTagInfo data from the server.
+        """Finds and retrieves ethernetTagInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ethernetTagInfo data from the server.
-        By default the find method takes no parameters and will retrieve all ethernetTagInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernetTagInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ethernetTagInfo resources from the server.
 
-        Args:
-            EthernetTag (str): (Read Only) Ethernet Tag Id in hex format.
-            IpList (list(dict(arg1:str,arg2:str))): (Read Only) A list of mapped IP strings.
-            Labels (str): (Read Only) Labels learned for the C-MAC/B-MAC.
+        Args
+        ----
+        - EthernetTag (str): (Read Only) Ethernet Tag Id in hex format.
+        - IpList (list(dict(arg1:str,arg2:str))): (Read Only) A list of mapped IP strings.
+        - Labels (str): (Read Only) Labels learned for the C-MAC/B-MAC.
 
-        Returns:
-            self: This instance with matching ethernetTagInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ethernetTagInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ethernetTagInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ethernetTagInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ethernetTagInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologyNodeTopologyRange(Base):
     """NOT DEFINED
-    The CustomTopologyNodeTopologyRange class encapsulates a list of customTopologyNodeTopologyRange resources that is be managed by the user.
+    The CustomTopologyNodeTopologyRange class encapsulates a list of customTopologyNodeTopologyRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologyNodeTopologyRange.find() method.
-    The list can be managed by the user by using the CustomTopologyNodeTopologyRange.add() and CustomTopologyNodeTopologyRange.remove() methods.
+    The list can be managed by using the CustomTopologyNodeTopologyRange.add() and CustomTopologyNodeTopologyRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class CustomTopologyNodeTopologyRange(Base):
 
     @property
     def CustomTopologyInterestedVlanRange(self):
-        """An instance of the CustomTopologyInterestedVlanRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_f8d9f61475f4821c8ffb471717da2222.CustomTopologyInterestedVlanRange): An instance of the CustomTopologyInterestedVlanRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_f8d9f61475f4821c8ffb471717da2222.CustomTopologyInterestedVlanRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_f8d9f61475f4821c8ffb471717da2222 import CustomTopologyInterestedVlanRange
         return CustomTopologyInterestedVlanRange(self)
 
     @property
     def NicknameCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('nicknameCount')
     @NicknameCount.setter
@@ -64,10 +64,10 @@ class CustomTopologyNodeTopologyRange(Base):
 
     @property
     def NodeNicknameIncrement(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('nodeNicknameIncrement')
     @NodeNicknameIncrement.setter
@@ -76,10 +76,10 @@ class CustomTopologyNodeTopologyRange(Base):
 
     @property
     def NumberOftreesToCompute(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numberOftreesToCompute')
     @NumberOftreesToCompute.setter
@@ -88,10 +88,10 @@ class CustomTopologyNodeTopologyRange(Base):
 
     @property
     def StartNickname(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('startNickname')
     @StartNickname.setter
@@ -99,76 +99,89 @@ class CustomTopologyNodeTopologyRange(Base):
         self._set_attribute('startNickname', value)
 
     def update(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
-        """Updates a child instance of customTopologyNodeTopologyRange on the server.
+        """Updates customTopologyNodeTopologyRange resource on the server.
 
-        Args:
-            NicknameCount (number): NOT DEFINED
-            NodeNicknameIncrement (number): NOT DEFINED
-            NumberOftreesToCompute (number): NOT DEFINED
-            StartNickname (number): NOT DEFINED
+        Args
+        ----
+        - NicknameCount (number): NOT DEFINED
+        - NodeNicknameIncrement (number): NOT DEFINED
+        - NumberOftreesToCompute (number): NOT DEFINED
+        - StartNickname (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
-        """Adds a new customTopologyNodeTopologyRange node on the server and retrieves it in this instance.
+        """Adds a new customTopologyNodeTopologyRange resource on the server and adds it to the container.
 
-        Args:
-            NicknameCount (number): NOT DEFINED
-            NodeNicknameIncrement (number): NOT DEFINED
-            NumberOftreesToCompute (number): NOT DEFINED
-            StartNickname (number): NOT DEFINED
+        Args
+        ----
+        - NicknameCount (number): NOT DEFINED
+        - NodeNicknameIncrement (number): NOT DEFINED
+        - NumberOftreesToCompute (number): NOT DEFINED
+        - StartNickname (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologyNodeTopologyRange data using find and the newly added customTopologyNodeTopologyRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologyNodeTopologyRange resources using find and the newly added customTopologyNodeTopologyRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologyNodeTopologyRange data in this instance from server.
+        """Deletes all the contained customTopologyNodeTopologyRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
-        """Finds and retrieves customTopologyNodeTopologyRange data from the server.
+        """Finds and retrieves customTopologyNodeTopologyRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologyNodeTopologyRange data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologyNodeTopologyRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyNodeTopologyRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologyNodeTopologyRange resources from the server.
 
-        Args:
-            NicknameCount (number): NOT DEFINED
-            NodeNicknameIncrement (number): NOT DEFINED
-            NumberOftreesToCompute (number): NOT DEFINED
-            StartNickname (number): NOT DEFINED
+        Args
+        ----
+        - NicknameCount (number): NOT DEFINED
+        - NodeNicknameIncrement (number): NOT DEFINED
+        - NumberOftreesToCompute (number): NOT DEFINED
+        - StartNickname (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologyNodeTopologyRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologyNodeTopologyRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologyNodeTopologyRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologyNodeTopologyRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologyNodeTopologyRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

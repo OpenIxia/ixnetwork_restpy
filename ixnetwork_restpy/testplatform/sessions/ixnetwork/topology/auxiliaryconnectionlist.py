@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AuxiliaryConnectionList(Base):
     """Openflow Switch Auxiliary Connections level Configuration
-    The AuxiliaryConnectionList class encapsulates a list of auxiliaryConnectionList resources that is managed by the system.
+    The AuxiliaryConnectionList class encapsulates a list of auxiliaryConnectionList resources that are managed by the system.
     A list of resources can be retrieved from the server using the AuxiliaryConnectionList.find() method.
     """
 
@@ -37,64 +37,67 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AuxId(self):
-        """Specify the Auxiliary Id, {0 - 255}
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('auxId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the Auxiliary Id, {0 - 255}
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('auxId'))
 
     @property
     def ChannelName(self):
-        """Parent Channel Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parent Channel Name
         """
         return self._get_attribute('channelName')
 
     @property
     def ConnectionType(self):
-        """The type of connection used for the Interface. Options include: 1) TCP 2) TLS 3) UDP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('connectionType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of connection used for the Interface. Options include: 1) TCP 2) TLS 3) UDP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('connectionType'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -103,59 +106,69 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def UDPSrcPortNum(self):
-        """UDP Source Port Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('uDPSrcPortNum')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Source Port Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('uDPSrcPortNum'))
 
     def update(self, Name=None):
-        """Updates a child instance of auxiliaryConnectionList on the server.
+        """Updates auxiliaryConnectionList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, ChannelName=None, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves auxiliaryConnectionList data from the server.
+        """Finds and retrieves auxiliaryConnectionList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve auxiliaryConnectionList data from the server.
-        By default the find method takes no parameters and will retrieve all auxiliaryConnectionList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve auxiliaryConnectionList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all auxiliaryConnectionList resources from the server.
 
-        Args:
-            ChannelName (str): Parent Channel Name
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - ChannelName (str): Parent Channel Name
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching auxiliaryConnectionList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching auxiliaryConnectionList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of auxiliaryConnectionList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the auxiliaryConnectionList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the auxiliaryConnectionList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -164,17 +177,20 @@ class AuxiliaryConnectionList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AuxId (str): optional regex of auxId
-            ConnectionType (str): optional regex of connectionType
-            UDPSrcPortNum (str): optional regex of uDPSrcPortNum
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AuxId (str): optional regex of auxId
+        - ConnectionType (str): optional regex of connectionType
+        - UDPSrcPortNum (str): optional regex of uDPSrcPortNum
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

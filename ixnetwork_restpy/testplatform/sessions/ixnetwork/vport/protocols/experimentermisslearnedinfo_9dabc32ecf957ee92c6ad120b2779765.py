@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ExperimenterMissLearnedInfo(Base):
     """NOT DEFINED
-    The ExperimenterMissLearnedInfo class encapsulates a list of experimenterMissLearnedInfo resources that is be managed by the user.
+    The ExperimenterMissLearnedInfo class encapsulates a list of experimenterMissLearnedInfo resources that are managed by the user.
     A list of resources can be retrieved from the server using the ExperimenterMissLearnedInfo.find() method.
-    The list can be managed by the user by using the ExperimenterMissLearnedInfo.add() and ExperimenterMissLearnedInfo.remove() methods.
+    The list can be managed by using the ExperimenterMissLearnedInfo.add() and ExperimenterMissLearnedInfo.remove() methods.
     """
 
     __slots__ = ()
@@ -38,111 +38,121 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
 
     @property
     def NextTableIds(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nextTableIds')
 
     @property
     def Property(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('property')
 
     @property
     def SupportedField(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('supportedField')
 
     def add(self):
-        """Adds a new experimenterMissLearnedInfo node on the server and retrieves it in this instance.
+        """Adds a new experimenterMissLearnedInfo resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved experimenterMissLearnedInfo data using find and the newly added experimenterMissLearnedInfo data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved experimenterMissLearnedInfo resources using find and the newly added experimenterMissLearnedInfo resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the experimenterMissLearnedInfo data in this instance from server.
+        """Deletes all the contained experimenterMissLearnedInfo resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
-        """Finds and retrieves experimenterMissLearnedInfo data from the server.
+        """Finds and retrieves experimenterMissLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve experimenterMissLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all experimenterMissLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve experimenterMissLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all experimenterMissLearnedInfo resources from the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            NextTableIds (str): NOT DEFINED
-            Property (str): NOT DEFINED
-            SupportedField (str): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - NextTableIds (str): NOT DEFINED
+        - Property (str): NOT DEFINED
+        - SupportedField (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching experimenterMissLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching experimenterMissLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of experimenterMissLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the experimenterMissLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the experimenterMissLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

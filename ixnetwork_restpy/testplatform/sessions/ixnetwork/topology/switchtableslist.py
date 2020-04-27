@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchTablesList(Base):
     """Openflow Switch Tables level Configuration
-    The SwitchTablesList class encapsulates a list of switchTablesList resources that is managed by the system.
+    The SwitchTablesList class encapsulates a list of switchTablesList resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchTablesList.find() method.
     """
 
@@ -37,172 +37,188 @@ class SwitchTablesList(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ApplyActions(self):
-        """Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applyActions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applyActions'))
 
     @property
     def ApplyActionsMiss(self):
-        """Select the type of apply action miss capability that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applyActionsMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of apply action miss capability that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applyActionsMiss'))
 
     @property
     def ApplySetField(self):
-        """Select the type of Apply Set Field capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applySetField')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applySetField'))
 
     @property
     def ApplySetFieldMask(self):
-        """Select the type of Apply Set Field Mask capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applySetFieldMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Mask capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applySetFieldMask'))
 
     @property
     def ApplySetFieldMiss(self):
-        """Select the type of Apply Set Field Miss capability that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applySetFieldMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Miss capability that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applySetFieldMiss'))
 
     @property
     def ApplySetFieldMissMask(self):
-        """Select the type of Apply Set Field Miss capability that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('applySetFieldMissMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Miss capability that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('applySetFieldMissMask'))
 
     @property
     def AutoConfigNextTable(self):
-        """If selected, the Next Table and Next Table Miss are automatically configured
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('autoConfigNextTable')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Next Table and Next Table Miss are automatically configured
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('autoConfigNextTable'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FeaturesSupported(self):
-        """Select the table feature properties to enable them
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('featuresSupported')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the table feature properties to enable them
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('featuresSupported'))
 
     @property
     def Instruction(self):
-        """Select the type of Instructions that the table flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('instruction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Instructions that the table flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('instruction'))
 
     @property
     def InstructionMiss(self):
-        """Select the type of Instruction miss capabilities that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('instructionMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Instruction miss capabilities that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('instructionMiss'))
 
     @property
     def Match(self):
-        """Select the type of match capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('match')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of match capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('match'))
 
     @property
     def MatchMask(self):
-        """Select the type of match mask capability that the table will support.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('matchMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of match mask capability that the table will support.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('matchMask'))
 
     @property
     def MaxTableEntries(self):
-        """Specify Maximum Entries per Table.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxTableEntries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify Maximum Entries per Table.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTableEntries'))
 
     @property
     def MetadataMatch(self):
-        """Specify the bits of Metadata which the table can match
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metadataMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the bits of Metadata which the table can match
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metadataMatch'))
 
     @property
     def MetadataWrite(self):
-        """Specify the bits of Metadata which the table can write
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metadataWrite')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the bits of Metadata which the table can write
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metadataWrite'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -211,167 +227,188 @@ class SwitchTablesList(Base):
 
     @property
     def NextTable(self):
-        """Specify the next table property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextTable')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the next table property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextTable'))
 
     @property
     def NextTableMiss(self):
-        """Specify the next table miss property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextTableMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the next table miss property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextTableMiss'))
 
     @property
     def ParentSwitch(self):
-        """Parent Switch Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parent Switch Name
         """
         return self._get_attribute('parentSwitch')
 
     @property
     def TableId(self):
-        """Specify the Table Id, {0 - 254}
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tableId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the Table Id, {0 - 254}
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tableId'))
 
     @property
     def TableName(self):
-        """Specify the name of the Table.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tableName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the name of the Table.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tableName'))
 
     @property
     def WildcardFeature(self):
-        """Select the type of wildcard capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('wildcardFeature')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of wildcard capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('wildcardFeature'))
 
     @property
     def WildcardFeatureMask(self):
-        """Select the type of wildcard mask capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('wildcardFeatureMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of wildcard mask capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('wildcardFeatureMask'))
 
     @property
     def WriteActions(self):
-        """Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeActions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeActions'))
 
     @property
     def WriteActionsMiss(self):
-        """Select the type of write action miss capability that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeActionsMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of write action miss capability that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeActionsMiss'))
 
     @property
     def WriteSetField(self):
-        """Select the type of Write Set Field capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeSetField')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeSetField'))
 
     @property
     def WriteSetFieldMask(self):
-        """Select the type of Write Set Field Mask capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeSetFieldMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Mask capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeSetFieldMask'))
 
     @property
     def WriteSetFieldMiss(self):
-        """Select the type of Write Set Field Miss capability that the table miss flow entry will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeSetFieldMiss')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Miss capability that the table miss flow entry will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeSetFieldMiss'))
 
     @property
     def WriteSetFieldMissMask(self):
-        """Select the type of Write Set Field Miss mask capability that the table will support
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('writeSetFieldMissMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Miss mask capability that the table will support
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('writeSetFieldMissMask'))
 
     def update(self, Name=None):
-        """Updates a child instance of switchTablesList on the server.
+        """Updates switchTablesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None, ParentSwitch=None):
-        """Finds and retrieves switchTablesList data from the server.
+        """Finds and retrieves switchTablesList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchTablesList data from the server.
-        By default the find method takes no parameters and will retrieve all switchTablesList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchTablesList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchTablesList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            ParentSwitch (str): Parent Switch Name
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - ParentSwitch (str): Parent Switch Name
 
-        Returns:
-            self: This instance with matching switchTablesList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchTablesList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchTablesList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchTablesList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchTablesList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -380,41 +417,44 @@ class SwitchTablesList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            ApplyActions (str): optional regex of applyActions
-            ApplyActionsMiss (str): optional regex of applyActionsMiss
-            ApplySetField (str): optional regex of applySetField
-            ApplySetFieldMask (str): optional regex of applySetFieldMask
-            ApplySetFieldMiss (str): optional regex of applySetFieldMiss
-            ApplySetFieldMissMask (str): optional regex of applySetFieldMissMask
-            AutoConfigNextTable (str): optional regex of autoConfigNextTable
-            FeaturesSupported (str): optional regex of featuresSupported
-            Instruction (str): optional regex of instruction
-            InstructionMiss (str): optional regex of instructionMiss
-            Match (str): optional regex of match
-            MatchMask (str): optional regex of matchMask
-            MaxTableEntries (str): optional regex of maxTableEntries
-            MetadataMatch (str): optional regex of metadataMatch
-            MetadataWrite (str): optional regex of metadataWrite
-            NextTable (str): optional regex of nextTable
-            NextTableMiss (str): optional regex of nextTableMiss
-            TableId (str): optional regex of tableId
-            TableName (str): optional regex of tableName
-            WildcardFeature (str): optional regex of wildcardFeature
-            WildcardFeatureMask (str): optional regex of wildcardFeatureMask
-            WriteActions (str): optional regex of writeActions
-            WriteActionsMiss (str): optional regex of writeActionsMiss
-            WriteSetField (str): optional regex of writeSetField
-            WriteSetFieldMask (str): optional regex of writeSetFieldMask
-            WriteSetFieldMiss (str): optional regex of writeSetFieldMiss
-            WriteSetFieldMissMask (str): optional regex of writeSetFieldMissMask
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ApplyActions (str): optional regex of applyActions
+        - ApplyActionsMiss (str): optional regex of applyActionsMiss
+        - ApplySetField (str): optional regex of applySetField
+        - ApplySetFieldMask (str): optional regex of applySetFieldMask
+        - ApplySetFieldMiss (str): optional regex of applySetFieldMiss
+        - ApplySetFieldMissMask (str): optional regex of applySetFieldMissMask
+        - AutoConfigNextTable (str): optional regex of autoConfigNextTable
+        - FeaturesSupported (str): optional regex of featuresSupported
+        - Instruction (str): optional regex of instruction
+        - InstructionMiss (str): optional regex of instructionMiss
+        - Match (str): optional regex of match
+        - MatchMask (str): optional regex of matchMask
+        - MaxTableEntries (str): optional regex of maxTableEntries
+        - MetadataMatch (str): optional regex of metadataMatch
+        - MetadataWrite (str): optional regex of metadataWrite
+        - NextTable (str): optional regex of nextTable
+        - NextTableMiss (str): optional regex of nextTableMiss
+        - TableId (str): optional regex of tableId
+        - TableName (str): optional regex of tableName
+        - WildcardFeature (str): optional regex of wildcardFeature
+        - WildcardFeatureMask (str): optional regex of wildcardFeatureMask
+        - WriteActions (str): optional regex of writeActions
+        - WriteActionsMiss (str): optional regex of writeActionsMiss
+        - WriteSetField (str): optional regex of writeSetField
+        - WriteSetFieldMask (str): optional regex of writeSetFieldMask
+        - WriteSetFieldMiss (str): optional regex of writeSetFieldMiss
+        - WriteSetFieldMissMask (str): optional regex of writeSetFieldMissMask
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

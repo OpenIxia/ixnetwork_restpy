@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class GroupRange(Base):
     """This object holds a list of multicast addresses that a particular host is interested in.
-    The GroupRange class encapsulates a list of groupRange resources that is be managed by the user.
+    The GroupRange class encapsulates a list of groupRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the GroupRange.find() method.
-    The list can be managed by the user by using the GroupRange.add() and GroupRange.remove() methods.
+    The list can be managed by using the GroupRange.add() and GroupRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class GroupRange(Base):
 
     @property
     def SourceRange(self):
-        """An instance of the SourceRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_7b799bb6033b8d130745458440a9b817.SourceRange): An instance of the SourceRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_7b799bb6033b8d130745458440a9b817.SourceRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_7b799bb6033b8d130745458440a9b817 import SourceRange
         return SourceRange(self)
 
     @property
     def EnablePacking(self):
-        """If enabled, the user can specify the number of records per frame and sources per record.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the user can specify the number of records per frame and sources per record.
         """
         return self._get_attribute('enablePacking')
     @EnablePacking.setter
@@ -64,10 +64,10 @@ class GroupRange(Base):
 
     @property
     def EnableUpdateRequired(self):
-        """If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
         """
         return self._get_attribute('enableUpdateRequired')
     @EnableUpdateRequired.setter
@@ -76,10 +76,10 @@ class GroupRange(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of the group range in the MLD simulation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the group range in the MLD simulation.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,10 +88,10 @@ class GroupRange(Base):
 
     @property
     def GroupCount(self):
-        """The total number of IPv6 groups (Multicast Addresses) in this group range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of IPv6 groups (Multicast Addresses) in this group range.
         """
         return self._get_attribute('groupCount')
     @GroupCount.setter
@@ -100,10 +100,10 @@ class GroupRange(Base):
 
     @property
     def GroupIpFrom(self):
-        """The IPv6 address of the first member of the Group (Multicast Address).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv6 address of the first member of the Group (Multicast Address).
         """
         return self._get_attribute('groupIpFrom')
     @GroupIpFrom.setter
@@ -112,10 +112,10 @@ class GroupRange(Base):
 
     @property
     def IncrementStep(self):
-        """The value used to increment the IPv6 address for each additional member of the group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value used to increment the IPv6 address for each additional member of the group.
         """
         return self._get_attribute('incrementStep')
     @IncrementStep.setter
@@ -124,10 +124,10 @@ class GroupRange(Base):
 
     @property
     def RecordsPerFrame(self):
-        """The total number of group records to be added to each frame/message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of group records to be added to each frame/message.
         """
         return self._get_attribute('recordsPerFrame')
     @RecordsPerFrame.setter
@@ -136,10 +136,10 @@ class GroupRange(Base):
 
     @property
     def SourceMode(self):
-        """Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-
-        Returns:
-            str(include|exclude)
+        """
+        Returns
+        -------
+        - str(include | exclude): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
         """
         return self._get_attribute('sourceMode')
     @SourceMode.setter
@@ -148,10 +148,10 @@ class GroupRange(Base):
 
     @property
     def SourcesPerRecord(self):
-        """The total number of sources to be added to each record.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of sources to be added to each record.
         """
         return self._get_attribute('sourcesPerRecord')
     @SourcesPerRecord.setter
@@ -159,92 +159,105 @@ class GroupRange(Base):
         self._set_attribute('sourcesPerRecord', value)
 
     def update(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
-        """Updates a child instance of groupRange on the server.
+        """Updates groupRange resource on the server.
 
-        Args:
-            EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
-            EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
-            Enabled (bool): Enables the use of the group range in the MLD simulation.
-            GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
-            GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
-            IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
-            RecordsPerFrame (number): The total number of group records to be added to each frame/message.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The total number of sources to be added to each record.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
+        - EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
+        - Enabled (bool): Enables the use of the group range in the MLD simulation.
+        - GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
+        - GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
+        - IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
+        - RecordsPerFrame (number): The total number of group records to be added to each frame/message.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The total number of sources to be added to each record.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
-        """Adds a new groupRange node on the server and retrieves it in this instance.
+        """Adds a new groupRange resource on the server and adds it to the container.
 
-        Args:
-            EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
-            EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
-            Enabled (bool): Enables the use of the group range in the MLD simulation.
-            GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
-            GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
-            IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
-            RecordsPerFrame (number): The total number of group records to be added to each frame/message.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The total number of sources to be added to each record.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
+        - EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
+        - Enabled (bool): Enables the use of the group range in the MLD simulation.
+        - GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
+        - GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
+        - IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
+        - RecordsPerFrame (number): The total number of group records to be added to each frame/message.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The total number of sources to be added to each record.
 
-        Returns:
-            self: This instance with all currently retrieved groupRange data using find and the newly added groupRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved groupRange resources using find and the newly added groupRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the groupRange data in this instance from server.
+        """Deletes all the contained groupRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
-        """Finds and retrieves groupRange data from the server.
+        """Finds and retrieves groupRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve groupRange data from the server.
-        By default the find method takes no parameters and will retrieve all groupRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all groupRange resources from the server.
 
-        Args:
-            EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
-            EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
-            Enabled (bool): Enables the use of the group range in the MLD simulation.
-            GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
-            GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
-            IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
-            RecordsPerFrame (number): The total number of group records to be added to each frame/message.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The total number of sources to be added to each record.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, the user can specify the number of records per frame and sources per record.
+        - EnableUpdateRequired (bool): If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
+        - Enabled (bool): Enables the use of the group range in the MLD simulation.
+        - GroupCount (number): The total number of IPv6 groups (Multicast Addresses) in this group range.
+        - GroupIpFrom (str): The IPv6 address of the first member of the Group (Multicast Address).
+        - IncrementStep (number): The value used to increment the IPv6 address for each additional member of the group.
+        - RecordsPerFrame (number): The total number of group records to be added to each frame/message.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The total number of sources to be added to each record.
 
-        Returns:
-            self: This instance with matching groupRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching groupRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of groupRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the groupRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the groupRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -253,12 +266,10 @@ class GroupRange(Base):
 
         Updates the source information for the group host for MLD.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('updateSource', payload=payload, response_object=None)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisDceSimulatedTopologyConfig(Base):
     """Fabric-Path Simulated Topology Configuration
-    The IsisDceSimulatedTopologyConfig class encapsulates a list of isisDceSimulatedTopologyConfig resources that is managed by the system.
+    The IsisDceSimulatedTopologyConfig class encapsulates a list of isisDceSimulatedTopologyConfig resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisDceSimulatedTopologyConfig.find() method.
     """
 
@@ -37,42 +37,43 @@ class IsisDceSimulatedTopologyConfig(Base):
 
     @property
     def DceNodeTopologyList(self):
-        """An instance of the DceNodeTopologyList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist.DceNodeTopologyList): An instance of the DceNodeTopologyList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist.DceNodeTopologyList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist import DceNodeTopologyList
         return DceNodeTopologyList(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DceNodeTopologyCount(self):
-        """Node Topology Count(multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Node Topology Count(multiplier)
         """
         return self._get_attribute('dceNodeTopologyCount')
     @DceNodeTopologyCount.setter
@@ -81,37 +82,39 @@ class IsisDceSimulatedTopologyConfig(Base):
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableHostName(self):
-        """Enable Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHostName'))
 
     @property
     def HostName(self):
-        """Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hostName'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -119,52 +122,61 @@ class IsisDceSimulatedTopologyConfig(Base):
         self._set_attribute('name', value)
 
     def update(self, DceNodeTopologyCount=None, Name=None):
-        """Updates a child instance of isisDceSimulatedTopologyConfig on the server.
+        """Updates isisDceSimulatedTopologyConfig resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            DceNodeTopologyCount (number): Node Topology Count(multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - DceNodeTopologyCount (number): Node Topology Count(multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DceNodeTopologyCount=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves isisDceSimulatedTopologyConfig data from the server.
+        """Finds and retrieves isisDceSimulatedTopologyConfig resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisDceSimulatedTopologyConfig data from the server.
-        By default the find method takes no parameters and will retrieve all isisDceSimulatedTopologyConfig data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisDceSimulatedTopologyConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisDceSimulatedTopologyConfig resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DceNodeTopologyCount (number): Node Topology Count(multiplier)
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DceNodeTopologyCount (number): Node Topology Count(multiplier)
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching isisDceSimulatedTopologyConfig data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisDceSimulatedTopologyConfig resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisDceSimulatedTopologyConfig data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisDceSimulatedTopologyConfig data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisDceSimulatedTopologyConfig resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -173,17 +185,20 @@ class IsisDceSimulatedTopologyConfig(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            EnableHostName (str): optional regex of enableHostName
-            HostName (str): optional regex of hostName
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - EnableHostName (str): optional regex of enableHostName
+        - HostName (str): optional regex of hostName
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -192,22 +207,20 @@ class IsisDceSimulatedTopologyConfig(Base):
 
         Start Isis Simulated Topology
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -219,22 +232,20 @@ class IsisDceSimulatedTopologyConfig(Base):
 
         Stop Isis Simulated Topology
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6ClientGlobals(Base):
     """Global settings placeholder for DHCPPlugin.
-    The Dhcpv6ClientGlobals class encapsulates a list of dhcpv6ClientGlobals resources that is be managed by the user.
+    The Dhcpv6ClientGlobals class encapsulates a list of dhcpv6ClientGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6ClientGlobals.find() method.
-    The list can be managed by the user by using the Dhcpv6ClientGlobals.add() and Dhcpv6ClientGlobals.remove() methods.
+    The list can be managed by using the Dhcpv6ClientGlobals.add() and Dhcpv6ClientGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def Dhcp6InfMaxRc(self):
-        """The maximum information-request retry attempts.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum information-request retry attempts.
         """
         return self._get_attribute('dhcp6InfMaxRc')
     @Dhcp6InfMaxRc.setter
@@ -50,10 +50,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def Dhcp6InfMaxRt(self):
-        """RFC 3315 maximum information-request timeout value, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 maximum information-request timeout value, in seconds.
         """
         return self._get_attribute('dhcp6InfMaxRt')
     @Dhcp6InfMaxRt.setter
@@ -62,10 +62,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def Dhcp6InfTimeout(self):
-        """RFC 3315 Initial information-request timeout, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RFC 3315 Initial information-request timeout, in seconds.
         """
         return self._get_attribute('dhcp6InfTimeout')
     @Dhcp6InfTimeout.setter
@@ -74,10 +74,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -86,19 +86,19 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SetupRateIncrement(self):
-        """This value represents the increment value for setup rate. This value is applied every second and can be negative.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the increment value for setup rate. This value is applied every second and can be negative.
         """
         return self._get_attribute('setupRateIncrement')
     @SetupRateIncrement.setter
@@ -107,10 +107,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def SetupRateInitial(self):
-        """Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -119,10 +119,10 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def SetupRateMax(self):
-        """This value represents the final value for setup rate. The setup rate will not change after this value is reached.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value represents the final value for setup rate. The setup rate will not change after this value is reached.
         """
         return self._get_attribute('setupRateMax')
     @SetupRateMax.setter
@@ -130,86 +130,99 @@ class Dhcpv6ClientGlobals(Base):
         self._set_attribute('setupRateMax', value)
 
     def update(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Updates a child instance of dhcpv6ClientGlobals on the server.
+        """Updates dhcpv6ClientGlobals resource on the server.
 
-        Args:
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Adds a new dhcpv6ClientGlobals node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6ClientGlobals resource on the server and adds it to the container.
 
-        Args:
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6ClientGlobals data using find and the newly added dhcpv6ClientGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6ClientGlobals resources using find and the newly added dhcpv6ClientGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6ClientGlobals data in this instance from server.
+        """Deletes all the contained dhcpv6ClientGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, ObjectId=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
-        """Finds and retrieves dhcpv6ClientGlobals data from the server.
+        """Finds and retrieves dhcpv6ClientGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6ClientGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6ClientGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6ClientGlobals resources from the server.
 
-        Args:
-            Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
-            Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
-            Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
-            MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
-            ObjectId (str): Unique identifier for this object
-            SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
-            SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
-            SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
+        Args
+        ----
+        - Dhcp6InfMaxRc (number): The maximum information-request retry attempts.
+        - Dhcp6InfMaxRt (number): RFC 3315 maximum information-request timeout value, in seconds.
+        - Dhcp6InfTimeout (number): RFC 3315 Initial information-request timeout, in seconds.
+        - MaxOutstandingRequests (number): This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
+        - ObjectId (str): Unique identifier for this object
+        - SetupRateIncrement (number): This value represents the increment value for setup rate. This value is applied every second and can be negative.
+        - SetupRateInitial (number): Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
+        - SetupRateMax (number): This value represents the final value for setup rate. The setup rate will not change after this value is reached.
 
-        Returns:
-            self: This instance with matching dhcpv6ClientGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6ClientGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6ClientGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6ClientGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6ClientGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

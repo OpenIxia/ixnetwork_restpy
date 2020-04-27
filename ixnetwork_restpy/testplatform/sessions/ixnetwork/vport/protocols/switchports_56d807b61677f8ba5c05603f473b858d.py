@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SwitchPorts(Base):
     """This object allows to define the attributes for the physical Switch Ports.
-    The SwitchPorts class encapsulates a list of switchPorts resources that is be managed by the user.
+    The SwitchPorts class encapsulates a list of switchPorts resources that are managed by the user.
     A list of resources can be retrieved from the server using the SwitchPorts.find() method.
-    The list can be managed by the user by using the SwitchPorts.add() and SwitchPorts.remove() methods.
+    The list can be managed by using the SwitchPorts.add() and SwitchPorts.remove() methods.
     """
 
     __slots__ = ()
@@ -38,108 +38,108 @@ class SwitchPorts(Base):
 
     @property
     def AdvertisedFeatures(self):
-        """An instance of the AdvertisedFeatures class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_0ef3ac1db9aa8bc64320a687d88e4d79.AdvertisedFeatures): An instance of the AdvertisedFeatures class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_0ef3ac1db9aa8bc64320a687d88e4d79.AdvertisedFeatures)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_0ef3ac1db9aa8bc64320a687d88e4d79 import AdvertisedFeatures
         return AdvertisedFeatures(self)._select()
 
     @property
     def Config(self):
-        """An instance of the Config class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_5d9001581cadd18c65bab3c03d435f1b.Config): An instance of the Config class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_5d9001581cadd18c65bab3c03d435f1b.Config)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_5d9001581cadd18c65bab3c03d435f1b import Config
         return Config(self)._select()
 
     @property
     def CurrentFeatures(self):
-        """An instance of the CurrentFeatures class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_31297c16efe904c634c9858877cc1c59.CurrentFeatures): An instance of the CurrentFeatures class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_31297c16efe904c634c9858877cc1c59.CurrentFeatures)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_31297c16efe904c634c9858877cc1c59 import CurrentFeatures
         return CurrentFeatures(self)._select()
 
     @property
     def PeerAdvertisedFeatures(self):
-        """An instance of the PeerAdvertisedFeatures class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_10a7fab22b63d8a00b89ffb54a0deeb6.PeerAdvertisedFeatures): An instance of the PeerAdvertisedFeatures class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_10a7fab22b63d8a00b89ffb54a0deeb6.PeerAdvertisedFeatures)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_10a7fab22b63d8a00b89ffb54a0deeb6 import PeerAdvertisedFeatures
         return PeerAdvertisedFeatures(self)._select()
 
     @property
     def State(self):
-        """An instance of the State class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_e30ab3660676f38743eb4e51da8e15ea.State): An instance of the State class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_e30ab3660676f38743eb4e51da8e15ea.State)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_e30ab3660676f38743eb4e51da8e15ea import State
         return State(self)._select()
 
     @property
     def SupportedFeatures(self):
-        """An instance of the SupportedFeatures class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_c04ef4f1e7a49f46a80f8f5920f7b2ab.SupportedFeatures): An instance of the SupportedFeatures class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_c04ef4f1e7a49f46a80f8f5920f7b2ab.SupportedFeatures)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_c04ef4f1e7a49f46a80f8f5920f7b2ab import SupportedFeatures
         return SupportedFeatures(self)._select()
 
     @property
     def SwitchPortQueues(self):
-        """An instance of the SwitchPortQueues class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_df3f97cd2355d3c90f1061f6bfa87ae0.SwitchPortQueues): An instance of the SwitchPortQueues class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_df3f97cd2355d3c90f1061f6bfa87ae0.SwitchPortQueues)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_df3f97cd2355d3c90f1061f6bfa87ae0 import SwitchPortQueues
         return SwitchPortQueues(self)
 
     @property
     def Enabled(self):
-        """If true, the ports in the selected port range are added to the switch.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the ports in the selected port range are added to the switch.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -148,10 +148,10 @@ class SwitchPorts(Base):
 
     @property
     def EthernetAddress(self):
-        """Indicates the hardware address of the ports in the port range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the hardware address of the ports in the port range.
         """
         return self._get_attribute('ethernetAddress')
     @EthernetAddress.setter
@@ -160,10 +160,10 @@ class SwitchPorts(Base):
 
     @property
     def NumberOfPorts(self):
-        """Specifies the number of ports in a port range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of ports in a port range.
         """
         return self._get_attribute('numberOfPorts')
     @NumberOfPorts.setter
@@ -172,10 +172,10 @@ class SwitchPorts(Base):
 
     @property
     def PortName(self):
-        """Indicates the name for the switch port interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the name for the switch port interface.
         """
         return self._get_attribute('portName')
     @PortName.setter
@@ -184,10 +184,10 @@ class SwitchPorts(Base):
 
     @property
     def PortNumber(self):
-        """Indicates a value that the datapath associates with a physical port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates a value that the datapath associates with a physical port.
         """
         return self._get_attribute('portNumber')
     @PortNumber.setter
@@ -195,80 +195,93 @@ class SwitchPorts(Base):
         self._set_attribute('portNumber', value)
 
     def update(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
-        """Updates a child instance of switchPorts on the server.
+        """Updates switchPorts resource on the server.
 
-        Args:
-            Enabled (bool): If true, the ports in the selected port range are added to the switch.
-            EthernetAddress (str): Indicates the hardware address of the ports in the port range.
-            NumberOfPorts (number): Specifies the number of ports in a port range.
-            PortName (str): Indicates the name for the switch port interface.
-            PortNumber (str): Indicates a value that the datapath associates with a physical port.
+        Args
+        ----
+        - Enabled (bool): If true, the ports in the selected port range are added to the switch.
+        - EthernetAddress (str): Indicates the hardware address of the ports in the port range.
+        - NumberOfPorts (number): Specifies the number of ports in a port range.
+        - PortName (str): Indicates the name for the switch port interface.
+        - PortNumber (str): Indicates a value that the datapath associates with a physical port.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
-        """Adds a new switchPorts node on the server and retrieves it in this instance.
+        """Adds a new switchPorts resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, the ports in the selected port range are added to the switch.
-            EthernetAddress (str): Indicates the hardware address of the ports in the port range.
-            NumberOfPorts (number): Specifies the number of ports in a port range.
-            PortName (str): Indicates the name for the switch port interface.
-            PortNumber (str): Indicates a value that the datapath associates with a physical port.
+        Args
+        ----
+        - Enabled (bool): If true, the ports in the selected port range are added to the switch.
+        - EthernetAddress (str): Indicates the hardware address of the ports in the port range.
+        - NumberOfPorts (number): Specifies the number of ports in a port range.
+        - PortName (str): Indicates the name for the switch port interface.
+        - PortNumber (str): Indicates a value that the datapath associates with a physical port.
 
-        Returns:
-            self: This instance with all currently retrieved switchPorts data using find and the newly added switchPorts data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchPorts resources using find and the newly added switchPorts resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the switchPorts data in this instance from server.
+        """Deletes all the contained switchPorts resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
-        """Finds and retrieves switchPorts data from the server.
+        """Finds and retrieves switchPorts resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchPorts data from the server.
-        By default the find method takes no parameters and will retrieve all switchPorts data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchPorts resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchPorts resources from the server.
 
-        Args:
-            Enabled (bool): If true, the ports in the selected port range are added to the switch.
-            EthernetAddress (str): Indicates the hardware address of the ports in the port range.
-            NumberOfPorts (number): Specifies the number of ports in a port range.
-            PortName (str): Indicates the name for the switch port interface.
-            PortNumber (str): Indicates a value that the datapath associates with a physical port.
+        Args
+        ----
+        - Enabled (bool): If true, the ports in the selected port range are added to the switch.
+        - EthernetAddress (str): Indicates the hardware address of the ports in the port range.
+        - NumberOfPorts (number): Specifies the number of ports in a port range.
+        - PortName (str): Indicates the name for the switch port interface.
+        - PortNumber (str): Indicates a value that the datapath associates with a physical port.
 
-        Returns:
-            self: This instance with matching switchPorts data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchPorts resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchPorts data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchPorts data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchPorts resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -277,12 +290,10 @@ class SwitchPorts(Base):
 
         Exec to simulate port up and down.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('simulatePortUpDown', payload=payload, response_object=None)

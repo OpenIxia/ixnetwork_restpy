@@ -36,10 +36,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -48,10 +48,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def BadBlocksNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('badBlocksNumber')
     @BadBlocksNumber.setter
@@ -60,19 +60,19 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def EnableAutoNegotiation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAutoNegotiation')
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -81,10 +81,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def EnableRsFec(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableRsFec')
     @EnableRsFec.setter
@@ -93,10 +93,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def EnableRsFecStats(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableRsFecStats')
     @EnableRsFecStats.setter
@@ -105,10 +105,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -117,10 +117,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def FirecodeAdvertise(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('firecodeAdvertise')
     @FirecodeAdvertise.setter
@@ -129,10 +129,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def FirecodeForceOff(self):
-        """DEPRECATED NOT DEFINED
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('firecodeForceOff')
     @FirecodeForceOff.setter
@@ -141,10 +141,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def FirecodeForceOn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('firecodeForceOn')
     @FirecodeForceOn.setter
@@ -153,10 +153,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def FirecodeRequest(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('firecodeRequest')
     @FirecodeRequest.setter
@@ -165,10 +165,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """The 48-bit MAC address that the port listens on for a directed pause.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -177,10 +177,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def ForceDisableFEC(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('forceDisableFEC')
     @ForceDisableFEC.setter
@@ -189,10 +189,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def GoodBlocksNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('goodBlocksNumber')
     @GoodBlocksNumber.setter
@@ -201,19 +201,19 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def IeeeL1Defaults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ieeeL1Defaults')
 
     @property
     def LaserOn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('laserOn')
     @LaserOn.setter
@@ -222,19 +222,19 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def LinkTraining(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('linkTraining')
 
     @property
     def LoopContinuously(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('loopContinuously')
     @LoopContinuously.setter
@@ -243,10 +243,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def LoopCountNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('loopCountNumber')
     @LoopCountNumber.setter
@@ -255,10 +255,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -267,10 +267,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def LoopbackMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        """
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -279,10 +279,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -291,10 +291,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def RsFecAdvertise(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('rsFecAdvertise')
     @RsFecAdvertise.setter
@@ -303,10 +303,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def RsFecForceOn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('rsFecForceOn')
     @RsFecForceOn.setter
@@ -315,10 +315,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def RsFecRequest(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('rsFecRequest')
     @RsFecRequest.setter
@@ -327,10 +327,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def SendSetsMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(alternate|typeAOnly|typeBOnly)
+        """
+        Returns
+        -------
+        - str(alternate | typeAOnly | typeBOnly): NOT DEFINED
         """
         return self._get_attribute('sendSetsMode')
     @SendSetsMode.setter
@@ -339,10 +339,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def Speed(self):
-        """NOT DEFINED
-
-        Returns:
-            str(speed100g|speed200g|speed400g|speed50g)
+        """
+        Returns
+        -------
+        - str(speed100g | speed200g | speed400g | speed50g): NOT DEFINED
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -351,10 +351,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def StartErrorInsertion(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('startErrorInsertion')
     @StartErrorInsertion.setter
@@ -363,10 +363,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -375,10 +375,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def TypeAOrderedSets(self):
-        """NOT DEFINED
-
-        Returns:
-            str(localFault|remoteFault)
+        """
+        Returns
+        -------
+        - str(localFault | remoteFault): NOT DEFINED
         """
         return self._get_attribute('typeAOrderedSets')
     @TypeAOrderedSets.setter
@@ -387,10 +387,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def TypeBOrderedSets(self):
-        """NOT DEFINED
-
-        Returns:
-            str(localFault|remoteFault)
+        """
+        Returns
+        -------
+        - str(localFault | remoteFault): NOT DEFINED
         """
         return self._get_attribute('typeBOrderedSets')
     @TypeBOrderedSets.setter
@@ -399,10 +399,10 @@ class KrakenFourHundredGigLan(Base):
 
     @property
     def UseANResults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('useANResults')
     @UseANResults.setter
@@ -410,40 +410,42 @@ class KrakenFourHundredGigLan(Base):
         self._set_attribute('useANResults', value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
-        """Updates a child instance of krakenFourHundredGigLan on the server.
+        """Updates krakenFourHundredGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            BadBlocksNumber (number): NOT DEFINED
-            EnablePPM (bool): If true, enables the portsppm.
-            EnableRsFec (bool): NOT DEFINED
-            EnableRsFecStats (bool): NOT DEFINED
-            EnabledFlowControl (bool): NOT DEFINED
-            FirecodeAdvertise (bool): NOT DEFINED
-            FirecodeForceOff (bool): NOT DEFINED
-            FirecodeForceOn (bool): NOT DEFINED
-            FirecodeRequest (bool): NOT DEFINED
-            FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
-            ForceDisableFEC (bool): NOT DEFINED
-            GoodBlocksNumber (number): NOT DEFINED
-            LaserOn (bool): NOT DEFINED
-            LoopContinuously (bool): NOT DEFINED
-            LoopCountNumber (number): NOT DEFINED
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            RsFecAdvertise (bool): NOT DEFINED
-            RsFecForceOn (bool): NOT DEFINED
-            RsFecRequest (bool): NOT DEFINED
-            SendSetsMode (str(alternate|typeAOnly|typeBOnly)): NOT DEFINED
-            Speed (str(speed100g|speed200g|speed400g|speed50g)): NOT DEFINED
-            StartErrorInsertion (bool): NOT DEFINED
-            TxIgnoreRxLinkFaults (bool): NOT DEFINED
-            TypeAOrderedSets (str(localFault|remoteFault)): NOT DEFINED
-            TypeBOrderedSets (str(localFault|remoteFault)): NOT DEFINED
-            UseANResults (bool): NOT DEFINED
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - BadBlocksNumber (number): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnableRsFec (bool): NOT DEFINED
+        - EnableRsFecStats (bool): NOT DEFINED
+        - EnabledFlowControl (bool): NOT DEFINED
+        - FirecodeAdvertise (bool): NOT DEFINED
+        - FirecodeForceOff (bool): NOT DEFINED
+        - FirecodeForceOn (bool): NOT DEFINED
+        - FirecodeRequest (bool): NOT DEFINED
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - ForceDisableFEC (bool): NOT DEFINED
+        - GoodBlocksNumber (number): NOT DEFINED
+        - LaserOn (bool): NOT DEFINED
+        - LoopContinuously (bool): NOT DEFINED
+        - LoopCountNumber (number): NOT DEFINED
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RsFecAdvertise (bool): NOT DEFINED
+        - RsFecForceOn (bool): NOT DEFINED
+        - RsFecRequest (bool): NOT DEFINED
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
+        - Speed (str(speed100g | speed200g | speed400g | speed50g)): NOT DEFINED
+        - StartErrorInsertion (bool): NOT DEFINED
+        - TxIgnoreRxLinkFaults (bool): NOT DEFINED
+        - TypeAOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - TypeBOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - UseANResults (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,55 +36,57 @@ class VxlanStaticInfo(Base):
 
     @property
     def Active(self):
-        """Flag.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def LocalVNI(self):
-        """VNI
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): VNI
         """
         return self._get_attribute('localVNI')
 
     @property
     def MacStaticConfig(self):
-        """Statically configure the Remote Inner Mac address to Outer Vtep IP mapping, used for traffic.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('macStaticConfig')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Statically configure the Remote Inner Mac address to Outer Vtep IP mapping, used for traffic.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('macStaticConfig'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -93,72 +95,81 @@ class VxlanStaticInfo(Base):
 
     @property
     def RemoteVmStaticIpv4(self):
-        """VM IPv4 Address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteVmStaticIpv4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VM IPv4 Address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteVmStaticIpv4'))
 
     @property
     def RemoteVmStaticMac(self):
-        """Remote VM MAC address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteVmStaticMac')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote VM MAC address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteVmStaticMac'))
 
     @property
     def RemoteVtepIpv4(self):
-        """Remote VTEP Unicast IPv4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteVtepIpv4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote VTEP Unicast IPv4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteVtepIpv4'))
 
     @property
     def SuppressArp(self):
-        """Suppress Arp for VM IP, VM MAC pair.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('suppressArp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Suppress Arp for VM IP, VM MAC pair.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('suppressArp'))
 
     def update(self, Name=None):
-        """Updates a child instance of vxlanStaticInfo on the server.
+        """Updates vxlanStaticInfo resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, MacStaticConfig=None, RemoteVmStaticIpv4=None, RemoteVmStaticMac=None, RemoteVtepIpv4=None, SuppressArp=None):
         """Base class infrastructure that gets a list of vxlanStaticInfo device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            MacStaticConfig (str): optional regex of macStaticConfig
-            RemoteVmStaticIpv4 (str): optional regex of remoteVmStaticIpv4
-            RemoteVmStaticMac (str): optional regex of remoteVmStaticMac
-            RemoteVtepIpv4 (str): optional regex of remoteVtepIpv4
-            SuppressArp (str): optional regex of suppressArp
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - MacStaticConfig (str): optional regex of macStaticConfig
+        - RemoteVmStaticIpv4 (str): optional regex of remoteVmStaticIpv4
+        - RemoteVmStaticMac (str): optional regex of remoteVmStaticMac
+        - RemoteVtepIpv4 (str): optional regex of remoteVtepIpv4
+        - SuppressArp (str): optional regex of suppressArp
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

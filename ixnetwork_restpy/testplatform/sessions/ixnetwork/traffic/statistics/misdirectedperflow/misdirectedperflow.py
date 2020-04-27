@@ -36,10 +36,10 @@ class MisdirectedPerFlow(Base):
 
     @property
     def Enabled(self):
-        """If true then misdirected per flow statistics will be enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then misdirected per flow statistics will be enabled
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -47,12 +47,14 @@ class MisdirectedPerFlow(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of misdirectedPerFlow on the server.
+        """Updates misdirectedPerFlow resource on the server.
 
-        Args:
-            Enabled (bool): If true then misdirected per flow statistics will be enabled
+        Args
+        ----
+        - Enabled (bool): If true then misdirected per flow statistics will be enabled
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

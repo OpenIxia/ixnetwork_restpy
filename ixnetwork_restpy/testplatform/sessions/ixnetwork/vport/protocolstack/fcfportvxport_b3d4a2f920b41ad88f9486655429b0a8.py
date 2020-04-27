@@ -36,10 +36,10 @@ class FcFportVxPort(Base):
 
     @property
     def B2bRxSize(self):
-        """The buffer-to-buffer receive data field size in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The buffer-to-buffer receive data field size in bytes.
         """
         return self._get_attribute('b2bRxSize')
     @B2bRxSize.setter
@@ -48,10 +48,10 @@ class FcFportVxPort(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class FcFportVxPort(Base):
 
     @property
     def FabricName(self):
-        """The Fabric Name value assigned to this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Fabric Name value assigned to this interface.
         """
         return self._get_attribute('fabricName')
     @FabricName.setter
@@ -72,10 +72,10 @@ class FcFportVxPort(Base):
 
     @property
     def FdiscRejectInterval(self):
-        """When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
         """
         return self._get_attribute('fdiscRejectInterval')
     @FdiscRejectInterval.setter
@@ -84,10 +84,10 @@ class FcFportVxPort(Base):
 
     @property
     def FlogiRejectInterval(self):
-        """When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
         """
         return self._get_attribute('flogiRejectInterval')
     @FlogiRejectInterval.setter
@@ -96,10 +96,10 @@ class FcFportVxPort(Base):
 
     @property
     def LogoRejectInterval(self):
-        """When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
         """
         return self._get_attribute('logoRejectInterval')
     @LogoRejectInterval.setter
@@ -108,10 +108,10 @@ class FcFportVxPort(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -120,10 +120,10 @@ class FcFportVxPort(Base):
 
     @property
     def NameServer(self):
-        """Select this option to respond to Name Service requests.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select this option to respond to Name Service requests.
         """
         return self._get_attribute('nameServer')
     @NameServer.setter
@@ -132,10 +132,10 @@ class FcFportVxPort(Base):
 
     @property
     def NameServerCommands(self):
-        """Signifies the Name Server Commands that will be accepted by the forwarder.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Signifies the Name Server Commands that will be accepted by the forwarder.
         """
         return self._get_attribute('nameServerCommands')
     @NameServerCommands.setter
@@ -144,19 +144,19 @@ class FcFportVxPort(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OperatingMode(self):
-        """Describes the operating mode for this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Describes the operating mode for this interface.
         """
         return self._get_attribute('operatingMode')
     @OperatingMode.setter
@@ -165,10 +165,10 @@ class FcFportVxPort(Base):
 
     @property
     def PlogiRejectInterval(self):
-        """When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
         """
         return self._get_attribute('plogiRejectInterval')
     @PlogiRejectInterval.setter
@@ -177,10 +177,10 @@ class FcFportVxPort(Base):
 
     @property
     def SwitchName(self):
-        """The Switch Name value assigned to this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Switch Name value assigned to this interface.
         """
         return self._get_attribute('switchName')
     @SwitchName.setter
@@ -188,40 +188,43 @@ class FcFportVxPort(Base):
         self._set_attribute('switchName', value)
 
     def update(self, B2bRxSize=None, Enabled=None, FabricName=None, FdiscRejectInterval=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None):
-        """Updates a child instance of fcFportVxPort on the server.
+        """Updates fcFportVxPort resource on the server.
 
-        Args:
-            B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FabricName (str): The Fabric Name value assigned to this interface.
-            FdiscRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
-            FlogiRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
-            LogoRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
-            Name (str): Name of range
-            NameServer (bool): Select this option to respond to Name Service requests.
-            NameServerCommands (list(number)): Signifies the Name Server Commands that will be accepted by the forwarder.
-            OperatingMode (str): Describes the operating mode for this interface.
-            PlogiRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
-            SwitchName (str): The Switch Name value assigned to this interface.
+        Args
+        ----
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FabricName (str): The Fabric Name value assigned to this interface.
+        - FdiscRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
+        - FlogiRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
+        - LogoRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
+        - Name (str): Name of range
+        - NameServer (bool): Select this option to respond to Name Service requests.
+        - NameServerCommands (list(number)): Signifies the Name Server Commands that will be accepted by the forwarder.
+        - OperatingMode (str): Describes the operating mode for this interface.
+        - PlogiRejectInterval (number): When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
+        - SwitchName (str): The Switch Name value assigned to this interface.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -233,16 +236,15 @@ class FcFportVxPort(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -254,16 +256,15 @@ class FcFportVxPort(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

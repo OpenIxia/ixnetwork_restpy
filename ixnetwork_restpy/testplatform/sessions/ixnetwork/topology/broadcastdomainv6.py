@@ -36,132 +36,142 @@ class BroadcastDomainV6(Base):
 
     @property
     def PnTLVList(self):
-        """An instance of the PnTLVList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist.PnTLVList): An instance of the PnTLVList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist.PnTLVList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist import PnTLVList
         return PnTLVList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdRouteLabel(self):
-        """AD Route Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('adRouteLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AD Route Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('adRouteLabel'))
 
     @property
     def AdvSrv6SidInIgp(self):
-        """Advertise SRv6 SID in IGP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advSrv6SidInIgp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID in IGP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advSrv6SidInIgp'))
 
     @property
     def AdvertiseSRv6SID(self):
-        """Advertise SRv6 SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseSRv6SID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseSRv6SID'))
 
     @property
     def BVlanId(self):
-        """B VLAN ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bVlanId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bVlanId'))
 
     @property
     def BVlanPriority(self):
-        """B VLAN Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bVlanPriority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bVlanPriority'))
 
     @property
     def BVlanTpid(self):
-        """B VLAN TPID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bVlanTpid')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN TPID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bVlanTpid'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableVlanAwareService(self):
-        """Enable VLAN Aware Service
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableVlanAwareService')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable VLAN Aware Service
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableVlanAwareService'))
 
     @property
     def EthernetTagId(self):
-        """Ethernet Tag ID. For VPWS, this acts as VPWS Service ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ethernetTagId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Ethernet Tag ID. For VPWS, this acts as VPWS Service ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ethernetTagId'))
 
     @property
     def GroupAddress(self):
-        """Group Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupAddress'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -170,10 +180,10 @@ class BroadcastDomainV6(Base):
 
     @property
     def NoOfMacPools(self):
-        """Number of Mac Pools
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Mac Pools
         """
         return self._get_attribute('noOfMacPools')
     @NoOfMacPools.setter
@@ -182,100 +192,160 @@ class BroadcastDomainV6(Base):
 
     @property
     def RootAddress(self):
-        """Root Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddress'))
 
     @property
     def RsvpP2mpId(self):
-        """RSVP P2MP ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rsvpP2mpId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP P2MP ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rsvpP2mpId'))
 
     @property
     def RsvpP2mpIdAsNumber(self):
-        """RSVP P2MP ID as Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rsvpP2mpIdAsNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP P2MP ID as Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rsvpP2mpIdAsNumber'))
 
     @property
     def RsvpTunnelId(self):
-        """RSVP Tunnel ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rsvpTunnelId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP Tunnel ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rsvpTunnelId'))
+
+    @property
+    def SendSRv6SIDOptionalInfo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendSRv6SIDOptionalInfo'))
 
     @property
     def SenderAddressPRootNodeAddress(self):
-        """Sender Address/P-Root Node Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('senderAddressPRootNodeAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Sender Address/P-Root Node Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('senderAddressPRootNodeAddress'))
+
+    @property
+    def Srv6EndpointBehavior(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Endpoint Behavior field Value for all routes in this Route Range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6EndpointBehavior'))
+
+    @property
+    def Srv6SIDOptionalInformation(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SIDOptionalInformation'))
 
     @property
     def Srv6SidFlags(self):
-        """SRv6 SID Flags Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidFlags')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Flags Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidFlags'))
 
     @property
     def Srv6SidLoc(self):
-        """SRv6 SID. It consists of Locator, Func and Args
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidLoc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidLoc'))
 
     @property
     def Srv6SidLocLen(self):
-        """SRv6 SID Locator Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidLocLen')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidLocLen'))
 
     @property
     def Srv6SidLocMetric(self):
-        """SRv6 SID Locator Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidLocMetric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidLocMetric'))
 
     @property
     def Srv6SidReserved(self):
-        """SRv6 SID Reserved Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidReserved')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidReserved'))
+
+    @property
+    def Srv6SidReserved1(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved1 Field for Service Information sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidReserved1'))
+
+    @property
+    def Srv6SidReserved2(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved2 Field for Service Information sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidReserved2'))
 
     @property
     def UsebVlan(self):
-        """Use B-VLAN
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use B-VLAN
         """
         return self._get_attribute('usebVlan')
     @UsebVlan.setter
@@ -283,54 +353,64 @@ class BroadcastDomainV6(Base):
         self._set_attribute('usebVlan', value)
 
     def update(self, Name=None, NoOfMacPools=None, UsebVlan=None):
-        """Updates a child instance of broadcastDomainV6 on the server.
+        """Updates broadcastDomainV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfMacPools (number): Number of Mac Pools
-            UsebVlan (bool): Use B-VLAN
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfMacPools (number): Number of Mac Pools
+        - UsebVlan (bool): Use B-VLAN
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvertiseSRv6SID=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, GroupAddress=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None, Srv6SidFlags=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None):
+    def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvertiseSRv6SID=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, GroupAddress=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SendSRv6SIDOptionalInfo=None, SenderAddressPRootNodeAddress=None, Srv6EndpointBehavior=None, Srv6SIDOptionalInformation=None, Srv6SidFlags=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None, Srv6SidReserved1=None, Srv6SidReserved2=None):
         """Base class infrastructure that gets a list of broadcastDomainV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AdRouteLabel (str): optional regex of adRouteLabel
-            AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
-            AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
-            BVlanId (str): optional regex of bVlanId
-            BVlanPriority (str): optional regex of bVlanPriority
-            BVlanTpid (str): optional regex of bVlanTpid
-            EnableVlanAwareService (str): optional regex of enableVlanAwareService
-            EthernetTagId (str): optional regex of ethernetTagId
-            GroupAddress (str): optional regex of groupAddress
-            RootAddress (str): optional regex of rootAddress
-            RsvpP2mpId (str): optional regex of rsvpP2mpId
-            RsvpP2mpIdAsNumber (str): optional regex of rsvpP2mpIdAsNumber
-            RsvpTunnelId (str): optional regex of rsvpTunnelId
-            SenderAddressPRootNodeAddress (str): optional regex of senderAddressPRootNodeAddress
-            Srv6SidFlags (str): optional regex of srv6SidFlags
-            Srv6SidLoc (str): optional regex of srv6SidLoc
-            Srv6SidLocLen (str): optional regex of srv6SidLocLen
-            Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
-            Srv6SidReserved (str): optional regex of srv6SidReserved
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AdRouteLabel (str): optional regex of adRouteLabel
+        - AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
+        - AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
+        - BVlanId (str): optional regex of bVlanId
+        - BVlanPriority (str): optional regex of bVlanPriority
+        - BVlanTpid (str): optional regex of bVlanTpid
+        - EnableVlanAwareService (str): optional regex of enableVlanAwareService
+        - EthernetTagId (str): optional regex of ethernetTagId
+        - GroupAddress (str): optional regex of groupAddress
+        - RootAddress (str): optional regex of rootAddress
+        - RsvpP2mpId (str): optional regex of rsvpP2mpId
+        - RsvpP2mpIdAsNumber (str): optional regex of rsvpP2mpIdAsNumber
+        - RsvpTunnelId (str): optional regex of rsvpTunnelId
+        - SendSRv6SIDOptionalInfo (str): optional regex of sendSRv6SIDOptionalInfo
+        - SenderAddressPRootNodeAddress (str): optional regex of senderAddressPRootNodeAddress
+        - Srv6EndpointBehavior (str): optional regex of srv6EndpointBehavior
+        - Srv6SIDOptionalInformation (str): optional regex of srv6SIDOptionalInformation
+        - Srv6SidFlags (str): optional regex of srv6SidFlags
+        - Srv6SidLoc (str): optional regex of srv6SidLoc
+        - Srv6SidLocLen (str): optional regex of srv6SidLocLen
+        - Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+        - Srv6SidReserved (str): optional regex of srv6SidReserved
+        - Srv6SidReserved1 (str): optional regex of srv6SidReserved1
+        - Srv6SidReserved2 (str): optional regex of srv6SidReserved2
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -339,16 +419,15 @@ class BroadcastDomainV6(Base):
 
         Advertise Aliasing Per Broadcast Domain.
 
-        advertiseAliasing(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        advertiseAliasing(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -360,16 +439,15 @@ class BroadcastDomainV6(Base):
 
         Withdraw Aliasing Per Broadcast Domain.
 
-        withdrawAliasing(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        withdrawAliasing(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

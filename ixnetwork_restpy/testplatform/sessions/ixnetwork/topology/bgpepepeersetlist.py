@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class BgpEpePeerSetList(Base):
     """EPE Peer Set
-    The BgpEpePeerSetList class encapsulates a list of bgpEpePeerSetList resources that is managed by the system.
+    The BgpEpePeerSetList class encapsulates a list of bgpEpePeerSetList resources that are managed by the system.
     A list of resources can be retrieved from the server using the BgpEpePeerSetList.find() method.
     """
 
@@ -37,10 +37,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def BBit(self):
-        """B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
         """
         return self._get_attribute('bBit')
     @BBit.setter
@@ -49,28 +49,28 @@ class BgpEpePeerSetList(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def LBit(self):
-        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
         """
         return self._get_attribute('lBit')
     @LBit.setter
@@ -79,10 +79,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -91,10 +91,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def PBit(self):
-        """P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
         """
         return self._get_attribute('pBit')
     @PBit.setter
@@ -103,10 +103,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def Reserved(self):
-        """Reserved
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Reserved
         """
         return self._get_attribute('reserved')
     @Reserved.setter
@@ -115,19 +115,20 @@ class BgpEpePeerSetList(Base):
 
     @property
     def RsvdBits(self):
-        """Reserved for future use and MUST be zero when originated and ignored when received
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rsvdBits')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rsvdBits'))
 
     @property
     def SidIndex(self):
-        """Local Label for Peer-Set
-
-        Returns:
-            str(sid|index)
+        """
+        Returns
+        -------
+        - str(sid | index): Local Label for Peer-Set
         """
         return self._get_attribute('sidIndex')
     @SidIndex.setter
@@ -136,10 +137,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def SidIndexValue(self):
-        """If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
         """
         return self._get_attribute('sidIndexValue')
     @SidIndexValue.setter
@@ -148,10 +149,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def VBit(self):
-        """V-Flag: Value flag. If set, then the SID carries a label value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: V-Flag: Value flag. If set, then the SID carries a label value.
         """
         return self._get_attribute('vBit')
     @VBit.setter
@@ -160,10 +161,10 @@ class BgpEpePeerSetList(Base):
 
     @property
     def Weight(self):
-        """Weight of SID for the purpose of load balancing
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Weight of SID for the purpose of load balancing
         """
         return self._get_attribute('weight')
     @Weight.setter
@@ -171,66 +172,75 @@ class BgpEpePeerSetList(Base):
         self._set_attribute('weight', value)
 
     def update(self, BBit=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
-        """Updates a child instance of bgpEpePeerSetList on the server.
+        """Updates bgpEpePeerSetList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
-            LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
-            Reserved (number): Reserved
-            SidIndex (str(sid|index)): Local Label for Peer-Set
-            SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
-            VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
-            Weight (number): Weight of SID for the purpose of load balancing
+        Args
+        ----
+        - BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
+        - LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
+        - Reserved (number): Reserved
+        - SidIndex (str(sid | index)): Local Label for Peer-Set
+        - SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
+        - VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
+        - Weight (number): Weight of SID for the purpose of load balancing
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, BBit=None, Count=None, DescriptiveName=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
-        """Finds and retrieves bgpEpePeerSetList data from the server.
+        """Finds and retrieves bgpEpePeerSetList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bgpEpePeerSetList data from the server.
-        By default the find method takes no parameters and will retrieve all bgpEpePeerSetList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpEpePeerSetList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpEpePeerSetList resources from the server.
 
-        Args:
-            BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
-            Reserved (number): Reserved
-            SidIndex (str(sid|index)): Local Label for Peer-Set
-            SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
-            VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
-            Weight (number): Weight of SID for the purpose of load balancing
+        Args
+        ----
+        - BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
+        - Reserved (number): Reserved
+        - SidIndex (str(sid | index)): Local Label for Peer-Set
+        - SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
+        - VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
+        - Weight (number): Weight of SID for the purpose of load balancing
 
-        Returns:
-            self: This instance with matching bgpEpePeerSetList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bgpEpePeerSetList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bgpEpePeerSetList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bgpEpePeerSetList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bgpEpePeerSetList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -239,14 +249,17 @@ class BgpEpePeerSetList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            RsvdBits (str): optional regex of rsvdBits
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - RsvdBits (str): optional regex of rsvdBits
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

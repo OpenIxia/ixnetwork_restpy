@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Statistic(Base):
     """
-    The Statistic class encapsulates a list of statistic resources that is be managed by the user.
+    The Statistic class encapsulates a list of statistic resources that are managed by the user.
     A list of resources can be retrieved from the server using the Statistic.find() method.
-    The list can be managed by the user by using the Statistic.add() and Statistic.remove() methods.
+    The list can be managed by using the Statistic.add() and Statistic.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Statistic(Base):
 
     @property
     def Enable(self):
-        """Enable/Disable monitoring for the current statistic.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable monitoring for the current statistic.
         """
         return self._get_attribute('enable')
     @Enable.setter
@@ -50,46 +50,46 @@ class Statistic(Base):
 
     @property
     def Name(self):
-        """The name of the statistic that is being monitored.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the statistic that is being monitored.
         """
         return self._get_attribute('name')
 
     @property
     def Notes(self):
-        """Additional notes that explain what is being monitored for this statistic.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Additional notes that explain what is being monitored for this statistic.
         """
         return self._get_attribute('notes')
 
     @property
     def Operator(self):
-        """The operator that is being used to compare the actual value of the statistic with the configured threshold.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The operator that is being used to compare the actual value of the statistic with the configured threshold.
         """
         return self._get_attribute('operator')
 
     @property
     def Unit(self):
-        """The measurement unit being used for this statistic.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The measurement unit being used for this statistic.
         """
         return self._get_attribute('unit')
 
     @property
     def Value(self):
-        """The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -97,74 +97,87 @@ class Statistic(Base):
         self._set_attribute('value', value)
 
     def update(self, Enable=None, Value=None):
-        """Updates a child instance of statistic on the server.
+        """Updates statistic resource on the server.
 
-        Args:
-            Enable (bool): Enable/Disable monitoring for the current statistic.
-            Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
+        Args
+        ----
+        - Enable (bool): Enable/Disable monitoring for the current statistic.
+        - Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enable=None, Value=None):
-        """Adds a new statistic node on the server and retrieves it in this instance.
+        """Adds a new statistic resource on the server and adds it to the container.
 
-        Args:
-            Enable (bool): Enable/Disable monitoring for the current statistic.
-            Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
+        Args
+        ----
+        - Enable (bool): Enable/Disable monitoring for the current statistic.
+        - Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
 
-        Returns:
-            self: This instance with all currently retrieved statistic data using find and the newly added statistic data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved statistic resources using find and the newly added statistic resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the statistic data in this instance from server.
+        """Deletes all the contained statistic resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enable=None, Name=None, Notes=None, Operator=None, Unit=None, Value=None):
-        """Finds and retrieves statistic data from the server.
+        """Finds and retrieves statistic resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve statistic data from the server.
-        By default the find method takes no parameters and will retrieve all statistic data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistic resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statistic resources from the server.
 
-        Args:
-            Enable (bool): Enable/Disable monitoring for the current statistic.
-            Name (str): The name of the statistic that is being monitored.
-            Notes (str): Additional notes that explain what is being monitored for this statistic.
-            Operator (str): The operator that is being used to compare the actual value of the statistic with the configured threshold.
-            Unit (str): The measurement unit being used for this statistic.
-            Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
+        Args
+        ----
+        - Enable (bool): Enable/Disable monitoring for the current statistic.
+        - Name (str): The name of the statistic that is being monitored.
+        - Notes (str): Additional notes that explain what is being monitored for this statistic.
+        - Operator (str): The operator that is being used to compare the actual value of the statistic with the configured threshold.
+        - Unit (str): The measurement unit being used for this statistic.
+        - Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
 
-        Returns:
-            self: This instance with matching statistic data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching statistic resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the statistic data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the statistic resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

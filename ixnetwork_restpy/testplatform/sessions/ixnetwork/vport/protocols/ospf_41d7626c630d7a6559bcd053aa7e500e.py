@@ -36,24 +36,24 @@ class Ospf(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_527fd224df416456371158e8ee44dd5e.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_527fd224df416456371158e8ee44dd5e.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_527fd224df416456371158e8ee44dd5e import Router
         return Router(self)
 
     @property
     def EnableDrOrBdr(self):
-        """If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
         """
         return self._get_attribute('enableDrOrBdr')
     @EnableDrOrBdr.setter
@@ -62,10 +62,10 @@ class Ospf(Base):
 
     @property
     def Enabled(self):
-        """Enables this emulated OSPF router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this emulated OSPF router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class Ospf(Base):
 
     @property
     def FloodLinkStateUpdatesPerInterval(self):
-        """Sets the number of Flood Link State Updates to be sent in each rate control interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the number of Flood Link State Updates to be sent in each rate control interval.
         """
         return self._get_attribute('floodLinkStateUpdatesPerInterval')
     @FloodLinkStateUpdatesPerInterval.setter
@@ -86,10 +86,10 @@ class Ospf(Base):
 
     @property
     def RateControlInterval(self):
-        """Enables the option Rate Control Interval to define a value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Enables the option Rate Control Interval to define a value.
         """
         return self._get_attribute('rateControlInterval')
     @RateControlInterval.setter
@@ -98,35 +98,38 @@ class Ospf(Base):
 
     @property
     def RunningState(self):
-        """The current state of the OSPF router.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current state of the OSPF router.
         """
         return self._get_attribute('runningState')
 
     def update(self, EnableDrOrBdr=None, Enabled=None, FloodLinkStateUpdatesPerInterval=None, RateControlInterval=None):
-        """Updates a child instance of ospf on the server.
+        """Updates ospf resource on the server.
 
-        Args:
-            EnableDrOrBdr (bool): If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
-            Enabled (bool): Enables this emulated OSPF router.
-            FloodLinkStateUpdatesPerInterval (number): Sets the number of Flood Link State Updates to be sent in each rate control interval.
-            RateControlInterval (number): Enables the option Rate Control Interval to define a value.
+        Args
+        ----
+        - EnableDrOrBdr (bool): If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
+        - Enabled (bool): Enables this emulated OSPF router.
+        - FloodLinkStateUpdatesPerInterval (number): Sets the number of Flood Link State Updates to be sent in each rate control interval.
+        - RateControlInterval (number): Enables the option Rate Control Interval to define a value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the OSPF protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -136,9 +139,10 @@ class Ospf(Base):
 
         Stops the MLD protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

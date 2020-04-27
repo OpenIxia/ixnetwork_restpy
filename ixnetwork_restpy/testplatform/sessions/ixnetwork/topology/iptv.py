@@ -36,91 +36,98 @@ class Iptv(Base):
 
     @property
     def CombinedLeaveJoin(self):
-        """If enabled, Leave for current group and join for next group gets merged in a single multicast packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('combinedLeaveJoin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Leave for current group and join for next group gets merged in a single multicast packet
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('combinedLeaveJoin'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableGeneralQueryResponse(self):
-        """If enabled, General Query Response is send.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableGeneralQueryResponse')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, General Query Response is send.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableGeneralQueryResponse'))
 
     @property
     def EnableGroupSpecificQueryResponse(self):
-        """If enabled, Group Specific Response is sent
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableGroupSpecificQueryResponse')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Group Specific Response is sent
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableGroupSpecificQueryResponse'))
 
     @property
     def JoinLatencyThreshold(self):
-        """The maximum time that is allowed for a multicast stream to arrive for channel for which a Join has been sent.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('joinLatencyThreshold')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum time that is allowed for a multicast stream to arrive for channel for which a Join has been sent.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('joinLatencyThreshold'))
 
     @property
     def LeaveLatencyThreshold(self):
-        """The maximum time allowed for a multicast stream to stop for a channel for which a Leave has been sent.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('leaveLatencyThreshold')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum time allowed for a multicast stream to stop for a channel for which a Leave has been sent.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('leaveLatencyThreshold'))
 
     @property
     def LogAllTimestamps(self):
-        """If enabled, all the captured timestamps for Join and Leave are saved to a log file.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('logAllTimestamps')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, all the captured timestamps for Join and Leave are saved to a log file.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('logAllTimestamps'))
 
     @property
     def LogFailureTimestamps(self):
-        """If enabled, the timestamps for Join and Leave failures are saved to a log file.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('logFailureTimestamps')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the timestamps for Join and Leave failures are saved to a log file.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('logFailureTimestamps'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -129,117 +136,129 @@ class Iptv(Base):
 
     @property
     def NumChannelChangesBeforeView(self):
-        """Number of channels to change before stopping on a channel and watching it for View Duration.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numChannelChangesBeforeView')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of channels to change before stopping on a channel and watching it for View Duration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numChannelChangesBeforeView'))
 
     @property
     def State(self):
-        """Indicates the state IPTV
-
-        Returns:
-            list(str[notStarted|started])
+        """
+        Returns
+        -------
+        - list(str[notStarted | started]): Indicates the state IPTV
         """
         return self._get_attribute('state')
 
     @property
     def StbLeaveJoinDelay(self):
-        """Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('stbLeaveJoinDelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('stbLeaveJoinDelay'))
 
     @property
     def ViewDuration(self):
-        """Specifies the time in milliseconds to view the last channel.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('viewDuration')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the time in milliseconds to view the last channel.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('viewDuration'))
 
     @property
     def ZapBehavior(self):
-        """Use Zap Only to change channels without viewing the channel or Zap and View to change traffic and receive traffic for the last channel.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('zapBehavior')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use Zap Only to change channels without viewing the channel or Zap and View to change traffic and receive traffic for the last channel.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('zapBehavior'))
 
     @property
     def ZapDirection(self):
-        """Specifies the direction of changing channels.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('zapDirection')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the direction of changing channels.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('zapDirection'))
 
     @property
     def ZapInterval(self):
-        """Interval in milliseconds between channel changes based on the selected type.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('zapInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Interval in milliseconds between channel changes based on the selected type.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('zapInterval'))
 
     @property
     def ZapIntervalType(self):
-        """Specifies the wait interval type before changing the channels.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('zapIntervalType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the wait interval type before changing the channels.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('zapIntervalType'))
 
     def update(self, Name=None):
-        """Updates a child instance of iptv on the server.
+        """Updates iptv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, CombinedLeaveJoin=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
         """Base class infrastructure that gets a list of iptv device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            CombinedLeaveJoin (str): optional regex of combinedLeaveJoin
-            EnableGeneralQueryResponse (str): optional regex of enableGeneralQueryResponse
-            EnableGroupSpecificQueryResponse (str): optional regex of enableGroupSpecificQueryResponse
-            JoinLatencyThreshold (str): optional regex of joinLatencyThreshold
-            LeaveLatencyThreshold (str): optional regex of leaveLatencyThreshold
-            LogAllTimestamps (str): optional regex of logAllTimestamps
-            LogFailureTimestamps (str): optional regex of logFailureTimestamps
-            NumChannelChangesBeforeView (str): optional regex of numChannelChangesBeforeView
-            StbLeaveJoinDelay (str): optional regex of stbLeaveJoinDelay
-            ViewDuration (str): optional regex of viewDuration
-            ZapBehavior (str): optional regex of zapBehavior
-            ZapDirection (str): optional regex of zapDirection
-            ZapInterval (str): optional regex of zapInterval
-            ZapIntervalType (str): optional regex of zapIntervalType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - CombinedLeaveJoin (str): optional regex of combinedLeaveJoin
+        - EnableGeneralQueryResponse (str): optional regex of enableGeneralQueryResponse
+        - EnableGroupSpecificQueryResponse (str): optional regex of enableGroupSpecificQueryResponse
+        - JoinLatencyThreshold (str): optional regex of joinLatencyThreshold
+        - LeaveLatencyThreshold (str): optional regex of leaveLatencyThreshold
+        - LogAllTimestamps (str): optional regex of logAllTimestamps
+        - LogFailureTimestamps (str): optional regex of logFailureTimestamps
+        - NumChannelChangesBeforeView (str): optional regex of numChannelChangesBeforeView
+        - StbLeaveJoinDelay (str): optional regex of stbLeaveJoinDelay
+        - ViewDuration (str): optional regex of viewDuration
+        - ZapBehavior (str): optional regex of zapBehavior
+        - ZapDirection (str): optional regex of zapDirection
+        - ZapInterval (str): optional regex of zapInterval
+        - ZapIntervalType (str): optional regex of zapIntervalType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -248,29 +267,25 @@ class Iptv(Base):
 
         Start IPTV
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startIptv()
+        startIptv(SessionIndices=list)
+        ------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        startIptv(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        startIptv(SessionIndices=string)
+        --------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        startIptv(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        startIptv(Arg2=list)list
+        ------------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        startIptv(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -282,29 +297,25 @@ class Iptv(Base):
 
         Stop IPTV
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stopIptv()
+        stopIptv(SessionIndices=list)
+        -----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stopIptv(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stopIptv(SessionIndices=string)
+        -------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stopIptv(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        stopIptv(Arg2=list)list
+        -----------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        stopIptv(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

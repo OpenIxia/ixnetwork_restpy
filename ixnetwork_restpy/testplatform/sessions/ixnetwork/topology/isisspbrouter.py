@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IsisSpbRouter(Base):
     """SPB Configuration
-    The IsisSpbRouter class encapsulates a list of isisSpbRouter resources that is be managed by the user.
+    The IsisSpbRouter class encapsulates a list of isisSpbRouter resources that are managed by the user.
     A list of resources can be retrieved from the server using the IsisSpbRouter.find() method.
-    The list can be managed by the user by using the IsisSpbRouter.add() and IsisSpbRouter.remove() methods.
+    The list can be managed by using the IsisSpbRouter.add() and IsisSpbRouter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,276 +38,300 @@ class IsisSpbRouter(Base):
 
     @property
     def SpbTopologyList(self):
-        """An instance of the SpbTopologyList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbtopologylist.SpbTopologyList): An instance of the SpbTopologyList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbtopologylist.SpbTopologyList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbtopologylist import SpbTopologyList
         return SpbTopologyList(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AreaAddresses(self):
-        """Area Addresses
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaAddresses')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Addresses
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaAddresses'))
 
     @property
     def AreaAuthenticationType(self):
-        """Area Authentication Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaAuthenticationType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Authentication Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaAuthenticationType'))
 
     @property
     def AreaTransmitPasswordOrMD5Key(self):
-        """Area Transmit Password / MD5-Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaTransmitPasswordOrMD5Key')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Transmit Password / MD5-Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaTransmitPasswordOrMD5Key'))
 
     @property
     def Attached(self):
-        """Attached
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('attached')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Attached
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('attached'))
 
     @property
     def CSNPInterval(self):
-        """CSNP Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('cSNPInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CSNP Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('cSNPInterval'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DiscardLSPs(self):
-        """Discard LSPs
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('discardLSPs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Discard LSPs
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('discardLSPs'))
 
     @property
     def EnableHelloPadding(self):
-        """Enable Hello Padding
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHelloPadding')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Padding
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHelloPadding'))
 
     @property
     def EnableHitlessRestart(self):
-        """Enable Hitless Restart
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHitlessRestart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hitless Restart
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHitlessRestart'))
 
     @property
     def EnableHostName(self):
-        """Enable Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHostName'))
 
     @property
     def EnableWideMetric(self):
-        """Enable Wide Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableWideMetric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Wide Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableWideMetric'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def HitlessRestartMode(self):
-        """Restart Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartMode'))
 
     @property
     def HitlessRestartTime(self):
-        """Restart Time
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Time
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartTime'))
 
     @property
     def HitlessRestartVersion(self):
-        """Restart Version
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartVersion')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Version
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartVersion'))
 
     @property
     def HostName(self):
-        """Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hostName'))
 
     @property
     def IgnoreMTPortCapability(self):
-        """Ignore MT Port Capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ignoreMTPortCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Ignore MT Port Capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ignoreMTPortCapability'))
 
     @property
     def IgnoreReceiveMD5(self):
-        """Ignore Receive MD5
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ignoreReceiveMD5')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Ignore Receive MD5
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ignoreReceiveMD5'))
 
     @property
     def InterLSPsOrMGroupPDUBurstGap(self):
-        """Inter LSPs/MGROUP-PDUs Burst Gap (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interLSPsOrMGroupPDUBurstGap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inter LSPs/MGROUP-PDUs Burst Gap (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interLSPsOrMGroupPDUBurstGap'))
 
     @property
     def LSPLifetime(self):
-        """LSP Rifetime (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPLifetime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Rifetime (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPLifetime'))
 
     @property
     def LSPRefreshRate(self):
-        """LSP Refresh Rate (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPRefreshRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Refresh Rate (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPRefreshRate'))
 
     @property
     def LSPorMGroupPDUMinTransmissionInterval(self):
-        """LSP/MGROUP-PDU Min Transmission Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPorMGroupPDUMinTransmissionInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP/MGROUP-PDU Min Transmission Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPorMGroupPDUMinTransmissionInterval'))
 
     @property
     def LocalSystemID(self):
-        """System ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): System ID
         """
         return self._get_attribute('localSystemID')
 
     @property
     def MaxAreaAddresses(self):
-        """Maximum Area Addresses
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxAreaAddresses')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Area Addresses
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxAreaAddresses'))
 
     @property
     def MaxLSPSize(self):
-        """Max LSP Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxLSPSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSP Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxLSPSize'))
 
     @property
     def MaxLSPsOrMGroupPDUsPerBurst(self):
-        """Max LSPs/MGROUP-PDUs Per Burst
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxLSPsOrMGroupPDUsPerBurst')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSPs/MGROUP-PDUs Per Burst
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxLSPsOrMGroupPDUsPerBurst'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -316,55 +340,58 @@ class IsisSpbRouter(Base):
 
     @property
     def Overloaded(self):
-        """Overloaded
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('overloaded')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Overloaded
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('overloaded'))
 
     @property
     def PSNPInterval(self):
-        """PSNP Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pSNPInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PSNP Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pSNPInterval'))
 
     @property
     def PartitionRepair(self):
-        """Partition Repair
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('partitionRepair')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Partition Repair
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('partitionRepair'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the session Information
-
-        Returns:
-            list(str[noIfaceUp|up])
+        """
+        Returns
+        -------
+        - list(str[noIfaceUp | up]): Logs additional information about the session Information
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def SpbTopologyCount(self):
-        """Topology Count(multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Topology Count(multiplier)
         """
         return self._get_attribute('spbTopologyCount')
     @SpbTopologyCount.setter
@@ -373,99 +400,112 @@ class IsisSpbRouter(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     def update(self, Name=None, SpbTopologyCount=None):
-        """Updates a child instance of isisSpbRouter on the server.
+        """Updates isisSpbRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SpbTopologyCount (number): Topology Count(multiplier)
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SpbTopologyCount (number): Topology Count(multiplier)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, SpbTopologyCount=None):
-        """Adds a new isisSpbRouter node on the server and retrieves it in this instance.
+        """Adds a new isisSpbRouter resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SpbTopologyCount (number): Topology Count(multiplier)
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SpbTopologyCount (number): Topology Count(multiplier)
 
-        Returns:
-            self: This instance with all currently retrieved isisSpbRouter data using find and the newly added isisSpbRouter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisSpbRouter resources using find and the newly added isisSpbRouter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the isisSpbRouter data in this instance from server.
+        """Deletes all the contained isisSpbRouter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Name=None, SessionInfo=None, SessionStatus=None, SpbTopologyCount=None, StateCounts=None, Status=None):
-        """Finds and retrieves isisSpbRouter data from the server.
+        """Finds and retrieves isisSpbRouter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisSpbRouter data from the server.
-        By default the find method takes no parameters and will retrieve all isisSpbRouter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisSpbRouter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisSpbRouter resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LocalSystemID (list(str)): System ID
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionInfo (list(str[noIfaceUp|up])): Logs additional information about the session Information
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            SpbTopologyCount (number): Topology Count(multiplier)
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LocalSystemID (list(str)): System ID
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionInfo (list(str[noIfaceUp | up])): Logs additional information about the session Information
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - SpbTopologyCount (number): Topology Count(multiplier)
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching isisSpbRouter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisSpbRouter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisSpbRouter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisSpbRouter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisSpbRouter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -474,41 +514,44 @@ class IsisSpbRouter(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AreaAddresses (str): optional regex of areaAddresses
-            AreaAuthenticationType (str): optional regex of areaAuthenticationType
-            AreaTransmitPasswordOrMD5Key (str): optional regex of areaTransmitPasswordOrMD5Key
-            Attached (str): optional regex of attached
-            CSNPInterval (str): optional regex of cSNPInterval
-            DiscardLSPs (str): optional regex of discardLSPs
-            EnableHelloPadding (str): optional regex of enableHelloPadding
-            EnableHitlessRestart (str): optional regex of enableHitlessRestart
-            EnableHostName (str): optional regex of enableHostName
-            EnableWideMetric (str): optional regex of enableWideMetric
-            HitlessRestartMode (str): optional regex of hitlessRestartMode
-            HitlessRestartTime (str): optional regex of hitlessRestartTime
-            HitlessRestartVersion (str): optional regex of hitlessRestartVersion
-            HostName (str): optional regex of hostName
-            IgnoreMTPortCapability (str): optional regex of ignoreMTPortCapability
-            IgnoreReceiveMD5 (str): optional regex of ignoreReceiveMD5
-            InterLSPsOrMGroupPDUBurstGap (str): optional regex of interLSPsOrMGroupPDUBurstGap
-            LSPLifetime (str): optional regex of lSPLifetime
-            LSPRefreshRate (str): optional regex of lSPRefreshRate
-            LSPorMGroupPDUMinTransmissionInterval (str): optional regex of lSPorMGroupPDUMinTransmissionInterval
-            MaxAreaAddresses (str): optional regex of maxAreaAddresses
-            MaxLSPSize (str): optional regex of maxLSPSize
-            MaxLSPsOrMGroupPDUsPerBurst (str): optional regex of maxLSPsOrMGroupPDUsPerBurst
-            Overloaded (str): optional regex of overloaded
-            PSNPInterval (str): optional regex of pSNPInterval
-            PartitionRepair (str): optional regex of partitionRepair
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AreaAddresses (str): optional regex of areaAddresses
+        - AreaAuthenticationType (str): optional regex of areaAuthenticationType
+        - AreaTransmitPasswordOrMD5Key (str): optional regex of areaTransmitPasswordOrMD5Key
+        - Attached (str): optional regex of attached
+        - CSNPInterval (str): optional regex of cSNPInterval
+        - DiscardLSPs (str): optional regex of discardLSPs
+        - EnableHelloPadding (str): optional regex of enableHelloPadding
+        - EnableHitlessRestart (str): optional regex of enableHitlessRestart
+        - EnableHostName (str): optional regex of enableHostName
+        - EnableWideMetric (str): optional regex of enableWideMetric
+        - HitlessRestartMode (str): optional regex of hitlessRestartMode
+        - HitlessRestartTime (str): optional regex of hitlessRestartTime
+        - HitlessRestartVersion (str): optional regex of hitlessRestartVersion
+        - HostName (str): optional regex of hostName
+        - IgnoreMTPortCapability (str): optional regex of ignoreMTPortCapability
+        - IgnoreReceiveMD5 (str): optional regex of ignoreReceiveMD5
+        - InterLSPsOrMGroupPDUBurstGap (str): optional regex of interLSPsOrMGroupPDUBurstGap
+        - LSPLifetime (str): optional regex of lSPLifetime
+        - LSPRefreshRate (str): optional regex of lSPRefreshRate
+        - LSPorMGroupPDUMinTransmissionInterval (str): optional regex of lSPorMGroupPDUMinTransmissionInterval
+        - MaxAreaAddresses (str): optional regex of maxAreaAddresses
+        - MaxLSPSize (str): optional regex of maxLSPSize
+        - MaxLSPsOrMGroupPDUsPerBurst (str): optional regex of maxLSPsOrMGroupPDUsPerBurst
+        - Overloaded (str): optional regex of overloaded
+        - PSNPInterval (str): optional regex of pSNPInterval
+        - PartitionRepair (str): optional regex of partitionRepair
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -517,22 +560,20 @@ class IsisSpbRouter(Base):
 
         Start ISIS Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        isisStartRouter()
+        isisStartRouter(SessionIndices=list)
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        isisStartRouter(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        isisStartRouter(SessionIndices=string)
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        isisStartRouter(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -544,22 +585,20 @@ class IsisSpbRouter(Base):
 
         Stop ISIS Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        isisStopRouter()
+        isisStopRouter(SessionIndices=list)
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        isisStopRouter(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        isisStopRouter(SessionIndices=string)
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        isisStopRouter(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -571,22 +610,20 @@ class IsisSpbRouter(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -598,22 +635,20 @@ class IsisSpbRouter(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -625,22 +660,20 @@ class IsisSpbRouter(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

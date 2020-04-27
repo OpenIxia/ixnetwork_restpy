@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedRouteIpv6(Base):
     """NOT DEFINED
-    The LearnedRouteIpv6 class encapsulates a list of learnedRouteIpv6 resources that is managed by the system.
+    The LearnedRouteIpv6 class encapsulates a list of learnedRouteIpv6 resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedRouteIpv6.find() method.
     """
 
@@ -37,191 +37,198 @@ class LearnedRouteIpv6(Base):
 
     @property
     def AsPath(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('asPath')
 
     @property
     def BlockOffset(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('blockOffset')
 
     @property
     def BlockSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('blockSize')
 
     @property
     def ControlWordEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('controlWordEnabled')
 
     @property
     def IpPrefix(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('ipPrefix')
 
     @property
     def LabelBase(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('labelBase')
 
     @property
     def LocalPreference(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('localPreference')
 
     @property
     def MaxLabel(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxLabel')
 
     @property
     def MultiExitDiscriminator(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('multiExitDiscriminator')
 
     @property
     def Neighbor(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('neighbor')
 
     @property
     def NextHop(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nextHop')
 
     @property
     def OriginType(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('originType')
 
     @property
     def PrefixLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('prefixLength')
 
     @property
     def RouteDistinguisher(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('routeDistinguisher')
 
     @property
     def SeqDeliveryEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('seqDeliveryEnabled')
 
     @property
     def SiteId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('siteId')
 
     def find(self, AsPath=None, BlockOffset=None, BlockSize=None, ControlWordEnabled=None, IpPrefix=None, LabelBase=None, LocalPreference=None, MaxLabel=None, MultiExitDiscriminator=None, Neighbor=None, NextHop=None, OriginType=None, PrefixLength=None, RouteDistinguisher=None, SeqDeliveryEnabled=None, SiteId=None):
-        """Finds and retrieves learnedRouteIpv6 data from the server.
+        """Finds and retrieves learnedRouteIpv6 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedRouteIpv6 data from the server.
-        By default the find method takes no parameters and will retrieve all learnedRouteIpv6 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedRouteIpv6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedRouteIpv6 resources from the server.
 
-        Args:
-            AsPath (str): NOT DEFINED
-            BlockOffset (number): NOT DEFINED
-            BlockSize (number): NOT DEFINED
-            ControlWordEnabled (bool): NOT DEFINED
-            IpPrefix (str): NOT DEFINED
-            LabelBase (number): NOT DEFINED
-            LocalPreference (number): NOT DEFINED
-            MaxLabel (number): NOT DEFINED
-            MultiExitDiscriminator (number): NOT DEFINED
-            Neighbor (str): NOT DEFINED
-            NextHop (str): NOT DEFINED
-            OriginType (str): NOT DEFINED
-            PrefixLength (number): NOT DEFINED
-            RouteDistinguisher (str): NOT DEFINED
-            SeqDeliveryEnabled (bool): NOT DEFINED
-            SiteId (number): NOT DEFINED
+        Args
+        ----
+        - AsPath (str): NOT DEFINED
+        - BlockOffset (number): NOT DEFINED
+        - BlockSize (number): NOT DEFINED
+        - ControlWordEnabled (bool): NOT DEFINED
+        - IpPrefix (str): NOT DEFINED
+        - LabelBase (number): NOT DEFINED
+        - LocalPreference (number): NOT DEFINED
+        - MaxLabel (number): NOT DEFINED
+        - MultiExitDiscriminator (number): NOT DEFINED
+        - Neighbor (str): NOT DEFINED
+        - NextHop (str): NOT DEFINED
+        - OriginType (str): NOT DEFINED
+        - PrefixLength (number): NOT DEFINED
+        - RouteDistinguisher (str): NOT DEFINED
+        - SeqDeliveryEnabled (bool): NOT DEFINED
+        - SiteId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching learnedRouteIpv6 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedRouteIpv6 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedRouteIpv6 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedRouteIpv6 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedRouteIpv6 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

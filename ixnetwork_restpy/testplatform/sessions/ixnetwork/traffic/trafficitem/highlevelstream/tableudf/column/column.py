@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Column(Base):
     """This object specifies column properties of an UDF table.
-    The Column class encapsulates a list of column resources that is be managed by the user.
+    The Column class encapsulates a list of column resources that are managed by the user.
     A list of resources can be retrieved from the server using the Column.find() method.
-    The list can be managed by the user by using the Column.add() and Column.remove() methods.
+    The list can be managed by using the Column.add() and Column.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Column(Base):
 
     @property
     def Format(self):
-        """The format of the Table UDF list (column).
-
-        Returns:
-            str(ascii|binary|custom|decimal|hex|ipv4|ipv6|mac)
+        """
+        Returns
+        -------
+        - str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac): The format of the Table UDF list (column).
         """
         return self._get_attribute('format')
     @Format.setter
@@ -50,10 +50,10 @@ class Column(Base):
 
     @property
     def Offset(self):
-        """The offset value, in bytes, of the Table UDF list (column).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The offset value, in bytes, of the Table UDF list (column).
         """
         return self._get_attribute('offset')
     @Offset.setter
@@ -62,10 +62,10 @@ class Column(Base):
 
     @property
     def Size(self):
-        """The size, in bytes, of the Table UDF list (column).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The size, in bytes, of the Table UDF list (column).
         """
         return self._get_attribute('size')
     @Size.setter
@@ -74,10 +74,10 @@ class Column(Base):
 
     @property
     def Values(self):
-        """The value of the table UDF column.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The value of the table UDF column.
         """
         return self._get_attribute('values')
     @Values.setter
@@ -85,76 +85,89 @@ class Column(Base):
         self._set_attribute('values', value)
 
     def update(self, Format=None, Offset=None, Size=None, Values=None):
-        """Updates a child instance of column on the server.
+        """Updates column resource on the server.
 
-        Args:
-            Format (str(ascii|binary|custom|decimal|hex|ipv4|ipv6|mac)): The format of the Table UDF list (column).
-            Offset (number): The offset value, in bytes, of the Table UDF list (column).
-            Size (number): The size, in bytes, of the Table UDF list (column).
-            Values (list(str)): The value of the table UDF column.
+        Args
+        ----
+        - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
+        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Size (number): The size, in bytes, of the Table UDF list (column).
+        - Values (list(str)): The value of the table UDF column.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Format=None, Offset=None, Size=None, Values=None):
-        """Adds a new column node on the server and retrieves it in this instance.
+        """Adds a new column resource on the server and adds it to the container.
 
-        Args:
-            Format (str(ascii|binary|custom|decimal|hex|ipv4|ipv6|mac)): The format of the Table UDF list (column).
-            Offset (number): The offset value, in bytes, of the Table UDF list (column).
-            Size (number): The size, in bytes, of the Table UDF list (column).
-            Values (list(str)): The value of the table UDF column.
+        Args
+        ----
+        - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
+        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Size (number): The size, in bytes, of the Table UDF list (column).
+        - Values (list(str)): The value of the table UDF column.
 
-        Returns:
-            self: This instance with all currently retrieved column data using find and the newly added column data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved column resources using find and the newly added column resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the column data in this instance from server.
+        """Deletes all the contained column resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Format=None, Offset=None, Size=None, Values=None):
-        """Finds and retrieves column data from the server.
+        """Finds and retrieves column resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve column data from the server.
-        By default the find method takes no parameters and will retrieve all column data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve column resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all column resources from the server.
 
-        Args:
-            Format (str(ascii|binary|custom|decimal|hex|ipv4|ipv6|mac)): The format of the Table UDF list (column).
-            Offset (number): The offset value, in bytes, of the Table UDF list (column).
-            Size (number): The size, in bytes, of the Table UDF list (column).
-            Values (list(str)): The value of the table UDF column.
+        Args
+        ----
+        - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
+        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Size (number): The size, in bytes, of the Table UDF list (column).
+        - Values (list(str)): The value of the table UDF column.
 
-        Returns:
-            self: This instance with matching column data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching column resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of column data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the column data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the column resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

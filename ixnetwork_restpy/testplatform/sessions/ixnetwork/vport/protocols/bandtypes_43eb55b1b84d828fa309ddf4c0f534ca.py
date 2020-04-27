@@ -36,10 +36,10 @@ class BandTypes(Base):
 
     @property
     def Drop(self):
-        """This indicates that packets which exceed the band rate value are dropped.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that packets which exceed the band rate value are dropped.
         """
         return self._get_attribute('drop')
     @Drop.setter
@@ -48,10 +48,10 @@ class BandTypes(Base):
 
     @property
     def DscpRemark(self):
-        """This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
         """
         return self._get_attribute('dscpRemark')
     @DscpRemark.setter
@@ -59,13 +59,15 @@ class BandTypes(Base):
         self._set_attribute('dscpRemark', value)
 
     def update(self, Drop=None, DscpRemark=None):
-        """Updates a child instance of bandTypes on the server.
+        """Updates bandTypes resource on the server.
 
-        Args:
-            Drop (bool): This indicates that packets which exceed the band rate value are dropped.
-            DscpRemark (bool): This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
+        Args
+        ----
+        - Drop (bool): This indicates that packets which exceed the band rate value are dropped.
+        - DscpRemark (bool): This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

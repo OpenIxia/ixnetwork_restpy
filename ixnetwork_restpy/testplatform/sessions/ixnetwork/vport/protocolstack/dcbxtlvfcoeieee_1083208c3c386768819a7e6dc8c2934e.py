@@ -36,24 +36,24 @@ class DcbxTlvFcoeIeee(Base):
 
     @property
     def DcbxAppProtocolAtt(self):
-        """An instance of the DcbxAppProtocolAtt class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxappprotocolatt_748637445f0eb27a92b72f9a6a629711.DcbxAppProtocolAtt): An instance of the DcbxAppProtocolAtt class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxappprotocolatt_748637445f0eb27a92b72f9a6a629711.DcbxAppProtocolAtt)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxappprotocolatt_748637445f0eb27a92b72f9a6a629711 import DcbxAppProtocolAtt
         return DcbxAppProtocolAtt(self)
 
     @property
     def ApplicationProtocolId(self):
-        """DEPRECATED Identifies protocol supported by DCB node.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Identifies protocol supported by DCB node.
         """
         return self._get_attribute('applicationProtocolId')
     @ApplicationProtocolId.setter
@@ -62,19 +62,19 @@ class DcbxTlvFcoeIeee(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PriorityMap(self):
         """DEPRECATED 
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('priorityMap')
     @PriorityMap.setter
@@ -82,30 +82,33 @@ class DcbxTlvFcoeIeee(Base):
         self._set_attribute('priorityMap', value)
 
     def update(self, ApplicationProtocolId=None, PriorityMap=None):
-        """Updates a child instance of dcbxTlvFcoeIeee on the server.
+        """Updates dcbxTlvFcoeIeee resource on the server.
 
-        Args:
-            ApplicationProtocolId (number): Identifies protocol supported by DCB node.
-            PriorityMap (list(number)): 
+        Args
+        ----
+        - ApplicationProtocolId (number): Identifies protocol supported by DCB node.
+        - PriorityMap (list(number)): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -117,16 +120,15 @@ class DcbxTlvFcoeIeee(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -138,16 +140,15 @@ class DcbxTlvFcoeIeee(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

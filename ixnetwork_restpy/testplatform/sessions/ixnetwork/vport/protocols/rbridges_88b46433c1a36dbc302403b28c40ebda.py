@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RBridges(Base):
     """The DCE ISIS Learned Information option fetches the learned information for the RBridges of a particular DCE ISIS Router.
-    The RBridges class encapsulates a list of rBridges resources that is managed by the system.
+    The RBridges class encapsulates a list of rBridges resources that are managed by the system.
     A list of resources can be retrieved from the server using the RBridges.find() method.
     """
 
@@ -37,171 +37,178 @@ class RBridges(Base):
 
     @property
     def Age(self):
-        """This indicates the age in time in seconds, since it was last refreshed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the age in time in seconds, since it was last refreshed.
         """
         return self._get_attribute('age')
 
     @property
     def EnableCommonMtId(self):
-        """If true, common Mt ld is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, common Mt ld is enabled.
         """
         return self._get_attribute('enableCommonMtId')
 
     @property
     def ExtendedCircuitId(self):
-        """The hexadecimal format of the extended circuit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The hexadecimal format of the extended circuit.
         """
         return self._get_attribute('extendedCircuitId')
 
     @property
     def GraphId(self):
-        """This indicates the Graph ID value if FTAG is present.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the Graph ID value if FTAG is present.
         """
         return self._get_attribute('graphId')
 
     @property
     def HostName(self):
-        """The host name as retrieved from the related packets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The host name as retrieved from the related packets.
         """
         return self._get_attribute('hostName')
 
     @property
     def LinkMetric(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('linkMetric')
 
     @property
     def MtId(self):
-        """This indicates the MT ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the MT ID.
         """
         return self._get_attribute('mtId')
 
     @property
     def PrimaryFtag(self):
-        """This indicates the Primary FTAG value if FTAG is present.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the Primary FTAG value if FTAG is present.
         """
         return self._get_attribute('primaryFtag')
 
     @property
     def Priority(self):
-        """This indicates the Broadcast Root Priority as advertised by this RBridge.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the Broadcast Root Priority as advertised by this RBridge.
         """
         return self._get_attribute('priority')
 
     @property
     def Role(self):
-        """This indicates the role of the RBridge.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the role of the RBridge.
         """
         return self._get_attribute('role')
 
     @property
     def SecondaryFtag(self):
-        """This indicates the Secondary FTAG value if FTAG is present.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the Secondary FTAG value if FTAG is present.
         """
         return self._get_attribute('secondaryFtag')
 
     @property
     def SequenceNumber(self):
-        """This indicates the sequence number of the LSP containing the route.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the sequence number of the LSP containing the route.
         """
         return self._get_attribute('sequenceNumber')
 
     @property
     def SwitchId(self):
-        """This indicates the Switch ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This indicates the Switch ID.
         """
         return self._get_attribute('switchId')
 
     @property
     def SystemId(self):
-        """This indicates the ISIS System ID.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the ISIS System ID.
         """
         return self._get_attribute('systemId')
 
     def find(self, Age=None, EnableCommonMtId=None, ExtendedCircuitId=None, GraphId=None, HostName=None, LinkMetric=None, MtId=None, PrimaryFtag=None, Priority=None, Role=None, SecondaryFtag=None, SequenceNumber=None, SwitchId=None, SystemId=None):
-        """Finds and retrieves rBridges data from the server.
+        """Finds and retrieves rBridges resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rBridges data from the server.
-        By default the find method takes no parameters and will retrieve all rBridges data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rBridges resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rBridges resources from the server.
 
-        Args:
-            Age (number): This indicates the age in time in seconds, since it was last refreshed.
-            EnableCommonMtId (bool): If true, common Mt ld is enabled.
-            ExtendedCircuitId (number): The hexadecimal format of the extended circuit.
-            GraphId (number): This indicates the Graph ID value if FTAG is present.
-            HostName (str): The host name as retrieved from the related packets.
-            LinkMetric (number): NOT DEFINED
-            MtId (number): This indicates the MT ID.
-            PrimaryFtag (number): This indicates the Primary FTAG value if FTAG is present.
-            Priority (number): This indicates the Broadcast Root Priority as advertised by this RBridge.
-            Role (str): This indicates the role of the RBridge.
-            SecondaryFtag (number): This indicates the Secondary FTAG value if FTAG is present.
-            SequenceNumber (number): This indicates the sequence number of the LSP containing the route.
-            SwitchId (number): This indicates the Switch ID.
-            SystemId (str): This indicates the ISIS System ID.
+        Args
+        ----
+        - Age (number): This indicates the age in time in seconds, since it was last refreshed.
+        - EnableCommonMtId (bool): If true, common Mt ld is enabled.
+        - ExtendedCircuitId (number): The hexadecimal format of the extended circuit.
+        - GraphId (number): This indicates the Graph ID value if FTAG is present.
+        - HostName (str): The host name as retrieved from the related packets.
+        - LinkMetric (number): NOT DEFINED
+        - MtId (number): This indicates the MT ID.
+        - PrimaryFtag (number): This indicates the Primary FTAG value if FTAG is present.
+        - Priority (number): This indicates the Broadcast Root Priority as advertised by this RBridge.
+        - Role (str): This indicates the role of the RBridge.
+        - SecondaryFtag (number): This indicates the Secondary FTAG value if FTAG is present.
+        - SequenceNumber (number): This indicates the sequence number of the LSP containing the route.
+        - SwitchId (number): This indicates the Switch ID.
+        - SystemId (str): This indicates the ISIS System ID.
 
-        Returns:
-            self: This instance with matching rBridges data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rBridges resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rBridges data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rBridges data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rBridges resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

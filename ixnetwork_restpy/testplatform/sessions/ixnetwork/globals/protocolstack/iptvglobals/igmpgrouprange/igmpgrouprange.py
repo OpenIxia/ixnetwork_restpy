@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IgmpGroupRange(Base):
     """
-    The IgmpGroupRange class encapsulates a list of igmpGroupRange resources that is be managed by the user.
+    The IgmpGroupRange class encapsulates a list of igmpGroupRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the IgmpGroupRange.find() method.
-    The list can be managed by the user by using the IgmpGroupRange.add() and IgmpGroupRange.remove() methods.
+    The list can be managed by using the IgmpGroupRange.add() and IgmpGroupRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IgmpGroupRange(Base):
 
     @property
     def Count(self):
-        """The count of multicast groups in a range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of multicast groups in a range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class IgmpGroupRange(Base):
 
     @property
     def FilterMode(self):
-        """Define the Group Record type included in the Report messages.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Define the Group Record type included in the Report messages.
         """
         return self._get_attribute('filterMode')
     @FilterMode.setter
@@ -62,10 +62,10 @@ class IgmpGroupRange(Base):
 
     @property
     def Increment(self):
-        """The value used to enumerate all the addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The value used to enumerate all the addresses in the range.
         """
         return self._get_attribute('increment')
     @Increment.setter
@@ -74,10 +74,10 @@ class IgmpGroupRange(Base):
 
     @property
     def IpAddress(self):
-        """The IP address of the first multicast group in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the first multicast group in the range.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -86,10 +86,10 @@ class IgmpGroupRange(Base):
 
     @property
     def Name(self):
-        """-The name of the range containing multicast groups.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: -The name of the range containing multicast groups.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -98,19 +98,19 @@ class IgmpGroupRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SourceCount(self):
-        """The count of sources in the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of sources in the range.
         """
         return self._get_attribute('sourceCount')
     @SourceCount.setter
@@ -119,10 +119,10 @@ class IgmpGroupRange(Base):
 
     @property
     def SourceIncrement(self):
-        """The value used to enumerate all the source addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The value used to enumerate all the source addresses in the range.
         """
         return self._get_attribute('sourceIncrement')
     @SourceIncrement.setter
@@ -131,10 +131,10 @@ class IgmpGroupRange(Base):
 
     @property
     def SourceIpAddress(self):
-        """The starting IP address of a range of sources.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The starting IP address of a range of sources.
         """
         return self._get_attribute('sourceIpAddress')
     @SourceIpAddress.setter
@@ -143,10 +143,10 @@ class IgmpGroupRange(Base):
 
     @property
     def Type(self):
-        """The type of the multicast group range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of the multicast group range.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -154,92 +154,105 @@ class IgmpGroupRange(Base):
         self._set_attribute('type', value)
 
     def update(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
-        """Updates a child instance of igmpGroupRange on the server.
+        """Updates igmpGroupRange resource on the server.
 
-        Args:
-            Count (number): The count of multicast groups in a range.
-            FilterMode (str): Define the Group Record type included in the Report messages.
-            Increment (str): The value used to enumerate all the addresses in the range.
-            IpAddress (str): The IP address of the first multicast group in the range.
-            Name (str): -The name of the range containing multicast groups.
-            SourceCount (number): The count of sources in the range.
-            SourceIncrement (str): The value used to enumerate all the source addresses in the range.
-            SourceIpAddress (str): The starting IP address of a range of sources.
-            Type (str): The type of the multicast group range.
+        Args
+        ----
+        - Count (number): The count of multicast groups in a range.
+        - FilterMode (str): Define the Group Record type included in the Report messages.
+        - Increment (str): The value used to enumerate all the addresses in the range.
+        - IpAddress (str): The IP address of the first multicast group in the range.
+        - Name (str): -The name of the range containing multicast groups.
+        - SourceCount (number): The count of sources in the range.
+        - SourceIncrement (str): The value used to enumerate all the source addresses in the range.
+        - SourceIpAddress (str): The starting IP address of a range of sources.
+        - Type (str): The type of the multicast group range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
-        """Adds a new igmpGroupRange node on the server and retrieves it in this instance.
+        """Adds a new igmpGroupRange resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The count of multicast groups in a range.
-            FilterMode (str): Define the Group Record type included in the Report messages.
-            Increment (str): The value used to enumerate all the addresses in the range.
-            IpAddress (str): The IP address of the first multicast group in the range.
-            Name (str): -The name of the range containing multicast groups.
-            SourceCount (number): The count of sources in the range.
-            SourceIncrement (str): The value used to enumerate all the source addresses in the range.
-            SourceIpAddress (str): The starting IP address of a range of sources.
-            Type (str): The type of the multicast group range.
+        Args
+        ----
+        - Count (number): The count of multicast groups in a range.
+        - FilterMode (str): Define the Group Record type included in the Report messages.
+        - Increment (str): The value used to enumerate all the addresses in the range.
+        - IpAddress (str): The IP address of the first multicast group in the range.
+        - Name (str): -The name of the range containing multicast groups.
+        - SourceCount (number): The count of sources in the range.
+        - SourceIncrement (str): The value used to enumerate all the source addresses in the range.
+        - SourceIpAddress (str): The starting IP address of a range of sources.
+        - Type (str): The type of the multicast group range.
 
-        Returns:
-            self: This instance with all currently retrieved igmpGroupRange data using find and the newly added igmpGroupRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved igmpGroupRange resources using find and the newly added igmpGroupRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the igmpGroupRange data in this instance from server.
+        """Deletes all the contained igmpGroupRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, ObjectId=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
-        """Finds and retrieves igmpGroupRange data from the server.
+        """Finds and retrieves igmpGroupRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve igmpGroupRange data from the server.
-        By default the find method takes no parameters and will retrieve all igmpGroupRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpGroupRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all igmpGroupRange resources from the server.
 
-        Args:
-            Count (number): The count of multicast groups in a range.
-            FilterMode (str): Define the Group Record type included in the Report messages.
-            Increment (str): The value used to enumerate all the addresses in the range.
-            IpAddress (str): The IP address of the first multicast group in the range.
-            Name (str): -The name of the range containing multicast groups.
-            ObjectId (str): Unique identifier for this object
-            SourceCount (number): The count of sources in the range.
-            SourceIncrement (str): The value used to enumerate all the source addresses in the range.
-            SourceIpAddress (str): The starting IP address of a range of sources.
-            Type (str): The type of the multicast group range.
+        Args
+        ----
+        - Count (number): The count of multicast groups in a range.
+        - FilterMode (str): Define the Group Record type included in the Report messages.
+        - Increment (str): The value used to enumerate all the addresses in the range.
+        - IpAddress (str): The IP address of the first multicast group in the range.
+        - Name (str): -The name of the range containing multicast groups.
+        - ObjectId (str): Unique identifier for this object
+        - SourceCount (number): The count of sources in the range.
+        - SourceIncrement (str): The value used to enumerate all the source addresses in the range.
+        - SourceIpAddress (str): The starting IP address of a range of sources.
+        - Type (str): The type of the multicast group range.
 
-        Returns:
-            self: This instance with matching igmpGroupRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching igmpGroupRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of igmpGroupRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the igmpGroupRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the igmpGroupRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

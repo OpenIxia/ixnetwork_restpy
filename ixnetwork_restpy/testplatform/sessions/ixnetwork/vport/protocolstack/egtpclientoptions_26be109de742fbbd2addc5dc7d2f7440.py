@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgtpClientOptions(Base):
     """
-    The EgtpClientOptions class encapsulates a list of egtpClientOptions resources that is be managed by the user.
+    The EgtpClientOptions class encapsulates a list of egtpClientOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgtpClientOptions.find() method.
-    The list can be managed by the user by using the EgtpClientOptions.add() and EgtpClientOptions.remove() methods.
+    The list can be managed by using the EgtpClientOptions.add() and EgtpClientOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EgtpClientOptions(Base):
 
     @property
     def AlwaysIncludeRecoveryIE(self):
-        """Always include recovery IE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Always include recovery IE
         """
         return self._get_attribute('alwaysIncludeRecoveryIE')
     @AlwaysIncludeRecoveryIE.setter
@@ -50,10 +50,10 @@ class EgtpClientOptions(Base):
 
     @property
     def DeleteIdleBearers(self):
-        """Delete Idle Bearers
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Delete Idle Bearers
         """
         return self._get_attribute('deleteIdleBearers')
     @DeleteIdleBearers.setter
@@ -62,10 +62,10 @@ class EgtpClientOptions(Base):
 
     @property
     def MaxOutstandingReleases(self):
-        """- The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -74,10 +74,10 @@ class EgtpClientOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """- The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -86,19 +86,19 @@ class EgtpClientOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRateControls(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalRateControls')
     @OverrideGlobalRateControls.setter
@@ -107,10 +107,10 @@ class EgtpClientOptions(Base):
 
     @property
     def PcpuLogLevel(self):
-        """PCPU log level
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PCPU log level
         """
         return self._get_attribute('pcpuLogLevel')
     @PcpuLogLevel.setter
@@ -119,10 +119,10 @@ class EgtpClientOptions(Base):
 
     @property
     def SetupRateInitial(self):
-        """- The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -131,10 +131,10 @@ class EgtpClientOptions(Base):
 
     @property
     def TeardownRateInitial(self):
-        """- The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -142,90 +142,103 @@ class EgtpClientOptions(Base):
         self._set_attribute('teardownRateInitial', value)
 
     def update(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Updates a child instance of egtpClientOptions on the server.
+        """Updates egtpClientOptions resource on the server.
 
-        Args:
-            AlwaysIncludeRecoveryIE (bool): Always include recovery IE
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIE (bool): Always include recovery IE
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Adds a new egtpClientOptions node on the server and retrieves it in this instance.
+        """Adds a new egtpClientOptions resource on the server and adds it to the container.
 
-        Args:
-            AlwaysIncludeRecoveryIE (bool): Always include recovery IE
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIE (bool): Always include recovery IE
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Returns:
-            self: This instance with all currently retrieved egtpClientOptions data using find and the newly added egtpClientOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egtpClientOptions resources using find and the newly added egtpClientOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egtpClientOptions data in this instance from server.
+        """Deletes all the contained egtpClientOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Finds and retrieves egtpClientOptions data from the server.
+        """Finds and retrieves egtpClientOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egtpClientOptions data from the server.
-        By default the find method takes no parameters and will retrieve all egtpClientOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpClientOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpClientOptions resources from the server.
 
-        Args:
-            AlwaysIncludeRecoveryIE (bool): Always include recovery IE
-            DeleteIdleBearers (bool): Delete Idle Bearers
-            MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
-            MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PcpuLogLevel (str): PCPU log level
-            SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
-            TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        Args
+        ----
+        - AlwaysIncludeRecoveryIE (bool): Always include recovery IE
+        - DeleteIdleBearers (bool): Delete Idle Bearers
+        - MaxOutstandingReleases (number): - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
+        - MaxOutstandingRequests (number): - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PcpuLogLevel (str): PCPU log level
+        - SetupRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
+        - TeardownRateInitial (number): - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
 
-        Returns:
-            self: This instance with matching egtpClientOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egtpClientOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egtpClientOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egtpClientOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egtpClientOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -234,14 +247,15 @@ class EgtpClientOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -253,16 +267,15 @@ class EgtpClientOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -274,16 +287,15 @@ class EgtpClientOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

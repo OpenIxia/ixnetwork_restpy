@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableTrackingFilter(Base):
     """List of tracking available for filtering.
-    The AvailableTrackingFilter class encapsulates a list of availableTrackingFilter resources that is managed by the system.
+    The AvailableTrackingFilter class encapsulates a list of availableTrackingFilter resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableTrackingFilter.find() method.
     """
 
@@ -37,71 +37,78 @@ class AvailableTrackingFilter(Base):
 
     @property
     def Constraints(self):
-        """Lists down the constraints associated with the available tracking filter list.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Lists down the constraints associated with the available tracking filter list.
         """
         return self._get_attribute('constraints')
 
     @property
     def Name(self):
-        """Displays the name of the tracking filter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the name of the tracking filter.
         """
         return self._get_attribute('name')
 
     @property
     def TrackingType(self):
-        """Indicates the tracking type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the tracking type.
         """
         return self._get_attribute('trackingType')
 
     @property
     def ValueType(self):
-        """Value of tracking to be matched based on operator.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of tracking to be matched based on operator.
         """
         return self._get_attribute('valueType')
 
     def find(self, Constraints=None, Name=None, TrackingType=None, ValueType=None):
-        """Finds and retrieves availableTrackingFilter data from the server.
+        """Finds and retrieves availableTrackingFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableTrackingFilter data from the server.
-        By default the find method takes no parameters and will retrieve all availableTrackingFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableTrackingFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableTrackingFilter resources from the server.
 
-        Args:
-            Constraints (list(str)): Lists down the constraints associated with the available tracking filter list.
-            Name (str): Displays the name of the tracking filter.
-            TrackingType (str): Indicates the tracking type.
-            ValueType (str): Value of tracking to be matched based on operator.
+        Args
+        ----
+        - Constraints (list(str)): Lists down the constraints associated with the available tracking filter list.
+        - Name (str): Displays the name of the tracking filter.
+        - TrackingType (str): Indicates the tracking type.
+        - ValueType (str): Value of tracking to be matched based on operator.
 
-        Returns:
-            self: This instance with matching availableTrackingFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableTrackingFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableTrackingFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableTrackingFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableTrackingFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

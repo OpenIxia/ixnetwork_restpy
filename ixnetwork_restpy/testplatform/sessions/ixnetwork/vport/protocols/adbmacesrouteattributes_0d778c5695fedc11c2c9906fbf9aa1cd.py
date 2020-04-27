@@ -36,10 +36,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def AggregatorAs(self):
-        """This signifies the AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
         """
         return self._get_attribute('aggregatorAs')
     @AggregatorAs.setter
@@ -48,10 +48,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def AggregatorId(self):
-        """This signifies the IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('aggregatorId')
     @AggregatorId.setter
@@ -60,10 +60,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def AsPath(self):
-        """This signifes the local IP address of the BGP router
-
-        Returns:
-            list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number])): This signifes the local IP address of the BGP router
         """
         return self._get_attribute('asPath')
     @AsPath.setter
@@ -72,10 +72,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def AsSetMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(includeAsSeq|includeAsSeqConf|includeAsSet|includeAsSetConf|noInclude|prependAs)
+        """
+        Returns
+        -------
+        - str(includeAsSeq | includeAsSeqConf | includeAsSet | includeAsSetConf | noInclude | prependAs): NOT DEFINED
         """
         return self._get_attribute('asSetMode')
     @AsSetMode.setter
@@ -84,10 +84,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def Cluster(self):
-        """The list of BGP clusters that a particular route has passed through.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The list of BGP clusters that a particular route has passed through.
         """
         return self._get_attribute('cluster')
     @Cluster.setter
@@ -96,10 +96,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def Community(self):
-        """This signifies the BGP Community attribute to be added to the BGP entry
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): This signifies the BGP Community attribute to be added to the BGP entry
         """
         return self._get_attribute('community')
     @Community.setter
@@ -108,10 +108,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableAggregator(self):
-        """This signifies to generate an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies to generate an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
         """
         return self._get_attribute('enableAggregator')
     @EnableAggregator.setter
@@ -120,10 +120,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableAsPath(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAsPath')
     @EnableAsPath.setter
@@ -132,10 +132,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableAtomicAggregate(self):
-        """This signifies to set the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies to set the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
         """
         return self._get_attribute('enableAtomicAggregate')
     @EnableAtomicAggregate.setter
@@ -144,10 +144,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableCluster(self):
-        """This signifies to enable the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies to enable the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
         """
         return self._get_attribute('enableCluster')
     @EnableCluster.setter
@@ -156,10 +156,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableCommunity(self):
-        """This enables the generation of a COMMUNITY attribute list. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the generation of a COMMUNITY attribute list. (default = false)
         """
         return self._get_attribute('enableCommunity')
     @EnableCommunity.setter
@@ -168,10 +168,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableLocalPref(self):
-        """This enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
         """
         return self._get_attribute('enableLocalPref')
     @EnableLocalPref.setter
@@ -180,10 +180,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableMultiExit(self):
-        """This enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
         """
         return self._get_attribute('enableMultiExit')
     @EnableMultiExit.setter
@@ -192,10 +192,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableNextHop(self):
-        """This enables the generation of a NEXT HOP attribute. (default = true)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the generation of a NEXT HOP attribute. (default = true)
         """
         return self._get_attribute('enableNextHop')
     @EnableNextHop.setter
@@ -204,10 +204,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableOrigin(self):
-        """This enables the generation of an ORIGIN attribute. (default = true)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the generation of an ORIGIN attribute. (default = true)
         """
         return self._get_attribute('enableOrigin')
     @EnableOrigin.setter
@@ -216,10 +216,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def EnableOriginator(self):
-        """This signifies to enable the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies to enable the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
         """
         return self._get_attribute('enableOriginator')
     @EnableOriginator.setter
@@ -228,10 +228,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def ExtendedCommunity(self):
-        """This is used to construct an extended community attribute for a route item
-
-        Returns:
-            list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|ip|fourOctetAs|opaque|administratorAsTwoOctetLinkBw],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | ip | fourOctetAs | opaque | administratorAsTwoOctetLinkBw],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str)): This is used to construct an extended community attribute for a route item
         """
         return self._get_attribute('extendedCommunity')
     @ExtendedCommunity.setter
@@ -240,10 +240,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def LocalPref(self):
-        """This signifies the local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the local preference value for the routes with the LOCAL PREF attribute. (default = 0)
         """
         return self._get_attribute('localPref')
     @LocalPref.setter
@@ -252,10 +252,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def MultiExit(self):
-        """This signifies the multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies the multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
         """
         return self._get_attribute('multiExit')
     @MultiExit.setter
@@ -264,10 +264,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def NextHop(self):
-        """This signifies the IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('nextHop')
     @NextHop.setter
@@ -276,10 +276,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def NextHopIpType(self):
-        """This signifies the IP type of Next Hop. Default is IPv4.
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): This signifies the IP type of Next Hop. Default is IPv4.
         """
         return self._get_attribute('nextHopIpType')
     @NextHopIpType.setter
@@ -288,10 +288,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def NextHopMode(self):
-        """This signifies that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-
-        Returns:
-            str(fixed|incrementPerPeer)
+        """
+        Returns
+        -------
+        - str(fixed | incrementPerPeer): This signifies that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
         """
         return self._get_attribute('nextHopMode')
     @NextHopMode.setter
@@ -300,10 +300,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def Origin(self):
-        """This signifies an indication of where the route entry originated.
-
-        Returns:
-            str(igp|egp|incomplete)
+        """
+        Returns
+        -------
+        - str(igp | egp | incomplete): This signifies an indication of where the route entry originated.
         """
         return self._get_attribute('origin')
     @Origin.setter
@@ -312,10 +312,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def OriginatorId(self):
-        """This signifies the router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
         """
         return self._get_attribute('originatorId')
     @OriginatorId.setter
@@ -324,10 +324,10 @@ class AdBmacEsRouteAttributes(Base):
 
     @property
     def SetNextHop(self):
-        """This signifies now to set the next hop IP address.
-
-        Returns:
-            str(manually|sameAsLocalIp)
+        """
+        Returns
+        -------
+        - str(manually | sameAsLocalIp): This signifies now to set the next hop IP address.
         """
         return self._get_attribute('setNextHop')
     @SetNextHop.setter
@@ -335,36 +335,38 @@ class AdBmacEsRouteAttributes(Base):
         self._set_attribute('setNextHop', value)
 
     def update(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
-        """Updates a child instance of adBmacEsRouteAttributes on the server.
+        """Updates adBmacEsRouteAttributes resource on the server.
 
-        Args:
-            AggregatorAs (number): This signifies the AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
-            AggregatorId (str): This signifies the IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
-            AsPath (list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))): This signifes the local IP address of the BGP router
-            AsSetMode (str(includeAsSeq|includeAsSeqConf|includeAsSet|includeAsSetConf|noInclude|prependAs)): NOT DEFINED
-            Cluster (list(number)): The list of BGP clusters that a particular route has passed through.
-            Community (list(number)): This signifies the BGP Community attribute to be added to the BGP entry
-            EnableAggregator (bool): This signifies to generate an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
-            EnableAsPath (bool): NOT DEFINED
-            EnableAtomicAggregate (bool): This signifies to set the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
-            EnableCluster (bool): This signifies to enable the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
-            EnableCommunity (bool): This enables the generation of a COMMUNITY attribute list. (default = false)
-            EnableLocalPref (bool): This enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
-            EnableMultiExit (bool): This enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
-            EnableNextHop (bool): This enables the generation of a NEXT HOP attribute. (default = true)
-            EnableOrigin (bool): This enables the generation of an ORIGIN attribute. (default = true)
-            EnableOriginator (bool): This signifies to enable the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
-            ExtendedCommunity (list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|ip|fourOctetAs|opaque|administratorAsTwoOctetLinkBw],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))): This is used to construct an extended community attribute for a route item
-            LocalPref (number): This signifies the local preference value for the routes with the LOCAL PREF attribute. (default = 0)
-            MultiExit (number): This signifies the multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
-            NextHop (str): This signifies the IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
-            NextHopIpType (str(ipv4|ipv6)): This signifies the IP type of Next Hop. Default is IPv4.
-            NextHopMode (str(fixed|incrementPerPeer)): This signifies that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
-            Origin (str(igp|egp|incomplete)): This signifies an indication of where the route entry originated.
-            OriginatorId (str): This signifies the router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
-            SetNextHop (str(manually|sameAsLocalIp)): This signifies now to set the next hop IP address.
+        Args
+        ----
+        - AggregatorAs (number): This signifies the AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+        - AggregatorId (str): This signifies the IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+        - AsPath (list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number]))): This signifes the local IP address of the BGP router
+        - AsSetMode (str(includeAsSeq | includeAsSeqConf | includeAsSet | includeAsSetConf | noInclude | prependAs)): NOT DEFINED
+        - Cluster (list(number)): The list of BGP clusters that a particular route has passed through.
+        - Community (list(number)): This signifies the BGP Community attribute to be added to the BGP entry
+        - EnableAggregator (bool): This signifies to generate an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+        - EnableAsPath (bool): NOT DEFINED
+        - EnableAtomicAggregate (bool): This signifies to set the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+        - EnableCluster (bool): This signifies to enable the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+        - EnableCommunity (bool): This enables the generation of a COMMUNITY attribute list. (default = false)
+        - EnableLocalPref (bool): This enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+        - EnableMultiExit (bool): This enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+        - EnableNextHop (bool): This enables the generation of a NEXT HOP attribute. (default = true)
+        - EnableOrigin (bool): This enables the generation of an ORIGIN attribute. (default = true)
+        - EnableOriginator (bool): This signifies to enable the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+        - ExtendedCommunity (list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | ip | fourOctetAs | opaque | administratorAsTwoOctetLinkBw],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str))): This is used to construct an extended community attribute for a route item
+        - LocalPref (number): This signifies the local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+        - MultiExit (number): This signifies the multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+        - NextHop (str): This signifies the IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+        - NextHopIpType (str(ipv4 | ipv6)): This signifies the IP type of Next Hop. Default is IPv4.
+        - NextHopMode (str(fixed | incrementPerPeer)): This signifies that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+        - Origin (str(igp | egp | incomplete)): This signifies an indication of where the route entry originated.
+        - OriginatorId (str): This signifies the router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+        - SetNextHop (str(manually | sameAsLocalIp)): This signifies now to set the next hop IP address.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

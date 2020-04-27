@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class DiscoveredInterface(Base):
     """Retrieves the list of interfaces for a discovered appliance
-    The DiscoveredInterface class encapsulates a list of discoveredInterface resources that is managed by the system.
+    The DiscoveredInterface class encapsulates a list of discoveredInterface resources that are managed by the system.
     A list of resources can be retrieved from the server using the DiscoveredInterface.find() method.
     """
 
@@ -37,51 +37,58 @@ class DiscoveredInterface(Base):
 
     @property
     def InterfaceName(self):
-        """Represents the interface name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the interface name
         """
         return self._get_attribute('interfaceName')
 
     @property
     def State(self):
-        """Represents the interface state
-
-        Returns:
-            str(assigned|available|unusable)
+        """
+        Returns
+        -------
+        - str(assigned | available | unusable): Represents the interface state
         """
         return self._get_attribute('state')
 
     def find(self, InterfaceName=None, State=None):
-        """Finds and retrieves discoveredInterface data from the server.
+        """Finds and retrieves discoveredInterface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve discoveredInterface data from the server.
-        By default the find method takes no parameters and will retrieve all discoveredInterface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredInterface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all discoveredInterface resources from the server.
 
-        Args:
-            InterfaceName (str): Represents the interface name
-            State (str(assigned|available|unusable)): Represents the interface state
+        Args
+        ----
+        - InterfaceName (str): Represents the interface name
+        - State (str(assigned | available | unusable)): Represents the interface state
 
-        Returns:
-            self: This instance with matching discoveredInterface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching discoveredInterface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of discoveredInterface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the discoveredInterface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the discoveredInterface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

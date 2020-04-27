@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class RadiusRange(Base):
     """Represents a RADIUS range.
-    The RadiusRange class encapsulates a list of radiusRange resources that is be managed by the user.
+    The RadiusRange class encapsulates a list of radiusRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the RadiusRange.find() method.
-    The list can be managed by the user by using the RadiusRange.add() and RadiusRange.remove() methods.
+    The list can be managed by using the RadiusRange.add() and RadiusRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class RadiusRange(Base):
 
     @property
     def AccountingPort(self):
-        """Accounting UDP port
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Accounting UDP port
         """
         return self._get_attribute('accountingPort')
     @AccountingPort.setter
@@ -50,10 +50,10 @@ class RadiusRange(Base):
 
     @property
     def AccountingServer(self):
-        """RADIUS Accounting Server, specified as IP address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: RADIUS Accounting Server, specified as IP address
         """
         return self._get_attribute('accountingServer')
     @AccountingServer.setter
@@ -62,10 +62,10 @@ class RadiusRange(Base):
 
     @property
     def AuthenticationPort(self):
-        """Authentication UDP port
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Authentication UDP port
         """
         return self._get_attribute('authenticationPort')
     @AuthenticationPort.setter
@@ -74,10 +74,10 @@ class RadiusRange(Base):
 
     @property
     def AuthenticationServer(self):
-        """RADIUS Authentication Server, specified as IP address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: RADIUS Authentication Server, specified as IP address
         """
         return self._get_attribute('authenticationServer')
     @AuthenticationServer.setter
@@ -86,10 +86,10 @@ class RadiusRange(Base):
 
     @property
     def EnableAccounting(self):
-        """Enables support for RADIUS accounting
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables support for RADIUS accounting
         """
         return self._get_attribute('enableAccounting')
     @EnableAccounting.setter
@@ -98,10 +98,10 @@ class RadiusRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class RadiusRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -122,19 +122,19 @@ class RadiusRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Retries(self):
-        """RADIUS retry value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RADIUS retry value
         """
         return self._get_attribute('retries')
     @Retries.setter
@@ -143,10 +143,10 @@ class RadiusRange(Base):
 
     @property
     def Secret(self):
-        """Shared secret used by Ixia RADIUS client and RADIUS server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Shared secret used by Ixia RADIUS client and RADIUS server
         """
         return self._get_attribute('secret')
     @Secret.setter
@@ -155,10 +155,10 @@ class RadiusRange(Base):
 
     @property
     def Timeout(self):
-        """RADIUS timeout value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: RADIUS timeout value
         """
         return self._get_attribute('timeout')
     @Timeout.setter
@@ -167,10 +167,10 @@ class RadiusRange(Base):
 
     @property
     def TunnelAttributeSet(self):
-        """Defines the RADIUS tunnel attributes
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): Defines the RADIUS tunnel attributes
         """
         return self._get_attribute('tunnelAttributeSet')
     @TunnelAttributeSet.setter
@@ -178,99 +178,112 @@ class RadiusRange(Base):
         self._set_attribute('tunnelAttributeSet', value)
 
     def update(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
-        """Updates a child instance of radiusRange on the server.
+        """Updates radiusRange resource on the server.
 
-        Args:
-            AccountingPort (number): Accounting UDP port
-            AccountingServer (str): RADIUS Accounting Server, specified as IP address
-            AuthenticationPort (number): Authentication UDP port
-            AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
-            EnableAccounting (bool): Enables support for RADIUS accounting
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): Name of range
-            Retries (number): RADIUS retry value
-            Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
-            Timeout (number): RADIUS timeout value
-            TunnelAttributeSet (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        Args
+        ----
+        - AccountingPort (number): Accounting UDP port
+        - AccountingServer (str): RADIUS Accounting Server, specified as IP address
+        - AuthenticationPort (number): Authentication UDP port
+        - AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
+        - EnableAccounting (bool): Enables support for RADIUS accounting
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - Retries (number): RADIUS retry value
+        - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
+        - Timeout (number): RADIUS timeout value
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
-        """Adds a new radiusRange node on the server and retrieves it in this instance.
+        """Adds a new radiusRange resource on the server and adds it to the container.
 
-        Args:
-            AccountingPort (number): Accounting UDP port
-            AccountingServer (str): RADIUS Accounting Server, specified as IP address
-            AuthenticationPort (number): Authentication UDP port
-            AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
-            EnableAccounting (bool): Enables support for RADIUS accounting
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): Name of range
-            Retries (number): RADIUS retry value
-            Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
-            Timeout (number): RADIUS timeout value
-            TunnelAttributeSet (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        Args
+        ----
+        - AccountingPort (number): Accounting UDP port
+        - AccountingServer (str): RADIUS Accounting Server, specified as IP address
+        - AuthenticationPort (number): Authentication UDP port
+        - AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
+        - EnableAccounting (bool): Enables support for RADIUS accounting
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - Retries (number): RADIUS retry value
+        - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
+        - Timeout (number): RADIUS timeout value
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
-        Returns:
-            self: This instance with all currently retrieved radiusRange data using find and the newly added radiusRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved radiusRange resources using find and the newly added radiusRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the radiusRange data in this instance from server.
+        """Deletes all the contained radiusRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, ObjectId=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
-        """Finds and retrieves radiusRange data from the server.
+        """Finds and retrieves radiusRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve radiusRange data from the server.
-        By default the find method takes no parameters and will retrieve all radiusRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve radiusRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all radiusRange resources from the server.
 
-        Args:
-            AccountingPort (number): Accounting UDP port
-            AccountingServer (str): RADIUS Accounting Server, specified as IP address
-            AuthenticationPort (number): Authentication UDP port
-            AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
-            EnableAccounting (bool): Enables support for RADIUS accounting
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            Retries (number): RADIUS retry value
-            Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
-            Timeout (number): RADIUS timeout value
-            TunnelAttributeSet (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        Args
+        ----
+        - AccountingPort (number): Accounting UDP port
+        - AccountingServer (str): RADIUS Accounting Server, specified as IP address
+        - AuthenticationPort (number): Authentication UDP port
+        - AuthenticationServer (str): RADIUS Authentication Server, specified as IP address
+        - EnableAccounting (bool): Enables support for RADIUS accounting
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Retries (number): RADIUS retry value
+        - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
+        - Timeout (number): RADIUS timeout value
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
-        Returns:
-            self: This instance with matching radiusRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching radiusRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of radiusRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the radiusRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the radiusRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -279,14 +292,15 @@ class RadiusRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -298,16 +312,15 @@ class RadiusRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -319,16 +332,15 @@ class RadiusRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

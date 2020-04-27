@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Link(Base):
     """This object contains the link configuration.
-    The Link class encapsulates a list of link resources that is be managed by the user.
+    The Link class encapsulates a list of link resources that are managed by the user.
     A list of resources can be retrieved from the server using the Link.find() method.
-    The list can be managed by the user by using the Link.add() and Link.remove() methods.
+    The list can be managed by using the Link.add() and Link.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Link(Base):
 
     @property
     def Enabled(self):
-        """If true, the link is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the link is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class Link(Base):
 
     @property
     def LinkType(self):
-        """Sets the link type.
-
-        Returns:
-            str(broadcast|pointToPoint)
+        """
+        Returns
+        -------
+        - str(broadcast | pointToPoint): Sets the link type.
         """
         return self._get_attribute('linkType')
     @LinkType.setter
@@ -62,10 +62,10 @@ class Link(Base):
 
     @property
     def MoreMps(self):
-        """Attaches multiple MPs to the link. MPs must be previously configured.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp]): Attaches multiple MPs to the link. MPs must be previously configured.
         """
         return self._get_attribute('moreMps')
     @MoreMps.setter
@@ -74,10 +74,10 @@ class Link(Base):
 
     @property
     def MpOutwardsIxia(self):
-        """Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
         """
         return self._get_attribute('mpOutwardsIxia')
     @MpOutwardsIxia.setter
@@ -86,10 +86,10 @@ class Link(Base):
 
     @property
     def MpTowardsIxia(self):
-        """Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
         """
         return self._get_attribute('mpTowardsIxia')
     @MpTowardsIxia.setter
@@ -97,79 +97,92 @@ class Link(Base):
         self._set_attribute('mpTowardsIxia', value)
 
     def update(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
-        """Updates a child instance of link on the server.
+        """Updates link resource on the server.
 
-        Args:
-            Enabled (bool): If true, the link is enabled.
-            LinkType (str(broadcast|pointToPoint)): Sets the link type.
-            MoreMps (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-            MpOutwardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-            MpTowardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        Args
+        ----
+        - Enabled (bool): If true, the link is enabled.
+        - LinkType (str(broadcast | pointToPoint)): Sets the link type.
+        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
-        """Adds a new link node on the server and retrieves it in this instance.
+        """Adds a new link resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, the link is enabled.
-            LinkType (str(broadcast|pointToPoint)): Sets the link type.
-            MoreMps (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-            MpOutwardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-            MpTowardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        Args
+        ----
+        - Enabled (bool): If true, the link is enabled.
+        - LinkType (str(broadcast | pointToPoint)): Sets the link type.
+        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
-        Returns:
-            self: This instance with all currently retrieved link data using find and the newly added link data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved link resources using find and the newly added link resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the link data in this instance from server.
+        """Deletes all the contained link resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
-        """Finds and retrieves link data from the server.
+        """Finds and retrieves link resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve link data from the server.
-        By default the find method takes no parameters and will retrieve all link data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve link resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all link resources from the server.
 
-        Args:
-            Enabled (bool): If true, the link is enabled.
-            LinkType (str(broadcast|pointToPoint)): Sets the link type.
-            MoreMps (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-            MpOutwardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-            MpTowardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        Args
+        ----
+        - Enabled (bool): If true, the link is enabled.
+        - LinkType (str(broadcast | pointToPoint)): Sets the link type.
+        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
-        Returns:
-            self: This instance with matching link data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching link resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of link data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the link data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the link resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,24 +36,24 @@ class CustomDelayVariation(Base):
 
     @property
     def CustomValue(self):
-        """An instance of the CustomValue class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue.CustomValue): An instance of the CustomValue class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue.CustomValue)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue import CustomValue
         return CustomValue(self)
 
     @property
     def Enabled(self):
-        """If true, vary the packet delay.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, vary the packet delay.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class CustomDelayVariation(Base):
 
     @property
     def Name(self):
-        """Descriptive name of custom value list.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Descriptive name of custom value list.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -73,13 +73,15 @@ class CustomDelayVariation(Base):
         self._set_attribute('name', value)
 
     def update(self, Enabled=None, Name=None):
-        """Updates a child instance of customDelayVariation on the server.
+        """Updates customDelayVariation resource on the server.
 
-        Args:
-            Enabled (bool): If true, vary the packet delay.
-            Name (str): Descriptive name of custom value list.
+        Args
+        ----
+        - Enabled (bool): If true, vary the packet delay.
+        - Name (str): Descriptive name of custom value list.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

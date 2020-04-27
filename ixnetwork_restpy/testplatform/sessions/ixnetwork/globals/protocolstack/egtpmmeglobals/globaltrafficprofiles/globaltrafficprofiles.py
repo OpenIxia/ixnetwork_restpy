@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class GlobalTrafficProfiles(Base):
     """
-    The GlobalTrafficProfiles class encapsulates a list of globalTrafficProfiles resources that is be managed by the user.
+    The GlobalTrafficProfiles class encapsulates a list of globalTrafficProfiles resources that are managed by the user.
     A list of resources can be retrieved from the server using the GlobalTrafficProfiles.find() method.
-    The list can be managed by the user by using the GlobalTrafficProfiles.add() and GlobalTrafficProfiles.remove() methods.
+    The list can be managed by using the GlobalTrafficProfiles.add() and GlobalTrafficProfiles.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class GlobalTrafficProfiles(Base):
     @property
     def Apn(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalEgtpApn)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApn): 
         """
         return self._get_attribute('apn')
     @Apn.setter
@@ -50,10 +50,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Arp(self):
-        """Priority of allocation and retention
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Priority of allocation and retention
         """
         return self._get_attribute('arp')
     @Arp.setter
@@ -62,10 +62,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def DefaultBearerFallback(self):
-        """Fallback on default bearer if no dedicated bearer was created for this activity.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Fallback on default bearer if no dedicated bearer was created for this activity.
         """
         return self._get_attribute('defaultBearerFallback')
     @DefaultBearerFallback.setter
@@ -74,10 +74,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def EnableSessionTimeout(self):
-        """Deprecated. Kept for TCL bw compatibility
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Deprecated. Kept for TCL bw compatibility
         """
         return self._get_attribute('enableSessionTimeout')
     @EnableSessionTimeout.setter
@@ -86,10 +86,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -98,10 +98,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Gbrd(self):
-        """Guaranteed bitrate for downlink (kbps)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Guaranteed bitrate for downlink (kbps)
         """
         return self._get_attribute('gbrd')
     @Gbrd.setter
@@ -110,10 +110,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Gbru(self):
-        """Guaranteed bitrate for uplink (kbps)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Guaranteed bitrate for uplink (kbps)
         """
         return self._get_attribute('gbru')
     @Gbru.setter
@@ -122,10 +122,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def IsMsInitiated(self):
-        """UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
         """
         return self._get_attribute('isMsInitiated')
     @IsMsInitiated.setter
@@ -134,10 +134,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Mbrd(self):
-        """Maximum bitrate for downlink (kbps)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for downlink (kbps)
         """
         return self._get_attribute('mbrd')
     @Mbrd.setter
@@ -146,10 +146,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Mbru(self):
-        """Maximum bitrate for uplink (kbps)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for uplink (kbps)
         """
         return self._get_attribute('mbru')
     @Mbru.setter
@@ -158,10 +158,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def Name(self):
-        """GTP needs the name of the activity
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: GTP needs the name of the activity
         """
         return self._get_attribute('name')
     @Name.setter
@@ -170,19 +170,19 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Qci(self):
-        """QoS Class Identifier
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: QoS Class Identifier
         """
         return self._get_attribute('qci')
     @Qci.setter
@@ -191,10 +191,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def RunOnDefaultBearer(self):
-        """Run activity on default bearer only
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Run activity on default bearer only
         """
         return self._get_attribute('runOnDefaultBearer')
     @RunOnDefaultBearer.setter
@@ -204,9 +204,9 @@ class GlobalTrafficProfiles(Base):
     @property
     def STftFiltersCustom(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('sTftFiltersCustom')
     @STftFiltersCustom.setter
@@ -215,10 +215,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def SessionTimeoutValue(self):
-        """Deprecated. Kept for TCL bw compatibility
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Deprecated. Kept for TCL bw compatibility
         """
         return self._get_attribute('sessionTimeoutValue')
     @SessionTimeoutValue.setter
@@ -227,10 +227,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def SpcoContainer(self):
-        """Protocol Configuration Options (Container)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Protocol Configuration Options (Container)
         """
         return self._get_attribute('spcoContainer')
     @SpcoContainer.setter
@@ -239,10 +239,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def SpcoProtocol(self):
-        """Protocol Configuration Options (Protocol)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Protocol Configuration Options (Protocol)
         """
         return self._get_attribute('spcoProtocol')
     @SpcoProtocol.setter
@@ -251,10 +251,10 @@ class GlobalTrafficProfiles(Base):
 
     @property
     def TearDownIndicator(self):
-        """Set tear down indicator flag when deleting context for this activity
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set tear down indicator flag when deleting context for this activity
         """
         return self._get_attribute('tearDownIndicator')
     @TearDownIndicator.setter
@@ -264,9 +264,9 @@ class GlobalTrafficProfiles(Base):
     @property
     def UsePredefinedQci(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('usePredefinedQci')
     @UsePredefinedQci.setter
@@ -276,9 +276,9 @@ class GlobalTrafficProfiles(Base):
     @property
     def UsePredefinedTft(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('usePredefinedTft')
     @UsePredefinedTft.setter
@@ -286,125 +286,138 @@ class GlobalTrafficProfiles(Base):
         self._set_attribute('usePredefinedTft', value)
 
     def update(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, STftFiltersCustom=None, SessionTimeoutValue=None, SpcoContainer=None, SpcoProtocol=None, TearDownIndicator=None, UsePredefinedQci=None, UsePredefinedTft=None):
-        """Updates a child instance of globalTrafficProfiles on the server.
+        """Updates globalTrafficProfiles resource on the server.
 
-        Args:
-            Apn (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalEgtpApn)): 
-            Arp (number): Priority of allocation and retention
-            DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
-            EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink (kbps)
-            Gbru (number): Guaranteed bitrate for uplink (kbps)
-            IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
-            Mbrd (number): Maximum bitrate for downlink (kbps)
-            Mbru (number): Maximum bitrate for uplink (kbps)
-            Name (str): GTP needs the name of the activity
-            Qci (number): QoS Class Identifier
-            RunOnDefaultBearer (bool): Run activity on default bearer only
-            STftFiltersCustom (str): 
-            SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
-            SpcoContainer (str): Protocol Configuration Options (Container)
-            SpcoProtocol (str): Protocol Configuration Options (Protocol)
-            TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
-            UsePredefinedQci (bool): 
-            UsePredefinedTft (bool): 
+        Args
+        ----
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApn)): 
+        - Arp (number): Priority of allocation and retention
+        - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
+        - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink (kbps)
+        - Gbru (number): Guaranteed bitrate for uplink (kbps)
+        - IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
+        - Mbrd (number): Maximum bitrate for downlink (kbps)
+        - Mbru (number): Maximum bitrate for uplink (kbps)
+        - Name (str): GTP needs the name of the activity
+        - Qci (number): QoS Class Identifier
+        - RunOnDefaultBearer (bool): Run activity on default bearer only
+        - STftFiltersCustom (str): 
+        - SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
+        - SpcoContainer (str): Protocol Configuration Options (Container)
+        - SpcoProtocol (str): Protocol Configuration Options (Protocol)
+        - TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
+        - UsePredefinedQci (bool): 
+        - UsePredefinedTft (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, STftFiltersCustom=None, SessionTimeoutValue=None, SpcoContainer=None, SpcoProtocol=None, TearDownIndicator=None, UsePredefinedQci=None, UsePredefinedTft=None):
-        """Adds a new globalTrafficProfiles node on the server and retrieves it in this instance.
+        """Adds a new globalTrafficProfiles resource on the server and adds it to the container.
 
-        Args:
-            Apn (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalEgtpApn)): 
-            Arp (number): Priority of allocation and retention
-            DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
-            EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink (kbps)
-            Gbru (number): Guaranteed bitrate for uplink (kbps)
-            IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
-            Mbrd (number): Maximum bitrate for downlink (kbps)
-            Mbru (number): Maximum bitrate for uplink (kbps)
-            Name (str): GTP needs the name of the activity
-            Qci (number): QoS Class Identifier
-            RunOnDefaultBearer (bool): Run activity on default bearer only
-            STftFiltersCustom (str): 
-            SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
-            SpcoContainer (str): Protocol Configuration Options (Container)
-            SpcoProtocol (str): Protocol Configuration Options (Protocol)
-            TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
-            UsePredefinedQci (bool): 
-            UsePredefinedTft (bool): 
+        Args
+        ----
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApn)): 
+        - Arp (number): Priority of allocation and retention
+        - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
+        - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink (kbps)
+        - Gbru (number): Guaranteed bitrate for uplink (kbps)
+        - IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
+        - Mbrd (number): Maximum bitrate for downlink (kbps)
+        - Mbru (number): Maximum bitrate for uplink (kbps)
+        - Name (str): GTP needs the name of the activity
+        - Qci (number): QoS Class Identifier
+        - RunOnDefaultBearer (bool): Run activity on default bearer only
+        - STftFiltersCustom (str): 
+        - SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
+        - SpcoContainer (str): Protocol Configuration Options (Container)
+        - SpcoProtocol (str): Protocol Configuration Options (Protocol)
+        - TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
+        - UsePredefinedQci (bool): 
+        - UsePredefinedTft (bool): 
 
-        Returns:
-            self: This instance with all currently retrieved globalTrafficProfiles data using find and the newly added globalTrafficProfiles data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved globalTrafficProfiles resources using find and the newly added globalTrafficProfiles resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the globalTrafficProfiles data in this instance from server.
+        """Deletes all the contained globalTrafficProfiles resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, ObjectId=None, Qci=None, RunOnDefaultBearer=None, STftFiltersCustom=None, SessionTimeoutValue=None, SpcoContainer=None, SpcoProtocol=None, TearDownIndicator=None, UsePredefinedQci=None, UsePredefinedTft=None):
-        """Finds and retrieves globalTrafficProfiles data from the server.
+        """Finds and retrieves globalTrafficProfiles resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve globalTrafficProfiles data from the server.
-        By default the find method takes no parameters and will retrieve all globalTrafficProfiles data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globalTrafficProfiles resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all globalTrafficProfiles resources from the server.
 
-        Args:
-            Apn (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalEgtpApn)): 
-            Arp (number): Priority of allocation and retention
-            DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
-            EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink (kbps)
-            Gbru (number): Guaranteed bitrate for uplink (kbps)
-            IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
-            Mbrd (number): Maximum bitrate for downlink (kbps)
-            Mbru (number): Maximum bitrate for uplink (kbps)
-            Name (str): GTP needs the name of the activity
-            ObjectId (str): Unique identifier for this object
-            Qci (number): QoS Class Identifier
-            RunOnDefaultBearer (bool): Run activity on default bearer only
-            STftFiltersCustom (str): 
-            SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
-            SpcoContainer (str): Protocol Configuration Options (Container)
-            SpcoProtocol (str): Protocol Configuration Options (Protocol)
-            TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
-            UsePredefinedQci (bool): 
-            UsePredefinedTft (bool): 
+        Args
+        ----
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApn)): 
+        - Arp (number): Priority of allocation and retention
+        - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
+        - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink (kbps)
+        - Gbru (number): Guaranteed bitrate for uplink (kbps)
+        - IsMsInitiated (bool): UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
+        - Mbrd (number): Maximum bitrate for downlink (kbps)
+        - Mbru (number): Maximum bitrate for uplink (kbps)
+        - Name (str): GTP needs the name of the activity
+        - ObjectId (str): Unique identifier for this object
+        - Qci (number): QoS Class Identifier
+        - RunOnDefaultBearer (bool): Run activity on default bearer only
+        - STftFiltersCustom (str): 
+        - SessionTimeoutValue (number): Deprecated. Kept for TCL bw compatibility
+        - SpcoContainer (str): Protocol Configuration Options (Container)
+        - SpcoProtocol (str): Protocol Configuration Options (Protocol)
+        - TearDownIndicator (bool): Set tear down indicator flag when deleting context for this activity
+        - UsePredefinedQci (bool): 
+        - UsePredefinedTft (bool): 
 
-        Returns:
-            self: This instance with matching globalTrafficProfiles data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching globalTrafficProfiles resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of globalTrafficProfiles data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the globalTrafficProfiles data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the globalTrafficProfiles resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

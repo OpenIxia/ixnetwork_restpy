@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TwampTestRange(Base):
     """Represents a range of TWAMP Session-Sender.
-    The TwampTestRange class encapsulates a list of twampTestRange resources that is be managed by the user.
+    The TwampTestRange class encapsulates a list of twampTestRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the TwampTestRange.find() method.
-    The list can be managed by the user by using the TwampTestRange.add() and TwampTestRange.remove() methods.
+    The list can be managed by using the TwampTestRange.add() and TwampTestRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TwampTestRange(Base):
 
     @property
     def ControlRangeName(self):
-        """Name of the associated TWAMP Control range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the associated TWAMP Control range
         """
         return self._get_attribute('controlRangeName')
     @ControlRangeName.setter
@@ -50,10 +50,10 @@ class TwampTestRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class TwampTestRange(Base):
 
     @property
     def Explicit(self):
-        """True if the range needs to be created, false if the range was created automatically as first range always is
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: True if the range needs to be created, false if the range was created automatically as first range always is
         """
         return self._get_attribute('explicit')
     @Explicit.setter
@@ -74,10 +74,10 @@ class TwampTestRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -86,10 +86,10 @@ class TwampTestRange(Base):
 
     @property
     def NumberOfPackets(self):
-        """Number of packets to be sent by the Session-Sender.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of packets to be sent by the Session-Sender.
         """
         return self._get_attribute('numberOfPackets')
     @NumberOfPackets.setter
@@ -98,19 +98,19 @@ class TwampTestRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PacketLength(self):
-        """Packet size, including padding length as defined by the RFC4656, in section 3.5
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Packet size, including padding length as defined by the RFC4656, in section 3.5
         """
         return self._get_attribute('packetLength')
     @PacketLength.setter
@@ -119,10 +119,10 @@ class TwampTestRange(Base):
 
     @property
     def PacketsPerSecond(self):
-        """Rate at which packets will be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Rate at which packets will be sent.
         """
         return self._get_attribute('packetsPerSecond')
     @PacketsPerSecond.setter
@@ -131,10 +131,10 @@ class TwampTestRange(Base):
 
     @property
     def PaddingWithZero(self):
-        """Per RFC465, data in the packets is random, unless it is configured to be zero
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Per RFC465, data in the packets is random, unless it is configured to be zero
         """
         return self._get_attribute('paddingWithZero')
     @PaddingWithZero.setter
@@ -143,10 +143,10 @@ class TwampTestRange(Base):
 
     @property
     def SessionReflectorPort(self):
-        """Port on which the reflector receives the packets from the stream initiated by Session-Sender
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Port on which the reflector receives the packets from the stream initiated by Session-Sender
         """
         return self._get_attribute('sessionReflectorPort')
     @SessionReflectorPort.setter
@@ -155,10 +155,10 @@ class TwampTestRange(Base):
 
     @property
     def SessionReflectorPortIncrement(self):
-        """Increment to use for above field when expanding sessions from this range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment to use for above field when expanding sessions from this range
         """
         return self._get_attribute('sessionReflectorPortIncrement')
     @SessionReflectorPortIncrement.setter
@@ -167,10 +167,10 @@ class TwampTestRange(Base):
 
     @property
     def SessionSenderPort(self):
-        """Source Port of the stream initiated by Session-Sender
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Source Port of the stream initiated by Session-Sender
         """
         return self._get_attribute('sessionSenderPort')
     @SessionSenderPort.setter
@@ -179,10 +179,10 @@ class TwampTestRange(Base):
 
     @property
     def SessionSenderPortIncrement(self):
-        """Increment to use for above field when expanding sessions from this range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment to use for above field when expanding sessions from this range
         """
         return self._get_attribute('sessionSenderPortIncrement')
     @SessionSenderPortIncrement.setter
@@ -191,10 +191,10 @@ class TwampTestRange(Base):
 
     @property
     def TestSessionsCount(self):
-        """Number of TWAMP-Test session expanded for each range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of TWAMP-Test session expanded for each range
         """
         return self._get_attribute('testSessionsCount')
     @TestSessionsCount.setter
@@ -203,10 +203,10 @@ class TwampTestRange(Base):
 
     @property
     def Timeout(self):
-        """Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
         """
         return self._get_attribute('timeout')
     @Timeout.setter
@@ -215,10 +215,10 @@ class TwampTestRange(Base):
 
     @property
     def TypepDescriptor(self):
-        """Type-P descriptor sets the Differentiated Services Code Point (DSCP).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Type-P descriptor sets the Differentiated Services Code Point (DSCP).
         """
         return self._get_attribute('typepDescriptor')
     @TypepDescriptor.setter
@@ -226,111 +226,124 @@ class TwampTestRange(Base):
         self._set_attribute('typepDescriptor', value)
 
     def update(self, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
-        """Updates a child instance of twampTestRange on the server.
+        """Updates twampTestRange resource on the server.
 
-        Args:
-            ControlRangeName (str): Name of the associated TWAMP Control range
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
-            Name (str): Name of range
-            NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
-            PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
-            PacketsPerSecond (number): Rate at which packets will be sent.
-            PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
-            SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
-            SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
-            SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
-            Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
-            TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
+        Args
+        ----
+        - ControlRangeName (str): Name of the associated TWAMP Control range
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
+        - Name (str): Name of range
+        - NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
+        - PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
+        - PacketsPerSecond (number): Rate at which packets will be sent.
+        - PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
+        - SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
+        - SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
+        - SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
+        - Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
+        - TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
-        """Adds a new twampTestRange node on the server and retrieves it in this instance.
+        """Adds a new twampTestRange resource on the server and adds it to the container.
 
-        Args:
-            ControlRangeName (str): Name of the associated TWAMP Control range
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
-            Name (str): Name of range
-            NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
-            PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
-            PacketsPerSecond (number): Rate at which packets will be sent.
-            PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
-            SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
-            SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
-            SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
-            Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
-            TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
+        Args
+        ----
+        - ControlRangeName (str): Name of the associated TWAMP Control range
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
+        - Name (str): Name of range
+        - NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
+        - PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
+        - PacketsPerSecond (number): Rate at which packets will be sent.
+        - PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
+        - SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
+        - SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
+        - SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
+        - Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
+        - TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
 
-        Returns:
-            self: This instance with all currently retrieved twampTestRange data using find and the newly added twampTestRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved twampTestRange resources using find and the newly added twampTestRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the twampTestRange data in this instance from server.
+        """Deletes all the contained twampTestRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, ObjectId=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
-        """Finds and retrieves twampTestRange data from the server.
+        """Finds and retrieves twampTestRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve twampTestRange data from the server.
-        By default the find method takes no parameters and will retrieve all twampTestRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampTestRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all twampTestRange resources from the server.
 
-        Args:
-            ControlRangeName (str): Name of the associated TWAMP Control range
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
-            Name (str): Name of range
-            NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
-            ObjectId (str): Unique identifier for this object
-            PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
-            PacketsPerSecond (number): Rate at which packets will be sent.
-            PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
-            SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
-            SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
-            SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
-            TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
-            Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
-            TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
+        Args
+        ----
+        - ControlRangeName (str): Name of the associated TWAMP Control range
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Explicit (bool): True if the range needs to be created, false if the range was created automatically as first range always is
+        - Name (str): Name of range
+        - NumberOfPackets (number): Number of packets to be sent by the Session-Sender.
+        - ObjectId (str): Unique identifier for this object
+        - PacketLength (number): Packet size, including padding length as defined by the RFC4656, in section 3.5
+        - PacketsPerSecond (number): Rate at which packets will be sent.
+        - PaddingWithZero (bool): Per RFC465, data in the packets is random, unless it is configured to be zero
+        - SessionReflectorPort (number): Port on which the reflector receives the packets from the stream initiated by Session-Sender
+        - SessionReflectorPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - SessionSenderPort (number): Source Port of the stream initiated by Session-Sender
+        - SessionSenderPortIncrement (number): Increment to use for above field when expanding sessions from this range
+        - TestSessionsCount (number): Number of TWAMP-Test session expanded for each range
+        - Timeout (number): Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
+        - TypepDescriptor (number): Type-P descriptor sets the Differentiated Services Code Point (DSCP).
 
-        Returns:
-            self: This instance with matching twampTestRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching twampTestRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of twampTestRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the twampTestRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the twampTestRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -339,14 +352,15 @@ class TwampTestRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -358,16 +372,15 @@ class TwampTestRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -379,18 +392,38 @@ class TwampTestRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
+
+    def TwampDeleteTestRange(self, *args, **kwargs):
+        """Executes the twampDeleteTestRange operation on the server.
+
+        Deletes a Test Range Object
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        twampDeleteTestRange(Arg2=enum)
+        -------------------------------
+        - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpEnbEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpMmeEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpEnbEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpMmeEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpUeEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/ipEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpEnbEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpMmeEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpEnbEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpMmeEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpUeEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ipEndpoint/range/twampTestRange]
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('twampDeleteTestRange', payload=payload, response_object=None)

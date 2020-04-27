@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class WebAuthOptions(Base):
     """Web Authentication PortGroup Options
-    The WebAuthOptions class encapsulates a list of webAuthOptions resources that is be managed by the user.
+    The WebAuthOptions class encapsulates a list of webAuthOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the WebAuthOptions.find() method.
-    The list can be managed by the user by using the WebAuthOptions.add() and WebAuthOptions.remove() methods.
+    The list can be managed by using the WebAuthOptions.add() and WebAuthOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class WebAuthOptions(Base):
 
     @property
     def MaxClientsPerSecond(self):
-        """The number interfaces to setup per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number interfaces to setup per second.
         """
         return self._get_attribute('maxClientsPerSecond')
     @MaxClientsPerSecond.setter
@@ -50,10 +50,10 @@ class WebAuthOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """The maximum number of sessions that can be negotiated at one moment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of sessions that can be negotiated at one moment.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -62,19 +62,19 @@ class WebAuthOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalArpResponse(self):
-        """If enabled, will reverse the global option for Arp Response
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will reverse the global option for Arp Response
         """
         return self._get_attribute('overrideGlobalArpResponse')
     @OverrideGlobalArpResponse.setter
@@ -83,10 +83,10 @@ class WebAuthOptions(Base):
 
     @property
     def OverrideGlobalSetupRate(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalSetupRate')
     @OverrideGlobalSetupRate.setter
@@ -94,78 +94,91 @@ class WebAuthOptions(Base):
         self._set_attribute('overrideGlobalSetupRate', value)
 
     def update(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
-        """Updates a child instance of webAuthOptions on the server.
+        """Updates webAuthOptions resource on the server.
 
-        Args:
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
-        """Adds a new webAuthOptions node on the server and retrieves it in this instance.
+        """Adds a new webAuthOptions resource on the server and adds it to the container.
 
-        Args:
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Returns:
-            self: This instance with all currently retrieved webAuthOptions data using find and the newly added webAuthOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved webAuthOptions resources using find and the newly added webAuthOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the webAuthOptions data in this instance from server.
+        """Deletes all the contained webAuthOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
-        """Finds and retrieves webAuthOptions data from the server.
+        """Finds and retrieves webAuthOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve webAuthOptions data from the server.
-        By default the find method takes no parameters and will retrieve all webAuthOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve webAuthOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all webAuthOptions resources from the server.
 
-        Args:
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalArpResponse (bool): If enabled, will reverse the global option for Arp Response
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Returns:
-            self: This instance with matching webAuthOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching webAuthOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of webAuthOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the webAuthOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the webAuthOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -174,14 +187,15 @@ class WebAuthOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -193,16 +207,15 @@ class WebAuthOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -214,16 +227,15 @@ class WebAuthOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

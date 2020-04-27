@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DhcpServerGlobals(Base):
     """Global settings placeholder for DHCPServerPlugin.
-    The DhcpServerGlobals class encapsulates a list of dhcpServerGlobals resources that is be managed by the user.
+    The DhcpServerGlobals class encapsulates a list of dhcpServerGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the DhcpServerGlobals.find() method.
-    The list can be managed by the user by using the DhcpServerGlobals.add() and DhcpServerGlobals.remove() methods.
+    The list can be managed by using the DhcpServerGlobals.add() and DhcpServerGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DhcpServerGlobals(Base):
 
     @property
     def DefaultLeaseTime(self):
-        """The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
         """
         return self._get_attribute('defaultLeaseTime')
     @DefaultLeaseTime.setter
@@ -50,10 +50,10 @@ class DhcpServerGlobals(Base):
 
     @property
     def MaxLeaseTime(self):
-        """The maximum Life Time length in seconds that will be assigned to a lease.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum Life Time length in seconds that will be assigned to a lease.
         """
         return self._get_attribute('maxLeaseTime')
     @MaxLeaseTime.setter
@@ -62,19 +62,19 @@ class DhcpServerGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PingCheck(self):
-        """When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
         """
         return self._get_attribute('pingCheck')
     @PingCheck.setter
@@ -83,10 +83,10 @@ class DhcpServerGlobals(Base):
 
     @property
     def PingTimeout(self):
-        """The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
         """
         return self._get_attribute('pingTimeout')
     @PingTimeout.setter
@@ -95,10 +95,10 @@ class DhcpServerGlobals(Base):
 
     @property
     def SharedNetwork(self):
-        """When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
         """
         return self._get_attribute('sharedNetwork')
     @SharedNetwork.setter
@@ -106,80 +106,93 @@ class DhcpServerGlobals(Base):
         self._set_attribute('sharedNetwork', value)
 
     def update(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
-        """Updates a child instance of dhcpServerGlobals on the server.
+        """Updates dhcpServerGlobals resource on the server.
 
-        Args:
-            DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
-            MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
-            PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
-            PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
-            SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
+        Args
+        ----
+        - DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
+        - MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
+        - PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
+        - PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
+        - SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
-        """Adds a new dhcpServerGlobals node on the server and retrieves it in this instance.
+        """Adds a new dhcpServerGlobals resource on the server and adds it to the container.
 
-        Args:
-            DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
-            MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
-            PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
-            PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
-            SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
+        Args
+        ----
+        - DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
+        - MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
+        - PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
+        - PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
+        - SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpServerGlobals data using find and the newly added dhcpServerGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpServerGlobals resources using find and the newly added dhcpServerGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpServerGlobals data in this instance from server.
+        """Deletes all the contained dhcpServerGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DefaultLeaseTime=None, MaxLeaseTime=None, ObjectId=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
-        """Finds and retrieves dhcpServerGlobals data from the server.
+        """Finds and retrieves dhcpServerGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpServerGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpServerGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpServerGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpServerGlobals resources from the server.
 
-        Args:
-            DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
-            MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
-            ObjectId (str): Unique identifier for this object
-            PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
-            PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
-            SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
+        Args
+        ----
+        - DefaultLeaseTime (number): The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
+        - MaxLeaseTime (number): The maximum Life Time length in seconds that will be assigned to a lease.
+        - ObjectId (str): Unique identifier for this object
+        - PingCheck (bool): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
+        - PingTimeout (number): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
+        - SharedNetwork (bool): When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
 
-        Returns:
-            self: This instance with matching dhcpServerGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpServerGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpServerGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpServerGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpServerGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EthernetTrafficEndPoint(Base):
     """NOT DEFINED
-    The EthernetTrafficEndPoint class encapsulates a list of ethernetTrafficEndPoint resources that is be managed by the user.
+    The EthernetTrafficEndPoint class encapsulates a list of ethernetTrafficEndPoint resources that are managed by the user.
     A list of resources can be retrieved from the server using the EthernetTrafficEndPoint.find() method.
-    The list can be managed by the user by using the EthernetTrafficEndPoint.add() and EthernetTrafficEndPoint.remove() methods.
+    The list can be managed by using the EthernetTrafficEndPoint.add() and EthernetTrafficEndPoint.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def ArpViaInterface(self):
-        """If selected, ARP request is conveyed through an Interface.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP request is conveyed through an Interface.
         """
         return self._get_attribute('arpViaInterface')
     @ArpViaInterface.setter
@@ -50,10 +50,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def CustomEtherHeaderLength(self):
-        """Specify the Custom Header length in bytes. The default length is 46 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the Custom Header length in bytes. The default length is 46 bytes.
         """
         return self._get_attribute('customEtherHeaderLength')
     @CustomEtherHeaderLength.setter
@@ -62,10 +62,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def CustomEtherHeaderValue(self):
-        """Specify the Custom Header value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the Custom Header value.
         """
         return self._get_attribute('customEtherHeaderValue')
     @CustomEtherHeaderValue.setter
@@ -74,10 +74,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def CustomEtherType(self):
-        """Specify the Custom Ether type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the Custom Ether type.
         """
         return self._get_attribute('customEtherType')
     @CustomEtherType.setter
@@ -86,10 +86,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def EnableMacInMac(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableMacInMac')
     @EnableMacInMac.setter
@@ -98,10 +98,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def EnableVlan(self):
-        """Select this check box to make VLAN available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select this check box to make VLAN available.
         """
         return self._get_attribute('enableVlan')
     @EnableVlan.setter
@@ -110,10 +110,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def GatewayMac(self):
-        """The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         """
         return self._get_attribute('gatewayMac')
     @GatewayMac.setter
@@ -122,10 +122,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def MacAddress(self):
-        """The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -134,10 +134,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def Name(self):
-        """The name of the Traffic Source Endpoint.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the Traffic Source Endpoint.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -146,10 +146,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbDestinamtionMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('pbbDestinamtionMac')
     @PbbDestinamtionMac.setter
@@ -158,10 +158,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbEtherType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)
+        """
+        Returns
+        -------
+        - str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200): NOT DEFINED
         """
         return self._get_attribute('pbbEtherType')
     @PbbEtherType.setter
@@ -170,10 +170,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbIsId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('pbbIsId')
     @PbbIsId.setter
@@ -182,10 +182,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbSourceMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('pbbSourceMac')
     @PbbSourceMac.setter
@@ -194,10 +194,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbVlanId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('pbbVlanId')
     @PbbVlanId.setter
@@ -206,10 +206,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def PbbVlanPcp(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('pbbVlanPcp')
     @PbbVlanPcp.setter
@@ -218,10 +218,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def ProtocolInterface(self):
-        """NOT DEFINED
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -230,10 +230,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def RangeSize(self):
-        """Specify the size of the Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the size of the Range.
         """
         return self._get_attribute('rangeSize')
     @RangeSize.setter
@@ -242,10 +242,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def VlanCount(self):
-        """Specify the VLAN count. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the VLAN count. The default value is 1.
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -254,10 +254,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def VlanId(self):
-        """Specify the VLAN ID (Outer and Inner).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the VLAN ID (Outer and Inner).
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -266,10 +266,10 @@ class EthernetTrafficEndPoint(Base):
 
     @property
     def VlanPriority(self):
-        """Specify the VLAN Priority (Outer and Inner).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the VLAN Priority (Outer and Inner).
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -277,124 +277,137 @@ class EthernetTrafficEndPoint(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of ethernetTrafficEndPoint on the server.
+        """Updates ethernetTrafficEndPoint resource on the server.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
-            CustomEtherHeaderValue (str): Specify the Custom Header value.
-            CustomEtherType (str): Specify the Custom Ether type.
-            EnableMacInMac (bool): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic Source Endpoint.
-            PbbDestinamtionMac (str): NOT DEFINED
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): NOT DEFINED
-            PbbIsId (str): NOT DEFINED
-            PbbSourceMac (str): NOT DEFINED
-            PbbVlanId (str): NOT DEFINED
-            PbbVlanPcp (str): NOT DEFINED
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the Range.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
+        - CustomEtherHeaderValue (str): Specify the Custom Header value.
+        - CustomEtherType (str): Specify the Custom Ether type.
+        - EnableMacInMac (bool): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic Source Endpoint.
+        - PbbDestinamtionMac (str): NOT DEFINED
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): NOT DEFINED
+        - PbbIsId (str): NOT DEFINED
+        - PbbSourceMac (str): NOT DEFINED
+        - PbbVlanId (str): NOT DEFINED
+        - PbbVlanPcp (str): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the Range.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Adds a new ethernetTrafficEndPoint node on the server and retrieves it in this instance.
+        """Adds a new ethernetTrafficEndPoint resource on the server and adds it to the container.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
-            CustomEtherHeaderValue (str): Specify the Custom Header value.
-            CustomEtherType (str): Specify the Custom Ether type.
-            EnableMacInMac (bool): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic Source Endpoint.
-            PbbDestinamtionMac (str): NOT DEFINED
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): NOT DEFINED
-            PbbIsId (str): NOT DEFINED
-            PbbSourceMac (str): NOT DEFINED
-            PbbVlanId (str): NOT DEFINED
-            PbbVlanPcp (str): NOT DEFINED
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the Range.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
+        - CustomEtherHeaderValue (str): Specify the Custom Header value.
+        - CustomEtherType (str): Specify the Custom Ether type.
+        - EnableMacInMac (bool): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic Source Endpoint.
+        - PbbDestinamtionMac (str): NOT DEFINED
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): NOT DEFINED
+        - PbbIsId (str): NOT DEFINED
+        - PbbSourceMac (str): NOT DEFINED
+        - PbbVlanId (str): NOT DEFINED
+        - PbbVlanPcp (str): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the Range.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Returns:
-            self: This instance with all currently retrieved ethernetTrafficEndPoint data using find and the newly added ethernetTrafficEndPoint data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ethernetTrafficEndPoint resources using find and the newly added ethernetTrafficEndPoint resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ethernetTrafficEndPoint data in this instance from server.
+        """Deletes all the contained ethernetTrafficEndPoint resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves ethernetTrafficEndPoint data from the server.
+        """Finds and retrieves ethernetTrafficEndPoint resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ethernetTrafficEndPoint data from the server.
-        By default the find method takes no parameters and will retrieve all ethernetTrafficEndPoint data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernetTrafficEndPoint resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ethernetTrafficEndPoint resources from the server.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
-            CustomEtherHeaderValue (str): Specify the Custom Header value.
-            CustomEtherType (str): Specify the Custom Ether type.
-            EnableMacInMac (bool): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic Source Endpoint.
-            PbbDestinamtionMac (str): NOT DEFINED
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): NOT DEFINED
-            PbbIsId (str): NOT DEFINED
-            PbbSourceMac (str): NOT DEFINED
-            PbbVlanId (str): NOT DEFINED
-            PbbVlanPcp (str): NOT DEFINED
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the Range.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
+        - CustomEtherHeaderValue (str): Specify the Custom Header value.
+        - CustomEtherType (str): Specify the Custom Ether type.
+        - EnableMacInMac (bool): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic Source Endpoint.
+        - PbbDestinamtionMac (str): NOT DEFINED
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): NOT DEFINED
+        - PbbIsId (str): NOT DEFINED
+        - PbbSourceMac (str): NOT DEFINED
+        - PbbVlanId (str): NOT DEFINED
+        - PbbVlanPcp (str): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the Range.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Returns:
-            self: This instance with matching ethernetTrafficEndPoint data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ethernetTrafficEndPoint resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ethernetTrafficEndPoint data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ethernetTrafficEndPoint data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ethernetTrafficEndPoint resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

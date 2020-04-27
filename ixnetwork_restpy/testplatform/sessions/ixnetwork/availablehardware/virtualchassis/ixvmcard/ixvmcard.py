@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IxVmCard(Base):
     """Retrieves the list of cards existent on the virtual chassis
-    The IxVmCard class encapsulates a list of ixVmCard resources that is be managed by the user.
+    The IxVmCard class encapsulates a list of ixVmCard resources that are managed by the user.
     A list of resources can be retrieved from the server using the IxVmCard.find() method.
-    The list can be managed by the user by using the IxVmCard.add() and IxVmCard.remove() methods.
+    The list can be managed by using the IxVmCard.add() and IxVmCard.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class IxVmCard(Base):
 
     @property
     def IxVmPort(self):
-        """An instance of the IxVmPort class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport.IxVmPort): An instance of the IxVmPort class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport.IxVmPort)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport import IxVmPort
         return IxVmPort(self)
 
     @property
     def CardId(self):
-        """Represents slot on the chassis
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents slot on the chassis
         """
         return self._get_attribute('cardId')
     @CardId.setter
@@ -64,10 +64,10 @@ class IxVmCard(Base):
 
     @property
     def CardName(self):
-        """Represents the card name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the card name
         """
         return self._get_attribute('cardName')
     @CardName.setter
@@ -76,19 +76,19 @@ class IxVmCard(Base):
 
     @property
     def CardState(self):
-        """Represents the card state
-
-        Returns:
-            str(cardDisconnected|cardIpInUse|cardOK|cardRemoved|cardUnableToConnect|cardUnitialized|cardUnknownError|cardUnsynchronized|cardVersionMismatch)
+        """
+        Returns
+        -------
+        - str(cardDisconnected | cardIpInUse | cardOK | cardRemoved | cardUnableToConnect | cardUnitialized | cardUnknownError | cardUnsynchronized | cardVersionMismatch): Represents the card state
         """
         return self._get_attribute('cardState')
 
     @property
     def KeepAliveTimeout(self):
-        """Represents the keepalive timeout
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Represents the keepalive timeout
         """
         return self._get_attribute('keepAliveTimeout')
     @KeepAliveTimeout.setter
@@ -97,10 +97,10 @@ class IxVmCard(Base):
 
     @property
     def ManagementIp(self):
-        """Represents the management Ip
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the management Ip
         """
         return self._get_attribute('managementIp')
     @ManagementIp.setter
@@ -108,77 +108,90 @@ class IxVmCard(Base):
         self._set_attribute('managementIp', value)
 
     def update(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
-        """Updates a child instance of ixVmCard on the server.
+        """Updates ixVmCard resource on the server.
 
-        Args:
-            CardId (str): Represents slot on the chassis
-            CardName (str): Represents the card name
-            KeepAliveTimeout (number): Represents the keepalive timeout
-            ManagementIp (str): Represents the management Ip
+        Args
+        ----
+        - CardId (str): Represents slot on the chassis
+        - CardName (str): Represents the card name
+        - KeepAliveTimeout (number): Represents the keepalive timeout
+        - ManagementIp (str): Represents the management Ip
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
-        """Adds a new ixVmCard node on the server and retrieves it in this instance.
+        """Adds a new ixVmCard resource on the server and adds it to the container.
 
-        Args:
-            CardId (str): Represents slot on the chassis
-            CardName (str): Represents the card name
-            KeepAliveTimeout (number): Represents the keepalive timeout
-            ManagementIp (str): Represents the management Ip
+        Args
+        ----
+        - CardId (str): Represents slot on the chassis
+        - CardName (str): Represents the card name
+        - KeepAliveTimeout (number): Represents the keepalive timeout
+        - ManagementIp (str): Represents the management Ip
 
-        Returns:
-            self: This instance with all currently retrieved ixVmCard data using find and the newly added ixVmCard data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ixVmCard resources using find and the newly added ixVmCard resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ixVmCard data in this instance from server.
+        """Deletes all the contained ixVmCard resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CardId=None, CardName=None, CardState=None, KeepAliveTimeout=None, ManagementIp=None):
-        """Finds and retrieves ixVmCard data from the server.
+        """Finds and retrieves ixVmCard resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ixVmCard data from the server.
-        By default the find method takes no parameters and will retrieve all ixVmCard data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ixVmCard resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ixVmCard resources from the server.
 
-        Args:
-            CardId (str): Represents slot on the chassis
-            CardName (str): Represents the card name
-            CardState (str(cardDisconnected|cardIpInUse|cardOK|cardRemoved|cardUnableToConnect|cardUnitialized|cardUnknownError|cardUnsynchronized|cardVersionMismatch)): Represents the card state
-            KeepAliveTimeout (number): Represents the keepalive timeout
-            ManagementIp (str): Represents the management Ip
+        Args
+        ----
+        - CardId (str): Represents slot on the chassis
+        - CardName (str): Represents the card name
+        - CardState (str(cardDisconnected | cardIpInUse | cardOK | cardRemoved | cardUnableToConnect | cardUnitialized | cardUnknownError | cardUnsynchronized | cardVersionMismatch)): Represents the card state
+        - KeepAliveTimeout (number): Represents the keepalive timeout
+        - ManagementIp (str): Represents the management Ip
 
-        Returns:
-            self: This instance with matching ixVmCard data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ixVmCard resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ixVmCard data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ixVmCard data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ixVmCard resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RangeList(Base):
     """This object provides different options for UDF in Range list Type.
-    The RangeList class encapsulates a list of rangeList resources that is managed by the system.
+    The RangeList class encapsulates a list of rangeList resources that are managed by the system.
     A list of resources can be retrieved from the server using the RangeList.find() method.
     """
 
@@ -37,19 +37,19 @@ class RangeList(Base):
 
     @property
     def AvailableWidths(self):
-        """Species all the possible widths available for a UDF in particular Type.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Species all the possible widths available for a UDF in particular Type.
         """
         return self._get_attribute('availableWidths')
 
     @property
     def BitOffset(self):
-        """Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
         return self._get_attribute('bitOffset')
     @BitOffset.setter
@@ -58,10 +58,10 @@ class RangeList(Base):
 
     @property
     def StartValueCountStepList(self):
-        """Specifies the Start Value, Count and Step Value of the UDF.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Specifies the Start Value, Count and Step Value of the UDF.
         """
         return self._get_attribute('startValueCountStepList')
     @StartValueCountStepList.setter
@@ -70,10 +70,10 @@ class RangeList(Base):
 
     @property
     def Width(self):
-        """Specifies the width of the UDF.
-
-        Returns:
-            str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)
+        """
+        Returns
+        -------
+        - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
         return self._get_attribute('width')
     @Width.setter
@@ -81,49 +81,58 @@ class RangeList(Base):
         self._set_attribute('width', value)
 
     def update(self, BitOffset=None, StartValueCountStepList=None, Width=None):
-        """Updates a child instance of rangeList on the server.
+        """Updates rangeList resource on the server.
 
-        Args:
-            BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-            StartValueCountStepList (list(number)): Specifies the Start Value, Count and Step Value of the UDF.
-            Width (str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)): Specifies the width of the UDF.
+        Args
+        ----
+        - BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
+        - StartValueCountStepList (list(number)): Specifies the Start Value, Count and Step Value of the UDF.
+        - Width (str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9)): Specifies the width of the UDF.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableWidths=None, BitOffset=None, StartValueCountStepList=None, Width=None):
-        """Finds and retrieves rangeList data from the server.
+        """Finds and retrieves rangeList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rangeList data from the server.
-        By default the find method takes no parameters and will retrieve all rangeList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rangeList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rangeList resources from the server.
 
-        Args:
-            AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
-            BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
-            StartValueCountStepList (list(number)): Specifies the Start Value, Count and Step Value of the UDF.
-            Width (str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)): Specifies the width of the UDF.
+        Args
+        ----
+        - AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
+        - BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
+        - StartValueCountStepList (list(number)): Specifies the Start Value, Count and Step Value of the UDF.
+        - Width (str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9)): Specifies the width of the UDF.
 
-        Returns:
-            self: This instance with matching rangeList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rangeList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rangeList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rangeList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rangeList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

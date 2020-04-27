@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ExternalLink(Base):
     """Links to NetTopologies with each other
-    The ExternalLink class encapsulates a list of externalLink resources that is be managed by the user.
+    The ExternalLink class encapsulates a list of externalLink resources that are managed by the user.
     A list of resources can be retrieved from the server using the ExternalLink.find() method.
-    The list can be managed by the user by using the ExternalLink.add() and ExternalLink.remove() methods.
+    The list can be managed by using the ExternalLink.add() and ExternalLink.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class ExternalLink(Base):
 
     @property
     def FromNodeIndex(self):
-        """Index of the originating node as defined in fromNetworkTopology
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Index of the originating node as defined in fromNetworkTopology
         """
         return self._get_attribute('fromNodeIndex')
     @FromNodeIndex.setter
@@ -50,10 +50,10 @@ class ExternalLink(Base):
 
     @property
     def ToNetworkTopology(self):
-        """Network Topology this link is pointing to
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Network Topology this link is pointing to
         """
         return self._get_attribute('toNetworkTopology')
     @ToNetworkTopology.setter
@@ -62,10 +62,10 @@ class ExternalLink(Base):
 
     @property
     def ToNodeIndex(self):
-        """Index of the target node as defined in toNetworkTopology
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Index of the target node as defined in toNetworkTopology
         """
         return self._get_attribute('toNodeIndex')
     @ToNodeIndex.setter
@@ -73,73 +73,86 @@ class ExternalLink(Base):
         self._set_attribute('toNodeIndex', value)
 
     def update(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
-        """Updates a child instance of externalLink on the server.
+        """Updates externalLink resource on the server.
 
-        Args:
-            FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-            ToNetworkTopology (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): Network Topology this link is pointing to
-            ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
+        Args
+        ----
+        - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
-        """Adds a new externalLink node on the server and retrieves it in this instance.
+        """Adds a new externalLink resource on the server and adds it to the container.
 
-        Args:
-            FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-            ToNetworkTopology (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): Network Topology this link is pointing to
-            ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
+        Args
+        ----
+        - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
-        Returns:
-            self: This instance with all currently retrieved externalLink data using find and the newly added externalLink data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved externalLink resources using find and the newly added externalLink resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the externalLink data in this instance from server.
+        """Deletes all the contained externalLink resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
-        """Finds and retrieves externalLink data from the server.
+        """Finds and retrieves externalLink resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve externalLink data from the server.
-        By default the find method takes no parameters and will retrieve all externalLink data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve externalLink resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all externalLink resources from the server.
 
-        Args:
-            FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-            ToNetworkTopology (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): Network Topology this link is pointing to
-            ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
+        Args
+        ----
+        - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
-        Returns:
-            self: This instance with matching externalLink data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching externalLink resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of externalLink data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the externalLink data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the externalLink resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

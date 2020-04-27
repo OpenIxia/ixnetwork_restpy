@@ -36,24 +36,24 @@ class Bfd(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_3118064fd0c46afb99a0e50b97a3674b.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_3118064fd0c46afb99a0e50b97a3674b.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_3118064fd0c46afb99a0e50b97a3674b import Router
         return Router(self)
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class Bfd(Base):
 
     @property
     def IntervalValue(self):
-        """Interval Value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Interval Value
         """
         return self._get_attribute('intervalValue')
     @IntervalValue.setter
@@ -74,10 +74,10 @@ class Bfd(Base):
 
     @property
     def PacketsPerInterval(self):
-        """Number of BFD control packets per interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of BFD control packets per interval.
         """
         return self._get_attribute('packetsPerInterval')
     @PacketsPerInterval.setter
@@ -86,34 +86,37 @@ class Bfd(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the BFD protocol.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the BFD protocol.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None, IntervalValue=None, PacketsPerInterval=None):
-        """Updates a child instance of bfd on the server.
+        """Updates bfd resource on the server.
 
-        Args:
-            Enabled (bool): Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
-            IntervalValue (number): Interval Value
-            PacketsPerInterval (number): Number of BFD control packets per interval.
+        Args
+        ----
+        - Enabled (bool): Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
+        - IntervalValue (number): Interval Value
+        - PacketsPerInterval (number): Number of BFD control packets per interval.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the BFD protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -123,9 +126,10 @@ class Bfd(Base):
 
         Stops the BFD protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

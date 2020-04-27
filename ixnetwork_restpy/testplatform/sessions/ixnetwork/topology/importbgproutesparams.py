@@ -36,10 +36,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def BestRoutes(self):
-        """Import only the best routes (provided route file has this information).
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Import only the best routes (provided route file has this information).
         """
         return self._get_attribute('bestRoutes')
     @BestRoutes.setter
@@ -48,10 +48,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def DataFile(self):
-        """Select source file having route information.
-
-        Returns:
-            obj(ixnetwork_restpy.files.Files)
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.files.Files): Select source file having route information.
         """
         return self._get_attribute('dataFile')
     @DataFile.setter
@@ -60,10 +60,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def FileType(self):
-        """Import routes file type. Route import may fail in file type is not matching with the file being imported.
-
-        Returns:
-            str(csv|juniper|cisco)
+        """
+        Returns
+        -------
+        - str(csv | juniper | cisco): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         """
         return self._get_attribute('fileType')
     @FileType.setter
@@ -72,10 +72,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def NextHop(self):
-        """Option for setting Next Hop modification type.
-
-        Returns:
-            str(overwriteTestersAddress|preserveFromFile)
+        """
+        Returns
+        -------
+        - str(overwriteTestersAddress | preserveFromFile): Option for setting Next Hop modification type.
         """
         return self._get_attribute('nextHop')
     @NextHop.setter
@@ -84,10 +84,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def RouteDistributionType(self):
-        """Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
-
-        Returns:
-            str(roundRobin|replicate)
+        """
+        Returns
+        -------
+        - str(roundRobin | replicate): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         """
         return self._get_attribute('routeDistributionType')
     @RouteDistributionType.setter
@@ -96,10 +96,10 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def RouteLimit(self):
-        """Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
         """
         return self._get_attribute('routeLimit')
     @RouteLimit.setter
@@ -107,29 +107,32 @@ class ImportBgpRoutesParams(Base):
         self._set_attribute('routeLimit', value)
 
     def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
-        """Updates a child instance of importBgpRoutesParams on the server.
+        """Updates importBgpRoutesParams resource on the server.
 
-        Args:
-            BestRoutes (bool): Import only the best routes (provided route file has this information).
-            DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
-            FileType (str(csv|juniper|cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
-            NextHop (str(overwriteTestersAddress|preserveFromFile)): Option for setting Next Hop modification type.
-            RouteDistributionType (str(roundRobin|replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
-            RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
+        Args
+        ----
+        - BestRoutes (bool): Import only the best routes (provided route file has this information).
+        - DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
+        - FileType (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - NextHop (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
+        - RouteDistributionType (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+        - RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def ImportBgpRoutes(self):
         """Executes the importBgpRoutes operation on the server.
 
         Import IPv4 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('importBgpRoutes', payload=payload, response_object=None)

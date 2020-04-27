@@ -37,9 +37,9 @@ class Fcoe(Base):
     @property
     def EnablePFCPauseDelay(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enablePFCPauseDelay')
     @EnablePFCPauseDelay.setter
@@ -49,9 +49,9 @@ class Fcoe(Base):
     @property
     def FlowControlType(self):
         """
-
-        Returns:
-            str(ieee802.1Qbb|ieee802.3x)
+        Returns
+        -------
+        - str(ieee802.1Qbb | ieee802.3x): 
         """
         return self._get_attribute('flowControlType')
     @FlowControlType.setter
@@ -61,9 +61,9 @@ class Fcoe(Base):
     @property
     def PfcPauseDelay(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('pfcPauseDelay')
     @PfcPauseDelay.setter
@@ -73,9 +73,9 @@ class Fcoe(Base):
     @property
     def PfcPriorityGroups(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('pfcPriorityGroups')
     @PfcPriorityGroups.setter
@@ -85,9 +85,9 @@ class Fcoe(Base):
     @property
     def PriorityGroupSize(self):
         """
-
-        Returns:
-            str(priorityGroupSize-4|priorityGroupSize-8)
+        Returns
+        -------
+        - str(priorityGroupSize-4 | priorityGroupSize-8): 
         """
         return self._get_attribute('priorityGroupSize')
     @PriorityGroupSize.setter
@@ -97,9 +97,9 @@ class Fcoe(Base):
     @property
     def SupportDataCenterMode(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('supportDataCenterMode')
     @SupportDataCenterMode.setter
@@ -107,17 +107,19 @@ class Fcoe(Base):
         self._set_attribute('supportDataCenterMode', value)
 
     def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
-        """Updates a child instance of fcoe on the server.
+        """Updates fcoe resource on the server.
 
-        Args:
-            EnablePFCPauseDelay (bool): 
-            FlowControlType (str(ieee802.1Qbb|ieee802.3x)): 
-            PfcPauseDelay (number): 
-            PfcPriorityGroups (list(str)): 
-            PriorityGroupSize (str(priorityGroupSize-4|priorityGroupSize-8)): 
-            SupportDataCenterMode (bool): 
+        Args
+        ----
+        - EnablePFCPauseDelay (bool): 
+        - FlowControlType (str(ieee802.1Qbb | ieee802.3x)): 
+        - PfcPauseDelay (number): 
+        - PfcPriorityGroups (list(str)): 
+        - PriorityGroupSize (str(priorityGroupSize-4 | priorityGroupSize-8)): 
+        - SupportDataCenterMode (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

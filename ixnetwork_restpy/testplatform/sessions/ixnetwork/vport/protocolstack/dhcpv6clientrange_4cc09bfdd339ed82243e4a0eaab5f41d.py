@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6ClientRange(Base):
     """Manages a range of IP addresses that are configured using DHCP protocol.
-    The Dhcpv6ClientRange class encapsulates a list of dhcpv6ClientRange resources that is be managed by the user.
+    The Dhcpv6ClientRange class encapsulates a list of dhcpv6ClientRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6ClientRange.find() method.
-    The list can be managed by the user by using the Dhcpv6ClientRange.add() and Dhcpv6ClientRange.remove() methods.
+    The list can be managed by using the Dhcpv6ClientRange.add() and Dhcpv6ClientRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Dhcp6DuidEnterpriseId(self):
-        """The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         """
         return self._get_attribute('dhcp6DuidEnterpriseId')
     @Dhcp6DuidEnterpriseId.setter
@@ -50,10 +50,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Dhcp6DuidType(self):
-        """DHCP Unique Identifier Type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: DHCP Unique Identifier Type.
         """
         return self._get_attribute('dhcp6DuidType')
     @Dhcp6DuidType.setter
@@ -62,10 +62,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Dhcp6DuidVendorId(self):
-        """The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
         """
         return self._get_attribute('dhcp6DuidVendorId')
     @Dhcp6DuidVendorId.setter
@@ -74,10 +74,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Dhcp6DuidVendorIdIncrement(self):
-        """The value by which the VENDOR-ID is incremented for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which the VENDOR-ID is incremented for each DHCP client.
         """
         return self._get_attribute('dhcp6DuidVendorIdIncrement')
     @Dhcp6DuidVendorIdIncrement.setter
@@ -86,10 +86,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Dhcp6ParamRequestList(self):
-        """The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         """
         return self._get_attribute('dhcp6ParamRequestList')
     @Dhcp6ParamRequestList.setter
@@ -98,10 +98,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def IpType(self):
-        """Defines the version of IP address style to be used for describing the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the version of IP address style to be used for describing the range.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -122,10 +122,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -134,19 +134,19 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def UseVendorClassId(self):
-        """Enables use of the Vendor Class Identifier configured in the field below.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables use of the Vendor Class Identifier configured in the field below.
         """
         return self._get_attribute('useVendorClassId')
     @UseVendorClassId.setter
@@ -155,10 +155,10 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def VendorClassId(self):
-        """This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
         """
         return self._get_attribute('vendorClassId')
     @VendorClassId.setter
@@ -166,96 +166,109 @@ class Dhcpv6ClientRange(Base):
         self._set_attribute('vendorClassId', value)
 
     def update(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
-        """Updates a child instance of dhcpv6ClientRange on the server.
+        """Updates dhcpv6ClientRange resource on the server.
 
-        Args:
-            Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-            Dhcp6DuidType (str): DHCP Unique Identifier Type.
-            Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-            Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
-            Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the version of IP address style to be used for describing the range.
-            Name (str): Name of range
-            UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
-            VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
+        Args
+        ----
+        - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
+        - Dhcp6DuidType (str): DHCP Unique Identifier Type.
+        - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
+        - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Name (str): Name of range
+        - UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
+        - VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
-        """Adds a new dhcpv6ClientRange node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6ClientRange resource on the server and adds it to the container.
 
-        Args:
-            Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-            Dhcp6DuidType (str): DHCP Unique Identifier Type.
-            Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-            Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
-            Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the version of IP address style to be used for describing the range.
-            Name (str): Name of range
-            UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
-            VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
+        Args
+        ----
+        - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
+        - Dhcp6DuidType (str): DHCP Unique Identifier Type.
+        - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
+        - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Name (str): Name of range
+        - UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
+        - VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6ClientRange data using find and the newly added dhcpv6ClientRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6ClientRange resources using find and the newly added dhcpv6ClientRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6ClientRange data in this instance from server.
+        """Deletes all the contained dhcpv6ClientRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, ObjectId=None, UseVendorClassId=None, VendorClassId=None):
-        """Finds and retrieves dhcpv6ClientRange data from the server.
+        """Finds and retrieves dhcpv6ClientRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6ClientRange data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6ClientRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6ClientRange resources from the server.
 
-        Args:
-            Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-            Dhcp6DuidType (str): DHCP Unique Identifier Type.
-            Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-            Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
-            Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the version of IP address style to be used for describing the range.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
-            VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
+        Args
+        ----
+        - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
+        - Dhcp6DuidType (str): DHCP Unique Identifier Type.
+        - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
+        - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
+        - VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
 
-        Returns:
-            self: This instance with matching dhcpv6ClientRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6ClientRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6ClientRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6ClientRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6ClientRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -264,14 +277,15 @@ class Dhcpv6ClientRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -283,16 +297,15 @@ class Dhcpv6ClientRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -304,16 +317,15 @@ class Dhcpv6ClientRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

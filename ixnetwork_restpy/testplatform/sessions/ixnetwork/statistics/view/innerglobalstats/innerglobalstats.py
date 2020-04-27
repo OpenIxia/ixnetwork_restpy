@@ -36,18 +36,18 @@ class InnerGlobalStats(Base):
 
     @property
     def ColumnCaptions(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): NOT DEFINED
         """
         return self._get_attribute('columnCaptions')
 
     @property
     def RowValues(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): NOT DEFINED
         """
         return self._get_attribute('rowValues')

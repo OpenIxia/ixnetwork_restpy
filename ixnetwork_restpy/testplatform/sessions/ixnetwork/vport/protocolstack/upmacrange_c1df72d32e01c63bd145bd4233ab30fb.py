@@ -36,10 +36,10 @@ class UpMacRange(Base):
 
     @property
     def Count(self):
-        """The total number of interfaces to be created for the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of interfaces to be created for the range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -48,10 +48,10 @@ class UpMacRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class UpMacRange(Base):
 
     @property
     def IncrementBy(self):
-        """Incrementor used when the plugin creates a range of MACs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Incrementor used when the plugin creates a range of MACs.
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -72,10 +72,10 @@ class UpMacRange(Base):
 
     @property
     def Mac(self):
-        """Base value used when the plugin creates a MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base value used when the plugin creates a MAC address.
         """
         return self._get_attribute('mac')
     @Mac.setter
@@ -84,10 +84,10 @@ class UpMacRange(Base):
 
     @property
     def Mtu(self):
-        """Maximum Transmission Unit. The largest packet that a given network medium can carry. Ethernet, for example, has a fixed MTU of 1500 bytes without and 9500 bytes with Jumbo frame support. ATM has a fixed MTU of 48 bytes and PPP has a negotiated MTU that is usually between 500 and 2000 bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum Transmission Unit. The largest packet that a given network medium can carry. Ethernet, for example, has a fixed MTU of 1500 bytes without and 9500 bytes with Jumbo frame support. ATM has a fixed MTU of 48 bytes and PPP has a negotiated MTU that is usually between 500 and 2000 bytes.
         """
         return self._get_attribute('mtu')
     @Mtu.setter
@@ -96,10 +96,10 @@ class UpMacRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -108,42 +108,45 @@ class UpMacRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, Count=None, Enabled=None, IncrementBy=None, Mac=None, Mtu=None, Name=None):
-        """Updates a child instance of upMacRange on the server.
+        """Updates upMacRange resource on the server.
 
-        Args:
-            Count (number): The total number of interfaces to be created for the range.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IncrementBy (str): Incrementor used when the plugin creates a range of MACs.
-            Mac (str): Base value used when the plugin creates a MAC address.
-            Mtu (number): Maximum Transmission Unit. The largest packet that a given network medium can carry. Ethernet, for example, has a fixed MTU of 1500 bytes without and 9500 bytes with Jumbo frame support. ATM has a fixed MTU of 48 bytes and PPP has a negotiated MTU that is usually between 500 and 2000 bytes.
-            Name (str): Name of range
+        Args
+        ----
+        - Count (number): The total number of interfaces to be created for the range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IncrementBy (str): Incrementor used when the plugin creates a range of MACs.
+        - Mac (str): Base value used when the plugin creates a MAC address.
+        - Mtu (number): Maximum Transmission Unit. The largest packet that a given network medium can carry. Ethernet, for example, has a fixed MTU of 1500 bytes without and 9500 bytes with Jumbo frame support. ATM has a fixed MTU of 48 bytes and PPP has a negotiated MTU that is usually between 500 and 2000 bytes.
+        - Name (str): Name of range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -155,16 +158,15 @@ class UpMacRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -176,16 +178,15 @@ class UpMacRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

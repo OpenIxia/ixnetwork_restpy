@@ -36,24 +36,24 @@ class Match(Base):
 
     @property
     def MatchFields(self):
-        """An instance of the MatchFields class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287.MatchFields): An instance of the MatchFields class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287.MatchFields)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287 import MatchFields
         return MatchFields(self)._select()
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -62,10 +62,10 @@ class Match(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -74,10 +74,10 @@ class Match(Base):
 
     @property
     def ExperimenterField(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterField')
     @ExperimenterField.setter
@@ -86,10 +86,10 @@ class Match(Base):
 
     @property
     def ExperimenterHasMask(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('experimenterHasMask')
     @ExperimenterHasMask.setter
@@ -98,10 +98,10 @@ class Match(Base):
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -109,16 +109,18 @@ class Match(Base):
         self._set_attribute('experimenterId', value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
-        """Updates a child instance of match on the server.
+        """Updates match resource on the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterField (number): NOT DEFINED
-            ExperimenterHasMask (bool): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterField (number): NOT DEFINED
+        - ExperimenterHasMask (bool): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

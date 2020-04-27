@@ -36,10 +36,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvDecimalPrecision(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('csvDecimalPrecision')
     @CsvDecimalPrecision.setter
@@ -48,10 +48,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvDumpTxPortLabelMap(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('csvDumpTxPortLabelMap')
     @CsvDumpTxPortLabelMap.setter
@@ -60,10 +60,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvFormatTimestamp(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('csvFormatTimestamp')
     @CsvFormatTimestamp.setter
@@ -72,10 +72,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvLocation(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('csvLocation')
     @CsvLocation.setter
@@ -85,9 +85,9 @@ class CsvSnapshot(Base):
     @property
     def CsvName(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('csvName')
     @CsvName.setter
@@ -96,10 +96,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvStringQuotes(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('csvStringQuotes')
     @CsvStringQuotes.setter
@@ -108,10 +108,10 @@ class CsvSnapshot(Base):
 
     @property
     def CsvSupportsCSVSorting(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('csvSupportsCSVSorting')
     @CsvSupportsCSVSorting.setter
@@ -120,10 +120,10 @@ class CsvSnapshot(Base):
 
     @property
     def NextGenRefreshBeforeSnapshot(self):
-        """DEPRECATED nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
         """
         return self._get_attribute('nextGenRefreshBeforeSnapshot')
     @NextGenRefreshBeforeSnapshot.setter
@@ -133,9 +133,9 @@ class CsvSnapshot(Base):
     @property
     def OpenViewer(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('openViewer')
     @OpenViewer.setter
@@ -144,19 +144,19 @@ class CsvSnapshot(Base):
 
     @property
     def SnapshotSettingsName(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('snapshotSettingsName')
 
     @property
     def SnapshotViewContents(self):
-        """NOT DEFINED
-
-        Returns:
-            str(allPages|currentPage)
+        """
+        Returns
+        -------
+        - str(allPages | currentPage): NOT DEFINED
         """
         return self._get_attribute('snapshotViewContents')
     @SnapshotViewContents.setter
@@ -165,10 +165,10 @@ class CsvSnapshot(Base):
 
     @property
     def SnapshotViewCsvGenerationMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(appendCSVFile|newCSVFile|overwriteCSVFile)
+        """
+        Returns
+        -------
+        - str(appendCSVFile | newCSVFile | overwriteCSVFile): NOT DEFINED
         """
         return self._get_attribute('snapshotViewCsvGenerationMode')
     @SnapshotViewCsvGenerationMode.setter
@@ -177,10 +177,10 @@ class CsvSnapshot(Base):
 
     @property
     def Views(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=view])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view]): NOT DEFINED
         """
         return self._get_attribute('views')
     @Views.setter
@@ -188,35 +188,38 @@ class CsvSnapshot(Base):
         self._set_attribute('views', value)
 
     def update(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
-        """Updates a child instance of csvSnapshot on the server.
+        """Updates csvSnapshot resource on the server.
 
-        Args:
-            CsvDecimalPrecision (number): NOT DEFINED
-            CsvDumpTxPortLabelMap (bool): NOT DEFINED
-            CsvFormatTimestamp (bool): NOT DEFINED
-            CsvLocation (str): NOT DEFINED
-            CsvName (str): 
-            CsvStringQuotes (bool): NOT DEFINED
-            CsvSupportsCSVSorting (bool): NOT DEFINED
-            NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
-            OpenViewer (bool): 
-            SnapshotViewContents (str(allPages|currentPage)): NOT DEFINED
-            SnapshotViewCsvGenerationMode (str(appendCSVFile|newCSVFile|overwriteCSVFile)): NOT DEFINED
-            Views (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=view])): NOT DEFINED
+        Args
+        ----
+        - CsvDecimalPrecision (number): NOT DEFINED
+        - CsvDumpTxPortLabelMap (bool): NOT DEFINED
+        - CsvFormatTimestamp (bool): NOT DEFINED
+        - CsvLocation (str): NOT DEFINED
+        - CsvName (str): 
+        - CsvStringQuotes (bool): NOT DEFINED
+        - CsvSupportsCSVSorting (bool): NOT DEFINED
+        - NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
+        - OpenViewer (bool): 
+        - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
+        - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
+        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view])): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def ResetToDefaults(self):
         """Executes the resetToDefaults operation on the server.
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('resetToDefaults', payload=payload, response_object=None)
@@ -226,9 +229,10 @@ class CsvSnapshot(Base):
 
         Takes CSV Snapshot. The views and other settings must be set before the call using the /statistics/csvSnapshot attributes.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('takeCsvSnapshot', payload=payload, response_object=None)

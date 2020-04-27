@@ -36,24 +36,24 @@ class AppTypeRef(Base):
 
     @property
     def NacApps(self):
-        """An instance of the NacApps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps): An instance of the NacApps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
         return NacApps(self)
 
     @property
     def Name(self):
-        """AppType Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AppType Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -62,19 +62,19 @@ class AppTypeRef(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """AppType ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: AppType ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -82,13 +82,15 @@ class AppTypeRef(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of appTypeRef on the server.
+        """Updates appTypeRef resource on the server.
 
-        Args:
-            Name (str): AppType Name.
-            Value (number): AppType ID.
+        Args
+        ----
+        - Name (str): AppType Name.
+        - Value (number): AppType ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

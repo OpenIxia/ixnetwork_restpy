@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class LnsCpfCapacity(Base):
     """
-    The LnsCpfCapacity class encapsulates a list of lnsCpfCapacity resources that is be managed by the user.
+    The LnsCpfCapacity class encapsulates a list of lnsCpfCapacity resources that are managed by the user.
     A list of resources can be retrieved from the server using the LnsCpfCapacity.find() method.
-    The list can be managed by the user by using the LnsCpfCapacity.add() and LnsCpfCapacity.remove() methods.
+    The list can be managed by using the LnsCpfCapacity.add() and LnsCpfCapacity.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class LnsCpfCapacity(Base):
 
     @property
     def Results(self):
-        """An instance of the Results class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_0f2f6d4a16314a06f315d84729989f63.Results): An instance of the Results class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_0f2f6d4a16314a06f315d84729989f63.Results)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_0f2f6d4a16314a06f315d84729989f63 import Results
         return Results(self)._select()
 
     @property
     def TestConfig(self):
-        """An instance of the TestConfig class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_e0b0986e9c429993cecb79414afd3322.TestConfig): An instance of the TestConfig class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_e0b0986e9c429993cecb79414afd3322.TestConfig)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_e0b0986e9c429993cecb79414afd3322 import TestConfig
         return TestConfig(self)._select()
 
     @property
     def ForceApplyQTConfig(self):
-        """Apply QT config
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply QT config
         """
         return self._get_attribute('forceApplyQTConfig')
     @ForceApplyQTConfig.setter
@@ -78,10 +78,10 @@ class LnsCpfCapacity(Base):
 
     @property
     def InputParameters(self):
-        """Input Parameters
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Input Parameters
         """
         return self._get_attribute('inputParameters')
     @InputParameters.setter
@@ -90,10 +90,10 @@ class LnsCpfCapacity(Base):
 
     @property
     def Mode(self):
-        """Test mode
-
-        Returns:
-            str(existingMode|newMode)
+        """
+        Returns
+        -------
+        - str(existingMode | newMode): Test mode
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -102,10 +102,10 @@ class LnsCpfCapacity(Base):
 
     @property
     def Name(self):
-        """Test name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test name
         """
         return self._get_attribute('name')
     @Name.setter
@@ -113,77 +113,90 @@ class LnsCpfCapacity(Base):
         self._set_attribute('name', value)
 
     def update(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Updates a child instance of lnsCpfCapacity on the server.
+        """Updates lnsCpfCapacity resource on the server.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Adds a new lnsCpfCapacity node on the server and retrieves it in this instance.
+        """Adds a new lnsCpfCapacity resource on the server and adds it to the container.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Returns:
-            self: This instance with all currently retrieved lnsCpfCapacity data using find and the newly added lnsCpfCapacity data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved lnsCpfCapacity resources using find and the newly added lnsCpfCapacity resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the lnsCpfCapacity data in this instance from server.
+        """Deletes all the contained lnsCpfCapacity resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Finds and retrieves lnsCpfCapacity data from the server.
+        """Finds and retrieves lnsCpfCapacity resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lnsCpfCapacity data from the server.
-        By default the find method takes no parameters and will retrieve all lnsCpfCapacity data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lnsCpfCapacity resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lnsCpfCapacity resources from the server.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Returns:
-            self: This instance with matching lnsCpfCapacity data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lnsCpfCapacity resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lnsCpfCapacity data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lnsCpfCapacity data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lnsCpfCapacity resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -192,9 +205,10 @@ class LnsCpfCapacity(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -202,9 +216,10 @@ class LnsCpfCapacity(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -212,12 +227,10 @@ class LnsCpfCapacity(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -227,9 +240,10 @@ class LnsCpfCapacity(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -239,12 +253,10 @@ class LnsCpfCapacity(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -254,24 +266,17 @@ class LnsCpfCapacity(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -283,18 +288,16 @@ class LnsCpfCapacity(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -306,9 +309,10 @@ class LnsCpfCapacity(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -318,12 +322,10 @@ class LnsCpfCapacity(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

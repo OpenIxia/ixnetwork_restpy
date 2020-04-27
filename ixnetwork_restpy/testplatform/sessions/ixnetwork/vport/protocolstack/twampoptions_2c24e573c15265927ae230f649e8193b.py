@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TwampOptions(Base):
     """Portgroup options for the Twamp extension plug-in.
-    The TwampOptions class encapsulates a list of twampOptions resources that is be managed by the user.
+    The TwampOptions class encapsulates a list of twampOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the TwampOptions.find() method.
-    The list can be managed by the user by using the TwampOptions.add() and TwampOptions.remove() methods.
+    The list can be managed by using the TwampOptions.add() and TwampOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TwampOptions(Base):
 
     @property
     def ErrorEstimateMultiplier(self):
-        """Twamp error estimate scale multiplier - used for the Error estimation computation
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Twamp error estimate scale multiplier - used for the Error estimation computation
         """
         return self._get_attribute('errorEstimateMultiplier')
     @ErrorEstimateMultiplier.setter
@@ -50,10 +50,10 @@ class TwampOptions(Base):
 
     @property
     def ErrorEstimateScale(self):
-        """Twamp error estimate scale factor - used for the Error estimation computation
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Twamp error estimate scale factor - used for the Error estimation computation
         """
         return self._get_attribute('errorEstimateScale')
     @ErrorEstimateScale.setter
@@ -62,10 +62,10 @@ class TwampOptions(Base):
 
     @property
     def MaxOutstanding(self):
-        """The number of Twamp-control connections to be in initiation or terminating state at any time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Twamp-control connections to be in initiation or terminating state at any time.
         """
         return self._get_attribute('maxOutstanding')
     @MaxOutstanding.setter
@@ -74,19 +74,19 @@ class TwampOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRateOptions(self):
-        """If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalRateOptions')
     @OverrideGlobalRateOptions.setter
@@ -95,10 +95,10 @@ class TwampOptions(Base):
 
     @property
     def SessionTimeout(self):
-        """Maximum duration for establishment of a control-session, test-session, and the start-sessions command
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum duration for establishment of a control-session, test-session, and the start-sessions command
         """
         return self._get_attribute('sessionTimeout')
     @SessionTimeout.setter
@@ -107,10 +107,10 @@ class TwampOptions(Base):
 
     @property
     def SetupRate(self):
-        """The number of Twamp-Control connections initiated in a second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Twamp-Control connections initiated in a second.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -119,10 +119,10 @@ class TwampOptions(Base):
 
     @property
     def TeardownRate(self):
-        """The number of Twamp-Control connections torn down in a second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Twamp-Control connections torn down in a second.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -130,87 +130,100 @@ class TwampOptions(Base):
         self._set_attribute('teardownRate', value)
 
     def update(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
-        """Updates a child instance of twampOptions on the server.
+        """Updates twampOptions resource on the server.
 
-        Args:
-            ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
-            ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
-            MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
-            OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
-            SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
-            SetupRate (number): The number of Twamp-Control connections initiated in a second.
-            TeardownRate (number): The number of Twamp-Control connections torn down in a second.
+        Args
+        ----
+        - ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
+        - ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
+        - MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
+        - OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
+        - SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
+        - SetupRate (number): The number of Twamp-Control connections initiated in a second.
+        - TeardownRate (number): The number of Twamp-Control connections torn down in a second.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
-        """Adds a new twampOptions node on the server and retrieves it in this instance.
+        """Adds a new twampOptions resource on the server and adds it to the container.
 
-        Args:
-            ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
-            ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
-            MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
-            OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
-            SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
-            SetupRate (number): The number of Twamp-Control connections initiated in a second.
-            TeardownRate (number): The number of Twamp-Control connections torn down in a second.
+        Args
+        ----
+        - ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
+        - ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
+        - MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
+        - OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
+        - SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
+        - SetupRate (number): The number of Twamp-Control connections initiated in a second.
+        - TeardownRate (number): The number of Twamp-Control connections torn down in a second.
 
-        Returns:
-            self: This instance with all currently retrieved twampOptions data using find and the newly added twampOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved twampOptions resources using find and the newly added twampOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the twampOptions data in this instance from server.
+        """Deletes all the contained twampOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, ObjectId=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
-        """Finds and retrieves twampOptions data from the server.
+        """Finds and retrieves twampOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve twampOptions data from the server.
-        By default the find method takes no parameters and will retrieve all twampOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all twampOptions resources from the server.
 
-        Args:
-            ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
-            ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
-            MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
-            SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
-            SetupRate (number): The number of Twamp-Control connections initiated in a second.
-            TeardownRate (number): The number of Twamp-Control connections torn down in a second.
+        Args
+        ----
+        - ErrorEstimateMultiplier (number): Twamp error estimate scale multiplier - used for the Error estimation computation
+        - ErrorEstimateScale (number): Twamp error estimate scale factor - used for the Error estimation computation
+        - MaxOutstanding (number): The number of Twamp-control connections to be in initiation or terminating state at any time.
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRateOptions (bool): If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
+        - SessionTimeout (number): Maximum duration for establishment of a control-session, test-session, and the start-sessions command
+        - SetupRate (number): The number of Twamp-Control connections initiated in a second.
+        - TeardownRate (number): The number of Twamp-Control connections torn down in a second.
 
-        Returns:
-            self: This instance with matching twampOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching twampOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of twampOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the twampOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the twampOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -219,14 +232,15 @@ class TwampOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -238,16 +252,15 @@ class TwampOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -259,16 +272,15 @@ class TwampOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LtLearnedInfo(Base):
     """This object contains the link trace learned information.
-    The LtLearnedInfo class encapsulates a list of ltLearnedInfo resources that is managed by the system.
+    The LtLearnedInfo class encapsulates a list of ltLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the LtLearnedInfo.find() method.
     """
 
@@ -37,135 +37,142 @@ class LtLearnedInfo(Base):
 
     @property
     def LtLearnedHop(self):
-        """An instance of the LtLearnedHop class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_82ac0cad58bb816bb3ece5f35aabef55.LtLearnedHop): An instance of the LtLearnedHop class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_82ac0cad58bb816bb3ece5f35aabef55.LtLearnedHop)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_82ac0cad58bb816bb3ece5f35aabef55 import LtLearnedHop
         return LtLearnedHop(self)
 
     @property
     def CVlan(self):
-        """(read only) The stacked VLAN identifier for the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The stacked VLAN identifier for the link trace message.
         """
         return self._get_attribute('cVlan')
 
     @property
     def DstMacAddress(self):
-        """(read only) The destination MAC address associated with the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The destination MAC address associated with the link trace message.
         """
         return self._get_attribute('dstMacAddress')
 
     @property
     def HopCount(self):
-        """(read only) The hop count for the link trace message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The hop count for the link trace message.
         """
         return self._get_attribute('hopCount')
 
     @property
     def Hops(self):
-        """(read only) The number of hops for the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The number of hops for the link trace message.
         """
         return self._get_attribute('hops')
 
     @property
     def MdLevel(self):
-        """(read only) The MD level associated with the link trace message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The MD level associated with the link trace message.
         """
         return self._get_attribute('mdLevel')
 
     @property
     def ReplyStatus(self):
-        """(read only) Indicates the status of the reply for the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) Indicates the status of the reply for the link trace message.
         """
         return self._get_attribute('replyStatus')
 
     @property
     def SVlan(self):
-        """(read only) The single VLAN identifier associated with the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The single VLAN identifier associated with the link trace message.
         """
         return self._get_attribute('sVlan')
 
     @property
     def SrcMacAddress(self):
-        """(read only) The source MAC address associated with the link trace message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The source MAC address associated with the link trace message.
         """
         return self._get_attribute('srcMacAddress')
 
     @property
     def TransactionId(self):
-        """(read only) The transaction identifier sent with the link trace message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The transaction identifier sent with the link trace message.
         """
         return self._get_attribute('transactionId')
 
     def find(self, CVlan=None, DstMacAddress=None, HopCount=None, Hops=None, MdLevel=None, ReplyStatus=None, SVlan=None, SrcMacAddress=None, TransactionId=None):
-        """Finds and retrieves ltLearnedInfo data from the server.
+        """Finds and retrieves ltLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ltLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all ltLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ltLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ltLearnedInfo resources from the server.
 
-        Args:
-            CVlan (str): (read only) The stacked VLAN identifier for the link trace message.
-            DstMacAddress (str): (read only) The destination MAC address associated with the link trace message.
-            HopCount (number): (read only) The hop count for the link trace message.
-            Hops (str): (read only) The number of hops for the link trace message.
-            MdLevel (number): (read only) The MD level associated with the link trace message.
-            ReplyStatus (str): (read only) Indicates the status of the reply for the link trace message.
-            SVlan (str): (read only) The single VLAN identifier associated with the link trace message.
-            SrcMacAddress (str): (read only) The source MAC address associated with the link trace message.
-            TransactionId (number): (read only) The transaction identifier sent with the link trace message.
+        Args
+        ----
+        - CVlan (str): (read only) The stacked VLAN identifier for the link trace message.
+        - DstMacAddress (str): (read only) The destination MAC address associated with the link trace message.
+        - HopCount (number): (read only) The hop count for the link trace message.
+        - Hops (str): (read only) The number of hops for the link trace message.
+        - MdLevel (number): (read only) The MD level associated with the link trace message.
+        - ReplyStatus (str): (read only) Indicates the status of the reply for the link trace message.
+        - SVlan (str): (read only) The single VLAN identifier associated with the link trace message.
+        - SrcMacAddress (str): (read only) The source MAC address associated with the link trace message.
+        - TransactionId (number): (read only) The transaction identifier sent with the link trace message.
 
-        Returns:
-            self: This instance with matching ltLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ltLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ltLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ltLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ltLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

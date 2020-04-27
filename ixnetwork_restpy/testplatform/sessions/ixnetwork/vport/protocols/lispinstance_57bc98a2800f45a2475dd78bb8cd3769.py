@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class LispInstance(Base):
     """It gives details about the lisp instance
-    The LispInstance class encapsulates a list of lispInstance resources that is be managed by the user.
+    The LispInstance class encapsulates a list of lispInstance resources that are managed by the user.
     A list of resources can be retrieved from the server using the LispInstance.find() method.
-    The list can be managed by the user by using the LispInstance.add() and LispInstance.remove() methods.
+    The list can be managed by using the LispInstance.add() and LispInstance.remove() methods.
     """
 
     __slots__ = ()
@@ -38,66 +38,66 @@ class LispInstance(Base):
 
     @property
     def ItrRemoteEidRange(self):
-        """An instance of the ItrRemoteEidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_52da09c5d85a9714cdfc8193b118f1ca.ItrRemoteEidRange): An instance of the ItrRemoteEidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_52da09c5d85a9714cdfc8193b118f1ca.ItrRemoteEidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_52da09c5d85a9714cdfc8193b118f1ca import ItrRemoteEidRange
         return ItrRemoteEidRange(self)
 
     @property
     def LocalEidRange(self):
-        """An instance of the LocalEidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_c70c39ff6c1dafcbb8b3452542238044.LocalEidRange): An instance of the LocalEidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_c70c39ff6c1dafcbb8b3452542238044.LocalEidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_c70c39ff6c1dafcbb8b3452542238044 import LocalEidRange
         return LocalEidRange(self)
 
     @property
     def MapServerResolver(self):
-        """An instance of the MapServerResolver class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_0b082fe96a080b425b8ce968386c7dda.MapServerResolver): An instance of the MapServerResolver class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_0b082fe96a080b425b8ce968386c7dda.MapServerResolver)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_0b082fe96a080b425b8ce968386c7dda import MapServerResolver
         return MapServerResolver(self)
 
     @property
     def MsAllowedEidRange(self):
-        """An instance of the MsAllowedEidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_914a04e5d41b69640f681c05be1957cb.MsAllowedEidRange): An instance of the MsAllowedEidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_914a04e5d41b69640f681c05be1957cb.MsAllowedEidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_914a04e5d41b69640f681c05be1957cb import MsAllowedEidRange
         return MsAllowedEidRange(self)
 
     @property
     def Act(self):
-        """It gives details about the action
-
-        Returns:
-            str(noAction|nativelyForward|sendMapRequest|drop)
+        """
+        Returns
+        -------
+        - str(noAction | nativelyForward | sendMapRequest | drop): It gives details about the action
         """
         return self._get_attribute('act')
     @Act.setter
@@ -106,10 +106,10 @@ class LispInstance(Base):
 
     @property
     def AllowAllEids(self):
-        """It allows all the eids
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It allows all the eids
         """
         return self._get_attribute('allowAllEids')
     @AllowAllEids.setter
@@ -118,10 +118,10 @@ class LispInstance(Base):
 
     @property
     def AuthenticationAlgorithm(self):
-        """It gives details about the authentication algorithm
-
-        Returns:
-            str(sha-1-96|sha-128-256)
+        """
+        Returns
+        -------
+        - str(sha-1-96 | sha-128-256): It gives details about the authentication algorithm
         """
         return self._get_attribute('authenticationAlgorithm')
     @AuthenticationAlgorithm.setter
@@ -130,10 +130,10 @@ class LispInstance(Base):
 
     @property
     def AuthoritativeBit(self):
-        """If true, it enables the authoritative bit
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the authoritative bit
         """
         return self._get_attribute('authoritativeBit')
     @AuthoritativeBit.setter
@@ -142,10 +142,10 @@ class LispInstance(Base):
 
     @property
     def AutoComposeNegativeMapReply(self):
-        """If true, it enables the auto compose negative map reply
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the auto compose negative map reply
         """
         return self._get_attribute('autoComposeNegativeMapReply')
     @AutoComposeNegativeMapReply.setter
@@ -154,10 +154,10 @@ class LispInstance(Base):
 
     @property
     def Enabled(self):
-        """If true, it enables the protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -166,10 +166,10 @@ class LispInstance(Base):
 
     @property
     def EtrRegistrationTimeout(self):
-        """It gives the etr registration timeout
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives the etr registration timeout
         """
         return self._get_attribute('etrRegistrationTimeout')
     @EtrRegistrationTimeout.setter
@@ -178,10 +178,10 @@ class LispInstance(Base):
 
     @property
     def InstanceId(self):
-        """It gives the instance id
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives the instance id
         """
         return self._get_attribute('instanceId')
     @InstanceId.setter
@@ -190,10 +190,10 @@ class LispInstance(Base):
 
     @property
     def InternalMsmrSelectionMode(self):
-        """it gives the details about the internal Msmr selection mode
-
-        Returns:
-            str(allMsmrInSameIxiaPort|custom|none)
+        """
+        Returns
+        -------
+        - str(allMsmrInSameIxiaPort | custom | none): it gives the details about the internal Msmr selection mode
         """
         return self._get_attribute('internalMsmrSelectionMode')
     @InternalMsmrSelectionMode.setter
@@ -202,10 +202,10 @@ class LispInstance(Base):
 
     @property
     def Key(self):
-        """It gives details about the key
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the key
         """
         return self._get_attribute('key')
     @Key.setter
@@ -214,10 +214,10 @@ class LispInstance(Base):
 
     @property
     def MapVersionNumber(self):
-        """It gives details about the map version number
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the map version number
         """
         return self._get_attribute('mapVersionNumber')
     @MapVersionNumber.setter
@@ -226,10 +226,10 @@ class LispInstance(Base):
 
     @property
     def Reserved(self):
-        """It gives details about the reserved protocols
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the reserved protocols
         """
         return self._get_attribute('reserved')
     @Reserved.setter
@@ -238,10 +238,10 @@ class LispInstance(Base):
 
     @property
     def Rsvd(self):
-        """It gives details about the rsvd
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the rsvd
         """
         return self._get_attribute('rsvd')
     @Rsvd.setter
@@ -250,10 +250,10 @@ class LispInstance(Base):
 
     @property
     def Ttl(self):
-        """It gives details about the ttl
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the ttl
         """
         return self._get_attribute('ttl')
     @Ttl.setter
@@ -261,106 +261,119 @@ class LispInstance(Base):
         self._set_attribute('ttl', value)
 
     def update(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
-        """Updates a child instance of lispInstance on the server.
+        """Updates lispInstance resource on the server.
 
-        Args:
-            Act (str(noAction|nativelyForward|sendMapRequest|drop)): It gives details about the action
-            AllowAllEids (bool): It allows all the eids
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            AuthoritativeBit (bool): If true, it enables the authoritative bit
-            AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
-            Enabled (bool): If true, it enables the protocol
-            EtrRegistrationTimeout (number): It gives the etr registration timeout
-            InstanceId (str): It gives the instance id
-            InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort|custom|none)): it gives the details about the internal Msmr selection mode
-            Key (str): It gives details about the key
-            MapVersionNumber (number): It gives details about the map version number
-            Reserved (number): It gives details about the reserved protocols
-            Rsvd (number): It gives details about the rsvd
-            Ttl (number): It gives details about the ttl
+        Args
+        ----
+        - Act (str(noAction | nativelyForward | sendMapRequest | drop)): It gives details about the action
+        - AllowAllEids (bool): It allows all the eids
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - AuthoritativeBit (bool): If true, it enables the authoritative bit
+        - AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
+        - Enabled (bool): If true, it enables the protocol
+        - EtrRegistrationTimeout (number): It gives the etr registration timeout
+        - InstanceId (str): It gives the instance id
+        - InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort | custom | none)): it gives the details about the internal Msmr selection mode
+        - Key (str): It gives details about the key
+        - MapVersionNumber (number): It gives details about the map version number
+        - Reserved (number): It gives details about the reserved protocols
+        - Rsvd (number): It gives details about the rsvd
+        - Ttl (number): It gives details about the ttl
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
-        """Adds a new lispInstance node on the server and retrieves it in this instance.
+        """Adds a new lispInstance resource on the server and adds it to the container.
 
-        Args:
-            Act (str(noAction|nativelyForward|sendMapRequest|drop)): It gives details about the action
-            AllowAllEids (bool): It allows all the eids
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            AuthoritativeBit (bool): If true, it enables the authoritative bit
-            AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
-            Enabled (bool): If true, it enables the protocol
-            EtrRegistrationTimeout (number): It gives the etr registration timeout
-            InstanceId (str): It gives the instance id
-            InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort|custom|none)): it gives the details about the internal Msmr selection mode
-            Key (str): It gives details about the key
-            MapVersionNumber (number): It gives details about the map version number
-            Reserved (number): It gives details about the reserved protocols
-            Rsvd (number): It gives details about the rsvd
-            Ttl (number): It gives details about the ttl
+        Args
+        ----
+        - Act (str(noAction | nativelyForward | sendMapRequest | drop)): It gives details about the action
+        - AllowAllEids (bool): It allows all the eids
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - AuthoritativeBit (bool): If true, it enables the authoritative bit
+        - AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
+        - Enabled (bool): If true, it enables the protocol
+        - EtrRegistrationTimeout (number): It gives the etr registration timeout
+        - InstanceId (str): It gives the instance id
+        - InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort | custom | none)): it gives the details about the internal Msmr selection mode
+        - Key (str): It gives details about the key
+        - MapVersionNumber (number): It gives details about the map version number
+        - Reserved (number): It gives details about the reserved protocols
+        - Rsvd (number): It gives details about the rsvd
+        - Ttl (number): It gives details about the ttl
 
-        Returns:
-            self: This instance with all currently retrieved lispInstance data using find and the newly added lispInstance data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved lispInstance resources using find and the newly added lispInstance resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the lispInstance data in this instance from server.
+        """Deletes all the contained lispInstance resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
-        """Finds and retrieves lispInstance data from the server.
+        """Finds and retrieves lispInstance resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lispInstance data from the server.
-        By default the find method takes no parameters and will retrieve all lispInstance data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lispInstance resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lispInstance resources from the server.
 
-        Args:
-            Act (str(noAction|nativelyForward|sendMapRequest|drop)): It gives details about the action
-            AllowAllEids (bool): It allows all the eids
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            AuthoritativeBit (bool): If true, it enables the authoritative bit
-            AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
-            Enabled (bool): If true, it enables the protocol
-            EtrRegistrationTimeout (number): It gives the etr registration timeout
-            InstanceId (str): It gives the instance id
-            InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort|custom|none)): it gives the details about the internal Msmr selection mode
-            Key (str): It gives details about the key
-            MapVersionNumber (number): It gives details about the map version number
-            Reserved (number): It gives details about the reserved protocols
-            Rsvd (number): It gives details about the rsvd
-            Ttl (number): It gives details about the ttl
+        Args
+        ----
+        - Act (str(noAction | nativelyForward | sendMapRequest | drop)): It gives details about the action
+        - AllowAllEids (bool): It allows all the eids
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - AuthoritativeBit (bool): If true, it enables the authoritative bit
+        - AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
+        - Enabled (bool): If true, it enables the protocol
+        - EtrRegistrationTimeout (number): It gives the etr registration timeout
+        - InstanceId (str): It gives the instance id
+        - InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort | custom | none)): it gives the details about the internal Msmr selection mode
+        - Key (str): It gives details about the key
+        - MapVersionNumber (number): It gives details about the map version number
+        - Reserved (number): It gives details about the reserved protocols
+        - Rsvd (number): It gives details about the rsvd
+        - Ttl (number): It gives details about the ttl
 
-        Returns:
-            self: This instance with matching lispInstance data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lispInstance resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lispInstance data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lispInstance data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lispInstance resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

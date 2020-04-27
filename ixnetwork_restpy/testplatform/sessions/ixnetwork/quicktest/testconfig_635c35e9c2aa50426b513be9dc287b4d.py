@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def EnableAllSlavesStatus(self):
-        """Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
         """
         return self._get_attribute('enableAllSlavesStatus')
     @EnableAllSlavesStatus.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def EnableExpectedGrandMasterStatus(self):
-        """Status of the clock configured as Expected Master is Grand Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Status of the clock configured as Expected Master is Grand Master
         """
         return self._get_attribute('enableExpectedGrandMasterStatus')
     @EnableExpectedGrandMasterStatus.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def EnableNonExpectedMasterStatus(self):
-        """Status of clocks configured as Master is not Grand Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Status of clocks configured as Master is not Grand Master
         """
         return self._get_attribute('enableNonExpectedMasterStatus')
     @EnableNonExpectedMasterStatus.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def ExpectedMasterClockId(self):
-        """ID of the Expected Master Clock
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: ID of the Expected Master Clock
         """
         return self._get_attribute('expectedMasterClockId')
     @ExpectedMasterClockId.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def ExpectedMasterPort(self):
-        """Port selected as Expected Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Port selected as Expected Master
         """
         return self._get_attribute('expectedMasterPort')
     @ExpectedMasterPort.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def GrandMasterStatus(self):
-        """Port selected as Grand Master Clock
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Port selected as Grand Master Clock
         """
         return self._get_attribute('grandMasterStatus')
     @GrandMasterStatus.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def MasterPorts(self):
-        """Ports selected as Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Ports selected as Master
         """
         return self._get_attribute('masterPorts')
     @MasterPorts.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def MaxOutstanding(self):
-        """Maximum number of connection requests or tear down requests that can be pending at any one time
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of connection requests or tear down requests that can be pending at any one time
         """
         return self._get_attribute('maxOutstanding')
     @MaxOutstanding.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def NonExpectedMasterStatus(self):
-        """Clocks configured as Master are not Grand Master
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Clocks configured as Master are not Grand Master
         """
         return self._get_attribute('nonExpectedMasterStatus')
     @NonExpectedMasterStatus.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """Number of trials that can be run
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of trials that can be run
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def Runmode(self):
-        """Running mode used
-
-        Returns:
-            str(duration|noframes)
+        """
+        Returns
+        -------
+        - str(duration | noframes): Running mode used
         """
         return self._get_attribute('runmode')
     @Runmode.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def SetupRate(self):
-        """The number of PTP connections to be initiated per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PTP connections to be initiated per second
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def SlavePorts(self):
-        """The ports selected as slaves
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The ports selected as slaves
         """
         return self._get_attribute('slavePorts')
     @SlavePorts.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def StartTraffic(self):
-        """All traffic configured in IxNetwork is initiated on running this test
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: All traffic configured in IxNetwork is initiated on running this test
         """
         return self._get_attribute('startTraffic')
     @StartTraffic.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def TeardownRate(self):
-        """The number of PTP connections to tear down per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PTP connections to tear down per second
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def UseExistingSetupRate(self):
-        """Currently set Setup Rate value is used
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Currently set Setup Rate value is used
         """
         return self._get_attribute('useExistingSetupRate')
     @UseExistingSetupRate.setter
@@ -251,41 +251,44 @@ class TestConfig(Base):
         self._set_attribute('useExistingSetupRate', value)
 
     def update(self, Duration=None, EnableAllSlavesStatus=None, EnableExpectedGrandMasterStatus=None, EnableNonExpectedMasterStatus=None, ExpectedMasterClockId=None, ExpectedMasterPort=None, GrandMasterStatus=None, MasterPorts=None, MaxOutstanding=None, NonExpectedMasterStatus=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, SlavePorts=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
-            EnableAllSlavesStatus (str): Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
-            EnableExpectedGrandMasterStatus (str): Status of the clock configured as Expected Master is Grand Master
-            EnableNonExpectedMasterStatus (str): Status of clocks configured as Master is not Grand Master
-            ExpectedMasterClockId (str): ID of the Expected Master Clock
-            ExpectedMasterPort (str): Port selected as Expected Master
-            GrandMasterStatus (str): Port selected as Grand Master Clock
-            MasterPorts (str): Ports selected as Master
-            MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
-            NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
-            Numtrials (number): Number of trials that can be run
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            Runmode (str(duration|noframes)): Running mode used
-            SetupRate (number): The number of PTP connections to be initiated per second
-            SlavePorts (str): The ports selected as slaves
-            StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
-            TeardownRate (number): The number of PTP connections to tear down per second
-            UseExistingSetupRate (bool): Currently set Setup Rate value is used
+        Args
+        ----
+        - Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+        - EnableAllSlavesStatus (str): Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
+        - EnableExpectedGrandMasterStatus (str): Status of the clock configured as Expected Master is Grand Master
+        - EnableNonExpectedMasterStatus (str): Status of clocks configured as Master is not Grand Master
+        - ExpectedMasterClockId (str): ID of the Expected Master Clock
+        - ExpectedMasterPort (str): Port selected as Expected Master
+        - GrandMasterStatus (str): Port selected as Grand Master Clock
+        - MasterPorts (str): Ports selected as Master
+        - MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+        - NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
+        - Numtrials (number): Number of trials that can be run
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - Runmode (str(duration | noframes)): Running mode used
+        - SetupRate (number): The number of PTP connections to be initiated per second
+        - SlavePorts (str): The ports selected as slaves
+        - StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+        - TeardownRate (number): The number of PTP connections to tear down per second
+        - UseExistingSetupRate (bool): Currently set Setup Rate value is used
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -293,9 +296,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -303,12 +307,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -318,9 +320,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -330,12 +333,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -345,24 +346,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -374,18 +368,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -397,9 +389,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -409,12 +402,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

@@ -36,10 +36,10 @@ class GroupCapabilities(Base):
 
     @property
     def Chaining(self):
-        """Chaining groups.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Chaining groups.
         """
         return self._get_attribute('chaining')
     @Chaining.setter
@@ -48,10 +48,10 @@ class GroupCapabilities(Base):
 
     @property
     def ChainingChecks(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('chainingChecks')
     @ChainingChecks.setter
@@ -60,10 +60,10 @@ class GroupCapabilities(Base):
 
     @property
     def SelectLiveness(self):
-        """Liveness for select groups.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Liveness for select groups.
         """
         return self._get_attribute('selectLiveness')
     @SelectLiveness.setter
@@ -72,10 +72,10 @@ class GroupCapabilities(Base):
 
     @property
     def SelectWeight(self):
-        """Weight for select groups.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Weight for select groups.
         """
         return self._get_attribute('selectWeight')
     @SelectWeight.setter
@@ -83,15 +83,17 @@ class GroupCapabilities(Base):
         self._set_attribute('selectWeight', value)
 
     def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
-        """Updates a child instance of groupCapabilities on the server.
+        """Updates groupCapabilities resource on the server.
 
-        Args:
-            Chaining (bool): Chaining groups.
-            ChainingChecks (bool): NOT DEFINED
-            SelectLiveness (bool): Liveness for select groups.
-            SelectWeight (bool): Weight for select groups.
+        Args
+        ----
+        - Chaining (bool): Chaining groups.
+        - ChainingChecks (bool): NOT DEFINED
+        - SelectLiveness (bool): Liveness for select groups.
+        - SelectWeight (bool): Weight for select groups.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

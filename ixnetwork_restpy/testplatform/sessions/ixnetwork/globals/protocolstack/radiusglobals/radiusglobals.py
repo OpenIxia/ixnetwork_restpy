@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class RadiusGlobals(Base):
     """Global settings for the RADIUS extension.
-    The RadiusGlobals class encapsulates a list of radiusGlobals resources that is be managed by the user.
+    The RadiusGlobals class encapsulates a list of radiusGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the RadiusGlobals.find() method.
-    The list can be managed by the user by using the RadiusGlobals.add() and RadiusGlobals.remove() methods.
+    The list can be managed by using the RadiusGlobals.add() and RadiusGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,75 +38,85 @@ class RadiusGlobals(Base):
 
     @property
     def DhcpOptionSet(self):
-        """An instance of the DhcpOptionSet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset.DhcpOptionSet): An instance of the DhcpOptionSet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset.DhcpOptionSet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset import DhcpOptionSet
         return DhcpOptionSet(self)
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def add(self):
-        """Adds a new radiusGlobals node on the server and retrieves it in this instance.
+        """Adds a new radiusGlobals resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved radiusGlobals data using find and the newly added radiusGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved radiusGlobals resources using find and the newly added radiusGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the radiusGlobals data in this instance from server.
+        """Deletes all the contained radiusGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ObjectId=None):
-        """Finds and retrieves radiusGlobals data from the server.
+        """Finds and retrieves radiusGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve radiusGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all radiusGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve radiusGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all radiusGlobals resources from the server.
 
-        Args:
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching radiusGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching radiusGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of radiusGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the radiusGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the radiusGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

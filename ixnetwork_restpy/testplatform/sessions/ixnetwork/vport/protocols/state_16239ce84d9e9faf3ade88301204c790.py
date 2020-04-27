@@ -36,10 +36,10 @@ class State(Base):
 
     @property
     def Blocked(self):
-        """If true, this state is available for this port. A port is in the blocked state when a switch protocol outside of OpenFlow, such as 802.1D Spanning Tree, prevents the use of that port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. A port is in the blocked state when a switch protocol outside of OpenFlow, such as 802.1D Spanning Tree, prevents the use of that port.
         """
         return self._get_attribute('blocked')
     @Blocked.setter
@@ -48,10 +48,10 @@ class State(Base):
 
     @property
     def LinkDown(self):
-        """If true, there is no physical link present.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, there is no physical link present.
         """
         return self._get_attribute('linkDown')
     @LinkDown.setter
@@ -60,10 +60,10 @@ class State(Base):
 
     @property
     def LiveForFastFailoverGroup(self):
-        """If true, this state is available for this port. The link is live for the Fast Failover Group.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. The link is live for the Fast Failover Group.
         """
         return self._get_attribute('liveForFastFailoverGroup')
     @LiveForFastFailoverGroup.setter
@@ -72,10 +72,10 @@ class State(Base):
 
     @property
     def StpBlock(self):
-        """If true, this state is available for this port. The Switch Ports goes into a blocking state when a switch receives a BPDU on a port that indicates a better path to the root switch, and if a port is not a root port or a designated port.A port in the blocking state does not participate in frame forwarding and also discards frames received from the attached network segment. During blocking state, the port is only listening to and processing BPDUs on its interfaces. The switch port then changes from the blocking state to the listening state.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. The Switch Ports goes into a blocking state when a switch receives a BPDU on a port that indicates a better path to the root switch, and if a port is not a root port or a designated port.A port in the blocking state does not participate in frame forwarding and also discards frames received from the attached network segment. During blocking state, the port is only listening to and processing BPDUs on its interfaces. The switch port then changes from the blocking state to the listening state.
         """
         return self._get_attribute('stpBlock')
     @StpBlock.setter
@@ -84,10 +84,10 @@ class State(Base):
 
     @property
     def StpForward(self):
-        """If true, this state is available for this port. A port in the forwarding state forwards frames across the attached network segment. In a forwarding state, the port processes BPDUs, updates its MAC Address table with frames that it receives, and forwards user traffic through the port. Forwarding State is the normal state. Data and configuration messages are passed through the port, when it is in forwarding state.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. A port in the forwarding state forwards frames across the attached network segment. In a forwarding state, the port processes BPDUs, updates its MAC Address table with frames that it receives, and forwards user traffic through the port. Forwarding State is the normal state. Data and configuration messages are passed through the port, when it is in forwarding state.
         """
         return self._get_attribute('stpForward')
     @StpForward.setter
@@ -96,10 +96,10 @@ class State(Base):
 
     @property
     def StpLearn(self):
-        """If true, this state is available for this port. A port changes to learning state after listening state. During the learning state, the port is listening for and processing BPDUs. In the listening state, the port begins to process user frames and starts updating the MAC address table. But the user frames are not forwarded to the destination. The switch port then moves from the learning state to the forwarding state.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. A port changes to learning state after listening state. During the learning state, the port is listening for and processing BPDUs. In the listening state, the port begins to process user frames and starts updating the MAC address table. But the user frames are not forwarded to the destination. The switch port then moves from the learning state to the forwarding state.
         """
         return self._get_attribute('stpLearn')
     @StpLearn.setter
@@ -108,10 +108,10 @@ class State(Base):
 
     @property
     def StpListen(self):
-        """If true, this state is available for this port. After blocking state, a root port or a designated port moves to a listening state. All other ports remains in a blocked state. During the listening state the port discards frames received from the attached network segment and it also discards frames switched from another port for forwarding. At this state, the port receives BPDUs from the network segment and directs them to the switch system module for processing. The switch port then moves from the listening state to the learning state.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this state is available for this port. After blocking state, a root port or a designated port moves to a listening state. All other ports remains in a blocked state. During the listening state the port discards frames received from the attached network segment and it also discards frames switched from another port for forwarding. At this state, the port receives BPDUs from the network segment and directs them to the switch system module for processing. The switch port then moves from the listening state to the learning state.
         """
         return self._get_attribute('stpListen')
     @StpListen.setter
@@ -119,18 +119,20 @@ class State(Base):
         self._set_attribute('stpListen', value)
 
     def update(self, Blocked=None, LinkDown=None, LiveForFastFailoverGroup=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
-        """Updates a child instance of state on the server.
+        """Updates state resource on the server.
 
-        Args:
-            Blocked (bool): If true, this state is available for this port. A port is in the blocked state when a switch protocol outside of OpenFlow, such as 802.1D Spanning Tree, prevents the use of that port.
-            LinkDown (bool): If true, there is no physical link present.
-            LiveForFastFailoverGroup (bool): If true, this state is available for this port. The link is live for the Fast Failover Group.
-            StpBlock (bool): If true, this state is available for this port. The Switch Ports goes into a blocking state when a switch receives a BPDU on a port that indicates a better path to the root switch, and if a port is not a root port or a designated port.A port in the blocking state does not participate in frame forwarding and also discards frames received from the attached network segment. During blocking state, the port is only listening to and processing BPDUs on its interfaces. The switch port then changes from the blocking state to the listening state.
-            StpForward (bool): If true, this state is available for this port. A port in the forwarding state forwards frames across the attached network segment. In a forwarding state, the port processes BPDUs, updates its MAC Address table with frames that it receives, and forwards user traffic through the port. Forwarding State is the normal state. Data and configuration messages are passed through the port, when it is in forwarding state.
-            StpLearn (bool): If true, this state is available for this port. A port changes to learning state after listening state. During the learning state, the port is listening for and processing BPDUs. In the listening state, the port begins to process user frames and starts updating the MAC address table. But the user frames are not forwarded to the destination. The switch port then moves from the learning state to the forwarding state.
-            StpListen (bool): If true, this state is available for this port. After blocking state, a root port or a designated port moves to a listening state. All other ports remains in a blocked state. During the listening state the port discards frames received from the attached network segment and it also discards frames switched from another port for forwarding. At this state, the port receives BPDUs from the network segment and directs them to the switch system module for processing. The switch port then moves from the listening state to the learning state.
+        Args
+        ----
+        - Blocked (bool): If true, this state is available for this port. A port is in the blocked state when a switch protocol outside of OpenFlow, such as 802.1D Spanning Tree, prevents the use of that port.
+        - LinkDown (bool): If true, there is no physical link present.
+        - LiveForFastFailoverGroup (bool): If true, this state is available for this port. The link is live for the Fast Failover Group.
+        - StpBlock (bool): If true, this state is available for this port. The Switch Ports goes into a blocking state when a switch receives a BPDU on a port that indicates a better path to the root switch, and if a port is not a root port or a designated port.A port in the blocking state does not participate in frame forwarding and also discards frames received from the attached network segment. During blocking state, the port is only listening to and processing BPDUs on its interfaces. The switch port then changes from the blocking state to the listening state.
+        - StpForward (bool): If true, this state is available for this port. A port in the forwarding state forwards frames across the attached network segment. In a forwarding state, the port processes BPDUs, updates its MAC Address table with frames that it receives, and forwards user traffic through the port. Forwarding State is the normal state. Data and configuration messages are passed through the port, when it is in forwarding state.
+        - StpLearn (bool): If true, this state is available for this port. A port changes to learning state after listening state. During the learning state, the port is listening for and processing BPDUs. In the listening state, the port begins to process user frames and starts updating the MAC address table. But the user frames are not forwarded to the destination. The switch port then moves from the learning state to the forwarding state.
+        - StpListen (bool): If true, this state is available for this port. After blocking state, a root port or a designated port moves to a listening state. All other ports remains in a blocked state. During the listening state the port discards frames received from the attached network segment and it also discards frames switched from another port for forwarding. At this state, the port receives BPDUs from the network segment and directs them to the switch system module for processing. The switch port then moves from the listening state to the learning state.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

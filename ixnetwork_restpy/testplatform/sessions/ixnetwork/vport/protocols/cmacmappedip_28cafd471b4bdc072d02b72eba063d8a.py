@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CMacMappedIp(Base):
     """This objects holds all the IP (V4/V6) addresses associated with a B-MAC of an ethernet segment.
-    The CMacMappedIp class encapsulates a list of cMacMappedIp resources that is be managed by the user.
+    The CMacMappedIp class encapsulates a list of cMacMappedIp resources that are managed by the user.
     A list of resources can be retrieved from the server using the CMacMappedIp.find() method.
-    The list can be managed by the user by using the CMacMappedIp.add() and CMacMappedIp.remove() methods.
+    The list can be managed by using the CMacMappedIp.add() and CMacMappedIp.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CMacMappedIp(Base):
 
     @property
     def Enabled(self):
-        """If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class CMacMappedIp(Base):
 
     @property
     def IpAddress(self):
-        """IP address value is given here depending on the IP Type. Default value is all zero.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IP address value is given here depending on the IP Type. Default value is all zero.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -62,10 +62,10 @@ class CMacMappedIp(Base):
 
     @property
     def IpStep(self):
-        """If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
         """
         return self._get_attribute('ipStep')
     @IpStep.setter
@@ -74,10 +74,10 @@ class CMacMappedIp(Base):
 
     @property
     def IpType(self):
-        """Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -85,76 +85,89 @@ class CMacMappedIp(Base):
         self._set_attribute('ipType', value)
 
     def update(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
-        """Updates a child instance of cMacMappedIp on the server.
+        """Updates cMacMappedIp resource on the server.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
-            IpType (str(ipv4|ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
+        - IpType (str(ipv4 | ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
-        """Adds a new cMacMappedIp node on the server and retrieves it in this instance.
+        """Adds a new cMacMappedIp resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
-            IpType (str(ipv4|ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
+        - IpType (str(ipv4 | ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Returns:
-            self: This instance with all currently retrieved cMacMappedIp data using find and the newly added cMacMappedIp data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved cMacMappedIp resources using find and the newly added cMacMappedIp resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the cMacMappedIp data in this instance from server.
+        """Deletes all the contained cMacMappedIp resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
-        """Finds and retrieves cMacMappedIp data from the server.
+        """Finds and retrieves cMacMappedIp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve cMacMappedIp data from the server.
-        By default the find method takes no parameters and will retrieve all cMacMappedIp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cMacMappedIp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cMacMappedIp resources from the server.
 
-        Args:
-            Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
-            IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
-            IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
-            IpType (str(ipv4|ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+        Args
+        ----
+        - Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+        - IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+        - IpStep (number): If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
+        - IpType (str(ipv4 | ipv6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
 
-        Returns:
-            self: This instance with matching cMacMappedIp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching cMacMappedIp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of cMacMappedIp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the cMacMappedIp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the cMacMappedIp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

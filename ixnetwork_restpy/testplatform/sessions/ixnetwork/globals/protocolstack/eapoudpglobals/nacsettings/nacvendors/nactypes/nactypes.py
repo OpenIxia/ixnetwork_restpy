@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NacTypes(Base):
     """TLV Application Type
-    The NacTypes class encapsulates a list of nacTypes resources that is be managed by the user.
+    The NacTypes class encapsulates a list of nacTypes resources that are managed by the user.
     A list of resources can be retrieved from the server using the NacTypes.find() method.
-    The list can be managed by the user by using the NacTypes.add() and NacTypes.remove() methods.
+    The list can be managed by using the NacTypes.add() and NacTypes.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class NacTypes(Base):
 
     @property
     def NacApps(self):
-        """An instance of the NacApps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nactypes.nacapps.nacapps.NacApps): An instance of the NacApps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nactypes.nacapps.nacapps.NacApps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nactypes.nacapps.nacapps import NacApps
         return NacApps(self)
 
     @property
     def Name(self):
-        """AppType Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AppType Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -64,19 +64,19 @@ class NacTypes(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """AppType ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: AppType ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -84,71 +84,84 @@ class NacTypes(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of nacTypes on the server.
+        """Updates nacTypes resource on the server.
 
-        Args:
-            Name (str): AppType Name.
-            Value (number): AppType ID.
+        Args
+        ----
+        - Name (str): AppType Name.
+        - Value (number): AppType ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, Value=None):
-        """Adds a new nacTypes node on the server and retrieves it in this instance.
+        """Adds a new nacTypes resource on the server and adds it to the container.
 
-        Args:
-            Name (str): AppType Name.
-            Value (number): AppType ID.
+        Args
+        ----
+        - Name (str): AppType Name.
+        - Value (number): AppType ID.
 
-        Returns:
-            self: This instance with all currently retrieved nacTypes data using find and the newly added nacTypes data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved nacTypes resources using find and the newly added nacTypes resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the nacTypes data in this instance from server.
+        """Deletes all the contained nacTypes resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Name=None, ObjectId=None, Value=None):
-        """Finds and retrieves nacTypes data from the server.
+        """Finds and retrieves nacTypes resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nacTypes data from the server.
-        By default the find method takes no parameters and will retrieve all nacTypes data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacTypes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nacTypes resources from the server.
 
-        Args:
-            Name (str): AppType Name.
-            ObjectId (str): Unique identifier for this object
-            Value (number): AppType ID.
+        Args
+        ----
+        - Name (str): AppType Name.
+        - ObjectId (str): Unique identifier for this object
+        - Value (number): AppType ID.
 
-        Returns:
-            self: This instance with matching nacTypes data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nacTypes resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nacTypes data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nacTypes data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nacTypes resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

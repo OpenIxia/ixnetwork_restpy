@@ -36,38 +36,38 @@ class HundredGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -76,10 +76,10 @@ class HundredGigLan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -88,10 +88,10 @@ class HundredGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """If true, enables the ports's MAC flow control and mechanisms to listen for a directed address pause message
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the ports's MAC flow control and mechanisms to listen for a directed address pause message
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -100,10 +100,10 @@ class HundredGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """the 48 bit MAC address that the port listens on for a directed pause
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: the 48 bit MAC address that the port listens on for a directed pause
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -112,10 +112,10 @@ class HundredGigLan(Base):
 
     @property
     def Loopback(self):
-        """The loopback address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The loopback address.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -124,10 +124,10 @@ class HundredGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -136,10 +136,10 @@ class HundredGigLan(Base):
 
     @property
     def Speed(self):
-        """The speed of the lan
-
-        Returns:
-            str(speed100g|speed40g)
+        """
+        Returns
+        -------
+        - str(speed100g | speed40g): The speed of the lan
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -148,10 +148,10 @@ class HundredGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If enabled, will allow transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -159,19 +159,21 @@ class HundredGigLan(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, AutoInstrumentation=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, Speed=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of hundredGigLan on the server.
+        """Updates hundredGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): If true, enables the ports's MAC flow control and mechanisms to listen for a directed address pause message
-            FlowControlDirectedAddress (str): the 48 bit MAC address that the port listens on for a directed pause
-            Loopback (bool): The loopback address.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            Speed (str(speed100g|speed40g)): The speed of the lan
-            TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the ports's MAC flow control and mechanisms to listen for a directed address pause message
+        - FlowControlDirectedAddress (str): the 48 bit MAC address that the port listens on for a directed pause
+        - Loopback (bool): The loopback address.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - Speed (str(speed100g | speed40g)): The speed of the lan
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

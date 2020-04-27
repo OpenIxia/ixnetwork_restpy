@@ -36,10 +36,10 @@ class LearnFrames(Base):
 
     @property
     def LearnFrameSize(self):
-        """Specifies the size of the learning frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the size of the learning frames.
         """
         return self._get_attribute('learnFrameSize')
     @LearnFrameSize.setter
@@ -48,10 +48,10 @@ class LearnFrames(Base):
 
     @property
     def LearnFrequency(self):
-        """Allows to choose how frequently IxNetwork sends learning frames during the test.
-
-        Returns:
-            str(never)
+        """
+        Returns
+        -------
+        - str(never): Allows to choose how frequently IxNetwork sends learning frames during the test.
         """
         return self._get_attribute('learnFrequency')
     @LearnFrequency.setter
@@ -60,10 +60,10 @@ class LearnFrames(Base):
 
     @property
     def LearnNumFrames(self):
-        """Specifies the number of learning frames that IxNetwork sends for each address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of learning frames that IxNetwork sends for each address.
         """
         return self._get_attribute('learnNumFrames')
     @LearnNumFrames.setter
@@ -72,10 +72,10 @@ class LearnFrames(Base):
 
     @property
     def LearnRate(self):
-        """Specifies the rate at which IxNetwork sends learn frames to the DUT.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the rate at which IxNetwork sends learn frames to the DUT.
         """
         return self._get_attribute('learnRate')
     @LearnRate.setter
@@ -84,10 +84,10 @@ class LearnFrames(Base):
 
     @property
     def LearnWaitTime(self):
-        """Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
         """
         return self._get_attribute('learnWaitTime')
     @LearnWaitTime.setter
@@ -96,10 +96,10 @@ class LearnFrames(Base):
 
     @property
     def LearnWaitTimeBeforeTransmit(self):
-        """The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
         """
         return self._get_attribute('learnWaitTimeBeforeTransmit')
     @LearnWaitTimeBeforeTransmit.setter
@@ -107,29 +107,32 @@ class LearnFrames(Base):
         self._set_attribute('learnWaitTimeBeforeTransmit', value)
 
     def update(self, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
-        """Updates a child instance of learnFrames on the server.
+        """Updates learnFrames resource on the server.
 
-        Args:
-            LearnFrameSize (number): Specifies the size of the learning frames.
-            LearnFrequency (str(never)): Allows to choose how frequently IxNetwork sends learning frames during the test.
-            LearnNumFrames (number): Specifies the number of learning frames that IxNetwork sends for each address.
-            LearnRate (number): Specifies the rate at which IxNetwork sends learn frames to the DUT.
-            LearnWaitTime (number): Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
-            LearnWaitTimeBeforeTransmit (number): The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+        Args
+        ----
+        - LearnFrameSize (number): Specifies the size of the learning frames.
+        - LearnFrequency (str(never)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+        - LearnNumFrames (number): Specifies the number of learning frames that IxNetwork sends for each address.
+        - LearnRate (number): Specifies the rate at which IxNetwork sends learn frames to the DUT.
+        - LearnWaitTime (number): Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
+        - LearnWaitTimeBeforeTransmit (number): The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -137,9 +140,10 @@ class LearnFrames(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -147,12 +151,10 @@ class LearnFrames(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -162,9 +164,10 @@ class LearnFrames(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -174,12 +177,10 @@ class LearnFrames(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -189,24 +190,17 @@ class LearnFrames(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -218,18 +212,16 @@ class LearnFrames(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -241,9 +233,10 @@ class LearnFrames(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -253,12 +246,10 @@ class LearnFrames(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

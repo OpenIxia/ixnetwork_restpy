@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Lan(Base):
     """A set of STP LANs to be included in stpServer.
-    The Lan class encapsulates a list of lan resources that is be managed by the user.
+    The Lan class encapsulates a list of lan resources that are managed by the user.
     A list of resources can be retrieved from the server using the Lan.find() method.
-    The list can be managed by the user by using the Lan.add() and Lan.remove() methods.
+    The list can be managed by using the Lan.add() and Lan.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Lan(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of the STP LAN.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the STP LAN.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class Lan(Base):
 
     @property
     def MacAddress(self):
-        """The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -62,10 +62,10 @@ class Lan(Base):
 
     @property
     def MacCount(self):
-        """The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
         """
         return self._get_attribute('macCount')
     @MacCount.setter
@@ -74,10 +74,10 @@ class Lan(Base):
 
     @property
     def MacIncrement(self):
-        """If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
         """
         return self._get_attribute('macIncrement')
     @MacIncrement.setter
@@ -86,10 +86,10 @@ class Lan(Base):
 
     @property
     def TrafficGroupId(self):
-        """References a traffic group identifier as configured by the trafficGroup object.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): References a traffic group identifier as configured by the trafficGroup object.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -98,10 +98,10 @@ class Lan(Base):
 
     @property
     def VlanEnabled(self):
-        """Enables the use of this STP LAN. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this STP LAN. (default = disabled)
         """
         return self._get_attribute('vlanEnabled')
     @VlanEnabled.setter
@@ -110,10 +110,10 @@ class Lan(Base):
 
     @property
     def VlanId(self):
-        """The identifier for the first VLAN in the range. Valid range: 1 to 4094.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for the first VLAN in the range. Valid range: 1 to 4094.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -122,10 +122,10 @@ class Lan(Base):
 
     @property
     def VlanIncrement(self):
-        """If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
         """
         return self._get_attribute('vlanIncrement')
     @VlanIncrement.setter
@@ -133,88 +133,101 @@ class Lan(Base):
         self._set_attribute('vlanIncrement', value)
 
     def update(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
-        """Updates a child instance of lan on the server.
+        """Updates lan resource on the server.
 
-        Args:
-            Enabled (bool): Enables the use of the STP LAN.
-            MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
-            MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
-            MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
-            VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
-            VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
-            VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
+        Args
+        ----
+        - Enabled (bool): Enables the use of the STP LAN.
+        - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
+        - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
+        - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
+        - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
+        - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
-        """Adds a new lan node on the server and retrieves it in this instance.
+        """Adds a new lan resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Enables the use of the STP LAN.
-            MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
-            MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
-            MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
-            VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
-            VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
-            VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
+        Args
+        ----
+        - Enabled (bool): Enables the use of the STP LAN.
+        - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
+        - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
+        - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
+        - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
+        - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
 
-        Returns:
-            self: This instance with all currently retrieved lan data using find and the newly added lan data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved lan resources using find and the newly added lan resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the lan data in this instance from server.
+        """Deletes all the contained lan resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
-        """Finds and retrieves lan data from the server.
+        """Finds and retrieves lan resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve lan data from the server.
-        By default the find method takes no parameters and will retrieve all lan data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lan resources from the server.
 
-        Args:
-            Enabled (bool): Enables the use of the STP LAN.
-            MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
-            MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
-            MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
-            VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
-            VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
-            VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
+        Args
+        ----
+        - Enabled (bool): Enables the use of the STP LAN.
+        - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
+        - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
+        - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
+        - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
+        - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
 
-        Returns:
-            self: This instance with matching lan data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching lan resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of lan data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the lan data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the lan resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

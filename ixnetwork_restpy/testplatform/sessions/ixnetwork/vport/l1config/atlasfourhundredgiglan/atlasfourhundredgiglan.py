@@ -36,14 +36,14 @@ class AtlasFourHundredGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
@@ -51,9 +51,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def AutoInstrumentation(self):
         """
-
-        Returns:
-            str(endOfFrame|floating)
+        Returns
+        -------
+        - str(endOfFrame | floating): 
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -63,9 +63,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def BadBlocksNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('badBlocksNumber')
     @BadBlocksNumber.setter
@@ -75,9 +75,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def EnableAutoNegotiation(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableAutoNegotiation')
     @EnableAutoNegotiation.setter
@@ -87,9 +87,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def EnablePPM(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -99,9 +99,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def EnableRsFec(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRsFec')
     @EnableRsFec.setter
@@ -111,9 +111,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def EnableRsFecStats(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRsFecStats')
     @EnableRsFecStats.setter
@@ -123,9 +123,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def EnabledFlowControl(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -135,9 +135,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def FirecodeAdvertise(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeAdvertise')
     @FirecodeAdvertise.setter
@@ -147,9 +147,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def FirecodeForceOff(self):
         """DEPRECATED 
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeForceOff')
     @FirecodeForceOff.setter
@@ -159,9 +159,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def FirecodeForceOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeForceOn')
     @FirecodeForceOn.setter
@@ -171,9 +171,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def FirecodeRequest(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('firecodeRequest')
     @FirecodeRequest.setter
@@ -183,9 +183,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def FlowControlDirectedAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -195,9 +195,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def ForceDisableFEC(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('forceDisableFEC')
     @ForceDisableFEC.setter
@@ -207,9 +207,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def GoodBlocksNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('goodBlocksNumber')
     @GoodBlocksNumber.setter
@@ -219,18 +219,18 @@ class AtlasFourHundredGigLan(Base):
     @property
     def IeeeL1Defaults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('ieeeL1Defaults')
 
     @property
     def LaserOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('laserOn')
     @LaserOn.setter
@@ -240,9 +240,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def LinkTraining(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('linkTraining')
     @LinkTraining.setter
@@ -252,9 +252,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def LoopContinuously(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('loopContinuously')
     @LoopContinuously.setter
@@ -264,9 +264,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def LoopCountNumber(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('loopCountNumber')
     @LoopCountNumber.setter
@@ -276,9 +276,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def Loopback(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -288,9 +288,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def LoopbackMode(self):
         """
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): 
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -300,9 +300,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def Ppm(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -312,9 +312,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def RsFecAdvertise(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecAdvertise')
     @RsFecAdvertise.setter
@@ -324,9 +324,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def RsFecForceOn(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecForceOn')
     @RsFecForceOn.setter
@@ -336,9 +336,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def RsFecRequest(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('rsFecRequest')
     @RsFecRequest.setter
@@ -348,9 +348,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def SendSetsMode(self):
         """
-
-        Returns:
-            str(alternate|typeAOnly|typeBOnly)
+        Returns
+        -------
+        - str(alternate | typeAOnly | typeBOnly): 
         """
         return self._get_attribute('sendSetsMode')
     @SendSetsMode.setter
@@ -360,9 +360,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def Speed(self):
         """
-
-        Returns:
-            str(speed100g|speed200g|speed400g|speed50g)
+        Returns
+        -------
+        - str(speed100g | speed200g | speed400g | speed50g): 
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -372,9 +372,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def StartErrorInsertion(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('startErrorInsertion')
     @StartErrorInsertion.setter
@@ -384,9 +384,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def TxIgnoreRxLinkFaults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -396,9 +396,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def TypeAOrderedSets(self):
         """
-
-        Returns:
-            str(localFault|remoteFault)
+        Returns
+        -------
+        - str(localFault | remoteFault): 
         """
         return self._get_attribute('typeAOrderedSets')
     @TypeAOrderedSets.setter
@@ -408,9 +408,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def TypeBOrderedSets(self):
         """
-
-        Returns:
-            str(localFault|remoteFault)
+        Returns
+        -------
+        - str(localFault | remoteFault): 
         """
         return self._get_attribute('typeBOrderedSets')
     @TypeBOrderedSets.setter
@@ -420,9 +420,9 @@ class AtlasFourHundredGigLan(Base):
     @property
     def UseANResults(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('useANResults')
     @UseANResults.setter
@@ -430,42 +430,44 @@ class AtlasFourHundredGigLan(Base):
         self._set_attribute('useANResults', value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
-        """Updates a child instance of atlasFourHundredGigLan on the server.
+        """Updates atlasFourHundredGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): 
-            BadBlocksNumber (number): 
-            EnableAutoNegotiation (bool): 
-            EnablePPM (bool): 
-            EnableRsFec (bool): 
-            EnableRsFecStats (bool): 
-            EnabledFlowControl (bool): 
-            FirecodeAdvertise (bool): 
-            FirecodeForceOff (bool): 
-            FirecodeForceOn (bool): 
-            FirecodeRequest (bool): 
-            FlowControlDirectedAddress (str): 
-            ForceDisableFEC (bool): 
-            GoodBlocksNumber (number): 
-            LaserOn (bool): 
-            LinkTraining (bool): 
-            LoopContinuously (bool): 
-            LoopCountNumber (number): 
-            Loopback (bool): 
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): 
-            Ppm (number): 
-            RsFecAdvertise (bool): 
-            RsFecForceOn (bool): 
-            RsFecRequest (bool): 
-            SendSetsMode (str(alternate|typeAOnly|typeBOnly)): 
-            Speed (str(speed100g|speed200g|speed400g|speed50g)): 
-            StartErrorInsertion (bool): 
-            TxIgnoreRxLinkFaults (bool): 
-            TypeAOrderedSets (str(localFault|remoteFault)): 
-            TypeBOrderedSets (str(localFault|remoteFault)): 
-            UseANResults (bool): 
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): 
+        - BadBlocksNumber (number): 
+        - EnableAutoNegotiation (bool): 
+        - EnablePPM (bool): 
+        - EnableRsFec (bool): 
+        - EnableRsFecStats (bool): 
+        - EnabledFlowControl (bool): 
+        - FirecodeAdvertise (bool): 
+        - FirecodeForceOff (bool): 
+        - FirecodeForceOn (bool): 
+        - FirecodeRequest (bool): 
+        - FlowControlDirectedAddress (str): 
+        - ForceDisableFEC (bool): 
+        - GoodBlocksNumber (number): 
+        - LaserOn (bool): 
+        - LinkTraining (bool): 
+        - LoopContinuously (bool): 
+        - LoopCountNumber (number): 
+        - Loopback (bool): 
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): 
+        - Ppm (number): 
+        - RsFecAdvertise (bool): 
+        - RsFecForceOn (bool): 
+        - RsFecRequest (bool): 
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): 
+        - Speed (str(speed100g | speed200g | speed400g | speed50g)): 
+        - StartErrorInsertion (bool): 
+        - TxIgnoreRxLinkFaults (bool): 
+        - TypeAOrderedSets (str(localFault | remoteFault)): 
+        - TypeBOrderedSets (str(localFault | remoteFault)): 
+        - UseANResults (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TunnelHeadTrafficEndPoint(Base):
     """The tunnelHeadTrafficEndPoint helps to configure the IP addresses to be used in the Source IP field in traffic to be sent over the LSPs originating from this Head Range.
-    The TunnelHeadTrafficEndPoint class encapsulates a list of tunnelHeadTrafficEndPoint resources that is be managed by the user.
+    The TunnelHeadTrafficEndPoint class encapsulates a list of tunnelHeadTrafficEndPoint resources that are managed by the user.
     A list of resources can be retrieved from the server using the TunnelHeadTrafficEndPoint.find() method.
-    The list can be managed by the user by using the TunnelHeadTrafficEndPoint.add() and TunnelHeadTrafficEndPoint.remove() methods.
+    The list can be managed by using the TunnelHeadTrafficEndPoint.add() and TunnelHeadTrafficEndPoint.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TunnelHeadTrafficEndPoint(Base):
 
     @property
     def EndPointType(self):
-        """IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
-
-        Returns:
-            str(ipv4|ipv6|17|18)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6 | 17 | 18): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
         """
         return self._get_attribute('endPointType')
     @EndPointType.setter
@@ -50,10 +50,10 @@ class TunnelHeadTrafficEndPoint(Base):
 
     @property
     def InsertExplicitTrafficItem(self):
-        """DEPRECATED NOT DEFINED
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('insertExplicitTrafficItem')
     @InsertExplicitTrafficItem.setter
@@ -62,10 +62,10 @@ class TunnelHeadTrafficEndPoint(Base):
 
     @property
     def InsertIpv6ExplicitNull(self):
-        """This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
         """
         return self._get_attribute('insertIpv6ExplicitNull')
     @InsertIpv6ExplicitNull.setter
@@ -74,10 +74,10 @@ class TunnelHeadTrafficEndPoint(Base):
 
     @property
     def IpCount(self):
-        """Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
         """
         return self._get_attribute('ipCount')
     @IpCount.setter
@@ -86,10 +86,10 @@ class TunnelHeadTrafficEndPoint(Base):
 
     @property
     def IpStart(self):
-        """The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
         """
         return self._get_attribute('ipStart')
     @IpStart.setter
@@ -97,79 +97,92 @@ class TunnelHeadTrafficEndPoint(Base):
         self._set_attribute('ipStart', value)
 
     def update(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
-        """Updates a child instance of tunnelHeadTrafficEndPoint on the server.
+        """Updates tunnelHeadTrafficEndPoint resource on the server.
 
-        Args:
-            EndPointType (str(ipv4|ipv6|17|18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
-            InsertExplicitTrafficItem (bool): NOT DEFINED
-            InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
-            IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
-            IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
+        Args
+        ----
+        - EndPointType (str(ipv4 | ipv6 | 17 | 18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
+        - InsertExplicitTrafficItem (bool): NOT DEFINED
+        - InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
+        - IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
+        - IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
-        """Adds a new tunnelHeadTrafficEndPoint node on the server and retrieves it in this instance.
+        """Adds a new tunnelHeadTrafficEndPoint resource on the server and adds it to the container.
 
-        Args:
-            EndPointType (str(ipv4|ipv6|17|18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
-            InsertExplicitTrafficItem (bool): NOT DEFINED
-            InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
-            IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
-            IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
+        Args
+        ----
+        - EndPointType (str(ipv4 | ipv6 | 17 | 18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
+        - InsertExplicitTrafficItem (bool): NOT DEFINED
+        - InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
+        - IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
+        - IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
 
-        Returns:
-            self: This instance with all currently retrieved tunnelHeadTrafficEndPoint data using find and the newly added tunnelHeadTrafficEndPoint data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved tunnelHeadTrafficEndPoint resources using find and the newly added tunnelHeadTrafficEndPoint resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the tunnelHeadTrafficEndPoint data in this instance from server.
+        """Deletes all the contained tunnelHeadTrafficEndPoint resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
-        """Finds and retrieves tunnelHeadTrafficEndPoint data from the server.
+        """Finds and retrieves tunnelHeadTrafficEndPoint resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tunnelHeadTrafficEndPoint data from the server.
-        By default the find method takes no parameters and will retrieve all tunnelHeadTrafficEndPoint data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tunnelHeadTrafficEndPoint resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tunnelHeadTrafficEndPoint resources from the server.
 
-        Args:
-            EndPointType (str(ipv4|ipv6|17|18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
-            InsertExplicitTrafficItem (bool): NOT DEFINED
-            InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
-            IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
-            IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
+        Args
+        ----
+        - EndPointType (str(ipv4 | ipv6 | 17 | 18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
+        - InsertExplicitTrafficItem (bool): NOT DEFINED
+        - InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
+        - IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
+        - IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
 
-        Returns:
-            self: This instance with matching tunnelHeadTrafficEndPoint data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tunnelHeadTrafficEndPoint resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tunnelHeadTrafficEndPoint data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tunnelHeadTrafficEndPoint data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tunnelHeadTrafficEndPoint resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

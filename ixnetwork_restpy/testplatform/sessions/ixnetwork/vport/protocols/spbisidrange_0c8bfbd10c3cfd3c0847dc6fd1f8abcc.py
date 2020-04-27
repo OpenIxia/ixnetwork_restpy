@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbIsIdRange(Base):
     """The ISIS ID for SPB Topology Range.
-    The SpbIsIdRange class encapsulates a list of spbIsIdRange resources that is be managed by the user.
+    The SpbIsIdRange class encapsulates a list of spbIsIdRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbIsIdRange.find() method.
-    The list can be managed by the user by using the SpbIsIdRange.add() and SpbIsIdRange.remove() methods.
+    The list can be managed by using the SpbIsIdRange.add() and SpbIsIdRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class SpbIsIdRange(Base):
 
     @property
     def CMacAddressCount(self):
-        """The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
         """
         return self._get_attribute('cMacAddressCount')
     @CMacAddressCount.setter
@@ -50,10 +50,10 @@ class SpbIsIdRange(Base):
 
     @property
     def CMacAddressStep(self):
-        """The amount to increment each successive C-MAC address from the starting CMAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The amount to increment each successive C-MAC address from the starting CMAC address.
         """
         return self._get_attribute('cMacAddressStep')
     @CMacAddressStep.setter
@@ -62,10 +62,10 @@ class SpbIsIdRange(Base):
 
     @property
     def CVlan(self):
-        """The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
         """
         return self._get_attribute('cVlan')
     @CVlan.setter
@@ -74,10 +74,10 @@ class SpbIsIdRange(Base):
 
     @property
     def Enabled(self):
-        """If true, the topology range will be part of the simulated network.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the topology range will be part of the simulated network.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -86,10 +86,10 @@ class SpbIsIdRange(Base):
 
     @property
     def ISid(self):
-        """The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
         """
         return self._get_attribute('iSid')
     @ISid.setter
@@ -98,19 +98,19 @@ class SpbIsIdRange(Base):
 
     @property
     def ITagEthernetType(self):
-        """The I-Tag Ethernet type. An I-Tag is a multiplexing tag for service instance scaling in Provider Bridged Networks.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The I-Tag Ethernet type. An I-Tag is a multiplexing tag for service instance scaling in Provider Bridged Networks.
         """
         return self._get_attribute('iTagEthernetType')
 
     @property
     def RBit(self):
-        """The Restart State bit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The Restart State bit.
         """
         return self._get_attribute('rBit')
     @RBit.setter
@@ -119,10 +119,10 @@ class SpbIsIdRange(Base):
 
     @property
     def SVlan(self):
-        """The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
         """
         return self._get_attribute('sVlan')
     @SVlan.setter
@@ -131,10 +131,10 @@ class SpbIsIdRange(Base):
 
     @property
     def StartCmacAddress(self):
-        """The starting C-MAC address for the C_MAC range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The starting C-MAC address for the C_MAC range.
         """
         return self._get_attribute('startCmacAddress')
     @StartCmacAddress.setter
@@ -143,10 +143,10 @@ class SpbIsIdRange(Base):
 
     @property
     def TBit(self):
-        """The external route tag bit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The external route tag bit.
         """
         return self._get_attribute('tBit')
     @TBit.setter
@@ -155,10 +155,10 @@ class SpbIsIdRange(Base):
 
     @property
     def TrafficDestMacAddress(self):
-        """The traffic-destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The traffic-destination MAC address.
         """
         return self._get_attribute('trafficDestMacAddress')
     @TrafficDestMacAddress.setter
@@ -167,10 +167,10 @@ class SpbIsIdRange(Base):
 
     @property
     def TransmissionType(self):
-        """Select the type of packet transmission. Options include Unicast and Multicast.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Select the type of packet transmission. Options include Unicast and Multicast.
         """
         return self._get_attribute('transmissionType')
     @TransmissionType.setter
@@ -179,10 +179,10 @@ class SpbIsIdRange(Base):
 
     @property
     def VlanType(self):
-        """Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
         """
         return self._get_attribute('vlanType')
     @VlanType.setter
@@ -190,101 +190,114 @@ class SpbIsIdRange(Base):
         self._set_attribute('vlanType', value)
 
     def update(self, CMacAddressCount=None, CMacAddressStep=None, CVlan=None, Enabled=None, ISid=None, RBit=None, SVlan=None, StartCmacAddress=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
-        """Updates a child instance of spbIsIdRange on the server.
+        """Updates spbIsIdRange resource on the server.
 
-        Args:
-            CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
-            CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
-            CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
-            RBit (bool): The Restart State bit.
-            SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
-            TBit (bool): The external route tag bit.
-            TrafficDestMacAddress (str): The traffic-destination MAC address.
-            TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
-            VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
+        Args
+        ----
+        - CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
+        - CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
+        - CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
+        - RBit (bool): The Restart State bit.
+        - SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
+        - TBit (bool): The external route tag bit.
+        - TrafficDestMacAddress (str): The traffic-destination MAC address.
+        - TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
+        - VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CMacAddressCount=None, CMacAddressStep=None, CVlan=None, Enabled=None, ISid=None, RBit=None, SVlan=None, StartCmacAddress=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
-        """Adds a new spbIsIdRange node on the server and retrieves it in this instance.
+        """Adds a new spbIsIdRange resource on the server and adds it to the container.
 
-        Args:
-            CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
-            CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
-            CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
-            RBit (bool): The Restart State bit.
-            SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
-            TBit (bool): The external route tag bit.
-            TrafficDestMacAddress (str): The traffic-destination MAC address.
-            TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
-            VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
+        Args
+        ----
+        - CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
+        - CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
+        - CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
+        - RBit (bool): The Restart State bit.
+        - SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
+        - TBit (bool): The external route tag bit.
+        - TrafficDestMacAddress (str): The traffic-destination MAC address.
+        - TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
+        - VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
 
-        Returns:
-            self: This instance with all currently retrieved spbIsIdRange data using find and the newly added spbIsIdRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbIsIdRange resources using find and the newly added spbIsIdRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbIsIdRange data in this instance from server.
+        """Deletes all the contained spbIsIdRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CMacAddressCount=None, CMacAddressStep=None, CVlan=None, Enabled=None, ISid=None, ITagEthernetType=None, RBit=None, SVlan=None, StartCmacAddress=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
-        """Finds and retrieves spbIsIdRange data from the server.
+        """Finds and retrieves spbIsIdRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbIsIdRange data from the server.
-        By default the find method takes no parameters and will retrieve all spbIsIdRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbIsIdRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbIsIdRange resources from the server.
 
-        Args:
-            CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
-            CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
-            CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            Enabled (bool): If true, the topology range will be part of the simulated network.
-            ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
-            ITagEthernetType (number): The I-Tag Ethernet type. An I-Tag is a multiplexing tag for service instance scaling in Provider Bridged Networks.
-            RBit (bool): The Restart State bit.
-            SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
-            StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
-            TBit (bool): The external route tag bit.
-            TrafficDestMacAddress (str): The traffic-destination MAC address.
-            TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
-            VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
+        Args
+        ----
+        - CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
+        - CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
+        - CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - Enabled (bool): If true, the topology range will be part of the simulated network.
+        - ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
+        - ITagEthernetType (number): The I-Tag Ethernet type. An I-Tag is a multiplexing tag for service instance scaling in Provider Bridged Networks.
+        - RBit (bool): The Restart State bit.
+        - SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+        - StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
+        - TBit (bool): The external route tag bit.
+        - TrafficDestMacAddress (str): The traffic-destination MAC address.
+        - TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
+        - VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
 
-        Returns:
-            self: This instance with matching spbIsIdRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbIsIdRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbIsIdRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbIsIdRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbIsIdRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

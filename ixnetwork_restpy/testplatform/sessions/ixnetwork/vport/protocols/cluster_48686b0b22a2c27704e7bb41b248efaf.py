@@ -36,10 +36,10 @@ class Cluster(Base):
 
     @property
     def Val(self):
-        """The value of the cluster list.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The value of the cluster list.
         """
         return self._get_attribute('val')
     @Val.setter
@@ -47,12 +47,14 @@ class Cluster(Base):
         self._set_attribute('val', value)
 
     def update(self, Val=None):
-        """Updates a child instance of cluster on the server.
+        """Updates cluster resource on the server.
 
-        Args:
-            Val (list(number)): The value of the cluster list.
+        Args
+        ----
+        - Val (list(number)): The value of the cluster list.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,24 +36,24 @@ class VendorRef(Base):
 
     @property
     def NacTypes(self):
-        """An instance of the NacTypes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.vendorref.nactypes.nactypes.NacTypes): An instance of the NacTypes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.vendorref.nactypes.nactypes.NacTypes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.vendorref.nactypes.nactypes import NacTypes
         return NacTypes(self)
 
     @property
     def Name(self):
-        """Vendor Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Vendor Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -62,19 +62,19 @@ class VendorRef(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """Vendor ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Vendor ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -82,13 +82,15 @@ class VendorRef(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of vendorRef on the server.
+        """Updates vendorRef resource on the server.
 
-        Args:
-            Name (str): Vendor Name.
-            Value (number): Vendor ID.
+        Args
+        ----
+        - Name (str): Vendor Name.
+        - Value (number): Vendor ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

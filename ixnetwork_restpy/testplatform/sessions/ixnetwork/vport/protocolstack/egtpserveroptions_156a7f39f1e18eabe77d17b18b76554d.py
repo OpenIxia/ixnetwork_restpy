@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgtpServerOptions(Base):
     """
-    The EgtpServerOptions class encapsulates a list of egtpServerOptions resources that is be managed by the user.
+    The EgtpServerOptions class encapsulates a list of egtpServerOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgtpServerOptions.find() method.
-    The list can be managed by the user by using the EgtpServerOptions.add() and EgtpServerOptions.remove() methods.
+    The list can be managed by using the EgtpServerOptions.add() and EgtpServerOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EgtpServerOptions(Base):
 
     @property
     def DistributeUserPlaneIps(self):
-        """Distribute L7 user plane IP addresses across all assigned Ixia ports.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Distribute L7 user plane IP addresses across all assigned Ixia ports.
         """
         return self._get_attribute('distributeUserPlaneIps')
     @DistributeUserPlaneIps.setter
@@ -50,10 +50,10 @@ class EgtpServerOptions(Base):
 
     @property
     def EnableCreateBearerTFTHack(self):
-        """Send the first port received from the peer activity in the Create Bearer Request TFT.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Send the first port received from the peer activity in the Create Bearer Request TFT.
         """
         return self._get_attribute('enableCreateBearerTFTHack')
     @EnableCreateBearerTFTHack.setter
@@ -62,10 +62,10 @@ class EgtpServerOptions(Base):
 
     @property
     def EnableDynamicAllocation(self):
-        """Enable dynamic allocation of UEs and sessions on PGW.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable dynamic allocation of UEs and sessions on PGW.
         """
         return self._get_attribute('enableDynamicAllocation')
     @EnableDynamicAllocation.setter
@@ -74,19 +74,19 @@ class EgtpServerOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PcpuLogLevel(self):
-        """PCPU log level
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PCPU log level
         """
         return self._get_attribute('pcpuLogLevel')
     @PcpuLogLevel.setter
@@ -95,10 +95,10 @@ class EgtpServerOptions(Base):
 
     @property
     def PublishStatistics(self):
-        """Publish statistics for SGW.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Publish statistics for SGW.
         """
         return self._get_attribute('publishStatistics')
     @PublishStatistics.setter
@@ -106,81 +106,94 @@ class EgtpServerOptions(Base):
         self._set_attribute('publishStatistics', value)
 
     def update(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
-        """Updates a child instance of egtpServerOptions on the server.
+        """Updates egtpServerOptions resource on the server.
 
-        Args:
-            DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
-            EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
-            EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
-            PcpuLogLevel (str): PCPU log level
-            PublishStatistics (bool): Publish statistics for SGW.
+        Args
+        ----
+        - DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
+        - EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
+        - EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
+        - PcpuLogLevel (str): PCPU log level
+        - PublishStatistics (bool): Publish statistics for SGW.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
-        """Adds a new egtpServerOptions node on the server and retrieves it in this instance.
+        """Adds a new egtpServerOptions resource on the server and adds it to the container.
 
-        Args:
-            DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
-            EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
-            EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
-            PcpuLogLevel (str): PCPU log level
-            PublishStatistics (bool): Publish statistics for SGW.
+        Args
+        ----
+        - DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
+        - EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
+        - EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
+        - PcpuLogLevel (str): PCPU log level
+        - PublishStatistics (bool): Publish statistics for SGW.
 
-        Returns:
-            self: This instance with all currently retrieved egtpServerOptions data using find and the newly added egtpServerOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egtpServerOptions resources using find and the newly added egtpServerOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egtpServerOptions data in this instance from server.
+        """Deletes all the contained egtpServerOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, ObjectId=None, PcpuLogLevel=None, PublishStatistics=None):
-        """Finds and retrieves egtpServerOptions data from the server.
+        """Finds and retrieves egtpServerOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egtpServerOptions data from the server.
-        By default the find method takes no parameters and will retrieve all egtpServerOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpServerOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpServerOptions resources from the server.
 
-        Args:
-            DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
-            EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
-            EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
-            ObjectId (str): Unique identifier for this object
-            PcpuLogLevel (str): PCPU log level
-            PublishStatistics (bool): Publish statistics for SGW.
+        Args
+        ----
+        - DistributeUserPlaneIps (bool): Distribute L7 user plane IP addresses across all assigned Ixia ports.
+        - EnableCreateBearerTFTHack (bool): Send the first port received from the peer activity in the Create Bearer Request TFT.
+        - EnableDynamicAllocation (bool): Enable dynamic allocation of UEs and sessions on PGW.
+        - ObjectId (str): Unique identifier for this object
+        - PcpuLogLevel (str): PCPU log level
+        - PublishStatistics (bool): Publish statistics for SGW.
 
-        Returns:
-            self: This instance with matching egtpServerOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egtpServerOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egtpServerOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egtpServerOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egtpServerOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -189,14 +202,15 @@ class EgtpServerOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -208,16 +222,15 @@ class EgtpServerOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -229,16 +242,15 @@ class EgtpServerOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

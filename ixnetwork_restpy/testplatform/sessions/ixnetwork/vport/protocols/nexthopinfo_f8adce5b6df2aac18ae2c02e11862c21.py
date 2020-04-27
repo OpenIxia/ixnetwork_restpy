@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class NextHopInfo(Base):
     """(Read Only) List of next hops learned.
-    The NextHopInfo class encapsulates a list of nextHopInfo resources that is managed by the system.
+    The NextHopInfo class encapsulates a list of nextHopInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the NextHopInfo.find() method.
     """
 
@@ -37,55 +37,62 @@ class NextHopInfo(Base):
 
     @property
     def RdInfo(self):
-        """An instance of the RdInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_ff77079944ebb69fe802108f735cf231.RdInfo): An instance of the RdInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_ff77079944ebb69fe802108f735cf231.RdInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_ff77079944ebb69fe802108f735cf231 import RdInfo
         return RdInfo(self)
 
     @property
     def NextHop(self):
-        """(Read Only) Next Hop IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Next Hop IP.
         """
         return self._get_attribute('nextHop')
 
     def find(self, NextHop=None):
-        """Finds and retrieves nextHopInfo data from the server.
+        """Finds and retrieves nextHopInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nextHopInfo data from the server.
-        By default the find method takes no parameters and will retrieve all nextHopInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nextHopInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nextHopInfo resources from the server.
 
-        Args:
-            NextHop (str): (Read Only) Next Hop IP.
+        Args
+        ----
+        - NextHop (str): (Read Only) Next Hop IP.
 
-        Returns:
-            self: This instance with matching nextHopInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nextHopInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nextHopInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nextHopInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nextHopInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

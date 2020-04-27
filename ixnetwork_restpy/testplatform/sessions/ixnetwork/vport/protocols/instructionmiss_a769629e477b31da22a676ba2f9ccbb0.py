@@ -36,10 +36,10 @@ class InstructionMiss(Base):
 
     @property
     def ApplyActions(self):
-        """Apply actions property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply actions property.
         """
         return self._get_attribute('applyActions')
     @ApplyActions.setter
@@ -48,10 +48,10 @@ class InstructionMiss(Base):
 
     @property
     def ClearActions(self):
-        """If selected, Clear Actions instruction is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Clear Actions instruction is supported.
         """
         return self._get_attribute('clearActions')
     @ClearActions.setter
@@ -60,10 +60,10 @@ class InstructionMiss(Base):
 
     @property
     def GoToTable(self):
-        """If selected, GoTo Table instruction is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, GoTo Table instruction is supported.
         """
         return self._get_attribute('goToTable')
     @GoToTable.setter
@@ -72,10 +72,10 @@ class InstructionMiss(Base):
 
     @property
     def Meter(self):
-        """If selected, Meter instruction is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Meter instruction is supported.
         """
         return self._get_attribute('meter')
     @Meter.setter
@@ -84,10 +84,10 @@ class InstructionMiss(Base):
 
     @property
     def WriteActions(self):
-        """Write actions property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Write actions property.
         """
         return self._get_attribute('writeActions')
     @WriteActions.setter
@@ -96,10 +96,10 @@ class InstructionMiss(Base):
 
     @property
     def WriteMetadata(self):
-        """If selected, Write Metadata instruction is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Write Metadata instruction is supported.
         """
         return self._get_attribute('writeMetadata')
     @WriteMetadata.setter
@@ -107,17 +107,19 @@ class InstructionMiss(Base):
         self._set_attribute('writeMetadata', value)
 
     def update(self, ApplyActions=None, ClearActions=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
-        """Updates a child instance of instructionMiss on the server.
+        """Updates instructionMiss resource on the server.
 
-        Args:
-            ApplyActions (bool): Apply actions property.
-            ClearActions (bool): If selected, Clear Actions instruction is supported.
-            GoToTable (bool): If selected, GoTo Table instruction is supported.
-            Meter (bool): If selected, Meter instruction is supported.
-            WriteActions (bool): Write actions property.
-            WriteMetadata (bool): If selected, Write Metadata instruction is supported.
+        Args
+        ----
+        - ApplyActions (bool): Apply actions property.
+        - ClearActions (bool): If selected, Clear Actions instruction is supported.
+        - GoToTable (bool): If selected, GoTo Table instruction is supported.
+        - Meter (bool): If selected, Meter instruction is supported.
+        - WriteActions (bool): Write actions property.
+        - WriteMetadata (bool): If selected, Write Metadata instruction is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Egress(Base):
     """DEPRECATED SV settings for egress traking display. (fixed list, based on number of ingress rows)
-    The Egress class encapsulates a list of egress resources that is managed by the system.
+    The Egress class encapsulates a list of egress resources that are managed by the system.
     A list of resources can be retrieved from the server using the Egress.find() method.
     """
 
@@ -37,24 +37,24 @@ class Egress(Base):
 
     @property
     def FlowCondition(self):
-        """An instance of the FlowCondition class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.flowcondition.flowcondition.FlowCondition): An instance of the FlowCondition class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.flowcondition.flowcondition.FlowCondition)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.flowcondition.flowcondition import FlowCondition
         return FlowCondition(self)
 
     @property
     def CommitEgressPage(self):
-        """Attribute used to commit egress paging from TCL
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Attribute used to commit egress paging from TCL
         """
         return self._get_attribute('commitEgressPage')
     @CommitEgressPage.setter
@@ -63,10 +63,10 @@ class Egress(Base):
 
     @property
     def CurrentPage(self):
-        """Determines the current egress page for the indicated ingress page.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Determines the current egress page for the indicated ingress page.
         """
         return self._get_attribute('currentPage')
     @CurrentPage.setter
@@ -75,65 +75,74 @@ class Egress(Base):
 
     @property
     def RowCount(self):
-        """Displays the particular row number in the view.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Displays the particular row number in the view.
         """
         return self._get_attribute('rowCount')
 
     @property
     def TotalPages(self):
-        """The total number of egress pages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of egress pages.
         """
         return self._get_attribute('totalPages')
 
     def update(self, CommitEgressPage=None, CurrentPage=None):
-        """Updates a child instance of egress on the server.
+        """Updates egress resource on the server.
 
-        Args:
-            CommitEgressPage (bool): Attribute used to commit egress paging from TCL
-            CurrentPage (number): Determines the current egress page for the indicated ingress page.
+        Args
+        ----
+        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
+        - CurrentPage (number): Determines the current egress page for the indicated ingress page.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
-        """Finds and retrieves egress data from the server.
+        """Finds and retrieves egress resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egress data from the server.
-        By default the find method takes no parameters and will retrieve all egress data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egress resources from the server.
 
-        Args:
-            CommitEgressPage (bool): Attribute used to commit egress paging from TCL
-            CurrentPage (number): Determines the current egress page for the indicated ingress page.
-            RowCount (number): Displays the particular row number in the view.
-            TotalPages (number): The total number of egress pages.
+        Args
+        ----
+        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
+        - CurrentPage (number): Determines the current egress page for the indicated ingress page.
+        - RowCount (number): Displays the particular row number in the view.
+        - TotalPages (number): The total number of egress pages.
 
-        Returns:
-            self: This instance with matching egress data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egress resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egress data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egress data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egress resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

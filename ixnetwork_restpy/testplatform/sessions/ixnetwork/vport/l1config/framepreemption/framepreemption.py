@@ -37,9 +37,9 @@ class FramePreemption(Base):
     @property
     def IsFramePreemptionEnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isFramePreemptionEnabled')
     @IsFramePreemptionEnabled.setter
@@ -49,9 +49,9 @@ class FramePreemption(Base):
     @property
     def IsSmdVREnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isSmdVREnabled')
     @IsSmdVREnabled.setter
@@ -59,13 +59,15 @@ class FramePreemption(Base):
         self._set_attribute('isSmdVREnabled', value)
 
     def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
-        """Updates a child instance of framePreemption on the server.
+        """Updates framePreemption resource on the server.
 
-        Args:
-            IsFramePreemptionEnabled (bool): 
-            IsSmdVREnabled (bool): 
+        Args
+        ----
+        - IsFramePreemptionEnabled (bool): 
+        - IsSmdVREnabled (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

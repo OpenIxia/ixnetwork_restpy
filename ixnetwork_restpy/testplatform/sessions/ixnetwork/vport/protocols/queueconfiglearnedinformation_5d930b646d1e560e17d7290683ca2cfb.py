@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class QueueConfigLearnedInformation(Base):
     """This object allows to define the queue configuration learned information parameters of the switch.
-    The QueueConfigLearnedInformation class encapsulates a list of queueConfigLearnedInformation resources that is managed by the system.
+    The QueueConfigLearnedInformation class encapsulates a list of queueConfigLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the QueueConfigLearnedInformation.find() method.
     """
 
@@ -37,201 +37,208 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def DataPathId(self):
-        """Indicates the Datapath ID of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID of the switch.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """Indicates the Datapath ID, in hexadecimal format, of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def ErrorCode(self):
-        """Signifies the error code of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the error code of the error received.
         """
         return self._get_attribute('errorCode')
 
     @property
     def ErrorType(self):
-        """Signifies the type of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the type of the error received.
         """
         return self._get_attribute('errorType')
 
     @property
     def ExperimenterData(self):
-        """The experimenter data field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The experimenter data field value.
         """
         return self._get_attribute('experimenterData')
 
     @property
     def ExperimenterDataLength(self):
-        """Value of the Experimenter data length field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the Experimenter data length field.
         """
         return self._get_attribute('experimenterDataLength')
 
     @property
     def ExperimenterId(self):
-        """Value of the experimenter ID field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Value of the experimenter ID field.
         """
         return self._get_attribute('experimenterId')
 
     @property
     def Latency(self):
-        """Indicates the duration elapsed (in microsecond) between the learned info request and response.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
         return self._get_attribute('latency')
 
     @property
     def LocalIp(self):
-        """Indicates the local IP of the Controller.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP of the Controller.
         """
         return self._get_attribute('localIp')
 
     @property
     def NegotiatedVersion(self):
-        """Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
         return self._get_attribute('negotiatedVersion')
 
     @property
     def PortNumber(self):
-        """Indicates the Port number to which the queue belongs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the Port number to which the queue belongs.
         """
         return self._get_attribute('portNumber')
 
     @property
     def PropertyRate(self):
-        """Indicates the minimum transmission rate of the queue if the queue supports the minimum rate property
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the minimum transmission rate of the queue if the queue supports the minimum rate property
         """
         return self._get_attribute('propertyRate')
 
     @property
     def QueueId(self):
-        """Indicates the identifier of the queue
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the identifier of the queue
         """
         return self._get_attribute('queueId')
 
     @property
     def QueuePortNumber(self):
-        """The Switch port number on which Queue has been configured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Switch port number on which Queue has been configured.
         """
         return self._get_attribute('queuePortNumber')
 
     @property
     def QueueProperty(self):
-        """Indicates the supported properties of the queue.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the supported properties of the queue.
         """
         return self._get_attribute('queueProperty')
 
     @property
     def RemoteIp(self):
-        """Indicates the IP of the remote end of the OF Channel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IP of the remote end of the OF Channel.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def ReplyState(self):
-        """Indicates the reply state of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the reply state of the switch.
         """
         return self._get_attribute('replyState')
 
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PortNumber=None, PropertyRate=None, QueueId=None, QueuePortNumber=None, QueueProperty=None, RemoteIp=None, ReplyState=None):
-        """Finds and retrieves queueConfigLearnedInformation data from the server.
+        """Finds and retrieves queueConfigLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve queueConfigLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all queueConfigLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve queueConfigLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all queueConfigLearnedInformation resources from the server.
 
-        Args:
-            DataPathId (str): Indicates the Datapath ID of the switch.
-            DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
-            ErrorCode (str): Signifies the error code of the error received.
-            ErrorType (str): Signifies the type of the error received.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDataLength (number): Value of the Experimenter data length field.
-            ExperimenterId (number): Value of the experimenter ID field.
-            Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
-            LocalIp (str): Indicates the local IP of the Controller.
-            NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-            PortNumber (number): Indicates the Port number to which the queue belongs.
-            PropertyRate (number): Indicates the minimum transmission rate of the queue if the queue supports the minimum rate property
-            QueueId (number): Indicates the identifier of the queue
-            QueuePortNumber (number): The Switch port number on which Queue has been configured.
-            QueueProperty (str): Indicates the supported properties of the queue.
-            RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
-            ReplyState (str): Indicates the reply state of the switch.
+        Args
+        ----
+        - DataPathId (str): Indicates the Datapath ID of the switch.
+        - DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
+        - ErrorCode (str): Signifies the error code of the error received.
+        - ErrorType (str): Signifies the type of the error received.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDataLength (number): Value of the Experimenter data length field.
+        - ExperimenterId (number): Value of the experimenter ID field.
+        - Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
+        - LocalIp (str): Indicates the local IP of the Controller.
+        - NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+        - PortNumber (number): Indicates the Port number to which the queue belongs.
+        - PropertyRate (number): Indicates the minimum transmission rate of the queue if the queue supports the minimum rate property
+        - QueueId (number): Indicates the identifier of the queue
+        - QueuePortNumber (number): The Switch port number on which Queue has been configured.
+        - QueueProperty (str): Indicates the supported properties of the queue.
+        - RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
+        - ReplyState (str): Indicates the reply state of the switch.
 
-        Returns:
-            self: This instance with matching queueConfigLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching queueConfigLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of queueConfigLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the queueConfigLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the queueConfigLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

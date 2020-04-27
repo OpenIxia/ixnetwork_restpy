@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def CorrectionFactorMode(self):
-        """Correction Factor mode
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Correction Factor mode
         """
         return self._get_attribute('correctionFactorMode')
     @CorrectionFactorMode.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def CorrectionFactorScale(self):
-        """Correction Factor Scale
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Correction Factor Scale
         """
         return self._get_attribute('correctionFactorScale')
     @CorrectionFactorScale.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def EnableCorrectionFactorPassFail(self):
-        """If selected, a Pass/Fail criteria is applied to the Correction Factor Error test
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If selected, a Pass/Fail criteria is applied to the Correction Factor Error test
         """
         return self._get_attribute('enableCorrectionFactorPassFail')
     @EnableCorrectionFactorPassFail.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def MaxOutstanding(self):
-        """Maximum number of connection requests or tear down requests that can be pending at any one time
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of connection requests or tear down requests that can be pending at any one time
         """
         return self._get_attribute('maxOutstanding')
     @MaxOutstanding.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def MeasuredResidenceTime(self):
-        """The measured time taken by a packet to move from the ingress port to the egress port
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The measured time taken by a packet to move from the ingress port to the egress port
         """
         return self._get_attribute('measuredResidenceTime')
     @MeasuredResidenceTime.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def NumberCorrectionFactorPassFail(self):
-        """Number of criteria used for Pass/Fail
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of criteria used for Pass/Fail
         """
         return self._get_attribute('numberCorrectionFactorPassFail')
     @NumberCorrectionFactorPassFail.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The number of trials that can be run
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of trials that can be run
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def OffsetGraph(self):
-        """Offset graphing
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Offset graphing
         """
         return self._get_attribute('offsetGraph')
     @OffsetGraph.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def PathDelayGraphing(self):
-        """Graphing of path delay
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Graphing of path delay
         """
         return self._get_attribute('pathDelayGraphing')
     @PathDelayGraphing.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def ResidenceTime(self):
-        """The time taken by a packet to move from the ingress port to the egress port
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time taken by a packet to move from the ingress port to the egress port
         """
         return self._get_attribute('residenceTime')
     @ResidenceTime.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def Runmode(self):
-        """Running mode used
-
-        Returns:
-            str(duration|noframes)
+        """
+        Returns
+        -------
+        - str(duration | noframes): Running mode used
         """
         return self._get_attribute('runmode')
     @Runmode.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def SetupRate(self):
-        """The number of PTP connections to be initiated per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PTP connections to be initiated per second
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def StartTraffic(self):
-        """All traffic configured in IxNetwork is initiated on running this test
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: All traffic configured in IxNetwork is initiated on running this test
         """
         return self._get_attribute('startTraffic')
     @StartTraffic.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def TeardownRate(self):
-        """The number of PTP connections to tear down per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PTP connections to tear down per second
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def TestConfiguration(self):
-        """Test configuration
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test configuration
         """
         return self._get_attribute('testConfiguration')
     @TestConfiguration.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def UseExistingSetupRate(self):
-        """The current setup rate value is used
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The current setup rate value is used
         """
         return self._get_attribute('useExistingSetupRate')
     @UseExistingSetupRate.setter
@@ -251,41 +251,44 @@ class TestConfig(Base):
         self._set_attribute('useExistingSetupRate', value)
 
     def update(self, CorrectionFactorMode=None, CorrectionFactorScale=None, Duration=None, EnableCorrectionFactorPassFail=None, MaxOutstanding=None, MeasuredResidenceTime=None, NumberCorrectionFactorPassFail=None, Numtrials=None, OffsetGraph=None, PathDelayGraphing=None, ProtocolItem=None, ResidenceTime=None, Runmode=None, SetupRate=None, StartTraffic=None, TeardownRate=None, TestConfiguration=None, UseExistingSetupRate=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            CorrectionFactorMode (str): Correction Factor mode
-            CorrectionFactorScale (str): Correction Factor Scale
-            Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
-            EnableCorrectionFactorPassFail (str): If selected, a Pass/Fail criteria is applied to the Correction Factor Error test
-            MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
-            MeasuredResidenceTime (str): The measured time taken by a packet to move from the ingress port to the egress port
-            NumberCorrectionFactorPassFail (number): Number of criteria used for Pass/Fail
-            Numtrials (number): The number of trials that can be run
-            OffsetGraph (str): Offset graphing
-            PathDelayGraphing (str): Graphing of path delay
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            ResidenceTime (number): The time taken by a packet to move from the ingress port to the egress port
-            Runmode (str(duration|noframes)): Running mode used
-            SetupRate (number): The number of PTP connections to be initiated per second
-            StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
-            TeardownRate (number): The number of PTP connections to tear down per second
-            TestConfiguration (str): Test configuration
-            UseExistingSetupRate (bool): The current setup rate value is used
+        Args
+        ----
+        - CorrectionFactorMode (str): Correction Factor mode
+        - CorrectionFactorScale (str): Correction Factor Scale
+        - Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+        - EnableCorrectionFactorPassFail (str): If selected, a Pass/Fail criteria is applied to the Correction Factor Error test
+        - MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+        - MeasuredResidenceTime (str): The measured time taken by a packet to move from the ingress port to the egress port
+        - NumberCorrectionFactorPassFail (number): Number of criteria used for Pass/Fail
+        - Numtrials (number): The number of trials that can be run
+        - OffsetGraph (str): Offset graphing
+        - PathDelayGraphing (str): Graphing of path delay
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ResidenceTime (number): The time taken by a packet to move from the ingress port to the egress port
+        - Runmode (str(duration | noframes)): Running mode used
+        - SetupRate (number): The number of PTP connections to be initiated per second
+        - StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+        - TeardownRate (number): The number of PTP connections to tear down per second
+        - TestConfiguration (str): Test configuration
+        - UseExistingSetupRate (bool): The current setup rate value is used
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -293,9 +296,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -303,12 +307,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -318,9 +320,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -330,12 +333,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -345,24 +346,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -374,18 +368,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -397,9 +389,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -409,12 +402,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

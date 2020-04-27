@@ -36,10 +36,10 @@ class Flags(Base):
 
     @property
     def BurstSize(self):
-        """This flag indicate that burst size calculation is to be done while applying the bands.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag indicate that burst size calculation is to be done while applying the bands.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -48,10 +48,10 @@ class Flags(Base):
 
     @property
     def CollectStatistics(self):
-        """This flag enables statistics collection for the meter and each band.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag enables statistics collection for the meter and each band.
         """
         return self._get_attribute('collectStatistics')
     @CollectStatistics.setter
@@ -60,10 +60,10 @@ class Flags(Base):
 
     @property
     def RateKb(self):
-        """This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
         """
         return self._get_attribute('rateKb')
     @RateKb.setter
@@ -72,10 +72,10 @@ class Flags(Base):
 
     @property
     def RatePacket(self):
-        """This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
         """
         return self._get_attribute('ratePacket')
     @RatePacket.setter
@@ -83,15 +83,17 @@ class Flags(Base):
         self._set_attribute('ratePacket', value)
 
     def update(self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None):
-        """Updates a child instance of flags on the server.
+        """Updates flags resource on the server.
 
-        Args:
-            BurstSize (bool): This flag indicate that burst size calculation is to be done while applying the bands.
-            CollectStatistics (bool): This flag enables statistics collection for the meter and each band.
-            RateKb (bool): This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
-            RatePacket (bool): This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
+        Args
+        ----
+        - BurstSize (bool): This flag indicate that burst size calculation is to be done while applying the bands.
+        - CollectStatistics (bool): This flag enables statistics collection for the meter and each band.
+        - RateKb (bool): This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
+        - RatePacket (bool): This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

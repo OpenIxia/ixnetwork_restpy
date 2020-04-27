@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class PbbTePeriodicOamDmLearnedInfo(Base):
     """The pbbTePeriodicOamDmLearnedInfo object holds the PBB-TE periodic OAM delay measurement learned information.
-    The PbbTePeriodicOamDmLearnedInfo class encapsulates a list of pbbTePeriodicOamDmLearnedInfo resources that is managed by the system.
+    The PbbTePeriodicOamDmLearnedInfo class encapsulates a list of pbbTePeriodicOamDmLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the PbbTePeriodicOamDmLearnedInfo.find() method.
     """
 
@@ -37,181 +37,188 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def AverageDelayNanoSec(self):
-        """(read only) The learned average delay in nanoseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned average delay in nanoseconds.
         """
         return self._get_attribute('averageDelayNanoSec')
 
     @property
     def AverageDelaySec(self):
-        """(read only) The learned average delay in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned average delay in seconds.
         """
         return self._get_attribute('averageDelaySec')
 
     @property
     def AverageDelayVariationNanoSec(self):
-        """(read only) The learned most recent delay variation in nano seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay variation in nano seconds.
         """
         return self._get_attribute('averageDelayVariationNanoSec')
 
     @property
     def AverageDelayVariationSec(self):
-        """(read only) The learned most recent delay variation in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay variation in seconds.
         """
         return self._get_attribute('averageDelayVariationSec')
 
     @property
     def BVlan(self):
-        """(read only) The learned B-VLAN identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned B-VLAN identifier.
         """
         return self._get_attribute('bVlan')
 
     @property
     def DmmCountSent(self):
-        """(read only) The learned number of DMMs sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of DMMs sent.
         """
         return self._get_attribute('dmmCountSent')
 
     @property
     def DstMacAddress(self):
-        """(read only) The learned destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned destination MAC address.
         """
         return self._get_attribute('dstMacAddress')
 
     @property
     def MdLevel(self):
-        """(read only) The learned MD level for the periodic OAM.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned MD level for the periodic OAM.
         """
         return self._get_attribute('mdLevel')
 
     @property
     def NoReplyCount(self):
-        """(read only) The learned number of periodic OAM no replies.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of periodic OAM no replies.
         """
         return self._get_attribute('noReplyCount')
 
     @property
     def OneDmReceivedCount(self):
-        """(read only) The learned number of DM received.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of DM received.
         """
         return self._get_attribute('oneDmReceivedCount')
 
     @property
     def RecentDelayNanoSec(self):
-        """(read only) The learned most recent delay measurement in nanoseconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay measurement in nanoseconds.
         """
         return self._get_attribute('recentDelayNanoSec')
 
     @property
     def RecentDelaySec(self):
-        """(read only) The learned most recent delay measurement in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay measurement in seconds.
         """
         return self._get_attribute('recentDelaySec')
 
     @property
     def RecentDelayVariationNanoSec(self):
-        """(read only) The learned most recent delay variation in nano seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay variation in nano seconds.
         """
         return self._get_attribute('recentDelayVariationNanoSec')
 
     @property
     def RecentDelayVariationSec(self):
-        """(read only) The learned most recent delay variation in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned most recent delay variation in seconds.
         """
         return self._get_attribute('recentDelayVariationSec')
 
     @property
     def SrcMacAddress(self):
-        """(read only) The learned source MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned source MAC address.
         """
         return self._get_attribute('srcMacAddress')
 
     def find(self, AverageDelayNanoSec=None, AverageDelaySec=None, AverageDelayVariationNanoSec=None, AverageDelayVariationSec=None, BVlan=None, DmmCountSent=None, DstMacAddress=None, MdLevel=None, NoReplyCount=None, OneDmReceivedCount=None, RecentDelayNanoSec=None, RecentDelaySec=None, RecentDelayVariationNanoSec=None, RecentDelayVariationSec=None, SrcMacAddress=None):
-        """Finds and retrieves pbbTePeriodicOamDmLearnedInfo data from the server.
+        """Finds and retrieves pbbTePeriodicOamDmLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pbbTePeriodicOamDmLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all pbbTePeriodicOamDmLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbTePeriodicOamDmLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pbbTePeriodicOamDmLearnedInfo resources from the server.
 
-        Args:
-            AverageDelayNanoSec (number): (read only) The learned average delay in nanoseconds.
-            AverageDelaySec (number): (read only) The learned average delay in seconds.
-            AverageDelayVariationNanoSec (number): (read only) The learned most recent delay variation in nano seconds.
-            AverageDelayVariationSec (number): (read only) The learned most recent delay variation in seconds.
-            BVlan (str): (read only) The learned B-VLAN identifier.
-            DmmCountSent (number): (read only) The learned number of DMMs sent.
-            DstMacAddress (str): (read only) The learned destination MAC address.
-            MdLevel (number): (read only) The learned MD level for the periodic OAM.
-            NoReplyCount (number): (read only) The learned number of periodic OAM no replies.
-            OneDmReceivedCount (number): (read only) The learned number of DM received.
-            RecentDelayNanoSec (number): (read only) The learned most recent delay measurement in nanoseconds.
-            RecentDelaySec (number): (read only) The learned most recent delay measurement in seconds.
-            RecentDelayVariationNanoSec (number): (read only) The learned most recent delay variation in nano seconds.
-            RecentDelayVariationSec (number): (read only) The learned most recent delay variation in seconds.
-            SrcMacAddress (str): (read only) The learned source MAC address.
+        Args
+        ----
+        - AverageDelayNanoSec (number): (read only) The learned average delay in nanoseconds.
+        - AverageDelaySec (number): (read only) The learned average delay in seconds.
+        - AverageDelayVariationNanoSec (number): (read only) The learned most recent delay variation in nano seconds.
+        - AverageDelayVariationSec (number): (read only) The learned most recent delay variation in seconds.
+        - BVlan (str): (read only) The learned B-VLAN identifier.
+        - DmmCountSent (number): (read only) The learned number of DMMs sent.
+        - DstMacAddress (str): (read only) The learned destination MAC address.
+        - MdLevel (number): (read only) The learned MD level for the periodic OAM.
+        - NoReplyCount (number): (read only) The learned number of periodic OAM no replies.
+        - OneDmReceivedCount (number): (read only) The learned number of DM received.
+        - RecentDelayNanoSec (number): (read only) The learned most recent delay measurement in nanoseconds.
+        - RecentDelaySec (number): (read only) The learned most recent delay measurement in seconds.
+        - RecentDelayVariationNanoSec (number): (read only) The learned most recent delay variation in nano seconds.
+        - RecentDelayVariationSec (number): (read only) The learned most recent delay variation in seconds.
+        - SrcMacAddress (str): (read only) The learned source MAC address.
 
-        Returns:
-            self: This instance with matching pbbTePeriodicOamDmLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pbbTePeriodicOamDmLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pbbTePeriodicOamDmLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pbbTePeriodicOamDmLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pbbTePeriodicOamDmLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

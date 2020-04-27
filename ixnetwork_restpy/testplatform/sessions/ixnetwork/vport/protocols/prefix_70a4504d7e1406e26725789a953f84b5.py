@@ -36,10 +36,10 @@ class Prefix(Base):
 
     @property
     def Prefix(self):
-        """Controls the prefix attributes that are filtered on.
-
-        Returns:
-            list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:bool,arg3:number,arg4:number)): Controls the prefix attributes that are filtered on.
         """
         return self._get_attribute('prefix')
     @Prefix.setter
@@ -47,12 +47,14 @@ class Prefix(Base):
         self._set_attribute('prefix', value)
 
     def update(self, Prefix=None):
-        """Updates a child instance of prefix on the server.
+        """Updates prefix resource on the server.
 
-        Args:
-            Prefix (list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))): Controls the prefix attributes that are filtered on.
+        Args
+        ----
+        - Prefix (list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))): Controls the prefix attributes that are filtered on.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

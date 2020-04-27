@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class NextTableLearnedInfo(Base):
     """NOT DEFINED
-    The NextTableLearnedInfo class encapsulates a list of nextTableLearnedInfo resources that is managed by the system.
+    The NextTableLearnedInfo class encapsulates a list of nextTableLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the NextTableLearnedInfo.find() method.
     """
 
@@ -37,91 +37,98 @@ class NextTableLearnedInfo(Base):
 
     @property
     def ExperimenterData(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('experimenterData')
 
     @property
     def ExperimenterDataLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterDataLength')
 
     @property
     def ExperimenterId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('experimenterId')
 
     @property
     def NextTableIds(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nextTableIds')
 
     @property
     def Property(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('property')
 
     @property
     def SupportedField(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('supportedField')
 
     def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
-        """Finds and retrieves nextTableLearnedInfo data from the server.
+        """Finds and retrieves nextTableLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nextTableLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all nextTableLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nextTableLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nextTableLearnedInfo resources from the server.
 
-        Args:
-            ExperimenterData (str): NOT DEFINED
-            ExperimenterDataLength (number): NOT DEFINED
-            ExperimenterId (number): NOT DEFINED
-            NextTableIds (str): NOT DEFINED
-            Property (str): NOT DEFINED
-            SupportedField (str): NOT DEFINED
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - NextTableIds (str): NOT DEFINED
+        - Property (str): NOT DEFINED
+        - SupportedField (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching nextTableLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nextTableLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nextTableLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nextTableLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nextTableLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

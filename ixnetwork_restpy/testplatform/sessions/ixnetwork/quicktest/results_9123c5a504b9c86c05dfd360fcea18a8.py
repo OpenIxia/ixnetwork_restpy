@@ -37,100 +37,100 @@ each of the traffic items.
 
     @property
     def CurrentActions(self):
-        """Current actions
-
-        Returns:
-            list(dict(arg1:str,arg2:str[AgingTable|ApplyFlowGroups|CheckingForAvailableStats|CheckingLicense|ClearingStats|CollectingStats|DropLink|frameLossCriteriaNotMet|HoldDown|InitializingTest|IterationStart|LicenseFailed|LicenseVerified|None|NoRibInConvergenceStopping|ReleasingResources|SendingLearningFrames|SetTestConfiguration|SetupStatisticsCollection|StartingTraffic|TestEnded|TestStarted|ThresholdReachedStopping|TransmittingComplete|TransmittingFrames|WaitAfterFailover|WaitBeforeFailover|WaitingAfterLearningFramesSent|WaitingBeforeSendingTraffic|WaitingForDelayBetweenIterations|WaitingForPorts|WaitingForStats|WaitingTrafficToStop]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:str[AgingTable | ApplyFlowGroups | CheckingForAvailableStats | CheckingLicense | ClearingStats | CollectingStats | DropLink | frameLossCriteriaNotMet | HoldDown | InitializingTest | IterationStart | LicenseFailed | LicenseVerified | None | NoRibInConvergenceStopping | ReleasingResources | SendingLearningFrames | SetTestConfiguration | SetupStatisticsCollection | StartingTraffic | TestEnded | TestStarted | ThresholdReachedStopping | TransmittingComplete | TransmittingFrames | WaitAfterFailover | WaitBeforeFailover | WaitingAfterLearningFramesSent | WaitingBeforeSendingTraffic | WaitingForDelayBetweenIterations | WaitingForPorts | WaitingForStats | WaitingTrafficToStop])): Current actions
         """
         return self._get_attribute('currentActions')
 
     @property
     def CurrentViews(self):
-        """Views used by this QuickTest
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Views used by this QuickTest
         """
         return self._get_attribute('currentViews')
 
     @property
     def Duration(self):
-        """Test duration
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test duration
         """
         return self._get_attribute('duration')
 
     @property
     def IsRunning(self):
-        """Indicates whether the test is currently running
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether the test is currently running
         """
         return self._get_attribute('isRunning')
 
     @property
     def Progress(self):
-        """Test progress
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test progress
         """
         return self._get_attribute('progress')
 
     @property
     def Result(self):
-        """Test result
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test result
         """
         return self._get_attribute('result')
 
     @property
     def ResultPath(self):
-        """Folder containing test result files
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Folder containing test result files
         """
         return self._get_attribute('resultPath')
 
     @property
     def StartTime(self):
-        """Test start time
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test start time
         """
         return self._get_attribute('startTime')
 
     @property
     def Status(self):
-        """Test status
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test status
         """
         return self._get_attribute('status')
 
     @property
     def TrafficStatus(self):
-        """Test traffic status
-
-        Returns:
-            dict(arg1:number,arg2:number)
+        """
+        Returns
+        -------
+        - dict(arg1:number,arg2:number): Test traffic status
         """
         return self._get_attribute('trafficStatus')
 
     @property
     def WaitingStatus(self):
-        """Test waiting status
-
-        Returns:
-            dict(arg1:number,arg2:number)
+        """
+        Returns
+        -------
+        - dict(arg1:number,arg2:number): Test waiting status
         """
         return self._get_attribute('waitingStatus')
 
@@ -139,9 +139,10 @@ each of the traffic items.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -149,9 +150,10 @@ each of the traffic items.
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -159,12 +161,10 @@ each of the traffic items.
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -174,9 +174,10 @@ each of the traffic items.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -186,12 +187,10 @@ each of the traffic items.
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -201,24 +200,17 @@ each of the traffic items.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -230,18 +222,16 @@ each of the traffic items.
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -253,9 +243,10 @@ each of the traffic items.
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -265,12 +256,10 @@ each of the traffic items.
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

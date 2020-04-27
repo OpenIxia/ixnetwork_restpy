@@ -36,10 +36,10 @@ class Licensing(Base):
 
     @property
     def LicensingServers(self):
-        """List of license servers to use
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of license servers to use
         """
         return self._get_attribute('licensingServers')
     @LicensingServers.setter
@@ -48,10 +48,10 @@ class Licensing(Base):
 
     @property
     def Mode(self):
-        """Set license mode to either perpetual or subscription
-
-        Returns:
-            str(mixed|perpetual|subscription)
+        """
+        Returns
+        -------
+        - str(mixed | perpetual | subscription): Set license mode to either perpetual or subscription
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -60,10 +60,10 @@ class Licensing(Base):
 
     @property
     def Tier(self):
-        """set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
         """
         return self._get_attribute('tier')
     @Tier.setter
@@ -71,14 +71,16 @@ class Licensing(Base):
         self._set_attribute('tier', value)
 
     def update(self, LicensingServers=None, Mode=None, Tier=None):
-        """Updates a child instance of licensing on the server.
+        """Updates licensing resource on the server.
 
-        Args:
-            LicensingServers (list(str)): List of license servers to use
-            Mode (str(mixed|perpetual|subscription)): Set license mode to either perpetual or subscription
-            Tier (str): set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
+        Args
+        ----
+        - LicensingServers (list(str)): List of license servers to use
+        - Mode (str(mixed | perpetual | subscription)): Set license mode to either perpetual or subscription
+        - Tier (str): set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

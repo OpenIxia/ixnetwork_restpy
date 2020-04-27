@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableProtocolStackFilter(Base):
     """List of protocol stack ranges available for filtering.
-    The AvailableProtocolStackFilter class encapsulates a list of availableProtocolStackFilter resources that is managed by the system.
+    The AvailableProtocolStackFilter class encapsulates a list of availableProtocolStackFilter resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableProtocolStackFilter.find() method.
     """
 
@@ -37,41 +37,48 @@ class AvailableProtocolStackFilter(Base):
 
     @property
     def Name(self):
-        """The name of the protocol stack ranges.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the protocol stack ranges.
         """
         return self._get_attribute('name')
 
     def find(self, Name=None):
-        """Finds and retrieves availableProtocolStackFilter data from the server.
+        """Finds and retrieves availableProtocolStackFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableProtocolStackFilter data from the server.
-        By default the find method takes no parameters and will retrieve all availableProtocolStackFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableProtocolStackFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableProtocolStackFilter resources from the server.
 
-        Args:
-            Name (str): The name of the protocol stack ranges.
+        Args
+        ----
+        - Name (str): The name of the protocol stack ranges.
 
-        Returns:
-            self: This instance with matching availableProtocolStackFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableProtocolStackFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableProtocolStackFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableProtocolStackFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableProtocolStackFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,24 +36,24 @@ class Isis(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_6c0c1aba5659095e9c92d62cfb8d29b8.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_6c0c1aba5659095e9c92d62cfb8d29b8.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_6c0c1aba5659095e9c92d62cfb8d29b8 import Router
         return Router(self)
 
     @property
     def AllL1RbridgesMac(self):
-        """ISIS All L1 RBridge MAC
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: ISIS All L1 RBridge MAC
         """
         return self._get_attribute('allL1RbridgesMac')
     @AllL1RbridgesMac.setter
@@ -62,10 +62,10 @@ class Isis(Base):
 
     @property
     def EmulationType(self):
-        """Sets the router emulation type of ISIS component of the protocol server for a particular port.
-
-        Returns:
-            str(isisL3Routing|dceIsis|spbIsis|trillIsis)
+        """
+        Returns
+        -------
+        - str(isisL3Routing | dceIsis | spbIsis | trillIsis): Sets the router emulation type of ISIS component of the protocol server for a particular port.
         """
         return self._get_attribute('emulationType')
     @EmulationType.setter
@@ -74,10 +74,10 @@ class Isis(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated IS-IS router in the emulated IS-IS network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated IS-IS router in the emulated IS-IS network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -86,10 +86,10 @@ class Isis(Base):
 
     @property
     def HelloMulticastMac(self):
-        """ISIS Hello Multicast MAC
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: ISIS Hello Multicast MAC
         """
         return self._get_attribute('helloMulticastMac')
     @HelloMulticastMac.setter
@@ -98,10 +98,10 @@ class Isis(Base):
 
     @property
     def LspMgroupPdusPerInterval(self):
-        """Indicates the number of LSP MGROUP-PDUs to be sent for each interval.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of LSP MGROUP-PDUs to be sent for each interval.
         """
         return self._get_attribute('lspMgroupPdusPerInterval')
     @LspMgroupPdusPerInterval.setter
@@ -110,10 +110,10 @@ class Isis(Base):
 
     @property
     def NlpId(self):
-        """ISIS NLP ID
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: ISIS NLP ID
         """
         return self._get_attribute('nlpId')
     @NlpId.setter
@@ -122,10 +122,10 @@ class Isis(Base):
 
     @property
     def RateControlInterval(self):
-        """Indicates the wait time for transmission.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the wait time for transmission.
         """
         return self._get_attribute('rateControlInterval')
     @RateControlInterval.setter
@@ -134,19 +134,19 @@ class Isis(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the ISIS server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the ISIS server.
         """
         return self._get_attribute('runningState')
 
     @property
     def SendP2PHellosToUnicastMac(self):
-        """If enabled, sends point to point hello messages to unicast mac addresses.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, sends point to point hello messages to unicast mac addresses.
         """
         return self._get_attribute('sendP2PHellosToUnicastMac')
     @SendP2PHellosToUnicastMac.setter
@@ -155,10 +155,10 @@ class Isis(Base):
 
     @property
     def SpbAllL1BridgesMac(self):
-        """Contains all SPB ISIS specific attributes.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Contains all SPB ISIS specific attributes.
         """
         return self._get_attribute('spbAllL1BridgesMac')
     @SpbAllL1BridgesMac.setter
@@ -167,10 +167,10 @@ class Isis(Base):
 
     @property
     def SpbHelloMulticastMac(self):
-        """Contains all hello messages to multicast mac addresses.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Contains all hello messages to multicast mac addresses.
         """
         return self._get_attribute('spbHelloMulticastMac')
     @SpbHelloMulticastMac.setter
@@ -179,10 +179,10 @@ class Isis(Base):
 
     @property
     def SpbNlpId(self):
-        """SPB NLP ID
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SPB NLP ID
         """
         return self._get_attribute('spbNlpId')
     @SpbNlpId.setter
@@ -190,34 +190,37 @@ class Isis(Base):
         self._set_attribute('spbNlpId', value)
 
     def update(self, AllL1RbridgesMac=None, EmulationType=None, Enabled=None, HelloMulticastMac=None, LspMgroupPdusPerInterval=None, NlpId=None, RateControlInterval=None, SendP2PHellosToUnicastMac=None, SpbAllL1BridgesMac=None, SpbHelloMulticastMac=None, SpbNlpId=None):
-        """Updates a child instance of isis on the server.
+        """Updates isis resource on the server.
 
-        Args:
-            AllL1RbridgesMac (str): ISIS All L1 RBridge MAC
-            EmulationType (str(isisL3Routing|dceIsis|spbIsis|trillIsis)): Sets the router emulation type of ISIS component of the protocol server for a particular port.
-            Enabled (bool): Enables or disables the use of this emulated IS-IS router in the emulated IS-IS network. (default = disabled)
-            HelloMulticastMac (str): ISIS Hello Multicast MAC
-            LspMgroupPdusPerInterval (number): Indicates the number of LSP MGROUP-PDUs to be sent for each interval.
-            NlpId (number): ISIS NLP ID
-            RateControlInterval (number): Indicates the wait time for transmission.
-            SendP2PHellosToUnicastMac (bool): If enabled, sends point to point hello messages to unicast mac addresses.
-            SpbAllL1BridgesMac (str): Contains all SPB ISIS specific attributes.
-            SpbHelloMulticastMac (str): Contains all hello messages to multicast mac addresses.
-            SpbNlpId (number): SPB NLP ID
+        Args
+        ----
+        - AllL1RbridgesMac (str): ISIS All L1 RBridge MAC
+        - EmulationType (str(isisL3Routing | dceIsis | spbIsis | trillIsis)): Sets the router emulation type of ISIS component of the protocol server for a particular port.
+        - Enabled (bool): Enables or disables the use of this emulated IS-IS router in the emulated IS-IS network. (default = disabled)
+        - HelloMulticastMac (str): ISIS Hello Multicast MAC
+        - LspMgroupPdusPerInterval (number): Indicates the number of LSP MGROUP-PDUs to be sent for each interval.
+        - NlpId (number): ISIS NLP ID
+        - RateControlInterval (number): Indicates the wait time for transmission.
+        - SendP2PHellosToUnicastMac (bool): If enabled, sends point to point hello messages to unicast mac addresses.
+        - SpbAllL1BridgesMac (str): Contains all SPB ISIS specific attributes.
+        - SpbHelloMulticastMac (str): Contains all hello messages to multicast mac addresses.
+        - SpbNlpId (number): SPB NLP ID
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the ISIS protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -227,9 +230,10 @@ class Isis(Base):
 
         Stops the ISIS protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

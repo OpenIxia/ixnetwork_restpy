@@ -36,10 +36,10 @@ class Ethernet(Base):
 
     @property
     def MacAddress(self):
-        """A 48-bit hardware address that uniquely identifies each node of a network.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A 48-bit hardware address that uniquely identifies each node of a network.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -48,10 +48,10 @@ class Ethernet(Base):
 
     @property
     def Mtu(self):
-        """The maximum packet size, in bytes, that a particular interface can handle.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum packet size, in bytes, that a particular interface can handle.
         """
         return self._get_attribute('mtu')
     @Mtu.setter
@@ -60,10 +60,10 @@ class Ethernet(Base):
 
     @property
     def UidFromMac(self):
-        """The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
         """
         return self._get_attribute('uidFromMac')
     @UidFromMac.setter
@@ -71,14 +71,16 @@ class Ethernet(Base):
         self._set_attribute('uidFromMac', value)
 
     def update(self, MacAddress=None, Mtu=None, UidFromMac=None):
-        """Updates a child instance of ethernet on the server.
+        """Updates ethernet resource on the server.
 
-        Args:
-            MacAddress (str): A 48-bit hardware address that uniquely identifies each node of a network.
-            Mtu (number): The maximum packet size, in bytes, that a particular interface can handle.
-            UidFromMac (bool): The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
+        Args
+        ----
+        - MacAddress (str): A 48-bit hardware address that uniquely identifies each node of a network.
+        - Mtu (number): The maximum packet size, in bytes, that a particular interface can handle.
+        - UidFromMac (bool): The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

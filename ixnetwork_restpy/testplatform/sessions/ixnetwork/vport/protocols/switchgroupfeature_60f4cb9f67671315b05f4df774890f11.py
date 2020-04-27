@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchGroupFeature(Base):
     """This window allows you to configure the capabilities of groups on a switch. The fields and controls in the Switch Group Features window are described in this section. This window is available for Switch configuration only.
-    The SwitchGroupFeature class encapsulates a list of switchGroupFeature resources that is managed by the system.
+    The SwitchGroupFeature class encapsulates a list of switchGroupFeature resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchGroupFeature.find() method.
     """
 
@@ -37,10 +37,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def ApplyGroup(self):
-        """If selected, table supports Apply Group capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Apply Group capability.
         """
         return self._get_attribute('applyGroup')
     @ApplyGroup.setter
@@ -49,10 +49,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def CopyTtlIn(self):
-        """If selected, table supports Copy TTL In capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Copy TTL In capability.
         """
         return self._get_attribute('copyTtlIn')
     @CopyTtlIn.setter
@@ -61,10 +61,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def CopyTtlOut(self):
-        """If selected, table supports Copy TTL capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Copy TTL capability.
         """
         return self._get_attribute('copyTtlOut')
     @CopyTtlOut.setter
@@ -73,10 +73,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def DecrementMplsTtl(self):
-        """If selected, table supports Decrement MPLS TTL capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Decrement MPLS TTL capability.
         """
         return self._get_attribute('decrementMplsTtl')
     @DecrementMplsTtl.setter
@@ -85,10 +85,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def DecrementNetworkTtl(self):
-        """If selected, table supports Decrement Network TTL capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Decrement Network TTL capability.
         """
         return self._get_attribute('decrementNetworkTtl')
     @DecrementNetworkTtl.setter
@@ -97,19 +97,19 @@ class SwitchGroupFeature(Base):
 
     @property
     def GroupType(self):
-        """The type of group. (This type is selected in the Switches window.)
-
-        Returns:
-            str(allGroup|selectGroup|indirectGroup|fastFailoverGroup)
+        """
+        Returns
+        -------
+        - str(allGroup | selectGroup | indirectGroup | fastFailoverGroup): The type of group. (This type is selected in the Switches window.)
         """
         return self._get_attribute('groupType')
 
     @property
     def MaxNoOfGroups(self):
-        """Specify the maximum number of groups supported per switch group type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the maximum number of groups supported per switch group type.
         """
         return self._get_attribute('maxNoOfGroups')
     @MaxNoOfGroups.setter
@@ -118,10 +118,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def Output(self):
-        """If selected, table supports Output capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Output capability.
         """
         return self._get_attribute('output')
     @Output.setter
@@ -130,10 +130,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PopMpls(self):
-        """If selected, table supports Pop MPLS capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Pop MPLS capability.
         """
         return self._get_attribute('popMpls')
     @PopMpls.setter
@@ -142,10 +142,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PopPbb(self):
-        """If selected, table supports Experimenter capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Experimenter capability.
         """
         return self._get_attribute('popPbb')
     @PopPbb.setter
@@ -154,10 +154,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PopVlan(self):
-        """If selected, table supports Pop VLAN capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Pop VLAN capability.
         """
         return self._get_attribute('popVlan')
     @PopVlan.setter
@@ -166,10 +166,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PushMpls(self):
-        """If selected, table supports Push MPLS capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push MPLS capability.
         """
         return self._get_attribute('pushMpls')
     @PushMpls.setter
@@ -178,10 +178,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PushPbb(self):
-        """If selected, table supports Push PBB capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push PBB capability.
         """
         return self._get_attribute('pushPbb')
     @PushPbb.setter
@@ -190,10 +190,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def PushVlan(self):
-        """If selected, table supports Push VLAN capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push VLAN capability.
         """
         return self._get_attribute('pushVlan')
     @PushVlan.setter
@@ -202,10 +202,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def SetField(self):
-        """If selected, table supports Set Field capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Field capability.
         """
         return self._get_attribute('setField')
     @SetField.setter
@@ -214,10 +214,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def SetMplsTtl(self):
-        """If selected, table supports Set MPLS TTL capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set MPLS TTL capability.
         """
         return self._get_attribute('setMplsTtl')
     @SetMplsTtl.setter
@@ -226,10 +226,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def SetNetworkTtl(self):
-        """If selected, table supports Set Network TTL capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Network TTL capability.
         """
         return self._get_attribute('setNetworkTtl')
     @SetNetworkTtl.setter
@@ -238,10 +238,10 @@ class SwitchGroupFeature(Base):
 
     @property
     def SetQueue(self):
-        """If selected, table supports Set Queue capability.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Queue capability.
         """
         return self._get_attribute('setQueue')
     @SetQueue.setter
@@ -249,77 +249,86 @@ class SwitchGroupFeature(Base):
         self._set_attribute('setQueue', value)
 
     def update(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Updates a child instance of switchGroupFeature on the server.
+        """Updates switchGroupFeature resource on the server.
 
-        Args:
-            ApplyGroup (bool): If selected, table supports Apply Group capability.
-            CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
-            CopyTtlOut (bool): If selected, table supports Copy TTL capability.
-            DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
-            DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
-            MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
-            Output (bool): If selected, table supports Output capability.
-            PopMpls (bool): If selected, table supports Pop MPLS capability.
-            PopPbb (bool): If selected, table supports Experimenter capability.
-            PopVlan (bool): If selected, table supports Pop VLAN capability.
-            PushMpls (bool): If selected, table supports Push MPLS capability.
-            PushPbb (bool): If selected, table supports Push PBB capability.
-            PushVlan (bool): If selected, table supports Push VLAN capability.
-            SetField (bool): If selected, table supports Set Field capability.
-            SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
-            SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
-            SetQueue (bool): If selected, table supports Set Queue capability.
+        Args
+        ----
+        - ApplyGroup (bool): If selected, table supports Apply Group capability.
+        - CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
+        - CopyTtlOut (bool): If selected, table supports Copy TTL capability.
+        - DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
+        - MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
+        - Output (bool): If selected, table supports Output capability.
+        - PopMpls (bool): If selected, table supports Pop MPLS capability.
+        - PopPbb (bool): If selected, table supports Experimenter capability.
+        - PopVlan (bool): If selected, table supports Pop VLAN capability.
+        - PushMpls (bool): If selected, table supports Push MPLS capability.
+        - PushPbb (bool): If selected, table supports Push PBB capability.
+        - PushVlan (bool): If selected, table supports Push VLAN capability.
+        - SetField (bool): If selected, table supports Set Field capability.
+        - SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
+        - SetQueue (bool): If selected, table supports Set Queue capability.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, GroupType=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Finds and retrieves switchGroupFeature data from the server.
+        """Finds and retrieves switchGroupFeature resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchGroupFeature data from the server.
-        By default the find method takes no parameters and will retrieve all switchGroupFeature data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupFeature resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchGroupFeature resources from the server.
 
-        Args:
-            ApplyGroup (bool): If selected, table supports Apply Group capability.
-            CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
-            CopyTtlOut (bool): If selected, table supports Copy TTL capability.
-            DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
-            DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
-            GroupType (str(allGroup|selectGroup|indirectGroup|fastFailoverGroup)): The type of group. (This type is selected in the Switches window.)
-            MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
-            Output (bool): If selected, table supports Output capability.
-            PopMpls (bool): If selected, table supports Pop MPLS capability.
-            PopPbb (bool): If selected, table supports Experimenter capability.
-            PopVlan (bool): If selected, table supports Pop VLAN capability.
-            PushMpls (bool): If selected, table supports Push MPLS capability.
-            PushPbb (bool): If selected, table supports Push PBB capability.
-            PushVlan (bool): If selected, table supports Push VLAN capability.
-            SetField (bool): If selected, table supports Set Field capability.
-            SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
-            SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
-            SetQueue (bool): If selected, table supports Set Queue capability.
+        Args
+        ----
+        - ApplyGroup (bool): If selected, table supports Apply Group capability.
+        - CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
+        - CopyTtlOut (bool): If selected, table supports Copy TTL capability.
+        - DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
+        - GroupType (str(allGroup | selectGroup | indirectGroup | fastFailoverGroup)): The type of group. (This type is selected in the Switches window.)
+        - MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
+        - Output (bool): If selected, table supports Output capability.
+        - PopMpls (bool): If selected, table supports Pop MPLS capability.
+        - PopPbb (bool): If selected, table supports Experimenter capability.
+        - PopVlan (bool): If selected, table supports Pop VLAN capability.
+        - PushMpls (bool): If selected, table supports Push MPLS capability.
+        - PushPbb (bool): If selected, table supports Push PBB capability.
+        - PushVlan (bool): If selected, table supports Push VLAN capability.
+        - SetField (bool): If selected, table supports Set Field capability.
+        - SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
+        - SetQueue (bool): If selected, table supports Set Queue capability.
 
-        Returns:
-            self: This instance with matching switchGroupFeature data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchGroupFeature resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchGroupFeature data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchGroupFeature data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchGroupFeature resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

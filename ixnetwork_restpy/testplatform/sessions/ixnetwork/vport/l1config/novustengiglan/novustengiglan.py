@@ -36,38 +36,38 @@ class NovusTenGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -76,10 +76,10 @@ class NovusTenGigLan(Base):
 
     @property
     def AutoNegotiate(self):
-        """If enabled, allows autonegotiation between ports for speed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, allows autonegotiation between ports for speed.
         """
         return self._get_attribute('autoNegotiate')
     @AutoNegotiate.setter
@@ -88,10 +88,10 @@ class NovusTenGigLan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -100,10 +100,10 @@ class NovusTenGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -112,10 +112,10 @@ class NovusTenGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """The 48-bit MAC address that the port listens on for a directed pause.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -124,10 +124,10 @@ class NovusTenGigLan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -136,10 +136,10 @@ class NovusTenGigLan(Base):
 
     @property
     def LoopbackMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        """
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -149,9 +149,9 @@ class NovusTenGigLan(Base):
     @property
     def MasterSlaveMode(self):
         """
-
-        Returns:
-            str(master|slave)
+        Returns
+        -------
+        - str(master | slave): 
         """
         return self._get_attribute('masterSlaveMode')
     @MasterSlaveMode.setter
@@ -160,10 +160,10 @@ class NovusTenGigLan(Base):
 
     @property
     def Media(self):
-        """Available only for cards that support this dual-PHY capability.
-
-        Returns:
-            str(copper|fiber|sgmii)
+        """
+        Returns
+        -------
+        - str(copper | fiber | sgmii): Available only for cards that support this dual-PHY capability.
         """
         return self._get_attribute('media')
     @Media.setter
@@ -172,10 +172,10 @@ class NovusTenGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -184,10 +184,10 @@ class NovusTenGigLan(Base):
 
     @property
     def Speed(self):
-        """NOT DEFINED
-
-        Returns:
-            str(speed1000|speed100fd|speed10g|speed2.5g|speed5g)
+        """
+        Returns
+        -------
+        - str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g): NOT DEFINED
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -197,9 +197,9 @@ class NovusTenGigLan(Base):
     @property
     def SpeedAuto(self):
         """
-
-        Returns:
-            list(str[speed1000|speed100fd|speed10g|speed2.5g|speed5g])
+        Returns
+        -------
+        - list(str[speed1000 | speed100fd | speed10g | speed2.5g | speed5g]): 
         """
         return self._get_attribute('speedAuto')
     @SpeedAuto.setter
@@ -208,10 +208,10 @@ class NovusTenGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If enabled, will allow transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -219,24 +219,26 @@ class NovusTenGigLan(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, Ppm=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of novusTenGigLan on the server.
+        """Updates novusTenGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed.
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
-            MasterSlaveMode (str(master|slave)): 
-            Media (str(copper|fiber|sgmii)): Available only for cards that support this dual-PHY capability.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            Speed (str(speed1000|speed100fd|speed10g|speed2.5g|speed5g)): NOT DEFINED
-            SpeedAuto (list(str[speed1000|speed100fd|speed10g|speed2.5g|speed5g])): 
-            TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - MasterSlaveMode (str(master | slave)): 
+        - Media (str(copper | fiber | sgmii)): Available only for cards that support this dual-PHY capability.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - Speed (str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
+        - SpeedAuto (list(str[speed1000 | speed100fd | speed10g | speed2.5g | speed5g])): 
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

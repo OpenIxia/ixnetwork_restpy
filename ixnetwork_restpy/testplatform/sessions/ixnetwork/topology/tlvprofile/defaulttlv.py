@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class DefaultTlv(Base):
     """Default Tlv container created by protocols
-    The DefaultTlv class encapsulates a list of defaultTlv resources that is managed by the system.
+    The DefaultTlv class encapsulates a list of defaultTlv resources that are managed by the system.
     A list of resources can be retrieved from the server using the DefaultTlv.find() method.
     """
 
@@ -37,33 +37,33 @@ class DefaultTlv(Base):
 
     @property
     def Value(self):
-        """An instance of the Value class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value.Value): An instance of the Value class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value.Value)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value import Value
         return Value(self)._select()
 
     @property
     def AvailableIncludeInMessages(self):
-        """A list of available messages which are used in the includeInMessages attribute
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): A list of available messages which are used in the includeInMessages attribute
         """
         return self._get_attribute('availableIncludeInMessages')
 
     @property
     def Description(self):
-        """Description of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the tlv
         """
         return self._get_attribute('description')
     @Description.setter
@@ -72,19 +72,20 @@ class DefaultTlv(Base):
 
     @property
     def EnablePerSession(self):
-        """Enable TLV per session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enablePerSession')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable TLV per session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enablePerSession'))
 
     @property
     def IncludeInMessages(self):
-        """Include the TLV in these protocol messages
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Include the TLV in these protocol messages
         """
         return self._get_attribute('includeInMessages')
     @IncludeInMessages.setter
@@ -93,10 +94,10 @@ class DefaultTlv(Base):
 
     @property
     def IsEnabled(self):
-        """Enables/disables this tlv
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/disables this tlv
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -105,10 +106,10 @@ class DefaultTlv(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -116,55 +117,64 @@ class DefaultTlv(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
-        """Updates a child instance of defaultTlv on the server.
+        """Updates defaultTlv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Description (str): Description of the tlv
-            IncludeInMessages (list(str)): Include the TLV in these protocol messages
-            IsEnabled (bool): Enables/disables this tlv
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IncludeInMessages (list(str)): Include the TLV in these protocol messages
+        - IsEnabled (bool): Enables/disables this tlv
+        - Name (str): Name of the tlv
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableIncludeInMessages=None, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
-        """Finds and retrieves defaultTlv data from the server.
+        """Finds and retrieves defaultTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve defaultTlv data from the server.
-        By default the find method takes no parameters and will retrieve all defaultTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve defaultTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all defaultTlv resources from the server.
 
-        Args:
-            AvailableIncludeInMessages (list(str)): A list of available messages which are used in the includeInMessages attribute
-            Description (str): Description of the tlv
-            IncludeInMessages (list(str)): Include the TLV in these protocol messages
-            IsEnabled (bool): Enables/disables this tlv
-            Name (str): Name of the tlv
+        Args
+        ----
+        - AvailableIncludeInMessages (list(str)): A list of available messages which are used in the includeInMessages attribute
+        - Description (str): Description of the tlv
+        - IncludeInMessages (list(str)): Include the TLV in these protocol messages
+        - IsEnabled (bool): Enables/disables this tlv
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with matching defaultTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching defaultTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of defaultTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the defaultTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the defaultTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -173,14 +183,17 @@ class DefaultTlv(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            EnablePerSession (str): optional regex of enablePerSession
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - EnablePerSession (str): optional regex of enablePerSession
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

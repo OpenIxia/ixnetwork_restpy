@@ -36,10 +36,10 @@ class InterArrivalTimeRate(Base):
 
     @property
     def Enabled(self):
-        """If enabled, fetches inter-arrival time and rate statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, fetches inter-arrival time and rate statistics.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -47,12 +47,14 @@ class InterArrivalTimeRate(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of interArrivalTimeRate on the server.
+        """Updates interArrivalTimeRate resource on the server.
 
-        Args:
-            Enabled (bool): If enabled, fetches inter-arrival time and rate statistics.
+        Args
+        ----
+        - Enabled (bool): If enabled, fetches inter-arrival time and rate statistics.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

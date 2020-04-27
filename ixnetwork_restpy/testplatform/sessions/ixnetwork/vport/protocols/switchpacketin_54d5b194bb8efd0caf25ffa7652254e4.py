@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SwitchPacketIn(Base):
     """This object allows to configure the packet-in message parameters of the switch.
-    The SwitchPacketIn class encapsulates a list of switchPacketIn resources that is be managed by the user.
+    The SwitchPacketIn class encapsulates a list of switchPacketIn resources that are managed by the user.
     A list of resources can be retrieved from the server using the SwitchPacketIn.find() method.
-    The list can be managed by the user by using the SwitchPacketIn.add() and SwitchPacketIn.remove() methods.
+    The list can be managed by using the SwitchPacketIn.add() and SwitchPacketIn.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SwitchPacketIn(Base):
 
     @property
     def PacketInHeaders(self):
-        """An instance of the PacketInHeaders class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_d02a629ad9612b0e5ef79eb3afe666db.PacketInHeaders): An instance of the PacketInHeaders class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_d02a629ad9612b0e5ef79eb3afe666db.PacketInHeaders)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_d02a629ad9612b0e5ef79eb3afe666db import PacketInHeaders
         return PacketInHeaders(self)._select()
 
     @property
     def AuxiliaryId(self):
-        """The identifier for auxiliary connections
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for auxiliary connections
         """
         return self._get_attribute('auxiliaryId')
     @AuxiliaryId.setter
@@ -64,10 +64,10 @@ class SwitchPacketIn(Base):
 
     @property
     def ConsultFlowTable(self):
-        """If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
         """
         return self._get_attribute('consultFlowTable')
     @ConsultFlowTable.setter
@@ -76,10 +76,10 @@ class SwitchPacketIn(Base):
 
     @property
     def Enabled(self):
-        """If true, enables Packet-In Range for the switch.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables Packet-In Range for the switch.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,10 +88,10 @@ class SwitchPacketIn(Base):
 
     @property
     def InPort(self):
-        """Specifies the number of ports on which the switch receives the new packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the number of ports on which the switch receives the new packet.
         """
         return self._get_attribute('inPort')
     @InPort.setter
@@ -100,10 +100,10 @@ class SwitchPacketIn(Base):
 
     @property
     def PacketIn(self):
-        """Specifies the contents of the new packet that will be sent via the Packet-In message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the contents of the new packet that will be sent via the Packet-In message.
         """
         return self._get_attribute('packetIn')
     @PacketIn.setter
@@ -112,10 +112,10 @@ class SwitchPacketIn(Base):
 
     @property
     def PacketInName(self):
-        """Indicates the packet-in Range identifier name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the packet-in Range identifier name.
         """
         return self._get_attribute('packetInName')
     @PacketInName.setter
@@ -124,10 +124,10 @@ class SwitchPacketIn(Base):
 
     @property
     def PhysicalInPort(self):
-        """The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
         """
         return self._get_attribute('physicalInPort')
     @PhysicalInPort.setter
@@ -136,10 +136,10 @@ class SwitchPacketIn(Base):
 
     @property
     def SendPacketIn(self):
-        """If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
         """
         return self._get_attribute('sendPacketIn')
     @SendPacketIn.setter
@@ -147,89 +147,102 @@ class SwitchPacketIn(Base):
         self._set_attribute('sendPacketIn', value)
 
     def update(self, AuxiliaryId=None, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, PhysicalInPort=None, SendPacketIn=None):
-        """Updates a child instance of switchPacketIn on the server.
+        """Updates switchPacketIn resource on the server.
 
-        Args:
-            AuxiliaryId (number): The identifier for auxiliary connections
-            ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
-            Enabled (bool): If true, enables Packet-In Range for the switch.
-            InPort (str): Specifies the number of ports on which the switch receives the new packet.
-            PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
-            PacketInName (str): Indicates the packet-in Range identifier name.
-            PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
-            SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
+        Args
+        ----
+        - AuxiliaryId (number): The identifier for auxiliary connections
+        - ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
+        - Enabled (bool): If true, enables Packet-In Range for the switch.
+        - InPort (str): Specifies the number of ports on which the switch receives the new packet.
+        - PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
+        - PacketInName (str): Indicates the packet-in Range identifier name.
+        - PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
+        - SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuxiliaryId=None, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, PhysicalInPort=None, SendPacketIn=None):
-        """Adds a new switchPacketIn node on the server and retrieves it in this instance.
+        """Adds a new switchPacketIn resource on the server and adds it to the container.
 
-        Args:
-            AuxiliaryId (number): The identifier for auxiliary connections
-            ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
-            Enabled (bool): If true, enables Packet-In Range for the switch.
-            InPort (str): Specifies the number of ports on which the switch receives the new packet.
-            PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
-            PacketInName (str): Indicates the packet-in Range identifier name.
-            PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
-            SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
+        Args
+        ----
+        - AuxiliaryId (number): The identifier for auxiliary connections
+        - ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
+        - Enabled (bool): If true, enables Packet-In Range for the switch.
+        - InPort (str): Specifies the number of ports on which the switch receives the new packet.
+        - PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
+        - PacketInName (str): Indicates the packet-in Range identifier name.
+        - PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
+        - SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
 
-        Returns:
-            self: This instance with all currently retrieved switchPacketIn data using find and the newly added switchPacketIn data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchPacketIn resources using find and the newly added switchPacketIn resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the switchPacketIn data in this instance from server.
+        """Deletes all the contained switchPacketIn resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuxiliaryId=None, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, PhysicalInPort=None, SendPacketIn=None):
-        """Finds and retrieves switchPacketIn data from the server.
+        """Finds and retrieves switchPacketIn resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchPacketIn data from the server.
-        By default the find method takes no parameters and will retrieve all switchPacketIn data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchPacketIn resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchPacketIn resources from the server.
 
-        Args:
-            AuxiliaryId (number): The identifier for auxiliary connections
-            ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
-            Enabled (bool): If true, enables Packet-In Range for the switch.
-            InPort (str): Specifies the number of ports on which the switch receives the new packet.
-            PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
-            PacketInName (str): Indicates the packet-in Range identifier name.
-            PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
-            SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
+        Args
+        ----
+        - AuxiliaryId (number): The identifier for auxiliary connections
+        - ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
+        - Enabled (bool): If true, enables Packet-In Range for the switch.
+        - InPort (str): Specifies the number of ports on which the switch receives the new packet.
+        - PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
+        - PacketInName (str): Indicates the packet-in Range identifier name.
+        - PhysicalInPort (str): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
+        - SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
 
-        Returns:
-            self: This instance with matching switchPacketIn data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchPacketIn resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchPacketIn data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchPacketIn data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchPacketIn resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -238,16 +251,15 @@ class SwitchPacketIn(Base):
 
         NOT DEFINED
 
-        sendSwitchPacketInOption(Arg2:enum)bool
-            Args:
-                args[0] is Arg2 (str(sendPause|sendStart|sendStop)): NOT DEFINED
+        sendSwitchPacketInOption(Arg2=enum)bool
+        ---------------------------------------
+        - Arg2 (str(sendPause | sendStart | sendStop)): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

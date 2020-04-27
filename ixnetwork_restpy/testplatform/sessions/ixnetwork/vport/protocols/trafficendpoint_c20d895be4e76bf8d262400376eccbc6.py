@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrafficEndPoint(Base):
     """Specifies the Traffic Endpoints added to the grid.
-    The TrafficEndPoint class encapsulates a list of trafficEndPoint resources that is be managed by the user.
+    The TrafficEndPoint class encapsulates a list of trafficEndPoint resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrafficEndPoint.find() method.
-    The list can be managed by the user by using the TrafficEndPoint.add() and TrafficEndPoint.remove() methods.
+    The list can be managed by using the TrafficEndPoint.add() and TrafficEndPoint.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TrafficEndPoint(Base):
 
     @property
     def ArpViaInterface(self):
-        """DEPRECATED If true, ARP request is conveyed through an Interface.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, ARP request is conveyed through an Interface.
         """
         return self._get_attribute('arpViaInterface')
     @ArpViaInterface.setter
@@ -50,10 +50,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomEtherHeaderLength(self):
-        """DEPRECATED Specifies the Custom Header length in bytes.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the Custom Header length in bytes.
         """
         return self._get_attribute('customEtherHeaderLength')
     @CustomEtherHeaderLength.setter
@@ -62,10 +62,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomEtherHeaderValue(self):
-        """DEPRECATED Specifies the Custom ether Header value.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Custom ether Header value.
         """
         return self._get_attribute('customEtherHeaderValue')
     @CustomEtherHeaderValue.setter
@@ -74,10 +74,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomEtherType(self):
-        """DEPRECATED Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('customEtherType')
     @CustomEtherType.setter
@@ -86,10 +86,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomIpHeaderLength(self):
-        """DEPRECATED Specifies the custom Header length in bytes.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the custom Header length in bytes.
         """
         return self._get_attribute('customIpHeaderLength')
     @CustomIpHeaderLength.setter
@@ -98,10 +98,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomIpHeaderValue(self):
-        """DEPRECATED Specifies the Custom Header value.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Custom Header value.
         """
         return self._get_attribute('customIpHeaderValue')
     @CustomIpHeaderValue.setter
@@ -110,10 +110,10 @@ class TrafficEndPoint(Base):
 
     @property
     def CustomIpProtocol(self):
-        """DEPRECATED Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('customIpProtocol')
     @CustomIpProtocol.setter
@@ -122,10 +122,10 @@ class TrafficEndPoint(Base):
 
     @property
     def DestinationPort(self):
-        """DEPRECATED Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('destinationPort')
     @DestinationPort.setter
@@ -134,10 +134,10 @@ class TrafficEndPoint(Base):
 
     @property
     def EnableMacInMac(self):
-        """DEPRECATED Enables the PBB-specific fields.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Enables the PBB-specific fields.
         """
         return self._get_attribute('enableMacInMac')
     @EnableMacInMac.setter
@@ -146,10 +146,10 @@ class TrafficEndPoint(Base):
 
     @property
     def EnableVlan(self):
-        """DEPRECATED If enabled, VLAN is available.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If enabled, VLAN is available.
         """
         return self._get_attribute('enableVlan')
     @EnableVlan.setter
@@ -158,10 +158,10 @@ class TrafficEndPoint(Base):
 
     @property
     def EtherType(self):
-        """DEPRECATED Specifies the Ether Type to be used.
-
-        Returns:
-            str(custom|ipv4|ipv6|mplsUnicast)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(custom | ipv4 | ipv6 | mplsUnicast): Specifies the Ether Type to be used.
         """
         return self._get_attribute('etherType')
     @EtherType.setter
@@ -170,10 +170,10 @@ class TrafficEndPoint(Base):
 
     @property
     def GatewayMac(self):
-        """DEPRECATED Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('gatewayMac')
     @GatewayMac.setter
@@ -182,10 +182,10 @@ class TrafficEndPoint(Base):
 
     @property
     def IpAddress(self):
-        """DEPRECATED Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -194,10 +194,10 @@ class TrafficEndPoint(Base):
 
     @property
     def IpMask(self):
-        """DEPRECATED Specifies the Mask value.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the Mask value.
         """
         return self._get_attribute('ipMask')
     @IpMask.setter
@@ -206,10 +206,10 @@ class TrafficEndPoint(Base):
 
     @property
     def IpProtocol(self):
-        """DEPRECATED Specifies the IP Protocol to be used.
-
-        Returns:
-            str(custom|tcp|udp)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(custom | tcp | udp): Specifies the IP Protocol to be used.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -218,10 +218,10 @@ class TrafficEndPoint(Base):
 
     @property
     def IpTos(self):
-        """DEPRECATED Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipTos')
     @IpTos.setter
@@ -230,10 +230,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv4Dscp(self):
-        """DEPRECATED Specifies value of Ipv4 DSCP field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies value of Ipv4 DSCP field.
         """
         return self._get_attribute('ipv4Dscp')
     @Ipv4Dscp.setter
@@ -242,10 +242,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv4Ecn(self):
-        """DEPRECATED Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
         """
         return self._get_attribute('ipv4Ecn')
     @Ipv4Ecn.setter
@@ -254,10 +254,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6Address(self):
-        """DEPRECATED Specifies the IPv6 address to be used in the traffic endpoint.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv6 address to be used in the traffic endpoint.
         """
         return self._get_attribute('ipv6Address')
     @Ipv6Address.setter
@@ -266,10 +266,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6AddressMask(self):
-        """DEPRECATED Specifies the mask of IPv6 address
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the mask of IPv6 address
         """
         return self._get_attribute('ipv6AddressMask')
     @Ipv6AddressMask.setter
@@ -278,10 +278,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6CustomHeaderLength(self):
-        """DEPRECATED Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
         """
         return self._get_attribute('ipv6CustomHeaderLength')
     @Ipv6CustomHeaderLength.setter
@@ -290,10 +290,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6CustomHeaderValue(self):
-        """DEPRECATED Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
         """
         return self._get_attribute('ipv6CustomHeaderValue')
     @Ipv6CustomHeaderValue.setter
@@ -302,10 +302,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6CustomNextHeader(self):
-        """DEPRECATED Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
         """
         return self._get_attribute('ipv6CustomNextHeader')
     @Ipv6CustomNextHeader.setter
@@ -314,10 +314,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6Dscp(self):
-        """DEPRECATED Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
         """
         return self._get_attribute('ipv6Dscp')
     @Ipv6Dscp.setter
@@ -326,10 +326,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6Ecn(self):
-        """DEPRECATED Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
         """
         return self._get_attribute('ipv6Ecn')
     @Ipv6Ecn.setter
@@ -338,10 +338,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """DEPRECATED Specifies the IPv6 flow label field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the IPv6 flow label field.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -350,10 +350,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Ipv6NextHeader(self):
-        """DEPRECATED Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
-
-        Returns:
-            str(custom|tcp|udp)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(custom | tcp | udp): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
         """
         return self._get_attribute('ipv6NextHeader')
     @Ipv6NextHeader.setter
@@ -362,10 +362,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MacAddress(self):
-        """DEPRECATED Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -374,10 +374,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsInnerMacSource(self):
-        """DEPRECATED Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
         """
         return self._get_attribute('mplsInnerMacSource')
     @MplsInnerMacSource.setter
@@ -386,10 +386,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsInnerVlanId(self):
-        """DEPRECATED Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
         """
         return self._get_attribute('mplsInnerVlanId')
     @MplsInnerVlanId.setter
@@ -398,10 +398,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsInnerVlanPriority(self):
-        """DEPRECATED Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
         """
         return self._get_attribute('mplsInnerVlanPriority')
     @MplsInnerVlanPriority.setter
@@ -410,10 +410,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsLabel(self):
-        """DEPRECATED Value of the MPLS label field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Value of the MPLS label field.
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -422,10 +422,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsLabelStackSize(self):
-        """DEPRECATED Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
         """
         return self._get_attribute('mplsLabelStackSize')
     @MplsLabelStackSize.setter
@@ -434,10 +434,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsPayloadType(self):
-        """DEPRECATED Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
-
-        Returns:
-            str(ethernet|ipv4|ipv6)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(ethernet | ipv4 | ipv6): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
         """
         return self._get_attribute('mplsPayloadType')
     @MplsPayloadType.setter
@@ -446,10 +446,10 @@ class TrafficEndPoint(Base):
 
     @property
     def MplsTrafficClass(self):
-        """DEPRECATED Specifies the MPLS traffic class.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the MPLS traffic class.
         """
         return self._get_attribute('mplsTrafficClass')
     @MplsTrafficClass.setter
@@ -458,10 +458,10 @@ class TrafficEndPoint(Base):
 
     @property
     def Name(self):
-        """DEPRECATED Specifies the name of the Traffic endpoint.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the name of the Traffic endpoint.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -470,10 +470,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbDestinamtionMac(self):
-        """DEPRECATED Specifies the B-Destination MAC.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the B-Destination MAC.
         """
         return self._get_attribute('pbbDestinamtionMac')
     @PbbDestinamtionMac.setter
@@ -482,10 +482,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbEtherType(self):
-        """DEPRECATED Specifies the B-Ether Type.
-
-        Returns:
-            str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200): Specifies the B-Ether Type.
         """
         return self._get_attribute('pbbEtherType')
     @PbbEtherType.setter
@@ -494,10 +494,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbIsId(self):
-        """DEPRECATED Value of the PBB I-SID field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Value of the PBB I-SID field.
         """
         return self._get_attribute('pbbIsId')
     @PbbIsId.setter
@@ -506,10 +506,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbSourceMac(self):
-        """DEPRECATED Specifies the B-Source MAC.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the B-Source MAC.
         """
         return self._get_attribute('pbbSourceMac')
     @PbbSourceMac.setter
@@ -518,10 +518,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbVlanId(self):
-        """DEPRECATED Specifies the B-VLAN ID.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the B-VLAN ID.
         """
         return self._get_attribute('pbbVlanId')
     @PbbVlanId.setter
@@ -530,10 +530,10 @@ class TrafficEndPoint(Base):
 
     @property
     def PbbVlanPcp(self):
-        """DEPRECATED Specifies the B-VLAN priority.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the B-VLAN priority.
         """
         return self._get_attribute('pbbVlanPcp')
     @PbbVlanPcp.setter
@@ -542,10 +542,10 @@ class TrafficEndPoint(Base):
 
     @property
     def ProtocolInterface(self):
-        """DEPRECATED Specifies the name of the protocol interface being used for this OpenFlow configuration.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): Specifies the name of the protocol interface being used for this OpenFlow configuration.
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -554,10 +554,10 @@ class TrafficEndPoint(Base):
 
     @property
     def RangeSize(self):
-        """DEPRECATED Specifies the size of the traffic range.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the size of the traffic range.
         """
         return self._get_attribute('rangeSize')
     @RangeSize.setter
@@ -566,10 +566,10 @@ class TrafficEndPoint(Base):
 
     @property
     def SourcePort(self):
-        """DEPRECATED Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('sourcePort')
     @SourcePort.setter
@@ -578,10 +578,10 @@ class TrafficEndPoint(Base):
 
     @property
     def UdpDestination(self):
-        """DEPRECATED Value of the UDP destination field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Value of the UDP destination field.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -590,10 +590,10 @@ class TrafficEndPoint(Base):
 
     @property
     def UdpSource(self):
-        """DEPRECATED Value of the UDP source field.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Value of the UDP source field.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -602,10 +602,10 @@ class TrafficEndPoint(Base):
 
     @property
     def VlanCount(self):
-        """DEPRECATED Specifies the VLAN Count.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Specifies the VLAN Count.
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -614,10 +614,10 @@ class TrafficEndPoint(Base):
 
     @property
     def VlanId(self):
-        """DEPRECATED Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -626,10 +626,10 @@ class TrafficEndPoint(Base):
 
     @property
     def VlanPriority(self):
-        """DEPRECATED Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -637,214 +637,227 @@ class TrafficEndPoint(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of trafficEndPoint on the server.
+        """Updates trafficEndPoint resource on the server.
 
-        Args:
-            ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
-            CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
-            CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
-            CustomIpHeaderValue (str): Specifies the Custom Header value.
-            CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EnableMacInMac (bool): Enables the PBB-specific fields.
-            EnableVlan (bool): If enabled, VLAN is available.
-            EtherType (str(custom|ipv4|ipv6|mplsUnicast)): Specifies the Ether Type to be used.
-            GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpMask (number): Specifies the Mask value.
-            IpProtocol (str(custom|tcp|udp)): Specifies the IP Protocol to be used.
-            IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
-            Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
-            Ipv6AddressMask (number): Specifies the mask of IPv6 address
-            Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
-            Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
-            Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
-            Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
-            Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
-            Ipv6NextHeader (str(custom|tcp|udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
-            MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
-            MplsLabel (str): Value of the MPLS label field.
-            MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
-            MplsPayloadType (str(ethernet|ipv4|ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
-            MplsTrafficClass (str): Specifies the MPLS traffic class.
-            Name (str): Specifies the name of the Traffic endpoint.
-            PbbDestinamtionMac (str): Specifies the B-Destination MAC.
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): Specifies the B-Ether Type.
-            PbbIsId (str): Value of the PBB I-SID field.
-            PbbSourceMac (str): Specifies the B-Source MAC.
-            PbbVlanId (str): Specifies the B-VLAN ID.
-            PbbVlanPcp (str): Specifies the B-VLAN priority.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
-            RangeSize (number): Specifies the size of the traffic range.
-            SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            UdpDestination (str): Value of the UDP destination field.
-            UdpSource (str): Value of the UDP source field.
-            VlanCount (number): Specifies the VLAN Count.
-            VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
+        - CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
+        - CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
+        - CustomIpHeaderValue (str): Specifies the Custom Header value.
+        - CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EnableMacInMac (bool): Enables the PBB-specific fields.
+        - EnableVlan (bool): If enabled, VLAN is available.
+        - EtherType (str(custom | ipv4 | ipv6 | mplsUnicast)): Specifies the Ether Type to be used.
+        - GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpMask (number): Specifies the Mask value.
+        - IpProtocol (str(custom | tcp | udp)): Specifies the IP Protocol to be used.
+        - IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
+        - Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
+        - Ipv6AddressMask (number): Specifies the mask of IPv6 address
+        - Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
+        - Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
+        - Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
+        - Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
+        - Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
+        - Ipv6NextHeader (str(custom | tcp | udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
+        - MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
+        - MplsLabel (str): Value of the MPLS label field.
+        - MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
+        - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
+        - MplsTrafficClass (str): Specifies the MPLS traffic class.
+        - Name (str): Specifies the name of the Traffic endpoint.
+        - PbbDestinamtionMac (str): Specifies the B-Destination MAC.
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): Specifies the B-Ether Type.
+        - PbbIsId (str): Value of the PBB I-SID field.
+        - PbbSourceMac (str): Specifies the B-Source MAC.
+        - PbbVlanId (str): Specifies the B-VLAN ID.
+        - PbbVlanPcp (str): Specifies the B-VLAN priority.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - RangeSize (number): Specifies the size of the traffic range.
+        - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - UdpDestination (str): Value of the UDP destination field.
+        - UdpSource (str): Value of the UDP source field.
+        - VlanCount (number): Specifies the VLAN Count.
+        - VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Adds a new trafficEndPoint node on the server and retrieves it in this instance.
+        """Adds a new trafficEndPoint resource on the server and adds it to the container.
 
-        Args:
-            ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
-            CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
-            CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
-            CustomIpHeaderValue (str): Specifies the Custom Header value.
-            CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EnableMacInMac (bool): Enables the PBB-specific fields.
-            EnableVlan (bool): If enabled, VLAN is available.
-            EtherType (str(custom|ipv4|ipv6|mplsUnicast)): Specifies the Ether Type to be used.
-            GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpMask (number): Specifies the Mask value.
-            IpProtocol (str(custom|tcp|udp)): Specifies the IP Protocol to be used.
-            IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
-            Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
-            Ipv6AddressMask (number): Specifies the mask of IPv6 address
-            Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
-            Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
-            Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
-            Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
-            Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
-            Ipv6NextHeader (str(custom|tcp|udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
-            MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
-            MplsLabel (str): Value of the MPLS label field.
-            MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
-            MplsPayloadType (str(ethernet|ipv4|ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
-            MplsTrafficClass (str): Specifies the MPLS traffic class.
-            Name (str): Specifies the name of the Traffic endpoint.
-            PbbDestinamtionMac (str): Specifies the B-Destination MAC.
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): Specifies the B-Ether Type.
-            PbbIsId (str): Value of the PBB I-SID field.
-            PbbSourceMac (str): Specifies the B-Source MAC.
-            PbbVlanId (str): Specifies the B-VLAN ID.
-            PbbVlanPcp (str): Specifies the B-VLAN priority.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
-            RangeSize (number): Specifies the size of the traffic range.
-            SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            UdpDestination (str): Value of the UDP destination field.
-            UdpSource (str): Value of the UDP source field.
-            VlanCount (number): Specifies the VLAN Count.
-            VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
+        - CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
+        - CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
+        - CustomIpHeaderValue (str): Specifies the Custom Header value.
+        - CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EnableMacInMac (bool): Enables the PBB-specific fields.
+        - EnableVlan (bool): If enabled, VLAN is available.
+        - EtherType (str(custom | ipv4 | ipv6 | mplsUnicast)): Specifies the Ether Type to be used.
+        - GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpMask (number): Specifies the Mask value.
+        - IpProtocol (str(custom | tcp | udp)): Specifies the IP Protocol to be used.
+        - IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
+        - Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
+        - Ipv6AddressMask (number): Specifies the mask of IPv6 address
+        - Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
+        - Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
+        - Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
+        - Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
+        - Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
+        - Ipv6NextHeader (str(custom | tcp | udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
+        - MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
+        - MplsLabel (str): Value of the MPLS label field.
+        - MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
+        - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
+        - MplsTrafficClass (str): Specifies the MPLS traffic class.
+        - Name (str): Specifies the name of the Traffic endpoint.
+        - PbbDestinamtionMac (str): Specifies the B-Destination MAC.
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): Specifies the B-Ether Type.
+        - PbbIsId (str): Value of the PBB I-SID field.
+        - PbbSourceMac (str): Specifies the B-Source MAC.
+        - PbbVlanId (str): Specifies the B-VLAN ID.
+        - PbbVlanPcp (str): Specifies the B-VLAN priority.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - RangeSize (number): Specifies the size of the traffic range.
+        - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - UdpDestination (str): Value of the UDP destination field.
+        - UdpSource (str): Value of the UDP source field.
+        - VlanCount (number): Specifies the VLAN Count.
+        - VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Returns:
-            self: This instance with all currently retrieved trafficEndPoint data using find and the newly added trafficEndPoint data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trafficEndPoint resources using find and the newly added trafficEndPoint resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trafficEndPoint data in this instance from server.
+        """Deletes all the contained trafficEndPoint resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves trafficEndPoint data from the server.
+        """Finds and retrieves trafficEndPoint resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trafficEndPoint data from the server.
-        By default the find method takes no parameters and will retrieve all trafficEndPoint data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficEndPoint resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trafficEndPoint resources from the server.
 
-        Args:
-            ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
-            CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
-            CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
-            CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
-            CustomIpHeaderValue (str): Specifies the Custom Header value.
-            CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EnableMacInMac (bool): Enables the PBB-specific fields.
-            EnableVlan (bool): If enabled, VLAN is available.
-            EtherType (str(custom|ipv4|ipv6|mplsUnicast)): Specifies the Ether Type to be used.
-            GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpMask (number): Specifies the Mask value.
-            IpProtocol (str(custom|tcp|udp)): Specifies the IP Protocol to be used.
-            IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
-            Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
-            Ipv6AddressMask (number): Specifies the mask of IPv6 address
-            Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
-            Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
-            Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
-            Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
-            Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
-            Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
-            Ipv6NextHeader (str(custom|tcp|udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
-            MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
-            MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
-            MplsLabel (str): Value of the MPLS label field.
-            MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
-            MplsPayloadType (str(ethernet|ipv4|ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
-            MplsTrafficClass (str): Specifies the MPLS traffic class.
-            Name (str): Specifies the name of the Traffic endpoint.
-            PbbDestinamtionMac (str): Specifies the B-Destination MAC.
-            PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): Specifies the B-Ether Type.
-            PbbIsId (str): Value of the PBB I-SID field.
-            PbbSourceMac (str): Specifies the B-Source MAC.
-            PbbVlanId (str): Specifies the B-VLAN ID.
-            PbbVlanPcp (str): Specifies the B-VLAN priority.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
-            RangeSize (number): Specifies the size of the traffic range.
-            SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            UdpDestination (str): Value of the UDP destination field.
-            UdpSource (str): Value of the UDP source field.
-            VlanCount (number): Specifies the VLAN Count.
-            VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - ArpViaInterface (bool): If true, ARP request is conveyed through an Interface.
+        - CustomEtherHeaderLength (number): Specifies the Custom Header length in bytes.
+        - CustomEtherHeaderValue (str): Specifies the Custom ether Header value.
+        - CustomEtherType (str): Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - CustomIpHeaderLength (number): Specifies the custom Header length in bytes.
+        - CustomIpHeaderValue (str): Specifies the Custom Header value.
+        - CustomIpProtocol (str): Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - DestinationPort (str): Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EnableMacInMac (bool): Enables the PBB-specific fields.
+        - EnableVlan (bool): If enabled, VLAN is available.
+        - EtherType (str(custom | ipv4 | ipv6 | mplsUnicast)): Specifies the Ether Type to be used.
+        - GatewayMac (str): Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpAddress (str): Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpMask (number): Specifies the Mask value.
+        - IpProtocol (str(custom | tcp | udp)): Specifies the IP Protocol to be used.
+        - IpTos (str): Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Dscp (str): Specifies value of Ipv4 DSCP field.
+        - Ipv4Ecn (str): Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6Address (str): Specifies the IPv6 address to be used in the traffic endpoint.
+        - Ipv6AddressMask (number): Specifies the mask of IPv6 address
+        - Ipv6CustomHeaderLength (number): Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
+        - Ipv6CustomHeaderValue (str): Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
+        - Ipv6CustomNextHeader (str): Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
+        - Ipv6Dscp (str): Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
+        - Ipv6Ecn (str): Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
+        - Ipv6FlowLabel (str): Specifies the IPv6 flow label field.
+        - Ipv6NextHeader (str(custom | tcp | udp)): Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
+        - MacAddress (str): Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MplsInnerMacSource (str): Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanId (str): Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
+        - MplsInnerVlanPriority (str): Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
+        - MplsLabel (str): Value of the MPLS label field.
+        - MplsLabelStackSize (number): Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
+        - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
+        - MplsTrafficClass (str): Specifies the MPLS traffic class.
+        - Name (str): Specifies the name of the Traffic endpoint.
+        - PbbDestinamtionMac (str): Specifies the B-Destination MAC.
+        - PbbEtherType (str(bEtherType8100 | bEtherType88A8 | bEtherType88E7 | bEtherType9100 | bEtherType9200)): Specifies the B-Ether Type.
+        - PbbIsId (str): Value of the PBB I-SID field.
+        - PbbSourceMac (str): Specifies the B-Source MAC.
+        - PbbVlanId (str): Specifies the B-VLAN ID.
+        - PbbVlanPcp (str): Specifies the B-VLAN priority.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - RangeSize (number): Specifies the size of the traffic range.
+        - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - UdpDestination (str): Value of the UDP destination field.
+        - UdpSource (str): Value of the UDP source field.
+        - VlanCount (number): Specifies the VLAN Count.
+        - VlanId (str): Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Returns:
-            self: This instance with matching trafficEndPoint data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trafficEndPoint resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trafficEndPoint data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trafficEndPoint data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trafficEndPoint resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

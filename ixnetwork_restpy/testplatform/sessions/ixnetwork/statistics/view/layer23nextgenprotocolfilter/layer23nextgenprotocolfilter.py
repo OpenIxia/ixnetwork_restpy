@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Layer23NextGenProtocolFilter(Base):
     """Describes the filter of next gen protocols for layer 2 and layer 3
-    The Layer23NextGenProtocolFilter class encapsulates a list of layer23NextGenProtocolFilter resources that is be managed by the user.
+    The Layer23NextGenProtocolFilter class encapsulates a list of layer23NextGenProtocolFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the Layer23NextGenProtocolFilter.find() method.
-    The list can be managed by the user by using the Layer23NextGenProtocolFilter.add() and Layer23NextGenProtocolFilter.remove() methods.
+    The list can be managed by using the Layer23NextGenProtocolFilter.add() and Layer23NextGenProtocolFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def AdvancedFilter(self):
-        """An instance of the AdvancedFilter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter.AdvancedFilter): An instance of the AdvancedFilter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter.AdvancedFilter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
         return AdvancedFilter(self)
 
     @property
     def AvailableAdvancedFilterOptions(self):
-        """An instance of the AvailableAdvancedFilterOptions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions.AvailableAdvancedFilterOptions): An instance of the AvailableAdvancedFilterOptions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions.AvailableAdvancedFilterOptions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions import AvailableAdvancedFilterOptions
         return AvailableAdvancedFilterOptions(self)
 
     @property
     def AdvancedCVFilter(self):
-        """Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=advancedCVFilters)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         """
         return self._get_attribute('advancedCVFilter')
     @AdvancedCVFilter.setter
@@ -78,10 +78,10 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def AdvancedFilterName(self):
-        """Selects an advanced filter from the ones available in the selected drill down view.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Selects an advanced filter from the ones available in the selected drill down view.
         """
         return self._get_attribute('advancedFilterName')
     @AdvancedFilterName.setter
@@ -90,10 +90,10 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def AggregationType(self):
-        """Signifies the type of aggregation of next gen protocols
-
-        Returns:
-            str(perPort|perSession)
+        """
+        Returns
+        -------
+        - str(perPort | perSession): Signifies the type of aggregation of next gen protocols
         """
         return self._get_attribute('aggregationType')
     @AggregationType.setter
@@ -102,28 +102,28 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def AllAdvancedFilters(self):
-        """Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
         return self._get_attribute('allAdvancedFilters')
 
     @property
     def MatchingAdvancedFilters(self):
-        """Returns a list that contains only the filters that can be applied on the current drill down view.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list that contains only the filters that can be applied on the current drill down view.
         """
         return self._get_attribute('matchingAdvancedFilters')
 
     @property
     def PortFilterIds(self):
-        """Filters the port IDs
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Filters the port IDs
         """
         return self._get_attribute('portFilterIds')
     @PortFilterIds.setter
@@ -132,10 +132,10 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def ProtocolFilterIds(self):
-        """Filters the protocol IDs
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Filters the protocol IDs
         """
         return self._get_attribute('protocolFilterIds')
     @ProtocolFilterIds.setter
@@ -143,82 +143,95 @@ class Layer23NextGenProtocolFilter(Base):
         self._set_attribute('protocolFilterIds', value)
 
     def update(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
-        """Updates a child instance of layer23NextGenProtocolFilter on the server.
+        """Updates layer23NextGenProtocolFilter resource on the server.
 
-        Args:
-            AdvancedCVFilter (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
-            AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
-            AggregationType (str(perPort|perSession)): Signifies the type of aggregation of next gen protocols
-            PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Filters the port IDs
-            ProtocolFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])): Filters the protocol IDs
+        Args
+        ----
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
+        - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
-        """Adds a new layer23NextGenProtocolFilter node on the server and retrieves it in this instance.
+        """Adds a new layer23NextGenProtocolFilter resource on the server and adds it to the container.
 
-        Args:
-            AdvancedCVFilter (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
-            AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
-            AggregationType (str(perPort|perSession)): Signifies the type of aggregation of next gen protocols
-            PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Filters the port IDs
-            ProtocolFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])): Filters the protocol IDs
+        Args
+        ----
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
+        - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
 
-        Returns:
-            self: This instance with all currently retrieved layer23NextGenProtocolFilter data using find and the newly added layer23NextGenProtocolFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved layer23NextGenProtocolFilter resources using find and the newly added layer23NextGenProtocolFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the layer23NextGenProtocolFilter data in this instance from server.
+        """Deletes all the contained layer23NextGenProtocolFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, AllAdvancedFilters=None, MatchingAdvancedFilters=None, PortFilterIds=None, ProtocolFilterIds=None):
-        """Finds and retrieves layer23NextGenProtocolFilter data from the server.
+        """Finds and retrieves layer23NextGenProtocolFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve layer23NextGenProtocolFilter data from the server.
-        By default the find method takes no parameters and will retrieve all layer23NextGenProtocolFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23NextGenProtocolFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all layer23NextGenProtocolFilter resources from the server.
 
-        Args:
-            AdvancedCVFilter (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
-            AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
-            AggregationType (str(perPort|perSession)): Signifies the type of aggregation of next gen protocols
-            AllAdvancedFilters (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
-            MatchingAdvancedFilters (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Returns a list that contains only the filters that can be applied on the current drill down view.
-            PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Filters the port IDs
-            ProtocolFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])): Filters the protocol IDs
+        Args
+        ----
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
+        - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
+        - AllAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - MatchingAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list that contains only the filters that can be applied on the current drill down view.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
 
-        Returns:
-            self: This instance with matching layer23NextGenProtocolFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching layer23NextGenProtocolFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of layer23NextGenProtocolFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the layer23NextGenProtocolFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the layer23NextGenProtocolFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -227,13 +240,14 @@ class Layer23NextGenProtocolFilter(Base):
 
         NOT DEFINED
 
-        addAdvancedFilter(Arg2:href)
-            Args:
-                args[0] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): NOT DEFINED
+        addAdvancedFilter(Arg2=href)
+        ----------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -245,13 +259,14 @@ class Layer23NextGenProtocolFilter(Base):
 
         NOT DEFINED
 
-        removeAdvancedFilter(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
+        removeAdvancedFilter(Arg2=string)
+        ---------------------------------
+        - Arg2 (str): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -263,9 +278,10 @@ class Layer23NextGenProtocolFilter(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('removeAllAdvancedFilters', payload=payload, response_object=None)

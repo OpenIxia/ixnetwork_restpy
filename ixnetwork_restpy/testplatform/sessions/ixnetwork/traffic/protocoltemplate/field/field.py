@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Field(Base):
     """This object specifies the field properties of the protocol template.
-    The Field class encapsulates a list of field resources that is managed by the system.
+    The Field class encapsulates a list of field resources that are managed by the system.
     A list of resources can be retrieved from the server using the Field.find() method.
     """
 
@@ -37,81 +37,88 @@ class Field(Base):
 
     @property
     def __id__(self):
-        """DEPRECATED An alphanumeric string that defines the internal field ID.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: An alphanumeric string that defines the internal field ID.
         """
         return self._get_attribute('__id__')
 
     @property
     def DisplayName(self):
-        """It is used to get the name of the particular field as available in the protocol template.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It is used to get the name of the particular field as available in the protocol template.
         """
         return self._get_attribute('displayName')
 
     @property
     def FieldTypeId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('fieldTypeId')
 
     @property
     def Length(self):
-        """It is used to get the length of the field in bits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It is used to get the length of the field in bits.
         """
         return self._get_attribute('length')
 
     @property
     def Trackable(self):
-        """The trackable fields.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The trackable fields.
         """
         return self._get_attribute('trackable')
 
     def find(self, __id__=None, DisplayName=None, FieldTypeId=None, Length=None, Trackable=None):
-        """Finds and retrieves field data from the server.
+        """Finds and retrieves field resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve field data from the server.
-        By default the find method takes no parameters and will retrieve all field data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all field resources from the server.
 
-        Args:
-            __id__ (str): An alphanumeric string that defines the internal field ID.
-            DisplayName (str): It is used to get the name of the particular field as available in the protocol template.
-            FieldTypeId (str): 
-            Length (number): It is used to get the length of the field in bits.
-            Trackable (bool): The trackable fields.
+        Args
+        ----
+        - __id__ (str): An alphanumeric string that defines the internal field ID.
+        - DisplayName (str): It is used to get the name of the particular field as available in the protocol template.
+        - FieldTypeId (str): 
+        - Length (number): It is used to get the length of the field in bits.
+        - Trackable (bool): The trackable fields.
 
-        Returns:
-            self: This instance with matching field data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching field resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the field data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the field resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

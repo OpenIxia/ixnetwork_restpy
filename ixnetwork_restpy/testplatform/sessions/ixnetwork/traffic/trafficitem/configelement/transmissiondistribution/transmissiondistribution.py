@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class TransmissionDistribution(Base):
     """This object provides the options for packet transmission distribution.
-    The TransmissionDistribution class encapsulates a list of transmissionDistribution resources that is managed by the system.
+    The TransmissionDistribution class encapsulates a list of transmissionDistribution resources that are managed by the system.
     A list of resources can be retrieved from the server using the TransmissionDistribution.find() method.
     """
 
@@ -37,28 +37,28 @@ class TransmissionDistribution(Base):
 
     @property
     def AvailableDistributions(self):
-        """Indicates the available transmission distributions for the traffic streams.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Indicates the available transmission distributions for the traffic streams.
         """
         return self._get_attribute('availableDistributions')
 
     @property
     def AvailableDistributionsSet(self):
-        """Returns user friendly list of distribution fields
-
-        Returns:
-            list(dict(arg1:str,arg2:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:str)): Returns user friendly list of distribution fields
         """
         return self._get_attribute('availableDistributionsSet')
 
     @property
     def Distributions(self):
-        """Indicates the predefined size distribution based on size and weight.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Indicates the predefined size distribution based on size and weight.
         """
         return self._get_attribute('distributions')
     @Distributions.setter
@@ -67,55 +67,64 @@ class TransmissionDistribution(Base):
 
     @property
     def DistributionsDisplayNames(self):
-        """Returns user friendly list of distribution fields
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Returns user friendly list of distribution fields
         """
         return self._get_attribute('distributionsDisplayNames')
 
     def update(self, Distributions=None):
-        """Updates a child instance of transmissionDistribution on the server.
+        """Updates transmissionDistribution resource on the server.
 
-        Args:
-            Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
+        Args
+        ----
+        - Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableDistributions=None, AvailableDistributionsSet=None, Distributions=None, DistributionsDisplayNames=None):
-        """Finds and retrieves transmissionDistribution data from the server.
+        """Finds and retrieves transmissionDistribution resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve transmissionDistribution data from the server.
-        By default the find method takes no parameters and will retrieve all transmissionDistribution data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve transmissionDistribution resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all transmissionDistribution resources from the server.
 
-        Args:
-            AvailableDistributions (list(str)): Indicates the available transmission distributions for the traffic streams.
-            AvailableDistributionsSet (list(dict(arg1:str,arg2:str))): Returns user friendly list of distribution fields
-            Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
-            DistributionsDisplayNames (list(str)): Returns user friendly list of distribution fields
+        Args
+        ----
+        - AvailableDistributions (list(str)): Indicates the available transmission distributions for the traffic streams.
+        - AvailableDistributionsSet (list(dict(arg1:str,arg2:str))): Returns user friendly list of distribution fields
+        - Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
+        - DistributionsDisplayNames (list(str)): Returns user friendly list of distribution fields
 
-        Returns:
-            self: This instance with matching transmissionDistribution data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching transmissionDistribution resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of transmissionDistribution data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the transmissionDistribution data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the transmissionDistribution resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

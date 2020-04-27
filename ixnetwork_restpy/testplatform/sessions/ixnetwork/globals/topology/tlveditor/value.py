@@ -36,24 +36,24 @@ class Value(Base):
 
     @property
     def Object(self):
-        """An instance of the Object class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object.Object): An instance of the Object class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object.Object)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object import Object
         return Object(self)
 
     @property
     def Name(self):
-        """The name of the object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the object
         """
         return self._get_attribute('name')
     @Name.setter
@@ -61,12 +61,14 @@ class Value(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of value on the server.
+        """Updates value resource on the server.
 
-        Args:
-            Name (str): The name of the object
+        Args
+        ----
+        - Name (str): The name of the object
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

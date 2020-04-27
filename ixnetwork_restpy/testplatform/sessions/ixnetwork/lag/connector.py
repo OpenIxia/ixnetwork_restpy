@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Connector(Base):
     """Connects scenario elements
-    The Connector class encapsulates a list of connector resources that is be managed by the user.
+    The Connector class encapsulates a list of connector resources that are managed by the user.
     A list of resources can be retrieved from the server using the Connector.find() method.
-    The list can be managed by the user by using the Connector.add() and Connector.remove() methods.
+    The list can be managed by using the Connector.add() and Connector.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Connector(Base):
 
     @property
     def ConnectedTo(self):
-        """Scenario element this connector is connecting to
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/lag/.../*): Scenario element this connector is connecting to
         """
         return self._get_attribute('connectedTo')
     @ConnectedTo.setter
@@ -50,86 +50,99 @@ class Connector(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def PropagateMultiplier(self):
-        """The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
         """
         return self._get_attribute('propagateMultiplier')
 
     def update(self, ConnectedTo=None):
-        """Updates a child instance of connector on the server.
+        """Updates connector resource on the server.
 
-        Args:
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*)): Scenario element this connector is connecting to
+        Args
+        ----
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedTo=None):
-        """Adds a new connector node on the server and retrieves it in this instance.
+        """Adds a new connector resource on the server and adds it to the container.
 
-        Args:
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*)): Scenario element this connector is connecting to
+        Args
+        ----
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
 
-        Returns:
-            self: This instance with all currently retrieved connector data using find and the newly added connector data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved connector resources using find and the newly added connector resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the connector data in this instance from server.
+        """Deletes all the contained connector resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedTo=None, Count=None, PropagateMultiplier=None):
-        """Finds and retrieves connector data from the server.
+        """Finds and retrieves connector resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve connector data from the server.
-        By default the find method takes no parameters and will retrieve all connector data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve connector resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all connector resources from the server.
 
-        Args:
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*)): Scenario element this connector is connecting to
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            PropagateMultiplier (bool): The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
+        Args
+        ----
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - PropagateMultiplier (bool): The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
 
-        Returns:
-            self: This instance with matching connector data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching connector resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of connector data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the connector data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the connector resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

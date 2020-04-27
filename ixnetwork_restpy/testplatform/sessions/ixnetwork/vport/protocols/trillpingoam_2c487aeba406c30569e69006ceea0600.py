@@ -36,10 +36,10 @@ class TrillPingOam(Base):
 
     @property
     def AlertFlag(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('alertFlag')
     @AlertFlag.setter
@@ -48,10 +48,10 @@ class TrillPingOam(Base):
 
     @property
     def DestinationNickname(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('destinationNickname')
     @DestinationNickname.setter
@@ -60,10 +60,10 @@ class TrillPingOam(Base):
 
     @property
     def EtherType(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('etherType')
     @EtherType.setter
@@ -72,10 +72,10 @@ class TrillPingOam(Base):
 
     @property
     def HopCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('hopCount')
     @HopCount.setter
@@ -84,10 +84,10 @@ class TrillPingOam(Base):
 
     @property
     def NativeFlag(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('nativeFlag')
     @NativeFlag.setter
@@ -96,10 +96,10 @@ class TrillPingOam(Base):
 
     @property
     def NoOfPingRequests(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('noOfPingRequests')
     @NoOfPingRequests.setter
@@ -108,10 +108,10 @@ class TrillPingOam(Base):
 
     @property
     def SilentFlag(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('silentFlag')
     @SilentFlag.setter
@@ -120,10 +120,10 @@ class TrillPingOam(Base):
 
     @property
     def SourceNickname(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('sourceNickname')
     @SourceNickname.setter
@@ -132,10 +132,10 @@ class TrillPingOam(Base):
 
     @property
     def TimeOut(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('timeOut')
     @TimeOut.setter
@@ -143,20 +143,22 @@ class TrillPingOam(Base):
         self._set_attribute('timeOut', value)
 
     def update(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
-        """Updates a child instance of trillPingOam on the server.
+        """Updates trillPingOam resource on the server.
 
-        Args:
-            AlertFlag (bool): NOT DEFINED
-            DestinationNickname (number): NOT DEFINED
-            EtherType (number): NOT DEFINED
-            HopCount (number): NOT DEFINED
-            NativeFlag (bool): NOT DEFINED
-            NoOfPingRequests (number): NOT DEFINED
-            SilentFlag (bool): NOT DEFINED
-            SourceNickname (number): NOT DEFINED
-            TimeOut (number): NOT DEFINED
+        Args
+        ----
+        - AlertFlag (bool): NOT DEFINED
+        - DestinationNickname (number): NOT DEFINED
+        - EtherType (number): NOT DEFINED
+        - HopCount (number): NOT DEFINED
+        - NativeFlag (bool): NOT DEFINED
+        - NoOfPingRequests (number): NOT DEFINED
+        - SilentFlag (bool): NOT DEFINED
+        - SourceNickname (number): NOT DEFINED
+        - TimeOut (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

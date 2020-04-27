@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class PppoxGlobals(Base):
     """
-    The PppoxGlobals class encapsulates a list of pppoxGlobals resources that is be managed by the user.
+    The PppoxGlobals class encapsulates a list of pppoxGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the PppoxGlobals.find() method.
-    The list can be managed by the user by using the PppoxGlobals.add() and PppoxGlobals.remove() methods.
+    The list can be managed by using the PppoxGlobals.add() and PppoxGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class PppoxGlobals(Base):
 
     @property
     def EnforcePerPortRates(self):
-        """If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
         """
         return self._get_attribute('enforcePerPortRates')
     @EnforcePerPortRates.setter
@@ -50,10 +50,10 @@ class PppoxGlobals(Base):
 
     @property
     def MaxOutstandingReleases(self):
-        """The maximum number of PPP session releases opened at any time by the PPP plugin.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of PPP session releases opened at any time by the PPP plugin.
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -62,10 +62,10 @@ class PppoxGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """Threshold at which the plugin begins throttling back the number of new clients being set up.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Threshold at which the plugin begins throttling back the number of new clients being set up.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -74,19 +74,19 @@ class PppoxGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SetupRateInitial(self):
-        """Initial setup rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial setup rate
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -95,10 +95,10 @@ class PppoxGlobals(Base):
 
     @property
     def TeardownRateInitial(self):
-        """Initial teardown rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial teardown rate
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -106,80 +106,93 @@ class PppoxGlobals(Base):
         self._set_attribute('teardownRateInitial', value)
 
     def update(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Updates a child instance of pppoxGlobals on the server.
+        """Updates pppoxGlobals resource on the server.
 
-        Args:
-            EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
-            MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
-            MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
+        Args
+        ----
+        - EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
+        - MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
+        - MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Adds a new pppoxGlobals node on the server and retrieves it in this instance.
+        """Adds a new pppoxGlobals resource on the server and adds it to the container.
 
-        Args:
-            EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
-            MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
-            MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
+        Args
+        ----
+        - EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
+        - MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
+        - MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
 
-        Returns:
-            self: This instance with all currently retrieved pppoxGlobals data using find and the newly added pppoxGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved pppoxGlobals resources using find and the newly added pppoxGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the pppoxGlobals data in this instance from server.
+        """Deletes all the contained pppoxGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SetupRateInitial=None, TeardownRateInitial=None):
-        """Finds and retrieves pppoxGlobals data from the server.
+        """Finds and retrieves pppoxGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pppoxGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all pppoxGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pppoxGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pppoxGlobals resources from the server.
 
-        Args:
-            EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
-            MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
-            MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
-            ObjectId (str): Unique identifier for this object
-            SetupRateInitial (number): Initial setup rate
-            TeardownRateInitial (number): Initial teardown rate
+        Args
+        ----
+        - EnforcePerPortRates (bool): If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
+        - MaxOutstandingReleases (number): The maximum number of PPP session releases opened at any time by the PPP plugin.
+        - MaxOutstandingRequests (number): Threshold at which the plugin begins throttling back the number of new clients being set up.
+        - ObjectId (str): Unique identifier for this object
+        - SetupRateInitial (number): Initial setup rate
+        - TeardownRateInitial (number): Initial teardown rate
 
-        Returns:
-            self: This instance with matching pppoxGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pppoxGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pppoxGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pppoxGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pppoxGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

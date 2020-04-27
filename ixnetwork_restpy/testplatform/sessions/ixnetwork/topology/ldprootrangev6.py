@@ -36,78 +36,82 @@ class LdpRootRangeV6(Base):
 
     @property
     def LdpTLVList(self):
-        """An instance of the LdpTLVList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist.LdpTLVList): An instance of the LdpTLVList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist.LdpTLVList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist import LdpTLVList
         return LdpTLVList(self)
 
     @property
     def ContinuousIncrementOVAcrossRoot(self):
-        """Continuous Increment Opaque Value Across Root
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('continuousIncrementOVAcrossRoot')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Continuous Increment Opaque Value Across Root
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('continuousIncrementOVAcrossRoot'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FilterOnGroupAddress(self):
-        """If selected, all the LSPs will belong to the same set of groups
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('filterOnGroupAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, all the LSPs will belong to the same set of groups
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('filterOnGroupAddress'))
 
     @property
     def GroupCountPerLSP(self):
-        """Group Count Per LSP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('groupCountPerLSP')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Group Count Per LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('groupCountPerLSP'))
 
     @property
     def LspCountPerRoot(self):
-        """LSP Count Per Root
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lspCountPerRoot')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Count Per Root
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lspCountPerRoot'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -116,10 +120,10 @@ class LdpRootRangeV6(Base):
 
     @property
     def NumberOfTLVs(self):
-        """Number Of TLVs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of TLVs
         """
         return self._get_attribute('numberOfTLVs')
     @NumberOfTLVs.setter
@@ -128,115 +132,128 @@ class LdpRootRangeV6(Base):
 
     @property
     def RootAddress(self):
-        """Root Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddress'))
 
     @property
     def RootAddressCount(self):
-        """Root Address Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddressCount')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddressCount'))
 
     @property
     def RootAddressStep(self):
-        """Root Address Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rootAddressStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rootAddressStep'))
 
     @property
     def SourceAddressV4(self):
-        """IPv4 Source Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAddressV4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Source Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAddressV4'))
 
     @property
     def SourceAddressV6(self):
-        """IPv6 Source Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceAddressV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Source Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceAddressV6'))
 
     @property
     def SourceCountPerLSP(self):
-        """Source Count Per LSP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceCountPerLSP')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Count Per LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceCountPerLSP'))
 
     @property
     def StartGroupAddressV4(self):
-        """Start Group Address(V4)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startGroupAddressV4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address(V4)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startGroupAddressV4'))
 
     @property
     def StartGroupAddressV6(self):
-        """Start Group Address(V6)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startGroupAddressV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address(V6)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startGroupAddressV6'))
 
     def update(self, Name=None, NumberOfTLVs=None):
-        """Updates a child instance of ldpRootRangeV6 on the server.
+        """Updates ldpRootRangeV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfTLVs (number): Number Of TLVs
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfTLVs (number): Number Of TLVs
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, ContinuousIncrementOVAcrossRoot=None, FilterOnGroupAddress=None, GroupCountPerLSP=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None, SourceAddressV4=None, SourceAddressV6=None, SourceCountPerLSP=None, StartGroupAddressV4=None, StartGroupAddressV6=None):
         """Base class infrastructure that gets a list of ldpRootRangeV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ContinuousIncrementOVAcrossRoot (str): optional regex of continuousIncrementOVAcrossRoot
-            FilterOnGroupAddress (str): optional regex of filterOnGroupAddress
-            GroupCountPerLSP (str): optional regex of groupCountPerLSP
-            LspCountPerRoot (str): optional regex of lspCountPerRoot
-            RootAddress (str): optional regex of rootAddress
-            RootAddressCount (str): optional regex of rootAddressCount
-            RootAddressStep (str): optional regex of rootAddressStep
-            SourceAddressV4 (str): optional regex of sourceAddressV4
-            SourceAddressV6 (str): optional regex of sourceAddressV6
-            SourceCountPerLSP (str): optional regex of sourceCountPerLSP
-            StartGroupAddressV4 (str): optional regex of startGroupAddressV4
-            StartGroupAddressV6 (str): optional regex of startGroupAddressV6
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ContinuousIncrementOVAcrossRoot (str): optional regex of continuousIncrementOVAcrossRoot
+        - FilterOnGroupAddress (str): optional regex of filterOnGroupAddress
+        - GroupCountPerLSP (str): optional regex of groupCountPerLSP
+        - LspCountPerRoot (str): optional regex of lspCountPerRoot
+        - RootAddress (str): optional regex of rootAddress
+        - RootAddressCount (str): optional regex of rootAddressCount
+        - RootAddressStep (str): optional regex of rootAddressStep
+        - SourceAddressV4 (str): optional regex of sourceAddressV4
+        - SourceAddressV6 (str): optional regex of sourceAddressV6
+        - SourceCountPerLSP (str): optional regex of sourceCountPerLSP
+        - StartGroupAddressV4 (str): optional regex of startGroupAddressV4
+        - StartGroupAddressV6 (str): optional regex of startGroupAddressV6
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

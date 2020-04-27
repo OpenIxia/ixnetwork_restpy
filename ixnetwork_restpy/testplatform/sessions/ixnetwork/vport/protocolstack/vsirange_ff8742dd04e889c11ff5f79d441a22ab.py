@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VsiRange(Base):
     """Manages a range of Virtual Station Interfaces.
-    The VsiRange class encapsulates a list of vsiRange resources that is be managed by the user.
+    The VsiRange class encapsulates a list of vsiRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the VsiRange.find() method.
-    The list can be managed by the user by using the VsiRange.add() and VsiRange.remove() methods.
+    The list can be managed by using the VsiRange.add() and VsiRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class VsiRange(Base):
 
     @property
     def VsiFiltersInfo(self):
-        """An instance of the VsiFiltersInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsifiltersinfo_2772b1d1c8d358b95950b04b8b34cf2b.VsiFiltersInfo): An instance of the VsiFiltersInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsifiltersinfo_2772b1d1c8d358b95950b04b8b34cf2b.VsiFiltersInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsifiltersinfo_2772b1d1c8d358b95950b04b8b34cf2b import VsiFiltersInfo
         return VsiFiltersInfo(self)
 
     @property
     def Count(self):
-        """The number of VSIs in the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of VSIs in the range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -64,10 +64,10 @@ class VsiRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -76,10 +76,10 @@ class VsiRange(Base):
 
     @property
     def FilterInfoFormat(self):
-        """Dropdown box containing all the possible Filter Info Formats.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Dropdown box containing all the possible Filter Info Formats.
         """
         return self._get_attribute('filterInfoFormat')
     @FilterInfoFormat.setter
@@ -88,10 +88,10 @@ class VsiRange(Base):
 
     @property
     def GatewayAddress(self):
-        """The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
         """
         return self._get_attribute('gatewayAddress')
     @GatewayAddress.setter
@@ -100,10 +100,10 @@ class VsiRange(Base):
 
     @property
     def GatewayIncrement(self):
-        """The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
         """
         return self._get_attribute('gatewayIncrement')
     @GatewayIncrement.setter
@@ -112,10 +112,10 @@ class VsiRange(Base):
 
     @property
     def IpAddress(self):
-        """The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -124,10 +124,10 @@ class VsiRange(Base):
 
     @property
     def IpIncrementBy(self):
-        """The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
         """
         return self._get_attribute('ipIncrementBy')
     @IpIncrementBy.setter
@@ -136,10 +136,10 @@ class VsiRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -148,19 +148,19 @@ class VsiRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PreAssociateMode(self):
-        """Dropdown box containing the possible pre-associate modes.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Dropdown box containing the possible pre-associate modes.
         """
         return self._get_attribute('preAssociateMode')
     @PreAssociateMode.setter
@@ -169,10 +169,10 @@ class VsiRange(Base):
 
     @property
     def Prefix(self):
-        """Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
         """
         return self._get_attribute('prefix')
     @Prefix.setter
@@ -181,10 +181,10 @@ class VsiRange(Base):
 
     @property
     def Suspended(self):
-        """If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
         """
         return self._get_attribute('suspended')
     @Suspended.setter
@@ -193,10 +193,10 @@ class VsiRange(Base):
 
     @property
     def Uuid(self):
-        """The UUID for the interface. It is available only when the VSIID format is set to UUID.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UUID for the interface. It is available only when the VSIID format is set to UUID.
         """
         return self._get_attribute('uuid')
     @Uuid.setter
@@ -205,10 +205,10 @@ class VsiRange(Base):
 
     @property
     def UuidIncrementBy(self):
-        """The UUID increment for the interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The UUID increment for the interface.
         """
         return self._get_attribute('uuidIncrementBy')
     @UuidIncrementBy.setter
@@ -217,10 +217,10 @@ class VsiRange(Base):
 
     @property
     def VsiFormat(self):
-        """This field indicates the type of underlying VSI interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This field indicates the type of underlying VSI interface.
         """
         return self._get_attribute('vsiFormat')
     @VsiFormat.setter
@@ -229,10 +229,10 @@ class VsiRange(Base):
 
     @property
     def VsiIdFormat(self):
-        """Dropdown box containing the possible VSIID Formats.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Dropdown box containing the possible VSIID Formats.
         """
         return self._get_attribute('vsiIdFormat')
     @VsiIdFormat.setter
@@ -241,10 +241,10 @@ class VsiRange(Base):
 
     @property
     def VsiManagerId(self):
-        """Field exposing an IPv6 address identifying the VSI manager ID.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Field exposing an IPv6 address identifying the VSI manager ID.
         """
         return self._get_attribute('vsiManagerId')
     @VsiManagerId.setter
@@ -253,10 +253,10 @@ class VsiRange(Base):
 
     @property
     def VsiTypeId(self):
-        """VSI Type ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: VSI Type ID.
         """
         return self._get_attribute('vsiTypeId')
     @VsiTypeId.setter
@@ -265,10 +265,10 @@ class VsiRange(Base):
 
     @property
     def VsiTypeVersion(self):
-        """VSI Type Version.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: VSI Type Version.
         """
         return self._get_attribute('vsiTypeVersion')
     @VsiTypeVersion.setter
@@ -276,133 +276,147 @@ class VsiRange(Base):
         self._set_attribute('vsiTypeVersion', value)
 
     def update(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
-        """Updates a child instance of vsiRange on the server.
+        """Updates vsiRange resource on the server.
 
-        Args:
-            Count (number): The number of VSIs in the range.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
-            GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            Name (str): Name of range
-            PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
-            Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
-            Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
-            Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
-            UuidIncrementBy (str): The UUID increment for the interface.
-            VsiFormat (str): This field indicates the type of underlying VSI interface.
-            VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
-            VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
-            VsiTypeId (number): VSI Type ID.
-            VsiTypeVersion (number): VSI Type Version.
+        Args
+        ----
+        - Count (number): The number of VSIs in the range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
+        - GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - Name (str): Name of range
+        - PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
+        - Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
+        - Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
+        - Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
+        - UuidIncrementBy (str): The UUID increment for the interface.
+        - VsiFormat (str): This field indicates the type of underlying VSI interface.
+        - VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
+        - VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
+        - VsiTypeId (number): VSI Type ID.
+        - VsiTypeVersion (number): VSI Type Version.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
-        """Adds a new vsiRange node on the server and retrieves it in this instance.
+        """Adds a new vsiRange resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The number of VSIs in the range.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
-            GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            Name (str): Name of range
-            PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
-            Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
-            Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
-            Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
-            UuidIncrementBy (str): The UUID increment for the interface.
-            VsiFormat (str): This field indicates the type of underlying VSI interface.
-            VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
-            VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
-            VsiTypeId (number): VSI Type ID.
-            VsiTypeVersion (number): VSI Type Version.
+        Args
+        ----
+        - Count (number): The number of VSIs in the range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
+        - GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - Name (str): Name of range
+        - PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
+        - Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
+        - Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
+        - Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
+        - UuidIncrementBy (str): The UUID increment for the interface.
+        - VsiFormat (str): This field indicates the type of underlying VSI interface.
+        - VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
+        - VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
+        - VsiTypeId (number): VSI Type ID.
+        - VsiTypeVersion (number): VSI Type Version.
 
-        Returns:
-            self: This instance with all currently retrieved vsiRange data using find and the newly added vsiRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vsiRange resources using find and the newly added vsiRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vsiRange data in this instance from server.
+        """Deletes all the contained vsiRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, ObjectId=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
-        """Finds and retrieves vsiRange data from the server.
+        """Finds and retrieves vsiRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vsiRange data from the server.
-        By default the find method takes no parameters and will retrieve all vsiRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vsiRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vsiRange resources from the server.
 
-        Args:
-            Count (number): The number of VSIs in the range.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
-            GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
-            Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
-            Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
-            Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
-            UuidIncrementBy (str): The UUID increment for the interface.
-            VsiFormat (str): This field indicates the type of underlying VSI interface.
-            VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
-            VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
-            VsiTypeId (number): VSI Type ID.
-            VsiTypeVersion (number): VSI Type Version.
+        Args
+        ----
+        - Count (number): The number of VSIs in the range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FilterInfoFormat (str): Dropdown box containing all the possible Filter Info Formats.
+        - GatewayAddress (str): The start IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - GatewayIncrement (str): The increment IP address for the interface gateway. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpAddress (str): The start IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - IpIncrementBy (str): The increment IP address for the interface. It is available when the VSIID Format or the VSI Format are set to IP.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - PreAssociateMode (str): Dropdown box containing the possible pre-associate modes.
+        - Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
+        - Suspended (bool): If this is true, the VSI will have the Suspended Flag set in the VDP TLVs.
+        - Uuid (str): The UUID for the interface. It is available only when the VSIID format is set to UUID.
+        - UuidIncrementBy (str): The UUID increment for the interface.
+        - VsiFormat (str): This field indicates the type of underlying VSI interface.
+        - VsiIdFormat (str): Dropdown box containing the possible VSIID Formats.
+        - VsiManagerId (str): Field exposing an IPv6 address identifying the VSI manager ID.
+        - VsiTypeId (number): VSI Type ID.
+        - VsiTypeVersion (number): VSI Type Version.
 
-        Returns:
-            self: This instance with matching vsiRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vsiRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vsiRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vsiRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vsiRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
     def ChangeParentRange(self, *args, **kwargs):
         """Executes the changeParentRange operation on the server.
 
-        changeParentRange(Target:href)
-            Args:
-                args[0] is Target (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=erRange)): 
+        changeParentRange(Target=href)
+        ------------------------------
+        - Target (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -414,14 +428,15 @@ class VsiRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -433,16 +448,15 @@ class VsiRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -454,16 +468,15 @@ class VsiRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,10 +36,10 @@ class SendgPtpSignalingParams(Base):
 
     @property
     def AnnounceInterval(self):
-        """Desired announceInterval
-
-        Returns:
-            str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)
+        """
+        Returns
+        -------
+        - str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_): Desired announceInterval
         """
         return self._get_attribute('announceInterval')
     @AnnounceInterval.setter
@@ -48,10 +48,10 @@ class SendgPtpSignalingParams(Base):
 
     @property
     def ComputeNeighborPropDelay(self):
-        """computeNeighborPropDelay flag
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: computeNeighborPropDelay flag
         """
         return self._get_attribute('computeNeighborPropDelay')
     @ComputeNeighborPropDelay.setter
@@ -60,10 +60,10 @@ class SendgPtpSignalingParams(Base):
 
     @property
     def ComputeNeighborRateRatio(self):
-        """computeNeighborRateRatio flag
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: computeNeighborRateRatio flag
         """
         return self._get_attribute('computeNeighborRateRatio')
     @ComputeNeighborRateRatio.setter
@@ -72,10 +72,10 @@ class SendgPtpSignalingParams(Base):
 
     @property
     def LinkDelayInterval(self):
-        """Desired linkDelayInterval
-
-        Returns:
-            str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)
+        """
+        Returns
+        -------
+        - str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_): Desired linkDelayInterval
         """
         return self._get_attribute('linkDelayInterval')
     @LinkDelayInterval.setter
@@ -84,10 +84,10 @@ class SendgPtpSignalingParams(Base):
 
     @property
     def TimeSyncInterval(self):
-        """Desired timeSyncInterval
-
-        Returns:
-            str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)
+        """
+        Returns
+        -------
+        - str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_): Desired timeSyncInterval
         """
         return self._get_attribute('timeSyncInterval')
     @TimeSyncInterval.setter
@@ -95,28 +95,31 @@ class SendgPtpSignalingParams(Base):
         self._set_attribute('timeSyncInterval', value)
 
     def update(self, AnnounceInterval=None, ComputeNeighborPropDelay=None, ComputeNeighborRateRatio=None, LinkDelayInterval=None, TimeSyncInterval=None):
-        """Updates a child instance of sendgPtpSignalingParams on the server.
+        """Updates sendgPtpSignalingParams resource on the server.
 
-        Args:
-            AnnounceInterval (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired announceInterval
-            ComputeNeighborPropDelay (bool): computeNeighborPropDelay flag
-            ComputeNeighborRateRatio (bool): computeNeighborRateRatio flag
-            LinkDelayInterval (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired linkDelayInterval
-            TimeSyncInterval (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired timeSyncInterval
+        Args
+        ----
+        - AnnounceInterval (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
+        - ComputeNeighborPropDelay (bool): computeNeighborPropDelay flag
+        - ComputeNeighborRateRatio (bool): computeNeighborRateRatio flag
+        - LinkDelayInterval (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
+        - TimeSyncInterval (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def SendgPtpSignaling(self):
         """Executes the sendgPtpSignaling operation on the server.
 
         Send Signaling messages for the selected PTP IEEE 802.1AS sessions.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendgPtpSignaling', payload=payload, response_object=None)

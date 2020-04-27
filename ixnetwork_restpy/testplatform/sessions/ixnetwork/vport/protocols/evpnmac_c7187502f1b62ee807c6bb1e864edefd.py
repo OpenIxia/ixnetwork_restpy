@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class EvpnMac(Base):
     """(Read Only) EVPN MAC Advertisement route type.
-    The EvpnMac class encapsulates a list of evpnMac resources that is managed by the system.
+    The EvpnMac class encapsulates a list of evpnMac resources that are managed by the system.
     A list of resources can be retrieved from the server using the EvpnMac.find() method.
     """
 
@@ -37,85 +37,92 @@ class EvpnMac(Base):
 
     @property
     def NextHopInfo(self):
-        """An instance of the NextHopInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21.NextHopInfo): An instance of the NextHopInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21.NextHopInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21 import NextHopInfo
         return NextHopInfo(self)
 
     @property
     def Esi(self):
-        """(Read Only) Ethernet Segment Identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Ethernet Segment Identifier.
         """
         return self._get_attribute('esi')
 
     @property
     def MacAddress(self):
-        """(Read Only) The C-MAC or the B-MAC address learned.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) The C-MAC or the B-MAC address learned.
         """
         return self._get_attribute('macAddress')
 
     @property
     def MacPrefixLen(self):
-        """(Read Only) Prefix length of the learned C-MAC or B-MAC.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Prefix length of the learned C-MAC or B-MAC.
         """
         return self._get_attribute('macPrefixLen')
 
     @property
     def Neighbor(self):
-        """(Read Only) The neighbor IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) The neighbor IP.
         """
         return self._get_attribute('neighbor')
 
     def find(self, Esi=None, MacAddress=None, MacPrefixLen=None, Neighbor=None):
-        """Finds and retrieves evpnMac data from the server.
+        """Finds and retrieves evpnMac resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve evpnMac data from the server.
-        By default the find method takes no parameters and will retrieve all evpnMac data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnMac resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all evpnMac resources from the server.
 
-        Args:
-            Esi (str): (Read Only) Ethernet Segment Identifier.
-            MacAddress (str): (Read Only) The C-MAC or the B-MAC address learned.
-            MacPrefixLen (str): (Read Only) Prefix length of the learned C-MAC or B-MAC.
-            Neighbor (str): (Read Only) The neighbor IP.
+        Args
+        ----
+        - Esi (str): (Read Only) Ethernet Segment Identifier.
+        - MacAddress (str): (Read Only) The C-MAC or the B-MAC address learned.
+        - MacPrefixLen (str): (Read Only) Prefix length of the learned C-MAC or B-MAC.
+        - Neighbor (str): (Read Only) The neighbor IP.
 
-        Returns:
-            self: This instance with matching evpnMac data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching evpnMac resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of evpnMac data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the evpnMac data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the evpnMac resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

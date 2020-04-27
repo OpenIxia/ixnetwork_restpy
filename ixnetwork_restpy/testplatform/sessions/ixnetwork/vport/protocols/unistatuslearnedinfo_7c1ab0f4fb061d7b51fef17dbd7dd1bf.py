@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class UniStatusLearnedInfo(Base):
     """It signifies the status learned info for UNI.
-    The UniStatusLearnedInfo class encapsulates a list of uniStatusLearnedInfo resources that is managed by the system.
+    The UniStatusLearnedInfo class encapsulates a list of uniStatusLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the UniStatusLearnedInfo.find() method.
     """
 
@@ -37,251 +37,258 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def CbsMagnitude(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('cbsMagnitude')
 
     @property
     def CbsMultiplier(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('cbsMultiplier')
 
     @property
     def Cf(self):
-        """It signifies coupling flag.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies coupling flag.
         """
         return self._get_attribute('cf')
 
     @property
     def CirMagnitude(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('cirMagnitude')
 
     @property
     def CirMultiplier(self):
-        """It signifies two octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies two octet field.
         """
         return self._get_attribute('cirMultiplier')
 
     @property
     def Cm(self):
-        """It signifies color mode flag.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies color mode flag.
         """
         return self._get_attribute('cm')
 
     @property
     def EbsMagnitude(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('ebsMagnitude')
 
     @property
     def EbsMultiplier(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('ebsMultiplier')
 
     @property
     def EirMagnitude(self):
-        """It signifies one octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies one octet field.
         """
         return self._get_attribute('eirMagnitude')
 
     @property
     def EirMultiplier(self):
-        """It signifies two octet field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies two octet field.
         """
         return self._get_attribute('eirMultiplier')
 
     @property
     def EvcMapType(self):
-        """It signifies the type of EVC MAP type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the type of EVC MAP type.
         """
         return self._get_attribute('evcMapType')
 
     @property
     def PerCos(self):
-        """It signifies per cos behavior of bandwidth profile.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies per cos behavior of bandwidth profile.
         """
         return self._get_attribute('perCos')
 
     @property
     def UniId(self):
-        """It signifies the ID of user network interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the ID of user network interface.
         """
         return self._get_attribute('uniId')
 
     @property
     def UniIdLength(self):
-        """It signifies the length of the UNI ID value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the length of the UNI ID value.
         """
         return self._get_attribute('uniIdLength')
 
     @property
     def UserPriorityBits000(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits000')
 
     @property
     def UserPriorityBits001(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits001')
 
     @property
     def UserPriorityBits010(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits010')
 
     @property
     def UserPriorityBits011(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits011')
 
     @property
     def UserPriorityBits100(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits100')
 
     @property
     def UserPriorityBits101(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits101')
 
     @property
     def UserPriorityBits110(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits110')
 
     @property
     def UserPriorityBits111(self):
-        """If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1.
         """
         return self._get_attribute('userPriorityBits111')
 
     def find(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, EvcMapType=None, PerCos=None, UniId=None, UniIdLength=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
-        """Finds and retrieves uniStatusLearnedInfo data from the server.
+        """Finds and retrieves uniStatusLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve uniStatusLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all uniStatusLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve uniStatusLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all uniStatusLearnedInfo resources from the server.
 
-        Args:
-            CbsMagnitude (str): It signifies one octet field.
-            CbsMultiplier (str): It signifies one octet field.
-            Cf (str): It signifies coupling flag.
-            CirMagnitude (str): It signifies one octet field.
-            CirMultiplier (str): It signifies two octet field.
-            Cm (str): It signifies color mode flag.
-            EbsMagnitude (str): It signifies one octet field.
-            EbsMultiplier (str): It signifies one octet field.
-            EirMagnitude (str): It signifies one octet field.
-            EirMultiplier (str): It signifies two octet field.
-            EvcMapType (str): It signifies the type of EVC MAP type.
-            PerCos (str): It signifies per cos behavior of bandwidth profile.
-            UniId (str): It signifies the ID of user network interface.
-            UniIdLength (number): It signifies the length of the UNI ID value.
-            UserPriorityBits000 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1.
-            UserPriorityBits001 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1.
-            UserPriorityBits010 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1.
-            UserPriorityBits011 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1.
-            UserPriorityBits100 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1.
-            UserPriorityBits101 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1.
-            UserPriorityBits110 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1.
-            UserPriorityBits111 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1.
+        Args
+        ----
+        - CbsMagnitude (str): It signifies one octet field.
+        - CbsMultiplier (str): It signifies one octet field.
+        - Cf (str): It signifies coupling flag.
+        - CirMagnitude (str): It signifies one octet field.
+        - CirMultiplier (str): It signifies two octet field.
+        - Cm (str): It signifies color mode flag.
+        - EbsMagnitude (str): It signifies one octet field.
+        - EbsMultiplier (str): It signifies one octet field.
+        - EirMagnitude (str): It signifies one octet field.
+        - EirMultiplier (str): It signifies two octet field.
+        - EvcMapType (str): It signifies the type of EVC MAP type.
+        - PerCos (str): It signifies per cos behavior of bandwidth profile.
+        - UniId (str): It signifies the ID of user network interface.
+        - UniIdLength (number): It signifies the length of the UNI ID value.
+        - UserPriorityBits000 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1.
+        - UserPriorityBits001 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1.
+        - UserPriorityBits010 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1.
+        - UserPriorityBits011 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1.
+        - UserPriorityBits100 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1.
+        - UserPriorityBits101 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1.
+        - UserPriorityBits110 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1.
+        - UserPriorityBits111 (str): If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1.
 
-        Returns:
-            self: This instance with matching uniStatusLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching uniStatusLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of uniStatusLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the uniStatusLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the uniStatusLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

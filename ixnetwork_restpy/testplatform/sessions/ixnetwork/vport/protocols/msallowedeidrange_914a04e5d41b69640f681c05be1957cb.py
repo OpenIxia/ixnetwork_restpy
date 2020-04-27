@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MsAllowedEidRange(Base):
     """It allows the ms eid range 5.30
-    The MsAllowedEidRange class encapsulates a list of msAllowedEidRange resources that is be managed by the user.
+    The MsAllowedEidRange class encapsulates a list of msAllowedEidRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the MsAllowedEidRange.find() method.
-    The list can be managed by the user by using the MsAllowedEidRange.add() and MsAllowedEidRange.remove() methods.
+    The list can be managed by using the MsAllowedEidRange.add() and MsAllowedEidRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class MsAllowedEidRange(Base):
 
     @property
     def Address(self):
-        """It gives details about the address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the address
         """
         return self._get_attribute('address')
     @Address.setter
@@ -50,10 +50,10 @@ class MsAllowedEidRange(Base):
 
     @property
     def Count(self):
-        """it gives details about the count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: it gives details about the count
         """
         return self._get_attribute('count')
     @Count.setter
@@ -62,10 +62,10 @@ class MsAllowedEidRange(Base):
 
     @property
     def Enabled(self):
-        """If true, it enables the protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class MsAllowedEidRange(Base):
 
     @property
     def Family(self):
-        """It details about the ip family
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): It details about the ip family
         """
         return self._get_attribute('family')
     @Family.setter
@@ -86,10 +86,10 @@ class MsAllowedEidRange(Base):
 
     @property
     def PrefixLength(self):
-        """It gives details about the prefix length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the prefix length
         """
         return self._get_attribute('prefixLength')
     @PrefixLength.setter
@@ -97,79 +97,92 @@ class MsAllowedEidRange(Base):
         self._set_attribute('prefixLength', value)
 
     def update(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
-        """Updates a child instance of msAllowedEidRange on the server.
+        """Updates msAllowedEidRange resource on the server.
 
-        Args:
-            Address (str): It gives details about the address
-            Count (number): it gives details about the count
-            Enabled (bool): If true, it enables the protocol
-            Family (str(ipv4|ipv6)): It details about the ip family
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the address
+        - Count (number): it gives details about the count
+        - Enabled (bool): If true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It details about the ip family
+        - PrefixLength (number): It gives details about the prefix length
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
-        """Adds a new msAllowedEidRange node on the server and retrieves it in this instance.
+        """Adds a new msAllowedEidRange resource on the server and adds it to the container.
 
-        Args:
-            Address (str): It gives details about the address
-            Count (number): it gives details about the count
-            Enabled (bool): If true, it enables the protocol
-            Family (str(ipv4|ipv6)): It details about the ip family
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the address
+        - Count (number): it gives details about the count
+        - Enabled (bool): If true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It details about the ip family
+        - PrefixLength (number): It gives details about the prefix length
 
-        Returns:
-            self: This instance with all currently retrieved msAllowedEidRange data using find and the newly added msAllowedEidRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved msAllowedEidRange resources using find and the newly added msAllowedEidRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the msAllowedEidRange data in this instance from server.
+        """Deletes all the contained msAllowedEidRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
-        """Finds and retrieves msAllowedEidRange data from the server.
+        """Finds and retrieves msAllowedEidRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve msAllowedEidRange data from the server.
-        By default the find method takes no parameters and will retrieve all msAllowedEidRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve msAllowedEidRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all msAllowedEidRange resources from the server.
 
-        Args:
-            Address (str): It gives details about the address
-            Count (number): it gives details about the count
-            Enabled (bool): If true, it enables the protocol
-            Family (str(ipv4|ipv6)): It details about the ip family
-            PrefixLength (number): It gives details about the prefix length
+        Args
+        ----
+        - Address (str): It gives details about the address
+        - Count (number): it gives details about the count
+        - Enabled (bool): If true, it enables the protocol
+        - Family (str(ipv4 | ipv6)): It details about the ip family
+        - PrefixLength (number): It gives details about the prefix length
 
-        Returns:
-            self: This instance with matching msAllowedEidRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching msAllowedEidRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of msAllowedEidRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the msAllowedEidRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the msAllowedEidRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

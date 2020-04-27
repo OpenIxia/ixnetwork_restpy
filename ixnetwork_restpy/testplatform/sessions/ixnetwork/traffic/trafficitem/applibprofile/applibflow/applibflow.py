@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AppLibFlow(Base):
     """This object specifies the particular application library flow related properties.
-    The AppLibFlow class encapsulates a list of appLibFlow resources that is managed by the system.
+    The AppLibFlow class encapsulates a list of appLibFlow resources that are managed by the system.
     A list of resources can be retrieved from the server using the AppLibFlow.find() method.
     """
 
@@ -37,101 +37,101 @@ class AppLibFlow(Base):
 
     @property
     def Connection(self):
-        """An instance of the Connection class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.connection.Connection): An instance of the Connection class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.connection.Connection)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.connection import Connection
         return Connection(self)
 
     @property
     def Parameter(self):
-        """An instance of the Parameter class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter.Parameter): An instance of the Parameter class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter.Parameter)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter import Parameter
         return Parameter(self)
 
     @property
     def ConfigId(self):
-        """The internal config id asociated with this flow.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The internal config id asociated with this flow.
         """
         return self._get_attribute('configId')
 
     @property
     def ConnectionCount(self):
-        """Number of connections in this flow.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of connections in this flow.
         """
         return self._get_attribute('connectionCount')
 
     @property
     def Description(self):
-        """Brief description of what the flow does.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Brief description of what the flow does.
         """
         return self._get_attribute('description')
 
     @property
     def FlowId(self):
-        """The identifier of the flow.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The identifier of the flow.
         """
         return self._get_attribute('flowId')
 
     @property
     def FlowSize(self):
-        """The size of the flow in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The size of the flow in bytes.
         """
         return self._get_attribute('flowSize')
 
     @property
     def Name(self):
-        """the name of the Flow.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: the name of the Flow.
         """
         return self._get_attribute('name')
 
     @property
     def Parameters(self):
-        """Array containing configurable parameters per flow.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Array containing configurable parameters per flow.
         """
         return self._get_attribute('parameters')
 
     @property
     def Percentage(self):
-        """The amount of traffic generated for this flows.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of traffic generated for this flows.
         """
         return self._get_attribute('percentage')
     @Percentage.setter
@@ -139,51 +139,60 @@ class AppLibFlow(Base):
         self._set_attribute('percentage', value)
 
     def update(self, Percentage=None):
-        """Updates a child instance of appLibFlow on the server.
+        """Updates appLibFlow resource on the server.
 
-        Args:
-            Percentage (number): The amount of traffic generated for this flows.
+        Args
+        ----
+        - Percentage (number): The amount of traffic generated for this flows.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, ConfigId=None, ConnectionCount=None, Description=None, FlowId=None, FlowSize=None, Name=None, Parameters=None, Percentage=None):
-        """Finds and retrieves appLibFlow data from the server.
+        """Finds and retrieves appLibFlow resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve appLibFlow data from the server.
-        By default the find method takes no parameters and will retrieve all appLibFlow data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve appLibFlow resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all appLibFlow resources from the server.
 
-        Args:
-            ConfigId (number): The internal config id asociated with this flow.
-            ConnectionCount (number): Number of connections in this flow.
-            Description (str): Brief description of what the flow does.
-            FlowId (str): The identifier of the flow.
-            FlowSize (number): The size of the flow in bytes.
-            Name (str): the name of the Flow.
-            Parameters (list(str)): Array containing configurable parameters per flow.
-            Percentage (number): The amount of traffic generated for this flows.
+        Args
+        ----
+        - ConfigId (number): The internal config id asociated with this flow.
+        - ConnectionCount (number): Number of connections in this flow.
+        - Description (str): Brief description of what the flow does.
+        - FlowId (str): The identifier of the flow.
+        - FlowSize (number): The size of the flow in bytes.
+        - Name (str): the name of the Flow.
+        - Parameters (list(str)): Array containing configurable parameters per flow.
+        - Percentage (number): The amount of traffic generated for this flows.
 
-        Returns:
-            self: This instance with matching appLibFlow data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching appLibFlow resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of appLibFlow data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the appLibFlow data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the appLibFlow resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

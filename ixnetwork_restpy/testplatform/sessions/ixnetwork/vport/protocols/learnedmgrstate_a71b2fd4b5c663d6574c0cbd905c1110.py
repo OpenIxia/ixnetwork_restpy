@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedMgrState(Base):
     """The number of Multicast Groups for which information has been learned.
-    The LearnedMgrState class encapsulates a list of learnedMgrState resources that is managed by the system.
+    The LearnedMgrState class encapsulates a list of learnedMgrState resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedMgrState.find() method.
     """
 
@@ -37,51 +37,58 @@ class LearnedMgrState(Base):
 
     @property
     def Group(self):
-        """An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
         """
         return self._get_attribute('group')
 
     @property
     def Source(self):
-        """The source address that generates multicast traffic. It must be a unicast address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The source address that generates multicast traffic. It must be a unicast address.
         """
         return self._get_attribute('source')
 
     def find(self, Group=None, Source=None):
-        """Finds and retrieves learnedMgrState data from the server.
+        """Finds and retrieves learnedMgrState resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedMgrState data from the server.
-        By default the find method takes no parameters and will retrieve all learnedMgrState data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedMgrState resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedMgrState resources from the server.
 
-        Args:
-            Group (str): An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
-            Source (str): The source address that generates multicast traffic. It must be a unicast address.
+        Args
+        ----
+        - Group (str): An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
+        - Source (str): The source address that generates multicast traffic. It must be a unicast address.
 
-        Returns:
-            self: This instance with matching learnedMgrState data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedMgrState resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedMgrState data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedMgrState data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedMgrState resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

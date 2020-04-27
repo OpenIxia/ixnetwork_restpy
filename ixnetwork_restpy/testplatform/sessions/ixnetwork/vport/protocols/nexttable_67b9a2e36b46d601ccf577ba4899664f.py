@@ -36,10 +36,10 @@ class NextTable(Base):
 
     @property
     def TableId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('tableId')
     @TableId.setter
@@ -48,10 +48,10 @@ class NextTable(Base):
 
     @property
     def TableIdMiss(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('tableIdMiss')
     @TableIdMiss.setter
@@ -59,13 +59,15 @@ class NextTable(Base):
         self._set_attribute('tableIdMiss', value)
 
     def update(self, TableId=None, TableIdMiss=None):
-        """Updates a child instance of nextTable on the server.
+        """Updates nextTable resource on the server.
 
-        Args:
-            TableId (str): NOT DEFINED
-            TableIdMiss (str): NOT DEFINED
+        Args
+        ----
+        - TableId (str): NOT DEFINED
+        - TableIdMiss (str): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

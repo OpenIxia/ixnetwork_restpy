@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Actions(Base):
     """Action
-    The Actions class encapsulates a list of actions resources that is be managed by the user.
+    The Actions class encapsulates a list of actions resources that are managed by the user.
     A list of resources can be retrieved from the server using the Actions.find() method.
-    The list can be managed by the user by using the Actions.add() and Actions.remove() methods.
+    The list can be managed by using the Actions.add() and Actions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,33 +38,33 @@ class Actions(Base):
 
     @property
     def Action(self):
-        """An instance of the Action class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.action.Action): An instance of the Action class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.action.Action)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.action import Action
         return Action(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Description(self):
-        """Description of the field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the field.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -73,19 +73,19 @@ class Actions(Base):
 
     @property
     def DisplayName(self):
-        """Display name used by GUI.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Display name used by GUI.
         """
         return self._get_attribute('displayName')
 
     @property
     def IsEditable(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -94,10 +94,10 @@ class Actions(Base):
 
     @property
     def IsEnabled(self):
-        """Enables disables the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables disables the field.
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -106,10 +106,10 @@ class Actions(Base):
 
     @property
     def IsRequired(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -118,10 +118,10 @@ class Actions(Base):
 
     @property
     def Name(self):
-        """Name of packet field
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of packet field
         """
         return self._get_attribute('name')
     @Name.setter
@@ -129,82 +129,95 @@ class Actions(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Updates a child instance of actions on the server.
+        """Updates actions resource on the server.
 
-        Args:
-            Description (str): Description of the field.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Description (str): Description of the field.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Adds a new actions node on the server and retrieves it in this instance.
+        """Adds a new actions resource on the server and adds it to the container.
 
-        Args:
-            Description (str): Description of the field.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Description (str): Description of the field.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Returns:
-            self: This instance with all currently retrieved actions data using find and the newly added actions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved actions resources using find and the newly added actions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the actions data in this instance from server.
+        """Deletes all the contained actions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Finds and retrieves actions data from the server.
+        """Finds and retrieves actions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve actions data from the server.
-        By default the find method takes no parameters and will retrieve all actions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all actions resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            Description (str): Description of the field.
-            DisplayName (str): Display name used by GUI.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - Description (str): Description of the field.
+        - DisplayName (str): Display name used by GUI.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Returns:
-            self: This instance with matching actions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching actions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of actions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the actions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the actions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -213,13 +226,14 @@ class Actions(Base):
 
         Adds an Action item.
 
-        addAction(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): 
+        addAction(Arg2=string)
+        ----------------------
+        - Arg2 (str): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

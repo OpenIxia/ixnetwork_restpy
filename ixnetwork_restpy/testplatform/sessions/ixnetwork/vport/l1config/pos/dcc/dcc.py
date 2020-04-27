@@ -36,10 +36,10 @@ class Dcc(Base):
 
     @property
     def Crc(self):
-        """Choose the type of Cyclic Redundancy Check to be used.
-
-        Returns:
-            str(crc16|crc32)
+        """
+        Returns
+        -------
+        - str(crc16 | crc32): Choose the type of Cyclic Redundancy Check to be used.
         """
         return self._get_attribute('crc')
     @Crc.setter
@@ -48,10 +48,10 @@ class Dcc(Base):
 
     @property
     def OverheadByte(self):
-        """Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
-
-        Returns:
-            str(loh|soh)
+        """
+        Returns
+        -------
+        - str(loh | soh): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
         """
         return self._get_attribute('overheadByte')
     @OverheadByte.setter
@@ -60,10 +60,10 @@ class Dcc(Base):
 
     @property
     def TimeFill(self):
-        """Choose the type of bytes used to fill the gaps between DCC frames.
-
-        Returns:
-            str(flag7E|markIdle)
+        """
+        Returns
+        -------
+        - str(flag7E | markIdle): Choose the type of bytes used to fill the gaps between DCC frames.
         """
         return self._get_attribute('timeFill')
     @TimeFill.setter
@@ -71,14 +71,16 @@ class Dcc(Base):
         self._set_attribute('timeFill', value)
 
     def update(self, Crc=None, OverheadByte=None, TimeFill=None):
-        """Updates a child instance of dcc on the server.
+        """Updates dcc resource on the server.
 
-        Args:
-            Crc (str(crc16|crc32)): Choose the type of Cyclic Redundancy Check to be used.
-            OverheadByte (str(loh|soh)): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
-            TimeFill (str(flag7E|markIdle)): Choose the type of bytes used to fill the gaps between DCC frames.
+        Args
+        ----
+        - Crc (str(crc16 | crc32)): Choose the type of Cyclic Redundancy Check to be used.
+        - OverheadByte (str(loh | soh)): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
+        - TimeFill (str(flag7E | markIdle)): Choose the type of bytes used to fill the gaps between DCC frames.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

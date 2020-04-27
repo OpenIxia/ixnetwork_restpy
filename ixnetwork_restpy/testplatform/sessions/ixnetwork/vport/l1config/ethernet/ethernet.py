@@ -36,52 +36,52 @@ class Ethernet(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def Oam(self):
-        """An instance of the Oam class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam.Oam): An instance of the Oam class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam.Oam)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam import Oam
         return Oam(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -90,10 +90,10 @@ class Ethernet(Base):
 
     @property
     def AutoNegotiate(self):
-        """If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
         """
         return self._get_attribute('autoNegotiate')
     @AutoNegotiate.setter
@@ -102,10 +102,10 @@ class Ethernet(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -114,10 +114,10 @@ class Ethernet(Base):
 
     @property
     def EnabledFlowControl(self):
-        """If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -126,10 +126,10 @@ class Ethernet(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """The 48-bit MAC address that the port listens on for a directed pause.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -138,10 +138,10 @@ class Ethernet(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -150,10 +150,10 @@ class Ethernet(Base):
 
     @property
     def MasterSlaveMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(master|slave)
+        """
+        Returns
+        -------
+        - str(master | slave): NOT DEFINED
         """
         return self._get_attribute('masterSlaveMode')
     @MasterSlaveMode.setter
@@ -162,10 +162,10 @@ class Ethernet(Base):
 
     @property
     def Media(self):
-        """Available only for Ethernet cards that support this dual-PHY capability.
-
-        Returns:
-            str(copper|fiber|sgmii)
+        """
+        Returns
+        -------
+        - str(copper | fiber | sgmii): Available only for Ethernet cards that support this dual-PHY capability.
         """
         return self._get_attribute('media')
     @Media.setter
@@ -174,10 +174,10 @@ class Ethernet(Base):
 
     @property
     def NegotiateMasterSlave(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('negotiateMasterSlave')
     @NegotiateMasterSlave.setter
@@ -186,10 +186,10 @@ class Ethernet(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -198,10 +198,10 @@ class Ethernet(Base):
 
     @property
     def Speed(self):
-        """The speed and duplex operation options.
-
-        Returns:
-            str(auto|speed1000|speed100fd|speed100hd|speed10fd|speed10hd)
+        """
+        Returns
+        -------
+        - str(auto | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd): The speed and duplex operation options.
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -210,10 +210,10 @@ class Ethernet(Base):
 
     @property
     def SpeedAuto(self):
-        """If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
-
-        Returns:
-            list(str[all|speed1000|speed100fd|speed100hd|speed10fd|speed10hd])
+        """
+        Returns
+        -------
+        - list(str[all | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd]): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
         """
         return self._get_attribute('speedAuto')
     @SpeedAuto.setter
@@ -221,23 +221,25 @@ class Ethernet(Base):
         self._set_attribute('speedAuto', value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, Speed=None, SpeedAuto=None):
-        """Updates a child instance of ethernet on the server.
+        """Updates ethernet resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            MasterSlaveMode (str(master|slave)): NOT DEFINED
-            Media (str(copper|fiber|sgmii)): Available only for Ethernet cards that support this dual-PHY capability.
-            NegotiateMasterSlave (bool): NOT DEFINED
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
-            Speed (str(auto|speed1000|speed100fd|speed100hd|speed10fd|speed10hd)): The speed and duplex operation options.
-            SpeedAuto (list(str[all|speed1000|speed100fd|speed100hd|speed10fd|speed10hd])): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - MasterSlaveMode (str(master | slave)): NOT DEFINED
+        - Media (str(copper | fiber | sgmii)): Available only for Ethernet cards that support this dual-PHY capability.
+        - NegotiateMasterSlave (bool): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+        - Speed (str(auto | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd)): The speed and duplex operation options.
+        - SpeedAuto (list(str[all | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd])): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,114 +36,122 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def IsisPseudoSRv6EndSIDList(self):
-        """An instance of the IsisPseudoSRv6EndSIDList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist.IsisPseudoSRv6EndSIDList): An instance of the IsisPseudoSRv6EndSIDList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist.IsisPseudoSRv6EndSIDList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist import IsisPseudoSRv6EndSIDList
         return IsisPseudoSRv6EndSIDList(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdvertiseLocatorAsPrefix(self):
-        """Advertise Locator as Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseLocatorAsPrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Locator as Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseLocatorAsPrefix'))
 
     @property
     def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('algorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DBit(self):
-        """D Bit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): D Bit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dBit'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Locator(self):
-        """Locator
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('locator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locator'))
 
     @property
     def LocatorName(self):
-        """Locator Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('locatorName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorName'))
 
     @property
     def LocatorSize(self):
-        """Locator Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('locatorSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorSize'))
 
     @property
     def Metric(self):
-        """Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -152,55 +160,60 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def PrefixLength(self):
-        """Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def Redistribution(self):
-        """Redistribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redistribution')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redistribution'))
 
     @property
     def ReservedFlags(self):
-        """Reserved (Flags)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservedFlags')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved (Flags)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedFlags'))
 
     @property
     def RouteMetric(self):
-        """Route Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routeMetric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeMetric'))
 
     @property
     def RouteOrigin(self):
-        """Route Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routeOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeOrigin'))
 
     @property
     def SidCount(self):
-        """SID Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SID Count
         """
         return self._get_attribute('sidCount')
     @SidCount.setter
@@ -208,46 +221,51 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         self._set_attribute('sidCount', value)
 
     def update(self, Name=None, SidCount=None):
-        """Updates a child instance of isisPseudoSRv6LocatorEntryList on the server.
+        """Updates isisPseudoSRv6LocatorEntryList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SidCount (number): SID Count
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SidCount (number): SID Count
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
         """Base class infrastructure that gets a list of isisPseudoSRv6LocatorEntryList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
-            Algorithm (str): optional regex of algorithm
-            DBit (str): optional regex of dBit
-            Locator (str): optional regex of locator
-            LocatorName (str): optional regex of locatorName
-            LocatorSize (str): optional regex of locatorSize
-            Metric (str): optional regex of metric
-            PrefixLength (str): optional regex of prefixLength
-            Redistribution (str): optional regex of redistribution
-            ReservedFlags (str): optional regex of reservedFlags
-            RouteMetric (str): optional regex of routeMetric
-            RouteOrigin (str): optional regex of routeOrigin
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
+        - Algorithm (str): optional regex of algorithm
+        - DBit (str): optional regex of dBit
+        - Locator (str): optional regex of locator
+        - LocatorName (str): optional regex of locatorName
+        - LocatorSize (str): optional regex of locatorSize
+        - Metric (str): optional regex of metric
+        - PrefixLength (str): optional regex of prefixLength
+        - Redistribution (str): optional regex of redistribution
+        - ReservedFlags (str): optional regex of reservedFlags
+        - RouteMetric (str): optional regex of routeMetric
+        - RouteOrigin (str): optional regex of routeOrigin
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -256,9 +274,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -268,9 +287,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

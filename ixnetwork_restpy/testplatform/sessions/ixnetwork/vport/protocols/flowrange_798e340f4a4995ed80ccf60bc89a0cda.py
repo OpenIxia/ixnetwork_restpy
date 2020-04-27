@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FlowRange(Base):
     """This object allows you to define the number of Flow Ranges for this Interface.
-    The FlowRange class encapsulates a list of flowRange resources that is be managed by the user.
+    The FlowRange class encapsulates a list of flowRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the FlowRange.find() method.
-    The list can be managed by the user by using the FlowRange.add() and FlowRange.remove() methods.
+    The list can be managed by using the FlowRange.add() and FlowRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class FlowRange(Base):
 
     @property
     def FlowRangeAction(self):
-        """An instance of the FlowRangeAction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_31315dd539f30c26b673b858921f494b.FlowRangeAction): An instance of the FlowRangeAction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_31315dd539f30c26b673b858921f494b.FlowRangeAction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_31315dd539f30c26b673b858921f494b import FlowRangeAction
         return FlowRangeAction(self)
 
     @property
     def CheckOverlap(self):
-        """If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
         """
         return self._get_attribute('checkOverlap')
     @CheckOverlap.setter
@@ -64,10 +64,10 @@ class FlowRange(Base):
 
     @property
     def Description(self):
-        """A name that describes the Flow Range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A name that describes the Flow Range.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -76,10 +76,10 @@ class FlowRange(Base):
 
     @property
     def DontAddOnChannelUp(self):
-        """If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
         """
         return self._get_attribute('dontAddOnChannelUp')
     @DontAddOnChannelUp.setter
@@ -88,10 +88,10 @@ class FlowRange(Base):
 
     @property
     def EmergencyFlow(self):
-        """If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
         """
         return self._get_attribute('emergencyFlow')
     @EmergencyFlow.setter
@@ -100,10 +100,10 @@ class FlowRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the flow Range object in the protocol.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the flow Range object in the protocol.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -112,10 +112,10 @@ class FlowRange(Base):
 
     @property
     def EthernetDestination(self):
-        """Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -124,10 +124,10 @@ class FlowRange(Base):
 
     @property
     def EthernetSource(self):
-        """Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -136,10 +136,10 @@ class FlowRange(Base):
 
     @property
     def EthernetType(self):
-        """Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -148,19 +148,19 @@ class FlowRange(Base):
 
     @property
     def FlowModStatus(self):
-        """Reflects the status of the selected flow range which is modified at runtime.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Reflects the status of the selected flow range which is modified at runtime.
         """
         return self._get_attribute('flowModStatus')
 
     @property
     def HardTimeout(self):
-        """Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
         """
         return self._get_attribute('hardTimeout')
     @HardTimeout.setter
@@ -169,10 +169,10 @@ class FlowRange(Base):
 
     @property
     def IdleTimeout(self):
-        """Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
         """
         return self._get_attribute('idleTimeout')
     @IdleTimeout.setter
@@ -181,10 +181,10 @@ class FlowRange(Base):
 
     @property
     def InPort(self):
-        """Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('inPort')
     @InPort.setter
@@ -193,10 +193,10 @@ class FlowRange(Base):
 
     @property
     def IpDscp(self):
-        """Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -205,10 +205,10 @@ class FlowRange(Base):
 
     @property
     def IpProtocol(self):
-        """Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -217,10 +217,10 @@ class FlowRange(Base):
 
     @property
     def Ipv4Destination(self):
-        """Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -229,10 +229,10 @@ class FlowRange(Base):
 
     @property
     def Ipv4Source(self):
-        """Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -241,10 +241,10 @@ class FlowRange(Base):
 
     @property
     def MatchType(self):
-        """Indicates the type of match to be configured.
-
-        Returns:
-            str(strict|loose)
+        """
+        Returns
+        -------
+        - str(strict | loose): Indicates the type of match to be configured.
         """
         return self._get_attribute('matchType')
     @MatchType.setter
@@ -253,10 +253,10 @@ class FlowRange(Base):
 
     @property
     def Priority(self):
-        """Indicates the priority level for the Flow Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the priority level for the Flow Range.
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -265,10 +265,10 @@ class FlowRange(Base):
 
     @property
     def SendFlowRemoved(self):
-        """If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
         """
         return self._get_attribute('sendFlowRemoved')
     @SendFlowRemoved.setter
@@ -277,10 +277,10 @@ class FlowRange(Base):
 
     @property
     def TotalFlowCount(self):
-        """Specifies the number of flows.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of flows.
         """
         return self._get_attribute('totalFlowCount')
     @TotalFlowCount.setter
@@ -289,10 +289,10 @@ class FlowRange(Base):
 
     @property
     def TransportDestinationIcmpCode(self):
-        """Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('transportDestinationIcmpCode')
     @TransportDestinationIcmpCode.setter
@@ -301,10 +301,10 @@ class FlowRange(Base):
 
     @property
     def TransportSourceIcmpType(self):
-        """Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('transportSourceIcmpType')
     @TransportSourceIcmpType.setter
@@ -313,10 +313,10 @@ class FlowRange(Base):
 
     @property
     def VlanId(self):
-        """Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -325,10 +325,10 @@ class FlowRange(Base):
 
     @property
     def VlanPriority(self):
-        """Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -336,135 +336,148 @@ class FlowRange(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of flowRange on the server.
+        """Updates flowRange resource on the server.
 
-        Args:
-            CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
-            Description (str): A name that describes the Flow Range.
-            DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
-            EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
-            Enabled (bool): If true, enables the flow Range object in the protocol.
-            EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
-            IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
-            InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MatchType (str(strict|loose)): Indicates the type of match to be configured.
-            Priority (number): Indicates the priority level for the Flow Range.
-            SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
-            TotalFlowCount (number): Specifies the number of flows.
-            TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
+        - Description (str): A name that describes the Flow Range.
+        - DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
+        - EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
+        - Enabled (bool): If true, enables the flow Range object in the protocol.
+        - EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
+        - IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
+        - InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MatchType (str(strict | loose)): Indicates the type of match to be configured.
+        - Priority (number): Indicates the priority level for the Flow Range.
+        - SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
+        - TotalFlowCount (number): Specifies the number of flows.
+        - TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
-        """Adds a new flowRange node on the server and retrieves it in this instance.
+        """Adds a new flowRange resource on the server and adds it to the container.
 
-        Args:
-            CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
-            Description (str): A name that describes the Flow Range.
-            DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
-            EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
-            Enabled (bool): If true, enables the flow Range object in the protocol.
-            EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
-            IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
-            InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MatchType (str(strict|loose)): Indicates the type of match to be configured.
-            Priority (number): Indicates the priority level for the Flow Range.
-            SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
-            TotalFlowCount (number): Specifies the number of flows.
-            TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
+        - Description (str): A name that describes the Flow Range.
+        - DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
+        - EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
+        - Enabled (bool): If true, enables the flow Range object in the protocol.
+        - EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
+        - IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
+        - InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MatchType (str(strict | loose)): Indicates the type of match to be configured.
+        - Priority (number): Indicates the priority level for the Flow Range.
+        - SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
+        - TotalFlowCount (number): Specifies the number of flows.
+        - TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Returns:
-            self: This instance with all currently retrieved flowRange data using find and the newly added flowRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved flowRange resources using find and the newly added flowRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the flowRange data in this instance from server.
+        """Deletes all the contained flowRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, FlowModStatus=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves flowRange data from the server.
+        """Finds and retrieves flowRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve flowRange data from the server.
-        By default the find method takes no parameters and will retrieve all flowRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flowRange resources from the server.
 
-        Args:
-            CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
-            Description (str): A name that describes the Flow Range.
-            DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
-            EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
-            Enabled (bool): If true, enables the flow Range object in the protocol.
-            EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            FlowModStatus (str): Reflects the status of the selected flow range which is modified at runtime.
-            HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
-            IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
-            InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            MatchType (str(strict|loose)): Indicates the type of match to be configured.
-            Priority (number): Indicates the priority level for the Flow Range.
-            SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
-            TotalFlowCount (number): Specifies the number of flows.
-            TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
-            VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        Args
+        ----
+        - CheckOverlap (bool): If true, Ixia enables the Check Overlap flag while sending OpenFlow flow modification messages.
+        - Description (str): A name that describes the Flow Range.
+        - DontAddOnChannelUp (bool): If true, no flow add or delete packet is sent out when OpenFlow channel comes up or when flow entry is enabled/disabled in the IxNetwork GUI. This facility is useful to send flow add,delete, and modify for ad-hoc flows through Test Composer.
+        - EmergencyFlow (bool): If true, Ixia enables the Emergency flag while sending OpenFlow flow modification messages.
+        - Enabled (bool): If true, enables the flow Range object in the protocol.
+        - EthernetDestination (str): Indicates the Ethernet destination address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetSource (str): Indicates the Ethernet source address for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - EthernetType (str): Indicates the type of Ethernet to be used. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - FlowModStatus (str): Reflects the status of the selected flow range which is modified at runtime.
+        - HardTimeout (number): Indicates the inactive time in seconds after which the Flow range will hard timeout and close.
+        - IdleTimeout (number): Indicates the inactive time in seconds after which the Flow range will timeout and become idle.
+        - InPort (str): Indicates the In port value for flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpDscp (str): Specifies the IP DSCP value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - IpProtocol (str): Specifies the IP Protocol to be used for the flow range. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Destination (str): Indicates the IPv4 destination address mask value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - Ipv4Source (str): Indicates the IPv4 source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - MatchType (str(strict | loose)): Indicates the type of match to be configured.
+        - Priority (number): Indicates the priority level for the Flow Range.
+        - SendFlowRemoved (bool): If true, Ixia enables the Send Flow Removed flag while sending OpenFlow flow modification messages.
+        - TotalFlowCount (number): Specifies the number of flows.
+        - TransportDestinationIcmpCode (str): Specifies the Transport destination address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - TransportSourceIcmpType (str): Specifies the Transport Source address. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanId (str): Indicates the VLAN identifier value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+        - VlanPriority (str): Indicates the VLAN priority value. This attribute is of string type and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
-        Returns:
-            self: This instance with matching flowRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching flowRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of flowRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the flowRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the flowRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -473,16 +486,15 @@ class FlowRange(Base):
 
         NOT DEFINED
 
-        updateFlowMod(Arg2:enum)bool
-            Args:
-                args[0] is Arg2 (str(sendFlowAdd|sendFlowModify|sendFlowRemove)): NOT DEFINED
+        updateFlowMod(Arg2=enum)bool
+        ----------------------------
+        - Arg2 (str(sendFlowAdd | sendFlowModify | sendFlowRemove)): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

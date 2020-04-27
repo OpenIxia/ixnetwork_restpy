@@ -36,38 +36,38 @@ class L2tpRange(Base):
 
     @property
     def DomainGroup(self):
-        """An instance of the DomainGroup class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_f6859cb671851d1c232346b1baeeae89.DomainGroup): An instance of the DomainGroup class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_f6859cb671851d1c232346b1baeeae89.DomainGroup)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_f6859cb671851d1c232346b1baeeae89 import DomainGroup
         return DomainGroup(self)
 
     @property
     def LnsIp(self):
-        """An instance of the LnsIp class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_ec48a5dd0e5aa7799a7f283d3de4499d.LnsIp): An instance of the LnsIp class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_ec48a5dd0e5aa7799a7f283d3de4499d.LnsIp)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_ec48a5dd0e5aa7799a7f283d3de4499d import LnsIp
         return LnsIp(self)
 
     @property
     def AuthOptions(self):
-        """For GUI grouping.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For GUI grouping.
         """
         return self._get_attribute('authOptions')
     @AuthOptions.setter
@@ -76,10 +76,10 @@ class L2tpRange(Base):
 
     @property
     def AuthRetries(self):
-        """Number of PPP authentication retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of PPP authentication retries
         """
         return self._get_attribute('authRetries')
     @AuthRetries.setter
@@ -88,10 +88,10 @@ class L2tpRange(Base):
 
     @property
     def AuthTimeout(self):
-        """Timeout for PPP authentication, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for PPP authentication, in seconds.
         """
         return self._get_attribute('authTimeout')
     @AuthTimeout.setter
@@ -100,10 +100,10 @@ class L2tpRange(Base):
 
     @property
     def AuthType(self):
-        """Authentication type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Authentication type
         """
         return self._get_attribute('authType')
     @AuthType.setter
@@ -112,10 +112,10 @@ class L2tpRange(Base):
 
     @property
     def BaseLnsIp(self):
-        """Defines the base address to be used by the L2TP tunnel
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the base address to be used by the L2TP tunnel
         """
         return self._get_attribute('baseLnsIp')
     @BaseLnsIp.setter
@@ -125,9 +125,9 @@ class L2tpRange(Base):
     @property
     def BasicOptions(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('basicOptions')
     @BasicOptions.setter
@@ -136,10 +136,10 @@ class L2tpRange(Base):
 
     @property
     def BearerCapability(self):
-        """Bearer capability
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Bearer capability
         """
         return self._get_attribute('bearerCapability')
     @BearerCapability.setter
@@ -148,10 +148,10 @@ class L2tpRange(Base):
 
     @property
     def BearerType(self):
-        """Bearer Type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Bearer Type
         """
         return self._get_attribute('bearerType')
     @BearerType.setter
@@ -160,10 +160,10 @@ class L2tpRange(Base):
 
     @property
     def ChapName(self):
-        """User name when CHAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User name when CHAP Authentication is being used
         """
         return self._get_attribute('chapName')
     @ChapName.setter
@@ -172,10 +172,10 @@ class L2tpRange(Base):
 
     @property
     def ChapSecret(self):
-        """Secret when CHAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secret when CHAP Authentication is being used
         """
         return self._get_attribute('chapSecret')
     @ChapSecret.setter
@@ -184,10 +184,10 @@ class L2tpRange(Base):
 
     @property
     def ClientBaseIid(self):
-        """Base for IPv6CP interface identifiers assigned to clients.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv6CP interface identifiers assigned to clients.
         """
         return self._get_attribute('clientBaseIid')
     @ClientBaseIid.setter
@@ -196,10 +196,10 @@ class L2tpRange(Base):
 
     @property
     def ClientBaseIp(self):
-        """Base for IPv4 PPP client address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv4 PPP client address creation
         """
         return self._get_attribute('clientBaseIp')
     @ClientBaseIp.setter
@@ -208,10 +208,10 @@ class L2tpRange(Base):
 
     @property
     def ClientDnsOptions(self):
-        """Client DNS options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Client DNS options
         """
         return self._get_attribute('clientDnsOptions')
     @ClientDnsOptions.setter
@@ -220,10 +220,10 @@ class L2tpRange(Base):
 
     @property
     def ClientIidIncr(self):
-        """Increment for IPv6CP client interface identifiers.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment for IPv6CP client interface identifiers.
         """
         return self._get_attribute('clientIidIncr')
     @ClientIidIncr.setter
@@ -232,10 +232,10 @@ class L2tpRange(Base):
 
     @property
     def ClientIpIncr(self):
-        """Incrementor for IPv4 PPP client address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Incrementor for IPv4 PPP client address creation
         """
         return self._get_attribute('clientIpIncr')
     @ClientIpIncr.setter
@@ -244,10 +244,10 @@ class L2tpRange(Base):
 
     @property
     def ClientNetmask(self):
-        """Netmask that the client should request
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Netmask that the client should request
         """
         return self._get_attribute('clientNetmask')
     @ClientNetmask.setter
@@ -256,10 +256,10 @@ class L2tpRange(Base):
 
     @property
     def ClientNetmaskOptions(self):
-        """Client netmask options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Client netmask options
         """
         return self._get_attribute('clientNetmaskOptions')
     @ClientNetmaskOptions.setter
@@ -268,10 +268,10 @@ class L2tpRange(Base):
 
     @property
     def ClientPrimaryDnsAddress(self):
-        """Primary DNS server address requested by client
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Primary DNS server address requested by client
         """
         return self._get_attribute('clientPrimaryDnsAddress')
     @ClientPrimaryDnsAddress.setter
@@ -280,10 +280,10 @@ class L2tpRange(Base):
 
     @property
     def ClientSecondaryDnsAddress(self):
-        """Secondary DNS server address requested by client
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secondary DNS server address requested by client
         """
         return self._get_attribute('clientSecondaryDnsAddress')
     @ClientSecondaryDnsAddress.setter
@@ -292,10 +292,10 @@ class L2tpRange(Base):
 
     @property
     def ControlMsgsRetryCounter(self):
-        """Number of L2TP retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of L2TP retries
         """
         return self._get_attribute('controlMsgsRetryCounter')
     @ControlMsgsRetryCounter.setter
@@ -305,9 +305,9 @@ class L2tpRange(Base):
     @property
     def ControlPlaneOptions(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('controlPlaneOptions')
     @ControlPlaneOptions.setter
@@ -317,9 +317,9 @@ class L2tpRange(Base):
     @property
     def DataPlaneOptions(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('dataPlaneOptions')
     @DataPlaneOptions.setter
@@ -328,10 +328,10 @@ class L2tpRange(Base):
 
     @property
     def DnsServerList(self):
-        """DNS server list separacted by semicolon
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: DNS server list separacted by semicolon
         """
         return self._get_attribute('dnsServerList')
     @DnsServerList.setter
@@ -340,10 +340,10 @@ class L2tpRange(Base):
 
     @property
     def DomainList(self):
-        """Configure domain group settings
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Configure domain group settings
         """
         return self._get_attribute('domainList')
     @DomainList.setter
@@ -352,10 +352,10 @@ class L2tpRange(Base):
 
     @property
     def DomainToIpList(self):
-        """Domain To LNS
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Domain To LNS
         """
         return self._get_attribute('domainToIpList')
     @DomainToIpList.setter
@@ -364,10 +364,10 @@ class L2tpRange(Base):
 
     @property
     def EchoReqInterval(self):
-        """Keep alive interval
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Keep alive interval
         """
         return self._get_attribute('echoReqInterval')
     @EchoReqInterval.setter
@@ -376,10 +376,10 @@ class L2tpRange(Base):
 
     @property
     def EnableControlChecksum(self):
-        """Enable/Disable UDP checksums on control plane packets
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable UDP checksums on control plane packets
         """
         return self._get_attribute('enableControlChecksum')
     @EnableControlChecksum.setter
@@ -388,10 +388,10 @@ class L2tpRange(Base):
 
     @property
     def EnableDataChecksum(self):
-        """Enable/Disable UDP checksums on data plane packets
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable UDP checksums on data plane packets
         """
         return self._get_attribute('enableDataChecksum')
     @EnableDataChecksum.setter
@@ -400,10 +400,10 @@ class L2tpRange(Base):
 
     @property
     def EnableDnsRa(self):
-        """Enable RDNSS routing advertisments
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable RDNSS routing advertisments
         """
         return self._get_attribute('enableDnsRa')
     @EnableDnsRa.setter
@@ -412,10 +412,10 @@ class L2tpRange(Base):
 
     @property
     def EnableDomainGroups(self):
-        """Enable domain groups
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable domain groups
         """
         return self._get_attribute('enableDomainGroups')
     @EnableDomainGroups.setter
@@ -424,10 +424,10 @@ class L2tpRange(Base):
 
     @property
     def EnableEchoReq(self):
-        """Enable Echo requests
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Echo requests
         """
         return self._get_attribute('enableEchoReq')
     @EnableEchoReq.setter
@@ -436,10 +436,10 @@ class L2tpRange(Base):
 
     @property
     def EnableEchoRsp(self):
-        """Enable Echo replies
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Echo replies
         """
         return self._get_attribute('enableEchoRsp')
     @EnableEchoRsp.setter
@@ -448,10 +448,10 @@ class L2tpRange(Base):
 
     @property
     def EnableHelloRequest(self):
-        """If enabled, L2TP hello request is performed
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, L2TP hello request is performed
         """
         return self._get_attribute('enableHelloRequest')
     @EnableHelloRequest.setter
@@ -460,10 +460,10 @@ class L2tpRange(Base):
 
     @property
     def EnableMru(self):
-        """Enable/Disable MRU negotiation
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable MRU negotiation
         """
         return self._get_attribute('enableMru')
     @EnableMru.setter
@@ -472,10 +472,10 @@ class L2tpRange(Base):
 
     @property
     def EnablePasswordCheck(self):
-        """Enable authentication credential checking on the port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable authentication credential checking on the port.
         """
         return self._get_attribute('enablePasswordCheck')
     @EnablePasswordCheck.setter
@@ -484,10 +484,10 @@ class L2tpRange(Base):
 
     @property
     def EnableRedial(self):
-        """If enabled, L2TP redial is activated
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, L2TP redial is activated
         """
         return self._get_attribute('enableRedial')
     @EnableRedial.setter
@@ -496,10 +496,10 @@ class L2tpRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -508,10 +508,10 @@ class L2tpRange(Base):
 
     @property
     def FramingCapability(self):
-        """Designates sync or async framing
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Designates sync or async framing
         """
         return self._get_attribute('framingCapability')
     @FramingCapability.setter
@@ -520,10 +520,10 @@ class L2tpRange(Base):
 
     @property
     def HelloRequestInterval(self):
-        """Timeout for L2TP hello request, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for L2TP hello request, in seconds
         """
         return self._get_attribute('helloRequestInterval')
     @HelloRequestInterval.setter
@@ -532,10 +532,10 @@ class L2tpRange(Base):
 
     @property
     def IncrementBy(self):
-        """Defines the increment to be used for enumerating all the addresses in the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines the increment to be used for enumerating all the addresses in the range.
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -544,10 +544,10 @@ class L2tpRange(Base):
 
     @property
     def InitRetransmitInterval(self):
-        """Initial L2TP timeout
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initial L2TP timeout
         """
         return self._get_attribute('initRetransmitInterval')
     @InitRetransmitInterval.setter
@@ -556,10 +556,10 @@ class L2tpRange(Base):
 
     @property
     def IpIncrementOctet(self):
-        """IP increment octet
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: IP increment octet
         """
         return self._get_attribute('ipIncrementOctet')
     @IpIncrementOctet.setter
@@ -568,10 +568,10 @@ class L2tpRange(Base):
 
     @property
     def Ipv6AddrPrefixLen(self):
-        """IPv6 Address Prefix Length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: IPv6 Address Prefix Length
         """
         return self._get_attribute('ipv6AddrPrefixLen')
     @Ipv6AddrPrefixLen.setter
@@ -580,10 +580,10 @@ class L2tpRange(Base):
 
     @property
     def Ipv6PoolPrefix(self):
-        """Pool prefix for the IPv6 IP pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Pool prefix for the IPv6 IP pool.
         """
         return self._get_attribute('ipv6PoolPrefix')
     @Ipv6PoolPrefix.setter
@@ -592,10 +592,10 @@ class L2tpRange(Base):
 
     @property
     def Ipv6PoolPrefixLen(self):
-        """IPv6 Pool Prefix Length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: IPv6 Pool Prefix Length
         """
         return self._get_attribute('ipv6PoolPrefixLen')
     @Ipv6PoolPrefixLen.setter
@@ -605,9 +605,9 @@ class L2tpRange(Base):
     @property
     def L2tpAuthOptions(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('l2tpAuthOptions')
     @L2tpAuthOptions.setter
@@ -616,10 +616,10 @@ class L2tpRange(Base):
 
     @property
     def LacHostName(self):
-        """L2TP host name used during authentication on LAC, or authenticated against (on LNS).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: L2TP host name used during authentication on LAC, or authenticated against (on LNS).
         """
         return self._get_attribute('lacHostName')
     @LacHostName.setter
@@ -628,10 +628,10 @@ class L2tpRange(Base):
 
     @property
     def LacSecret(self):
-        """L2TP secret used during authentication
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: L2TP secret used during authentication
         """
         return self._get_attribute('lacSecret')
     @LacSecret.setter
@@ -640,10 +640,10 @@ class L2tpRange(Base):
 
     @property
     def LacToLnsMapping(self):
-        """LAC to LNS Mapping
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: LAC to LNS Mapping
         """
         return self._get_attribute('lacToLnsMapping')
     @LacToLnsMapping.setter
@@ -652,10 +652,10 @@ class L2tpRange(Base):
 
     @property
     def LcpOptions(self):
-        """For GUI grouping.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For GUI grouping.
         """
         return self._get_attribute('lcpOptions')
     @LcpOptions.setter
@@ -664,10 +664,10 @@ class L2tpRange(Base):
 
     @property
     def LcpRetries(self):
-        """Number of LCP retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of LCP retries
         """
         return self._get_attribute('lcpRetries')
     @LcpRetries.setter
@@ -676,10 +676,10 @@ class L2tpRange(Base):
 
     @property
     def LcpTermRetries(self):
-        """Number of LCP Termination Retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of LCP Termination Retries
         """
         return self._get_attribute('lcpTermRetries')
     @LcpTermRetries.setter
@@ -688,10 +688,10 @@ class L2tpRange(Base):
 
     @property
     def LcpTermTimeout(self):
-        """Timeout for LCP termination, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for LCP termination, in seconds.
         """
         return self._get_attribute('lcpTermTimeout')
     @LcpTermTimeout.setter
@@ -700,10 +700,10 @@ class L2tpRange(Base):
 
     @property
     def LcpTimeout(self):
-        """Timeout for LCP phase, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for LCP phase, in seconds
         """
         return self._get_attribute('lcpTimeout')
     @LcpTimeout.setter
@@ -712,10 +712,10 @@ class L2tpRange(Base):
 
     @property
     def LnsHostName(self):
-        """L2TP hostname sent by Ixia port when acting as LNS
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: L2TP hostname sent by Ixia port when acting as LNS
         """
         return self._get_attribute('lnsHostName')
     @LnsHostName.setter
@@ -724,10 +724,10 @@ class L2tpRange(Base):
 
     @property
     def LnsIpList(self):
-        """LNS IP Addresses
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: LNS IP Addresses
         """
         return self._get_attribute('lnsIpList')
     @LnsIpList.setter
@@ -736,10 +736,10 @@ class L2tpRange(Base):
 
     @property
     def LnsIpNumber(self):
-        """LNS IP number
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: LNS IP number
         """
         return self._get_attribute('lnsIpNumber')
     @LnsIpNumber.setter
@@ -748,10 +748,10 @@ class L2tpRange(Base):
 
     @property
     def MaxRedialAttempts(self):
-        """Max number of L2TP redial attempts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max number of L2TP redial attempts
         """
         return self._get_attribute('maxRedialAttempts')
     @MaxRedialAttempts.setter
@@ -760,10 +760,10 @@ class L2tpRange(Base):
 
     @property
     def MaxRetransmitInterval(self):
-        """Max. L2TP timeout
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max. L2TP timeout
         """
         return self._get_attribute('maxRetransmitInterval')
     @MaxRetransmitInterval.setter
@@ -772,10 +772,10 @@ class L2tpRange(Base):
 
     @property
     def Mtu(self):
-        """Max Transmit Unit for PPP
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Transmit Unit for PPP
         """
         return self._get_attribute('mtu')
     @Mtu.setter
@@ -784,10 +784,10 @@ class L2tpRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -796,10 +796,10 @@ class L2tpRange(Base):
 
     @property
     def NcpRetries(self):
-        """Number of NCP retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of NCP retries
         """
         return self._get_attribute('ncpRetries')
     @NcpRetries.setter
@@ -808,10 +808,10 @@ class L2tpRange(Base):
 
     @property
     def NcpTimeout(self):
-        """Timeout for NCP phase, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for NCP phase, in seconds
         """
         return self._get_attribute('ncpTimeout')
     @NcpTimeout.setter
@@ -820,10 +820,10 @@ class L2tpRange(Base):
 
     @property
     def NcpType(self):
-        """IP type (IPv4/IPv6) for Network Control Protocol
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IP type (IPv4/IPv6) for Network Control Protocol
         """
         return self._get_attribute('ncpType')
     @NcpType.setter
@@ -832,10 +832,10 @@ class L2tpRange(Base):
 
     @property
     def NoCallTimeout(self):
-        """Timeout for no call establishment, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for no call establishment, in seconds
         """
         return self._get_attribute('noCallTimeout')
     @NoCallTimeout.setter
@@ -844,10 +844,10 @@ class L2tpRange(Base):
 
     @property
     def NumSessions(self):
-        """No. of sessions to setup
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: No. of sessions to setup
         """
         return self._get_attribute('numSessions')
     @NumSessions.setter
@@ -856,19 +856,19 @@ class L2tpRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OffsetByte(self):
-        """L2TP offset byte
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: L2TP offset byte
         """
         return self._get_attribute('offsetByte')
     @OffsetByte.setter
@@ -877,10 +877,10 @@ class L2tpRange(Base):
 
     @property
     def OffsetLength(self):
-        """L2TP offset length in bytes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: L2TP offset length in bytes
         """
         return self._get_attribute('offsetLength')
     @OffsetLength.setter
@@ -889,10 +889,10 @@ class L2tpRange(Base):
 
     @property
     def PapPassword(self):
-        """Password when PAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Password when PAP Authentication is being used
         """
         return self._get_attribute('papPassword')
     @PapPassword.setter
@@ -901,10 +901,10 @@ class L2tpRange(Base):
 
     @property
     def PapUser(self):
-        """User name when PAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User name when PAP Authentication is being used
         """
         return self._get_attribute('papUser')
     @PapUser.setter
@@ -913,10 +913,10 @@ class L2tpRange(Base):
 
     @property
     def ReceiveWindowSize(self):
-        """L2TP Receive Window Size
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: L2TP Receive Window Size
         """
         return self._get_attribute('receiveWindowSize')
     @ReceiveWindowSize.setter
@@ -925,10 +925,10 @@ class L2tpRange(Base):
 
     @property
     def RedialInterval(self):
-        """L2TP redial timeout, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: L2TP redial timeout, in seconds
         """
         return self._get_attribute('redialInterval')
     @RedialInterval.setter
@@ -937,10 +937,10 @@ class L2tpRange(Base):
 
     @property
     def ServerBaseIid(self):
-        """Base for IPv6CP interface identifiers assigned to servers.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv6CP interface identifiers assigned to servers.
         """
         return self._get_attribute('serverBaseIid')
     @ServerBaseIid.setter
@@ -949,10 +949,10 @@ class L2tpRange(Base):
 
     @property
     def ServerBaseIp(self):
-        """Base for IPv4 PPP server address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv4 PPP server address creation
         """
         return self._get_attribute('serverBaseIp')
     @ServerBaseIp.setter
@@ -961,10 +961,10 @@ class L2tpRange(Base):
 
     @property
     def ServerDnsOptions(self):
-        """Server DNS options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Server DNS options
         """
         return self._get_attribute('serverDnsOptions')
     @ServerDnsOptions.setter
@@ -973,10 +973,10 @@ class L2tpRange(Base):
 
     @property
     def ServerIidIncr(self):
-        """Increment for IPv6CP server interface identifiers.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment for IPv6CP server interface identifiers.
         """
         return self._get_attribute('serverIidIncr')
     @ServerIidIncr.setter
@@ -985,10 +985,10 @@ class L2tpRange(Base):
 
     @property
     def ServerIpIncr(self):
-        """DEPRECATED *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
         """
         return self._get_attribute('serverIpIncr')
     @ServerIpIncr.setter
@@ -997,10 +997,10 @@ class L2tpRange(Base):
 
     @property
     def ServerNetmask(self):
-        """Netmask that the server should supply to clients
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Netmask that the server should supply to clients
         """
         return self._get_attribute('serverNetmask')
     @ServerNetmask.setter
@@ -1009,10 +1009,10 @@ class L2tpRange(Base):
 
     @property
     def ServerNetmaskOptions(self):
-        """Server netmask options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Server netmask options
         """
         return self._get_attribute('serverNetmaskOptions')
     @ServerNetmaskOptions.setter
@@ -1021,10 +1021,10 @@ class L2tpRange(Base):
 
     @property
     def ServerPrimaryDnsAddress(self):
-        """Primary DNS server address supplied by server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Primary DNS server address supplied by server
         """
         return self._get_attribute('serverPrimaryDnsAddress')
     @ServerPrimaryDnsAddress.setter
@@ -1033,10 +1033,10 @@ class L2tpRange(Base):
 
     @property
     def ServerSecondaryDnsAddress(self):
-        """Secondary DNS server address supplied by server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secondary DNS server address supplied by server
         """
         return self._get_attribute('serverSecondaryDnsAddress')
     @ServerSecondaryDnsAddress.setter
@@ -1046,9 +1046,9 @@ class L2tpRange(Base):
     @property
     def SessionAllocMethod(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('sessionAllocMethod')
     @SessionAllocMethod.setter
@@ -1057,10 +1057,10 @@ class L2tpRange(Base):
 
     @property
     def SessionsPerTunnel(self):
-        """Number of sessions per L2TP tunnel
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of sessions per L2TP tunnel
         """
         return self._get_attribute('sessionsPerTunnel')
     @SessionsPerTunnel.setter
@@ -1069,10 +1069,10 @@ class L2tpRange(Base):
 
     @property
     def TunnelAuthentication(self):
-        """Enable/Disable L2TP tunnel authentication
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Enable/Disable L2TP tunnel authentication
         """
         return self._get_attribute('tunnelAuthentication')
     @TunnelAuthentication.setter
@@ -1081,10 +1081,10 @@ class L2tpRange(Base):
 
     @property
     def TunnelDestinationIp(self):
-        """Defines the base address to be used for L2TP tunnel destination in the range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the base address to be used for L2TP tunnel destination in the range
         """
         return self._get_attribute('tunnelDestinationIp')
     @TunnelDestinationIp.setter
@@ -1093,10 +1093,10 @@ class L2tpRange(Base):
 
     @property
     def TunnelIncrementBy(self):
-        """Defines the increment to be used between L2TP tunnels
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the increment to be used between L2TP tunnels
         """
         return self._get_attribute('tunnelIncrementBy')
     @TunnelIncrementBy.setter
@@ -1105,10 +1105,10 @@ class L2tpRange(Base):
 
     @property
     def UdpDestinationPort(self):
-        """UDP port to employ for tunneling destinations
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: UDP port to employ for tunneling destinations
         """
         return self._get_attribute('udpDestinationPort')
     @UdpDestinationPort.setter
@@ -1117,10 +1117,10 @@ class L2tpRange(Base):
 
     @property
     def UdpSourcePort(self):
-        """UDP port to employ for tunneling sources
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: UDP port to employ for tunneling sources
         """
         return self._get_attribute('udpSourcePort')
     @UdpSourcePort.setter
@@ -1129,10 +1129,10 @@ class L2tpRange(Base):
 
     @property
     def UseHiddenAvps(self):
-        """Enable/Disable (A)ttribute (V)alue (P)air hiding
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable (A)ttribute (V)alue (P)air hiding
         """
         return self._get_attribute('useHiddenAvps')
     @UseHiddenAvps.setter
@@ -1141,10 +1141,10 @@ class L2tpRange(Base):
 
     @property
     def UseLengthBitInPayload(self):
-        """If enabled, length bit set in L2TP data packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, length bit set in L2TP data packets.
         """
         return self._get_attribute('useLengthBitInPayload')
     @UseLengthBitInPayload.setter
@@ -1153,10 +1153,10 @@ class L2tpRange(Base):
 
     @property
     def UseMagic(self):
-        """use magic
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: use magic
         """
         return self._get_attribute('useMagic')
     @UseMagic.setter
@@ -1165,10 +1165,10 @@ class L2tpRange(Base):
 
     @property
     def UseOffsetBitInPayload(self):
-        """If enabled, offset bit is enabled in L2TP data packets
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, offset bit is enabled in L2TP data packets
         """
         return self._get_attribute('useOffsetBitInPayload')
     @UseOffsetBitInPayload.setter
@@ -1177,10 +1177,10 @@ class L2tpRange(Base):
 
     @property
     def UseSequenceNoInPayload(self):
-        """If enabled, sequence bit is set in L2TP data packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, sequence bit is set in L2TP data packets.
         """
         return self._get_attribute('useSequenceNoInPayload')
     @UseSequenceNoInPayload.setter
@@ -1188,121 +1188,124 @@ class L2tpRange(Base):
         self._set_attribute('useSequenceNoInPayload', value)
 
     def update(self, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, BaseLnsIp=None, BasicOptions=None, BearerCapability=None, BearerType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ControlMsgsRetryCounter=None, ControlPlaneOptions=None, DataPlaneOptions=None, DnsServerList=None, DomainList=None, DomainToIpList=None, EchoReqInterval=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHelloRequest=None, EnableMru=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, FramingCapability=None, HelloRequestInterval=None, IncrementBy=None, InitRetransmitInterval=None, IpIncrementOctet=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, L2tpAuthOptions=None, LacHostName=None, LacSecret=None, LacToLnsMapping=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, LnsHostName=None, LnsIpList=None, LnsIpNumber=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NoCallTimeout=None, NumSessions=None, OffsetByte=None, OffsetLength=None, PapPassword=None, PapUser=None, ReceiveWindowSize=None, RedialInterval=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, SessionAllocMethod=None, SessionsPerTunnel=None, TunnelAuthentication=None, TunnelDestinationIp=None, TunnelIncrementBy=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAvps=None, UseLengthBitInPayload=None, UseMagic=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
-        """Updates a child instance of l2tpRange on the server.
+        """Updates l2tpRange resource on the server.
 
-        Args:
-            AuthOptions (str): For GUI grouping.
-            AuthRetries (number): Number of PPP authentication retries
-            AuthTimeout (number): Timeout for PPP authentication, in seconds.
-            AuthType (str): Authentication type
-            BaseLnsIp (str): Defines the base address to be used by the L2TP tunnel
-            BasicOptions (str): 
-            BearerCapability (str): Bearer capability
-            BearerType (str): Bearer Type
-            ChapName (str): User name when CHAP Authentication is being used
-            ChapSecret (str): Secret when CHAP Authentication is being used
-            ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
-            ClientBaseIp (str): Base for IPv4 PPP client address creation
-            ClientDnsOptions (str): Client DNS options
-            ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
-            ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
-            ClientNetmask (str): Netmask that the client should request
-            ClientNetmaskOptions (str): Client netmask options
-            ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
-            ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
-            ControlMsgsRetryCounter (number): Number of L2TP retries
-            ControlPlaneOptions (str): 
-            DataPlaneOptions (str): 
-            DnsServerList (str): DNS server list separacted by semicolon
-            DomainList (str): Configure domain group settings
-            DomainToIpList (str): Domain To LNS
-            EchoReqInterval (number): Keep alive interval
-            EnableControlChecksum (bool): Enable/Disable UDP checksums on control plane packets
-            EnableDataChecksum (bool): Enable/Disable UDP checksums on data plane packets
-            EnableDnsRa (bool): Enable RDNSS routing advertisments
-            EnableDomainGroups (bool): Enable domain groups
-            EnableEchoReq (bool): Enable Echo requests
-            EnableEchoRsp (bool): Enable Echo replies
-            EnableHelloRequest (bool): If enabled, L2TP hello request is performed
-            EnableMru (bool): Enable/Disable MRU negotiation
-            EnablePasswordCheck (bool): Enable authentication credential checking on the port.
-            EnableRedial (bool): If enabled, L2TP redial is activated
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            FramingCapability (str): Designates sync or async framing
-            HelloRequestInterval (number): Timeout for L2TP hello request, in seconds
-            IncrementBy (number): Defines the increment to be used for enumerating all the addresses in the range.
-            InitRetransmitInterval (number): Initial L2TP timeout
-            IpIncrementOctet (number): IP increment octet
-            Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
-            Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
-            Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
-            L2tpAuthOptions (str): 
-            LacHostName (str): L2TP host name used during authentication on LAC, or authenticated against (on LNS).
-            LacSecret (str): L2TP secret used during authentication
-            LacToLnsMapping (str): LAC to LNS Mapping
-            LcpOptions (str): For GUI grouping.
-            LcpRetries (number): Number of LCP retries
-            LcpTermRetries (number): Number of LCP Termination Retries
-            LcpTermTimeout (number): Timeout for LCP termination, in seconds.
-            LcpTimeout (number): Timeout for LCP phase, in seconds
-            LnsHostName (str): L2TP hostname sent by Ixia port when acting as LNS
-            LnsIpList (str): LNS IP Addresses
-            LnsIpNumber (number): LNS IP number
-            MaxRedialAttempts (number): Max number of L2TP redial attempts
-            MaxRetransmitInterval (number): Max. L2TP timeout
-            Mtu (number): Max Transmit Unit for PPP
-            Name (str): Name of range
-            NcpRetries (number): Number of NCP retries
-            NcpTimeout (number): Timeout for NCP phase, in seconds
-            NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
-            NoCallTimeout (number): Timeout for no call establishment, in seconds
-            NumSessions (number): No. of sessions to setup
-            OffsetByte (number): L2TP offset byte
-            OffsetLength (number): L2TP offset length in bytes
-            PapPassword (str): Password when PAP Authentication is being used
-            PapUser (str): User name when PAP Authentication is being used
-            ReceiveWindowSize (number): L2TP Receive Window Size
-            RedialInterval (number): L2TP redial timeout, in seconds
-            ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
-            ServerBaseIp (str): Base for IPv4 PPP server address creation
-            ServerDnsOptions (str): Server DNS options
-            ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
-            ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
-            ServerNetmask (str): Netmask that the server should supply to clients
-            ServerNetmaskOptions (str): Server netmask options
-            ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
-            ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
-            SessionAllocMethod (str): 
-            SessionsPerTunnel (number): Number of sessions per L2TP tunnel
-            TunnelAuthentication (str): Enable/Disable L2TP tunnel authentication
-            TunnelDestinationIp (str): Defines the base address to be used for L2TP tunnel destination in the range
-            TunnelIncrementBy (str): Defines the increment to be used between L2TP tunnels
-            UdpDestinationPort (number): UDP port to employ for tunneling destinations
-            UdpSourcePort (number): UDP port to employ for tunneling sources
-            UseHiddenAvps (bool): Enable/Disable (A)ttribute (V)alue (P)air hiding
-            UseLengthBitInPayload (bool): If enabled, length bit set in L2TP data packets.
-            UseMagic (bool): use magic
-            UseOffsetBitInPayload (bool): If enabled, offset bit is enabled in L2TP data packets
-            UseSequenceNoInPayload (bool): If enabled, sequence bit is set in L2TP data packets.
+        Args
+        ----
+        - AuthOptions (str): For GUI grouping.
+        - AuthRetries (number): Number of PPP authentication retries
+        - AuthTimeout (number): Timeout for PPP authentication, in seconds.
+        - AuthType (str): Authentication type
+        - BaseLnsIp (str): Defines the base address to be used by the L2TP tunnel
+        - BasicOptions (str): 
+        - BearerCapability (str): Bearer capability
+        - BearerType (str): Bearer Type
+        - ChapName (str): User name when CHAP Authentication is being used
+        - ChapSecret (str): Secret when CHAP Authentication is being used
+        - ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
+        - ClientBaseIp (str): Base for IPv4 PPP client address creation
+        - ClientDnsOptions (str): Client DNS options
+        - ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
+        - ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
+        - ClientNetmask (str): Netmask that the client should request
+        - ClientNetmaskOptions (str): Client netmask options
+        - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
+        - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
+        - ControlMsgsRetryCounter (number): Number of L2TP retries
+        - ControlPlaneOptions (str): 
+        - DataPlaneOptions (str): 
+        - DnsServerList (str): DNS server list separacted by semicolon
+        - DomainList (str): Configure domain group settings
+        - DomainToIpList (str): Domain To LNS
+        - EchoReqInterval (number): Keep alive interval
+        - EnableControlChecksum (bool): Enable/Disable UDP checksums on control plane packets
+        - EnableDataChecksum (bool): Enable/Disable UDP checksums on data plane packets
+        - EnableDnsRa (bool): Enable RDNSS routing advertisments
+        - EnableDomainGroups (bool): Enable domain groups
+        - EnableEchoReq (bool): Enable Echo requests
+        - EnableEchoRsp (bool): Enable Echo replies
+        - EnableHelloRequest (bool): If enabled, L2TP hello request is performed
+        - EnableMru (bool): Enable/Disable MRU negotiation
+        - EnablePasswordCheck (bool): Enable authentication credential checking on the port.
+        - EnableRedial (bool): If enabled, L2TP redial is activated
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FramingCapability (str): Designates sync or async framing
+        - HelloRequestInterval (number): Timeout for L2TP hello request, in seconds
+        - IncrementBy (number): Defines the increment to be used for enumerating all the addresses in the range.
+        - InitRetransmitInterval (number): Initial L2TP timeout
+        - IpIncrementOctet (number): IP increment octet
+        - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
+        - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
+        - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
+        - L2tpAuthOptions (str): 
+        - LacHostName (str): L2TP host name used during authentication on LAC, or authenticated against (on LNS).
+        - LacSecret (str): L2TP secret used during authentication
+        - LacToLnsMapping (str): LAC to LNS Mapping
+        - LcpOptions (str): For GUI grouping.
+        - LcpRetries (number): Number of LCP retries
+        - LcpTermRetries (number): Number of LCP Termination Retries
+        - LcpTermTimeout (number): Timeout for LCP termination, in seconds.
+        - LcpTimeout (number): Timeout for LCP phase, in seconds
+        - LnsHostName (str): L2TP hostname sent by Ixia port when acting as LNS
+        - LnsIpList (str): LNS IP Addresses
+        - LnsIpNumber (number): LNS IP number
+        - MaxRedialAttempts (number): Max number of L2TP redial attempts
+        - MaxRetransmitInterval (number): Max. L2TP timeout
+        - Mtu (number): Max Transmit Unit for PPP
+        - Name (str): Name of range
+        - NcpRetries (number): Number of NCP retries
+        - NcpTimeout (number): Timeout for NCP phase, in seconds
+        - NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
+        - NoCallTimeout (number): Timeout for no call establishment, in seconds
+        - NumSessions (number): No. of sessions to setup
+        - OffsetByte (number): L2TP offset byte
+        - OffsetLength (number): L2TP offset length in bytes
+        - PapPassword (str): Password when PAP Authentication is being used
+        - PapUser (str): User name when PAP Authentication is being used
+        - ReceiveWindowSize (number): L2TP Receive Window Size
+        - RedialInterval (number): L2TP redial timeout, in seconds
+        - ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
+        - ServerBaseIp (str): Base for IPv4 PPP server address creation
+        - ServerDnsOptions (str): Server DNS options
+        - ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
+        - ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
+        - ServerNetmask (str): Netmask that the server should supply to clients
+        - ServerNetmaskOptions (str): Server netmask options
+        - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
+        - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
+        - SessionAllocMethod (str): 
+        - SessionsPerTunnel (number): Number of sessions per L2TP tunnel
+        - TunnelAuthentication (str): Enable/Disable L2TP tunnel authentication
+        - TunnelDestinationIp (str): Defines the base address to be used for L2TP tunnel destination in the range
+        - TunnelIncrementBy (str): Defines the increment to be used between L2TP tunnels
+        - UdpDestinationPort (number): UDP port to employ for tunneling destinations
+        - UdpSourcePort (number): UDP port to employ for tunneling sources
+        - UseHiddenAvps (bool): Enable/Disable (A)ttribute (V)alue (P)air hiding
+        - UseLengthBitInPayload (bool): If enabled, length bit set in L2TP data packets.
+        - UseMagic (bool): use magic
+        - UseOffsetBitInPayload (bool): If enabled, offset bit is enabled in L2TP data packets
+        - UseSequenceNoInPayload (bool): If enabled, sequence bit is set in L2TP data packets.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1314,16 +1317,15 @@ class L2tpRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1335,16 +1337,15 @@ class L2tpRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,10 +36,10 @@ class ApplyActionMissType(Base):
 
     @property
     def CopyTtlIn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('copyTtlIn')
     @CopyTtlIn.setter
@@ -48,10 +48,10 @@ class ApplyActionMissType(Base):
 
     @property
     def CopyTtlOut(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('copyTtlOut')
     @CopyTtlOut.setter
@@ -60,10 +60,10 @@ class ApplyActionMissType(Base):
 
     @property
     def DecrementMplsTtl(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('decrementMplsTtl')
     @DecrementMplsTtl.setter
@@ -72,10 +72,10 @@ class ApplyActionMissType(Base):
 
     @property
     def DecrementNetworkTtl(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('decrementNetworkTtl')
     @DecrementNetworkTtl.setter
@@ -84,10 +84,10 @@ class ApplyActionMissType(Base):
 
     @property
     def Experimenter(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -96,10 +96,10 @@ class ApplyActionMissType(Base):
 
     @property
     def Group(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('group')
     @Group.setter
@@ -108,10 +108,10 @@ class ApplyActionMissType(Base):
 
     @property
     def Output(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('output')
     @Output.setter
@@ -120,10 +120,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PopMpls(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('popMpls')
     @PopMpls.setter
@@ -132,10 +132,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PopPbb(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('popPbb')
     @PopPbb.setter
@@ -144,10 +144,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PopVlan(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('popVlan')
     @PopVlan.setter
@@ -156,10 +156,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PushMpls(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('pushMpls')
     @PushMpls.setter
@@ -168,10 +168,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PushPbb(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('pushPbb')
     @PushPbb.setter
@@ -180,10 +180,10 @@ class ApplyActionMissType(Base):
 
     @property
     def PushVlan(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('pushVlan')
     @PushVlan.setter
@@ -192,10 +192,10 @@ class ApplyActionMissType(Base):
 
     @property
     def SetField(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('setField')
     @SetField.setter
@@ -204,10 +204,10 @@ class ApplyActionMissType(Base):
 
     @property
     def SetMplsTtl(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('setMplsTtl')
     @SetMplsTtl.setter
@@ -216,10 +216,10 @@ class ApplyActionMissType(Base):
 
     @property
     def SetNetworkTtl(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('setNetworkTtl')
     @SetNetworkTtl.setter
@@ -228,10 +228,10 @@ class ApplyActionMissType(Base):
 
     @property
     def SetQueue(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('setQueue')
     @SetQueue.setter
@@ -239,28 +239,30 @@ class ApplyActionMissType(Base):
         self._set_attribute('setQueue', value)
 
     def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Updates a child instance of applyActionMissType on the server.
+        """Updates applyActionMissType resource on the server.
 
-        Args:
-            CopyTtlIn (bool): NOT DEFINED
-            CopyTtlOut (bool): NOT DEFINED
-            DecrementMplsTtl (bool): NOT DEFINED
-            DecrementNetworkTtl (bool): NOT DEFINED
-            Experimenter (bool): NOT DEFINED
-            Group (bool): NOT DEFINED
-            Output (bool): NOT DEFINED
-            PopMpls (bool): NOT DEFINED
-            PopPbb (bool): NOT DEFINED
-            PopVlan (bool): NOT DEFINED
-            PushMpls (bool): NOT DEFINED
-            PushPbb (bool): NOT DEFINED
-            PushVlan (bool): NOT DEFINED
-            SetField (bool): NOT DEFINED
-            SetMplsTtl (bool): NOT DEFINED
-            SetNetworkTtl (bool): NOT DEFINED
-            SetQueue (bool): NOT DEFINED
+        Args
+        ----
+        - CopyTtlIn (bool): NOT DEFINED
+        - CopyTtlOut (bool): NOT DEFINED
+        - DecrementMplsTtl (bool): NOT DEFINED
+        - DecrementNetworkTtl (bool): NOT DEFINED
+        - Experimenter (bool): NOT DEFINED
+        - Group (bool): NOT DEFINED
+        - Output (bool): NOT DEFINED
+        - PopMpls (bool): NOT DEFINED
+        - PopPbb (bool): NOT DEFINED
+        - PopVlan (bool): NOT DEFINED
+        - PushMpls (bool): NOT DEFINED
+        - PushPbb (bool): NOT DEFINED
+        - PushVlan (bool): NOT DEFINED
+        - SetField (bool): NOT DEFINED
+        - SetMplsTtl (bool): NOT DEFINED
+        - SetNetworkTtl (bool): NOT DEFINED
+        - SetQueue (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

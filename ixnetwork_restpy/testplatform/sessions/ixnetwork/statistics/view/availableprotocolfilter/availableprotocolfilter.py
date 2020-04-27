@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableProtocolFilter(Base):
     """The protocol combinations that are permitted in IxNetwork.
-    The AvailableProtocolFilter class encapsulates a list of availableProtocolFilter resources that is managed by the system.
+    The AvailableProtocolFilter class encapsulates a list of availableProtocolFilter resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableProtocolFilter.find() method.
     """
 
@@ -37,41 +37,48 @@ class AvailableProtocolFilter(Base):
 
     @property
     def Name(self):
-        """The unique identifier of the object.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The unique identifier of the object.
         """
         return self._get_attribute('name')
 
     def find(self, Name=None):
-        """Finds and retrieves availableProtocolFilter data from the server.
+        """Finds and retrieves availableProtocolFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableProtocolFilter data from the server.
-        By default the find method takes no parameters and will retrieve all availableProtocolFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableProtocolFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableProtocolFilter resources from the server.
 
-        Args:
-            Name (str): The unique identifier of the object.
+        Args
+        ----
+        - Name (str): The unique identifier of the object.
 
-        Returns:
-            self: This instance with matching availableProtocolFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableProtocolFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableProtocolFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableProtocolFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableProtocolFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

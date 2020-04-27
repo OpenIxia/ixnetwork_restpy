@@ -36,10 +36,10 @@ class OAM(Base):
 
     @property
     def EnableTlvOption(self):
-        """If true, enables the tlv option.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the tlv option.
         """
         return self._get_attribute('enableTlvOption')
     @EnableTlvOption.setter
@@ -48,10 +48,10 @@ class OAM(Base):
 
     @property
     def Enabled(self):
-        """If true, enables OAM for the Ten Gig Lan port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables OAM for the Ten Gig Lan port.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class OAM(Base):
 
     @property
     def IdleTimer(self):
-        """The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
         """
         return self._get_attribute('idleTimer')
     @IdleTimer.setter
@@ -72,10 +72,10 @@ class OAM(Base):
 
     @property
     def LinkEvents(self):
-        """If true, enables link event interpreting support in Ixia port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables link event interpreting support in Ixia port.
         """
         return self._get_attribute('linkEvents')
     @LinkEvents.setter
@@ -84,10 +84,10 @@ class OAM(Base):
 
     @property
     def Loopback(self):
-        """If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back. .
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back. .
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -96,10 +96,10 @@ class OAM(Base):
 
     @property
     def MacAddress(self):
-        """Indicates the Mac address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Mac address.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -108,10 +108,10 @@ class OAM(Base):
 
     @property
     def MaxOAMPDUSize(self):
-        """Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
         """
         return self._get_attribute('maxOAMPDUSize')
     @MaxOAMPDUSize.setter
@@ -120,10 +120,10 @@ class OAM(Base):
 
     @property
     def OrganizationUniqueIdentifier(self):
-        """This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
         """
         return self._get_attribute('organizationUniqueIdentifier')
     @OrganizationUniqueIdentifier.setter
@@ -132,10 +132,10 @@ class OAM(Base):
 
     @property
     def TlvType(self):
-        """Indicates the tlv type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the tlv type.
         """
         return self._get_attribute('tlvType')
     @TlvType.setter
@@ -144,10 +144,10 @@ class OAM(Base):
 
     @property
     def TlvValue(self):
-        """Enters the tlv value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Enters the tlv value.
         """
         return self._get_attribute('tlvValue')
     @TlvValue.setter
@@ -156,10 +156,10 @@ class OAM(Base):
 
     @property
     def VendorSpecificInformation(self):
-        """Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
         """
         return self._get_attribute('vendorSpecificInformation')
     @VendorSpecificInformation.setter
@@ -167,22 +167,24 @@ class OAM(Base):
         self._set_attribute('vendorSpecificInformation', value)
 
     def update(self, EnableTlvOption=None, Enabled=None, IdleTimer=None, LinkEvents=None, Loopback=None, MacAddress=None, MaxOAMPDUSize=None, OrganizationUniqueIdentifier=None, TlvType=None, TlvValue=None, VendorSpecificInformation=None):
-        """Updates a child instance of OAM on the server.
+        """Updates OAM resource on the server.
 
-        Args:
-            EnableTlvOption (bool): If true, enables the tlv option.
-            Enabled (bool): If true, enables OAM for the Ten Gig Lan port.
-            IdleTimer (number): The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
-            LinkEvents (bool): If true, enables link event interpreting support in Ixia port.
-            Loopback (bool): If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back. .
-            MacAddress (str): Indicates the Mac address.
-            MaxOAMPDUSize (number): Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
-            OrganizationUniqueIdentifier (str): This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
-            TlvType (str): Indicates the tlv type.
-            TlvValue (str): Enters the tlv value.
-            VendorSpecificInformation (str): Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
+        Args
+        ----
+        - EnableTlvOption (bool): If true, enables the tlv option.
+        - Enabled (bool): If true, enables OAM for the Ten Gig Lan port.
+        - IdleTimer (number): The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
+        - LinkEvents (bool): If true, enables link event interpreting support in Ixia port.
+        - Loopback (bool): If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back. .
+        - MacAddress (str): Indicates the Mac address.
+        - MaxOAMPDUSize (number): Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
+        - OrganizationUniqueIdentifier (str): This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
+        - TlvType (str): Indicates the tlv type.
+        - TlvValue (str): Enters the tlv value.
+        - VendorSpecificInformation (str): Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

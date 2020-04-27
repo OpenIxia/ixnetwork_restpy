@@ -36,91 +36,96 @@ class Bfdv6Session(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableAutoChooseSourceIp(self):
-        """Selecting this check box enables the ability to configure the source IP address IP of BFD Session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAutoChooseSourceIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Selecting this check box enables the ability to configure the source IP address IP of BFD Session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAutoChooseSourceIp'))
 
     @property
     def EnableOVSDBCommunication(self):
-        """Selecting this check box enables the ability to communicate the remote IP and MAC address of BFD Session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOVSDBCommunication')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Selecting this check box enables the ability to communicate the remote IP and MAC address of BFD Session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOVSDBCommunication'))
 
     @property
     def EnableRemoteDiscriminatorLearned(self):
-        """Selecting this check box enables the ability to configure the remote discriminator for BFD Session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRemoteDiscriminatorLearned')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Selecting this check box enables the ability to configure the remote discriminator for BFD Session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRemoteDiscriminatorLearned'))
 
     @property
     def LearnedRemoteMac(self):
-        """The learned remote MAC address from controller
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The learned remote MAC address from controller
         """
         return self._get_attribute('learnedRemoteMac')
 
     @property
     def LocalRouterId(self):
-        """The BFD Router ID value, in IPv4 format.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The BFD Router ID value, in IPv4 format.
         """
         return self._get_attribute('localRouterId')
 
     @property
     def MyDiscriminator(self):
-        """The discriminator used locally for the BFD session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('myDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The discriminator used locally for the BFD session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('myDiscriminator'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -129,104 +134,114 @@ class Bfdv6Session(Base):
 
     @property
     def RemoteDiscriminator(self):
-        """The remote discriminator used by the peer BFD for session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The remote discriminator used by the peer BFD for session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteDiscriminator'))
 
     @property
     def RemoteIp6(self):
-        """The remote IP address used in BFD session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteIp6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The remote IP address used in BFD session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteIp6'))
 
     @property
     def RemoteMac(self):
-        """Remote MAC Address of Peer
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteMac')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote MAC Address of Peer
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteMac'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the Session state
-
-        Returns:
-            list(str[adminDown|awaitingIp|down|init|maxState|sessDeleted|unknownState|up])
+        """
+        Returns
+        -------
+        - list(str[adminDown | awaitingIp | down | init | maxState | sessDeleted | unknownState | up]): Logs additional information about the Session state
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionType(self):
-        """Session Type used in BFD session. One of: Single Hop, Multi Hops
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sessionType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Session Type used in BFD session. One of: Single Hop, Multi Hops
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sessionType'))
 
     @property
     def SourceIp6(self):
-        """The source IP address used in BFD session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceIp6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The source IP address used in BFD session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceIp6'))
 
     @property
     def Vni(self):
-        """Corresponding VXLAN Protocol VNI.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Corresponding VXLAN Protocol VNI.
         """
         return self._get_attribute('vni')
 
     def update(self, Name=None):
-        """Updates a child instance of bfdv6Session on the server.
+        """Updates bfdv6Session resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, EnableAutoChooseSourceIp=None, EnableOVSDBCommunication=None, EnableRemoteDiscriminatorLearned=None, MyDiscriminator=None, RemoteDiscriminator=None, RemoteIp6=None, RemoteMac=None, SessionType=None, SourceIp6=None):
         """Base class infrastructure that gets a list of bfdv6Session device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            EnableAutoChooseSourceIp (str): optional regex of enableAutoChooseSourceIp
-            EnableOVSDBCommunication (str): optional regex of enableOVSDBCommunication
-            EnableRemoteDiscriminatorLearned (str): optional regex of enableRemoteDiscriminatorLearned
-            MyDiscriminator (str): optional regex of myDiscriminator
-            RemoteDiscriminator (str): optional regex of remoteDiscriminator
-            RemoteIp6 (str): optional regex of remoteIp6
-            RemoteMac (str): optional regex of remoteMac
-            SessionType (str): optional regex of sessionType
-            SourceIp6 (str): optional regex of sourceIp6
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - EnableAutoChooseSourceIp (str): optional regex of enableAutoChooseSourceIp
+        - EnableOVSDBCommunication (str): optional regex of enableOVSDBCommunication
+        - EnableRemoteDiscriminatorLearned (str): optional regex of enableRemoteDiscriminatorLearned
+        - MyDiscriminator (str): optional regex of myDiscriminator
+        - RemoteDiscriminator (str): optional regex of remoteDiscriminator
+        - RemoteIp6 (str): optional regex of remoteIp6
+        - RemoteMac (str): optional regex of remoteMac
+        - SessionType (str): optional regex of sessionType
+        - SourceIp6 (str): optional regex of sourceIp6
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -235,29 +250,25 @@ class Bfdv6Session(Base):
 
         Activate Session
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        start(Arg2=list)list
+        --------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        start(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -269,29 +280,25 @@ class Bfdv6Session(Base):
 
         Deactivate Session
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        stop(Arg2=list)list
+        -------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        stop(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

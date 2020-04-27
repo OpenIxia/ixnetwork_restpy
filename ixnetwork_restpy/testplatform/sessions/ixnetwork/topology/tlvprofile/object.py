@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Object(Base):
     """Tlv object container which can contain one of a field, sub tlv or container
-    The Object class encapsulates a list of object resources that is managed by the system.
+    The Object class encapsulates a list of object resources that are managed by the system.
     A list of resources can be retrieved from the server using the Object.find() method.
     """
 
@@ -37,66 +37,66 @@ class Object(Base):
 
     @property
     def Container(self):
-        """An instance of the Container class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container.Container): An instance of the Container class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container.Container)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container import Container
         return Container(self)
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field import Field
         return Field(self)
 
     @property
     def RepeatableContainer(self):
-        """An instance of the RepeatableContainer class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer.RepeatableContainer): An instance of the RepeatableContainer class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer.RepeatableContainer)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer import RepeatableContainer
         return RepeatableContainer(self)
 
     @property
     def SubTlv(self):
-        """An instance of the SubTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv.SubTlv): An instance of the SubTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv.SubTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv import SubTlv
         return SubTlv(self)
 
     @property
     def Name(self):
-        """The name of the object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the object
         """
         return self._get_attribute('name')
     @Name.setter
@@ -104,44 +104,53 @@ class Object(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of object on the server.
+        """Updates object resource on the server.
 
-        Args:
-            Name (str): The name of the object
+        Args
+        ----
+        - Name (str): The name of the object
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Name=None):
-        """Finds and retrieves object data from the server.
+        """Finds and retrieves object resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve object data from the server.
-        By default the find method takes no parameters and will retrieve all object data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve object resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all object resources from the server.
 
-        Args:
-            Name (str): The name of the object
+        Args
+        ----
+        - Name (str): The name of the object
 
-        Returns:
-            self: This instance with matching object data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching object resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of object data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the object data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the object resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

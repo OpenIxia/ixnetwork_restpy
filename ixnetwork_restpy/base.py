@@ -75,18 +75,20 @@ class Base(object):
 
     @property
     def index(self):
-        """The current index of the objects that have been retrieved from the server
+        """The current index of the resources that have been retrieved from the server
 
-        Returns:
-            number:
+        Returns
+        -------
+        - number: The current index of the retrieved resources
         """
         return self._index
 
     def __len__(self):
-        """The total number of objects that have been retrieved from the server
+        """The total number of resources that have been retrieved from the server
 
-        Returns: 
-            number: 
+        Returns
+        -------
+        - number: The total number of resources retrieved from the server
         """
         return len(self._object_properties)
 
@@ -94,11 +96,14 @@ class Base(object):
     def href(self):
         """The hypertext reference of the current object
 
-        Returns: 
-            str: The fully qualified hypertext reference of the current object
+        Returns
+        ------- 
+        - str: The fully qualified hypertext reference of the current object
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - KeyError: The href key does not exist which means no resources have been retrieved from the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_attribute('href')
 
@@ -106,8 +111,9 @@ class Base(object):
     def parent(self):
         """The parent object of the current object
 
-        Returns: 
-            obj(Base): The parent object of the current object or None if there is no parent for this object
+        Returns
+        -------
+        - obj: The parent object of the current object or None if there is no parent for this object
         """
         return self._parent
 
@@ -210,7 +216,8 @@ class Base(object):
                     is_list = method_param.find('%s(list(' % key) != -1
             elif hasattr(self.__class__, public_key) is True:
                 returns = getattr(self.__class__, public_key).__doc__.replace('\n', '').replace('\t', '').replace(' ', '')
-                is_list = returns.find('Returns:list(') != -1
+                returns_pos = returns.find('Returns')
+                is_list = returns_pos != -1 and returns.find('list(', returns_pos) != -1
             if is_list is True and ignore_is_list is False:
                 hrefs = []
                 for list_value in value:
@@ -251,9 +258,7 @@ class Base(object):
         # replace /multivalue object reference with a Multivalue object
         for key in properties.keys():
             value = properties[key]
-            if key != 'href' and value is not None and isinstance(value, basestring) and value.find('/ixnetwork/multivalue') != -1:
-                self._properties[key] = Multivalue(self, value)
-            elif key == 'links':
+            if key == 'links':
                 continue
             else:
                 self._properties[key] = value
@@ -304,11 +309,14 @@ class Base(object):
     def refresh(self):
         """Refresh the contents of this object
 
-        Returns: 
-            obj: self
+        Returns
+        -------
+        - obj: self
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The href does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         selects = []
         for properties in self._object_properties:
@@ -439,15 +447,27 @@ class Base(object):
 
     def info(self, message):
         """Add an INFO level message to the logger handlers
+
+        Args
+        ----
+        - message (str): a message to be logged at INFO level
         """
         self._connection._info(message)
 
     def warn(self, message):
         """Add a WARN level message to the logger handlers
+
+        Args
+        ----
+        - message (str): a message to be logged at WARN level
         """
         self._connection._warn(message)
 
     def debug(self, message):
         """Add a DEBUG level message to the logger handlers
+
+        Args
+        ----
+        - message (str): a message to be logged at DEBUG level
         """
         self._connection._debug(message)

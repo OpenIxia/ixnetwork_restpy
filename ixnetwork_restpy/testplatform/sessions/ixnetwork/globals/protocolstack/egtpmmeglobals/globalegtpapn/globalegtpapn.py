@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class GlobalEgtpApn(Base):
     """
-    The GlobalEgtpApn class encapsulates a list of globalEgtpApn resources that is be managed by the user.
+    The GlobalEgtpApn class encapsulates a list of globalEgtpApn resources that are managed by the user.
     A list of resources can be retrieved from the server using the GlobalEgtpApn.find() method.
-    The list can be managed by the user by using the GlobalEgtpApn.add() and GlobalEgtpApn.remove() methods.
+    The list can be managed by using the GlobalEgtpApn.add() and GlobalEgtpApn.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def AddressPoolStartIpv4(self):
-        """Defines the base IPv4 address to be used for enumerating all the addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the base IPv4 address to be used for enumerating all the addresses in the range.
         """
         return self._get_attribute('addressPoolStartIpv4')
     @AddressPoolStartIpv4.setter
@@ -50,10 +50,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def AddressPoolStartIpv6(self):
-        """Defines the base IPv6 address to be used for enumerating all the addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the base IPv6 address to be used for enumerating all the addresses in the range.
         """
         return self._get_attribute('addressPoolStartIpv6')
     @AddressPoolStartIpv6.setter
@@ -62,10 +62,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def AmbrDl(self):
-        """Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
         return self._get_attribute('ambrDl')
     @AmbrDl.setter
@@ -74,10 +74,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def AmbrUl(self):
-        """Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
         return self._get_attribute('ambrUl')
     @AmbrUl.setter
@@ -86,10 +86,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def ArpPreemptionCapability(self):
-        """If true preemption capability is enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true preemption capability is enabled
         """
         return self._get_attribute('arpPreemptionCapability')
     @ArpPreemptionCapability.setter
@@ -98,10 +98,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def ArpPreemptionVulnerability(self):
-        """If true preemption vulnerability is enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true preemption vulnerability is enabled
         """
         return self._get_attribute('arpPreemptionVulnerability')
     @ArpPreemptionVulnerability.setter
@@ -110,10 +110,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def ArpPriorityLevel(self):
-        """Priority Level 1=highest 15=lowest
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Priority Level 1=highest 15=lowest
         """
         return self._get_attribute('arpPriorityLevel')
     @ArpPriorityLevel.setter
@@ -122,10 +122,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def EnableLifetime(self):
-        """Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
         """
         return self._get_attribute('enableLifetime')
     @EnableLifetime.setter
@@ -134,10 +134,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def EnableStaticIpAllocation(self):
-        """This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
         """
         return self._get_attribute('enableStaticIpAllocation')
     @EnableStaticIpAllocation.setter
@@ -146,10 +146,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -158,10 +158,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def IpType(self):
-        """Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -170,10 +170,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Lifetime(self):
-        """Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
         """
         return self._get_attribute('lifetime')
     @Lifetime.setter
@@ -182,10 +182,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Mbrd(self):
-        """Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('mbrd')
     @Mbrd.setter
@@ -194,10 +194,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Mbru(self):
-        """Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('mbru')
     @Mbru.setter
@@ -206,10 +206,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Name(self):
-        """APN name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: APN name
         """
         return self._get_attribute('name')
     @Name.setter
@@ -218,19 +218,19 @@ class GlobalEgtpApn(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PgwIp(self):
-        """PGW IP
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PGW IP
         """
         return self._get_attribute('pgwIp')
     @PgwIp.setter
@@ -240,9 +240,9 @@ class GlobalEgtpApn(Base):
     @property
     def PgwIpCount(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('pgwIpCount')
     @PgwIpCount.setter
@@ -251,10 +251,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Qci(self):
-        """QoS Class Identifier
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: QoS Class Identifier
         """
         return self._get_attribute('qci')
     @Qci.setter
@@ -263,10 +263,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def QosLabel(self):
-        """Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
         """
         return self._get_attribute('qosLabel')
     @QosLabel.setter
@@ -275,10 +275,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def Restriction(self):
-        """Authorization to access another APN
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Authorization to access another APN
         """
         return self._get_attribute('restriction')
     @Restriction.setter
@@ -287,10 +287,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def SelectionMode(self):
-        """Indicates the origin of the APN in the message
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the origin of the APN in the message
         """
         return self._get_attribute('selectionMode')
     @SelectionMode.setter
@@ -299,10 +299,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def SendImcnFlagPco(self):
-        """Set the IM CN Subsystem signalling flag in the PCO IE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set the IM CN Subsystem signalling flag in the PCO IE
         """
         return self._get_attribute('sendImcnFlagPco')
     @SendImcnFlagPco.setter
@@ -311,10 +311,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def SendPcscfv4RequestPco(self):
-        """Send a request for a P-CSCF IPv4 address in the PCO IE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Send a request for a P-CSCF IPv4 address in the PCO IE
         """
         return self._get_attribute('sendPcscfv4RequestPco')
     @SendPcscfv4RequestPco.setter
@@ -323,10 +323,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def SendPcscfv6RequestPco(self):
-        """Send a request for a P-CSCF IPv6 address in the PCO IE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Send a request for a P-CSCF IPv6 address in the PCO IE
         """
         return self._get_attribute('sendPcscfv6RequestPco')
     @SendPcscfv6RequestPco.setter
@@ -335,10 +335,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def UpdateAmbrEnable(self):
-        """Update APN-AMBR for this UE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Update APN-AMBR for this UE
         """
         return self._get_attribute('updateAmbrEnable')
     @UpdateAmbrEnable.setter
@@ -347,10 +347,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def UpdateAmbrIncrement(self):
-        """Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
         """
         return self._get_attribute('updateAmbrIncrement')
     @UpdateAmbrIncrement.setter
@@ -359,10 +359,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def UpdateAmbrIterations(self):
-        """How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
         """
         return self._get_attribute('updateAmbrIterations')
     @UpdateAmbrIterations.setter
@@ -371,10 +371,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def UpdateAmbrTimeout(self):
-        """Time to wait (in seconds) since the session was created until sending the update
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait (in seconds) since the session was created until sending the update
         """
         return self._get_attribute('updateAmbrTimeout')
     @UpdateAmbrTimeout.setter
@@ -383,10 +383,10 @@ class GlobalEgtpApn(Base):
 
     @property
     def UseFullApn(self):
-        """Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
         """
         return self._get_attribute('useFullApn')
     @UseFullApn.setter
@@ -394,152 +394,165 @@ class GlobalEgtpApn(Base):
         self._set_attribute('useFullApn', value)
 
     def update(self, AddressPoolStartIpv4=None, AddressPoolStartIpv6=None, AmbrDl=None, AmbrUl=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwIp=None, PgwIpCount=None, Qci=None, QosLabel=None, Restriction=None, SelectionMode=None, SendImcnFlagPco=None, SendPcscfv4RequestPco=None, SendPcscfv6RequestPco=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
-        """Updates a child instance of globalEgtpApn on the server.
+        """Updates globalEgtpApn resource on the server.
 
-        Args:
-            AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
-            AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
-            AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            ArpPreemptionCapability (bool): If true preemption capability is enabled
-            ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
-            EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
-            EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
-            Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
-            Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Name (str): APN name
-            PgwIp (str): PGW IP
-            PgwIpCount (number): 
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            Restriction (number): Authorization to access another APN
-            SelectionMode (number): Indicates the origin of the APN in the message
-            SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
-            SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
-            SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
-            UpdateAmbrEnable (bool): Update APN-AMBR for this UE
-            UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-            UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-            UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
-            UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
+        Args
+        ----
+        - AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
+        - AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
+        - AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - ArpPreemptionCapability (bool): If true preemption capability is enabled
+        - ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
+        - EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
+        - EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
+        - Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
+        - Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Name (str): APN name
+        - PgwIp (str): PGW IP
+        - PgwIpCount (number): 
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - Restriction (number): Authorization to access another APN
+        - SelectionMode (number): Indicates the origin of the APN in the message
+        - SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
+        - SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
+        - SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
+        - UpdateAmbrEnable (bool): Update APN-AMBR for this UE
+        - UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
+        - UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
+        - UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
+        - UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AddressPoolStartIpv4=None, AddressPoolStartIpv6=None, AmbrDl=None, AmbrUl=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwIp=None, PgwIpCount=None, Qci=None, QosLabel=None, Restriction=None, SelectionMode=None, SendImcnFlagPco=None, SendPcscfv4RequestPco=None, SendPcscfv6RequestPco=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
-        """Adds a new globalEgtpApn node on the server and retrieves it in this instance.
+        """Adds a new globalEgtpApn resource on the server and adds it to the container.
 
-        Args:
-            AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
-            AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
-            AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            ArpPreemptionCapability (bool): If true preemption capability is enabled
-            ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
-            EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
-            EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
-            Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
-            Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Name (str): APN name
-            PgwIp (str): PGW IP
-            PgwIpCount (number): 
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            Restriction (number): Authorization to access another APN
-            SelectionMode (number): Indicates the origin of the APN in the message
-            SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
-            SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
-            SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
-            UpdateAmbrEnable (bool): Update APN-AMBR for this UE
-            UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-            UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-            UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
-            UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
+        Args
+        ----
+        - AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
+        - AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
+        - AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - ArpPreemptionCapability (bool): If true preemption capability is enabled
+        - ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
+        - EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
+        - EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
+        - Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
+        - Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Name (str): APN name
+        - PgwIp (str): PGW IP
+        - PgwIpCount (number): 
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - Restriction (number): Authorization to access another APN
+        - SelectionMode (number): Indicates the origin of the APN in the message
+        - SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
+        - SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
+        - SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
+        - UpdateAmbrEnable (bool): Update APN-AMBR for this UE
+        - UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
+        - UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
+        - UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
+        - UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
 
-        Returns:
-            self: This instance with all currently retrieved globalEgtpApn data using find and the newly added globalEgtpApn data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved globalEgtpApn resources using find and the newly added globalEgtpApn resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the globalEgtpApn data in this instance from server.
+        """Deletes all the contained globalEgtpApn resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AddressPoolStartIpv4=None, AddressPoolStartIpv6=None, AmbrDl=None, AmbrUl=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, ObjectId=None, PgwIp=None, PgwIpCount=None, Qci=None, QosLabel=None, Restriction=None, SelectionMode=None, SendImcnFlagPco=None, SendPcscfv4RequestPco=None, SendPcscfv6RequestPco=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
-        """Finds and retrieves globalEgtpApn data from the server.
+        """Finds and retrieves globalEgtpApn resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve globalEgtpApn data from the server.
-        By default the find method takes no parameters and will retrieve all globalEgtpApn data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globalEgtpApn resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all globalEgtpApn resources from the server.
 
-        Args:
-            AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
-            AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
-            AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
-            ArpPreemptionCapability (bool): If true preemption capability is enabled
-            ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
-            EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
-            EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
-            Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
-            Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Name (str): APN name
-            ObjectId (str): Unique identifier for this object
-            PgwIp (str): PGW IP
-            PgwIpCount (number): 
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            Restriction (number): Authorization to access another APN
-            SelectionMode (number): Indicates the origin of the APN in the message
-            SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
-            SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
-            SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
-            UpdateAmbrEnable (bool): Update APN-AMBR for this UE
-            UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
-            UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
-            UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
-            UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
+        Args
+        ----
+        - AddressPoolStartIpv4 (str): Defines the base IPv4 address to be used for enumerating all the addresses in the range.
+        - AddressPoolStartIpv6 (str): Defines the base IPv6 address to be used for enumerating all the addresses in the range.
+        - AmbrDl (number): Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - AmbrUl (number): Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - ArpPreemptionCapability (bool): If true preemption capability is enabled
+        - ArpPreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - ArpPriorityLevel (number): Priority Level 1=highest 15=lowest
+        - EnableLifetime (bool): Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
+        - EnableStaticIpAllocation (bool): This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
+        - Lifetime (number): Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
+        - Mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Name (str): APN name
+        - ObjectId (str): Unique identifier for this object
+        - PgwIp (str): PGW IP
+        - PgwIpCount (number): 
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - Restriction (number): Authorization to access another APN
+        - SelectionMode (number): Indicates the origin of the APN in the message
+        - SendImcnFlagPco (bool): Set the IM CN Subsystem signalling flag in the PCO IE
+        - SendPcscfv4RequestPco (bool): Send a request for a P-CSCF IPv4 address in the PCO IE
+        - SendPcscfv6RequestPco (bool): Send a request for a P-CSCF IPv6 address in the PCO IE
+        - UpdateAmbrEnable (bool): Update APN-AMBR for this UE
+        - UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
+        - UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
+        - UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
+        - UseFullApn (bool): Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
 
-        Returns:
-            self: This instance with matching globalEgtpApn data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching globalEgtpApn resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of globalEgtpApn data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the globalEgtpApn data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the globalEgtpApn resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

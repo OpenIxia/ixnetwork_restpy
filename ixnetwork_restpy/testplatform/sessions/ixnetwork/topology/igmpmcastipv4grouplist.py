@@ -36,83 +36,86 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def IgmpUcastIPv4SourceList(self):
-        """An instance of the IgmpUcastIPv4SourceList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist.IgmpUcastIPv4SourceList): An instance of the IgmpUcastIPv4SourceList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist.IgmpUcastIPv4SourceList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist import IgmpUcastIPv4SourceList
         return IgmpUcastIPv4SourceList(self)._select()
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def McastAddrCnt(self):
-        """Multicast Address Count
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mcastAddrCnt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Count
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mcastAddrCnt'))
 
     @property
     def McastAddrIncr(self):
-        """Multicast Address Increment
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mcastAddrIncr')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Increment
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mcastAddrIncr'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -121,10 +124,10 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def NoOfSrcRanges(self):
-        """Sources per Multicast Group (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sources per Multicast Group (multiplier)
         """
         return self._get_attribute('noOfSrcRanges')
     @NoOfSrcRanges.setter
@@ -133,64 +136,71 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def SourceMode(self):
-        """Specifies the IGMP/MLD Source Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the IGMP/MLD Source Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceMode'))
 
     @property
     def StartMcastAddr(self):
-        """Start Multicast Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startMcastAddr')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start Multicast Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startMcastAddr'))
 
     @property
     def State(self):
-        """Indicates the state of the groups in the range
-
-        Returns:
-            list(str[iptv|joined|notJoined|notStarted])
+        """
+        Returns
+        -------
+        - list(str[iptv | joined | notJoined | notStarted]): Indicates the state of the groups in the range
         """
         return self._get_attribute('state')
 
     def update(self, Name=None, NoOfSrcRanges=None):
-        """Updates a child instance of igmpMcastIPv4GroupList on the server.
+        """Updates igmpMcastIPv4GroupList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfSrcRanges (number): Sources per Multicast Group (multiplier)
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSrcRanges (number): Sources per Multicast Group (multiplier)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, McastAddrCnt=None, McastAddrIncr=None, SourceMode=None, StartMcastAddr=None):
         """Base class infrastructure that gets a list of igmpMcastIPv4GroupList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            McastAddrCnt (str): optional regex of mcastAddrCnt
-            McastAddrIncr (str): optional regex of mcastAddrIncr
-            SourceMode (str): optional regex of sourceMode
-            StartMcastAddr (str): optional regex of startMcastAddr
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - McastAddrCnt (str): optional regex of mcastAddrCnt
+        - McastAddrIncr (str): optional regex of mcastAddrIncr
+        - SourceMode (str): optional regex of sourceMode
+        - StartMcastAddr (str): optional regex of startMcastAddr
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -199,22 +209,20 @@ class IgmpMcastIPv4GroupList(Base):
 
         Join Group
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpJoinGroup()
+        igmpJoinGroup(SessionIndices=list)
+        ----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        igmpJoinGroup(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        igmpJoinGroup(SessionIndices=string)
+        ------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        igmpJoinGroup(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -226,22 +234,20 @@ class IgmpMcastIPv4GroupList(Base):
 
         Leave Group
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpLeaveGroup()
+        igmpLeaveGroup(SessionIndices=list)
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        igmpLeaveGroup(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        igmpLeaveGroup(SessionIndices=string)
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        igmpLeaveGroup(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -253,16 +259,15 @@ class IgmpMcastIPv4GroupList(Base):
 
         Sends a Join on selected Group Ranges
 
-        join(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group range grid
+        join(Arg2=list)list
+        -------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -274,16 +279,15 @@ class IgmpMcastIPv4GroupList(Base):
 
         Sends a Leave on selected Group Ranges
 
-        leave(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group range grid
+        leave(Arg2=list)list
+        --------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

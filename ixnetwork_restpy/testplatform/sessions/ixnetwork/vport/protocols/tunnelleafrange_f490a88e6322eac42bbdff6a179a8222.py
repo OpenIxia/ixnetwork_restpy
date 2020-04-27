@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TunnelLeafRange(Base):
     """The tunnelLeafRange object is enabled only if the emulation type in Tunnel Tail Ranges is set to RSVP-TE P2MP. There is separate configuration for Ingress and Egress leaf nodes.
-    The TunnelLeafRange class encapsulates a list of tunnelLeafRange resources that is be managed by the user.
+    The TunnelLeafRange class encapsulates a list of tunnelLeafRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the TunnelLeafRange.find() method.
-    The list can be managed by the user by using the TunnelLeafRange.add() and TunnelLeafRange.remove() methods.
+    The list can be managed by using the TunnelLeafRange.add() and TunnelLeafRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TunnelLeafRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the RSVP-TE Tunnel Tail Range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the RSVP-TE Tunnel Tail Range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class TunnelLeafRange(Base):
 
     @property
     def IpCount(self):
-        """The number of IPv4 addresses in the range of Tunnel Tail addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of IPv4 addresses in the range of Tunnel Tail addresses.
         """
         return self._get_attribute('ipCount')
     @IpCount.setter
@@ -62,10 +62,10 @@ class TunnelLeafRange(Base):
 
     @property
     def IpStart(self):
-        """The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
         """
         return self._get_attribute('ipStart')
     @IpStart.setter
@@ -74,10 +74,10 @@ class TunnelLeafRange(Base):
 
     @property
     def SubLspDown(self):
-        """This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
         """
         return self._get_attribute('subLspDown')
     @SubLspDown.setter
@@ -85,76 +85,89 @@ class TunnelLeafRange(Base):
         self._set_attribute('subLspDown', value)
 
     def update(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
-        """Updates a child instance of tunnelLeafRange on the server.
+        """Updates tunnelLeafRange resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
-            IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
-            IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
-            SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
+        Args
+        ----
+        - Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
+        - IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
+        - IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
+        - SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
-        """Adds a new tunnelLeafRange node on the server and retrieves it in this instance.
+        """Adds a new tunnelLeafRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
-            IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
-            IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
-            SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
+        Args
+        ----
+        - Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
+        - IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
+        - IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
+        - SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
 
-        Returns:
-            self: This instance with all currently retrieved tunnelLeafRange data using find and the newly added tunnelLeafRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved tunnelLeafRange resources using find and the newly added tunnelLeafRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the tunnelLeafRange data in this instance from server.
+        """Deletes all the contained tunnelLeafRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
-        """Finds and retrieves tunnelLeafRange data from the server.
+        """Finds and retrieves tunnelLeafRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tunnelLeafRange data from the server.
-        By default the find method takes no parameters and will retrieve all tunnelLeafRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tunnelLeafRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tunnelLeafRange resources from the server.
 
-        Args:
-            Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
-            IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
-            IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
-            SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
+        Args
+        ----
+        - Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
+        - IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
+        - IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
+        - SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
 
-        Returns:
-            self: This instance with matching tunnelLeafRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tunnelLeafRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tunnelLeafRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tunnelLeafRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tunnelLeafRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

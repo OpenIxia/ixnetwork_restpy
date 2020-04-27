@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Opaque(Base):
     """
-    The Opaque class encapsulates a list of opaque resources that is managed by the system.
+    The Opaque class encapsulates a list of opaque resources that are managed by the system.
     A list of resources can be retrieved from the server using the Opaque.find() method.
     """
 
@@ -37,28 +37,28 @@ class Opaque(Base):
 
     @property
     def LinkTlv(self):
-        """An instance of the LinkTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_97a3eb5080e3c27fd5db1b93b81ce400.LinkTlv): An instance of the LinkTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_97a3eb5080e3c27fd5db1b93b81ce400.LinkTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_97a3eb5080e3c27fd5db1b93b81ce400 import LinkTlv
         return LinkTlv(self)
 
     @property
     def RouterTlv(self):
-        """An instance of the RouterTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_2c6ca07de5dca608cc948dca04c128f9.RouterTlv): An instance of the RouterTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_2c6ca07de5dca608cc948dca04c128f9.RouterTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_2c6ca07de5dca608cc948dca04c128f9 import RouterTlv
         return RouterTlv(self)
@@ -66,9 +66,9 @@ class Opaque(Base):
     @property
     def EnableRouterTlv(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableRouterTlv')
     @EnableRouterTlv.setter
@@ -76,44 +76,53 @@ class Opaque(Base):
         self._set_attribute('enableRouterTlv', value)
 
     def update(self, EnableRouterTlv=None):
-        """Updates a child instance of opaque on the server.
+        """Updates opaque resource on the server.
 
-        Args:
-            EnableRouterTlv (bool): 
+        Args
+        ----
+        - EnableRouterTlv (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, EnableRouterTlv=None):
-        """Finds and retrieves opaque data from the server.
+        """Finds and retrieves opaque resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve opaque data from the server.
-        By default the find method takes no parameters and will retrieve all opaque data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaque resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all opaque resources from the server.
 
-        Args:
-            EnableRouterTlv (bool): 
+        Args
+        ----
+        - EnableRouterTlv (bool): 
 
-        Returns:
-            self: This instance with matching opaque data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching opaque resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of opaque data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the opaque data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the opaque resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

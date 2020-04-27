@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LabelBlockList(Base):
     """Bgp Label Block
-    The LabelBlockList class encapsulates a list of labelBlockList resources that is managed by the system.
+    The LabelBlockList class encapsulates a list of labelBlockList resources that are managed by the system.
     A list of resources can be retrieved from the server using the LabelBlockList.find() method.
     """
 
@@ -37,37 +37,38 @@ class LabelBlockList(Base):
 
     @property
     def AdvLblBlock(self):
-        """Advertise Label Block
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advLblBlock')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Label Block
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advLblBlock'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -76,76 +77,88 @@ class LabelBlockList(Base):
 
     @property
     def NumLabels(self):
-        """Number Of Labels
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numLabels')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number Of Labels
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numLabels'))
 
     @property
     def OffsetLabelBlock(self):
-        """Label Block Offset
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('offsetLabelBlock')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Block Offset
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('offsetLabelBlock'))
 
     @property
     def StartLabel(self):
-        """Label Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startLabel'))
 
     def update(self, Name=None):
-        """Updates a child instance of labelBlockList on the server.
+        """Updates labelBlockList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves labelBlockList data from the server.
+        """Finds and retrieves labelBlockList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve labelBlockList data from the server.
-        By default the find method takes no parameters and will retrieve all labelBlockList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve labelBlockList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all labelBlockList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching labelBlockList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching labelBlockList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of labelBlockList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the labelBlockList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the labelBlockList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -154,17 +167,20 @@ class LabelBlockList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            AdvLblBlock (str): optional regex of advLblBlock
-            NumLabels (str): optional regex of numLabels
-            OffsetLabelBlock (str): optional regex of offsetLabelBlock
-            StartLabel (str): optional regex of startLabel
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AdvLblBlock (str): optional regex of advLblBlock
+        - NumLabels (str): optional regex of numLabels
+        - OffsetLabelBlock (str): optional regex of offsetLabelBlock
+        - StartLabel (str): optional regex of startLabel
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

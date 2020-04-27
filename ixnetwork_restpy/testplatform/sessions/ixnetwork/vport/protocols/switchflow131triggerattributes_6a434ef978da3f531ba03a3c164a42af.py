@@ -36,10 +36,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def OutGroup(self):
-        """This describes the out group value. It requires matching entries to include this as an output group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the out group value. It requires matching entries to include this as an output group.
         """
         return self._get_attribute('outGroup')
     @OutGroup.setter
@@ -48,10 +48,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def OutGroupInputMode(self):
-        """This describes the input mode of the out group value.
-
-        Returns:
-            str(allGroups|anyGroup|outGroupCustom)
+        """
+        Returns
+        -------
+        - str(allGroups | anyGroup | outGroupCustom): This describes the input mode of the out group value.
         """
         return self._get_attribute('outGroupInputMode')
     @OutGroupInputMode.setter
@@ -60,10 +60,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def OutPort(self):
-        """This describes the out port value. It requires matching entries to include this as an output port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the out port value. It requires matching entries to include this as an output port.
         """
         return self._get_attribute('outPort')
     @OutPort.setter
@@ -72,10 +72,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def OutPortInputMode(self):
-        """This describes the input mode of the out port value.
-
-        Returns:
-            str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)
+        """
+        Returns
+        -------
+        - str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom): This describes the input mode of the out port value.
         """
         return self._get_attribute('outPortInputMode')
     @OutPortInputMode.setter
@@ -84,10 +84,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def TableId(self):
-        """This describes the table identifier. It indicates the next table in the packet processing pipeline.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the table identifier. It indicates the next table in the packet processing pipeline.
         """
         return self._get_attribute('tableId')
     @TableId.setter
@@ -96,10 +96,10 @@ class SwitchFlow131TriggerAttributes(Base):
 
     @property
     def TableIdInputMode(self):
-        """This describes the input mode of the Table Identifier.
-
-        Returns:
-            str(allTables|emergency|custom)
+        """
+        Returns
+        -------
+        - str(allTables | emergency | custom): This describes the input mode of the Table Identifier.
         """
         return self._get_attribute('tableIdInputMode')
     @TableIdInputMode.setter
@@ -107,17 +107,19 @@ class SwitchFlow131TriggerAttributes(Base):
         self._set_attribute('tableIdInputMode', value)
 
     def update(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
-        """Updates a child instance of switchFlow131TriggerAttributes on the server.
+        """Updates switchFlow131TriggerAttributes resource on the server.
 
-        Args:
-            OutGroup (number): This describes the out group value. It requires matching entries to include this as an output group.
-            OutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): This describes the input mode of the out group value.
-            OutPort (number): This describes the out port value. It requires matching entries to include this as an output port.
-            OutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): This describes the input mode of the out port value.
-            TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
-            TableIdInputMode (str(allTables|emergency|custom)): This describes the input mode of the Table Identifier.
+        Args
+        ----
+        - OutGroup (number): This describes the out group value. It requires matching entries to include this as an output group.
+        - OutGroupInputMode (str(allGroups | anyGroup | outGroupCustom)): This describes the input mode of the out group value.
+        - OutPort (number): This describes the out port value. It requires matching entries to include this as an output port.
+        - OutPortInputMode (str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom)): This describes the input mode of the out port value.
+        - TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+        - TableIdInputMode (str(allTables | emergency | custom)): This describes the input mode of the Table Identifier.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

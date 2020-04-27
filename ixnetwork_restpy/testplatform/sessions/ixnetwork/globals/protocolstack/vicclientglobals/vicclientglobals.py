@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VicClientGlobals(Base):
     """Settings for vNIC Interface Control protocol
-    The VicClientGlobals class encapsulates a list of vicClientGlobals resources that is be managed by the user.
+    The VicClientGlobals class encapsulates a list of vicClientGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the VicClientGlobals.find() method.
-    The list can be managed by the user by using the VicClientGlobals.add() and VicClientGlobals.remove() methods.
+    The list can be managed by using the VicClientGlobals.add() and VicClientGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class VicClientGlobals(Base):
 
     @property
     def VicOptionSet(self):
-        """An instance of the VicOptionSet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptionset.VicOptionSet): An instance of the VicOptionSet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptionset.VicOptionSet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptionset import VicOptionSet
         return VicOptionSet(self)
 
     @property
     def DcbxTimeout(self):
-        """The number of seconds to wait for DCBX to negotiate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for DCBX to negotiate.
         """
         return self._get_attribute('dcbxTimeout')
     @DcbxTimeout.setter
@@ -64,10 +64,10 @@ class VicClientGlobals(Base):
 
     @property
     def LongMsgTimeout(self):
-        """The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
         """
         return self._get_attribute('longMsgTimeout')
     @LongMsgTimeout.setter
@@ -76,10 +76,10 @@ class VicClientGlobals(Base):
 
     @property
     def MaxErrorRetry(self):
-        """The number of attempts for each request in case of response error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of attempts for each request in case of response error.
         """
         return self._get_attribute('maxErrorRetry')
     @MaxErrorRetry.setter
@@ -88,10 +88,10 @@ class VicClientGlobals(Base):
 
     @property
     def MaxMsgSize(self):
-        """The maximum message size in bytes that can be received.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum message size in bytes that can be received.
         """
         return self._get_attribute('maxMsgSize')
     @MaxMsgSize.setter
@@ -100,10 +100,10 @@ class VicClientGlobals(Base):
 
     @property
     def MaxPduCredit(self):
-        """The number of PDUs that can be received without being acknowledged.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PDUs that can be received without being acknowledged.
         """
         return self._get_attribute('maxPduCredit')
     @MaxPduCredit.setter
@@ -112,10 +112,10 @@ class VicClientGlobals(Base):
 
     @property
     def MaxTimeoutRetry(self):
-        """The number of attempts for each request in case of response timeout.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of attempts for each request in case of response timeout.
         """
         return self._get_attribute('maxTimeoutRetry')
     @MaxTimeoutRetry.setter
@@ -124,19 +124,19 @@ class VicClientGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RegularMsgTimeout(self):
-        """The number of seconds to wait for a response.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for a response.
         """
         return self._get_attribute('regularMsgTimeout')
     @RegularMsgTimeout.setter
@@ -145,10 +145,10 @@ class VicClientGlobals(Base):
 
     @property
     def VifSetTimeout(self):
-        """The number of seconds to wait a VIF_SET message needed to enable the VIF device.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait a VIF_SET message needed to enable the VIF device.
         """
         return self._get_attribute('vifSetTimeout')
     @VifSetTimeout.setter
@@ -156,89 +156,102 @@ class VicClientGlobals(Base):
         self._set_attribute('vifSetTimeout', value)
 
     def update(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, RegularMsgTimeout=None, VifSetTimeout=None):
-        """Updates a child instance of vicClientGlobals on the server.
+        """Updates vicClientGlobals resource on the server.
 
-        Args:
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
-            MaxErrorRetry (number): The number of attempts for each request in case of response error.
-            MaxMsgSize (number): The maximum message size in bytes that can be received.
-            MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
-            MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
-            RegularMsgTimeout (number): The number of seconds to wait for a response.
-            VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
+        Args
+        ----
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
+        - MaxErrorRetry (number): The number of attempts for each request in case of response error.
+        - MaxMsgSize (number): The maximum message size in bytes that can be received.
+        - MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
+        - MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
+        - RegularMsgTimeout (number): The number of seconds to wait for a response.
+        - VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, RegularMsgTimeout=None, VifSetTimeout=None):
-        """Adds a new vicClientGlobals node on the server and retrieves it in this instance.
+        """Adds a new vicClientGlobals resource on the server and adds it to the container.
 
-        Args:
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
-            MaxErrorRetry (number): The number of attempts for each request in case of response error.
-            MaxMsgSize (number): The maximum message size in bytes that can be received.
-            MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
-            MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
-            RegularMsgTimeout (number): The number of seconds to wait for a response.
-            VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
+        Args
+        ----
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
+        - MaxErrorRetry (number): The number of attempts for each request in case of response error.
+        - MaxMsgSize (number): The maximum message size in bytes that can be received.
+        - MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
+        - MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
+        - RegularMsgTimeout (number): The number of seconds to wait for a response.
+        - VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
 
-        Returns:
-            self: This instance with all currently retrieved vicClientGlobals data using find and the newly added vicClientGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vicClientGlobals resources using find and the newly added vicClientGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vicClientGlobals data in this instance from server.
+        """Deletes all the contained vicClientGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, ObjectId=None, RegularMsgTimeout=None, VifSetTimeout=None):
-        """Finds and retrieves vicClientGlobals data from the server.
+        """Finds and retrieves vicClientGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vicClientGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all vicClientGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vicClientGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vicClientGlobals resources from the server.
 
-        Args:
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
-            MaxErrorRetry (number): The number of attempts for each request in case of response error.
-            MaxMsgSize (number): The maximum message size in bytes that can be received.
-            MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
-            MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
-            ObjectId (str): Unique identifier for this object
-            RegularMsgTimeout (number): The number of seconds to wait for a response.
-            VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
+        Args
+        ----
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - LongMsgTimeout (number): The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
+        - MaxErrorRetry (number): The number of attempts for each request in case of response error.
+        - MaxMsgSize (number): The maximum message size in bytes that can be received.
+        - MaxPduCredit (number): The number of PDUs that can be received without being acknowledged.
+        - MaxTimeoutRetry (number): The number of attempts for each request in case of response timeout.
+        - ObjectId (str): Unique identifier for this object
+        - RegularMsgTimeout (number): The number of seconds to wait for a response.
+        - VifSetTimeout (number): The number of seconds to wait a VIF_SET message needed to enable the VIF device.
 
-        Returns:
-            self: This instance with matching vicClientGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vicClientGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vicClientGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vicClientGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vicClientGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

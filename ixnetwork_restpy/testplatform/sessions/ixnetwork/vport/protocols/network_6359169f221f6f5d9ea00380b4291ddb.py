@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Network(Base):
     """
-    The Network class encapsulates a list of network resources that is managed by the system.
+    The Network class encapsulates a list of network resources that are managed by the system.
     A list of resources can be retrieved from the server using the Network.find() method.
     """
 
@@ -38,9 +38,9 @@ class Network(Base):
     @property
     def AttachedRouters(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('attachedRouters')
     @AttachedRouters.setter
@@ -50,9 +50,9 @@ class Network(Base):
     @property
     def OptBitDc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitDc')
     @OptBitDc.setter
@@ -62,9 +62,9 @@ class Network(Base):
     @property
     def OptBitE(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitE')
     @OptBitE.setter
@@ -74,9 +74,9 @@ class Network(Base):
     @property
     def OptBitMc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMc')
     @OptBitMc.setter
@@ -86,9 +86,9 @@ class Network(Base):
     @property
     def OptBitN(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitN')
     @OptBitN.setter
@@ -98,9 +98,9 @@ class Network(Base):
     @property
     def OptBitR(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitR')
     @OptBitR.setter
@@ -110,9 +110,9 @@ class Network(Base):
     @property
     def OptBitV6(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitV6')
     @OptBitV6.setter
@@ -122,9 +122,9 @@ class Network(Base):
     @property
     def Option(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('option')
     @Option.setter
@@ -132,58 +132,67 @@ class Network(Base):
         self._set_attribute('option', value)
 
     def update(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
-        """Updates a child instance of network on the server.
+        """Updates network resource on the server.
 
-        Args:
-            AttachedRouters (list(str)): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
+        Args
+        ----
+        - AttachedRouters (list(str)): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
-        """Finds and retrieves network data from the server.
+        """Finds and retrieves network resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve network data from the server.
-        By default the find method takes no parameters and will retrieve all network data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve network resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all network resources from the server.
 
-        Args:
-            AttachedRouters (list(str)): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
+        Args
+        ----
+        - AttachedRouters (list(str)): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
 
-        Returns:
-            self: This instance with matching network data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching network resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of network data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the network data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the network resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

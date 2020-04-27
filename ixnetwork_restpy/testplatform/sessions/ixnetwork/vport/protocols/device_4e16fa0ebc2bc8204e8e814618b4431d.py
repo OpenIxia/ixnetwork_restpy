@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Device(Base):
     """Indicates that the device is used to configure the protocol.
-    The Device class encapsulates a list of device resources that is be managed by the user.
+    The Device class encapsulates a list of device resources that are managed by the user.
     A list of resources can be retrieved from the server using the Device.find() method.
-    The list can be managed by the user by using the Device.add() and Device.remove() methods.
+    The list can be managed by using the Device.add() and Device.remove() methods.
     """
 
     __slots__ = ()
@@ -38,42 +38,42 @@ class Device(Base):
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_caab5eb40c486f45184116f2447c0e1b.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_caab5eb40c486f45184116f2447c0e1b.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_caab5eb40c486f45184116f2447c0e1b import Interface
         return Interface(self)
 
     @property
     def CaCertificateFile(self):
-        """Indicates the Trusted Root certificate file for the device.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Trusted Root certificate file for the device.
         """
         return self._get_attribute('caCertificateFile')
 
     @property
     def CertificateFile(self):
-        """Indicates the certificate file for the device.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the certificate file for the device.
         """
         return self._get_attribute('certificateFile')
 
     @property
     def Description(self):
-        """A description of the device used to configure this protocol.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A description of the device used to configure this protocol.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -82,10 +82,10 @@ class Device(Base):
 
     @property
     def DeviceRole(self):
-        """Indicates the device role of the OpenFlow device.
-
-        Returns:
-            str(controller|switch)
+        """
+        Returns
+        -------
+        - str(controller | switch): Indicates the device role of the OpenFlow device.
         """
         return self._get_attribute('deviceRole')
     @DeviceRole.setter
@@ -94,10 +94,10 @@ class Device(Base):
 
     @property
     def EnableVersion100(self):
-        """Enables protocol version 1.0
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables protocol version 1.0
         """
         return self._get_attribute('enableVersion100')
     @EnableVersion100.setter
@@ -106,10 +106,10 @@ class Device(Base):
 
     @property
     def EnableVersion131(self):
-        """Enables protocol version 1.3
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables protocol version 1.3
         """
         return self._get_attribute('enableVersion131')
     @EnableVersion131.setter
@@ -118,10 +118,10 @@ class Device(Base):
 
     @property
     def Enabled(self):
-        """If set enables the open-flow device.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set enables the open-flow device.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -130,19 +130,19 @@ class Device(Base):
 
     @property
     def PrivateFile(self):
-        """Indicates the private key file for the device.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the private key file for the device.
         """
         return self._get_attribute('privateFile')
 
     @property
     def Version(self):
-        """DEPRECATED Indicates the current version of the Openflow protocol implemented.
-
-        Returns:
-            str(1.0.0)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(1.0.0): Indicates the current version of the Openflow protocol implemented.
         """
         return self._get_attribute('version')
     @Version.setter
@@ -150,86 +150,99 @@ class Device(Base):
         self._set_attribute('version', value)
 
     def update(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
-        """Updates a child instance of device on the server.
+        """Updates device resource on the server.
 
-        Args:
-            Description (str): A description of the device used to configure this protocol.
-            DeviceRole (str(controller|switch)): Indicates the device role of the OpenFlow device.
-            EnableVersion100 (bool): Enables protocol version 1.0
-            EnableVersion131 (bool): Enables protocol version 1.3
-            Enabled (bool): If set enables the open-flow device.
-            Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
+        Args
+        ----
+        - Description (str): A description of the device used to configure this protocol.
+        - DeviceRole (str(controller | switch)): Indicates the device role of the OpenFlow device.
+        - EnableVersion100 (bool): Enables protocol version 1.0
+        - EnableVersion131 (bool): Enables protocol version 1.3
+        - Enabled (bool): If set enables the open-flow device.
+        - Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
-        """Adds a new device node on the server and retrieves it in this instance.
+        """Adds a new device resource on the server and adds it to the container.
 
-        Args:
-            Description (str): A description of the device used to configure this protocol.
-            DeviceRole (str(controller|switch)): Indicates the device role of the OpenFlow device.
-            EnableVersion100 (bool): Enables protocol version 1.0
-            EnableVersion131 (bool): Enables protocol version 1.3
-            Enabled (bool): If set enables the open-flow device.
-            Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
+        Args
+        ----
+        - Description (str): A description of the device used to configure this protocol.
+        - DeviceRole (str(controller | switch)): Indicates the device role of the OpenFlow device.
+        - EnableVersion100 (bool): Enables protocol version 1.0
+        - EnableVersion131 (bool): Enables protocol version 1.3
+        - Enabled (bool): If set enables the open-flow device.
+        - Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
 
-        Returns:
-            self: This instance with all currently retrieved device data using find and the newly added device data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved device resources using find and the newly added device resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the device data in this instance from server.
+        """Deletes all the contained device resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CaCertificateFile=None, CertificateFile=None, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, PrivateFile=None, Version=None):
-        """Finds and retrieves device data from the server.
+        """Finds and retrieves device resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve device data from the server.
-        By default the find method takes no parameters and will retrieve all device data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve device resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all device resources from the server.
 
-        Args:
-            CaCertificateFile (str): Indicates the Trusted Root certificate file for the device.
-            CertificateFile (str): Indicates the certificate file for the device.
-            Description (str): A description of the device used to configure this protocol.
-            DeviceRole (str(controller|switch)): Indicates the device role of the OpenFlow device.
-            EnableVersion100 (bool): Enables protocol version 1.0
-            EnableVersion131 (bool): Enables protocol version 1.3
-            Enabled (bool): If set enables the open-flow device.
-            PrivateFile (str): Indicates the private key file for the device.
-            Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
+        Args
+        ----
+        - CaCertificateFile (str): Indicates the Trusted Root certificate file for the device.
+        - CertificateFile (str): Indicates the certificate file for the device.
+        - Description (str): A description of the device used to configure this protocol.
+        - DeviceRole (str(controller | switch)): Indicates the device role of the OpenFlow device.
+        - EnableVersion100 (bool): Enables protocol version 1.0
+        - EnableVersion131 (bool): Enables protocol version 1.3
+        - Enabled (bool): If set enables the open-flow device.
+        - PrivateFile (str): Indicates the private key file for the device.
+        - Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
 
-        Returns:
-            self: This instance with matching device data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching device resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of device data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the device data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the device resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -238,18 +251,17 @@ class Device(Base):
 
         Exec to add TLS certificates.
 
-        addTlsCertificates(Arg2:href, Arg3:href, Arg4:href)number
-            Args:
-                args[0] is Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
-                args[1] is Arg3 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
-                args[2] is Arg4 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        addTlsCertificates(Arg2=href, Arg3=href, Arg4=href)number
+        ---------------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - Arg3 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - Arg4 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - Returns number: NOT DEFINED
 
-            Returns:
-                number: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

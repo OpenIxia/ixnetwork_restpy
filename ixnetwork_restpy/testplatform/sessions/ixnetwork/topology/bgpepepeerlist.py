@@ -36,119 +36,126 @@ class BgpEpePeerList(Base):
 
     @property
     def BgpEpePeerLinkList(self):
-        """An instance of the BgpEpePeerLinkList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist.BgpEpePeerLinkList): An instance of the BgpEpePeerLinkList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist.BgpEpePeerLinkList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist import BgpEpePeerLinkList
         return BgpEpePeerLinkList(self)._select()
 
     @property
     def BgpEpePeerSetList(self):
-        """An instance of the BgpEpePeerSetList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist.BgpEpePeerSetList): An instance of the BgpEpePeerSetList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist.BgpEpePeerSetList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist import BgpEpePeerSetList
         return BgpEpePeerSetList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def BBit(self):
-        """B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bBit'))
 
     @property
     def BgpLocalRouterId(self):
-        """BGP Router ID for Local Node Descriptor
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bgpLocalRouterId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Router ID for Local Node Descriptor
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bgpLocalRouterId'))
 
     @property
     def BgpRemoteRouterId(self):
-        """BGP Router ID for Remote Node Descriptor
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bgpRemoteRouterId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Router ID for Remote Node Descriptor
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bgpRemoteRouterId'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnablePeerNodeSid(self):
-        """Enable Peer-Node-SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enablePeerNodeSid')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Peer-Node-SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enablePeerNodeSid'))
 
     @property
     def LBit(self):
-        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lBit'))
 
     @property
     def LocalAsn(self):
-        """AS# of Egress node
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('localAsn')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS# of Egress node
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('localAsn'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -157,10 +164,10 @@ class BgpEpePeerList(Base):
 
     @property
     def NoOfPeerSet(self):
-        """Number of EPE Peer Set
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of EPE Peer Set
         """
         return self._get_attribute('noOfPeerSet')
     @NoOfPeerSet.setter
@@ -169,10 +176,10 @@ class BgpEpePeerList(Base):
 
     @property
     def NoOflinks(self):
-        """Number of Links
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Links
         """
         return self._get_attribute('noOflinks')
     @NoOflinks.setter
@@ -181,159 +188,176 @@ class BgpEpePeerList(Base):
 
     @property
     def PBit(self):
-        """P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pBit'))
 
     @property
     def PeerName(self):
-        """Peer Name For Reference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('peerName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Peer Name For Reference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('peerName'))
 
     @property
     def PeerSetGroup(self):
-        """Peer Set Group
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('peerSetGroup')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Peer Set Group
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('peerSetGroup'))
 
     @property
     def RemoteAsn(self):
-        """AS# of Peer Node
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteAsn')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS# of Peer Node
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteAsn'))
 
     @property
     def Reserved(self):
-        """Reserved
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reserved')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reserved'))
 
     @property
     def RsvdBits(self):
-        """Reserved for future use and MUST be zero when originated and ignored when received
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rsvdBits')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rsvdBits'))
 
     @property
     def SidIndex(self):
-        """Local Label for Peer-Node
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sidIndex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Label for Peer-Node
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sidIndex'))
 
     @property
     def SidIndexValue(self):
-        """If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sidIndexValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sidIndexValue'))
 
     @property
     def UseLocalConfedId(self):
-        """Use Local Confederation identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useLocalConfedId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use Local Confederation identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useLocalConfedId'))
 
     @property
     def UseRemoteConfedId(self):
-        """Use Remote Confederation identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useRemoteConfedId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use Remote Confederation identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useRemoteConfedId'))
 
     @property
     def VBit(self):
-        """V-Flag: Value flag. If set, then the SID carries a label value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries a label value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vBit'))
 
     @property
     def Weight(self):
-        """Weight of SID for Load Balancing
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of SID for Load Balancing
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
 
     def update(self, Name=None, NoOfPeerSet=None, NoOflinks=None):
-        """Updates a child instance of bgpEpePeerList on the server.
+        """Updates bgpEpePeerList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfPeerSet (number): Number of EPE Peer Set
-            NoOflinks (number): Number of Links
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfPeerSet (number): Number of EPE Peer Set
+        - NoOflinks (number): Number of Links
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, BBit=None, BgpLocalRouterId=None, BgpRemoteRouterId=None, EnablePeerNodeSid=None, LBit=None, LocalAsn=None, PBit=None, PeerName=None, PeerSetGroup=None, RemoteAsn=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, UseLocalConfedId=None, UseRemoteConfedId=None, VBit=None, Weight=None):
         """Base class infrastructure that gets a list of bgpEpePeerList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            BBit (str): optional regex of bBit
-            BgpLocalRouterId (str): optional regex of bgpLocalRouterId
-            BgpRemoteRouterId (str): optional regex of bgpRemoteRouterId
-            EnablePeerNodeSid (str): optional regex of enablePeerNodeSid
-            LBit (str): optional regex of lBit
-            LocalAsn (str): optional regex of localAsn
-            PBit (str): optional regex of pBit
-            PeerName (str): optional regex of peerName
-            PeerSetGroup (str): optional regex of peerSetGroup
-            RemoteAsn (str): optional regex of remoteAsn
-            Reserved (str): optional regex of reserved
-            RsvdBits (str): optional regex of rsvdBits
-            SidIndex (str): optional regex of sidIndex
-            SidIndexValue (str): optional regex of sidIndexValue
-            UseLocalConfedId (str): optional regex of useLocalConfedId
-            UseRemoteConfedId (str): optional regex of useRemoteConfedId
-            VBit (str): optional regex of vBit
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - BBit (str): optional regex of bBit
+        - BgpLocalRouterId (str): optional regex of bgpLocalRouterId
+        - BgpRemoteRouterId (str): optional regex of bgpRemoteRouterId
+        - EnablePeerNodeSid (str): optional regex of enablePeerNodeSid
+        - LBit (str): optional regex of lBit
+        - LocalAsn (str): optional regex of localAsn
+        - PBit (str): optional regex of pBit
+        - PeerName (str): optional regex of peerName
+        - PeerSetGroup (str): optional regex of peerSetGroup
+        - RemoteAsn (str): optional regex of remoteAsn
+        - Reserved (str): optional regex of reserved
+        - RsvdBits (str): optional regex of rsvdBits
+        - SidIndex (str): optional regex of sidIndex
+        - SidIndexValue (str): optional regex of sidIndexValue
+        - UseLocalConfedId (str): optional regex of useLocalConfedId
+        - UseRemoteConfedId (str): optional regex of useRemoteConfedId
+        - VBit (str): optional regex of vBit
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

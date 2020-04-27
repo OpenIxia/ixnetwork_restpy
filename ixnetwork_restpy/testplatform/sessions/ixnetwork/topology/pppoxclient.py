@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Pppoxclient(Base):
     """PPPoX Client
-    The Pppoxclient class encapsulates a list of pppoxclient resources that is be managed by the user.
+    The Pppoxclient class encapsulates a list of pppoxclient resources that are managed by the user.
     A list of resources can be retrieved from the server using the Pppoxclient.find() method.
-    The list can be managed by the user by using the Pppoxclient.add() and Pppoxclient.remove() methods.
+    The list can be managed by using the Pppoxclient.add() and Pppoxclient.remove() methods.
     """
 
     __slots__ = ()
@@ -38,635 +38,664 @@ class Pppoxclient(Base):
 
     @property
     def Bfdv4Interface(self):
-        """An instance of the Bfdv4Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface.Bfdv4Interface): An instance of the Bfdv4Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface.Bfdv4Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface import Bfdv4Interface
         return Bfdv4Interface(self)
 
     @property
     def Bfdv6Interface(self):
-        """An instance of the Bfdv6Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface.Bfdv6Interface): An instance of the Bfdv6Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface.Bfdv6Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface import Bfdv6Interface
         return Bfdv6Interface(self)
 
     @property
     def BgpIpv4Peer(self):
-        """An instance of the BgpIpv4Peer class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer.BgpIpv4Peer)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer import BgpIpv4Peer
         return BgpIpv4Peer(self)
 
     @property
     def BgpIpv6Peer(self):
-        """An instance of the BgpIpv6Peer class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer.BgpIpv6Peer)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer import BgpIpv6Peer
         return BgpIpv6Peer(self)
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def Dhcpv6client(self):
-        """An instance of the Dhcpv6client class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client.Dhcpv6client): An instance of the Dhcpv6client class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client.Dhcpv6client)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client import Dhcpv6client
         return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
-        """An instance of the ECpriRe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe): An instance of the ECpriRe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire import ECpriRe
         return ECpriRe(self)
 
     @property
     def ECpriRec(self):
-        """An instance of the ECpriRec class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec): An instance of the ECpriRec class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import ECpriRec
         return ECpriRec(self)
 
     @property
     def Geneve(self):
-        """An instance of the Geneve class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve.Geneve): An instance of the Geneve class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve.Geneve)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve import Geneve
         return Geneve(self)
 
     @property
     def IgmpHost(self):
-        """An instance of the IgmpHost class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost.IgmpHost): An instance of the IgmpHost class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost.IgmpHost)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost import IgmpHost
         return IgmpHost(self)
 
     @property
     def IgmpQuerier(self):
-        """An instance of the IgmpQuerier class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier.IgmpQuerier): An instance of the IgmpQuerier class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier.IgmpQuerier)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier import IgmpQuerier
         return IgmpQuerier(self)
 
     @property
     def MldHost(self):
-        """An instance of the MldHost class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost.MldHost): An instance of the MldHost class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost.MldHost)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost import MldHost
         return MldHost(self)
 
     @property
     def MldQuerier(self):
-        """An instance of the MldQuerier class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier.MldQuerier): An instance of the MldQuerier class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier.MldQuerier)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier import MldQuerier
         return MldQuerier(self)
 
     @property
     def MplsOam(self):
-        """An instance of the MplsOam class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam.MplsOam): An instance of the MplsOam class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam.MplsOam)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam import MplsOam
         return MplsOam(self)
 
     @property
     def NetconfClient(self):
-        """An instance of the NetconfClient class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient.NetconfClient): An instance of the NetconfClient class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient.NetconfClient)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient import NetconfClient
         return NetconfClient(self)
 
     @property
     def NetconfServer(self):
-        """An instance of the NetconfServer class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver.NetconfServer): An instance of the NetconfServer class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver.NetconfServer)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver import NetconfServer
         return NetconfServer(self)
 
     @property
     def Ospfv2(self):
-        """An instance of the Ospfv2 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2.Ospfv2): An instance of the Ospfv2 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2.Ospfv2)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2 import Ospfv2
         return Ospfv2(self)
 
     @property
     def Ospfv3(self):
-        """An instance of the Ospfv3 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3.Ospfv3): An instance of the Ospfv3 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3.Ospfv3)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3 import Ospfv3
         return Ospfv3(self)
 
     @property
     def Pcc(self):
-        """An instance of the Pcc class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc.Pcc): An instance of the Pcc class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc.Pcc)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc import Pcc
         return Pcc(self)
 
     @property
     def Pce(self):
-        """An instance of the Pce class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce.Pce): An instance of the Pce class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce.Pce)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce import Pce
         return Pce(self)
 
     @property
     def PimV4Interface(self):
-        """An instance of the PimV4Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface.PimV4Interface): An instance of the PimV4Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface.PimV4Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface import PimV4Interface
         return PimV4Interface(self)
 
     @property
     def PimV6Interface(self):
-        """An instance of the PimV6Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface.PimV6Interface): An instance of the PimV6Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface.PimV6Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface import PimV6Interface
         return PimV6Interface(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def TlvProfile(self):
-        """An instance of the TlvProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile): An instance of the TlvProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile import TlvProfile
         return TlvProfile(self)
 
     @property
     def Vxlan(self):
-        """An instance of the Vxlan class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan.Vxlan): An instance of the Vxlan class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan.Vxlan)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan import Vxlan
         return Vxlan(self)
 
     @property
     def Vxlanv6(self):
-        """An instance of the Vxlanv6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6.Vxlanv6): An instance of the Vxlanv6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6.Vxlanv6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6 import Vxlanv6
         return Vxlanv6(self)
 
     @property
     def AcMatchMac(self):
-        """?
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('acMatchMac')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ?
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('acMatchMac'))
 
     @property
     def AcMatchName(self):
-        """?
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('acMatchName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ?
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('acMatchName'))
 
     @property
     def AcOptions(self):
-        """Indicates PPPoE AC retrieval mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('acOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates PPPoE AC retrieval mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('acOptions'))
 
     @property
     def ActualRateDownstream(self):
-        """This parameter specifies the value to be included in the vendor specific PPPoE tag. It is the actual downstream data rate (sub-option 0x81), in kbps.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actualRateDownstream')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter specifies the value to be included in the vendor specific PPPoE tag. It is the actual downstream data rate (sub-option 0x81), in kbps.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actualRateDownstream'))
 
     @property
     def ActualRateUpstream(self):
-        """This parameter specifies the value to be included in the vendor specific PPPoE tag. It is the actual upstream data rate (sub-option 0x82), in kbps.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actualRateUpstream')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter specifies the value to be included in the vendor specific PPPoE tag. It is the actual upstream data rate (sub-option 0x82), in kbps.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actualRateUpstream'))
 
     @property
     def AgentAccessAggregationCircuitId(self):
-        """The value to be inserted into the Agent Access-Aggregation-Circuit-ID-ASCII-Value field of the PPPoX tag.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('agentAccessAggregationCircuitId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value to be inserted into the Agent Access-Aggregation-Circuit-ID-ASCII-Value field of the PPPoX tag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('agentAccessAggregationCircuitId'))
 
     @property
     def AgentCircuitId(self):
-        """The value to be inserted into the Agent Circuit ID field of the PPPoX tag.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('agentCircuitId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value to be inserted into the Agent Circuit ID field of the PPPoX tag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('agentCircuitId'))
 
     @property
     def AgentRemoteId(self):
-        """The value to be inserted into the Agent Remote ID field of the PPPoX tag.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('agentRemoteId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value to be inserted into the Agent Remote ID field of the PPPoX tag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('agentRemoteId'))
 
     @property
     def AuthRetries(self):
-        """Number of PPP authentication retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of PPP authentication retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authRetries'))
 
     @property
     def AuthTimeout(self):
-        """Timeout for PPP authentication, in seconds.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for PPP authentication, in seconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authTimeout'))
 
     @property
     def AuthType(self):
-        """The authentication type to use during link setup.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The authentication type to use during link setup.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authType'))
 
     @property
     def ChapName(self):
-        """User name when CHAP Authentication is being used
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('chapName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User name when CHAP Authentication is being used
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('chapName'))
 
     @property
     def ChapSecret(self):
-        """Secret when CHAP Authentication is being used
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('chapSecret')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Secret when CHAP Authentication is being used
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('chapSecret'))
 
     @property
     def ClientDnsOptions(self):
-        """The client DNS options.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientDnsOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The client DNS options.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientDnsOptions'))
 
     @property
     def ClientLocalIp(self):
-        """The requested IPv4 address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientLocalIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The requested IPv4 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientLocalIp'))
 
     @property
     def ClientLocalIpv6Iid(self):
-        """The requested IPv6 Interface Identifier (IID).
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientLocalIpv6Iid')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The requested IPv6 Interface Identifier (IID).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientLocalIpv6Iid'))
 
     @property
     def ClientNcpOptions(self):
-        """The NCP configuration mode for IPv4 addressing.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientNcpOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The NCP configuration mode for IPv4 addressing.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientNcpOptions'))
 
     @property
     def ClientNetmask(self):
-        """The netmask that the client will use with the assigned IP address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientNetmask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The netmask that the client will use with the assigned IP address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientNetmask'))
 
     @property
     def ClientNetmaskOptions(self):
-        """The client netmask option.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientNetmaskOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The client netmask option.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientNetmaskOptions'))
 
     @property
     def ClientPrimaryDnsAddress(self):
-        """This is the primary DNS server address that the client requests from the server when the value of the Client DNS Options field is set to 'Request Primary only' or 'Request Primary and Secondary'.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientPrimaryDnsAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the primary DNS server address that the client requests from the server when the value of the Client DNS Options field is set to 'Request Primary only' or 'Request Primary and Secondary'.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientPrimaryDnsAddress'))
 
     @property
     def ClientSecondaryDnsAddress(self):
-        """This is the secondary DNS server address that the client requests from the server when the value of the Client DNS Options field is set to 'Request Primary and Secondary'.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientSecondaryDnsAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the secondary DNS server address that the client requests from the server when the value of the Client DNS Options field is set to 'Request Primary and Secondary'.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientSecondaryDnsAddress'))
 
     @property
     def ClientSignalIWF(self):
-        """This parameter enables or disables the insertion of sub-option 0xFE (signaling of interworked sessions) into the DSL tag in PADI and PADR packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientSignalIWF')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter enables or disables the insertion of sub-option 0xFE (signaling of interworked sessions) into the DSL tag in PADI and PADR packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientSignalIWF'))
 
     @property
     def ClientSignalLoopChar(self):
-        """This parameter enables or disables the insertion of sub-options 0x81 and 0x82 into the DSL tag in PADI and PADR packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientSignalLoopChar')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter enables or disables the insertion of sub-options 0x81 and 0x82 into the DSL tag in PADI and PADR packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientSignalLoopChar'))
 
     @property
     def ClientSignalLoopEncapsulation(self):
-        """This parameter enables or disables the insertion of sub-option 0x90 into the DSL tag in PADI and PADR packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientSignalLoopEncapsulation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter enables or disables the insertion of sub-option 0x90 into the DSL tag in PADI and PADR packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientSignalLoopEncapsulation'))
 
     @property
     def ClientSignalLoopId(self):
-        """This parameter enables or disables the insertion of sub-options 0x01 , 0x02, 0x03 (Remote ID,Circuit ID and Access Aggregation Circuit ID) into the DSL tag in PADI and PADR packets.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientSignalLoopId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This parameter enables or disables the insertion of sub-options 0x01 , 0x02, 0x03 (Remote ID,Circuit ID and Access Aggregation Circuit ID) into the DSL tag in PADI and PADR packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientSignalLoopId'))
 
     @property
     def ClientV6NcpOptions(self):
-        """The NCP configuration mode for IPv6 addressing.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientV6NcpOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The NCP configuration mode for IPv6 addressing.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientV6NcpOptions'))
 
     @property
     def ClientWinsOptions(self):
-        """Specifies the mode in which WINS host addresses are configured.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientWinsOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the mode in which WINS host addresses are configured.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientWinsOptions'))
 
     @property
     def ClientWinsPrimaryAddress(self):
-        """Specifies the primary WINS address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientWinsPrimaryAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the primary WINS address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientWinsPrimaryAddress'))
 
     @property
     def ClientWinsSecondaryAddress(self):
-        """Specifies the secondary WINS address.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('clientWinsSecondaryAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the secondary WINS address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clientWinsSecondaryAddress'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -675,379 +704,409 @@ class Pppoxclient(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DataLink(self):
-        """A one-byte field included with sub-option 0x90.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dataLink')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A one-byte field included with sub-option 0x90.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dataLink'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DiscoveredIpv4Addresses(self):
-        """The discovered IPv4 addresses.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered IPv4 addresses.
         """
         return self._get_attribute('discoveredIpv4Addresses')
 
     @property
     def DiscoveredIpv6Addresses(self):
-        """The discovered IPv6 addresses.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered IPv6 addresses.
         """
         return self._get_attribute('discoveredIpv6Addresses')
 
     @property
     def DiscoveredMacs(self):
-        """The discovered remote MAC address.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered remote MAC address.
         """
         return self._get_attribute('discoveredMacs')
 
     @property
     def DiscoveredRemoteSessionIds(self):
-        """Remote session ID.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Remote session ID.
         """
         return self._get_attribute('discoveredRemoteSessionIds')
 
     @property
     def DiscoveredRemoteTunnelIds(self):
-        """Remote tunnel ID.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Remote tunnel ID.
         """
         return self._get_attribute('discoveredRemoteTunnelIds')
 
     @property
     def DiscoveredSessionIds(self):
-        """The negotiated session ID.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The negotiated session ID.
         """
         return self._get_attribute('discoveredSessionIds')
 
     @property
     def DiscoveredTunnelIPs(self):
-        """The discovered remote tunnel IP.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered remote tunnel IP.
         """
         return self._get_attribute('discoveredTunnelIPs')
 
     @property
     def DiscoveredTunnelIds(self):
-        """The negotiated tunnel ID.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The negotiated tunnel ID.
         """
         return self._get_attribute('discoveredTunnelIds')
 
     @property
     def DomainList(self):
-        """Configure domain group settings
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('domainList')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure domain group settings
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('domainList'))
 
     @property
     def DslTypeTlv(self):
-        """DSL Type to be advertised in PPPoE VSA Tag. For undefined DSL type user has to select User-defined DSL Type.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dslTypeTlv')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DSL Type to be advertised in PPPoE VSA Tag. For undefined DSL type user has to select User-defined DSL Type.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dslTypeTlv'))
 
     @property
     def EchoReqInterval(self):
-        """Keep alive interval, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('echoReqInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Keep alive interval, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('echoReqInterval'))
 
     @property
     def EnableDomainGroups(self):
-        """Enable domain groups
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableDomainGroups')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable domain groups
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableDomainGroups'))
 
     @property
     def EnableEchoReq(self):
-        """?
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableEchoReq')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ?
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableEchoReq'))
 
     @property
     def EnableEchoRsp(self):
-        """?
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableEchoRsp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ?
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableEchoRsp'))
 
     @property
     def EnableHostUniq(self):
-        """Enables PPPoE Host-Uniq tag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHostUniq')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables PPPoE Host-Uniq tag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHostUniq'))
 
     @property
     def EnableMaxPayload(self):
-        """Enables PPPoE Max Payload tag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMaxPayload')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables PPPoE Max Payload tag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMaxPayload'))
 
     @property
     def EnableRedial(self):
-        """If checked, PPPoE redial is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRedial')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, PPPoE redial is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRedial'))
 
     @property
     def Encaps1(self):
-        """A one-byte field included with sub-option 0x90.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('encaps1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A one-byte field included with sub-option 0x90.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('encaps1'))
 
     @property
     def Encaps2(self):
-        """A one-byte field included with sub-option 0x90.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('encaps2')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A one-byte field included with sub-option 0x90.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('encaps2'))
 
     @property
     def EndpointDiscNegotiation(self):
-        """Enable Endpoint Discriminator Negotiation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endpointDiscNegotiation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Endpoint Discriminator Negotiation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endpointDiscNegotiation'))
 
     @property
     def EndpointDiscriminatorClass(self):
-        """Endpoint Discriminator for PPP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('endpointDiscriminatorClass')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Endpoint Discriminator for PPP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('endpointDiscriminatorClass'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def HostUniq(self):
-        """Indicates Host-Uniq Tag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hostUniq')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates Host-Uniq Tag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hostUniq'))
 
     @property
     def HostUniqLength(self):
-        """Host-Uniq Length, in bytes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hostUniqLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Host-Uniq Length, in bytes
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hostUniqLength'))
 
     @property
     def LcpAccm(self):
-        """Async-Control-Character-Map
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpAccm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Async-Control-Character-Map
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpAccm'))
 
     @property
     def LcpEnableAccm(self):
-        """Enable Async-Control-Character-Map
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpEnableAccm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Async-Control-Character-Map
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpEnableAccm'))
 
     @property
     def LcpMaxFailure(self):
-        """Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpMaxFailure')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpMaxFailure'))
 
     @property
     def LcpRetries(self):
-        """Number of LCP retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of LCP retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpRetries'))
 
     @property
     def LcpStartDelay(self):
-        """Delay time in milliseconds to wait before sending LCP Config Request packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpStartDelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay time in milliseconds to wait before sending LCP Config Request packet
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpStartDelay'))
 
     @property
     def LcpTermRetries(self):
-        """Number of LCP Termination Retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpTermRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of LCP Termination Retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpTermRetries'))
 
     @property
     def LcpTimeout(self):
-        """Timeout for LCP phase, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lcpTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for LCP phase, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lcpTimeout'))
 
     @property
     def MaxPayload(self):
-        """Max Payload
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxPayload')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max Payload
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxPayload'))
 
     @property
     def MlpppIPAddress(self):
-        """The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mlpppIPAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mlpppIPAddress'))
 
     @property
     def MlpppMACAddress(self):
-        """The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mlpppMACAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mlpppMACAddress'))
 
     @property
     def Mrru(self):
-        """Max Receive Reconstructed Unit for PPP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mrru')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max Receive Reconstructed Unit for PPP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mrru'))
 
     @property
     def MrruNegotiation(self):
-        """Enable MRRU Negotiation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mrruNegotiation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MRRU Negotiation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mrruNegotiation'))
 
     @property
     def MruNegotiation(self):
-        """Enable MRU Negotiation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mruNegotiation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MRU Negotiation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mruNegotiation'))
 
     @property
     def Mtu(self):
-        """Max Transmit Unit for PPP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mtu')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max Transmit Unit for PPP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mtu'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -1056,10 +1115,10 @@ class Pppoxclient(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -1068,154 +1127,168 @@ class Pppoxclient(Base):
 
     @property
     def NcpRetries(self):
-        """Number of NCP retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ncpRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of NCP retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ncpRetries'))
 
     @property
     def NcpTimeout(self):
-        """Timeout for NCP phase, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ncpTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for NCP phase, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ncpTimeout'))
 
     @property
     def NcpType(self):
-        """IP address type (IPv4 or IPv6) for Network Control Protocol
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ncpType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IP address type (IPv4 or IPv6) for Network Control Protocol
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ncpType'))
 
     @property
     def PadiRetries(self):
-        """Number of PADI Retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('padiRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of PADI Retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('padiRetries'))
 
     @property
     def PadiTimeout(self):
-        """Timeout for PADI no response, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('padiTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for PADI no response, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('padiTimeout'))
 
     @property
     def PadrRetries(self):
-        """Number of PADR Retries
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('padrRetries')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of PADR Retries
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('padrRetries'))
 
     @property
     def PadrTimeout(self):
-        """Timeout for PADR no response, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('padrTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for PADR no response, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('padrTimeout'))
 
     @property
     def PapPassword(self):
-        """Password when PAP Authentication is being used
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('papPassword')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Password when PAP Authentication is being used
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('papPassword'))
 
     @property
     def PapUser(self):
-        """User name when PAP Authentication is being used
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('papUser')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User name when PAP Authentication is being used
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('papUser'))
 
     @property
     def PonTypeTlv(self):
-        """PON Type to be advertised in PPPoE VSA Tag. For undefined PON type user has to select User-defined PON Type.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ponTypeTlv')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PON Type to be advertised in PPPoE VSA Tag. For undefined PON type user has to select User-defined PON Type.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ponTypeTlv'))
 
     @property
     def RedialMax(self):
-        """Maximum number of PPPoE redials
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redialMax')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of PPPoE redials
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redialMax'))
 
     @property
     def RedialTimeout(self):
-        """PPPoE redial timeout, in seconds
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redialTimeout')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PPPoE redial timeout, in seconds
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redialTimeout'))
 
     @property
     def ServiceName(self):
-        """Access Concentrator Service Name - this option is only available for PPP servers.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('serviceName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Access Concentrator Service Name - this option is only available for PPP servers.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('serviceName'))
 
     @property
     def ServiceOptions(self):
-        """Indicates PPPoE service retrieval mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('serviceOptions')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates PPPoE service retrieval mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('serviceOptions'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the session state
-
-        Returns:
-            list(str[cLS_CFG_REJ_AUTH|cLS_CHAP_PEER_DET_FAIL|cLS_CHAP_PEER_RESP_BAD|cLS_CODE_REJ_IPCP|cLS_CODE_REJ_IPV6CP|cLS_CODE_REJ_LCP|cLS_ERR_PPP_NO_BUF|cLS_ERR_PPP_SEND_PKT|cLS_LINK_DISABLE|cLS_LOC_IPADDR_BROADCAST|cLS_LOC_IPADDR_CLASS_E|cLS_LOC_IPADDR_INVAL_ACKS_0|cLS_LOC_IPADDR_INVAL_ACKS_DIFF|cLS_LOC_IPADDR_LOOPBACK|cLS_LOC_IPADDR_PEER_MATCH_LOC|cLS_LOC_IPADDR_PEER_NO_GIVE|cLS_LOC_IPADDR_PEER_NO_HELP|cLS_LOC_IPADDR_PEER_NO_TAKE|cLS_LOC_IPADDR_PEER_REJ|cLS_LOOPBACK_DETECT|cLS_NO_NCP|cLS_NONE|cLS_PAP_BAD_PASSWD|cLS_PEER_DISCONNECTED|cLS_PEER_DISCONNECTED_NEGO|cLS_PEER_IPADDR_MATCH_LOC|cLS_PEER_IPADDR_PEER_NO_SET|cLS_PPOE_AC_SYSTEM_ERROR|cLS_PPOE_GENERIC_ERROR|cLS_PPP_DISABLE|cLS_PPPOE_NO_HOST_UNIQ|cLS_PPPOE_PADI_TIMEOUT|cLS_PPPOE_PADO_TIMEOUT|cLS_PPPOE_PADR_TIMEOUT|cLS_PROTO_REJ_IPCP|cLS_PROTO_REJ_IPv6CP|cLS_TIMEOUT_CHAP_CHAL|cLS_TIMEOUT_CHAP_RESP|cLS_TIMEOUT_IPCP_CFG_REQ|cLS_TIMEOUT_IPV6CP_CFG_REQ|cLS_TIMEOUT_IPV6CP_RA|cLS_TIMEOUT_LCP_CFG_REQ|cLS_TIMEOUT_LCP_ECHO_REQ|cLS_TIMEOUT_PAP_AUTH_REQ|cLS_TUN_AUTH_FAILED|cLS_TUN_NO_RESOURCES|cLS_TUN_TIMEOUT_ICRQ|cLS_TUN_TIMEOUT_SCCRQ|cLS_TUN_VENDOR_SPECIFIC_ERR])
+        """
+        Returns
+        -------
+        - list(str[cLS_CFG_REJ_AUTH | cLS_CHAP_PEER_DET_FAIL | cLS_CHAP_PEER_RESP_BAD | cLS_CODE_REJ_IPCP | cLS_CODE_REJ_IPV6CP | cLS_CODE_REJ_LCP | cLS_ERR_PPP_NO_BUF | cLS_ERR_PPP_SEND_PKT | cLS_LINK_DISABLE | cLS_LOC_IPADDR_BROADCAST | cLS_LOC_IPADDR_CLASS_E | cLS_LOC_IPADDR_INVAL_ACKS_0 | cLS_LOC_IPADDR_INVAL_ACKS_DIFF | cLS_LOC_IPADDR_LOOPBACK | cLS_LOC_IPADDR_PEER_MATCH_LOC | cLS_LOC_IPADDR_PEER_NO_GIVE | cLS_LOC_IPADDR_PEER_NO_HELP | cLS_LOC_IPADDR_PEER_NO_TAKE | cLS_LOC_IPADDR_PEER_REJ | cLS_LOOPBACK_DETECT | cLS_NO_NCP | cLS_NONE | cLS_PAP_BAD_PASSWD | cLS_PEER_DISCONNECTED | cLS_PEER_DISCONNECTED_NEGO | cLS_PEER_IPADDR_MATCH_LOC | cLS_PEER_IPADDR_PEER_NO_SET | cLS_PPOE_AC_SYSTEM_ERROR | cLS_PPOE_GENERIC_ERROR | cLS_PPP_DISABLE | cLS_PPPOE_NO_HOST_UNIQ | cLS_PPPOE_PADI_TIMEOUT | cLS_PPPOE_PADO_TIMEOUT | cLS_PPPOE_PADR_TIMEOUT | cLS_PROTO_REJ_IPCP | cLS_PROTO_REJ_IPv6CP | cLS_TIMEOUT_CHAP_CHAL | cLS_TIMEOUT_CHAP_RESP | cLS_TIMEOUT_IPCP_CFG_REQ | cLS_TIMEOUT_IPV6CP_CFG_REQ | cLS_TIMEOUT_IPV6CP_RA | cLS_TIMEOUT_LCP_CFG_REQ | cLS_TIMEOUT_LCP_ECHO_REQ | cLS_TIMEOUT_PAP_AUTH_REQ | cLS_TUN_AUTH_FAILED | cLS_TUN_NO_RESOURCES | cLS_TUN_TIMEOUT_ICRQ | cLS_TUN_TIMEOUT_SCCRQ | cLS_TUN_VENDOR_SPECIFIC_ERR]): Logs additional information about the session state
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -1224,139 +1297,155 @@ class Pppoxclient(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def UnlimitedRedialAttempts(self):
-        """If checked, PPPoE unlimited redial attempts is enabled
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unlimitedRedialAttempts')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, PPPoE unlimited redial attempts is enabled
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unlimitedRedialAttempts'))
 
     @property
     def UserDefinedDslType(self):
-        """User Defined DSL-Type Value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('userDefinedDslType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined DSL-Type Value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('userDefinedDslType'))
 
     @property
     def UserDefinedPonType(self):
-        """User Defined PON-Type Value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('userDefinedPonType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined PON-Type Value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('userDefinedPonType'))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of pppoxclient on the server.
+        """Updates pppoxclient resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new pppoxclient node on the server and retrieves it in this instance.
+        """Adds a new pppoxclient resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved pppoxclient data using find and the newly added pppoxclient data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved pppoxclient resources using find and the newly added pppoxclient resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the pppoxclient data in this instance from server.
+        """Deletes all the contained pppoxclient resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DiscoveredIpv4Addresses=None, DiscoveredIpv6Addresses=None, DiscoveredMacs=None, DiscoveredRemoteSessionIds=None, DiscoveredRemoteTunnelIds=None, DiscoveredSessionIds=None, DiscoveredTunnelIPs=None, DiscoveredTunnelIds=None, Errors=None, Multiplier=None, Name=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves pppoxclient data from the server.
+        """Finds and retrieves pppoxclient resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pppoxclient data from the server.
-        By default the find method takes no parameters and will retrieve all pppoxclient data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pppoxclient resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pppoxclient resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            DiscoveredIpv4Addresses (list(str)): The discovered IPv4 addresses.
-            DiscoveredIpv6Addresses (list(str)): The discovered IPv6 addresses.
-            DiscoveredMacs (list(str)): The discovered remote MAC address.
-            DiscoveredRemoteSessionIds (list(number)): Remote session ID.
-            DiscoveredRemoteTunnelIds (list(number)): Remote tunnel ID.
-            DiscoveredSessionIds (list(number)): The negotiated session ID.
-            DiscoveredTunnelIPs (list(str)): The discovered remote tunnel IP.
-            DiscoveredTunnelIds (list(number)): The negotiated tunnel ID.
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionInfo (list(str[cLS_CFG_REJ_AUTH|cLS_CHAP_PEER_DET_FAIL|cLS_CHAP_PEER_RESP_BAD|cLS_CODE_REJ_IPCP|cLS_CODE_REJ_IPV6CP|cLS_CODE_REJ_LCP|cLS_ERR_PPP_NO_BUF|cLS_ERR_PPP_SEND_PKT|cLS_LINK_DISABLE|cLS_LOC_IPADDR_BROADCAST|cLS_LOC_IPADDR_CLASS_E|cLS_LOC_IPADDR_INVAL_ACKS_0|cLS_LOC_IPADDR_INVAL_ACKS_DIFF|cLS_LOC_IPADDR_LOOPBACK|cLS_LOC_IPADDR_PEER_MATCH_LOC|cLS_LOC_IPADDR_PEER_NO_GIVE|cLS_LOC_IPADDR_PEER_NO_HELP|cLS_LOC_IPADDR_PEER_NO_TAKE|cLS_LOC_IPADDR_PEER_REJ|cLS_LOOPBACK_DETECT|cLS_NO_NCP|cLS_NONE|cLS_PAP_BAD_PASSWD|cLS_PEER_DISCONNECTED|cLS_PEER_DISCONNECTED_NEGO|cLS_PEER_IPADDR_MATCH_LOC|cLS_PEER_IPADDR_PEER_NO_SET|cLS_PPOE_AC_SYSTEM_ERROR|cLS_PPOE_GENERIC_ERROR|cLS_PPP_DISABLE|cLS_PPPOE_NO_HOST_UNIQ|cLS_PPPOE_PADI_TIMEOUT|cLS_PPPOE_PADO_TIMEOUT|cLS_PPPOE_PADR_TIMEOUT|cLS_PROTO_REJ_IPCP|cLS_PROTO_REJ_IPv6CP|cLS_TIMEOUT_CHAP_CHAL|cLS_TIMEOUT_CHAP_RESP|cLS_TIMEOUT_IPCP_CFG_REQ|cLS_TIMEOUT_IPV6CP_CFG_REQ|cLS_TIMEOUT_IPV6CP_RA|cLS_TIMEOUT_LCP_CFG_REQ|cLS_TIMEOUT_LCP_ECHO_REQ|cLS_TIMEOUT_PAP_AUTH_REQ|cLS_TUN_AUTH_FAILED|cLS_TUN_NO_RESOURCES|cLS_TUN_TIMEOUT_ICRQ|cLS_TUN_TIMEOUT_SCCRQ|cLS_TUN_VENDOR_SPECIFIC_ERR])): Logs additional information about the session state
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DiscoveredIpv4Addresses (list(str)): The discovered IPv4 addresses.
+        - DiscoveredIpv6Addresses (list(str)): The discovered IPv6 addresses.
+        - DiscoveredMacs (list(str)): The discovered remote MAC address.
+        - DiscoveredRemoteSessionIds (list(number)): Remote session ID.
+        - DiscoveredRemoteTunnelIds (list(number)): Remote tunnel ID.
+        - DiscoveredSessionIds (list(number)): The negotiated session ID.
+        - DiscoveredTunnelIPs (list(str)): The discovered remote tunnel IP.
+        - DiscoveredTunnelIds (list(number)): The negotiated tunnel ID.
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionInfo (list(str[cLS_CFG_REJ_AUTH | cLS_CHAP_PEER_DET_FAIL | cLS_CHAP_PEER_RESP_BAD | cLS_CODE_REJ_IPCP | cLS_CODE_REJ_IPV6CP | cLS_CODE_REJ_LCP | cLS_ERR_PPP_NO_BUF | cLS_ERR_PPP_SEND_PKT | cLS_LINK_DISABLE | cLS_LOC_IPADDR_BROADCAST | cLS_LOC_IPADDR_CLASS_E | cLS_LOC_IPADDR_INVAL_ACKS_0 | cLS_LOC_IPADDR_INVAL_ACKS_DIFF | cLS_LOC_IPADDR_LOOPBACK | cLS_LOC_IPADDR_PEER_MATCH_LOC | cLS_LOC_IPADDR_PEER_NO_GIVE | cLS_LOC_IPADDR_PEER_NO_HELP | cLS_LOC_IPADDR_PEER_NO_TAKE | cLS_LOC_IPADDR_PEER_REJ | cLS_LOOPBACK_DETECT | cLS_NO_NCP | cLS_NONE | cLS_PAP_BAD_PASSWD | cLS_PEER_DISCONNECTED | cLS_PEER_DISCONNECTED_NEGO | cLS_PEER_IPADDR_MATCH_LOC | cLS_PEER_IPADDR_PEER_NO_SET | cLS_PPOE_AC_SYSTEM_ERROR | cLS_PPOE_GENERIC_ERROR | cLS_PPP_DISABLE | cLS_PPPOE_NO_HOST_UNIQ | cLS_PPPOE_PADI_TIMEOUT | cLS_PPPOE_PADO_TIMEOUT | cLS_PPPOE_PADR_TIMEOUT | cLS_PROTO_REJ_IPCP | cLS_PROTO_REJ_IPv6CP | cLS_TIMEOUT_CHAP_CHAL | cLS_TIMEOUT_CHAP_RESP | cLS_TIMEOUT_IPCP_CFG_REQ | cLS_TIMEOUT_IPV6CP_CFG_REQ | cLS_TIMEOUT_IPV6CP_RA | cLS_TIMEOUT_LCP_CFG_REQ | cLS_TIMEOUT_LCP_ECHO_REQ | cLS_TIMEOUT_PAP_AUTH_REQ | cLS_TUN_AUTH_FAILED | cLS_TUN_NO_RESOURCES | cLS_TUN_TIMEOUT_ICRQ | cLS_TUN_TIMEOUT_SCCRQ | cLS_TUN_VENDOR_SPECIFIC_ERR])): Logs additional information about the session state
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching pppoxclient data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pppoxclient resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pppoxclient data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pppoxclient data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pppoxclient resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -1365,90 +1454,93 @@ class Pppoxclient(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            AcMatchMac (str): optional regex of acMatchMac
-            AcMatchName (str): optional regex of acMatchName
-            AcOptions (str): optional regex of acOptions
-            ActualRateDownstream (str): optional regex of actualRateDownstream
-            ActualRateUpstream (str): optional regex of actualRateUpstream
-            AgentAccessAggregationCircuitId (str): optional regex of agentAccessAggregationCircuitId
-            AgentCircuitId (str): optional regex of agentCircuitId
-            AgentRemoteId (str): optional regex of agentRemoteId
-            AuthRetries (str): optional regex of authRetries
-            AuthTimeout (str): optional regex of authTimeout
-            AuthType (str): optional regex of authType
-            ChapName (str): optional regex of chapName
-            ChapSecret (str): optional regex of chapSecret
-            ClientDnsOptions (str): optional regex of clientDnsOptions
-            ClientLocalIp (str): optional regex of clientLocalIp
-            ClientLocalIpv6Iid (str): optional regex of clientLocalIpv6Iid
-            ClientNcpOptions (str): optional regex of clientNcpOptions
-            ClientNetmask (str): optional regex of clientNetmask
-            ClientNetmaskOptions (str): optional regex of clientNetmaskOptions
-            ClientPrimaryDnsAddress (str): optional regex of clientPrimaryDnsAddress
-            ClientSecondaryDnsAddress (str): optional regex of clientSecondaryDnsAddress
-            ClientSignalIWF (str): optional regex of clientSignalIWF
-            ClientSignalLoopChar (str): optional regex of clientSignalLoopChar
-            ClientSignalLoopEncapsulation (str): optional regex of clientSignalLoopEncapsulation
-            ClientSignalLoopId (str): optional regex of clientSignalLoopId
-            ClientV6NcpOptions (str): optional regex of clientV6NcpOptions
-            ClientWinsOptions (str): optional regex of clientWinsOptions
-            ClientWinsPrimaryAddress (str): optional regex of clientWinsPrimaryAddress
-            ClientWinsSecondaryAddress (str): optional regex of clientWinsSecondaryAddress
-            DataLink (str): optional regex of dataLink
-            DomainList (str): optional regex of domainList
-            DslTypeTlv (str): optional regex of dslTypeTlv
-            EchoReqInterval (str): optional regex of echoReqInterval
-            EnableDomainGroups (str): optional regex of enableDomainGroups
-            EnableEchoReq (str): optional regex of enableEchoReq
-            EnableEchoRsp (str): optional regex of enableEchoRsp
-            EnableHostUniq (str): optional regex of enableHostUniq
-            EnableMaxPayload (str): optional regex of enableMaxPayload
-            EnableRedial (str): optional regex of enableRedial
-            Encaps1 (str): optional regex of encaps1
-            Encaps2 (str): optional regex of encaps2
-            EndpointDiscNegotiation (str): optional regex of endpointDiscNegotiation
-            EndpointDiscriminatorClass (str): optional regex of endpointDiscriminatorClass
-            HostUniq (str): optional regex of hostUniq
-            HostUniqLength (str): optional regex of hostUniqLength
-            LcpAccm (str): optional regex of lcpAccm
-            LcpEnableAccm (str): optional regex of lcpEnableAccm
-            LcpMaxFailure (str): optional regex of lcpMaxFailure
-            LcpRetries (str): optional regex of lcpRetries
-            LcpStartDelay (str): optional regex of lcpStartDelay
-            LcpTermRetries (str): optional regex of lcpTermRetries
-            LcpTimeout (str): optional regex of lcpTimeout
-            MaxPayload (str): optional regex of maxPayload
-            MlpppIPAddress (str): optional regex of mlpppIPAddress
-            MlpppMACAddress (str): optional regex of mlpppMACAddress
-            Mrru (str): optional regex of mrru
-            MrruNegotiation (str): optional regex of mrruNegotiation
-            MruNegotiation (str): optional regex of mruNegotiation
-            Mtu (str): optional regex of mtu
-            NcpRetries (str): optional regex of ncpRetries
-            NcpTimeout (str): optional regex of ncpTimeout
-            NcpType (str): optional regex of ncpType
-            PadiRetries (str): optional regex of padiRetries
-            PadiTimeout (str): optional regex of padiTimeout
-            PadrRetries (str): optional regex of padrRetries
-            PadrTimeout (str): optional regex of padrTimeout
-            PapPassword (str): optional regex of papPassword
-            PapUser (str): optional regex of papUser
-            PonTypeTlv (str): optional regex of ponTypeTlv
-            RedialMax (str): optional regex of redialMax
-            RedialTimeout (str): optional regex of redialTimeout
-            ServiceName (str): optional regex of serviceName
-            ServiceOptions (str): optional regex of serviceOptions
-            UnlimitedRedialAttempts (str): optional regex of unlimitedRedialAttempts
-            UserDefinedDslType (str): optional regex of userDefinedDslType
-            UserDefinedPonType (str): optional regex of userDefinedPonType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AcMatchMac (str): optional regex of acMatchMac
+        - AcMatchName (str): optional regex of acMatchName
+        - AcOptions (str): optional regex of acOptions
+        - ActualRateDownstream (str): optional regex of actualRateDownstream
+        - ActualRateUpstream (str): optional regex of actualRateUpstream
+        - AgentAccessAggregationCircuitId (str): optional regex of agentAccessAggregationCircuitId
+        - AgentCircuitId (str): optional regex of agentCircuitId
+        - AgentRemoteId (str): optional regex of agentRemoteId
+        - AuthRetries (str): optional regex of authRetries
+        - AuthTimeout (str): optional regex of authTimeout
+        - AuthType (str): optional regex of authType
+        - ChapName (str): optional regex of chapName
+        - ChapSecret (str): optional regex of chapSecret
+        - ClientDnsOptions (str): optional regex of clientDnsOptions
+        - ClientLocalIp (str): optional regex of clientLocalIp
+        - ClientLocalIpv6Iid (str): optional regex of clientLocalIpv6Iid
+        - ClientNcpOptions (str): optional regex of clientNcpOptions
+        - ClientNetmask (str): optional regex of clientNetmask
+        - ClientNetmaskOptions (str): optional regex of clientNetmaskOptions
+        - ClientPrimaryDnsAddress (str): optional regex of clientPrimaryDnsAddress
+        - ClientSecondaryDnsAddress (str): optional regex of clientSecondaryDnsAddress
+        - ClientSignalIWF (str): optional regex of clientSignalIWF
+        - ClientSignalLoopChar (str): optional regex of clientSignalLoopChar
+        - ClientSignalLoopEncapsulation (str): optional regex of clientSignalLoopEncapsulation
+        - ClientSignalLoopId (str): optional regex of clientSignalLoopId
+        - ClientV6NcpOptions (str): optional regex of clientV6NcpOptions
+        - ClientWinsOptions (str): optional regex of clientWinsOptions
+        - ClientWinsPrimaryAddress (str): optional regex of clientWinsPrimaryAddress
+        - ClientWinsSecondaryAddress (str): optional regex of clientWinsSecondaryAddress
+        - DataLink (str): optional regex of dataLink
+        - DomainList (str): optional regex of domainList
+        - DslTypeTlv (str): optional regex of dslTypeTlv
+        - EchoReqInterval (str): optional regex of echoReqInterval
+        - EnableDomainGroups (str): optional regex of enableDomainGroups
+        - EnableEchoReq (str): optional regex of enableEchoReq
+        - EnableEchoRsp (str): optional regex of enableEchoRsp
+        - EnableHostUniq (str): optional regex of enableHostUniq
+        - EnableMaxPayload (str): optional regex of enableMaxPayload
+        - EnableRedial (str): optional regex of enableRedial
+        - Encaps1 (str): optional regex of encaps1
+        - Encaps2 (str): optional regex of encaps2
+        - EndpointDiscNegotiation (str): optional regex of endpointDiscNegotiation
+        - EndpointDiscriminatorClass (str): optional regex of endpointDiscriminatorClass
+        - HostUniq (str): optional regex of hostUniq
+        - HostUniqLength (str): optional regex of hostUniqLength
+        - LcpAccm (str): optional regex of lcpAccm
+        - LcpEnableAccm (str): optional regex of lcpEnableAccm
+        - LcpMaxFailure (str): optional regex of lcpMaxFailure
+        - LcpRetries (str): optional regex of lcpRetries
+        - LcpStartDelay (str): optional regex of lcpStartDelay
+        - LcpTermRetries (str): optional regex of lcpTermRetries
+        - LcpTimeout (str): optional regex of lcpTimeout
+        - MaxPayload (str): optional regex of maxPayload
+        - MlpppIPAddress (str): optional regex of mlpppIPAddress
+        - MlpppMACAddress (str): optional regex of mlpppMACAddress
+        - Mrru (str): optional regex of mrru
+        - MrruNegotiation (str): optional regex of mrruNegotiation
+        - MruNegotiation (str): optional regex of mruNegotiation
+        - Mtu (str): optional regex of mtu
+        - NcpRetries (str): optional regex of ncpRetries
+        - NcpTimeout (str): optional regex of ncpTimeout
+        - NcpType (str): optional regex of ncpType
+        - PadiRetries (str): optional regex of padiRetries
+        - PadiTimeout (str): optional regex of padiTimeout
+        - PadrRetries (str): optional regex of padrRetries
+        - PadrTimeout (str): optional regex of padrTimeout
+        - PapPassword (str): optional regex of papPassword
+        - PapUser (str): optional regex of papUser
+        - PonTypeTlv (str): optional regex of ponTypeTlv
+        - RedialMax (str): optional regex of redialMax
+        - RedialTimeout (str): optional regex of redialTimeout
+        - ServiceName (str): optional regex of serviceName
+        - ServiceOptions (str): optional regex of serviceOptions
+        - UnlimitedRedialAttempts (str): optional regex of unlimitedRedialAttempts
+        - UserDefinedDslType (str): optional regex of userDefinedDslType
+        - UserDefinedPonType (str): optional regex of userDefinedPonType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -1457,31 +1549,22 @@ class Pppoxclient(Base):
 
         Close IPCP for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        closeIpcp()list
+        closeIpcp(SessionIndices=list)list
+        ----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        closeIpcp(SessionIndices=string)list
+        ------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        closeIpcp(SessionIndices:list)list
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        closeIpcp(SessionIndices:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1493,31 +1576,22 @@ class Pppoxclient(Base):
 
         Close IPv6CP for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        closeIpv6cp()list
+        closeIpv6cp(SessionIndices=list)list
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        closeIpv6cp(SessionIndices=string)list
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        closeIpv6cp(SessionIndices:list)list
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        closeIpv6cp(SessionIndices:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1529,31 +1603,22 @@ class Pppoxclient(Base):
 
         Open IPCP for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        openIpcp()list
+        openIpcp(SessionIndices=list)list
+        ---------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        openIpcp(SessionIndices=string)list
+        -----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        openIpcp(SessionIndices:list)list
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        openIpcp(SessionIndices:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1565,31 +1630,22 @@ class Pppoxclient(Base):
 
         Open IPv6CP for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        openIpv6cp()list
+        openIpv6cp(SessionIndices=list)list
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        openIpv6cp(SessionIndices=string)list
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        openIpv6cp(SessionIndices:list)list
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        openIpv6cp(SessionIndices:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1601,22 +1657,20 @@ class Pppoxclient(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1628,35 +1682,29 @@ class Pppoxclient(Base):
 
         Send Ping IPv4 for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendPing(DestIp:string)list
-            Args:
-                args[0] is DestIp (str): This parameter requires a destIp of type kString
+        sendPing(DestIp=string)list
+        ---------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        sendPing(DestIp=string, SessionIndices=list)list
+        ------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        sendPing(DestIp:string, SessionIndices:list)list
-            Args:
-                args[0] is DestIp (str): This parameter requires a destIp of type kString
-                args[1] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendPing(SessionIndices=string, DestIp=string)list
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIp of type kString
+        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(SessionIndices:string, DestIp:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a destIp of type kString
-                args[1] is DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1668,35 +1716,29 @@ class Pppoxclient(Base):
 
         Send Ping IPv6 for selected PPPoX items.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendPing6(DestIp:string)list
-            Args:
-                args[0] is DestIp (str): This parameter requires a destIp of type kString
+        sendPing6(DestIp=string)list
+        ----------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        sendPing6(DestIp=string, SessionIndices=list)list
+        -------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-        sendPing6(DestIp:string, SessionIndices:list)list
-            Args:
-                args[0] is DestIp (str): This parameter requires a destIp of type kString
-                args[1] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendPing6(SessionIndices=string, DestIp=string)list
+        ---------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIp of type kString
+        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing6(SessionIndices:string, DestIp:string)list
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a destIp of type kString
-                args[1] is DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-            Returns:
-                list(dict(port:str[None|/api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1708,22 +1750,20 @@ class Pppoxclient(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1735,22 +1775,20 @@ class Pppoxclient(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

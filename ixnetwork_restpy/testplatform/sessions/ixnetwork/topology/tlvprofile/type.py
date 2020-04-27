@@ -36,24 +36,24 @@ class Type(Base):
 
     @property
     def Object(self):
-        """An instance of the Object class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object): An instance of the Object class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object import Object
         return Object(self)
 
     @property
     def IsEditable(self):
-        """Indicates whether this is editable or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this is editable or not
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -62,10 +62,10 @@ class Type(Base):
 
     @property
     def IsRequired(self):
-        """Indicates whether this is required or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this is required or not
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -74,10 +74,10 @@ class Type(Base):
 
     @property
     def Name(self):
-        """Name of the node
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the node
         """
         return self._get_attribute('name')
     @Name.setter
@@ -85,14 +85,16 @@ class Type(Base):
         self._set_attribute('name', value)
 
     def update(self, IsEditable=None, IsRequired=None, Name=None):
-        """Updates a child instance of type on the server.
+        """Updates type resource on the server.
 
-        Args:
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRequired (bool): Indicates whether this is required or not
-            Name (str): Name of the node
+        Args
+        ----
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRequired (bool): Indicates whether this is required or not
+        - Name (str): Name of the node
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dhcpv6PdOptionSet(Base):
     """DHCP client options
-    The Dhcpv6PdOptionSet class encapsulates a list of dhcpv6PdOptionSet resources that is be managed by the user.
+    The Dhcpv6PdOptionSet class encapsulates a list of dhcpv6PdOptionSet resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6PdOptionSet.find() method.
-    The list can be managed by the user by using the Dhcpv6PdOptionSet.add() and Dhcpv6PdOptionSet.remove() methods.
+    The list can be managed by using the Dhcpv6PdOptionSet.add() and Dhcpv6PdOptionSet.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Dhcpv6PdOptionSet(Base):
 
     @property
     def Dhcpv6PdOptionTlv(self):
-        """An instance of the Dhcpv6PdOptionTlv class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptiontlv.dhcpv6pdoptiontlv.Dhcpv6PdOptionTlv): An instance of the Dhcpv6PdOptionTlv class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptiontlv.dhcpv6pdoptiontlv.Dhcpv6PdOptionTlv)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptiontlv.dhcpv6pdoptiontlv import Dhcpv6PdOptionTlv
         return Dhcpv6PdOptionTlv(self)
 
     @property
     def Defaultp(self):
-        """True to assign this option set to new ranges.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: True to assign this option set to new ranges.
         """
         return self._get_attribute('defaultp')
     @Defaultp.setter
@@ -64,10 +64,10 @@ class Dhcpv6PdOptionSet(Base):
 
     @property
     def IpType(self):
-        """The IP version used with this option set.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP version used with this option set.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -76,10 +76,10 @@ class Dhcpv6PdOptionSet(Base):
 
     @property
     def Name(self):
-        """Option set name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Option set name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -88,82 +88,95 @@ class Dhcpv6PdOptionSet(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, Defaultp=None, IpType=None, Name=None):
-        """Updates a child instance of dhcpv6PdOptionSet on the server.
+        """Updates dhcpv6PdOptionSet resource on the server.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            IpType (str): The IP version used with this option set.
-            Name (str): Option set name.
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - IpType (str): The IP version used with this option set.
+        - Name (str): Option set name.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Defaultp=None, IpType=None, Name=None):
-        """Adds a new dhcpv6PdOptionSet node on the server and retrieves it in this instance.
+        """Adds a new dhcpv6PdOptionSet resource on the server and adds it to the container.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            IpType (str): The IP version used with this option set.
-            Name (str): Option set name.
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - IpType (str): The IP version used with this option set.
+        - Name (str): Option set name.
 
-        Returns:
-            self: This instance with all currently retrieved dhcpv6PdOptionSet data using find and the newly added dhcpv6PdOptionSet data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dhcpv6PdOptionSet resources using find and the newly added dhcpv6PdOptionSet resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dhcpv6PdOptionSet data in this instance from server.
+        """Deletes all the contained dhcpv6PdOptionSet resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Defaultp=None, IpType=None, Name=None, ObjectId=None):
-        """Finds and retrieves dhcpv6PdOptionSet data from the server.
+        """Finds and retrieves dhcpv6PdOptionSet resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dhcpv6PdOptionSet data from the server.
-        By default the find method takes no parameters and will retrieve all dhcpv6PdOptionSet data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6PdOptionSet resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6PdOptionSet resources from the server.
 
-        Args:
-            Defaultp (bool): True to assign this option set to new ranges.
-            IpType (str): The IP version used with this option set.
-            Name (str): Option set name.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - Defaultp (bool): True to assign this option set to new ranges.
+        - IpType (str): The IP version used with this option set.
+        - Name (str): Option set name.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching dhcpv6PdOptionSet data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dhcpv6PdOptionSet resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6PdOptionSet data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dhcpv6PdOptionSet data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dhcpv6PdOptionSet resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Rfc2889addressCache(Base):
     """The RFC 2889 Address Cache determines the maximum MAC address table for each port or for an entire switch. This object allows you to define the configurations for the test.
-    The Rfc2889addressCache class encapsulates a list of rfc2889addressCache resources that is be managed by the user.
+    The Rfc2889addressCache class encapsulates a list of rfc2889addressCache resources that are managed by the user.
     A list of resources can be retrieved from the server using the Rfc2889addressCache.find() method.
-    The list can be managed by the user by using the Rfc2889addressCache.add() and Rfc2889addressCache.remove() methods.
+    The list can be managed by using the Rfc2889addressCache.add() and Rfc2889addressCache.remove() methods.
     """
 
     __slots__ = ()
@@ -38,66 +38,66 @@ class Rfc2889addressCache(Base):
 
     @property
     def LearnFrames(self):
-        """An instance of the LearnFrames class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_4478cb2fe3a574aad7ddea4c57ab12c2.LearnFrames): An instance of the LearnFrames class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_4478cb2fe3a574aad7ddea4c57ab12c2.LearnFrames)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_4478cb2fe3a574aad7ddea4c57ab12c2 import LearnFrames
         return LearnFrames(self)._select()
 
     @property
     def PassCriteria(self):
-        """An instance of the PassCriteria class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_e5563ed5278cf51c49ce6a910023d45d.PassCriteria): An instance of the PassCriteria class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_e5563ed5278cf51c49ce6a910023d45d.PassCriteria)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_e5563ed5278cf51c49ce6a910023d45d import PassCriteria
         return PassCriteria(self)._select()
 
     @property
     def Results(self):
-        """An instance of the Results class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_03a25ea5767d8794d98e51f9be5348f8.Results): An instance of the Results class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_03a25ea5767d8794d98e51f9be5348f8.Results)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_03a25ea5767d8794d98e51f9be5348f8 import Results
         return Results(self)._select()
 
     @property
     def TestConfig(self):
-        """An instance of the TestConfig class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_8054f9d9d555d6ec1dd34b8d934f7b1a.TestConfig): An instance of the TestConfig class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_8054f9d9d555d6ec1dd34b8d934f7b1a.TestConfig)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_8054f9d9d555d6ec1dd34b8d934f7b1a import TestConfig
         return TestConfig(self)._select()
 
     @property
     def ForceApplyQTConfig(self):
-        """Apply QT config
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply QT config
         """
         return self._get_attribute('forceApplyQTConfig')
     @ForceApplyQTConfig.setter
@@ -106,10 +106,10 @@ class Rfc2889addressCache(Base):
 
     @property
     def InputParameters(self):
-        """Input Parameters
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Input Parameters
         """
         return self._get_attribute('inputParameters')
     @InputParameters.setter
@@ -118,10 +118,10 @@ class Rfc2889addressCache(Base):
 
     @property
     def Mode(self):
-        """Test mode
-
-        Returns:
-            str(existingMode|newMode)
+        """
+        Returns
+        -------
+        - str(existingMode | newMode): Test mode
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -130,10 +130,10 @@ class Rfc2889addressCache(Base):
 
     @property
     def Name(self):
-        """Test name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Test name
         """
         return self._get_attribute('name')
     @Name.setter
@@ -141,77 +141,90 @@ class Rfc2889addressCache(Base):
         self._set_attribute('name', value)
 
     def update(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Updates a child instance of rfc2889addressCache on the server.
+        """Updates rfc2889addressCache resource on the server.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Adds a new rfc2889addressCache node on the server and retrieves it in this instance.
+        """Adds a new rfc2889addressCache resource on the server and adds it to the container.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Returns:
-            self: This instance with all currently retrieved rfc2889addressCache data using find and the newly added rfc2889addressCache data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved rfc2889addressCache resources using find and the newly added rfc2889addressCache resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the rfc2889addressCache data in this instance from server.
+        """Deletes all the contained rfc2889addressCache resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
-        """Finds and retrieves rfc2889addressCache data from the server.
+        """Finds and retrieves rfc2889addressCache resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rfc2889addressCache data from the server.
-        By default the find method takes no parameters and will retrieve all rfc2889addressCache data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rfc2889addressCache resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rfc2889addressCache resources from the server.
 
-        Args:
-            ForceApplyQTConfig (bool): Apply QT config
-            InputParameters (str): Input Parameters
-            Mode (str(existingMode|newMode)): Test mode
-            Name (str): Test name
+        Args
+        ----
+        - ForceApplyQTConfig (bool): Apply QT config
+        - InputParameters (str): Input Parameters
+        - Mode (str(existingMode | newMode)): Test mode
+        - Name (str): Test name
 
-        Returns:
-            self: This instance with matching rfc2889addressCache data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rfc2889addressCache resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rfc2889addressCache data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rfc2889addressCache data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rfc2889addressCache resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -220,9 +233,10 @@ class Rfc2889addressCache(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -230,9 +244,10 @@ class Rfc2889addressCache(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -240,12 +255,10 @@ class Rfc2889addressCache(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -255,9 +268,10 @@ class Rfc2889addressCache(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -267,12 +281,10 @@ class Rfc2889addressCache(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -282,24 +294,17 @@ class Rfc2889addressCache(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -311,18 +316,16 @@ class Rfc2889addressCache(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -334,9 +337,10 @@ class Rfc2889addressCache(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -346,12 +350,10 @@ class Rfc2889addressCache(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

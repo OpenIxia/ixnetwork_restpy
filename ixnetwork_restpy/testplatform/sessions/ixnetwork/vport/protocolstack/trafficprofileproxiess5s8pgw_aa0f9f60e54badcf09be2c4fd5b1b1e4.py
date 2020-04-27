@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrafficProfileProxiesS5S8Pgw(Base):
     """GTP Traffic Profile from IxNetwork
-    The TrafficProfileProxiesS5S8Pgw class encapsulates a list of trafficProfileProxiesS5S8Pgw resources that is be managed by the user.
+    The TrafficProfileProxiesS5S8Pgw class encapsulates a list of trafficProfileProxiesS5S8Pgw resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrafficProfileProxiesS5S8Pgw.find() method.
-    The list can be managed by the user by using the TrafficProfileProxiesS5S8Pgw.add() and TrafficProfileProxiesS5S8Pgw.remove() methods.
+    The list can be managed by using the TrafficProfileProxiesS5S8Pgw.add() and TrafficProfileProxiesS5S8Pgw.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class TrafficProfileProxiesS5S8Pgw(Base):
     @property
     def ActualPluginSettingsRange(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalTrafficProfileS5S8)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8): 
         """
         return self._get_attribute('actualPluginSettingsRange')
     @ActualPluginSettingsRange.setter
@@ -50,10 +50,10 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -63,9 +63,9 @@ class TrafficProfileProxiesS5S8Pgw(Base):
     @property
     def Name(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('name')
     @Name.setter
@@ -74,83 +74,96 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, ActualPluginSettingsRange=None, Enabled=None, Name=None):
-        """Updates a child instance of trafficProfileProxiesS5S8Pgw on the server.
+        """Updates trafficProfileProxiesS5S8Pgw resource on the server.
 
-        Args:
-            ActualPluginSettingsRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalTrafficProfileS5S8)): 
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): 
+        Args
+        ----
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)): 
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ActualPluginSettingsRange=None, Enabled=None, Name=None):
-        """Adds a new trafficProfileProxiesS5S8Pgw node on the server and retrieves it in this instance.
+        """Adds a new trafficProfileProxiesS5S8Pgw resource on the server and adds it to the container.
 
-        Args:
-            ActualPluginSettingsRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalTrafficProfileS5S8)): 
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): 
+        Args
+        ----
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)): 
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): 
 
-        Returns:
-            self: This instance with all currently retrieved trafficProfileProxiesS5S8Pgw data using find and the newly added trafficProfileProxiesS5S8Pgw data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trafficProfileProxiesS5S8Pgw resources using find and the newly added trafficProfileProxiesS5S8Pgw resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trafficProfileProxiesS5S8Pgw data in this instance from server.
+        """Deletes all the contained trafficProfileProxiesS5S8Pgw resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ActualPluginSettingsRange=None, Enabled=None, Name=None, ObjectId=None):
-        """Finds and retrieves trafficProfileProxiesS5S8Pgw data from the server.
+        """Finds and retrieves trafficProfileProxiesS5S8Pgw resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trafficProfileProxiesS5S8Pgw data from the server.
-        By default the find method takes no parameters and will retrieve all trafficProfileProxiesS5S8Pgw data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficProfileProxiesS5S8Pgw resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trafficProfileProxiesS5S8Pgw resources from the server.
 
-        Args:
-            ActualPluginSettingsRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=globalTrafficProfileS5S8)): 
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): 
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)): 
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): 
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching trafficProfileProxiesS5S8Pgw data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trafficProfileProxiesS5S8Pgw resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trafficProfileProxiesS5S8Pgw data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trafficProfileProxiesS5S8Pgw data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trafficProfileProxiesS5S8Pgw resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -159,14 +172,15 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -178,16 +192,15 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -199,16 +212,15 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

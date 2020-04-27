@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisL3Router(Base):
     """ISIS-L3 Port Configuration
-    The IsisL3Router class encapsulates a list of isisL3Router resources that is managed by the system.
+    The IsisL3Router class encapsulates a list of isisL3Router resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisL3Router.find() method.
     """
 
@@ -37,119 +37,186 @@ class IsisL3Router(Base):
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def BIERInfoSubTLVType(self):
-        """BIER Info Sub-TLV Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bIERInfoSubTLVType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BIER Info Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bIERInfoSubTLVType'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
-    def LinkMsdSubTlvType(self):
-        """This specifies the type of Link MSD sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def FaAppSpecfLinkAttrSubTlvType(self):
         """
-        return self._get_attribute('linkMsdSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): App Specific Link Attr Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('faAppSpecfLinkAttrSubTlvType'))
+
+    @property
+    def FaEagSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FAEAG Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('faEagSubTlvType'))
+
+    @property
+    def FadSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FAD Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fadSubTlvType'))
+
+    @property
+    def FadfSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FADF Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fadfSubTlvType'))
+
+    @property
+    def FaiAllAgSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FAIAllAG Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('faiAllAgSubTlvType'))
+
+    @property
+    def FaiAnyAgSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FAIAnyAG Sub-TLV Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('faiAnyAgSubTlvType'))
+
+    @property
+    def LinkMsdSubTlvType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Link MSD sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('linkMsdSubTlvType'))
 
     @property
     def MaxEndDMsdType(self):
-        """This specifies the type of Max End D MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxEndDMsdType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Max End D MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndDMsdType'))
 
     @property
     def MaxEndPopMsdType(self):
-        """This specifies the type of Max End Pop MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxEndPopMsdType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Max End Pop MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndPopMsdType'))
 
     @property
     def MaxSegmentsLeftMsdType(self):
-        """This specifies the type of Max Segments Left MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxSegmentsLeftMsdType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Max Segments Left MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxSegmentsLeftMsdType'))
 
     @property
     def MaxTEncapMsdType(self):
-        """This specifies the type of Max T Encap MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxTEncapMsdType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Max T Encap MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTEncapMsdType'))
 
     @property
     def MaxTInsertMsdType(self):
-        """This specifies the type of Max T Insert MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxTInsertMsdType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Max T Insert MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTInsertMsdType'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -158,231 +225,264 @@ class IsisL3Router(Base):
 
     @property
     def NoOfLSPsOrMgroupPDUsPerInterval(self):
-        """LSPs/MGROUP-PDUs per Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('noOfLSPsOrMgroupPDUsPerInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSPs/MGROUP-PDUs per Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('noOfLSPsOrMgroupPDUsPerInterval'))
 
     @property
     def NodeMsdSubTlvType(self):
-        """This specifies the type of Node MSD sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nodeMsdSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Node MSD sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nodeMsdSubTlvType'))
 
     @property
     def RateControlInterval(self):
-        """Rate Control Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rateControlInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Rate Control Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rateControlInterval'))
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     @property
     def SendP2PHellosToUnicastMAC(self):
-        """Send P2P Hellos To Unicast MAC
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendP2PHellosToUnicastMAC')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send P2P Hellos To Unicast MAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendP2PHellosToUnicastMAC'))
 
     @property
     def SrDraftExtension(self):
-        """This refers to the TLV structure of SRGB as per the Segment Routing draft version
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srDraftExtension')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This refers to the TLV structure of SRGB as per the Segment Routing draft version
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srDraftExtension'))
 
     @property
     def SrlbSubTlvType(self):
-        """This specifies the type of Segment Routing Local Block sub tlv, suggested value is 22.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srlbSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of Segment Routing Local Block sub tlv, suggested value is 22.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srlbSubTlvType'))
 
     @property
     def SrmsPreferenceSubTlvType(self):
-        """This specifies the type of SRMS Preference sub tlv, suggested value is 23.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srmsPreferenceSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRMS Preference sub tlv, suggested value is 23.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srmsPreferenceSubTlvType'))
 
     @property
     def Srv6AdjSIDSubTlvType(self):
-        """DEPRECATED This specifies the type of SRv6 Adjacency-SID sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 Adjacency-SID sub-TLV
         """
-        return self._get_attribute('srv6AdjSIDSubTlvType')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6AdjSIDSubTlvType'))
 
     @property
     def Srv6CapabilitiesSubTlvType(self):
-        """This specifies the type of SRv6 Capabilities sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6CapabilitiesSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 Capabilities sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6CapabilitiesSubTlvType'))
 
     @property
     def Srv6EndSidSubTlvType(self):
-        """This specifies the type of SRv6 End SID sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6EndSidSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 End SID sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6EndSidSubTlvType'))
 
     @property
     def Srv6EndXSidSubTlvType(self):
-        """This specifies the type of SRv6 End.X SID sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6EndXSidSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 End.X SID sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6EndXSidSubTlvType'))
 
     @property
     def Srv6LANAdjSIDSubTlvType(self):
-        """DEPRECATED This specifies the type of SRv6 LAN Adjacency-SID sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 LAN Adjacency-SID sub-TLV
         """
-        return self._get_attribute('srv6LANAdjSIDSubTlvType')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6LANAdjSIDSubTlvType'))
 
     @property
     def Srv6LanEndXSidSubTlvType(self):
-        """This specifies the type of SRv6 LAN End.X SID sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6LanEndXSidSubTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 LAN End.X SID sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6LanEndXSidSubTlvType'))
 
     @property
     def Srv6NodeSIDTlvType(self):
-        """DEPRECATED This specifies the type of SRv6 Node SID TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the type of SRv6 Node SID TLV
         """
-        return self._get_attribute('srv6NodeSIDTlvType')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6NodeSIDTlvType'))
 
     @property
     def Srv6SidLocatorTlvType(self):
-        """SRv6 SID Locator Tlv Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srv6SidLocatorTlvType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Tlv Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srv6SidLocatorTlvType'))
 
     def update(self, Name=None):
-        """Updates a child instance of isisL3Router on the server.
+        """Updates isisL3Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
-        """Finds and retrieves isisL3Router data from the server.
+        """Finds and retrieves isisL3Router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisL3Router data from the server.
-        By default the find method takes no parameters and will retrieve all isisL3Router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3Router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisL3Router resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            RowNames (list(str)): Name of rows
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
 
-        Returns:
-            self: This instance with matching isisL3Router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisL3Router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisL3Router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisL3Router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisL3Router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERInfoSubTLVType=None, LinkMsdSubTlvType=None, MaxEndDMsdType=None, MaxEndPopMsdType=None, MaxSegmentsLeftMsdType=None, MaxTEncapMsdType=None, MaxTInsertMsdType=None, NoOfLSPsOrMgroupPDUsPerInterval=None, NodeMsdSubTlvType=None, RateControlInterval=None, SendP2PHellosToUnicastMAC=None, SrDraftExtension=None, SrlbSubTlvType=None, SrmsPreferenceSubTlvType=None, Srv6AdjSIDSubTlvType=None, Srv6CapabilitiesSubTlvType=None, Srv6EndSidSubTlvType=None, Srv6EndXSidSubTlvType=None, Srv6LANAdjSIDSubTlvType=None, Srv6LanEndXSidSubTlvType=None, Srv6NodeSIDTlvType=None, Srv6SidLocatorTlvType=None):
+    def get_device_ids(self, PortNames=None, BIERInfoSubTLVType=None, FaAppSpecfLinkAttrSubTlvType=None, FaEagSubTlvType=None, FadSubTlvType=None, FadfSubTlvType=None, FaiAllAgSubTlvType=None, FaiAnyAgSubTlvType=None, LinkMsdSubTlvType=None, MaxEndDMsdType=None, MaxEndPopMsdType=None, MaxSegmentsLeftMsdType=None, MaxTEncapMsdType=None, MaxTInsertMsdType=None, NoOfLSPsOrMgroupPDUsPerInterval=None, NodeMsdSubTlvType=None, RateControlInterval=None, SendP2PHellosToUnicastMAC=None, SrDraftExtension=None, SrlbSubTlvType=None, SrmsPreferenceSubTlvType=None, Srv6AdjSIDSubTlvType=None, Srv6CapabilitiesSubTlvType=None, Srv6EndSidSubTlvType=None, Srv6EndXSidSubTlvType=None, Srv6LANAdjSIDSubTlvType=None, Srv6LanEndXSidSubTlvType=None, Srv6NodeSIDTlvType=None, Srv6SidLocatorTlvType=None):
         """Base class infrastructure that gets a list of isisL3Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BIERInfoSubTLVType (str): optional regex of bIERInfoSubTLVType
-            LinkMsdSubTlvType (str): optional regex of linkMsdSubTlvType
-            MaxEndDMsdType (str): optional regex of maxEndDMsdType
-            MaxEndPopMsdType (str): optional regex of maxEndPopMsdType
-            MaxSegmentsLeftMsdType (str): optional regex of maxSegmentsLeftMsdType
-            MaxTEncapMsdType (str): optional regex of maxTEncapMsdType
-            MaxTInsertMsdType (str): optional regex of maxTInsertMsdType
-            NoOfLSPsOrMgroupPDUsPerInterval (str): optional regex of noOfLSPsOrMgroupPDUsPerInterval
-            NodeMsdSubTlvType (str): optional regex of nodeMsdSubTlvType
-            RateControlInterval (str): optional regex of rateControlInterval
-            SendP2PHellosToUnicastMAC (str): optional regex of sendP2PHellosToUnicastMAC
-            SrDraftExtension (str): optional regex of srDraftExtension
-            SrlbSubTlvType (str): optional regex of srlbSubTlvType
-            SrmsPreferenceSubTlvType (str): optional regex of srmsPreferenceSubTlvType
-            Srv6AdjSIDSubTlvType (str): optional regex of srv6AdjSIDSubTlvType
-            Srv6CapabilitiesSubTlvType (str): optional regex of srv6CapabilitiesSubTlvType
-            Srv6EndSidSubTlvType (str): optional regex of srv6EndSidSubTlvType
-            Srv6EndXSidSubTlvType (str): optional regex of srv6EndXSidSubTlvType
-            Srv6LANAdjSIDSubTlvType (str): optional regex of srv6LANAdjSIDSubTlvType
-            Srv6LanEndXSidSubTlvType (str): optional regex of srv6LanEndXSidSubTlvType
-            Srv6NodeSIDTlvType (str): optional regex of srv6NodeSIDTlvType
-            Srv6SidLocatorTlvType (str): optional regex of srv6SidLocatorTlvType
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BIERInfoSubTLVType (str): optional regex of bIERInfoSubTLVType
+        - FaAppSpecfLinkAttrSubTlvType (str): optional regex of faAppSpecfLinkAttrSubTlvType
+        - FaEagSubTlvType (str): optional regex of faEagSubTlvType
+        - FadSubTlvType (str): optional regex of fadSubTlvType
+        - FadfSubTlvType (str): optional regex of fadfSubTlvType
+        - FaiAllAgSubTlvType (str): optional regex of faiAllAgSubTlvType
+        - FaiAnyAgSubTlvType (str): optional regex of faiAnyAgSubTlvType
+        - LinkMsdSubTlvType (str): optional regex of linkMsdSubTlvType
+        - MaxEndDMsdType (str): optional regex of maxEndDMsdType
+        - MaxEndPopMsdType (str): optional regex of maxEndPopMsdType
+        - MaxSegmentsLeftMsdType (str): optional regex of maxSegmentsLeftMsdType
+        - MaxTEncapMsdType (str): optional regex of maxTEncapMsdType
+        - MaxTInsertMsdType (str): optional regex of maxTInsertMsdType
+        - NoOfLSPsOrMgroupPDUsPerInterval (str): optional regex of noOfLSPsOrMgroupPDUsPerInterval
+        - NodeMsdSubTlvType (str): optional regex of nodeMsdSubTlvType
+        - RateControlInterval (str): optional regex of rateControlInterval
+        - SendP2PHellosToUnicastMAC (str): optional regex of sendP2PHellosToUnicastMAC
+        - SrDraftExtension (str): optional regex of srDraftExtension
+        - SrlbSubTlvType (str): optional regex of srlbSubTlvType
+        - SrmsPreferenceSubTlvType (str): optional regex of srmsPreferenceSubTlvType
+        - Srv6AdjSIDSubTlvType (str): optional regex of srv6AdjSIDSubTlvType
+        - Srv6CapabilitiesSubTlvType (str): optional regex of srv6CapabilitiesSubTlvType
+        - Srv6EndSidSubTlvType (str): optional regex of srv6EndSidSubTlvType
+        - Srv6EndXSidSubTlvType (str): optional regex of srv6EndXSidSubTlvType
+        - Srv6LANAdjSIDSubTlvType (str): optional regex of srv6LANAdjSIDSubTlvType
+        - Srv6LanEndXSidSubTlvType (str): optional regex of srv6LanEndXSidSubTlvType
+        - Srv6NodeSIDTlvType (str): optional regex of srv6NodeSIDTlvType
+        - Srv6SidLocatorTlvType (str): optional regex of srv6SidLocatorTlvType
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

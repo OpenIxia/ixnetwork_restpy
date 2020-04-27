@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchGroupLearnedInfo(Base):
     """NOT DEFINED
-    The SwitchGroupLearnedInfo class encapsulates a list of switchGroupLearnedInfo resources that is managed by the system.
+    The SwitchGroupLearnedInfo class encapsulates a list of switchGroupLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchGroupLearnedInfo.find() method.
     """
 
@@ -37,165 +37,172 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def SwitchGroupBucketLearnedInfo(self):
-        """An instance of the SwitchGroupBucketLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_1a690be54303809914304eadeaa153bf.SwitchGroupBucketLearnedInfo): An instance of the SwitchGroupBucketLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_1a690be54303809914304eadeaa153bf.SwitchGroupBucketLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_1a690be54303809914304eadeaa153bf import SwitchGroupBucketLearnedInfo
         return SwitchGroupBucketLearnedInfo(self)
 
     @property
     def ByteCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('byteCount')
 
     @property
     def DatapathId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('datapathId')
 
     @property
     def DatapathIdInHex(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('datapathIdInHex')
 
     @property
     def Duration(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('duration')
 
     @property
     def DurationInNs(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('durationInNs')
 
     @property
     def GroupId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('groupId')
 
     @property
     def GroupType(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('groupType')
 
     @property
     def LocalIp(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('localIp')
 
     @property
     def NegotiatedVersion(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('negotiatedVersion')
 
     @property
     def NumOfBuckets(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numOfBuckets')
 
     @property
     def PacketCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('packetCount')
 
     @property
     def ReferenceCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('referenceCount')
 
     def find(self, ByteCount=None, DatapathId=None, DatapathIdInHex=None, Duration=None, DurationInNs=None, GroupId=None, GroupType=None, LocalIp=None, NegotiatedVersion=None, NumOfBuckets=None, PacketCount=None, ReferenceCount=None):
-        """Finds and retrieves switchGroupLearnedInfo data from the server.
+        """Finds and retrieves switchGroupLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchGroupLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchGroupLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchGroupLearnedInfo resources from the server.
 
-        Args:
-            ByteCount (number): NOT DEFINED
-            DatapathId (str): NOT DEFINED
-            DatapathIdInHex (str): NOT DEFINED
-            Duration (number): NOT DEFINED
-            DurationInNs (number): NOT DEFINED
-            GroupId (number): NOT DEFINED
-            GroupType (str): NOT DEFINED
-            LocalIp (str): NOT DEFINED
-            NegotiatedVersion (str): NOT DEFINED
-            NumOfBuckets (number): NOT DEFINED
-            PacketCount (number): NOT DEFINED
-            ReferenceCount (number): NOT DEFINED
+        Args
+        ----
+        - ByteCount (number): NOT DEFINED
+        - DatapathId (str): NOT DEFINED
+        - DatapathIdInHex (str): NOT DEFINED
+        - Duration (number): NOT DEFINED
+        - DurationInNs (number): NOT DEFINED
+        - GroupId (number): NOT DEFINED
+        - GroupType (str): NOT DEFINED
+        - LocalIp (str): NOT DEFINED
+        - NegotiatedVersion (str): NOT DEFINED
+        - NumOfBuckets (number): NOT DEFINED
+        - PacketCount (number): NOT DEFINED
+        - ReferenceCount (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching switchGroupLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchGroupLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchGroupLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchGroupLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchGroupLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

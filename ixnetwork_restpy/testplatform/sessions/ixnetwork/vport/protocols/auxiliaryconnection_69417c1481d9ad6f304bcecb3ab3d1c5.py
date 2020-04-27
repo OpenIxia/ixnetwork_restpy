@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AuxiliaryConnection(Base):
     """A high level object that allows to define the auxiliary connection configurations for the OpenFlow switch.
-    The AuxiliaryConnection class encapsulates a list of auxiliaryConnection resources that is be managed by the user.
+    The AuxiliaryConnection class encapsulates a list of auxiliaryConnection resources that are managed by the user.
     A list of resources can be retrieved from the server using the AuxiliaryConnection.find() method.
-    The list can be managed by the user by using the AuxiliaryConnection.add() and AuxiliaryConnection.remove() methods.
+    The list can be managed by using the AuxiliaryConnection.add() and AuxiliaryConnection.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AuxiliaryConnection(Base):
 
     @property
     def AuxiliaryId(self):
-        """Indicates the Id of the auxiliary connection.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the Id of the auxiliary connection.
         """
         return self._get_attribute('auxiliaryId')
     @AuxiliaryId.setter
@@ -50,10 +50,10 @@ class AuxiliaryConnection(Base):
 
     @property
     def ConnectionType(self):
-        """Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
-
-        Returns:
-            str(tcp|tls|udp)
+        """
+        Returns
+        -------
+        - str(tcp | tls | udp): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
         """
         return self._get_attribute('connectionType')
     @ConnectionType.setter
@@ -62,10 +62,10 @@ class AuxiliaryConnection(Base):
 
     @property
     def Enable(self):
-        """If true, the object is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the object is enabled.
         """
         return self._get_attribute('enable')
     @Enable.setter
@@ -74,10 +74,10 @@ class AuxiliaryConnection(Base):
 
     @property
     def UdpSourcePortNumber(self):
-        """Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
         """
         return self._get_attribute('udpSourcePortNumber')
     @UdpSourcePortNumber.setter
@@ -85,76 +85,89 @@ class AuxiliaryConnection(Base):
         self._set_attribute('udpSourcePortNumber', value)
 
     def update(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
-        """Updates a child instance of auxiliaryConnection on the server.
+        """Updates auxiliaryConnection resource on the server.
 
-        Args:
-            AuxiliaryId (number): Indicates the Id of the auxiliary connection.
-            ConnectionType (str(tcp|tls|udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
-            Enable (bool): If true, the object is enabled.
-            UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
+        Args
+        ----
+        - AuxiliaryId (number): Indicates the Id of the auxiliary connection.
+        - ConnectionType (str(tcp | tls | udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
+        - Enable (bool): If true, the object is enabled.
+        - UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
-        """Adds a new auxiliaryConnection node on the server and retrieves it in this instance.
+        """Adds a new auxiliaryConnection resource on the server and adds it to the container.
 
-        Args:
-            AuxiliaryId (number): Indicates the Id of the auxiliary connection.
-            ConnectionType (str(tcp|tls|udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
-            Enable (bool): If true, the object is enabled.
-            UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
+        Args
+        ----
+        - AuxiliaryId (number): Indicates the Id of the auxiliary connection.
+        - ConnectionType (str(tcp | tls | udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
+        - Enable (bool): If true, the object is enabled.
+        - UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
 
-        Returns:
-            self: This instance with all currently retrieved auxiliaryConnection data using find and the newly added auxiliaryConnection data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved auxiliaryConnection resources using find and the newly added auxiliaryConnection resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the auxiliaryConnection data in this instance from server.
+        """Deletes all the contained auxiliaryConnection resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
-        """Finds and retrieves auxiliaryConnection data from the server.
+        """Finds and retrieves auxiliaryConnection resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve auxiliaryConnection data from the server.
-        By default the find method takes no parameters and will retrieve all auxiliaryConnection data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve auxiliaryConnection resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all auxiliaryConnection resources from the server.
 
-        Args:
-            AuxiliaryId (number): Indicates the Id of the auxiliary connection.
-            ConnectionType (str(tcp|tls|udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
-            Enable (bool): If true, the object is enabled.
-            UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
+        Args
+        ----
+        - AuxiliaryId (number): Indicates the Id of the auxiliary connection.
+        - ConnectionType (str(tcp | tls | udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
+        - Enable (bool): If true, the object is enabled.
+        - UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
 
-        Returns:
-            self: This instance with matching auxiliaryConnection data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching auxiliaryConnection resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of auxiliaryConnection data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the auxiliaryConnection data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the auxiliaryConnection resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

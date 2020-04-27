@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ErRange(Base):
     """Manages a range of Edge Relays.
-    The ErRange class encapsulates a list of erRange resources that is be managed by the user.
+    The ErRange class encapsulates a list of erRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the ErRange.find() method.
-    The list can be managed by the user by using the ErRange.add() and ErRange.remove() methods.
+    The list can be managed by using the ErRange.add() and ErRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class ErRange(Base):
 
     @property
     def VsiRange(self):
-        """An instance of the VsiRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsirange_ff8742dd04e889c11ff5f79d441a22ab.VsiRange): An instance of the VsiRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsirange_ff8742dd04e889c11ff5f79d441a22ab.VsiRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsirange_ff8742dd04e889c11ff5f79d441a22ab import VsiRange
         return VsiRange(self)
 
     @property
     def Count(self):
-        """The number of ERs in the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of ERs in the range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -64,10 +64,10 @@ class ErRange(Base):
 
     @property
     def EcpAckTimerInit(self):
-        """This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
         """
         return self._get_attribute('ecpAckTimerInit')
     @EcpAckTimerInit.setter
@@ -76,10 +76,10 @@ class ErRange(Base):
 
     @property
     def EcpMaxRetries(self):
-        """The number of times ECP will try to resend the VDP packages before failing.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of times ECP will try to resend the VDP packages before failing.
         """
         return self._get_attribute('ecpMaxRetries')
     @EcpMaxRetries.setter
@@ -88,10 +88,10 @@ class ErRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -100,10 +100,10 @@ class ErRange(Base):
 
     @property
     def ErMode(self):
-        """Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
         """
         return self._get_attribute('erMode')
     @ErMode.setter
@@ -112,10 +112,10 @@ class ErRange(Base):
 
     @property
     def EvbMode(self):
-        """EVB Range's Mode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: EVB Range's Mode.
         """
         return self._get_attribute('evbMode')
     @EvbMode.setter
@@ -124,10 +124,10 @@ class ErRange(Base):
 
     @property
     def EvbRka(self):
-        """This value is used by the VDP state machine to compute the value of reinitKeepAlive.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value is used by the VDP state machine to compute the value of reinitKeepAlive.
         """
         return self._get_attribute('evbRka')
     @EvbRka.setter
@@ -136,10 +136,10 @@ class ErRange(Base):
 
     @property
     def EvbRwd(self):
-        """This value is used by the VDP state machine to compute the value of resourceWaitDelay.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This value is used by the VDP state machine to compute the value of resourceWaitDelay.
         """
         return self._get_attribute('evbRwd')
     @EvbRwd.setter
@@ -148,10 +148,10 @@ class ErRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -160,19 +160,19 @@ class ErRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SchannelId(self):
-        """Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
         """
         return self._get_attribute('schannelId')
     @SchannelId.setter
@@ -181,10 +181,10 @@ class ErRange(Base):
 
     @property
     def SchannelIdMac(self):
-        """Uplink Relay Port MAC Address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Uplink Relay Port MAC Address.
         """
         return self._get_attribute('schannelIdMac')
     @SchannelIdMac.setter
@@ -193,10 +193,10 @@ class ErRange(Base):
 
     @property
     def SchannelVlanId(self):
-        """Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
         """
         return self._get_attribute('schannelVlanId')
     @SchannelVlanId.setter
@@ -204,102 +204,115 @@ class ErRange(Base):
         self._set_attribute('schannelVlanId', value)
 
     def update(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
-        """Updates a child instance of erRange on the server.
+        """Updates erRange resource on the server.
 
-        Args:
-            Count (number): The number of ERs in the range.
-            EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
-            EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
-            EvbMode (str): EVB Range's Mode.
-            EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
-            EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
-            Name (str): Name of range
-            SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
-            SchannelIdMac (str): Uplink Relay Port MAC Address.
-            SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
+        Args
+        ----
+        - Count (number): The number of ERs in the range.
+        - EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
+        - EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
+        - EvbMode (str): EVB Range's Mode.
+        - EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
+        - EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
+        - Name (str): Name of range
+        - SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
+        - SchannelIdMac (str): Uplink Relay Port MAC Address.
+        - SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
-        """Adds a new erRange node on the server and retrieves it in this instance.
+        """Adds a new erRange resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The number of ERs in the range.
-            EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
-            EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
-            EvbMode (str): EVB Range's Mode.
-            EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
-            EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
-            Name (str): Name of range
-            SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
-            SchannelIdMac (str): Uplink Relay Port MAC Address.
-            SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
+        Args
+        ----
+        - Count (number): The number of ERs in the range.
+        - EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
+        - EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
+        - EvbMode (str): EVB Range's Mode.
+        - EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
+        - EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
+        - Name (str): Name of range
+        - SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
+        - SchannelIdMac (str): Uplink Relay Port MAC Address.
+        - SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
 
-        Returns:
-            self: This instance with all currently retrieved erRange data using find and the newly added erRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved erRange resources using find and the newly added erRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the erRange data in this instance from server.
+        """Deletes all the contained erRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, ObjectId=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
-        """Finds and retrieves erRange data from the server.
+        """Finds and retrieves erRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve erRange data from the server.
-        By default the find method takes no parameters and will retrieve all erRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve erRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all erRange resources from the server.
 
-        Args:
-            Count (number): The number of ERs in the range.
-            EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
-            EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
-            EvbMode (str): EVB Range's Mode.
-            EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
-            EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
-            SchannelIdMac (str): Uplink Relay Port MAC Address.
-            SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
+        Args
+        ----
+        - Count (number): The number of ERs in the range.
+        - EcpAckTimerInit (number): This value is used by the ECP state machine to compute the timeout value for the ACK messages (milliseconds).
+        - EcpMaxRetries (number): The number of times ECP will try to resend the VDP packages before failing.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - ErMode (str): Dropdown box containing the ER Modes: -VEB: An edge relay that requires reflective relay service to be disabled on the station-facing Bridge Port (SBP) of the attached Bridge; -VEPA: An edge relay that always forwards frames through its uplink relay port (URP) and that can make use of reflective relay service provided by the station-facing Bridge Port (SBP) of the attached Bridge.
+        - EvbMode (str): EVB Range's Mode.
+        - EvbRka (number): This value is used by the VDP state machine to compute the value of reinitKeepAlive.
+        - EvbRwd (number): This value is used by the VDP state machine to compute the value of resourceWaitDelay.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - SchannelId (number): Service Channel ID used by ER in CDCP TLV. This field isn't editable for the default ER.
+        - SchannelIdMac (str): Uplink Relay Port MAC Address.
+        - SchannelVlanId (number): Service VLAN ID used by ER in CDCP TLV(if 0, ER will request S-VLAN from EVB Bridge). This field isn't editable for the default ER.
 
-        Returns:
-            self: This instance with matching erRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching erRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of erRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the erRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the erRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -308,14 +321,15 @@ class ErRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -327,16 +341,15 @@ class ErRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -348,16 +361,15 @@ class ErRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

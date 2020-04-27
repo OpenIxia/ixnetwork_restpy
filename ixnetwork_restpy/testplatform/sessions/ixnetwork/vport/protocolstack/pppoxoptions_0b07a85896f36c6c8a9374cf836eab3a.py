@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class PppoxOptions(Base):
     """Portgroup settings container for PppoxPlugin.
-    The PppoxOptions class encapsulates a list of pppoxOptions resources that is be managed by the user.
+    The PppoxOptions class encapsulates a list of pppoxOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the PppoxOptions.find() method.
-    The list can be managed by the user by using the PppoxOptions.add() and PppoxOptions.remove() methods.
+    The list can be managed by using the PppoxOptions.add() and PppoxOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class PppoxOptions(Base):
 
     @property
     def Associates(self):
-        """The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
         return self._get_attribute('associates')
     @Associates.setter
@@ -50,10 +50,10 @@ class PppoxOptions(Base):
 
     @property
     def EnablePerSessionStatGeneration(self):
-        """OBSOLETE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: OBSOLETE
         """
         return self._get_attribute('enablePerSessionStatGeneration')
     @EnablePerSessionStatGeneration.setter
@@ -62,10 +62,10 @@ class PppoxOptions(Base):
 
     @property
     def FilterDataPlaneBeforeL7(self):
-        """DEPRECATED Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
         """
         return self._get_attribute('filterDataPlaneBeforeL7')
     @FilterDataPlaneBeforeL7.setter
@@ -74,10 +74,10 @@ class PppoxOptions(Base):
 
     @property
     def Ipv6GlobalAddressMode(self):
-        """Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
         """
         return self._get_attribute('ipv6GlobalAddressMode')
     @Ipv6GlobalAddressMode.setter
@@ -86,10 +86,10 @@ class PppoxOptions(Base):
 
     @property
     def MaxOutstandingReleases(self):
-        """This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
         """
         return self._get_attribute('maxOutstandingReleases')
     @MaxOutstandingReleases.setter
@@ -98,10 +98,10 @@ class PppoxOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """Max. no. of sessions outstanding while new sessions are being setup
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max. no. of sessions outstanding while new sessions are being setup
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -110,19 +110,19 @@ class PppoxOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRateControls(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalRateControls')
     @OverrideGlobalRateControls.setter
@@ -131,10 +131,10 @@ class PppoxOptions(Base):
 
     @property
     def PerSessionStatFilePrefix(self):
-        """OBSOLETE
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: OBSOLETE
         """
         return self._get_attribute('perSessionStatFilePrefix')
     @PerSessionStatFilePrefix.setter
@@ -143,10 +143,10 @@ class PppoxOptions(Base):
 
     @property
     def RaTimeout(self):
-        """Router Advertisment RX timeout period (in seconds).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Router Advertisment RX timeout period (in seconds).
         """
         return self._get_attribute('raTimeout')
     @RaTimeout.setter
@@ -155,10 +155,10 @@ class PppoxOptions(Base):
 
     @property
     def ReConnectOnLinkUp(self):
-        """Renegotiate the PPP session when the link goes down and up.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Renegotiate the PPP session when the link goes down and up.
         """
         return self._get_attribute('reConnectOnLinkUp')
     @ReConnectOnLinkUp.setter
@@ -167,10 +167,10 @@ class PppoxOptions(Base):
 
     @property
     def Role(self):
-        """Functional Role for protocol stack, client or server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Functional Role for protocol stack, client or server
         """
         return self._get_attribute('role')
     @Role.setter
@@ -179,10 +179,10 @@ class PppoxOptions(Base):
 
     @property
     def SetupRateInitial(self):
-        """Rate (per sec), for session setup
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Rate (per sec), for session setup
         """
         return self._get_attribute('setupRateInitial')
     @SetupRateInitial.setter
@@ -191,10 +191,10 @@ class PppoxOptions(Base):
 
     @property
     def TeardownRateInitial(self):
-        """The rate per sec for destroying sessions
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The rate per sec for destroying sessions
         """
         return self._get_attribute('teardownRateInitial')
     @TeardownRateInitial.setter
@@ -203,10 +203,10 @@ class PppoxOptions(Base):
 
     @property
     def UseWaitForCompletionTimeout(self):
-        """Enables configuration of session setup timeout period by the user.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables configuration of session setup timeout period by the user.
         """
         return self._get_attribute('useWaitForCompletionTimeout')
     @UseWaitForCompletionTimeout.setter
@@ -215,10 +215,10 @@ class PppoxOptions(Base):
 
     @property
     def WaitForCompletionTimeout(self):
-        """Session setup timeout period.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Session setup timeout period.
         """
         return self._get_attribute('waitForCompletionTimeout')
     @WaitForCompletionTimeout.setter
@@ -227,10 +227,10 @@ class PppoxOptions(Base):
 
     @property
     def WaitingTimeUntilReconnect(self):
-        """Time to wait until reconnect
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait until reconnect
         """
         return self._get_attribute('waitingTimeUntilReconnect')
     @WaitingTimeUntilReconnect.setter
@@ -238,114 +238,127 @@ class PppoxOptions(Base):
         self._set_attribute('waitingTimeUntilReconnect', value)
 
     def update(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
-        """Updates a child instance of pppoxOptions on the server.
+        """Updates pppoxOptions resource on the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            EnablePerSessionStatGeneration (bool): OBSOLETE
-            FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
-            Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
-            MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PerSessionStatFilePrefix (str): OBSOLETE
-            RaTimeout (number): Router Advertisment RX timeout period (in seconds).
-            ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
-            Role (str): Functional Role for protocol stack, client or server
-            SetupRateInitial (number): Rate (per sec), for session setup
-            TeardownRateInitial (number): The rate per sec for destroying sessions
-            UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
-            WaitForCompletionTimeout (number): Session setup timeout period.
-            WaitingTimeUntilReconnect (number): Time to wait until reconnect
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - EnablePerSessionStatGeneration (bool): OBSOLETE
+        - FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
+        - Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
+        - MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PerSessionStatFilePrefix (str): OBSOLETE
+        - RaTimeout (number): Router Advertisment RX timeout period (in seconds).
+        - ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
+        - Role (str): Functional Role for protocol stack, client or server
+        - SetupRateInitial (number): Rate (per sec), for session setup
+        - TeardownRateInitial (number): The rate per sec for destroying sessions
+        - UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
+        - WaitForCompletionTimeout (number): Session setup timeout period.
+        - WaitingTimeUntilReconnect (number): Time to wait until reconnect
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
-        """Adds a new pppoxOptions node on the server and retrieves it in this instance.
+        """Adds a new pppoxOptions resource on the server and adds it to the container.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            EnablePerSessionStatGeneration (bool): OBSOLETE
-            FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
-            Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
-            MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PerSessionStatFilePrefix (str): OBSOLETE
-            RaTimeout (number): Router Advertisment RX timeout period (in seconds).
-            ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
-            Role (str): Functional Role for protocol stack, client or server
-            SetupRateInitial (number): Rate (per sec), for session setup
-            TeardownRateInitial (number): The rate per sec for destroying sessions
-            UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
-            WaitForCompletionTimeout (number): Session setup timeout period.
-            WaitingTimeUntilReconnect (number): Time to wait until reconnect
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - EnablePerSessionStatGeneration (bool): OBSOLETE
+        - FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
+        - Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
+        - MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PerSessionStatFilePrefix (str): OBSOLETE
+        - RaTimeout (number): Router Advertisment RX timeout period (in seconds).
+        - ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
+        - Role (str): Functional Role for protocol stack, client or server
+        - SetupRateInitial (number): Rate (per sec), for session setup
+        - TeardownRateInitial (number): The rate per sec for destroying sessions
+        - UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
+        - WaitForCompletionTimeout (number): Session setup timeout period.
+        - WaitingTimeUntilReconnect (number): Time to wait until reconnect
 
-        Returns:
-            self: This instance with all currently retrieved pppoxOptions data using find and the newly added pppoxOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved pppoxOptions resources using find and the newly added pppoxOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the pppoxOptions data in this instance from server.
+        """Deletes all the contained pppoxOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
-        """Finds and retrieves pppoxOptions data from the server.
+        """Finds and retrieves pppoxOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pppoxOptions data from the server.
-        By default the find method takes no parameters and will retrieve all pppoxOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pppoxOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pppoxOptions resources from the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            EnablePerSessionStatGeneration (bool): OBSOLETE
-            FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
-            Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
-            MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
-            MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-            PerSessionStatFilePrefix (str): OBSOLETE
-            RaTimeout (number): Router Advertisment RX timeout period (in seconds).
-            ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
-            Role (str): Functional Role for protocol stack, client or server
-            SetupRateInitial (number): Rate (per sec), for session setup
-            TeardownRateInitial (number): The rate per sec for destroying sessions
-            UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
-            WaitForCompletionTimeout (number): Session setup timeout period.
-            WaitingTimeUntilReconnect (number): Time to wait until reconnect
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - EnablePerSessionStatGeneration (bool): OBSOLETE
+        - FilterDataPlaneBeforeL7 (bool): Don't enable filters letting data plane traffic through to the port before a status-dump with enable-layer7=yes. When checked, should improve performance for stateless tests.
+        - Ipv6GlobalAddressMode (str): Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
+        - MaxOutstandingReleases (number): This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
+        - MaxOutstandingRequests (number): Max. no. of sessions outstanding while new sessions are being setup
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRateControls (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        - PerSessionStatFilePrefix (str): OBSOLETE
+        - RaTimeout (number): Router Advertisment RX timeout period (in seconds).
+        - ReConnectOnLinkUp (bool): Renegotiate the PPP session when the link goes down and up.
+        - Role (str): Functional Role for protocol stack, client or server
+        - SetupRateInitial (number): Rate (per sec), for session setup
+        - TeardownRateInitial (number): The rate per sec for destroying sessions
+        - UseWaitForCompletionTimeout (bool): Enables configuration of session setup timeout period by the user.
+        - WaitForCompletionTimeout (number): Session setup timeout period.
+        - WaitingTimeUntilReconnect (number): Time to wait until reconnect
 
-        Returns:
-            self: This instance with matching pppoxOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pppoxOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pppoxOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pppoxOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pppoxOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -354,14 +367,15 @@ class PppoxOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -373,16 +387,15 @@ class PppoxOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -394,16 +407,15 @@ class PppoxOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

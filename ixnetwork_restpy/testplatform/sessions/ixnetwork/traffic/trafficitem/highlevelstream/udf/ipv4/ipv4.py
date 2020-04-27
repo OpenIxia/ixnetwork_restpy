@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Ipv4(Base):
     """This object provides different options for UDF in IPv4 Type.
-    The Ipv4 class encapsulates a list of ipv4 resources that is managed by the system.
+    The Ipv4 class encapsulates a list of ipv4 resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ipv4.find() method.
     """
 
@@ -37,19 +37,19 @@ class Ipv4(Base):
 
     @property
     def AvailableWidths(self):
-        """Species all the possible widths available for a UDF in particular Type.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Species all the possible widths available for a UDF in particular Type.
         """
         return self._get_attribute('availableWidths')
 
     @property
     def BitmaskCount(self):
-        """Specifies the number of bits to be masked to any integer value between 2 to 32.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of bits to be masked to any integer value between 2 to 32.
         """
         return self._get_attribute('bitmaskCount')
     @BitmaskCount.setter
@@ -58,10 +58,10 @@ class Ipv4(Base):
 
     @property
     def InnerLoopIncrementBy(self):
-        """Specifies the Step Value by which the Inner Loop will be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Step Value by which the Inner Loop will be incremented.
         """
         return self._get_attribute('innerLoopIncrementBy')
     @InnerLoopIncrementBy.setter
@@ -70,10 +70,10 @@ class Ipv4(Base):
 
     @property
     def InnerLoopLoopCount(self):
-        """Specifies the no. of times the inner loop will occur.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the no. of times the inner loop will occur.
         """
         return self._get_attribute('innerLoopLoopCount')
     @InnerLoopLoopCount.setter
@@ -82,10 +82,10 @@ class Ipv4(Base):
 
     @property
     def OuterLoopLoopCount(self):
-        """Specifies the no. of times the outer loop will occur.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the no. of times the outer loop will occur.
         """
         return self._get_attribute('outerLoopLoopCount')
     @OuterLoopLoopCount.setter
@@ -94,10 +94,10 @@ class Ipv4(Base):
 
     @property
     def SkipValues(self):
-        """If true, Skip Values option is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Skip Values option is enabled.
         """
         return self._get_attribute('skipValues')
     @SkipValues.setter
@@ -106,10 +106,10 @@ class Ipv4(Base):
 
     @property
     def StartValue(self):
-        """Specifies the start value of the UDF.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the start value of the UDF.
         """
         return self._get_attribute('startValue')
     @StartValue.setter
@@ -118,10 +118,10 @@ class Ipv4(Base):
 
     @property
     def Width(self):
-        """Specifies the width of the UDF.
-
-        Returns:
-            str(32)
+        """
+        Returns
+        -------
+        - str(32): Specifies the width of the UDF.
         """
         return self._get_attribute('width')
     @Width.setter
@@ -129,57 +129,66 @@ class Ipv4(Base):
         self._set_attribute('width', value)
 
     def update(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
-        """Updates a child instance of ipv4 on the server.
+        """Updates ipv4 resource on the server.
 
-        Args:
-            BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
-            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-            OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
-            SkipValues (bool): If true, Skip Values option is enabled.
-            StartValue (number): Specifies the start value of the UDF.
-            Width (str(32)): Specifies the width of the UDF.
+        Args
+        ----
+        - BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
+        - InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+        - InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+        - OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
+        - SkipValues (bool): If true, Skip Values option is enabled.
+        - StartValue (number): Specifies the start value of the UDF.
+        - Width (str(32)): Specifies the width of the UDF.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableWidths=None, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
-        """Finds and retrieves ipv4 data from the server.
+        """Finds and retrieves ipv4 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv4 data from the server.
-        By default the find method takes no parameters and will retrieve all ipv4 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv4 resources from the server.
 
-        Args:
-            AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
-            BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
-            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-            OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
-            SkipValues (bool): If true, Skip Values option is enabled.
-            StartValue (number): Specifies the start value of the UDF.
-            Width (str(32)): Specifies the width of the UDF.
+        Args
+        ----
+        - AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
+        - BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
+        - InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+        - InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+        - OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
+        - SkipValues (bool): If true, Skip Values option is enabled.
+        - StartValue (number): Specifies the start value of the UDF.
+        - Width (str(32)): Specifies the width of the UDF.
 
-        Returns:
-            self: This instance with matching ipv4 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv4 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv4 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv4 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv4 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

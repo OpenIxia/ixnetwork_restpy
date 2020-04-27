@@ -36,108 +36,108 @@ class Traffic(Base):
 
     @property
     def DynamicFrameSize(self):
-        """An instance of the DynamicFrameSize class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize.DynamicFrameSize): An instance of the DynamicFrameSize class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize.DynamicFrameSize)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize import DynamicFrameSize
         return DynamicFrameSize(self)
 
     @property
     def DynamicRate(self):
-        """An instance of the DynamicRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate.DynamicRate): An instance of the DynamicRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate.DynamicRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate import DynamicRate
         return DynamicRate(self)
 
     @property
     def EgressOnlyTracking(self):
-        """An instance of the EgressOnlyTracking class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.egressonlytracking.egressonlytracking.EgressOnlyTracking): An instance of the EgressOnlyTracking class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.egressonlytracking.egressonlytracking.EgressOnlyTracking)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.egressonlytracking.egressonlytracking import EgressOnlyTracking
         return EgressOnlyTracking(self)
 
     @property
     def ProtocolTemplate(self):
-        """An instance of the ProtocolTemplate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate.ProtocolTemplate): An instance of the ProtocolTemplate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate.ProtocolTemplate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate import ProtocolTemplate
         return ProtocolTemplate(self)
 
     @property
     def Statistics(self):
-        """An instance of the Statistics class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics.Statistics): An instance of the Statistics class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics.Statistics)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics import Statistics
         return Statistics(self)._select()
 
     @property
     def TrafficGroup(self):
-        """An instance of the TrafficGroup class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup.TrafficGroup): An instance of the TrafficGroup class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup.TrafficGroup)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup import TrafficGroup
         return TrafficGroup(self)
 
     @property
     def TrafficItem(self):
-        """An instance of the TrafficItem class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem.TrafficItem): An instance of the TrafficItem class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem.TrafficItem)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem import TrafficItem
         return TrafficItem(self)
 
     @property
     def AutoCorrectL4HeaderChecksums(self):
-        """This is used for Multis and Xdensity as checksum is not calculated correctly when change on the fly operations are performed. When this option is enabled IxOS uses 2 bytes before CRC, that way ensuring the checksum is correct when change on the fly operations are performed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This is used for Multis and Xdensity as checksum is not calculated correctly when change on the fly operations are performed. When this option is enabled IxOS uses 2 bytes before CRC, that way ensuring the checksum is correct when change on the fly operations are performed.
         """
         return self._get_attribute('autoCorrectL4HeaderChecksums')
     @AutoCorrectL4HeaderChecksums.setter
@@ -147,9 +147,9 @@ class Traffic(Base):
     @property
     def CycleOffsetForScheduledStart(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('cycleOffsetForScheduledStart')
     @CycleOffsetForScheduledStart.setter
@@ -159,9 +159,9 @@ class Traffic(Base):
     @property
     def CycleOffsetUnitForScheduledStart(self):
         """
-
-        Returns:
-            str(microseconds|milliseconds|nanoseconds|seconds)
+        Returns
+        -------
+        - str(microseconds | milliseconds | nanoseconds | seconds): 
         """
         return self._get_attribute('cycleOffsetUnitForScheduledStart')
     @CycleOffsetUnitForScheduledStart.setter
@@ -171,9 +171,9 @@ class Traffic(Base):
     @property
     def CycleTimeForScheduledStart(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('cycleTimeForScheduledStart')
     @CycleTimeForScheduledStart.setter
@@ -183,9 +183,9 @@ class Traffic(Base):
     @property
     def CycleTimeUnitForScheduledStart(self):
         """
-
-        Returns:
-            str(microseconds|milliseconds|nanoseconds|seconds)
+        Returns
+        -------
+        - str(microseconds | milliseconds | nanoseconds | seconds): 
         """
         return self._get_attribute('cycleTimeUnitForScheduledStart')
     @CycleTimeUnitForScheduledStart.setter
@@ -194,10 +194,10 @@ class Traffic(Base):
 
     @property
     def DataPlaneJitterWindow(self):
-        """DEPRECATED Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
-
-        Returns:
-            str(0|10485760|1310720|167772160|20971520|2621440|335544320|41943040|5242880|671088640|83886080)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(0 | 10485760 | 1310720 | 167772160 | 20971520 | 2621440 | 335544320 | 41943040 | 5242880 | 671088640 | 83886080): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
         """
         return self._get_attribute('dataPlaneJitterWindow')
     @DataPlaneJitterWindow.setter
@@ -206,10 +206,10 @@ class Traffic(Base):
 
     @property
     def DelayTimeForScheduledStart(self):
-        """Delay Time For Scheduled Start Transmit in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Delay Time For Scheduled Start Transmit in seconds
         """
         return self._get_attribute('delayTimeForScheduledStart')
     @DelayTimeForScheduledStart.setter
@@ -218,10 +218,10 @@ class Traffic(Base):
 
     @property
     def DestMacRetryCount(self):
-        """The number of time to attempt to obtain the destination MAC address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of time to attempt to obtain the destination MAC address.
         """
         return self._get_attribute('destMacRetryCount')
     @DestMacRetryCount.setter
@@ -230,10 +230,10 @@ class Traffic(Base):
 
     @property
     def DestMacRetryDelay(self):
-        """The number of seconds to wait between attempts to obtain the destination MAC address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait between attempts to obtain the destination MAC address.
         """
         return self._get_attribute('destMacRetryDelay')
     @DestMacRetryDelay.setter
@@ -243,9 +243,9 @@ class Traffic(Base):
     @property
     def DetectMisdirectedOnAllPorts(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('detectMisdirectedOnAllPorts')
     @DetectMisdirectedOnAllPorts.setter
@@ -255,9 +255,9 @@ class Traffic(Base):
     @property
     def DisablePortLevelMisdirected(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('disablePortLevelMisdirected')
     @DisablePortLevelMisdirected.setter
@@ -266,10 +266,10 @@ class Traffic(Base):
 
     @property
     def DisplayMplsCurrentLabelValue(self):
-        """Displays current label value for LSP Endpoints.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Displays current label value for LSP Endpoints.
         """
         return self._get_attribute('displayMplsCurrentLabelValue')
     @DisplayMplsCurrentLabelValue.setter
@@ -277,32 +277,20 @@ class Traffic(Base):
         self._set_attribute('displayMplsCurrentLabelValue', value)
 
     @property
-    def EgressOnlyTrafficItemName(self):
-        """Traffic Item name for egress only flows in statistics.
-
-        Returns:
-            str
-        """
-        return self._get_attribute('egressOnlyTrafficItemName')
-    @EgressOnlyTrafficItemName.setter
-    def EgressOnlyTrafficItemName(self, value):
-        self._set_attribute('egressOnlyTrafficItemName', value)
-
-    @property
     def ElapsedTransmitTime(self):
-        """Specifies the amount of time traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the amount of time traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
         """
         return self._get_attribute('elapsedTransmitTime')
 
     @property
     def EnableDataIntegrityCheck(self):
-        """If true, enable data integrity check.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enable data integrity check.
         """
         return self._get_attribute('enableDataIntegrityCheck')
     @EnableDataIntegrityCheck.setter
@@ -311,10 +299,10 @@ class Traffic(Base):
 
     @property
     def EnableDestMacRetry(self):
-        """If true, enables the destination MAC address retry function.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the destination MAC address retry function.
         """
         return self._get_attribute('enableDestMacRetry')
     @EnableDestMacRetry.setter
@@ -323,10 +311,10 @@ class Traffic(Base):
 
     @property
     def EnableEgressOnlyTracking(self):
-        """This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
         """
         return self._get_attribute('enableEgressOnlyTracking')
     @EnableEgressOnlyTracking.setter
@@ -334,23 +322,11 @@ class Traffic(Base):
         self._set_attribute('enableEgressOnlyTracking', value)
 
     @property
-    def EnableEgressOnlyTxStats(self):
-        """This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
-
-        Returns:
-            bool
-        """
-        return self._get_attribute('enableEgressOnlyTxStats')
-    @EnableEgressOnlyTxStats.setter
-    def EnableEgressOnlyTxStats(self, value):
-        self._set_attribute('enableEgressOnlyTxStats', value)
-
-    @property
     def EnableInstantaneousStatsSupport(self):
-        """If true, enables instantaneous stats support
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables instantaneous stats support
         """
         return self._get_attribute('enableInstantaneousStatsSupport')
     @EnableInstantaneousStatsSupport.setter
@@ -360,9 +336,9 @@ class Traffic(Base):
     @property
     def EnableLagAutoRate(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLagAutoRate')
     @EnableLagAutoRate.setter
@@ -372,9 +348,9 @@ class Traffic(Base):
     @property
     def EnableLagFlowBalancing(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLagFlowBalancing')
     @EnableLagFlowBalancing.setter
@@ -384,9 +360,9 @@ class Traffic(Base):
     @property
     def EnableLagFlowFailoverMode(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLagFlowFailoverMode')
     @EnableLagFlowFailoverMode.setter
@@ -396,9 +372,9 @@ class Traffic(Base):
     @property
     def EnableLagRebalanceOnPortUp(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableLagRebalanceOnPortUp')
     @EnableLagRebalanceOnPortUp.setter
@@ -407,10 +383,10 @@ class Traffic(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -419,10 +395,10 @@ class Traffic(Base):
 
     @property
     def EnableMulticastScalingFactor(self):
-        """If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
         """
         return self._get_attribute('enableMulticastScalingFactor')
     @EnableMulticastScalingFactor.setter
@@ -431,10 +407,10 @@ class Traffic(Base):
 
     @property
     def EnableSequenceChecking(self):
-        """DEPRECATED If true, this field enables sequence checking. The default is false.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, this field enables sequence checking. The default is false.
         """
         return self._get_attribute('enableSequenceChecking')
     @EnableSequenceChecking.setter
@@ -443,10 +419,10 @@ class Traffic(Base):
 
     @property
     def EnableStaggeredStartDelay(self):
-        """If checked, enables the staggered start delay function.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If checked, enables the staggered start delay function.
         """
         return self._get_attribute('enableStaggeredStartDelay')
     @EnableStaggeredStartDelay.setter
@@ -455,10 +431,10 @@ class Traffic(Base):
 
     @property
     def EnableStaggeredTransmit(self):
-        """If true, the start of transmit is staggered across ports. A 25-30 ms delay is introduced between the time one port begins transmitting and the time next port begins transmitting.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the start of transmit is staggered across ports. A 25-30 ms delay is introduced between the time one port begins transmitting and the time next port begins transmitting.
         """
         return self._get_attribute('enableStaggeredTransmit')
     @EnableStaggeredTransmit.setter
@@ -467,10 +443,10 @@ class Traffic(Base):
 
     @property
     def EnableStreamOrdering(self):
-        """If true, IxNetwork will allow stream ordering per RFC 2889.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, IxNetwork will allow stream ordering per RFC 2889.
         """
         return self._get_attribute('enableStreamOrdering')
     @EnableStreamOrdering.setter
@@ -479,10 +455,10 @@ class Traffic(Base):
 
     @property
     def FrameOrderingMode(self):
-        """If true, enables frame ordering.
-
-        Returns:
-            str(flowGroupSetup|none|peakLoading|RFC2889)
+        """
+        Returns
+        -------
+        - str(flowGroupSetup | none | peakLoading | RFC2889): If true, enables frame ordering.
         """
         return self._get_attribute('frameOrderingMode')
     @FrameOrderingMode.setter
@@ -491,10 +467,10 @@ class Traffic(Base):
 
     @property
     def GlobalStreamControl(self):
-        """The Global Stream Control parameters.
-
-        Returns:
-            str(continuous|iterations)
+        """
+        Returns
+        -------
+        - str(continuous | iterations): The Global Stream Control parameters.
         """
         return self._get_attribute('globalStreamControl')
     @GlobalStreamControl.setter
@@ -503,10 +479,10 @@ class Traffic(Base):
 
     @property
     def GlobalStreamControlIterations(self):
-        """If true, the user can specify how many times each packet stream will be transmitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, the user can specify how many times each packet stream will be transmitted.
         """
         return self._get_attribute('globalStreamControlIterations')
     @GlobalStreamControlIterations.setter
@@ -515,37 +491,37 @@ class Traffic(Base):
 
     @property
     def IsApplicationTrafficRunning(self):
-        """If true, application traffic is running.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, application traffic is running.
         """
         return self._get_attribute('isApplicationTrafficRunning')
 
     @property
     def IsApplyOnTheFlyRequired(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isApplyOnTheFlyRequired')
 
     @property
     def IsTrafficRunning(self):
-        """If true, non-application traffic is running.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, non-application traffic is running.
         """
         return self._get_attribute('isTrafficRunning')
 
     @property
     def LargeErrorThreshhold(self):
-        """The user-configurable threshold value used to determine error levels for out-of-sequence, received packets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user-configurable threshold value used to determine error levels for out-of-sequence, received packets.
         """
         return self._get_attribute('largeErrorThreshhold')
     @LargeErrorThreshhold.setter
@@ -554,10 +530,10 @@ class Traffic(Base):
 
     @property
     def LearningFrameSize(self):
-        """Learns frame size
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Learns frame size
         """
         return self._get_attribute('learningFrameSize')
     @LearningFrameSize.setter
@@ -566,10 +542,10 @@ class Traffic(Base):
 
     @property
     def LearningFramesCount(self):
-        """Learns frames count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Learns frames count
         """
         return self._get_attribute('learningFramesCount')
     @LearningFramesCount.setter
@@ -578,10 +554,10 @@ class Traffic(Base):
 
     @property
     def LearningFramesRate(self):
-        """Learns frames rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Learns frames rate
         """
         return self._get_attribute('learningFramesRate')
     @LearningFramesRate.setter
@@ -590,10 +566,10 @@ class Traffic(Base):
 
     @property
     def MacChangeOnFly(self):
-        """If true, enables IxNetwork's gratuitous ARP capability. When enabled, IxNetwork listens for gratuitous ARP messages from its neighbors.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables IxNetwork's gratuitous ARP capability. When enabled, IxNetwork listens for gratuitous ARP messages from its neighbors.
         """
         return self._get_attribute('macChangeOnFly')
     @MacChangeOnFly.setter
@@ -602,10 +578,10 @@ class Traffic(Base):
 
     @property
     def MaxTrafficGenerationQueries(self):
-        """The maximum number of traffic generation queries. The default is 500.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of traffic generation queries. The default is 500.
         """
         return self._get_attribute('maxTrafficGenerationQueries')
     @MaxTrafficGenerationQueries.setter
@@ -614,10 +590,10 @@ class Traffic(Base):
 
     @property
     def MplsLabelLearningTimeout(self):
-        """The MPLS label learning timeout in seconds. The default is 30 seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The MPLS label learning timeout in seconds. The default is 30 seconds.
         """
         return self._get_attribute('mplsLabelLearningTimeout')
     @MplsLabelLearningTimeout.setter
@@ -626,10 +602,10 @@ class Traffic(Base):
 
     @property
     def PeakLoadingReplicationCount(self):
-        """The peak loading replication count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The peak loading replication count
         """
         return self._get_attribute('peakLoadingReplicationCount')
     @PeakLoadingReplicationCount.setter
@@ -638,10 +614,10 @@ class Traffic(Base):
 
     @property
     def PreventDataPlaneToCpu(self):
-        """Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
         """
         return self._get_attribute('preventDataPlaneToCpu')
     @PreventDataPlaneToCpu.setter
@@ -650,10 +626,10 @@ class Traffic(Base):
 
     @property
     def RefreshLearnedInfoBeforeApply(self):
-        """This field refreshes the learned information from the DUT.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This field refreshes the learned information from the DUT.
         """
         return self._get_attribute('refreshLearnedInfoBeforeApply')
     @RefreshLearnedInfoBeforeApply.setter
@@ -662,19 +638,19 @@ class Traffic(Base):
 
     @property
     def State(self):
-        """Denotes the current state of traffic.
-
-        Returns:
-            str(error|locked|started|startedWaitingForStats|startedWaitingForStreams|stopped|stoppedWaitingForStats|txStopWatchExpected|unapplied)
+        """
+        Returns
+        -------
+        - str(error | locked | started | startedWaitingForStats | startedWaitingForStreams | stopped | stoppedWaitingForStats | txStopWatchExpected | unapplied): Denotes the current state of traffic.
         """
         return self._get_attribute('state')
 
     @property
     def UseRfc5952(self):
-        """Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
         """
         return self._get_attribute('useRfc5952')
     @UseRfc5952.setter
@@ -683,10 +659,10 @@ class Traffic(Base):
 
     @property
     def UseScheduledStartTransmit(self):
-        """Use Scheduled Start Transmit
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use Scheduled Start Transmit
         """
         return self._get_attribute('useScheduledStartTransmit')
     @UseScheduledStartTransmit.setter
@@ -695,10 +671,10 @@ class Traffic(Base):
 
     @property
     def UseTxRxSync(self):
-        """If true, enables the transmit/receive port synchronization algorithm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the transmit/receive port synchronization algorithm.
         """
         return self._get_attribute('useTxRxSync')
     @UseTxRxSync.setter
@@ -707,79 +683,80 @@ class Traffic(Base):
 
     @property
     def WaitTime(self):
-        """The time (in seconds) to wait after Stop Transmit before stopping Latency Measurement.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time (in seconds) to wait after Stop Transmit before stopping Latency Measurement.
         """
         return self._get_attribute('waitTime')
     @WaitTime.setter
     def WaitTime(self, value):
         self._set_attribute('waitTime', value)
 
-    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EgressOnlyTrafficItemName=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableEgressOnlyTxStats=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
-        """Updates a child instance of traffic on the server.
+    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+        """Updates traffic resource on the server.
 
-        Args:
-            AutoCorrectL4HeaderChecksums (bool): This is used for Multis and Xdensity as checksum is not calculated correctly when change on the fly operations are performed. When this option is enabled IxOS uses 2 bytes before CRC, that way ensuring the checksum is correct when change on the fly operations are performed.
-            CycleOffsetForScheduledStart (number): 
-            CycleOffsetUnitForScheduledStart (str(microseconds|milliseconds|nanoseconds|seconds)): 
-            CycleTimeForScheduledStart (number): 
-            CycleTimeUnitForScheduledStart (str(microseconds|milliseconds|nanoseconds|seconds)): 
-            DataPlaneJitterWindow (str(0|10485760|1310720|167772160|20971520|2621440|335544320|41943040|5242880|671088640|83886080)): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
-            DelayTimeForScheduledStart (number): Delay Time For Scheduled Start Transmit in seconds
-            DestMacRetryCount (number): The number of time to attempt to obtain the destination MAC address.
-            DestMacRetryDelay (number): The number of seconds to wait between attempts to obtain the destination MAC address.
-            DetectMisdirectedOnAllPorts (bool): 
-            DisablePortLevelMisdirected (bool): 
-            DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
-            EgressOnlyTrafficItemName (str): Traffic Item name for egress only flows in statistics.
-            EnableDataIntegrityCheck (bool): If true, enable data integrity check.
-            EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
-            EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
-            EnableEgressOnlyTxStats (bool): This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
-            EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
-            EnableLagAutoRate (bool): 
-            EnableLagFlowBalancing (bool): 
-            EnableLagFlowFailoverMode (bool): 
-            EnableLagRebalanceOnPortUp (bool): 
-            EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
-            EnableMulticastScalingFactor (bool): If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
-            EnableSequenceChecking (bool): If true, this field enables sequence checking. The default is false.
-            EnableStaggeredStartDelay (bool): If checked, enables the staggered start delay function.
-            EnableStaggeredTransmit (bool): If true, the start of transmit is staggered across ports. A 25-30 ms delay is introduced between the time one port begins transmitting and the time next port begins transmitting.
-            EnableStreamOrdering (bool): If true, IxNetwork will allow stream ordering per RFC 2889.
-            FrameOrderingMode (str(flowGroupSetup|none|peakLoading|RFC2889)): If true, enables frame ordering.
-            GlobalStreamControl (str(continuous|iterations)): The Global Stream Control parameters.
-            GlobalStreamControlIterations (number): If true, the user can specify how many times each packet stream will be transmitted.
-            LargeErrorThreshhold (number): The user-configurable threshold value used to determine error levels for out-of-sequence, received packets.
-            LearningFrameSize (number): Learns frame size
-            LearningFramesCount (number): Learns frames count
-            LearningFramesRate (number): Learns frames rate
-            MacChangeOnFly (bool): If true, enables IxNetwork's gratuitous ARP capability. When enabled, IxNetwork listens for gratuitous ARP messages from its neighbors.
-            MaxTrafficGenerationQueries (number): The maximum number of traffic generation queries. The default is 500.
-            MplsLabelLearningTimeout (number): The MPLS label learning timeout in seconds. The default is 30 seconds.
-            PeakLoadingReplicationCount (number): The peak loading replication count
-            PreventDataPlaneToCpu (bool): Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
-            RefreshLearnedInfoBeforeApply (bool): This field refreshes the learned information from the DUT.
-            UseRfc5952 (bool): Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
-            UseScheduledStartTransmit (bool): Use Scheduled Start Transmit
-            UseTxRxSync (bool): If true, enables the transmit/receive port synchronization algorithm.
-            WaitTime (number): The time (in seconds) to wait after Stop Transmit before stopping Latency Measurement.
+        Args
+        ----
+        - AutoCorrectL4HeaderChecksums (bool): This is used for Multis and Xdensity as checksum is not calculated correctly when change on the fly operations are performed. When this option is enabled IxOS uses 2 bytes before CRC, that way ensuring the checksum is correct when change on the fly operations are performed.
+        - CycleOffsetForScheduledStart (number): 
+        - CycleOffsetUnitForScheduledStart (str(microseconds | milliseconds | nanoseconds | seconds)): 
+        - CycleTimeForScheduledStart (number): 
+        - CycleTimeUnitForScheduledStart (str(microseconds | milliseconds | nanoseconds | seconds)): 
+        - DataPlaneJitterWindow (str(0 | 10485760 | 1310720 | 167772160 | 20971520 | 2621440 | 335544320 | 41943040 | 5242880 | 671088640 | 83886080)): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
+        - DelayTimeForScheduledStart (number): Delay Time For Scheduled Start Transmit in seconds
+        - DestMacRetryCount (number): The number of time to attempt to obtain the destination MAC address.
+        - DestMacRetryDelay (number): The number of seconds to wait between attempts to obtain the destination MAC address.
+        - DetectMisdirectedOnAllPorts (bool): 
+        - DisablePortLevelMisdirected (bool): 
+        - DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
+        - EnableDataIntegrityCheck (bool): If true, enable data integrity check.
+        - EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
+        - EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
+        - EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
+        - EnableLagAutoRate (bool): 
+        - EnableLagFlowBalancing (bool): 
+        - EnableLagFlowFailoverMode (bool): 
+        - EnableLagRebalanceOnPortUp (bool): 
+        - EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
+        - EnableMulticastScalingFactor (bool): If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
+        - EnableSequenceChecking (bool): If true, this field enables sequence checking. The default is false.
+        - EnableStaggeredStartDelay (bool): If checked, enables the staggered start delay function.
+        - EnableStaggeredTransmit (bool): If true, the start of transmit is staggered across ports. A 25-30 ms delay is introduced between the time one port begins transmitting and the time next port begins transmitting.
+        - EnableStreamOrdering (bool): If true, IxNetwork will allow stream ordering per RFC 2889.
+        - FrameOrderingMode (str(flowGroupSetup | none | peakLoading | RFC2889)): If true, enables frame ordering.
+        - GlobalStreamControl (str(continuous | iterations)): The Global Stream Control parameters.
+        - GlobalStreamControlIterations (number): If true, the user can specify how many times each packet stream will be transmitted.
+        - LargeErrorThreshhold (number): The user-configurable threshold value used to determine error levels for out-of-sequence, received packets.
+        - LearningFrameSize (number): Learns frame size
+        - LearningFramesCount (number): Learns frames count
+        - LearningFramesRate (number): Learns frames rate
+        - MacChangeOnFly (bool): If true, enables IxNetwork's gratuitous ARP capability. When enabled, IxNetwork listens for gratuitous ARP messages from its neighbors.
+        - MaxTrafficGenerationQueries (number): The maximum number of traffic generation queries. The default is 500.
+        - MplsLabelLearningTimeout (number): The MPLS label learning timeout in seconds. The default is 30 seconds.
+        - PeakLoadingReplicationCount (number): The peak loading replication count
+        - PreventDataPlaneToCpu (bool): Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
+        - RefreshLearnedInfoBeforeApply (bool): This field refreshes the learned information from the DUT.
+        - UseRfc5952 (bool): Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
+        - UseScheduledStartTransmit (bool): Use Scheduled Start Transmit
+        - UseTxRxSync (bool): If true, enables the transmit/receive port synchronization algorithm.
+        - WaitTime (number): The time (in seconds) to wait after Stop Transmit before stopping Latency Measurement.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Apply the traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -789,9 +766,10 @@ class Traffic(Base):
 
         Apply the stateful traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyApplicationTraffic', payload=payload, response_object=None)
@@ -801,9 +779,10 @@ class Traffic(Base):
 
         Apply on the fly traffic changes.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyOnTheFlyTrafficChanges', payload=payload, response_object=None)
@@ -813,9 +792,10 @@ class Traffic(Base):
 
         Apply the traffic configuration for stateful traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyStatefulTraffic', payload=payload, response_object=None)
@@ -825,16 +805,15 @@ class Traffic(Base):
 
         Get the frame count for a specific duration.
 
-        getFrameCountForDuration(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
+        getFrameCountForDuration(Arg2=list)list
+        ---------------------------------------
+        - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
+        - Returns list(number): An array of frame counts.
 
-            Returns:
-                list(number): An array of frame counts.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -846,9 +825,10 @@ class Traffic(Base):
 
         Move stateless traffic to unapplied state.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('makeStatelessTrafficUnapplied', payload=payload, response_object=None)
@@ -858,9 +838,10 @@ class Traffic(Base):
 
         Send L2 and L3 learning frames.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('sendL2L3Learning', payload=payload, response_object=None)
@@ -870,9 +851,10 @@ class Traffic(Base):
 
         Start the traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -882,9 +864,10 @@ class Traffic(Base):
 
         Start the stateful traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startApplicationTraffic', payload=payload, response_object=None)
@@ -894,9 +877,10 @@ class Traffic(Base):
 
         Start stateful traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startStatefulTraffic', payload=payload, response_object=None)
@@ -906,9 +890,10 @@ class Traffic(Base):
 
         Start the traffic configuration for stateless traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTraffic', payload=payload, response_object=None)
@@ -918,9 +903,10 @@ class Traffic(Base):
 
         Start the traffic configuration for stateless traffic items only. This will block until traffic is fully started.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
@@ -930,9 +916,10 @@ class Traffic(Base):
 
         Stop the traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -942,9 +929,10 @@ class Traffic(Base):
 
         Stop the stateful traffic configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stopApplicationTraffic', payload=payload, response_object=None)
@@ -954,9 +942,10 @@ class Traffic(Base):
 
         Stop stateful traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stopStatefulTraffic', payload=payload, response_object=None)
@@ -966,9 +955,10 @@ class Traffic(Base):
 
         Stop the stateless traffic items.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
@@ -978,9 +968,10 @@ class Traffic(Base):
 
         Stop the traffic configuration for stateless traffic items only. This will block until traffic is fully stopped.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Uds(Base):
     """A counter that increments each time the capture filter conditions are met, as defined in the Capture Filter window.
-    The Uds class encapsulates a list of uds resources that is managed by the system.
+    The Uds class encapsulates a list of uds resources that are managed by the system.
     A list of resources can be retrieved from the server using the Uds.find() method.
     """
 
@@ -37,10 +37,10 @@ class Uds(Base):
 
     @property
     def CustomFrameSizeFrom(self):
-        """Frame size customized from.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Frame size customized from.
         """
         return self._get_attribute('customFrameSizeFrom')
     @CustomFrameSizeFrom.setter
@@ -49,10 +49,10 @@ class Uds(Base):
 
     @property
     def CustomFrameSizeTo(self):
-        """Customized frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Customized frame size.
         """
         return self._get_attribute('customFrameSizeTo')
     @CustomFrameSizeTo.setter
@@ -61,10 +61,10 @@ class Uds(Base):
 
     @property
     def DestinationAddressSelector(self):
-        """Destination address selector.
-
-        Returns:
-            str(addr1|addr2|anyAddr|notAddr1|notAddr2)
+        """
+        Returns
+        -------
+        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): Destination address selector.
         """
         return self._get_attribute('destinationAddressSelector')
     @DestinationAddressSelector.setter
@@ -73,10 +73,10 @@ class Uds(Base):
 
     @property
     def Error(self):
-        """Indicates error.
-
-        Returns:
-            str(errAnyFrame|errBadCRC|errBadFrame|errGoodFrame)
+        """
+        Returns
+        -------
+        - str(errAnyFrame | errBadCRC | errBadFrame | errGoodFrame): Indicates error.
         """
         return self._get_attribute('error')
     @Error.setter
@@ -85,10 +85,10 @@ class Uds(Base):
 
     @property
     def FrameSizeType(self):
-        """The type of frame size.
-
-        Returns:
-            str(any|custom|jumbo|oversized|undersized)
+        """
+        Returns
+        -------
+        - str(any | custom | jumbo | oversized | undersized): The type of frame size.
         """
         return self._get_attribute('frameSizeType')
     @FrameSizeType.setter
@@ -97,10 +97,10 @@ class Uds(Base):
 
     @property
     def IsEnabled(self):
-        """If true, UDS is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, UDS is enabled.
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -109,10 +109,10 @@ class Uds(Base):
 
     @property
     def PatternSelector(self):
-        """Pattern selector.
-
-        Returns:
-            str(anyPattern|notPattern1|notPattern2|pattern1|pattern2)
+        """
+        Returns
+        -------
+        - str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern2): Pattern selector.
         """
         return self._get_attribute('patternSelector')
     @PatternSelector.setter
@@ -121,10 +121,10 @@ class Uds(Base):
 
     @property
     def SourceAddressSelector(self):
-        """Source address selector.
-
-        Returns:
-            str(addr1|addr2|anyAddr|notAddr1|notAddr2)
+        """
+        Returns
+        -------
+        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): Source address selector.
         """
         return self._get_attribute('sourceAddressSelector')
     @SourceAddressSelector.setter
@@ -132,58 +132,67 @@ class Uds(Base):
         self._set_attribute('sourceAddressSelector', value)
 
     def update(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
-        """Updates a child instance of uds on the server.
+        """Updates uds resource on the server.
 
-        Args:
-            CustomFrameSizeFrom (number): Frame size customized from.
-            CustomFrameSizeTo (number): Customized frame size.
-            DestinationAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Destination address selector.
-            Error (str(errAnyFrame|errBadCRC|errBadFrame|errGoodFrame)): Indicates error.
-            FrameSizeType (str(any|custom|jumbo|oversized|undersized)): The type of frame size.
-            IsEnabled (bool): If true, UDS is enabled.
-            PatternSelector (str(anyPattern|notPattern1|notPattern2|pattern1|pattern2)): Pattern selector.
-            SourceAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Source address selector.
+        Args
+        ----
+        - CustomFrameSizeFrom (number): Frame size customized from.
+        - CustomFrameSizeTo (number): Customized frame size.
+        - DestinationAddressSelector (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): Destination address selector.
+        - Error (str(errAnyFrame | errBadCRC | errBadFrame | errGoodFrame)): Indicates error.
+        - FrameSizeType (str(any | custom | jumbo | oversized | undersized)): The type of frame size.
+        - IsEnabled (bool): If true, UDS is enabled.
+        - PatternSelector (str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern2)): Pattern selector.
+        - SourceAddressSelector (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): Source address selector.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
-        """Finds and retrieves uds data from the server.
+        """Finds and retrieves uds resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve uds data from the server.
-        By default the find method takes no parameters and will retrieve all uds data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve uds resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all uds resources from the server.
 
-        Args:
-            CustomFrameSizeFrom (number): Frame size customized from.
-            CustomFrameSizeTo (number): Customized frame size.
-            DestinationAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Destination address selector.
-            Error (str(errAnyFrame|errBadCRC|errBadFrame|errGoodFrame)): Indicates error.
-            FrameSizeType (str(any|custom|jumbo|oversized|undersized)): The type of frame size.
-            IsEnabled (bool): If true, UDS is enabled.
-            PatternSelector (str(anyPattern|notPattern1|notPattern2|pattern1|pattern2)): Pattern selector.
-            SourceAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Source address selector.
+        Args
+        ----
+        - CustomFrameSizeFrom (number): Frame size customized from.
+        - CustomFrameSizeTo (number): Customized frame size.
+        - DestinationAddressSelector (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): Destination address selector.
+        - Error (str(errAnyFrame | errBadCRC | errBadFrame | errGoodFrame)): Indicates error.
+        - FrameSizeType (str(any | custom | jumbo | oversized | undersized)): The type of frame size.
+        - IsEnabled (bool): If true, UDS is enabled.
+        - PatternSelector (str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern2)): Pattern selector.
+        - SourceAddressSelector (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): Source address selector.
 
-        Returns:
-            self: This instance with matching uds data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching uds resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of uds data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the uds data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the uds resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

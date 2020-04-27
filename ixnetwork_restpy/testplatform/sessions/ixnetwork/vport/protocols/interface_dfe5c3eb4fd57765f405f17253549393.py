@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Interface(Base):
     """A network interface to be included in this OSPFv3 router.
-    The Interface class encapsulates a list of interface resources that is be managed by the user.
+    The Interface class encapsulates a list of interface resources that are managed by the user.
     A list of resources can be retrieved from the server using the Interface.find() method.
-    The list can be managed by the user by using the Interface.add() and Interface.remove() methods.
+    The list can be managed by using the Interface.add() and Interface.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Interface(Base):
 
     @property
     def Area(self):
-        """The OSPFv3 area as a 32-bit number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The OSPFv3 area as a 32-bit number.
         """
         return self._get_attribute('area')
     @Area.setter
@@ -50,10 +50,10 @@ class Interface(Base):
 
     @property
     def DeadInterval(self):
-        """The number of seconds before declaring a silent router as being down.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds before declaring a silent router as being down.
         """
         return self._get_attribute('deadInterval')
     @DeadInterval.setter
@@ -62,10 +62,10 @@ class Interface(Base):
 
     @property
     def EnableBfdRegistration(self):
-        """Enables the BFD registration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the BFD registration.
         """
         return self._get_attribute('enableBfdRegistration')
     @EnableBfdRegistration.setter
@@ -74,10 +74,10 @@ class Interface(Base):
 
     @property
     def EnableFastHello(self):
-        """Enables Fast Hello option for OSPF Router
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables Fast Hello option for OSPF Router
         """
         return self._get_attribute('enableFastHello')
     @EnableFastHello.setter
@@ -86,10 +86,10 @@ class Interface(Base):
 
     @property
     def EnableIgnoreDbDescMtu(self):
-        """If true, enables the ability for the router to ignore the database described MTU.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the ability for the router to ignore the database described MTU.
         """
         return self._get_attribute('enableIgnoreDbDescMtu')
     @EnableIgnoreDbDescMtu.setter
@@ -98,10 +98,10 @@ class Interface(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of the simulated interface.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the simulated interface.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class Interface(Base):
 
     @property
     def HelloInterval(self):
-        """The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
         """
         return self._get_attribute('helloInterval')
     @HelloInterval.setter
@@ -122,10 +122,10 @@ class Interface(Base):
 
     @property
     def HelloMultiplier(self):
-        """Indicates the number of Hello Packets transmitted per second
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the number of Hello Packets transmitted per second
         """
         return self._get_attribute('helloMultiplier')
     @HelloMultiplier.setter
@@ -134,10 +134,10 @@ class Interface(Base):
 
     @property
     def InstanceId(self):
-        """Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
         """
         return self._get_attribute('instanceId')
     @InstanceId.setter
@@ -146,10 +146,10 @@ class Interface(Base):
 
     @property
     def InterfaceIndex(self):
-        """The assigned protocol interface ID for this OSPFv3 interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The assigned protocol interface ID for this OSPFv3 interface.
         """
         return self._get_attribute('interfaceIndex')
     @InterfaceIndex.setter
@@ -158,10 +158,10 @@ class Interface(Base):
 
     @property
     def InterfaceType(self):
-        """Indicates the type of network for the interface.
-
-        Returns:
-            str(pointToPoint|broadcast)
+        """
+        Returns
+        -------
+        - str(pointToPoint | broadcast): Indicates the type of network for the interface.
         """
         return self._get_attribute('interfaceType')
     @InterfaceType.setter
@@ -170,10 +170,10 @@ class Interface(Base):
 
     @property
     def InterfaceTypes(self):
-        """The type of interface to be selected for this OSPFv3 interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of interface to be selected for this OSPFv3 interface.
         """
         return self._get_attribute('interfaceTypes')
     @InterfaceTypes.setter
@@ -182,10 +182,10 @@ class Interface(Base):
 
     @property
     def Interfaces(self):
-        """The interfaces that are associated with the selected interface type.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute('interfaces')
     @Interfaces.setter
@@ -194,10 +194,10 @@ class Interface(Base):
 
     @property
     def LinkMetric(self):
-        """The metric for the link connecting the grid with the emulated OSPFv3 router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The metric for the link connecting the grid with the emulated OSPFv3 router.
         """
         return self._get_attribute('linkMetric')
     @LinkMetric.setter
@@ -206,10 +206,10 @@ class Interface(Base):
 
     @property
     def Priority(self):
-        """Indicates the OSPF interface priority
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the OSPF interface priority
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -218,10 +218,10 @@ class Interface(Base):
 
     @property
     def ProtocolInterface(self):
-        """DEPRECATED This is the name of this emulated OSPFv3 interface on this emulated router.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This is the name of this emulated OSPFv3 interface on this emulated router.
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -230,10 +230,10 @@ class Interface(Base):
 
     @property
     def RouterOptions(self):
-        """Options related to the interface. Multiple options may be or'd together. (default = 0x13).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Options related to the interface. Multiple options may be or'd together. (default = 0x13).
         """
         return self._get_attribute('routerOptions')
     @RouterOptions.setter
@@ -241,116 +241,129 @@ class Interface(Base):
         self._set_attribute('routerOptions', value)
 
     def update(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
-        """Updates a child instance of interface on the server.
+        """Updates interface resource on the server.
 
-        Args:
-            Area (number): The OSPFv3 area as a 32-bit number.
-            DeadInterval (number): The number of seconds before declaring a silent router as being down.
-            EnableBfdRegistration (bool): Enables the BFD registration.
-            EnableFastHello (bool): Enables Fast Hello option for OSPF Router
-            EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
-            Enabled (bool): Enables the use of the simulated interface.
-            HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
-            HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
-            InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
-            InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
-            InterfaceType (str(pointToPoint|broadcast)): Indicates the type of network for the interface.
-            InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
-            Priority (number): Indicates the OSPF interface priority
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
-            RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
+        Args
+        ----
+        - Area (number): The OSPFv3 area as a 32-bit number.
+        - DeadInterval (number): The number of seconds before declaring a silent router as being down.
+        - EnableBfdRegistration (bool): Enables the BFD registration.
+        - EnableFastHello (bool): Enables Fast Hello option for OSPF Router
+        - EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
+        - Enabled (bool): Enables the use of the simulated interface.
+        - HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
+        - HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
+        - InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
+        - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
+        - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
+        - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
+        - Priority (number): Indicates the OSPF interface priority
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
-        """Adds a new interface node on the server and retrieves it in this instance.
+        """Adds a new interface resource on the server and adds it to the container.
 
-        Args:
-            Area (number): The OSPFv3 area as a 32-bit number.
-            DeadInterval (number): The number of seconds before declaring a silent router as being down.
-            EnableBfdRegistration (bool): Enables the BFD registration.
-            EnableFastHello (bool): Enables Fast Hello option for OSPF Router
-            EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
-            Enabled (bool): Enables the use of the simulated interface.
-            HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
-            HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
-            InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
-            InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
-            InterfaceType (str(pointToPoint|broadcast)): Indicates the type of network for the interface.
-            InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
-            Priority (number): Indicates the OSPF interface priority
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
-            RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
+        Args
+        ----
+        - Area (number): The OSPFv3 area as a 32-bit number.
+        - DeadInterval (number): The number of seconds before declaring a silent router as being down.
+        - EnableBfdRegistration (bool): Enables the BFD registration.
+        - EnableFastHello (bool): Enables Fast Hello option for OSPF Router
+        - EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
+        - Enabled (bool): Enables the use of the simulated interface.
+        - HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
+        - HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
+        - InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
+        - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
+        - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
+        - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
+        - Priority (number): Indicates the OSPF interface priority
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
-        Returns:
-            self: This instance with all currently retrieved interface data using find and the newly added interface data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved interface resources using find and the newly added interface resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the interface data in this instance from server.
+        """Deletes all the contained interface resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
-        """Finds and retrieves interface data from the server.
+        """Finds and retrieves interface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve interface data from the server.
-        By default the find method takes no parameters and will retrieve all interface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all interface resources from the server.
 
-        Args:
-            Area (number): The OSPFv3 area as a 32-bit number.
-            DeadInterval (number): The number of seconds before declaring a silent router as being down.
-            EnableBfdRegistration (bool): Enables the BFD registration.
-            EnableFastHello (bool): Enables Fast Hello option for OSPF Router
-            EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
-            Enabled (bool): Enables the use of the simulated interface.
-            HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
-            HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
-            InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
-            InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
-            InterfaceType (str(pointToPoint|broadcast)): Indicates the type of network for the interface.
-            InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-            Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
-            LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
-            Priority (number): Indicates the OSPF interface priority
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
-            RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
+        Args
+        ----
+        - Area (number): The OSPFv3 area as a 32-bit number.
+        - DeadInterval (number): The number of seconds before declaring a silent router as being down.
+        - EnableBfdRegistration (bool): Enables the BFD registration.
+        - EnableFastHello (bool): Enables Fast Hello option for OSPF Router
+        - EnableIgnoreDbDescMtu (bool): If true, enables the ability for the router to ignore the database described MTU.
+        - Enabled (bool): Enables the use of the simulated interface.
+        - HelloInterval (number): The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
+        - HelloMultiplier (number): Indicates the number of Hello Packets transmitted per second
+        - InstanceId (number): Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
+        - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
+        - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
+        - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
+        - Priority (number): Indicates the OSPF interface priority
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
-        Returns:
-            self: This instance with matching interface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching interface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of interface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the interface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the interface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -359,12 +372,10 @@ class Interface(Base):
 
         Fetches interface accessor Iface list.
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)

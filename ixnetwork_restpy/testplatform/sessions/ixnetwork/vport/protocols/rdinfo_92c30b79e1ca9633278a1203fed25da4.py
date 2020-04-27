@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RdInfo(Base):
     """(Read Only) The list of RDs.
-    The RdInfo class encapsulates a list of rdInfo resources that is managed by the system.
+    The RdInfo class encapsulates a list of rdInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the RdInfo.find() method.
     """
 
@@ -37,75 +37,82 @@ class RdInfo(Base):
 
     @property
     def OpaqueElementInfo(self):
-        """An instance of the OpaqueElementInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_18a4a5c0fbf314ab3c2b286d7d250d24.OpaqueElementInfo): An instance of the OpaqueElementInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_18a4a5c0fbf314ab3c2b286d7d250d24.OpaqueElementInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_18a4a5c0fbf314ab3c2b286d7d250d24 import OpaqueElementInfo
         return OpaqueElementInfo(self)
 
     @property
     def EthernetTagList(self):
-        """(Read Only) Ethernet Tag Id in hex format.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read Only) Ethernet Tag Id in hex format.
         """
         return self._get_attribute('ethernetTagList')
 
     @property
     def Rd(self):
-        """(Read Only) RD value in X:Y format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) RD value in X:Y format.
         """
         return self._get_attribute('rd')
 
     @property
     def TunnelIdentifier(self):
-        """(Read Only) P2P or P2MP Tunnel Identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) P2P or P2MP Tunnel Identifier.
         """
         return self._get_attribute('tunnelIdentifier')
 
     def find(self, EthernetTagList=None, Rd=None, TunnelIdentifier=None):
-        """Finds and retrieves rdInfo data from the server.
+        """Finds and retrieves rdInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rdInfo data from the server.
-        By default the find method takes no parameters and will retrieve all rdInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rdInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rdInfo resources from the server.
 
-        Args:
-            EthernetTagList (list(str)): (Read Only) Ethernet Tag Id in hex format.
-            Rd (str): (Read Only) RD value in X:Y format.
-            TunnelIdentifier (str): (Read Only) P2P or P2MP Tunnel Identifier.
+        Args
+        ----
+        - EthernetTagList (list(str)): (Read Only) Ethernet Tag Id in hex format.
+        - Rd (str): (Read Only) RD value in X:Y format.
+        - TunnelIdentifier (str): (Read Only) P2P or P2MP Tunnel Identifier.
 
-        Returns:
-            self: This instance with matching rdInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rdInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rdInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rdInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rdInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

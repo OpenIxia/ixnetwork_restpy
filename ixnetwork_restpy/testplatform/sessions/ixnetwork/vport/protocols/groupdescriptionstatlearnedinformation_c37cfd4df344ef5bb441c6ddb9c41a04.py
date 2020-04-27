@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class GroupDescriptionStatLearnedInformation(Base):
     """NOT DEFINED
-    The GroupDescriptionStatLearnedInformation class encapsulates a list of groupDescriptionStatLearnedInformation resources that is managed by the system.
+    The GroupDescriptionStatLearnedInformation class encapsulates a list of groupDescriptionStatLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the GroupDescriptionStatLearnedInformation.find() method.
     """
 
@@ -37,165 +37,172 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def GroupBucketDescStatLearnedInformation(self):
-        """An instance of the GroupBucketDescStatLearnedInformation class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_09ec285a66eccee0f4aa85e63d9ff82f.GroupBucketDescStatLearnedInformation): An instance of the GroupBucketDescStatLearnedInformation class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_09ec285a66eccee0f4aa85e63d9ff82f.GroupBucketDescStatLearnedInformation)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_09ec285a66eccee0f4aa85e63d9ff82f import GroupBucketDescStatLearnedInformation
         return GroupBucketDescStatLearnedInformation(self)
 
     @property
     def DataPathId(self):
-        """The Data Path ID of the connected switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Data Path ID of the connected switch.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """The Data Path ID of the OpenFlow switch in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Data Path ID of the OpenFlow switch in hexadecimal format.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def ErrorCode(self):
-        """The error code of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The error code of the error received.
         """
         return self._get_attribute('errorCode')
 
     @property
     def ErrorType(self):
-        """The type of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of the error received.
         """
         return self._get_attribute('errorType')
 
     @property
     def GroupId(self):
-        """A 32-bit integer uniquely identifying the group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A 32-bit integer uniquely identifying the group.
         """
         return self._get_attribute('groupId')
 
     @property
     def GroupType(self):
-        """Specify the group types supported by Switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the group types supported by Switch.
         """
         return self._get_attribute('groupType')
 
     @property
     def Latency(self):
-        """The latency measurement for the OpenFlow channel.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The latency measurement for the OpenFlow channel.
         """
         return self._get_attribute('latency')
 
     @property
     def LocalIp(self):
-        """The local IP address of the selected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The local IP address of the selected interface.
         """
         return self._get_attribute('localIp')
 
     @property
     def NegotiatedVersion(self):
-        """The OpenFlow version supported by this configuration.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The OpenFlow version supported by this configuration.
         """
         return self._get_attribute('negotiatedVersion')
 
     @property
     def NumberOfBucketStats(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('numberOfBucketStats')
 
     @property
     def RemoteIp(self):
-        """The Remote IP address of the selected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Remote IP address of the selected interface.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def ReplyState(self):
-        """The reply state of the OF Channel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The reply state of the OF Channel.
         """
         return self._get_attribute('replyState')
 
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, GroupId=None, GroupType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, RemoteIp=None, ReplyState=None):
-        """Finds and retrieves groupDescriptionStatLearnedInformation data from the server.
+        """Finds and retrieves groupDescriptionStatLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve groupDescriptionStatLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all groupDescriptionStatLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupDescriptionStatLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all groupDescriptionStatLearnedInformation resources from the server.
 
-        Args:
-            DataPathId (str): The Data Path ID of the connected switch.
-            DataPathIdAsHex (str): The Data Path ID of the OpenFlow switch in hexadecimal format.
-            ErrorCode (str): The error code of the error received.
-            ErrorType (str): The type of the error received.
-            GroupId (number): A 32-bit integer uniquely identifying the group.
-            GroupType (str): Specify the group types supported by Switch.
-            Latency (number): The latency measurement for the OpenFlow channel.
-            LocalIp (str): The local IP address of the selected interface.
-            NegotiatedVersion (str): The OpenFlow version supported by this configuration.
-            NumberOfBucketStats (str): NOT DEFINED
-            RemoteIp (str): The Remote IP address of the selected interface.
-            ReplyState (str): The reply state of the OF Channel.
+        Args
+        ----
+        - DataPathId (str): The Data Path ID of the connected switch.
+        - DataPathIdAsHex (str): The Data Path ID of the OpenFlow switch in hexadecimal format.
+        - ErrorCode (str): The error code of the error received.
+        - ErrorType (str): The type of the error received.
+        - GroupId (number): A 32-bit integer uniquely identifying the group.
+        - GroupType (str): Specify the group types supported by Switch.
+        - Latency (number): The latency measurement for the OpenFlow channel.
+        - LocalIp (str): The local IP address of the selected interface.
+        - NegotiatedVersion (str): The OpenFlow version supported by this configuration.
+        - NumberOfBucketStats (str): NOT DEFINED
+        - RemoteIp (str): The Remote IP address of the selected interface.
+        - ReplyState (str): The reply state of the OF Channel.
 
-        Returns:
-            self: This instance with matching groupDescriptionStatLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching groupDescriptionStatLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of groupDescriptionStatLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the groupDescriptionStatLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the groupDescriptionStatLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

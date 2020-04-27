@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class LiveFlowsFilter(Base):
     """Live flows filter specification.
-    The LiveFlowsFilter class encapsulates a list of liveFlowsFilter resources that is be managed by the user.
+    The LiveFlowsFilter class encapsulates a list of liveFlowsFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the LiveFlowsFilter.find() method.
-    The list can be managed by the user by using the LiveFlowsFilter.add() and LiveFlowsFilter.remove() methods.
+    The list can be managed by using the LiveFlowsFilter.add() and LiveFlowsFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class LiveFlowsFilter(Base):
 
     @property
     def NumberOfResults(self):
-        """Number of traffic flows to be displayed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of traffic flows to be displayed.
         """
         return self._get_attribute('numberOfResults')
     @NumberOfResults.setter
@@ -50,10 +50,10 @@ class LiveFlowsFilter(Base):
 
     @property
     def SortByStatisticId(self):
-        """The reference statistic by which the data will be sorted in created SV.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute('sortByStatisticId')
     @SortByStatisticId.setter
@@ -62,10 +62,10 @@ class LiveFlowsFilter(Base):
 
     @property
     def SortingCondition(self):
-        """Sets the display of the view according to best or worst performers.
-
-        Returns:
-            str(bestPerformers|worstPerformers)
+        """
+        Returns
+        -------
+        - str(bestPerformers | worstPerformers): Sets the display of the view according to best or worst performers.
         """
         return self._get_attribute('sortingCondition')
     @SortingCondition.setter
@@ -73,73 +73,86 @@ class LiveFlowsFilter(Base):
         self._set_attribute('sortingCondition', value)
 
     def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
-        """Updates a child instance of liveFlowsFilter on the server.
+        """Updates liveFlowsFilter resource on the server.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortByStatisticId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
-            SortingCondition (str(bestPerformers|worstPerformers)): Sets the display of the view according to best or worst performers.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
-        """Adds a new liveFlowsFilter node on the server and retrieves it in this instance.
+        """Adds a new liveFlowsFilter resource on the server and adds it to the container.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortByStatisticId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
-            SortingCondition (str(bestPerformers|worstPerformers)): Sets the display of the view according to best or worst performers.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
-        Returns:
-            self: This instance with all currently retrieved liveFlowsFilter data using find and the newly added liveFlowsFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved liveFlowsFilter resources using find and the newly added liveFlowsFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the liveFlowsFilter data in this instance from server.
+        """Deletes all the contained liveFlowsFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
-        """Finds and retrieves liveFlowsFilter data from the server.
+        """Finds and retrieves liveFlowsFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve liveFlowsFilter data from the server.
-        By default the find method takes no parameters and will retrieve all liveFlowsFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve liveFlowsFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all liveFlowsFilter resources from the server.
 
-        Args:
-            NumberOfResults (number): Number of traffic flows to be displayed.
-            SortByStatisticId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
-            SortingCondition (str(bestPerformers|worstPerformers)): Sets the display of the view according to best or worst performers.
+        Args
+        ----
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
-        Returns:
-            self: This instance with matching liveFlowsFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching liveFlowsFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of liveFlowsFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the liveFlowsFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the liveFlowsFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

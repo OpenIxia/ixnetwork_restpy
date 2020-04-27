@@ -36,28 +36,28 @@ class HostTopologyLearnedInformation(Base):
 
     @property
     def SwitchHostRangeLearnedInfo(self):
-        """An instance of the SwitchHostRangeLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00.SwitchHostRangeLearnedInfo): An instance of the SwitchHostRangeLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00.SwitchHostRangeLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00 import SwitchHostRangeLearnedInfo
         return SwitchHostRangeLearnedInfo(self)
 
     @property
     def SwitchHostRangeLearnedInfoTriggerAttributes(self):
-        """An instance of the SwitchHostRangeLearnedInfoTriggerAttributes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d.SwitchHostRangeLearnedInfoTriggerAttributes): An instance of the SwitchHostRangeLearnedInfoTriggerAttributes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d.SwitchHostRangeLearnedInfoTriggerAttributes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d import SwitchHostRangeLearnedInfoTriggerAttributes
         return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
@@ -67,12 +67,10 @@ class HostTopologyLearnedInformation(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshHostRangeLearnedInformation', payload=payload, response_object=None)

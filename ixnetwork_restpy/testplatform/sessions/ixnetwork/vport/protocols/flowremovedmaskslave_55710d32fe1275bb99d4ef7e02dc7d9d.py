@@ -36,10 +36,10 @@ class FlowRemovedMaskSlave(Base):
 
     @property
     def Delete(self):
-        """This indicates that flow entry is evicted by a delete Flow Mod message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that flow entry is evicted by a delete Flow Mod message.
         """
         return self._get_attribute('delete')
     @Delete.setter
@@ -48,10 +48,10 @@ class FlowRemovedMaskSlave(Base):
 
     @property
     def GroupDelete(self):
-        """This indicates that the group is removed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that the group is removed.
         """
         return self._get_attribute('groupDelete')
     @GroupDelete.setter
@@ -60,10 +60,10 @@ class FlowRemovedMaskSlave(Base):
 
     @property
     def HardTimeout(self):
-        """This indicates that Flow idle time exceeded hard timeout.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that Flow idle time exceeded hard timeout.
         """
         return self._get_attribute('hardTimeout')
     @HardTimeout.setter
@@ -72,10 +72,10 @@ class FlowRemovedMaskSlave(Base):
 
     @property
     def IdleTimeout(self):
-        """This indicates that Flow idle time exceeded idle timeout.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This indicates that Flow idle time exceeded idle timeout.
         """
         return self._get_attribute('idleTimeout')
     @IdleTimeout.setter
@@ -83,15 +83,17 @@ class FlowRemovedMaskSlave(Base):
         self._set_attribute('idleTimeout', value)
 
     def update(self, Delete=None, GroupDelete=None, HardTimeout=None, IdleTimeout=None):
-        """Updates a child instance of flowRemovedMaskSlave on the server.
+        """Updates flowRemovedMaskSlave resource on the server.
 
-        Args:
-            Delete (bool): This indicates that flow entry is evicted by a delete Flow Mod message.
-            GroupDelete (bool): This indicates that the group is removed.
-            HardTimeout (bool): This indicates that Flow idle time exceeded hard timeout.
-            IdleTimeout (bool): This indicates that Flow idle time exceeded idle timeout.
+        Args
+        ----
+        - Delete (bool): This indicates that flow entry is evicted by a delete Flow Mod message.
+        - GroupDelete (bool): This indicates that the group is removed.
+        - HardTimeout (bool): This indicates that Flow idle time exceeded hard timeout.
+        - IdleTimeout (bool): This indicates that Flow idle time exceeded idle timeout.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

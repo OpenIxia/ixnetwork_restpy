@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgressOnlyTracking(Base):
     """
-    The EgressOnlyTracking class encapsulates a list of egressOnlyTracking resources that is be managed by the user.
+    The EgressOnlyTracking class encapsulates a list of egressOnlyTracking resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgressOnlyTracking.find() method.
-    The list can be managed by the user by using the EgressOnlyTracking.add() and EgressOnlyTracking.remove() methods.
+    The list can be managed by using the EgressOnlyTracking.add() and EgressOnlyTracking.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EgressOnlyTracking(Base):
 
     @property
     def Egress(self):
-        """Struct contains: egress offset and egress mask
-
-        Returns:
-            list(dict(arg1:number,arg2:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:str)): Struct contains: egress offset and egress mask
         """
         return self._get_attribute('egress')
     @Egress.setter
@@ -50,10 +50,10 @@ class EgressOnlyTracking(Base):
 
     @property
     def Enabled(self):
-        """Enables the egress only tracking for the given port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the egress only tracking for the given port.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -63,9 +63,9 @@ class EgressOnlyTracking(Base):
     @property
     def Port(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): 
         """
         return self._get_attribute('port')
     @Port.setter
@@ -73,35 +73,11 @@ class EgressOnlyTracking(Base):
         self._set_attribute('port', value)
 
     @property
-    def SignatureLengthType(self):
-        """
-
-        Returns:
-            str(fourByte|twelveByte)
-        """
-        return self._get_attribute('signatureLengthType')
-    @SignatureLengthType.setter
-    def SignatureLengthType(self, value):
-        self._set_attribute('signatureLengthType', value)
-
-    @property
-    def SignatureMask(self):
-        """Signature maks to be placed inside the packet.
-
-        Returns:
-            str
-        """
-        return self._get_attribute('signatureMask')
-    @SignatureMask.setter
-    def SignatureMask(self, value):
-        self._set_attribute('signatureMask', value)
-
-    @property
     def SignatureOffset(self):
-        """Offset where the signature value will be placed in the packet.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Offset where the signature value will be placed in the packet.
         """
         return self._get_attribute('signatureOffset')
     @SignatureOffset.setter
@@ -110,96 +86,103 @@ class EgressOnlyTracking(Base):
 
     @property
     def SignatureValue(self):
-        """Signature value to be placed inside the packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signature value to be placed inside the packet.
         """
         return self._get_attribute('signatureValue')
     @SignatureValue.setter
     def SignatureValue(self, value):
         self._set_attribute('signatureValue', value)
 
-    def update(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
-        """Updates a child instance of egressOnlyTracking on the server.
+    def update(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+        """Updates egressOnlyTracking resource on the server.
 
-        Args:
-            Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
-            Enabled (bool): Enables the egress only tracking for the given port.
-            Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
-            SignatureLengthType (str(fourByte|twelveByte)): 
-            SignatureMask (str): Signature maks to be placed inside the packet.
-            SignatureOffset (number): Offset where the signature value will be placed in the packet.
-            SignatureValue (str): Signature value to be placed inside the packet.
+        Args
+        ----
+        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Enabled (bool): Enables the egress only tracking for the given port.
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureOffset (number): Offset where the signature value will be placed in the packet.
+        - SignatureValue (str): Signature value to be placed inside the packet.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def add(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
-        """Adds a new egressOnlyTracking node on the server and retrieves it in this instance.
+    def add(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+        """Adds a new egressOnlyTracking resource on the server and adds it to the container.
 
-        Args:
-            Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
-            Enabled (bool): Enables the egress only tracking for the given port.
-            Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
-            SignatureLengthType (str(fourByte|twelveByte)): 
-            SignatureMask (str): Signature maks to be placed inside the packet.
-            SignatureOffset (number): Offset where the signature value will be placed in the packet.
-            SignatureValue (str): Signature value to be placed inside the packet.
+        Args
+        ----
+        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Enabled (bool): Enables the egress only tracking for the given port.
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureOffset (number): Offset where the signature value will be placed in the packet.
+        - SignatureValue (str): Signature value to be placed inside the packet.
 
-        Returns:
-            self: This instance with all currently retrieved egressOnlyTracking data using find and the newly added egressOnlyTracking data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egressOnlyTracking resources using find and the newly added egressOnlyTracking resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egressOnlyTracking data in this instance from server.
+        """Deletes all the contained egressOnlyTracking resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
-    def find(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
-        """Finds and retrieves egressOnlyTracking data from the server.
+    def find(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+        """Finds and retrieves egressOnlyTracking resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egressOnlyTracking data from the server.
-        By default the find method takes no parameters and will retrieve all egressOnlyTracking data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egressOnlyTracking resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egressOnlyTracking resources from the server.
 
-        Args:
-            Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
-            Enabled (bool): Enables the egress only tracking for the given port.
-            Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
-            SignatureLengthType (str(fourByte|twelveByte)): 
-            SignatureMask (str): Signature maks to be placed inside the packet.
-            SignatureOffset (number): Offset where the signature value will be placed in the packet.
-            SignatureValue (str): Signature value to be placed inside the packet.
+        Args
+        ----
+        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Enabled (bool): Enables the egress only tracking for the given port.
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureOffset (number): Offset where the signature value will be placed in the packet.
+        - SignatureValue (str): Signature value to be placed inside the packet.
 
-        Returns:
-            self: This instance with matching egressOnlyTracking data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egressOnlyTracking resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egressOnlyTracking data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egressOnlyTracking data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egressOnlyTracking resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

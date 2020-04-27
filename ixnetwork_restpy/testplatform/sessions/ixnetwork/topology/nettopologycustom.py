@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NetTopologyCustom(Base):
     """Custom, user defined topology.
-    The NetTopologyCustom class encapsulates a list of netTopologyCustom resources that is be managed by the user.
+    The NetTopologyCustom class encapsulates a list of netTopologyCustom resources that are managed by the user.
     A list of resources can be retrieved from the server using the NetTopologyCustom.find() method.
-    The list can be managed by the user by using the NetTopologyCustom.add() and NetTopologyCustom.remove() methods.
+    The list can be managed by using the NetTopologyCustom.add() and NetTopologyCustom.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class NetTopologyCustom(Base):
 
     @property
     def LinkTable(self):
-        """An instance of the LinkTable class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable.LinkTable): An instance of the LinkTable class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable.LinkTable)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable import LinkTable
         return LinkTable(self)._select()
 
     @property
     def IncludeEntryPoint(self):
-        """if true, entry node belongs to ring topology, otherwise it is outside of ring
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
         return self._get_attribute('includeEntryPoint')
     @IncludeEntryPoint.setter
@@ -64,10 +64,10 @@ class NetTopologyCustom(Base):
 
     @property
     def LinkMultiplier(self):
-        """number of links between two nodes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: number of links between two nodes
         """
         return self._get_attribute('linkMultiplier')
     @LinkMultiplier.setter
@@ -76,79 +76,92 @@ class NetTopologyCustom(Base):
 
     @property
     def NumberOfNodes(self):
-        """Number Of Nodes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of Nodes
         """
         return self._get_attribute('numberOfNodes')
 
     def update(self, IncludeEntryPoint=None, LinkMultiplier=None):
-        """Updates a child instance of netTopologyCustom on the server.
+        """Updates netTopologyCustom resource on the server.
 
-        Args:
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
+        Args
+        ----
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, IncludeEntryPoint=None, LinkMultiplier=None):
-        """Adds a new netTopologyCustom node on the server and retrieves it in this instance.
+        """Adds a new netTopologyCustom resource on the server and adds it to the container.
 
-        Args:
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
+        Args
+        ----
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
 
-        Returns:
-            self: This instance with all currently retrieved netTopologyCustom data using find and the newly added netTopologyCustom data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved netTopologyCustom resources using find and the newly added netTopologyCustom resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the netTopologyCustom data in this instance from server.
+        """Deletes all the contained netTopologyCustom resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfNodes=None):
-        """Finds and retrieves netTopologyCustom data from the server.
+        """Finds and retrieves netTopologyCustom resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve netTopologyCustom data from the server.
-        By default the find method takes no parameters and will retrieve all netTopologyCustom data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyCustom resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all netTopologyCustom resources from the server.
 
-        Args:
-            IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
-            LinkMultiplier (number): number of links between two nodes
-            NumberOfNodes (number): Number Of Nodes
+        Args
+        ----
+        - IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+        - LinkMultiplier (number): number of links between two nodes
+        - NumberOfNodes (number): Number Of Nodes
 
-        Returns:
-            self: This instance with matching netTopologyCustom data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching netTopologyCustom resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of netTopologyCustom data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the netTopologyCustom data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the netTopologyCustom resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

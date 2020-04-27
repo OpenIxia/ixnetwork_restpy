@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MobilePathEntries(Base):
     """
-    The MobilePathEntries class encapsulates a list of mobilePathEntries resources that is be managed by the user.
+    The MobilePathEntries class encapsulates a list of mobilePathEntries resources that are managed by the user.
     A list of resources can be retrieved from the server using the MobilePathEntries.find() method.
-    The list can be managed by the user by using the MobilePathEntries.add() and MobilePathEntries.remove() methods.
+    The list can be managed by using the MobilePathEntries.add() and MobilePathEntries.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class MobilePathEntries(Base):
 
     @property
     def NextENodeB(self):
-        """Obsolete. Use nextRange instead.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Obsolete. Use nextRange instead.
         """
         return self._get_attribute('nextENodeB')
     @NextENodeB.setter
@@ -51,9 +51,9 @@ class MobilePathEntries(Base):
     @property
     def NextRange(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): 
         """
         return self._get_attribute('nextRange')
     @NextRange.setter
@@ -62,19 +62,19 @@ class MobilePathEntries(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RelocateSgw(self):
-        """Perform SGW change on TAU or Handover.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Perform SGW change on TAU or Handover.
         """
         return self._get_attribute('relocateSgw')
     @RelocateSgw.setter
@@ -82,75 +82,88 @@ class MobilePathEntries(Base):
         self._set_attribute('relocateSgw', value)
 
     def update(self, NextENodeB=None, NextRange=None, RelocateSgw=None):
-        """Updates a child instance of mobilePathEntries on the server.
+        """Updates mobilePathEntries resource on the server.
 
-        Args:
-            NextENodeB (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Obsolete. Use nextRange instead.
-            NextRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): 
-            RelocateSgw (bool): Perform SGW change on TAU or Handover.
+        Args
+        ----
+        - NextENodeB (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Obsolete. Use nextRange instead.
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): 
+        - RelocateSgw (bool): Perform SGW change on TAU or Handover.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, NextENodeB=None, NextRange=None, RelocateSgw=None):
-        """Adds a new mobilePathEntries node on the server and retrieves it in this instance.
+        """Adds a new mobilePathEntries resource on the server and adds it to the container.
 
-        Args:
-            NextENodeB (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Obsolete. Use nextRange instead.
-            NextRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): 
-            RelocateSgw (bool): Perform SGW change on TAU or Handover.
+        Args
+        ----
+        - NextENodeB (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Obsolete. Use nextRange instead.
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): 
+        - RelocateSgw (bool): Perform SGW change on TAU or Handover.
 
-        Returns:
-            self: This instance with all currently retrieved mobilePathEntries data using find and the newly added mobilePathEntries data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved mobilePathEntries resources using find and the newly added mobilePathEntries resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the mobilePathEntries data in this instance from server.
+        """Deletes all the contained mobilePathEntries resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, NextENodeB=None, NextRange=None, ObjectId=None, RelocateSgw=None):
-        """Finds and retrieves mobilePathEntries data from the server.
+        """Finds and retrieves mobilePathEntries resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve mobilePathEntries data from the server.
-        By default the find method takes no parameters and will retrieve all mobilePathEntries data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mobilePathEntries resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all mobilePathEntries resources from the server.
 
-        Args:
-            NextENodeB (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Obsolete. Use nextRange instead.
-            NextRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): 
-            ObjectId (str): Unique identifier for this object
-            RelocateSgw (bool): Perform SGW change on TAU or Handover.
+        Args
+        ----
+        - NextENodeB (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Obsolete. Use nextRange instead.
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): 
+        - ObjectId (str): Unique identifier for this object
+        - RelocateSgw (bool): Perform SGW change on TAU or Handover.
 
-        Returns:
-            self: This instance with matching mobilePathEntries data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching mobilePathEntries resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of mobilePathEntries data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the mobilePathEntries data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the mobilePathEntries resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -159,14 +172,15 @@ class MobilePathEntries(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -178,16 +192,15 @@ class MobilePathEntries(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -199,16 +212,15 @@ class MobilePathEntries(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

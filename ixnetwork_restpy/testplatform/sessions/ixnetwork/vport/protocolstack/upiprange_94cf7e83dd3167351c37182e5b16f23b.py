@@ -36,10 +36,10 @@ class UpIpRange(Base):
 
     @property
     def AutoMacGeneration(self):
-        """If set, MAC addresses will be auto-generated based on IP
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set, MAC addresses will be auto-generated based on IP
         """
         return self._get_attribute('autoMacGeneration')
     @AutoMacGeneration.setter
@@ -48,10 +48,10 @@ class UpIpRange(Base):
 
     @property
     def Count(self):
-        """The total number of addresses to be created for the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of addresses to be created for the range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -60,10 +60,10 @@ class UpIpRange(Base):
 
     @property
     def EnableGatewayArp(self):
-        """DEPRECATED Deprecated property, please use Static IP globals instead.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Deprecated property, please use Static IP globals instead.
         """
         return self._get_attribute('enableGatewayArp')
     @EnableGatewayArp.setter
@@ -72,10 +72,10 @@ class UpIpRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -84,10 +84,10 @@ class UpIpRange(Base):
 
     @property
     def GatewayAddress(self):
-        """Defines the gateway to be associated with all the addresses created in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the gateway to be associated with all the addresses created in the range.
         """
         return self._get_attribute('gatewayAddress')
     @GatewayAddress.setter
@@ -96,10 +96,10 @@ class UpIpRange(Base):
 
     @property
     def GatewayIncrement(self):
-        """Defines the gateway step size to be used in the association with the addresses created in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the gateway step size to be used in the association with the addresses created in the range.
         """
         return self._get_attribute('gatewayIncrement')
     @GatewayIncrement.setter
@@ -108,10 +108,10 @@ class UpIpRange(Base):
 
     @property
     def GatewayIncrementMode(self):
-        """Defines the gateway step size to be used in the association with the addresses created in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the gateway step size to be used in the association with the addresses created in the range.
         """
         return self._get_attribute('gatewayIncrementMode')
     @GatewayIncrementMode.setter
@@ -120,10 +120,10 @@ class UpIpRange(Base):
 
     @property
     def IncrementBy(self):
-        """Defines the increment to be used for enumerating all the addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -132,10 +132,10 @@ class UpIpRange(Base):
 
     @property
     def IpAddress(self):
-        """Defines the base address to be used for enumerating all the addresses in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the base address to be used for enumerating all the addresses in the range.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -144,10 +144,10 @@ class UpIpRange(Base):
 
     @property
     def IpType(self):
-        """Defines the version of IP address style to be used for describing the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the version of IP address style to be used for describing the range.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -156,10 +156,10 @@ class UpIpRange(Base):
 
     @property
     def Mss(self):
-        """The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
         """
         return self._get_attribute('mss')
     @Mss.setter
@@ -168,10 +168,10 @@ class UpIpRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -180,19 +180,19 @@ class UpIpRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Prefix(self):
-        """Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
         """
         return self._get_attribute('prefix')
     @Prefix.setter
@@ -200,41 +200,44 @@ class UpIpRange(Base):
         self._set_attribute('prefix', value)
 
     def update(self, AutoMacGeneration=None, Count=None, EnableGatewayArp=None, Enabled=None, GatewayAddress=None, GatewayIncrement=None, GatewayIncrementMode=None, IncrementBy=None, IpAddress=None, IpType=None, Mss=None, Name=None, Prefix=None):
-        """Updates a child instance of upIpRange on the server.
+        """Updates upIpRange resource on the server.
 
-        Args:
-            AutoMacGeneration (bool): If set, MAC addresses will be auto-generated based on IP
-            Count (number): The total number of addresses to be created for the range.
-            EnableGatewayArp (bool): Deprecated property, please use Static IP globals instead.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            GatewayAddress (str): Defines the gateway to be associated with all the addresses created in the range.
-            GatewayIncrement (str): Defines the gateway step size to be used in the association with the addresses created in the range.
-            GatewayIncrementMode (str): Defines the gateway step size to be used in the association with the addresses created in the range.
-            IncrementBy (str): Defines the increment to be used for enumerating all the addresses in the range.
-            IpAddress (str): Defines the base address to be used for enumerating all the addresses in the range.
-            IpType (str): Defines the version of IP address style to be used for describing the range.
-            Mss (number): The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
-            Name (str): Name of range
-            Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
+        Args
+        ----
+        - AutoMacGeneration (bool): If set, MAC addresses will be auto-generated based on IP
+        - Count (number): The total number of addresses to be created for the range.
+        - EnableGatewayArp (bool): Deprecated property, please use Static IP globals instead.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - GatewayAddress (str): Defines the gateway to be associated with all the addresses created in the range.
+        - GatewayIncrement (str): Defines the gateway step size to be used in the association with the addresses created in the range.
+        - GatewayIncrementMode (str): Defines the gateway step size to be used in the association with the addresses created in the range.
+        - IncrementBy (str): Defines the increment to be used for enumerating all the addresses in the range.
+        - IpAddress (str): Defines the base address to be used for enumerating all the addresses in the range.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Mss (number): The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
+        - Name (str): Name of range
+        - Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -246,16 +249,15 @@ class UpIpRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -267,16 +269,15 @@ class UpIpRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

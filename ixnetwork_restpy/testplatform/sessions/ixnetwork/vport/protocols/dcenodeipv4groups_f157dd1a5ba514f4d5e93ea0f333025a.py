@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceNodeIpv4Groups(Base):
     """Sets the DCE Node IPv4 Groups for a particular DCE ISIS Network Range.
-    The DceNodeIpv4Groups class encapsulates a list of dceNodeIpv4Groups resources that is be managed by the user.
+    The DceNodeIpv4Groups class encapsulates a list of dceNodeIpv4Groups resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceNodeIpv4Groups.find() method.
-    The list can be managed by the user by using the DceNodeIpv4Groups.add() and DceNodeIpv4Groups.remove() methods.
+    The list can be managed by using the DceNodeIpv4Groups.add() and DceNodeIpv4Groups.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def IncludeIpv4Groups(self):
-        """If true, includes IPv4 groups for this Network Range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, includes IPv4 groups for this Network Range.
         """
         return self._get_attribute('includeIpv4Groups')
     @IncludeIpv4Groups.setter
@@ -50,10 +50,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def InterGroupUnicastIpv4Increment(self):
-        """The IPv4 address format of the Unicast IPv4 between one or more node groups.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the Unicast IPv4 between one or more node groups.
         """
         return self._get_attribute('interGroupUnicastIpv4Increment')
     @InterGroupUnicastIpv4Increment.setter
@@ -62,10 +62,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def IntraGroupUnicastIpv4Increment(self):
-        """The IPv4 address format of the Unicast MAC within a node group.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the Unicast MAC within a node group.
         """
         return self._get_attribute('intraGroupUnicastIpv4Increment')
     @IntraGroupUnicastIpv4Increment.setter
@@ -74,10 +74,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def MulticastAddressNodeStep(self):
-        """The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
         """
         return self._get_attribute('multicastAddressNodeStep')
     @MulticastAddressNodeStep.setter
@@ -86,10 +86,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def MulticastIpv4Count(self):
-        """The number of Multicast IPv4 addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Multicast IPv4 addresses.
         """
         return self._get_attribute('multicastIpv4Count')
     @MulticastIpv4Count.setter
@@ -98,10 +98,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def MulticastIpv4Step(self):
-        """The incremental value of Multicast IPv4 address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incremental value of Multicast IPv4 address.
         """
         return self._get_attribute('multicastIpv4Step')
     @MulticastIpv4Step.setter
@@ -110,10 +110,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def NoOfUnicastScrIpv4sPerMulicastIpv4(self):
-        """The number of Unicast Source for each Multicast IPv4 address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Unicast Source for each Multicast IPv4 address.
         """
         return self._get_attribute('noOfUnicastScrIpv4sPerMulicastIpv4')
     @NoOfUnicastScrIpv4sPerMulicastIpv4.setter
@@ -122,10 +122,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def SourceGroupMapping(self):
-        """The Source Group mapping type.
-
-        Returns:
-            str(fullyMeshed|oneToOne|manualMapping)
+        """
+        Returns
+        -------
+        - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
         return self._get_attribute('sourceGroupMapping')
     @SourceGroupMapping.setter
@@ -134,10 +134,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def StartMulticastIpv4(self):
-        """The IP address format of the starting Multicast IPv4 address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address format of the starting Multicast IPv4 address.
         """
         return self._get_attribute('startMulticastIpv4')
     @StartMulticastIpv4.setter
@@ -146,10 +146,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def StartUnicastSourceIpv4(self):
-        """The IPv4 address format of the starting Unicast Source IPv4.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the starting Unicast Source IPv4.
         """
         return self._get_attribute('startUnicastSourceIpv4')
     @StartUnicastSourceIpv4.setter
@@ -158,10 +158,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def UnicastAddressNodeStep(self):
-        """The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
         """
         return self._get_attribute('unicastAddressNodeStep')
     @UnicastAddressNodeStep.setter
@@ -170,10 +170,10 @@ class DceNodeIpv4Groups(Base):
 
     @property
     def VlanId(self):
-        """The VLAN ID of the enabled Multicast IPv4 Range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VLAN ID of the enabled Multicast IPv4 Range.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -181,100 +181,113 @@ class DceNodeIpv4Groups(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, IncludeIpv4Groups=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUnicastScrIpv4sPerMulicastIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Updates a child instance of dceNodeIpv4Groups on the server.
+        """Updates dceNodeIpv4Groups resource on the server.
 
-        Args:
-            IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
-            MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
-            NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
-            UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
+        Args
+        ----
+        - IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
+        - MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
+        - NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
+        - UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, IncludeIpv4Groups=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUnicastScrIpv4sPerMulicastIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Adds a new dceNodeIpv4Groups node on the server and retrieves it in this instance.
+        """Adds a new dceNodeIpv4Groups resource on the server and adds it to the container.
 
-        Args:
-            IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
-            MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
-            NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
-            UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
+        Args
+        ----
+        - IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
+        - MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
+        - NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
+        - UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
 
-        Returns:
-            self: This instance with all currently retrieved dceNodeIpv4Groups data using find and the newly added dceNodeIpv4Groups data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceNodeIpv4Groups resources using find and the newly added dceNodeIpv4Groups resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceNodeIpv4Groups data in this instance from server.
+        """Deletes all the contained dceNodeIpv4Groups resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, IncludeIpv4Groups=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUnicastScrIpv4sPerMulicastIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Finds and retrieves dceNodeIpv4Groups data from the server.
+        """Finds and retrieves dceNodeIpv4Groups resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceNodeIpv4Groups data from the server.
-        By default the find method takes no parameters and will retrieve all dceNodeIpv4Groups data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceNodeIpv4Groups resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceNodeIpv4Groups resources from the server.
 
-        Args:
-            IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
-            MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
-            NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
-            UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
+        Args
+        ----
+        - IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
+        - MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
+        - NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
+        - UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
 
-        Returns:
-            self: This instance with matching dceNodeIpv4Groups data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceNodeIpv4Groups resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceNodeIpv4Groups data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceNodeIpv4Groups data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceNodeIpv4Groups resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

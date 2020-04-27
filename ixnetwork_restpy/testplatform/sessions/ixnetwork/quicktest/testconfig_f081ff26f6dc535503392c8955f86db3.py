@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def CpDpConvergenceFactorScale(self):
-        """Indicates the convergence factor scale.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the convergence factor scale.
         """
         return self._get_attribute('cpDpConvergenceFactorScale')
     @CpDpConvergenceFactorScale.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def CpDpConvergenceTime(self):
-        """Indicates the convergence time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the convergence time.
         """
         return self._get_attribute('cpDpConvergenceTime')
     @CpDpConvergenceTime.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def CustomFramesizeValue(self):
-        """Sets the custom frame size value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the custom frame size value.
         """
         return self._get_attribute('customFramesizeValue')
     @CustomFramesizeValue.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def CustomLoadUnit(self):
-        """Specifies the custom load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the custom load unit.
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterFailover(self):
-        """Sets the delay after failover.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the delay after failover.
         """
         return self._get_attribute('delayAfterFailover')
     @DelayAfterFailover.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def DelayBeforeFailover(self):
-        """Sets the delay before failover.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the delay before failover.
         """
         return self._get_attribute('delayBeforeFailover')
     @DelayBeforeFailover.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def DeleteFlowsAtStartup(self):
-        """If true, the test will delete the flowgroups at startup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the test will delete the flowgroups at startup.
         """
         return self._get_attribute('deleteFlowsAtStartup')
     @DeleteFlowsAtStartup.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def DpDpConvergenceFactorScale(self):
-        """Indicates the convergence factor scale.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the convergence factor scale.
         """
         return self._get_attribute('dpDpConvergenceFactorScale')
     @DpDpConvergenceFactorScale.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def DpDpConvergenceTime(self):
-        """Indicates the convergence time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the convergence time.
         """
         return self._get_attribute('dpDpConvergenceTime')
     @DpDpConvergenceTime.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def EnableCpDpPassFail(self):
-        """Enables the CP DP pass fail.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the CP DP pass fail.
         """
         return self._get_attribute('enableCpDpPassFail')
     @EnableCpDpPassFail.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def EnableDpDpPassFail(self):
-        """Enables the DP DP pass fail
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the DP DP pass fail
         """
         return self._get_attribute('enableDpDpPassFail')
     @EnableDpDpPassFail.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, enables minimum frame size.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables minimum frame size.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def FailureMode(self):
-        """Sets the failure mode.
-
-        Returns:
-            str(delPrimaryFlow|modifyRxPort)
+        """
+        Returns
+        -------
+        - str(delPrimaryFlow | modifyRxPort): Sets the failure mode.
         """
         return self._get_attribute('failureMode')
     @FailureMode.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def FailureType(self):
-        """Sets the type of failure.
-
-        Returns:
-            str(proactive)
+        """
+        Returns
+        -------
+        - str(proactive): Sets the type of failure.
         """
         return self._get_attribute('failureType')
     @FailureType.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def ForceContinuosTraffic(self):
-        """Forces continuous traffic.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Forces continuous traffic.
         """
         return self._get_attribute('forceContinuosTraffic')
     @ForceContinuosTraffic.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian.
-
-        Returns:
-            str(increment|random)
+        """
+        Returns
+        -------
+        - str(increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """The gap in transmission of frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The gap in transmission of frames.
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateValue(self):
-        """The value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value of the load rate.
         """
         return self._get_attribute('loadRateValue')
     @LoadRateValue.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """The maximum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random frame size to be sent.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The minimum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random frame size to be sent.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The integer value that states the number of trials permitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value that states the number of trials permitted.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def ReportConvergenceUnit(self):
-        """The unit in which convergence will be reported.
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): The unit in which convergence will be reported.
         """
         return self._get_attribute('reportConvergenceUnit')
     @ReportConvergenceUnit.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """The unit of rate for throughput.
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): The unit of rate for throughput.
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def SecondaryRxPort(self):
-        """Sets the secondary receiving Port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the secondary receiving Port.
         """
         return self._get_attribute('secondaryRxPort')
     @SecondaryRxPort.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def TestTrafficType(self):
-        """It signifies the test traffic type value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the test traffic type value.
         """
         return self._get_attribute('testTrafficType')
     @TestTrafficType.setter
@@ -347,49 +347,52 @@ class TestConfig(Base):
         self._set_attribute('testTrafficType', value)
 
     def update(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayAfterFailover=None, DelayBeforeFailover=None, DeleteFlowsAtStartup=None, DpDpConvergenceFactorScale=None, DpDpConvergenceTime=None, EnableCpDpPassFail=None, EnableDpDpPassFail=None, EnableMinFrameSize=None, FailureMode=None, FailureType=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, LoadRateValue=None, MaxRandomFrameSize=None, MinRandomFrameSize=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, SecondaryRxPort=None, TestTrafficType=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            CpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
-            CpDpConvergenceTime (number): Indicates the convergence time.
-            CustomFramesizeValue (number): Sets the custom frame size value.
-            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
-            DelayAfterFailover (number): Sets the delay after failover.
-            DelayBeforeFailover (number): Sets the delay before failover.
-            DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup.
-            DpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
-            DpDpConvergenceTime (number): Indicates the convergence time.
-            EnableCpDpPassFail (bool): Enables the CP DP pass fail.
-            EnableDpDpPassFail (bool): Enables the DP DP pass fail
-            EnableMinFrameSize (bool): If true, enables minimum frame size.
-            FailureMode (str(delPrimaryFlow|modifyRxPort)): Sets the failure mode.
-            FailureType (str(proactive)): Sets the type of failure.
-            ForceContinuosTraffic (bool): Forces continuous traffic.
-            FrameSizeMode (str(increment|random)): This attribute is the frame size mode for the Quad Gaussian.
-            Gap (number): The gap in transmission of frames.
-            LoadRateValue (number): The value of the load rate.
-            MaxRandomFrameSize (number): The maximum random frame size to be sent.
-            MinRandomFrameSize (number): The minimum random frame size to be sent.
-            Numtrials (number): The integer value that states the number of trials permitted.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            ReportConvergenceUnit (str(ms|ns|us)): The unit in which convergence will be reported.
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The unit of rate for throughput.
-            SecondaryRxPort (number): Sets the secondary receiving Port.
-            TestTrafficType (str): It signifies the test traffic type value.
+        Args
+        ----
+        - CpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+        - CpDpConvergenceTime (number): Indicates the convergence time.
+        - CustomFramesizeValue (number): Sets the custom frame size value.
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit.
+        - DelayAfterFailover (number): Sets the delay after failover.
+        - DelayBeforeFailover (number): Sets the delay before failover.
+        - DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup.
+        - DpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+        - DpDpConvergenceTime (number): Indicates the convergence time.
+        - EnableCpDpPassFail (bool): Enables the CP DP pass fail.
+        - EnableDpDpPassFail (bool): Enables the DP DP pass fail
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - FailureMode (str(delPrimaryFlow | modifyRxPort)): Sets the failure mode.
+        - FailureType (str(proactive)): Sets the type of failure.
+        - ForceContinuosTraffic (bool): Forces continuous traffic.
+        - FrameSizeMode (str(increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - Gap (number): The gap in transmission of frames.
+        - LoadRateValue (number): The value of the load rate.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportConvergenceUnit (str(ms | ns | us)): The unit in which convergence will be reported.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
+        - SecondaryRxPort (number): Sets the secondary receiving Port.
+        - TestTrafficType (str): It signifies the test traffic type value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -397,9 +400,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -407,12 +411,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -422,9 +424,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -434,12 +437,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -449,24 +450,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -478,18 +472,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -501,9 +493,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -513,12 +506,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

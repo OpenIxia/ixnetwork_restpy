@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Session(Base):
     """Configures a session under a BFD interface.
-    The Session class encapsulates a list of session resources that is be managed by the user.
+    The Session class encapsulates a list of session resources that are managed by the user.
     A list of resources can be retrieved from the server using the Session.find() method.
-    The list can be managed by the user by using the Session.add() and Session.remove() methods.
+    The list can be managed by using the Session.add() and Session.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Session(Base):
 
     @property
     def BfdSessionType(self):
-        """The type of BFD session, either single or multiple hop.
-
-        Returns:
-            str(singleHop|multipleHops)
+        """
+        Returns
+        -------
+        - str(singleHop | multipleHops): The type of BFD session, either single or multiple hop.
         """
         return self._get_attribute('bfdSessionType')
     @BfdSessionType.setter
@@ -50,10 +50,10 @@ class Session(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of this route range for the simulated router. The default is disable.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this route range for the simulated router. The default is disable.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class Session(Base):
 
     @property
     def EnabledAutoChooseSource(self):
-        """If true, enables the session to automatically choose the source IP address for the BFD session.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the session to automatically choose the source IP address for the BFD session.
         """
         return self._get_attribute('enabledAutoChooseSource')
     @EnabledAutoChooseSource.setter
@@ -74,10 +74,10 @@ class Session(Base):
 
     @property
     def IpType(self):
-        """The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -86,10 +86,10 @@ class Session(Base):
 
     @property
     def LocalBfdAddress(self):
-        """The first IP address that will be used for simulated routers. IPv4 or IPv6.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IP address that will be used for simulated routers. IPv4 or IPv6.
         """
         return self._get_attribute('localBfdAddress')
     @LocalBfdAddress.setter
@@ -98,10 +98,10 @@ class Session(Base):
 
     @property
     def MyDisc(self):
-        """Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
         """
         return self._get_attribute('myDisc')
     @MyDisc.setter
@@ -110,10 +110,10 @@ class Session(Base):
 
     @property
     def RemoteBfdAddress(self):
-        """The remote address in which the BFD session is active.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The remote address in which the BFD session is active.
         """
         return self._get_attribute('remoteBfdAddress')
     @RemoteBfdAddress.setter
@@ -122,10 +122,10 @@ class Session(Base):
 
     @property
     def RemoteDisc(self):
-        """This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
         """
         return self._get_attribute('remoteDisc')
     @RemoteDisc.setter
@@ -134,10 +134,10 @@ class Session(Base):
 
     @property
     def RemoteDiscLearned(self):
-        """The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
         """
         return self._get_attribute('remoteDiscLearned')
     @RemoteDiscLearned.setter
@@ -145,91 +145,104 @@ class Session(Base):
         self._set_attribute('remoteDiscLearned', value)
 
     def update(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
-        """Updates a child instance of session on the server.
+        """Updates session resource on the server.
 
-        Args:
-            BfdSessionType (str(singleHop|multipleHops)): The type of BFD session, either single or multiple hop.
-            Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
-            EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
-            IpType (str(ipv4|ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
-            LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
-            MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
-            RemoteBfdAddress (str): The remote address in which the BFD session is active.
-            RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
-            RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
+        Args
+        ----
+        - BfdSessionType (str(singleHop | multipleHops)): The type of BFD session, either single or multiple hop.
+        - Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
+        - EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
+        - IpType (str(ipv4 | ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
+        - LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
+        - MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
+        - RemoteBfdAddress (str): The remote address in which the BFD session is active.
+        - RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
+        - RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
-        """Adds a new session node on the server and retrieves it in this instance.
+        """Adds a new session resource on the server and adds it to the container.
 
-        Args:
-            BfdSessionType (str(singleHop|multipleHops)): The type of BFD session, either single or multiple hop.
-            Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
-            EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
-            IpType (str(ipv4|ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
-            LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
-            MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
-            RemoteBfdAddress (str): The remote address in which the BFD session is active.
-            RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
-            RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
+        Args
+        ----
+        - BfdSessionType (str(singleHop | multipleHops)): The type of BFD session, either single or multiple hop.
+        - Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
+        - EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
+        - IpType (str(ipv4 | ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
+        - LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
+        - MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
+        - RemoteBfdAddress (str): The remote address in which the BFD session is active.
+        - RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
+        - RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
 
-        Returns:
-            self: This instance with all currently retrieved session data using find and the newly added session data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved session resources using find and the newly added session resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the session data in this instance from server.
+        """Deletes all the contained session resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
-        """Finds and retrieves session data from the server.
+        """Finds and retrieves session resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve session data from the server.
-        By default the find method takes no parameters and will retrieve all session data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve session resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all session resources from the server.
 
-        Args:
-            BfdSessionType (str(singleHop|multipleHops)): The type of BFD session, either single or multiple hop.
-            Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
-            EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
-            IpType (str(ipv4|ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
-            LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
-            MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
-            RemoteBfdAddress (str): The remote address in which the BFD session is active.
-            RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
-            RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
+        Args
+        ----
+        - BfdSessionType (str(singleHop | multipleHops)): The type of BFD session, either single or multiple hop.
+        - Enabled (bool): Enables the use of this route range for the simulated router. The default is disable.
+        - EnabledAutoChooseSource (bool): If true, enables the session to automatically choose the source IP address for the BFD session.
+        - IpType (str(ipv4 | ipv6)): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
+        - LocalBfdAddress (str): The first IP address that will be used for simulated routers. IPv4 or IPv6.
+        - MyDisc (number): Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
+        - RemoteBfdAddress (str): The remote address in which the BFD session is active.
+        - RemoteDisc (number): This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
+        - RemoteDiscLearned (bool): The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
 
-        Returns:
-            self: This instance with matching session data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching session resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of session data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the session data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the session resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

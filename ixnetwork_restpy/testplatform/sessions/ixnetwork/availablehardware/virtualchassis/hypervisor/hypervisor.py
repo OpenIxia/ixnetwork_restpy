@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Hypervisor(Base):
     """List of hypervisor credentials
-    The Hypervisor class encapsulates a list of hypervisor resources that is be managed by the user.
+    The Hypervisor class encapsulates a list of hypervisor resources that are managed by the user.
     A list of resources can be retrieved from the server using the Hypervisor.find() method.
-    The list can be managed by the user by using the Hypervisor.add() and Hypervisor.remove() methods.
+    The list can be managed by using the Hypervisor.add() and Hypervisor.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Hypervisor(Base):
 
     @property
     def Enabled(self):
-        """If true the hypervisor is enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the hypervisor is enabled
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class Hypervisor(Base):
 
     @property
     def Password(self):
-        """Represents the hypervisor password
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the hypervisor password
         """
         return self._get_attribute('password')
     @Password.setter
@@ -62,10 +62,10 @@ class Hypervisor(Base):
 
     @property
     def ServerIp(self):
-        """Represents the hypervisor Ip
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the hypervisor Ip
         """
         return self._get_attribute('serverIp')
     @ServerIp.setter
@@ -74,10 +74,10 @@ class Hypervisor(Base):
 
     @property
     def Type(self):
-        """Represents the hypervisor host type
-
-        Returns:
-            str(qemu|vCenter|vmware)
+        """
+        Returns
+        -------
+        - str(qemu | vCenter | vmware): Represents the hypervisor host type
         """
         return self._get_attribute('type')
     @Type.setter
@@ -86,10 +86,10 @@ class Hypervisor(Base):
 
     @property
     def User(self):
-        """Represents the hypervisor username
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Represents the hypervisor username
         """
         return self._get_attribute('user')
     @User.setter
@@ -97,79 +97,92 @@ class Hypervisor(Base):
         self._set_attribute('user', value)
 
     def update(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
-        """Updates a child instance of hypervisor on the server.
+        """Updates hypervisor resource on the server.
 
-        Args:
-            Enabled (bool): If true the hypervisor is enabled
-            Password (str): Represents the hypervisor password
-            ServerIp (str): Represents the hypervisor Ip
-            Type (str(qemu|vCenter|vmware)): Represents the hypervisor host type
-            User (str): Represents the hypervisor username
+        Args
+        ----
+        - Enabled (bool): If true the hypervisor is enabled
+        - Password (str): Represents the hypervisor password
+        - ServerIp (str): Represents the hypervisor Ip
+        - Type (str(qemu | vCenter | vmware)): Represents the hypervisor host type
+        - User (str): Represents the hypervisor username
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
-        """Adds a new hypervisor node on the server and retrieves it in this instance.
+        """Adds a new hypervisor resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true the hypervisor is enabled
-            Password (str): Represents the hypervisor password
-            ServerIp (str): Represents the hypervisor Ip
-            Type (str(qemu|vCenter|vmware)): Represents the hypervisor host type
-            User (str): Represents the hypervisor username
+        Args
+        ----
+        - Enabled (bool): If true the hypervisor is enabled
+        - Password (str): Represents the hypervisor password
+        - ServerIp (str): Represents the hypervisor Ip
+        - Type (str(qemu | vCenter | vmware)): Represents the hypervisor host type
+        - User (str): Represents the hypervisor username
 
-        Returns:
-            self: This instance with all currently retrieved hypervisor data using find and the newly added hypervisor data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved hypervisor resources using find and the newly added hypervisor resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the hypervisor data in this instance from server.
+        """Deletes all the contained hypervisor resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
-        """Finds and retrieves hypervisor data from the server.
+        """Finds and retrieves hypervisor resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve hypervisor data from the server.
-        By default the find method takes no parameters and will retrieve all hypervisor data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve hypervisor resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all hypervisor resources from the server.
 
-        Args:
-            Enabled (bool): If true the hypervisor is enabled
-            Password (str): Represents the hypervisor password
-            ServerIp (str): Represents the hypervisor Ip
-            Type (str(qemu|vCenter|vmware)): Represents the hypervisor host type
-            User (str): Represents the hypervisor username
+        Args
+        ----
+        - Enabled (bool): If true the hypervisor is enabled
+        - Password (str): Represents the hypervisor password
+        - ServerIp (str): Represents the hypervisor Ip
+        - Type (str(qemu | vCenter | vmware)): Represents the hypervisor host type
+        - User (str): Represents the hypervisor username
 
-        Returns:
-            self: This instance with matching hypervisor data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching hypervisor resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of hypervisor data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the hypervisor data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the hypervisor resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

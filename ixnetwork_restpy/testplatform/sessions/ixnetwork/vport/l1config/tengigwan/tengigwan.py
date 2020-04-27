@@ -36,38 +36,38 @@ class TenGigWan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -76,10 +76,10 @@ class TenGigWan(Base):
 
     @property
     def C2Expected(self):
-        """The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
         """
         return self._get_attribute('c2Expected')
     @C2Expected.setter
@@ -88,10 +88,10 @@ class TenGigWan(Base):
 
     @property
     def C2Tx(self):
-        """The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
         """
         return self._get_attribute('c2Tx')
     @C2Tx.setter
@@ -100,10 +100,10 @@ class TenGigWan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -112,10 +112,10 @@ class TenGigWan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -124,10 +124,10 @@ class TenGigWan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """This is the 48-bit MAC address that the port will listen on for a directed pause message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -136,10 +136,10 @@ class TenGigWan(Base):
 
     @property
     def IfsStretch(self):
-        """If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
         """
         return self._get_attribute('ifsStretch')
     @IfsStretch.setter
@@ -148,10 +148,10 @@ class TenGigWan(Base):
 
     @property
     def InterfaceType(self):
-        """The 10G WAN interface type for the port.
-
-        Returns:
-            str(wanSdh|wanSonet)
+        """
+        Returns
+        -------
+        - str(wanSdh | wanSonet): The 10G WAN interface type for the port.
         """
         return self._get_attribute('interfaceType')
     @InterfaceType.setter
@@ -160,10 +160,10 @@ class TenGigWan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -172,10 +172,10 @@ class TenGigWan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -184,10 +184,10 @@ class TenGigWan(Base):
 
     @property
     def TransmitClocking(self):
-        """The transmit clocking type for this 10G WAN port.
-
-        Returns:
-            str(external|internal|recovered)
+        """
+        Returns
+        -------
+        - str(external | internal | recovered): The transmit clocking type for this 10G WAN port.
         """
         return self._get_attribute('transmitClocking')
     @TransmitClocking.setter
@@ -196,10 +196,10 @@ class TenGigWan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If enabled, will allow transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -207,23 +207,25 @@ class TenGigWan(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of tenGigWan on the server.
+        """Updates tenGigWan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            C2Expected (number): The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
-            C2Tx (number): The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
-            IfsStretch (bool): If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
-            InterfaceType (str(wanSdh|wanSonet)): The 10G WAN interface type for the port.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            TransmitClocking (str(external|internal|recovered)): The transmit clocking type for this 10G WAN port.
-            TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - C2Expected (number): The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
+        - C2Tx (number): The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - IfsStretch (bool): If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
+        - InterfaceType (str(wanSdh | wanSonet)): The 10G WAN interface type for the port.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - TransmitClocking (str(external | internal | recovered)): The transmit clocking type for this 10G WAN port.
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

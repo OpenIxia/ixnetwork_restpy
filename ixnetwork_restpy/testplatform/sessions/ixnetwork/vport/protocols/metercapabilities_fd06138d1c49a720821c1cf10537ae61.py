@@ -36,10 +36,10 @@ class MeterCapabilities(Base):
 
     @property
     def CollectStatistics(self):
-        """The capability to collect statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The capability to collect statistics.
         """
         return self._get_attribute('collectStatistics')
     @CollectStatistics.setter
@@ -48,10 +48,10 @@ class MeterCapabilities(Base):
 
     @property
     def DoBurstSize(self):
-        """The size of burst.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The size of burst.
         """
         return self._get_attribute('doBurstSize')
     @DoBurstSize.setter
@@ -60,10 +60,10 @@ class MeterCapabilities(Base):
 
     @property
     def KiloBitPerSecond(self):
-        """Rate value in kilo-bit per second.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Rate value in kilo-bit per second.
         """
         return self._get_attribute('kiloBitPerSecond')
     @KiloBitPerSecond.setter
@@ -72,10 +72,10 @@ class MeterCapabilities(Base):
 
     @property
     def PacketPerSecond(self):
-        """Rate value in packet per second.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Rate value in packet per second.
         """
         return self._get_attribute('packetPerSecond')
     @PacketPerSecond.setter
@@ -83,15 +83,17 @@ class MeterCapabilities(Base):
         self._set_attribute('packetPerSecond', value)
 
     def update(self, CollectStatistics=None, DoBurstSize=None, KiloBitPerSecond=None, PacketPerSecond=None):
-        """Updates a child instance of meterCapabilities on the server.
+        """Updates meterCapabilities resource on the server.
 
-        Args:
-            CollectStatistics (bool): The capability to collect statistics.
-            DoBurstSize (bool): The size of burst.
-            KiloBitPerSecond (bool): Rate value in kilo-bit per second.
-            PacketPerSecond (bool): Rate value in packet per second.
+        Args
+        ----
+        - CollectStatistics (bool): The capability to collect statistics.
+        - DoBurstSize (bool): The size of burst.
+        - KiloBitPerSecond (bool): Rate value in kilo-bit per second.
+        - PacketPerSecond (bool): Rate value in packet per second.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

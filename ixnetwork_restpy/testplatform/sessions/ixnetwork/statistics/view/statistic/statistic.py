@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Statistic(Base):
     """
-    The Statistic class encapsulates a list of statistic resources that is managed by the system.
+    The Statistic class encapsulates a list of statistic resources that are managed by the system.
     A list of resources can be retrieved from the server using the Statistic.find() method.
     """
 
@@ -38,9 +38,9 @@ class Statistic(Base):
     @property
     def AggregationType(self):
         """
-
-        Returns:
-            str(average|averageRate|ax|axRate|intervalAverage|min|minRate|none|rate|runStateAgg|runStateAggIgnoreRamp|sum|vectorMax|vectorMin|weightedAverage)
+        Returns
+        -------
+        - str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage): 
         """
         return self._get_attribute('aggregationType')
     @AggregationType.setter
@@ -50,9 +50,9 @@ class Statistic(Base):
     @property
     def Caption(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('caption')
     @Caption.setter
@@ -62,18 +62,18 @@ class Statistic(Base):
     @property
     def DefaultCaption(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('defaultCaption')
 
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -83,9 +83,9 @@ class Statistic(Base):
     @property
     def ScaleFactor(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('scaleFactor')
     @ScaleFactor.setter
@@ -95,59 +95,68 @@ class Statistic(Base):
     @property
     def SourceTypes(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('sourceTypes')
 
     def update(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
-        """Updates a child instance of statistic on the server.
+        """Updates statistic resource on the server.
 
-        Args:
-            AggregationType (str(average|averageRate|ax|axRate|intervalAverage|min|minRate|none|rate|runStateAgg|runStateAggIgnoreRamp|sum|vectorMax|vectorMin|weightedAverage)): 
-            Caption (str): 
-            Enabled (bool): 
-            ScaleFactor (number): 
+        Args
+        ----
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
+        - Caption (str): 
+        - Enabled (bool): 
+        - ScaleFactor (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AggregationType=None, Caption=None, DefaultCaption=None, Enabled=None, ScaleFactor=None, SourceTypes=None):
-        """Finds and retrieves statistic data from the server.
+        """Finds and retrieves statistic resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve statistic data from the server.
-        By default the find method takes no parameters and will retrieve all statistic data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistic resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statistic resources from the server.
 
-        Args:
-            AggregationType (str(average|averageRate|ax|axRate|intervalAverage|min|minRate|none|rate|runStateAgg|runStateAggIgnoreRamp|sum|vectorMax|vectorMin|weightedAverage)): 
-            Caption (str): 
-            DefaultCaption (str): 
-            Enabled (bool): 
-            ScaleFactor (number): 
-            SourceTypes (list(str)): 
+        Args
+        ----
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
+        - Caption (str): 
+        - DefaultCaption (str): 
+        - Enabled (bool): 
+        - ScaleFactor (number): 
+        - SourceTypes (list(str)): 
 
-        Returns:
-            self: This instance with matching statistic data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching statistic resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the statistic data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the statistic resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,10 +36,10 @@ class DataCollection(Base):
 
     @property
     def Enable(self):
-        """If it is true, enables collection of data
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If it is true, enables collection of data
         """
         return self._get_attribute('Enable')
     @Enable.setter
@@ -48,20 +48,22 @@ class DataCollection(Base):
 
     @property
     def LastRunId(self):
-        """Specifies the identifier for last run.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the identifier for last run.
         """
         return self._get_attribute('LastRunId')
 
     def update(self, Enable=None):
-        """Updates a child instance of dataCollection on the server.
+        """Updates dataCollection resource on the server.
 
-        Args:
-            Enable (bool): If it is true, enables collection of data
+        Args
+        ----
+        - Enable (bool): If it is true, enables collection of data
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,38 +36,38 @@ class Lisp(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_322ac361cad5282fe4460001f490a8c0.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_322ac361cad5282fe4460001f490a8c0.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_322ac361cad5282fe4460001f490a8c0 import Router
         return Router(self)
 
     @property
     def SiteEidRange(self):
-        """An instance of the SiteEidRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_03c2bf594d510231e316a66b011906a8.SiteEidRange): An instance of the SiteEidRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_03c2bf594d510231e316a66b011906a8.SiteEidRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_03c2bf594d510231e316a66b011906a8 import SiteEidRange
         return SiteEidRange(self)
 
     @property
     def BurstIntervalInMs(self):
-        """It shows the details abou the burst interval in micro seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It shows the details abou the burst interval in micro seconds
         """
         return self._get_attribute('burstIntervalInMs')
     @BurstIntervalInMs.setter
@@ -76,10 +76,10 @@ class Lisp(Base):
 
     @property
     def Enabled(self):
-        """If true, it shows enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it shows enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,10 +88,10 @@ class Lisp(Base):
 
     @property
     def Ipv4MapRegisterPacketsPerBurst(self):
-        """It gives details about the ip v4 map register packets per burst
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the ip v4 map register packets per burst
         """
         return self._get_attribute('ipv4MapRegisterPacketsPerBurst')
     @Ipv4MapRegisterPacketsPerBurst.setter
@@ -100,10 +100,10 @@ class Lisp(Base):
 
     @property
     def Ipv4MapRequestPacketsPerBurst(self):
-        """It gives details about the ip v4 map requests packets per burst
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the ip v4 map requests packets per burst
         """
         return self._get_attribute('ipv4MapRequestPacketsPerBurst')
     @Ipv4MapRequestPacketsPerBurst.setter
@@ -112,10 +112,10 @@ class Lisp(Base):
 
     @property
     def Ipv4SmrPacketsPerBurst(self):
-        """It gives details about the Ip v4 Smr packets per bursts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the Ip v4 Smr packets per bursts
         """
         return self._get_attribute('ipv4SmrPacketsPerBurst')
     @Ipv4SmrPacketsPerBurst.setter
@@ -124,10 +124,10 @@ class Lisp(Base):
 
     @property
     def Ipv6MapRegisterPacketsPerBurst(self):
-        """It gives details about the ip v6 map register packets per burst
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the ip v6 map register packets per burst
         """
         return self._get_attribute('ipv6MapRegisterPacketsPerBurst')
     @Ipv6MapRegisterPacketsPerBurst.setter
@@ -136,10 +136,10 @@ class Lisp(Base):
 
     @property
     def Ipv6MapRequestPacketsPerBurst(self):
-        """It gives details about the ip v6 map requests packets per burst
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the ip v6 map requests packets per burst
         """
         return self._get_attribute('ipv6MapRequestPacketsPerBurst')
     @Ipv6MapRequestPacketsPerBurst.setter
@@ -148,10 +148,10 @@ class Lisp(Base):
 
     @property
     def Ipv6SmrPacketsPerBurst(self):
-        """It gives details about the Ip v6 Smr packets per bursts
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives details about the Ip v6 Smr packets per bursts
         """
         return self._get_attribute('ipv6SmrPacketsPerBurst')
     @Ipv6SmrPacketsPerBurst.setter
@@ -160,39 +160,42 @@ class Lisp(Base):
 
     @property
     def ProtocolState(self):
-        """Shows different protocol states (read-only)
-
-        Returns:
-            str(stopped|unknown|stopping|started|starting)
+        """
+        Returns
+        -------
+        - str(stopped | unknown | stopping | started | starting): Shows different protocol states (read-only)
         """
         return self._get_attribute('protocolState')
 
     def update(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None):
-        """Updates a child instance of lisp on the server.
+        """Updates lisp resource on the server.
 
-        Args:
-            BurstIntervalInMs (number): It shows the details abou the burst interval in micro seconds
-            Enabled (bool): If true, it shows enabled.
-            Ipv4MapRegisterPacketsPerBurst (number): It gives details about the ip v4 map register packets per burst
-            Ipv4MapRequestPacketsPerBurst (number): It gives details about the ip v4 map requests packets per burst
-            Ipv4SmrPacketsPerBurst (number): It gives details about the Ip v4 Smr packets per bursts
-            Ipv6MapRegisterPacketsPerBurst (number): It gives details about the ip v6 map register packets per burst
-            Ipv6MapRequestPacketsPerBurst (number): It gives details about the ip v6 map requests packets per burst
-            Ipv6SmrPacketsPerBurst (number): It gives details about the Ip v6 Smr packets per bursts
+        Args
+        ----
+        - BurstIntervalInMs (number): It shows the details abou the burst interval in micro seconds
+        - Enabled (bool): If true, it shows enabled.
+        - Ipv4MapRegisterPacketsPerBurst (number): It gives details about the ip v4 map register packets per burst
+        - Ipv4MapRequestPacketsPerBurst (number): It gives details about the ip v4 map requests packets per burst
+        - Ipv4SmrPacketsPerBurst (number): It gives details about the Ip v4 Smr packets per bursts
+        - Ipv6MapRegisterPacketsPerBurst (number): It gives details about the ip v6 map register packets per burst
+        - Ipv6MapRequestPacketsPerBurst (number): It gives details about the ip v6 map requests packets per burst
+        - Ipv6SmrPacketsPerBurst (number): It gives details about the Ip v6 Smr packets per bursts
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -202,9 +205,10 @@ class Lisp(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

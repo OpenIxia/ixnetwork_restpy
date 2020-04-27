@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class QueueStatLearnedInformation(Base):
     """This object allows to configure the queue statistics learned information parameters.
-    The QueueStatLearnedInformation class encapsulates a list of queueStatLearnedInformation resources that is managed by the system.
+    The QueueStatLearnedInformation class encapsulates a list of queueStatLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the QueueStatLearnedInformation.find() method.
     """
 
@@ -37,191 +37,198 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def BytesTx(self):
-        """Indicates the number of transmitted bytes.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the number of transmitted bytes.
         """
         return self._get_attribute('bytesTx')
 
     @property
     def DataPathId(self):
-        """Indicates the Datapath ID of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID of the switch.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """Indicates the Datapath ID, in hexadecimal format, of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def Duration(self):
-        """The time in seconds, for which the queue has been alive.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time in seconds, for which the queue has been alive.
         """
         return self._get_attribute('duration')
 
     @property
     def DurationInNsec(self):
-        """The time in nanoseconds, for which the queue has been alive beyond Duration (sec).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time in nanoseconds, for which the queue has been alive beyond Duration (sec).
         """
         return self._get_attribute('durationInNsec')
 
     @property
     def ErrorCode(self):
-        """Signifies the error code of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the error code of the error received.
         """
         return self._get_attribute('errorCode')
 
     @property
     def ErrorType(self):
-        """Signifies the type of the error received.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the type of the error received.
         """
         return self._get_attribute('errorType')
 
     @property
     def Latency(self):
-        """Indicates the duration elapsed (in microsecond) between the learned info request and response.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
         return self._get_attribute('latency')
 
     @property
     def LocalIp(self):
-        """Indicates the local IP of the Controller.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP of the Controller.
         """
         return self._get_attribute('localIp')
 
     @property
     def NegotiatedVersion(self):
-        """Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
         return self._get_attribute('negotiatedVersion')
 
     @property
     def PacketsTx(self):
-        """Indicates the number of transmitted packets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the number of transmitted packets.
         """
         return self._get_attribute('packetsTx')
 
     @property
     def PortNumber(self):
-        """Indicates the port to which the queue belongs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the port to which the queue belongs.
         """
         return self._get_attribute('portNumber')
 
     @property
     def QueueId(self):
-        """Indicates the Identifier of the queue.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the Identifier of the queue.
         """
         return self._get_attribute('queueId')
 
     @property
     def RemoteIp(self):
-        """Indicates the IP of the remote end of the OF Channel.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IP of the remote end of the OF Channel.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def ReplyState(self):
-        """Indicates the reply state of the switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the reply state of the switch.
         """
         return self._get_attribute('replyState')
 
     @property
     def TxErrors(self):
-        """Indicates the number of packets dropped due to overrun.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the number of packets dropped due to overrun.
         """
         return self._get_attribute('txErrors')
 
     def find(self, BytesTx=None, DataPathId=None, DataPathIdAsHex=None, Duration=None, DurationInNsec=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketsTx=None, PortNumber=None, QueueId=None, RemoteIp=None, ReplyState=None, TxErrors=None):
-        """Finds and retrieves queueStatLearnedInformation data from the server.
+        """Finds and retrieves queueStatLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve queueStatLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all queueStatLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve queueStatLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all queueStatLearnedInformation resources from the server.
 
-        Args:
-            BytesTx (str): Indicates the number of transmitted bytes.
-            DataPathId (str): Indicates the Datapath ID of the switch.
-            DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
-            Duration (number): The time in seconds, for which the queue has been alive.
-            DurationInNsec (number): The time in nanoseconds, for which the queue has been alive beyond Duration (sec).
-            ErrorCode (str): Signifies the error code of the error received.
-            ErrorType (str): Signifies the type of the error received.
-            Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
-            LocalIp (str): Indicates the local IP of the Controller.
-            NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-            PacketsTx (str): Indicates the number of transmitted packets.
-            PortNumber (number): Indicates the port to which the queue belongs.
-            QueueId (number): Indicates the Identifier of the queue.
-            RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
-            ReplyState (str): Indicates the reply state of the switch.
-            TxErrors (str): Indicates the number of packets dropped due to overrun.
+        Args
+        ----
+        - BytesTx (str): Indicates the number of transmitted bytes.
+        - DataPathId (str): Indicates the Datapath ID of the switch.
+        - DataPathIdAsHex (str): Indicates the Datapath ID, in hexadecimal format, of the switch.
+        - Duration (number): The time in seconds, for which the queue has been alive.
+        - DurationInNsec (number): The time in nanoseconds, for which the queue has been alive beyond Duration (sec).
+        - ErrorCode (str): Signifies the error code of the error received.
+        - ErrorType (str): Signifies the type of the error received.
+        - Latency (number): Indicates the duration elapsed (in microsecond) between the learned info request and response.
+        - LocalIp (str): Indicates the local IP of the Controller.
+        - NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+        - PacketsTx (str): Indicates the number of transmitted packets.
+        - PortNumber (number): Indicates the port to which the queue belongs.
+        - QueueId (number): Indicates the Identifier of the queue.
+        - RemoteIp (str): Indicates the IP of the remote end of the OF Channel.
+        - ReplyState (str): Indicates the reply state of the switch.
+        - TxErrors (str): Indicates the number of packets dropped due to overrun.
 
-        Returns:
-            self: This instance with matching queueStatLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching queueStatLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of queueStatLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the queueStatLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the queueStatLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

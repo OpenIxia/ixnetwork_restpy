@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IpRangeOptions(Base):
     """Ip V4V6 Range session specific data
-    The IpRangeOptions class encapsulates a list of ipRangeOptions resources that is be managed by the user.
+    The IpRangeOptions class encapsulates a list of ipRangeOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the IpRangeOptions.find() method.
-    The list can be managed by the user by using the IpRangeOptions.add() and IpRangeOptions.remove() methods.
+    The list can be managed by using the IpRangeOptions.add() and IpRangeOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IpRangeOptions(Base):
 
     @property
     def GatewayArpRequestRate(self):
-        """DEPRECATED Maximum ARP request rate
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Maximum ARP request rate
         """
         return self._get_attribute('gatewayArpRequestRate')
     @GatewayArpRequestRate.setter
@@ -50,10 +50,10 @@ class IpRangeOptions(Base):
 
     @property
     def Icmpv6DiscardRouterAdvertisements(self):
-        """When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
         """
         return self._get_attribute('icmpv6DiscardRouterAdvertisements')
     @Icmpv6DiscardRouterAdvertisements.setter
@@ -62,10 +62,10 @@ class IpRangeOptions(Base):
 
     @property
     def Ipv6AddressMode(self):
-        """Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
         """
         return self._get_attribute('ipv6AddressMode')
     @Ipv6AddressMode.setter
@@ -74,10 +74,10 @@ class IpRangeOptions(Base):
 
     @property
     def Ipv6ConfigRate(self):
-        """Number of IPv6 addresses to be configured per second. This is a best effort rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of IPv6 addresses to be configured per second. This is a best effort rate.
         """
         return self._get_attribute('ipv6ConfigRate')
     @Ipv6ConfigRate.setter
@@ -86,10 +86,10 @@ class IpRangeOptions(Base):
 
     @property
     def Ipv6ConfigRateEnable(self):
-        """When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
         """
         return self._get_attribute('ipv6ConfigRateEnable')
     @Ipv6ConfigRateEnable.setter
@@ -98,10 +98,10 @@ class IpRangeOptions(Base):
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
-        """DEPRECATED Threshold at which the plugin begins throttling back the number of new requests sent out.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Threshold at which the plugin begins throttling back the number of new requests sent out.
         """
         return self._get_attribute('maxOutstandingGatewayArpRequests')
     @MaxOutstandingGatewayArpRequests.setter
@@ -110,92 +110,105 @@ class IpRangeOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
-        """Updates a child instance of ipRangeOptions on the server.
+        """Updates ipRangeOptions resource on the server.
 
-        Args:
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
-            Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
-            Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
-            Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
+        Args
+        ----
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
+        - Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
+        - Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
+        - Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
-        """Adds a new ipRangeOptions node on the server and retrieves it in this instance.
+        """Adds a new ipRangeOptions resource on the server and adds it to the container.
 
-        Args:
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
-            Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
-            Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
-            Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
+        Args
+        ----
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
+        - Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
+        - Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
+        - Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
 
-        Returns:
-            self: This instance with all currently retrieved ipRangeOptions data using find and the newly added ipRangeOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipRangeOptions resources using find and the newly added ipRangeOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipRangeOptions data in this instance from server.
+        """Deletes all the contained ipRangeOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None, ObjectId=None):
-        """Finds and retrieves ipRangeOptions data from the server.
+        """Finds and retrieves ipRangeOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipRangeOptions data from the server.
-        By default the find method takes no parameters and will retrieve all ipRangeOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipRangeOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipRangeOptions resources from the server.
 
-        Args:
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
-            Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
-            Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
-            Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - Icmpv6DiscardRouterAdvertisements (bool): When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
+        - Ipv6AddressMode (str): Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
+        - Ipv6ConfigRate (number): Number of IPv6 addresses to be configured per second. This is a best effort rate.
+        - Ipv6ConfigRateEnable (bool): When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new requests sent out.
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching ipRangeOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipRangeOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipRangeOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipRangeOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipRangeOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -204,14 +217,15 @@ class IpRangeOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -223,16 +237,15 @@ class IpRangeOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -244,16 +257,15 @@ class IpRangeOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrillUnicastMacRange(Base):
     """The TRILL unicast MAC Range.
-    The TrillUnicastMacRange class encapsulates a list of trillUnicastMacRange resources that is be managed by the user.
+    The TrillUnicastMacRange class encapsulates a list of trillUnicastMacRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrillUnicastMacRange.find() method.
-    The list can be managed by the user by using the TrillUnicastMacRange.add() and TrillUnicastMacRange.remove() methods.
+    The list can be managed by using the TrillUnicastMacRange.add() and TrillUnicastMacRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TrillUnicastMacRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the use of TRILL unicast MAC range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the use of TRILL unicast MAC range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class TrillUnicastMacRange(Base):
 
     @property
     def StartUnicastMac(self):
-        """Starts unicast MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Starts unicast MAC address.
         """
         return self._get_attribute('startUnicastMac')
     @StartUnicastMac.setter
@@ -62,19 +62,19 @@ class TrillUnicastMacRange(Base):
 
     @property
     def Topology(self):
-        """Signifies the topology range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the topology range.
         """
         return self._get_attribute('topology')
 
     @property
     def UnicastMacCount(self):
-        """Signifies the count of unicast MAC address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the count of unicast MAC address.
         """
         return self._get_attribute('unicastMacCount')
     @UnicastMacCount.setter
@@ -83,10 +83,10 @@ class TrillUnicastMacRange(Base):
 
     @property
     def UnicastMacStep(self):
-        """Signifies the step value of unicast MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the step value of unicast MAC address.
         """
         return self._get_attribute('unicastMacStep')
     @UnicastMacStep.setter
@@ -95,10 +95,10 @@ class TrillUnicastMacRange(Base):
 
     @property
     def VlanId(self):
-        """Signifies VLAN identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies VLAN identifier.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -106,80 +106,93 @@ class TrillUnicastMacRange(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
-        """Updates a child instance of trillUnicastMacRange on the server.
+        """Updates trillUnicastMacRange resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables the use of TRILL unicast MAC range.
-            StartUnicastMac (str): Starts unicast MAC address.
-            UnicastMacCount (number): Signifies the count of unicast MAC address.
-            UnicastMacStep (str): Signifies the step value of unicast MAC address.
-            VlanId (number): Signifies VLAN identifier.
+        Args
+        ----
+        - Enabled (bool): If true, enables the use of TRILL unicast MAC range.
+        - StartUnicastMac (str): Starts unicast MAC address.
+        - UnicastMacCount (number): Signifies the count of unicast MAC address.
+        - UnicastMacStep (str): Signifies the step value of unicast MAC address.
+        - VlanId (number): Signifies VLAN identifier.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
-        """Adds a new trillUnicastMacRange node on the server and retrieves it in this instance.
+        """Adds a new trillUnicastMacRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, enables the use of TRILL unicast MAC range.
-            StartUnicastMac (str): Starts unicast MAC address.
-            UnicastMacCount (number): Signifies the count of unicast MAC address.
-            UnicastMacStep (str): Signifies the step value of unicast MAC address.
-            VlanId (number): Signifies VLAN identifier.
+        Args
+        ----
+        - Enabled (bool): If true, enables the use of TRILL unicast MAC range.
+        - StartUnicastMac (str): Starts unicast MAC address.
+        - UnicastMacCount (number): Signifies the count of unicast MAC address.
+        - UnicastMacStep (str): Signifies the step value of unicast MAC address.
+        - VlanId (number): Signifies VLAN identifier.
 
-        Returns:
-            self: This instance with all currently retrieved trillUnicastMacRange data using find and the newly added trillUnicastMacRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trillUnicastMacRange resources using find and the newly added trillUnicastMacRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trillUnicastMacRange data in this instance from server.
+        """Deletes all the contained trillUnicastMacRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, StartUnicastMac=None, Topology=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
-        """Finds and retrieves trillUnicastMacRange data from the server.
+        """Finds and retrieves trillUnicastMacRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trillUnicastMacRange data from the server.
-        By default the find method takes no parameters and will retrieve all trillUnicastMacRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillUnicastMacRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trillUnicastMacRange resources from the server.
 
-        Args:
-            Enabled (bool): If true, enables the use of TRILL unicast MAC range.
-            StartUnicastMac (str): Starts unicast MAC address.
-            Topology (number): Signifies the topology range.
-            UnicastMacCount (number): Signifies the count of unicast MAC address.
-            UnicastMacStep (str): Signifies the step value of unicast MAC address.
-            VlanId (number): Signifies VLAN identifier.
+        Args
+        ----
+        - Enabled (bool): If true, enables the use of TRILL unicast MAC range.
+        - StartUnicastMac (str): Starts unicast MAC address.
+        - Topology (number): Signifies the topology range.
+        - UnicastMacCount (number): Signifies the count of unicast MAC address.
+        - UnicastMacStep (str): Signifies the step value of unicast MAC address.
+        - VlanId (number): Signifies VLAN identifier.
 
-        Returns:
-            self: This instance with matching trillUnicastMacRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trillUnicastMacRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trillUnicastMacRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trillUnicastMacRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trillUnicastMacRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FlowRangeAction(Base):
     """Indicates the description of the Flow Range action.
-    The FlowRangeAction class encapsulates a list of flowRangeAction resources that is be managed by the user.
+    The FlowRangeAction class encapsulates a list of flowRangeAction resources that are managed by the user.
     A list of resources can be retrieved from the server using the FlowRangeAction.find() method.
-    The list can be managed by the user by using the FlowRangeAction.add() and FlowRangeAction.remove() methods.
+    The list can be managed by using the FlowRangeAction.add() and FlowRangeAction.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class FlowRangeAction(Base):
 
     @property
     def EthDestination(self):
-        """Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
         """
         return self._get_attribute('ethDestination')
     @EthDestination.setter
@@ -50,10 +50,10 @@ class FlowRangeAction(Base):
 
     @property
     def EthSource(self):
-        """Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
         """
         return self._get_attribute('ethSource')
     @EthSource.setter
@@ -62,10 +62,10 @@ class FlowRangeAction(Base):
 
     @property
     def IpDscp(self):
-        """Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -74,10 +74,10 @@ class FlowRangeAction(Base):
 
     @property
     def Ipv4Destination(self):
-        """Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -86,10 +86,10 @@ class FlowRangeAction(Base):
 
     @property
     def Ipv4Source(self):
-        """Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -98,10 +98,10 @@ class FlowRangeAction(Base):
 
     @property
     def MaxByteLength(self):
-        """Indicates the maximum length in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the maximum length in bytes.
         """
         return self._get_attribute('maxByteLength')
     @MaxByteLength.setter
@@ -110,10 +110,10 @@ class FlowRangeAction(Base):
 
     @property
     def OutputPort(self):
-        """Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
         """
         return self._get_attribute('outputPort')
     @OutputPort.setter
@@ -122,10 +122,10 @@ class FlowRangeAction(Base):
 
     @property
     def QueueId(self):
-        """Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
         """
         return self._get_attribute('queueId')
     @QueueId.setter
@@ -134,10 +134,10 @@ class FlowRangeAction(Base):
 
     @property
     def TransportDestination(self):
-        """Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
         """
         return self._get_attribute('transportDestination')
     @TransportDestination.setter
@@ -146,10 +146,10 @@ class FlowRangeAction(Base):
 
     @property
     def TransportSource(self):
-        """Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
         """
         return self._get_attribute('transportSource')
     @TransportSource.setter
@@ -158,10 +158,10 @@ class FlowRangeAction(Base):
 
     @property
     def TypeOfAction(self):
-        """Indicates the action type associated with this Flow Range.
-
-        Returns:
-            str(none|output|enqueue|setVlanId|setVlanPriority|stripVlanHeader|setEthernetSrc|setEthernetDst|setIpv4TosBits|setIpv4SrcAddress|setIpv4DstAddress|setTransportSource|setTransportDestination|setVendorAction)
+        """
+        Returns
+        -------
+        - str(none | output | enqueue | setVlanId | setVlanPriority | stripVlanHeader | setEthernetSrc | setEthernetDst | setIpv4TosBits | setIpv4SrcAddress | setIpv4DstAddress | setTransportSource | setTransportDestination | setVendorAction): Indicates the action type associated with this Flow Range.
         """
         return self._get_attribute('typeOfAction')
     @TypeOfAction.setter
@@ -170,10 +170,10 @@ class FlowRangeAction(Base):
 
     @property
     def TypeOfOutPort(self):
-        """Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
-
-        Returns:
-            str(ofppManual|ofppAll|ofppController|ofppInPort|ofppLocal|ofppNormal|ofppFlood)
+        """
+        Returns
+        -------
+        - str(ofppManual | ofppAll | ofppController | ofppInPort | ofppLocal | ofppNormal | ofppFlood): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
         """
         return self._get_attribute('typeOfOutPort')
     @TypeOfOutPort.setter
@@ -182,10 +182,10 @@ class FlowRangeAction(Base):
 
     @property
     def VendorData(self):
-        """Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
         return self._get_attribute('vendorData')
     @VendorData.setter
@@ -194,10 +194,10 @@ class FlowRangeAction(Base):
 
     @property
     def VendorDataLength(self):
-        """Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
         return self._get_attribute('vendorDataLength')
     @VendorDataLength.setter
@@ -206,10 +206,10 @@ class FlowRangeAction(Base):
 
     @property
     def VendorId(self):
-        """Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
         return self._get_attribute('vendorId')
     @VendorId.setter
@@ -218,10 +218,10 @@ class FlowRangeAction(Base):
 
     @property
     def VlanId(self):
-        """Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -230,10 +230,10 @@ class FlowRangeAction(Base):
 
     @property
     def VlanPriority(self):
-        """Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -241,115 +241,128 @@ class FlowRangeAction(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of flowRangeAction on the server.
+        """Updates flowRangeAction resource on the server.
 
-        Args:
-            EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
-            EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
-            IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
-            Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
-            Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
-            MaxByteLength (number): Indicates the maximum length in bytes.
-            OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
-            QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
-            TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
-            TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
-            TypeOfAction (str(none|output|enqueue|setVlanId|setVlanPriority|stripVlanHeader|setEthernetSrc|setEthernetDst|setIpv4TosBits|setIpv4SrcAddress|setIpv4DstAddress|setTransportSource|setTransportDestination|setVendorAction)): Indicates the action type associated with this Flow Range.
-            TypeOfOutPort (str(ofppManual|ofppAll|ofppController|ofppInPort|ofppLocal|ofppNormal|ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
-            VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
-            VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
+        Args
+        ----
+        - EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
+        - EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
+        - IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
+        - Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
+        - Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
+        - MaxByteLength (number): Indicates the maximum length in bytes.
+        - OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
+        - QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
+        - TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
+        - TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
+        - TypeOfAction (str(none | output | enqueue | setVlanId | setVlanPriority | stripVlanHeader | setEthernetSrc | setEthernetDst | setIpv4TosBits | setIpv4SrcAddress | setIpv4DstAddress | setTransportSource | setTransportDestination | setVendorAction)): Indicates the action type associated with this Flow Range.
+        - TypeOfOutPort (str(ofppManual | ofppAll | ofppController | ofppInPort | ofppLocal | ofppNormal | ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
+        - VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
+        - VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
-        """Adds a new flowRangeAction node on the server and retrieves it in this instance.
+        """Adds a new flowRangeAction resource on the server and adds it to the container.
 
-        Args:
-            EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
-            EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
-            IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
-            Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
-            Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
-            MaxByteLength (number): Indicates the maximum length in bytes.
-            OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
-            QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
-            TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
-            TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
-            TypeOfAction (str(none|output|enqueue|setVlanId|setVlanPriority|stripVlanHeader|setEthernetSrc|setEthernetDst|setIpv4TosBits|setIpv4SrcAddress|setIpv4DstAddress|setTransportSource|setTransportDestination|setVendorAction)): Indicates the action type associated with this Flow Range.
-            TypeOfOutPort (str(ofppManual|ofppAll|ofppController|ofppInPort|ofppLocal|ofppNormal|ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
-            VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
-            VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
+        Args
+        ----
+        - EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
+        - EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
+        - IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
+        - Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
+        - Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
+        - MaxByteLength (number): Indicates the maximum length in bytes.
+        - OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
+        - QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
+        - TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
+        - TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
+        - TypeOfAction (str(none | output | enqueue | setVlanId | setVlanPriority | stripVlanHeader | setEthernetSrc | setEthernetDst | setIpv4TosBits | setIpv4SrcAddress | setIpv4DstAddress | setTransportSource | setTransportDestination | setVendorAction)): Indicates the action type associated with this Flow Range.
+        - TypeOfOutPort (str(ofppManual | ofppAll | ofppController | ofppInPort | ofppLocal | ofppNormal | ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
+        - VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
+        - VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
 
-        Returns:
-            self: This instance with all currently retrieved flowRangeAction data using find and the newly added flowRangeAction data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved flowRangeAction resources using find and the newly added flowRangeAction resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the flowRangeAction data in this instance from server.
+        """Deletes all the contained flowRangeAction resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves flowRangeAction data from the server.
+        """Finds and retrieves flowRangeAction resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve flowRangeAction data from the server.
-        By default the find method takes no parameters and will retrieve all flowRangeAction data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowRangeAction resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flowRangeAction resources from the server.
 
-        Args:
-            EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
-            EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
-            IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
-            Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
-            Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
-            MaxByteLength (number): Indicates the maximum length in bytes.
-            OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
-            QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
-            TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
-            TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
-            TypeOfAction (str(none|output|enqueue|setVlanId|setVlanPriority|stripVlanHeader|setEthernetSrc|setEthernetDst|setIpv4TosBits|setIpv4SrcAddress|setIpv4DstAddress|setTransportSource|setTransportDestination|setVendorAction)): Indicates the action type associated with this Flow Range.
-            TypeOfOutPort (str(ofppManual|ofppAll|ofppController|ofppInPort|ofppLocal|ofppNormal|ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
-            VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
-            VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
-            VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
+        Args
+        ----
+        - EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
+        - EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
+        - IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
+        - Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
+        - Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
+        - MaxByteLength (number): Indicates the maximum length in bytes.
+        - OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
+        - QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
+        - TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
+        - TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
+        - TypeOfAction (str(none | output | enqueue | setVlanId | setVlanPriority | stripVlanHeader | setEthernetSrc | setEthernetDst | setIpv4TosBits | setIpv4SrcAddress | setIpv4DstAddress | setTransportSource | setTransportDestination | setVendorAction)): Indicates the action type associated with this Flow Range.
+        - TypeOfOutPort (str(ofppManual | ofppAll | ofppController | ofppInPort | ofppLocal | ofppNormal | ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
+        - VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+        - VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
+        - VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
 
-        Returns:
-            self: This instance with matching flowRangeAction data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching flowRangeAction resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of flowRangeAction data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the flowRangeAction data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the flowRangeAction resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

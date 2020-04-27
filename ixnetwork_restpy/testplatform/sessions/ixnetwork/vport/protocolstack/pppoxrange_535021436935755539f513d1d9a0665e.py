@@ -36,52 +36,52 @@ class PppoxRange(Base):
 
     @property
     def AcMac(self):
-        """An instance of the AcMac class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acmac_8e50169c78fa5a093fe398d8158a8ef0.AcMac): An instance of the AcMac class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acmac_8e50169c78fa5a093fe398d8158a8ef0.AcMac)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acmac_8e50169c78fa5a093fe398d8158a8ef0 import AcMac
         return AcMac(self)
 
     @property
     def AcName(self):
-        """An instance of the AcName class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acname_e6d0f33ce888fc287ef0d3fc7be325da.AcName): An instance of the AcName class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acname_e6d0f33ce888fc287ef0d3fc7be325da.AcName)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acname_e6d0f33ce888fc287ef0d3fc7be325da import AcName
         return AcName(self)
 
     @property
     def DomainGroup(self):
-        """An instance of the DomainGroup class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_fb34cac83d1e1ce75a73d5c58208e8a6.DomainGroup): An instance of the DomainGroup class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_fb34cac83d1e1ce75a73d5c58208e8a6.DomainGroup)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_fb34cac83d1e1ce75a73d5c58208e8a6 import DomainGroup
         return DomainGroup(self)
 
     @property
     def AcName(self):
-        """Access Concentrator Name - this option is only available for PPP servers.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Access Concentrator Name - this option is only available for PPP servers.
         """
         return self._get_attribute('acName')
     @AcName.setter
@@ -90,10 +90,10 @@ class PppoxRange(Base):
 
     @property
     def AcOptions(self):
-        """Indicates PPPoE AC retrieval mode
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates PPPoE AC retrieval mode
         """
         return self._get_attribute('acOptions')
     @AcOptions.setter
@@ -102,10 +102,10 @@ class PppoxRange(Base):
 
     @property
     def ActualRateDownstream(self):
-        """Actual Data Rate Downstream Value (TR-101 suboption 0x82)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Actual Data Rate Downstream Value (TR-101 suboption 0x82)
         """
         return self._get_attribute('actualRateDownstream')
     @ActualRateDownstream.setter
@@ -114,10 +114,10 @@ class PppoxRange(Base):
 
     @property
     def ActualRateUpstream(self):
-        """Actual Data Rate Upstream Value (TR-101 suboption 0x81)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Actual Data Rate Upstream Value (TR-101 suboption 0x81)
         """
         return self._get_attribute('actualRateUpstream')
     @ActualRateUpstream.setter
@@ -126,10 +126,10 @@ class PppoxRange(Base):
 
     @property
     def AgentCircuitId(self):
-        """Agent Circuit ID (TR-101 suboption 0x01)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Agent Circuit ID (TR-101 suboption 0x01)
         """
         return self._get_attribute('agentCircuitId')
     @AgentCircuitId.setter
@@ -138,10 +138,10 @@ class PppoxRange(Base):
 
     @property
     def AgentRemoteId(self):
-        """Agent Remote ID (TR-101 suboption 0x02)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Agent Remote ID (TR-101 suboption 0x02)
         """
         return self._get_attribute('agentRemoteId')
     @AgentRemoteId.setter
@@ -150,10 +150,10 @@ class PppoxRange(Base):
 
     @property
     def AuthOptions(self):
-        """For GUI grouping.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For GUI grouping.
         """
         return self._get_attribute('authOptions')
     @AuthOptions.setter
@@ -162,10 +162,10 @@ class PppoxRange(Base):
 
     @property
     def AuthRetries(self):
-        """Number of PPP authentication retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of PPP authentication retries
         """
         return self._get_attribute('authRetries')
     @AuthRetries.setter
@@ -174,10 +174,10 @@ class PppoxRange(Base):
 
     @property
     def AuthTimeout(self):
-        """Timeout for PPP authentication, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for PPP authentication, in seconds.
         """
         return self._get_attribute('authTimeout')
     @AuthTimeout.setter
@@ -186,10 +186,10 @@ class PppoxRange(Base):
 
     @property
     def AuthType(self):
-        """Authentication type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Authentication type
         """
         return self._get_attribute('authType')
     @AuthType.setter
@@ -198,10 +198,10 @@ class PppoxRange(Base):
 
     @property
     def ChapName(self):
-        """User name when CHAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User name when CHAP Authentication is being used
         """
         return self._get_attribute('chapName')
     @ChapName.setter
@@ -210,10 +210,10 @@ class PppoxRange(Base):
 
     @property
     def ChapSecret(self):
-        """Secret when CHAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secret when CHAP Authentication is being used
         """
         return self._get_attribute('chapSecret')
     @ChapSecret.setter
@@ -222,10 +222,10 @@ class PppoxRange(Base):
 
     @property
     def ClientBaseIid(self):
-        """Base for IPv6CP interface identifiers assigned to clients.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv6CP interface identifiers assigned to clients.
         """
         return self._get_attribute('clientBaseIid')
     @ClientBaseIid.setter
@@ -234,10 +234,10 @@ class PppoxRange(Base):
 
     @property
     def ClientBaseIp(self):
-        """Base for IPv4 PPP client address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv4 PPP client address creation
         """
         return self._get_attribute('clientBaseIp')
     @ClientBaseIp.setter
@@ -246,10 +246,10 @@ class PppoxRange(Base):
 
     @property
     def ClientDnsOptions(self):
-        """Client DNS options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Client DNS options
         """
         return self._get_attribute('clientDnsOptions')
     @ClientDnsOptions.setter
@@ -258,10 +258,10 @@ class PppoxRange(Base):
 
     @property
     def ClientIidIncr(self):
-        """Increment for IPv6CP client interface identifiers.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment for IPv6CP client interface identifiers.
         """
         return self._get_attribute('clientIidIncr')
     @ClientIidIncr.setter
@@ -270,10 +270,10 @@ class PppoxRange(Base):
 
     @property
     def ClientIpIncr(self):
-        """Incrementor for IPv4 PPP client address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Incrementor for IPv4 PPP client address creation
         """
         return self._get_attribute('clientIpIncr')
     @ClientIpIncr.setter
@@ -282,10 +282,10 @@ class PppoxRange(Base):
 
     @property
     def ClientNetmask(self):
-        """Netmask that the client should request
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Netmask that the client should request
         """
         return self._get_attribute('clientNetmask')
     @ClientNetmask.setter
@@ -294,10 +294,10 @@ class PppoxRange(Base):
 
     @property
     def ClientNetmaskOptions(self):
-        """Client netmask options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Client netmask options
         """
         return self._get_attribute('clientNetmaskOptions')
     @ClientNetmaskOptions.setter
@@ -306,10 +306,10 @@ class PppoxRange(Base):
 
     @property
     def ClientPrimaryDnsAddress(self):
-        """Primary DNS server address requested by client
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Primary DNS server address requested by client
         """
         return self._get_attribute('clientPrimaryDnsAddress')
     @ClientPrimaryDnsAddress.setter
@@ -318,10 +318,10 @@ class PppoxRange(Base):
 
     @property
     def ClientSecondaryDnsAddress(self):
-        """Secondary DNS server address requested by client
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secondary DNS server address requested by client
         """
         return self._get_attribute('clientSecondaryDnsAddress')
     @ClientSecondaryDnsAddress.setter
@@ -330,10 +330,10 @@ class PppoxRange(Base):
 
     @property
     def ClientSignalIwf(self):
-        """Enables the sending of the interworked session (0xFE) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the sending of the interworked session (0xFE) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
         """
         return self._get_attribute('clientSignalIwf')
     @ClientSignalIwf.setter
@@ -342,10 +342,10 @@ class PppoxRange(Base):
 
     @property
     def ClientSignalLoopChar(self):
-        """Enables the sending of the access loop characteristics TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the sending of the access loop characteristics TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
         """
         return self._get_attribute('clientSignalLoopChar')
     @ClientSignalLoopChar.setter
@@ -354,10 +354,10 @@ class PppoxRange(Base):
 
     @property
     def ClientSignalLoopEncapsulation(self):
-        """Enables the sending of the loop encapsulation (0x90) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the sending of the loop encapsulation (0x90) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
         """
         return self._get_attribute('clientSignalLoopEncapsulation')
     @ClientSignalLoopEncapsulation.setter
@@ -366,10 +366,10 @@ class PppoxRange(Base):
 
     @property
     def ClientSignalLoopId(self):
-        """Enables the sending of the remote ID and circuit ID TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the sending of the remote ID and circuit ID TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
         """
         return self._get_attribute('clientSignalLoopId')
     @ClientSignalLoopId.setter
@@ -378,10 +378,10 @@ class PppoxRange(Base):
 
     @property
     def DataLink(self):
-        """Data Link for TR-101 suboption 0x90
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Data Link for TR-101 suboption 0x90
         """
         return self._get_attribute('dataLink')
     @DataLink.setter
@@ -390,10 +390,10 @@ class PppoxRange(Base):
 
     @property
     def DnsServerList(self):
-        """DNS server list separacted by semicolon
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: DNS server list separacted by semicolon
         """
         return self._get_attribute('dnsServerList')
     @DnsServerList.setter
@@ -402,10 +402,10 @@ class PppoxRange(Base):
 
     @property
     def DomainList(self):
-        """Configure domain group settings
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Configure domain group settings
         """
         return self._get_attribute('domainList')
     @DomainList.setter
@@ -414,10 +414,10 @@ class PppoxRange(Base):
 
     @property
     def EchoReqInterval(self):
-        """Keep alive interval
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Keep alive interval
         """
         return self._get_attribute('echoReqInterval')
     @EchoReqInterval.setter
@@ -426,10 +426,10 @@ class PppoxRange(Base):
 
     @property
     def EnableDnsRa(self):
-        """Enable RDNSS routing advertisments
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable RDNSS routing advertisments
         """
         return self._get_attribute('enableDnsRa')
     @EnableDnsRa.setter
@@ -438,10 +438,10 @@ class PppoxRange(Base):
 
     @property
     def EnableDomainGroups(self):
-        """Enable domain groups
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable domain groups
         """
         return self._get_attribute('enableDomainGroups')
     @EnableDomainGroups.setter
@@ -450,10 +450,10 @@ class PppoxRange(Base):
 
     @property
     def EnableEchoReq(self):
-        """Enable Echo requests
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Echo requests
         """
         return self._get_attribute('enableEchoReq')
     @EnableEchoReq.setter
@@ -462,10 +462,10 @@ class PppoxRange(Base):
 
     @property
     def EnableEchoRsp(self):
-        """Enable Echo replies
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Echo replies
         """
         return self._get_attribute('enableEchoRsp')
     @EnableEchoRsp.setter
@@ -474,10 +474,10 @@ class PppoxRange(Base):
 
     @property
     def EnableIncludeTagInPadi(self):
-        """DEPRECATED OBSOLETE - If checked, PADI messages include Intermediate Agent Tags(only for PPP client)
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: OBSOLETE - If checked, PADI messages include Intermediate Agent Tags(only for PPP client)
         """
         return self._get_attribute('enableIncludeTagInPadi')
     @EnableIncludeTagInPadi.setter
@@ -486,10 +486,10 @@ class PppoxRange(Base):
 
     @property
     def EnableIncludeTagInPado(self):
-        """DEPRECATED OBSOLETE - If checked, PADO messages include Intermediate Agent Tags(only for PPP server)
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: OBSOLETE - If checked, PADO messages include Intermediate Agent Tags(only for PPP server)
         """
         return self._get_attribute('enableIncludeTagInPado')
     @EnableIncludeTagInPado.setter
@@ -498,10 +498,10 @@ class PppoxRange(Base):
 
     @property
     def EnableIncludeTagInPadr(self):
-        """DEPRECATED OBSOLETE - If checked, PADR messages include Intermediate Agent Tags(only for PPP client)
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: OBSOLETE - If checked, PADR messages include Intermediate Agent Tags(only for PPP client)
         """
         return self._get_attribute('enableIncludeTagInPadr')
     @EnableIncludeTagInPadr.setter
@@ -510,10 +510,10 @@ class PppoxRange(Base):
 
     @property
     def EnableIncludeTagInPads(self):
-        """DEPRECATED OBSOLETE - If checked, PADs messages include Intermediate Agent Tags(only for PPP server)
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: OBSOLETE - If checked, PADs messages include Intermediate Agent Tags(only for PPP server)
         """
         return self._get_attribute('enableIncludeTagInPads')
     @EnableIncludeTagInPads.setter
@@ -522,10 +522,10 @@ class PppoxRange(Base):
 
     @property
     def EnableIntermediateAgentTags(self):
-        """DEPRECATED OBSOLETE - If checked, Intermediate Agent Tags are enabled
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: OBSOLETE - If checked, Intermediate Agent Tags are enabled
         """
         return self._get_attribute('enableIntermediateAgentTags')
     @EnableIntermediateAgentTags.setter
@@ -534,10 +534,10 @@ class PppoxRange(Base):
 
     @property
     def EnableMaxPayload(self):
-        """Enable/Disable Max Payload
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable Max Payload
         """
         return self._get_attribute('enableMaxPayload')
     @EnableMaxPayload.setter
@@ -546,10 +546,10 @@ class PppoxRange(Base):
 
     @property
     def EnableMru(self):
-        """Enable/Disable MRU negotiation
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable MRU negotiation
         """
         return self._get_attribute('enableMru')
     @EnableMru.setter
@@ -558,10 +558,10 @@ class PppoxRange(Base):
 
     @property
     def EnableMruNegotiation(self):
-        """DEPRECATED Option is deprecated. Please use enableMaxPayload. If checked, MRU negotiation is enabled
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Option is deprecated. Please use enableMaxPayload. If checked, MRU negotiation is enabled
         """
         return self._get_attribute('enableMruNegotiation')
     @EnableMruNegotiation.setter
@@ -570,10 +570,10 @@ class PppoxRange(Base):
 
     @property
     def EnablePasswordCheck(self):
-        """Enable authentication credential checking on the port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable authentication credential checking on the port.
         """
         return self._get_attribute('enablePasswordCheck')
     @EnablePasswordCheck.setter
@@ -582,10 +582,10 @@ class PppoxRange(Base):
 
     @property
     def EnableRedial(self):
-        """Enable/Disable PPPoE redial
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable PPPoE redial
         """
         return self._get_attribute('enableRedial')
     @EnableRedial.setter
@@ -594,10 +594,10 @@ class PppoxRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -606,10 +606,10 @@ class PppoxRange(Base):
 
     @property
     def Encaps1(self):
-        """Encapsulation 1 for TR-101 suboption 0x90
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Encapsulation 1 for TR-101 suboption 0x90
         """
         return self._get_attribute('encaps1')
     @Encaps1.setter
@@ -618,10 +618,10 @@ class PppoxRange(Base):
 
     @property
     def Encaps2(self):
-        """Encapsulation 2 for TR-101 suboption 0x90
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Encapsulation 2 for TR-101 suboption 0x90
         """
         return self._get_attribute('encaps2')
     @Encaps2.setter
@@ -630,10 +630,10 @@ class PppoxRange(Base):
 
     @property
     def Ipv6AddrPrefixLen(self):
-        """IPv6 Address Prefix Length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: IPv6 Address Prefix Length
         """
         return self._get_attribute('ipv6AddrPrefixLen')
     @Ipv6AddrPrefixLen.setter
@@ -642,10 +642,10 @@ class PppoxRange(Base):
 
     @property
     def Ipv6PoolPrefix(self):
-        """Pool prefix for the IPv6 IP pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Pool prefix for the IPv6 IP pool.
         """
         return self._get_attribute('ipv6PoolPrefix')
     @Ipv6PoolPrefix.setter
@@ -654,10 +654,10 @@ class PppoxRange(Base):
 
     @property
     def Ipv6PoolPrefixLen(self):
-        """IPv6 Pool Prefix Length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: IPv6 Pool Prefix Length
         """
         return self._get_attribute('ipv6PoolPrefixLen')
     @Ipv6PoolPrefixLen.setter
@@ -666,10 +666,10 @@ class PppoxRange(Base):
 
     @property
     def LcpOptions(self):
-        """For GUI grouping.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For GUI grouping.
         """
         return self._get_attribute('lcpOptions')
     @LcpOptions.setter
@@ -678,10 +678,10 @@ class PppoxRange(Base):
 
     @property
     def LcpRetries(self):
-        """Number of LCP retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of LCP retries
         """
         return self._get_attribute('lcpRetries')
     @LcpRetries.setter
@@ -690,10 +690,10 @@ class PppoxRange(Base):
 
     @property
     def LcpTermRetries(self):
-        """Number of LCP Termination Retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of LCP Termination Retries
         """
         return self._get_attribute('lcpTermRetries')
     @LcpTermRetries.setter
@@ -702,10 +702,10 @@ class PppoxRange(Base):
 
     @property
     def LcpTermTimeout(self):
-        """Timeout for LCP termination, in seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for LCP termination, in seconds.
         """
         return self._get_attribute('lcpTermTimeout')
     @LcpTermTimeout.setter
@@ -714,10 +714,10 @@ class PppoxRange(Base):
 
     @property
     def LcpTimeout(self):
-        """Timeout for LCP phase, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for LCP phase, in seconds
         """
         return self._get_attribute('lcpTimeout')
     @LcpTimeout.setter
@@ -726,10 +726,10 @@ class PppoxRange(Base):
 
     @property
     def MaxPayload(self):
-        """Max Payload
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Payload
         """
         return self._get_attribute('maxPayload')
     @MaxPayload.setter
@@ -738,10 +738,10 @@ class PppoxRange(Base):
 
     @property
     def Mtu(self):
-        """Max Transmit Unit for PPP
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Transmit Unit for PPP
         """
         return self._get_attribute('mtu')
     @Mtu.setter
@@ -750,10 +750,10 @@ class PppoxRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -762,10 +762,10 @@ class PppoxRange(Base):
 
     @property
     def NcpRetries(self):
-        """Number of NCP retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of NCP retries
         """
         return self._get_attribute('ncpRetries')
     @NcpRetries.setter
@@ -774,10 +774,10 @@ class PppoxRange(Base):
 
     @property
     def NcpTimeout(self):
-        """Timeout for NCP phase, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for NCP phase, in seconds
         """
         return self._get_attribute('ncpTimeout')
     @NcpTimeout.setter
@@ -786,10 +786,10 @@ class PppoxRange(Base):
 
     @property
     def NcpType(self):
-        """IP type (IPv4/IPv6) for Network Control Protocol
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IP type (IPv4/IPv6) for Network Control Protocol
         """
         return self._get_attribute('ncpType')
     @NcpType.setter
@@ -798,10 +798,10 @@ class PppoxRange(Base):
 
     @property
     def NumSessions(self):
-        """No. of sessions to setup
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: No. of sessions to setup
         """
         return self._get_attribute('numSessions')
     @NumSessions.setter
@@ -810,19 +810,19 @@ class PppoxRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PadiRetries(self):
-        """Number of PADI Retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of PADI Retries
         """
         return self._get_attribute('padiRetries')
     @PadiRetries.setter
@@ -831,10 +831,10 @@ class PppoxRange(Base):
 
     @property
     def PadiTimeout(self):
-        """Timeout for PADI no response, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for PADI no response, in seconds
         """
         return self._get_attribute('padiTimeout')
     @PadiTimeout.setter
@@ -843,10 +843,10 @@ class PppoxRange(Base):
 
     @property
     def PadrRetries(self):
-        """Number of PADR Retries
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of PADR Retries
         """
         return self._get_attribute('padrRetries')
     @PadrRetries.setter
@@ -855,10 +855,10 @@ class PppoxRange(Base):
 
     @property
     def PadrTimeout(self):
-        """Timeout for PADR no response, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Timeout for PADR no response, in seconds
         """
         return self._get_attribute('padrTimeout')
     @PadrTimeout.setter
@@ -867,10 +867,10 @@ class PppoxRange(Base):
 
     @property
     def PapPassword(self):
-        """Password when PAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Password when PAP Authentication is being used
         """
         return self._get_attribute('papPassword')
     @PapPassword.setter
@@ -879,10 +879,10 @@ class PppoxRange(Base):
 
     @property
     def PapUser(self):
-        """User name when PAP Authentication is being used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User name when PAP Authentication is being used
         """
         return self._get_attribute('papUser')
     @PapUser.setter
@@ -891,10 +891,10 @@ class PppoxRange(Base):
 
     @property
     def PppoeOptions(self):
-        """For GUI grouping.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For GUI grouping.
         """
         return self._get_attribute('pppoeOptions')
     @PppoeOptions.setter
@@ -903,10 +903,10 @@ class PppoxRange(Base):
 
     @property
     def RedialMax(self):
-        """Maximum number of PPPoE redials
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of PPPoE redials
         """
         return self._get_attribute('redialMax')
     @RedialMax.setter
@@ -915,10 +915,10 @@ class PppoxRange(Base):
 
     @property
     def RedialTimeout(self):
-        """PPPoE redial timeout, in seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: PPPoE redial timeout, in seconds
         """
         return self._get_attribute('redialTimeout')
     @RedialTimeout.setter
@@ -927,10 +927,10 @@ class PppoxRange(Base):
 
     @property
     def ServerBaseIid(self):
-        """Base for IPv6CP interface identifiers assigned to servers.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv6CP interface identifiers assigned to servers.
         """
         return self._get_attribute('serverBaseIid')
     @ServerBaseIid.setter
@@ -939,10 +939,10 @@ class PppoxRange(Base):
 
     @property
     def ServerBaseIp(self):
-        """Base for IPv4 PPP server address creation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Base for IPv4 PPP server address creation
         """
         return self._get_attribute('serverBaseIp')
     @ServerBaseIp.setter
@@ -951,10 +951,10 @@ class PppoxRange(Base):
 
     @property
     def ServerDnsOptions(self):
-        """Server DNS options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Server DNS options
         """
         return self._get_attribute('serverDnsOptions')
     @ServerDnsOptions.setter
@@ -963,10 +963,10 @@ class PppoxRange(Base):
 
     @property
     def ServerIidIncr(self):
-        """Increment for IPv6CP server interface identifiers.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment for IPv6CP server interface identifiers.
         """
         return self._get_attribute('serverIidIncr')
     @ServerIidIncr.setter
@@ -975,10 +975,10 @@ class PppoxRange(Base):
 
     @property
     def ServerIpIncr(self):
-        """DEPRECATED *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
         """
         return self._get_attribute('serverIpIncr')
     @ServerIpIncr.setter
@@ -987,10 +987,10 @@ class PppoxRange(Base):
 
     @property
     def ServerNetmask(self):
-        """Netmask that the server should supply to clients
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Netmask that the server should supply to clients
         """
         return self._get_attribute('serverNetmask')
     @ServerNetmask.setter
@@ -999,10 +999,10 @@ class PppoxRange(Base):
 
     @property
     def ServerNetmaskOptions(self):
-        """Server netmask options
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Server netmask options
         """
         return self._get_attribute('serverNetmaskOptions')
     @ServerNetmaskOptions.setter
@@ -1011,10 +1011,10 @@ class PppoxRange(Base):
 
     @property
     def ServerPrimaryDnsAddress(self):
-        """Primary DNS server address supplied by server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Primary DNS server address supplied by server
         """
         return self._get_attribute('serverPrimaryDnsAddress')
     @ServerPrimaryDnsAddress.setter
@@ -1023,10 +1023,10 @@ class PppoxRange(Base):
 
     @property
     def ServerSecondaryDnsAddress(self):
-        """Secondary DNS server address supplied by server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Secondary DNS server address supplied by server
         """
         return self._get_attribute('serverSecondaryDnsAddress')
     @ServerSecondaryDnsAddress.setter
@@ -1035,10 +1035,10 @@ class PppoxRange(Base):
 
     @property
     def ServerSignalIwf(self):
-        """If enabled, the PPPoE server echoes the interworked session TR-101 suboption received in messages from the client
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the PPPoE server echoes the interworked session TR-101 suboption received in messages from the client
         """
         return self._get_attribute('serverSignalIwf')
     @ServerSignalIwf.setter
@@ -1047,10 +1047,10 @@ class PppoxRange(Base):
 
     @property
     def ServerSignalLoopChar(self):
-        """If enabled, the PPPoE server echoes the loop characteristics TR-101 suboptions received in messages from the client
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the PPPoE server echoes the loop characteristics TR-101 suboptions received in messages from the client
         """
         return self._get_attribute('serverSignalLoopChar')
     @ServerSignalLoopChar.setter
@@ -1059,10 +1059,10 @@ class PppoxRange(Base):
 
     @property
     def ServerSignalLoopEncapsulation(self):
-        """If enabled, the PPPoE server echoes the loop encapsulation (0x90) TR-101 suboption received in messages from the client
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the PPPoE server echoes the loop encapsulation (0x90) TR-101 suboption received in messages from the client
         """
         return self._get_attribute('serverSignalLoopEncapsulation')
     @ServerSignalLoopEncapsulation.setter
@@ -1071,10 +1071,10 @@ class PppoxRange(Base):
 
     @property
     def ServerSignalLoopId(self):
-        """If enabled, the PPPoE server echoes the remote ID and circuit ID TR-101 suboptions received in messages from the client
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the PPPoE server echoes the remote ID and circuit ID TR-101 suboptions received in messages from the client
         """
         return self._get_attribute('serverSignalLoopId')
     @ServerSignalLoopId.setter
@@ -1083,10 +1083,10 @@ class PppoxRange(Base):
 
     @property
     def ServiceName(self):
-        """Access Concentrator Service Name - this option is only available for PPP servers.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Access Concentrator Service Name - this option is only available for PPP servers.
         """
         return self._get_attribute('serviceName')
     @ServiceName.setter
@@ -1095,10 +1095,10 @@ class PppoxRange(Base):
 
     @property
     def ServiceOptions(self):
-        """Indicates PPPoE service retrieval mode
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates PPPoE service retrieval mode
         """
         return self._get_attribute('serviceOptions')
     @ServiceOptions.setter
@@ -1107,10 +1107,10 @@ class PppoxRange(Base):
 
     @property
     def UnlimitedRedialAttempts(self):
-        """Enable/Disable PPPoE unlimited redial attempts
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable PPPoE unlimited redial attempts
         """
         return self._get_attribute('unlimitedRedialAttempts')
     @UnlimitedRedialAttempts.setter
@@ -1119,10 +1119,10 @@ class PppoxRange(Base):
 
     @property
     def UseMagic(self):
-        """use magic
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: use magic
         """
         return self._get_attribute('useMagic')
     @UseMagic.setter
@@ -1130,115 +1130,118 @@ class PppoxRange(Base):
         self._set_attribute('useMagic', value)
 
     def update(self, AcName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentCircuitId=None, AgentRemoteId=None, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIwf=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, DataLink=None, DnsServerList=None, DomainList=None, EchoReqInterval=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableIncludeTagInPadi=None, EnableIncludeTagInPado=None, EnableIncludeTagInPadr=None, EnableIncludeTagInPads=None, EnableIntermediateAgentTags=None, EnableMaxPayload=None, EnableMru=None, EnableMruNegotiation=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, Encaps1=None, Encaps2=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, MaxPayload=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NumSessions=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PppoeOptions=None, RedialMax=None, RedialTimeout=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, ServerSignalIwf=None, ServerSignalLoopChar=None, ServerSignalLoopEncapsulation=None, ServerSignalLoopId=None, ServiceName=None, ServiceOptions=None, UnlimitedRedialAttempts=None, UseMagic=None):
-        """Updates a child instance of pppoxRange on the server.
+        """Updates pppoxRange resource on the server.
 
-        Args:
-            AcName (str): Access Concentrator Name - this option is only available for PPP servers.
-            AcOptions (str): Indicates PPPoE AC retrieval mode
-            ActualRateDownstream (number): Actual Data Rate Downstream Value (TR-101 suboption 0x82)
-            ActualRateUpstream (number): Actual Data Rate Upstream Value (TR-101 suboption 0x81)
-            AgentCircuitId (str): Agent Circuit ID (TR-101 suboption 0x01)
-            AgentRemoteId (str): Agent Remote ID (TR-101 suboption 0x02)
-            AuthOptions (str): For GUI grouping.
-            AuthRetries (number): Number of PPP authentication retries
-            AuthTimeout (number): Timeout for PPP authentication, in seconds.
-            AuthType (str): Authentication type
-            ChapName (str): User name when CHAP Authentication is being used
-            ChapSecret (str): Secret when CHAP Authentication is being used
-            ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
-            ClientBaseIp (str): Base for IPv4 PPP client address creation
-            ClientDnsOptions (str): Client DNS options
-            ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
-            ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
-            ClientNetmask (str): Netmask that the client should request
-            ClientNetmaskOptions (str): Client netmask options
-            ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
-            ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
-            ClientSignalIwf (bool): Enables the sending of the interworked session (0xFE) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
-            ClientSignalLoopChar (bool): Enables the sending of the access loop characteristics TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
-            ClientSignalLoopEncapsulation (bool): Enables the sending of the loop encapsulation (0x90) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
-            ClientSignalLoopId (bool): Enables the sending of the remote ID and circuit ID TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
-            DataLink (str): Data Link for TR-101 suboption 0x90
-            DnsServerList (str): DNS server list separacted by semicolon
-            DomainList (str): Configure domain group settings
-            EchoReqInterval (number): Keep alive interval
-            EnableDnsRa (bool): Enable RDNSS routing advertisments
-            EnableDomainGroups (bool): Enable domain groups
-            EnableEchoReq (bool): Enable Echo requests
-            EnableEchoRsp (bool): Enable Echo replies
-            EnableIncludeTagInPadi (bool): OBSOLETE - If checked, PADI messages include Intermediate Agent Tags(only for PPP client)
-            EnableIncludeTagInPado (bool): OBSOLETE - If checked, PADO messages include Intermediate Agent Tags(only for PPP server)
-            EnableIncludeTagInPadr (bool): OBSOLETE - If checked, PADR messages include Intermediate Agent Tags(only for PPP client)
-            EnableIncludeTagInPads (bool): OBSOLETE - If checked, PADs messages include Intermediate Agent Tags(only for PPP server)
-            EnableIntermediateAgentTags (bool): OBSOLETE - If checked, Intermediate Agent Tags are enabled
-            EnableMaxPayload (bool): Enable/Disable Max Payload
-            EnableMru (bool): Enable/Disable MRU negotiation
-            EnableMruNegotiation (bool): Option is deprecated. Please use enableMaxPayload. If checked, MRU negotiation is enabled
-            EnablePasswordCheck (bool): Enable authentication credential checking on the port.
-            EnableRedial (bool): Enable/Disable PPPoE redial
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Encaps1 (str): Encapsulation 1 for TR-101 suboption 0x90
-            Encaps2 (str): Encapsulation 2 for TR-101 suboption 0x90
-            Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
-            Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
-            Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
-            LcpOptions (str): For GUI grouping.
-            LcpRetries (number): Number of LCP retries
-            LcpTermRetries (number): Number of LCP Termination Retries
-            LcpTermTimeout (number): Timeout for LCP termination, in seconds.
-            LcpTimeout (number): Timeout for LCP phase, in seconds
-            MaxPayload (number): Max Payload
-            Mtu (number): Max Transmit Unit for PPP
-            Name (str): Name of range
-            NcpRetries (number): Number of NCP retries
-            NcpTimeout (number): Timeout for NCP phase, in seconds
-            NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
-            NumSessions (number): No. of sessions to setup
-            PadiRetries (number): Number of PADI Retries
-            PadiTimeout (number): Timeout for PADI no response, in seconds
-            PadrRetries (number): Number of PADR Retries
-            PadrTimeout (number): Timeout for PADR no response, in seconds
-            PapPassword (str): Password when PAP Authentication is being used
-            PapUser (str): User name when PAP Authentication is being used
-            PppoeOptions (str): For GUI grouping.
-            RedialMax (number): Maximum number of PPPoE redials
-            RedialTimeout (number): PPPoE redial timeout, in seconds
-            ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
-            ServerBaseIp (str): Base for IPv4 PPP server address creation
-            ServerDnsOptions (str): Server DNS options
-            ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
-            ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
-            ServerNetmask (str): Netmask that the server should supply to clients
-            ServerNetmaskOptions (str): Server netmask options
-            ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
-            ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
-            ServerSignalIwf (bool): If enabled, the PPPoE server echoes the interworked session TR-101 suboption received in messages from the client
-            ServerSignalLoopChar (bool): If enabled, the PPPoE server echoes the loop characteristics TR-101 suboptions received in messages from the client
-            ServerSignalLoopEncapsulation (bool): If enabled, the PPPoE server echoes the loop encapsulation (0x90) TR-101 suboption received in messages from the client
-            ServerSignalLoopId (bool): If enabled, the PPPoE server echoes the remote ID and circuit ID TR-101 suboptions received in messages from the client
-            ServiceName (str): Access Concentrator Service Name - this option is only available for PPP servers.
-            ServiceOptions (str): Indicates PPPoE service retrieval mode
-            UnlimitedRedialAttempts (bool): Enable/Disable PPPoE unlimited redial attempts
-            UseMagic (bool): use magic
+        Args
+        ----
+        - AcName (str): Access Concentrator Name - this option is only available for PPP servers.
+        - AcOptions (str): Indicates PPPoE AC retrieval mode
+        - ActualRateDownstream (number): Actual Data Rate Downstream Value (TR-101 suboption 0x82)
+        - ActualRateUpstream (number): Actual Data Rate Upstream Value (TR-101 suboption 0x81)
+        - AgentCircuitId (str): Agent Circuit ID (TR-101 suboption 0x01)
+        - AgentRemoteId (str): Agent Remote ID (TR-101 suboption 0x02)
+        - AuthOptions (str): For GUI grouping.
+        - AuthRetries (number): Number of PPP authentication retries
+        - AuthTimeout (number): Timeout for PPP authentication, in seconds.
+        - AuthType (str): Authentication type
+        - ChapName (str): User name when CHAP Authentication is being used
+        - ChapSecret (str): Secret when CHAP Authentication is being used
+        - ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
+        - ClientBaseIp (str): Base for IPv4 PPP client address creation
+        - ClientDnsOptions (str): Client DNS options
+        - ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
+        - ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
+        - ClientNetmask (str): Netmask that the client should request
+        - ClientNetmaskOptions (str): Client netmask options
+        - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
+        - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
+        - ClientSignalIwf (bool): Enables the sending of the interworked session (0xFE) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopChar (bool): Enables the sending of the access loop characteristics TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopEncapsulation (bool): Enables the sending of the loop encapsulation (0x90) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopId (bool): Enables the sending of the remote ID and circuit ID TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
+        - DataLink (str): Data Link for TR-101 suboption 0x90
+        - DnsServerList (str): DNS server list separacted by semicolon
+        - DomainList (str): Configure domain group settings
+        - EchoReqInterval (number): Keep alive interval
+        - EnableDnsRa (bool): Enable RDNSS routing advertisments
+        - EnableDomainGroups (bool): Enable domain groups
+        - EnableEchoReq (bool): Enable Echo requests
+        - EnableEchoRsp (bool): Enable Echo replies
+        - EnableIncludeTagInPadi (bool): OBSOLETE - If checked, PADI messages include Intermediate Agent Tags(only for PPP client)
+        - EnableIncludeTagInPado (bool): OBSOLETE - If checked, PADO messages include Intermediate Agent Tags(only for PPP server)
+        - EnableIncludeTagInPadr (bool): OBSOLETE - If checked, PADR messages include Intermediate Agent Tags(only for PPP client)
+        - EnableIncludeTagInPads (bool): OBSOLETE - If checked, PADs messages include Intermediate Agent Tags(only for PPP server)
+        - EnableIntermediateAgentTags (bool): OBSOLETE - If checked, Intermediate Agent Tags are enabled
+        - EnableMaxPayload (bool): Enable/Disable Max Payload
+        - EnableMru (bool): Enable/Disable MRU negotiation
+        - EnableMruNegotiation (bool): Option is deprecated. Please use enableMaxPayload. If checked, MRU negotiation is enabled
+        - EnablePasswordCheck (bool): Enable authentication credential checking on the port.
+        - EnableRedial (bool): Enable/Disable PPPoE redial
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Encaps1 (str): Encapsulation 1 for TR-101 suboption 0x90
+        - Encaps2 (str): Encapsulation 2 for TR-101 suboption 0x90
+        - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
+        - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
+        - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
+        - LcpOptions (str): For GUI grouping.
+        - LcpRetries (number): Number of LCP retries
+        - LcpTermRetries (number): Number of LCP Termination Retries
+        - LcpTermTimeout (number): Timeout for LCP termination, in seconds.
+        - LcpTimeout (number): Timeout for LCP phase, in seconds
+        - MaxPayload (number): Max Payload
+        - Mtu (number): Max Transmit Unit for PPP
+        - Name (str): Name of range
+        - NcpRetries (number): Number of NCP retries
+        - NcpTimeout (number): Timeout for NCP phase, in seconds
+        - NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
+        - NumSessions (number): No. of sessions to setup
+        - PadiRetries (number): Number of PADI Retries
+        - PadiTimeout (number): Timeout for PADI no response, in seconds
+        - PadrRetries (number): Number of PADR Retries
+        - PadrTimeout (number): Timeout for PADR no response, in seconds
+        - PapPassword (str): Password when PAP Authentication is being used
+        - PapUser (str): User name when PAP Authentication is being used
+        - PppoeOptions (str): For GUI grouping.
+        - RedialMax (number): Maximum number of PPPoE redials
+        - RedialTimeout (number): PPPoE redial timeout, in seconds
+        - ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
+        - ServerBaseIp (str): Base for IPv4 PPP server address creation
+        - ServerDnsOptions (str): Server DNS options
+        - ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
+        - ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
+        - ServerNetmask (str): Netmask that the server should supply to clients
+        - ServerNetmaskOptions (str): Server netmask options
+        - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
+        - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
+        - ServerSignalIwf (bool): If enabled, the PPPoE server echoes the interworked session TR-101 suboption received in messages from the client
+        - ServerSignalLoopChar (bool): If enabled, the PPPoE server echoes the loop characteristics TR-101 suboptions received in messages from the client
+        - ServerSignalLoopEncapsulation (bool): If enabled, the PPPoE server echoes the loop encapsulation (0x90) TR-101 suboption received in messages from the client
+        - ServerSignalLoopId (bool): If enabled, the PPPoE server echoes the remote ID and circuit ID TR-101 suboptions received in messages from the client
+        - ServiceName (str): Access Concentrator Service Name - this option is only available for PPP servers.
+        - ServiceOptions (str): Indicates PPPoE service retrieval mode
+        - UnlimitedRedialAttempts (bool): Enable/Disable PPPoE unlimited redial attempts
+        - UseMagic (bool): use magic
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1250,16 +1253,15 @@ class PppoxRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1271,16 +1273,15 @@ class PppoxRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

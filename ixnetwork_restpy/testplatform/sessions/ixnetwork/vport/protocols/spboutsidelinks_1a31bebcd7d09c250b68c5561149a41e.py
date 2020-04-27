@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbOutsideLinks(Base):
     """The SPBM Outside Links.
-    The SpbOutsideLinks class encapsulates a list of spbOutsideLinks resources that is be managed by the user.
+    The SpbOutsideLinks class encapsulates a list of spbOutsideLinks resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbOutsideLinks.find() method.
-    The list can be managed by the user by using the SpbOutsideLinks.add() and SpbOutsideLinks.remove() methods.
+    The list can be managed by using the SpbOutsideLinks.add() and SpbOutsideLinks.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class SpbOutsideLinks(Base):
 
     @property
     def ConnectionCol(self):
-        """Signifies the connection between the columns.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the connection between the columns.
         """
         return self._get_attribute('connectionCol')
     @ConnectionCol.setter
@@ -50,10 +50,10 @@ class SpbOutsideLinks(Base):
 
     @property
     def ConnectionRow(self):
-        """Signifies the connection between the rows.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the connection between the rows.
         """
         return self._get_attribute('connectionRow')
     @ConnectionRow.setter
@@ -62,10 +62,10 @@ class SpbOutsideLinks(Base):
 
     @property
     def LinkedRid(self):
-        """Signifies the link between R identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the link between R identifier.
         """
         return self._get_attribute('linkedRid')
     @LinkedRid.setter
@@ -73,73 +73,86 @@ class SpbOutsideLinks(Base):
         self._set_attribute('linkedRid', value)
 
     def update(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
-        """Updates a child instance of spbOutsideLinks on the server.
+        """Updates spbOutsideLinks resource on the server.
 
-        Args:
-            ConnectionCol (number): Signifies the connection between the columns.
-            ConnectionRow (number): Signifies the connection between the rows.
-            LinkedRid (str): Signifies the link between R identifier.
+        Args
+        ----
+        - ConnectionCol (number): Signifies the connection between the columns.
+        - ConnectionRow (number): Signifies the connection between the rows.
+        - LinkedRid (str): Signifies the link between R identifier.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
-        """Adds a new spbOutsideLinks node on the server and retrieves it in this instance.
+        """Adds a new spbOutsideLinks resource on the server and adds it to the container.
 
-        Args:
-            ConnectionCol (number): Signifies the connection between the columns.
-            ConnectionRow (number): Signifies the connection between the rows.
-            LinkedRid (str): Signifies the link between R identifier.
+        Args
+        ----
+        - ConnectionCol (number): Signifies the connection between the columns.
+        - ConnectionRow (number): Signifies the connection between the rows.
+        - LinkedRid (str): Signifies the link between R identifier.
 
-        Returns:
-            self: This instance with all currently retrieved spbOutsideLinks data using find and the newly added spbOutsideLinks data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbOutsideLinks resources using find and the newly added spbOutsideLinks resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbOutsideLinks data in this instance from server.
+        """Deletes all the contained spbOutsideLinks resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
-        """Finds and retrieves spbOutsideLinks data from the server.
+        """Finds and retrieves spbOutsideLinks resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbOutsideLinks data from the server.
-        By default the find method takes no parameters and will retrieve all spbOutsideLinks data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbOutsideLinks resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbOutsideLinks resources from the server.
 
-        Args:
-            ConnectionCol (number): Signifies the connection between the columns.
-            ConnectionRow (number): Signifies the connection between the rows.
-            LinkedRid (str): Signifies the link between R identifier.
+        Args
+        ----
+        - ConnectionCol (number): Signifies the connection between the columns.
+        - ConnectionRow (number): Signifies the connection between the rows.
+        - LinkedRid (str): Signifies the link between R identifier.
 
-        Returns:
-            self: This instance with matching spbOutsideLinks data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbOutsideLinks resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbOutsideLinks data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbOutsideLinks data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbOutsideLinks resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

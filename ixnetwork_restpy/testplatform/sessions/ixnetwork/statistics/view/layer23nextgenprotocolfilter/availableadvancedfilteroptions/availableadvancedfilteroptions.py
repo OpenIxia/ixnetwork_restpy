@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableAdvancedFilterOptions(Base):
     """Provides a list of all the statistics and the filtering options for the current view.
-    The AvailableAdvancedFilterOptions class encapsulates a list of availableAdvancedFilterOptions resources that is managed by the system.
+    The AvailableAdvancedFilterOptions class encapsulates a list of availableAdvancedFilterOptions resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableAdvancedFilterOptions.find() method.
     """
 
@@ -37,51 +37,58 @@ class AvailableAdvancedFilterOptions(Base):
 
     @property
     def Operators(self):
-        """Returns the operators list for a filter option.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Returns the operators list for a filter option.
         """
         return self._get_attribute('operators')
 
     @property
     def Stat(self):
-        """Returns the statistic name for a filter option.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Returns the statistic name for a filter option.
         """
         return self._get_attribute('stat')
 
     def find(self, Operators=None, Stat=None):
-        """Finds and retrieves availableAdvancedFilterOptions data from the server.
+        """Finds and retrieves availableAdvancedFilterOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableAdvancedFilterOptions data from the server.
-        By default the find method takes no parameters and will retrieve all availableAdvancedFilterOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableAdvancedFilterOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableAdvancedFilterOptions resources from the server.
 
-        Args:
-            Operators (str): Returns the operators list for a filter option.
-            Stat (str): Returns the statistic name for a filter option.
+        Args
+        ----
+        - Operators (str): Returns the operators list for a filter option.
+        - Stat (str): Returns the statistic name for a filter option.
 
-        Returns:
-            self: This instance with matching availableAdvancedFilterOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableAdvancedFilterOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableAdvancedFilterOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableAdvancedFilterOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableAdvancedFilterOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

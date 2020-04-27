@@ -36,10 +36,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def CustomPacket(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('customPacket')
     @CustomPacket.setter
@@ -48,10 +48,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationCustom(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('destinationCustom')
     @DestinationCustom.setter
@@ -60,10 +60,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationCustomIpv4Address(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationCustomIpv4Address')
     @DestinationCustomIpv4Address.setter
@@ -72,10 +72,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationCustomIpv4AddressStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationCustomIpv4AddressStep')
     @DestinationCustomIpv4AddressStep.setter
@@ -84,10 +84,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationCustomMacAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationCustomMacAddress')
     @DestinationCustomMacAddress.setter
@@ -96,10 +96,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationCustomMacAddressStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationCustomMacAddressStep')
     @DestinationCustomMacAddressStep.setter
@@ -108,10 +108,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def DestinationHostList(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
         """
         return self._get_attribute('destinationHostList')
     @DestinationHostList.setter
@@ -120,10 +120,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def MeshingType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(fullyMesh)
+        """
+        Returns
+        -------
+        - str(fullyMesh): NOT DEFINED
         """
         return self._get_attribute('meshingType')
     @MeshingType.setter
@@ -132,10 +132,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def PacketType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(arp|ping|custom)
+        """
+        Returns
+        -------
+        - str(arp | ping | custom): NOT DEFINED
         """
         return self._get_attribute('packetType')
     @PacketType.setter
@@ -144,10 +144,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def PeriodIntervalInMs(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('periodIntervalInMs')
     @PeriodIntervalInMs.setter
@@ -156,10 +156,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def Periodic(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('periodic')
     @Periodic.setter
@@ -168,10 +168,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def PeriodicIterationNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('periodicIterationNumber')
     @PeriodicIterationNumber.setter
@@ -180,10 +180,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def ResponseTimeout(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('responseTimeout')
     @ResponseTimeout.setter
@@ -192,10 +192,10 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 
     @property
     def SourceHostList(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
         """
         return self._get_attribute('sourceHostList')
     @SourceHostList.setter
@@ -203,25 +203,27 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         self._set_attribute('sourceHostList', value)
 
     def update(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
-        """Updates a child instance of switchHostRangeLearnedInfoTriggerAttributes on the server.
+        """Updates switchHostRangeLearnedInfoTriggerAttributes resource on the server.
 
-        Args:
-            CustomPacket (str): NOT DEFINED
-            DestinationCustom (bool): NOT DEFINED
-            DestinationCustomIpv4Address (str): NOT DEFINED
-            DestinationCustomIpv4AddressStep (str): NOT DEFINED
-            DestinationCustomMacAddress (str): NOT DEFINED
-            DestinationCustomMacAddressStep (str): NOT DEFINED
-            DestinationHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
-            MeshingType (str(fullyMesh)): NOT DEFINED
-            PacketType (str(arp|ping|custom)): NOT DEFINED
-            PeriodIntervalInMs (number): NOT DEFINED
-            Periodic (bool): NOT DEFINED
-            PeriodicIterationNumber (number): NOT DEFINED
-            ResponseTimeout (number): NOT DEFINED
-            SourceHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
+        Args
+        ----
+        - CustomPacket (str): NOT DEFINED
+        - DestinationCustom (bool): NOT DEFINED
+        - DestinationCustomIpv4Address (str): NOT DEFINED
+        - DestinationCustomIpv4AddressStep (str): NOT DEFINED
+        - DestinationCustomMacAddress (str): NOT DEFINED
+        - DestinationCustomMacAddressStep (str): NOT DEFINED
+        - DestinationHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
+        - MeshingType (str(fullyMesh)): NOT DEFINED
+        - PacketType (str(arp | ping | custom)): NOT DEFINED
+        - PeriodIntervalInMs (number): NOT DEFINED
+        - Periodic (bool): NOT DEFINED
+        - PeriodicIterationNumber (number): NOT DEFINED
+        - ResponseTimeout (number): NOT DEFINED
+        - SourceHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

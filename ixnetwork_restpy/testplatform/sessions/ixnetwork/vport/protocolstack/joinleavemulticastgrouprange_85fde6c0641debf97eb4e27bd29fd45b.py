@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class JoinLeaveMulticastGroupRange(Base):
     """
-    The JoinLeaveMulticastGroupRange class encapsulates a list of joinLeaveMulticastGroupRange resources that is be managed by the user.
+    The JoinLeaveMulticastGroupRange class encapsulates a list of joinLeaveMulticastGroupRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the JoinLeaveMulticastGroupRange.find() method.
-    The list can be managed by the user by using the JoinLeaveMulticastGroupRange.add() and JoinLeaveMulticastGroupRange.remove() methods.
+    The list can be managed by using the JoinLeaveMulticastGroupRange.add() and JoinLeaveMulticastGroupRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class JoinLeaveMulticastGroupRange(Base):
 
     @property
     def GroupRange(self):
-        """Reference to the multicast group range from the global settings
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): Reference to the multicast group range from the global settings
         """
         return self._get_attribute('groupRange')
     @GroupRange.setter
@@ -50,19 +50,19 @@ class JoinLeaveMulticastGroupRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SkipInTraffic(self):
-        """If true, the associated groupRange will not participate in traffic as endpoint
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the associated groupRange will not participate in traffic as endpoint
         """
         return self._get_attribute('skipInTraffic')
     @SkipInTraffic.setter
@@ -70,72 +70,85 @@ class JoinLeaveMulticastGroupRange(Base):
         self._set_attribute('skipInTraffic', value)
 
     def update(self, GroupRange=None, SkipInTraffic=None):
-        """Updates a child instance of joinLeaveMulticastGroupRange on the server.
+        """Updates joinLeaveMulticastGroupRange resource on the server.
 
-        Args:
-            GroupRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): Reference to the multicast group range from the global settings
-            SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
+        Args
+        ----
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, GroupRange=None, SkipInTraffic=None):
-        """Adds a new joinLeaveMulticastGroupRange node on the server and retrieves it in this instance.
+        """Adds a new joinLeaveMulticastGroupRange resource on the server and adds it to the container.
 
-        Args:
-            GroupRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): Reference to the multicast group range from the global settings
-            SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
+        Args
+        ----
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 
-        Returns:
-            self: This instance with all currently retrieved joinLeaveMulticastGroupRange data using find and the newly added joinLeaveMulticastGroupRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved joinLeaveMulticastGroupRange resources using find and the newly added joinLeaveMulticastGroupRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the joinLeaveMulticastGroupRange data in this instance from server.
+        """Deletes all the contained joinLeaveMulticastGroupRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, GroupRange=None, ObjectId=None, SkipInTraffic=None):
-        """Finds and retrieves joinLeaveMulticastGroupRange data from the server.
+        """Finds and retrieves joinLeaveMulticastGroupRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve joinLeaveMulticastGroupRange data from the server.
-        By default the find method takes no parameters and will retrieve all joinLeaveMulticastGroupRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve joinLeaveMulticastGroupRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all joinLeaveMulticastGroupRange resources from the server.
 
-        Args:
-            GroupRange (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=igmpGroupRange)): Reference to the multicast group range from the global settings
-            ObjectId (str): Unique identifier for this object
-            SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
+        Args
+        ----
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - ObjectId (str): Unique identifier for this object
+        - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 
-        Returns:
-            self: This instance with matching joinLeaveMulticastGroupRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching joinLeaveMulticastGroupRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of joinLeaveMulticastGroupRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the joinLeaveMulticastGroupRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the joinLeaveMulticastGroupRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -144,14 +157,15 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -163,16 +177,15 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -184,16 +197,15 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

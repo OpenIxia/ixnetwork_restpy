@@ -36,10 +36,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def CopyTtlIn(self):
-        """If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('copyTtlIn')
     @CopyTtlIn.setter
@@ -48,10 +48,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def CopyTtlOut(self):
-        """If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('copyTtlOut')
     @CopyTtlOut.setter
@@ -60,10 +60,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def DecrementMplsTtl(self):
-        """If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('decrementMplsTtl')
     @DecrementMplsTtl.setter
@@ -72,10 +72,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def DecrementNetworkTtl(self):
-        """If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('decrementNetworkTtl')
     @DecrementNetworkTtl.setter
@@ -84,10 +84,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def Experimenter(self):
-        """If selected, Experimenter Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Experimenter Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -96,10 +96,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def Group(self):
-        """If selected, Group Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Group Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('group')
     @Group.setter
@@ -108,10 +108,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def Output(self):
-        """If selected, Output Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Output Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('output')
     @Output.setter
@@ -120,10 +120,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PopMpls(self):
-        """If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popMpls')
     @PopMpls.setter
@@ -132,10 +132,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PopPbb(self):
-        """If selected, Pop PBB Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop PBB Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popPbb')
     @PopPbb.setter
@@ -144,10 +144,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PopVlan(self):
-        """If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('popVlan')
     @PopVlan.setter
@@ -156,10 +156,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PushMpls(self):
-        """If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushMpls')
     @PushMpls.setter
@@ -168,10 +168,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PushPbb(self):
-        """If selected, Push PBB Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Push PBB Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushPbb')
     @PushPbb.setter
@@ -180,10 +180,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def PushVlan(self):
-        """If selected, Push VLAN Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Push VLAN Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('pushVlan')
     @PushVlan.setter
@@ -192,10 +192,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def SetField(self):
-        """If selected, Set Field Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Field Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setField')
     @SetField.setter
@@ -204,10 +204,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def SetMplsTtl(self):
-        """If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setMplsTtl')
     @SetMplsTtl.setter
@@ -216,10 +216,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def SetNetworkTtl(self):
-        """If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setNetworkTtl')
     @SetNetworkTtl.setter
@@ -228,10 +228,10 @@ class ApplyActionsMiss(Base):
 
     @property
     def SetQueue(self):
-        """If selected, Set Queue Apply Actions is supported for table miss flow entries.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Set Queue Apply Actions is supported for table miss flow entries.
         """
         return self._get_attribute('setQueue')
     @SetQueue.setter
@@ -239,28 +239,30 @@ class ApplyActionsMiss(Base):
         self._set_attribute('setQueue', value)
 
     def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Updates a child instance of applyActionsMiss on the server.
+        """Updates applyActionsMiss resource on the server.
 
-        Args:
-            CopyTtlIn (bool): If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
-            CopyTtlOut (bool): If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
-            DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
-            DecrementNetworkTtl (bool): If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
-            Experimenter (bool): If selected, Experimenter Apply Actions is supported for table miss flow entries.
-            Group (bool): If selected, Group Apply Actions is supported for table miss flow entries.
-            Output (bool): If selected, Output Apply Actions is supported for table miss flow entries.
-            PopMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
-            PopPbb (bool): If selected, Pop PBB Apply Actions is supported for table miss flow entries.
-            PopVlan (bool): If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
-            PushMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
-            PushPbb (bool): If selected, Push PBB Apply Actions is supported for table miss flow entries.
-            PushVlan (bool): If selected, Push VLAN Apply Actions is supported for table miss flow entries.
-            SetField (bool): If selected, Set Field Apply Actions is supported for table miss flow entries.
-            SetMplsTtl (bool): If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
-            SetNetworkTtl (bool): If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
-            SetQueue (bool): If selected, Set Queue Apply Actions is supported for table miss flow entries.
+        Args
+        ----
+        - CopyTtlIn (bool): If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
+        - CopyTtlOut (bool): If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
+        - DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
+        - DecrementNetworkTtl (bool): If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
+        - Experimenter (bool): If selected, Experimenter Apply Actions is supported for table miss flow entries.
+        - Group (bool): If selected, Group Apply Actions is supported for table miss flow entries.
+        - Output (bool): If selected, Output Apply Actions is supported for table miss flow entries.
+        - PopMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
+        - PopPbb (bool): If selected, Pop PBB Apply Actions is supported for table miss flow entries.
+        - PopVlan (bool): If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
+        - PushMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
+        - PushPbb (bool): If selected, Push PBB Apply Actions is supported for table miss flow entries.
+        - PushVlan (bool): If selected, Push VLAN Apply Actions is supported for table miss flow entries.
+        - SetField (bool): If selected, Set Field Apply Actions is supported for table miss flow entries.
+        - SetMplsTtl (bool): If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
+        - SetNetworkTtl (bool): If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
+        - SetQueue (bool): If selected, Set Queue Apply Actions is supported for table miss flow entries.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,36 +36,36 @@ class LearnedInfo(Base):
 
     @property
     def ActualId(self):
-        """The identifier of the designated port associated with this RSTP interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier of the designated port associated with this RSTP interface.
         """
         return self._get_attribute('actualId')
 
     @property
     def RootCost(self):
-        """Root Path Cost. The administrative cost for the shortest path from this bridge to the Root bridge. A 4-byte unsigned integer. The default is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Root Path Cost. The administrative cost for the shortest path from this bridge to the Root bridge. A 4-byte unsigned integer. The default is 0.
         """
         return self._get_attribute('rootCost')
 
     @property
     def RootMac(self):
-        """Common and internal spanning tree (CIST) regional (internal) MAC address. Part of the CIST regional root identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Common and internal spanning tree (CIST) regional (internal) MAC address. Part of the CIST regional root identifier.
         """
         return self._get_attribute('rootMac')
 
     @property
     def RootPriority(self):
-        """The priority value of the root bridge for the common and internal spanning tree (CIST)/MSTP region (internal). Part of the CIST regional root identifier. Since MAC address reduction is used, only multiples of 4096 are used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The priority value of the root bridge for the common and internal spanning tree (CIST)/MSTP region (internal). Part of the CIST regional root identifier. Since MAC address reduction is used, only multiples of 4096 are used.
         """
         return self._get_attribute('rootPriority')

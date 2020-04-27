@@ -36,10 +36,10 @@ class Atm(Base):
 
     @property
     def C2Expected(self):
-        """The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
         """
         return self._get_attribute('c2Expected')
     @C2Expected.setter
@@ -48,10 +48,10 @@ class Atm(Base):
 
     @property
     def C2Tx(self):
-        """The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
         """
         return self._get_attribute('c2Tx')
     @C2Tx.setter
@@ -60,10 +60,10 @@ class Atm(Base):
 
     @property
     def CellHeader(self):
-        """user/network-to-network interface
-
-        Returns:
-            str(nni|uni)
+        """
+        Returns
+        -------
+        - str(nni | uni): user/network-to-network interface
         """
         return self._get_attribute('cellHeader')
     @CellHeader.setter
@@ -72,10 +72,10 @@ class Atm(Base):
 
     @property
     def CosetActive(self):
-        """CRC + Exclusive OR Operation
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: CRC + Exclusive OR Operation
         """
         return self._get_attribute('cosetActive')
     @CosetActive.setter
@@ -84,10 +84,10 @@ class Atm(Base):
 
     @property
     def CrcSize(self):
-        """Choose the type of Cyclic Redundancy Check to be used.
-
-        Returns:
-            str(crc16|crc32)
+        """
+        Returns
+        -------
+        - str(crc16 | crc32): Choose the type of Cyclic Redundancy Check to be used.
         """
         return self._get_attribute('crcSize')
     @CrcSize.setter
@@ -96,10 +96,10 @@ class Atm(Base):
 
     @property
     def DataScrambling(self):
-        """If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
         """
         return self._get_attribute('dataScrambling')
     @DataScrambling.setter
@@ -108,10 +108,10 @@ class Atm(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -120,10 +120,10 @@ class Atm(Base):
 
     @property
     def FillerCell(self):
-        """SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
-
-        Returns:
-            str(idle|unassigned)
+        """
+        Returns
+        -------
+        - str(idle | unassigned): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
         """
         return self._get_attribute('fillerCell')
     @FillerCell.setter
@@ -132,10 +132,10 @@ class Atm(Base):
 
     @property
     def InterfaceType(self):
-        """The interface type for ATM.
-
-        Returns:
-            str(oc12|oc3|stm1|stm4)
+        """
+        Returns
+        -------
+        - str(oc12 | oc3 | stm1 | stm4): The interface type for ATM.
         """
         return self._get_attribute('interfaceType')
     @InterfaceType.setter
@@ -144,10 +144,10 @@ class Atm(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -156,10 +156,10 @@ class Atm(Base):
 
     @property
     def PatternMatching(self):
-        """Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
         """
         return self._get_attribute('patternMatching')
     @PatternMatching.setter
@@ -168,10 +168,10 @@ class Atm(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -180,10 +180,10 @@ class Atm(Base):
 
     @property
     def ReassemblyTimeout(self):
-        """Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
         """
         return self._get_attribute('reassemblyTimeout')
     @ReassemblyTimeout.setter
@@ -192,10 +192,10 @@ class Atm(Base):
 
     @property
     def TransmitClocking(self):
-        """The options for the transmit clock.
-
-        Returns:
-            str(external|internal|recovered)
+        """
+        Returns
+        -------
+        - str(external | internal | recovered): The options for the transmit clock.
         """
         return self._get_attribute('transmitClocking')
     @TransmitClocking.setter
@@ -203,25 +203,27 @@ class Atm(Base):
         self._set_attribute('transmitClocking', value)
 
     def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, TransmitClocking=None):
-        """Updates a child instance of atm on the server.
+        """Updates atm resource on the server.
 
-        Args:
-            C2Expected (number): The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
-            C2Tx (number): The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
-            CellHeader (str(nni|uni)): user/network-to-network interface
-            CosetActive (bool): CRC + Exclusive OR Operation
-            CrcSize (str(crc16|crc32)): Choose the type of Cyclic Redundancy Check to be used.
-            DataScrambling (bool): If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
-            EnablePPM (bool): If true, enables the portsppm.
-            FillerCell (str(idle|unassigned)): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
-            InterfaceType (str(oc12|oc3|stm1|stm4)): The interface type for ATM.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
-            TransmitClocking (str(external|internal|recovered)): The options for the transmit clock.
+        Args
+        ----
+        - C2Expected (number): The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
+        - C2Tx (number): The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
+        - CellHeader (str(nni | uni)): user/network-to-network interface
+        - CosetActive (bool): CRC + Exclusive OR Operation
+        - CrcSize (str(crc16 | crc32)): Choose the type of Cyclic Redundancy Check to be used.
+        - DataScrambling (bool): If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - FillerCell (str(idle | unassigned)): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
+        - InterfaceType (str(oc12 | oc3 | stm1 | stm4)): The interface type for ATM.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
+        - TransmitClocking (str(external | internal | recovered)): The options for the transmit clock.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

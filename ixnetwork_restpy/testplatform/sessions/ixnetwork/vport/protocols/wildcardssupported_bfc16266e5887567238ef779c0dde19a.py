@@ -36,10 +36,10 @@ class WildcardsSupported(Base):
 
     @property
     def EthernetDestinationAddress(self):
-        """Indicates that the Ethernet destination address is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the Ethernet destination address is supported.
         """
         return self._get_attribute('ethernetDestinationAddress')
     @EthernetDestinationAddress.setter
@@ -48,10 +48,10 @@ class WildcardsSupported(Base):
 
     @property
     def EthernetFrameType(self):
-        """Indicates that the Ethernet frame type is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the Ethernet frame type is supported.
         """
         return self._get_attribute('ethernetFrameType')
     @EthernetFrameType.setter
@@ -60,10 +60,10 @@ class WildcardsSupported(Base):
 
     @property
     def EthernetSourceAddress(self):
-        """Indicates that the Ethernet source address is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the Ethernet source address is supported.
         """
         return self._get_attribute('ethernetSourceAddress')
     @EthernetSourceAddress.setter
@@ -72,10 +72,10 @@ class WildcardsSupported(Base):
 
     @property
     def IpDestinationAddress(self):
-        """Indicates that the IP destination address is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the IP destination address is supported.
         """
         return self._get_attribute('ipDestinationAddress')
     @IpDestinationAddress.setter
@@ -84,10 +84,10 @@ class WildcardsSupported(Base):
 
     @property
     def IpProtocol(self):
-        """Indicates that the IP protocol is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the IP protocol is supported.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -96,10 +96,10 @@ class WildcardsSupported(Base):
 
     @property
     def IpSourceAddress(self):
-        """Indicates that the IP source address is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the IP source address is supported.
         """
         return self._get_attribute('ipSourceAddress')
     @IpSourceAddress.setter
@@ -108,10 +108,10 @@ class WildcardsSupported(Base):
 
     @property
     def IpTos(self):
-        """Indicates that the IP ToS (DSCP field, 6 bits) is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the IP ToS (DSCP field, 6 bits) is supported.
         """
         return self._get_attribute('ipTos')
     @IpTos.setter
@@ -120,10 +120,10 @@ class WildcardsSupported(Base):
 
     @property
     def SwitchInputPort(self):
-        """Indicates that the Switch input port is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the Switch input port is supported.
         """
         return self._get_attribute('switchInputPort')
     @SwitchInputPort.setter
@@ -132,10 +132,10 @@ class WildcardsSupported(Base):
 
     @property
     def TcpUdpDestinationPort(self):
-        """Indicates that the TCP/UDP destination port is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the TCP/UDP destination port is supported.
         """
         return self._get_attribute('tcpUdpDestinationPort')
     @TcpUdpDestinationPort.setter
@@ -144,10 +144,10 @@ class WildcardsSupported(Base):
 
     @property
     def TcpUdpSourcePort(self):
-        """Indicates that the TCP/UDP source port is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the TCP/UDP source port is supported.
         """
         return self._get_attribute('tcpUdpSourcePort')
     @TcpUdpSourcePort.setter
@@ -156,10 +156,10 @@ class WildcardsSupported(Base):
 
     @property
     def VlanId(self):
-        """Indicates that the VLAN id is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the VLAN id is supported.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -168,10 +168,10 @@ class WildcardsSupported(Base):
 
     @property
     def VlanPriority(self):
-        """Indicates that the VLAN priority is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the VLAN priority is supported.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -179,23 +179,25 @@ class WildcardsSupported(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, EthernetDestinationAddress=None, EthernetFrameType=None, EthernetSourceAddress=None, IpDestinationAddress=None, IpProtocol=None, IpSourceAddress=None, IpTos=None, SwitchInputPort=None, TcpUdpDestinationPort=None, TcpUdpSourcePort=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of wildcardsSupported on the server.
+        """Updates wildcardsSupported resource on the server.
 
-        Args:
-            EthernetDestinationAddress (bool): Indicates that the Ethernet destination address is supported.
-            EthernetFrameType (bool): Indicates that the Ethernet frame type is supported.
-            EthernetSourceAddress (bool): Indicates that the Ethernet source address is supported.
-            IpDestinationAddress (bool): Indicates that the IP destination address is supported.
-            IpProtocol (bool): Indicates that the IP protocol is supported.
-            IpSourceAddress (bool): Indicates that the IP source address is supported.
-            IpTos (bool): Indicates that the IP ToS (DSCP field, 6 bits) is supported.
-            SwitchInputPort (bool): Indicates that the Switch input port is supported.
-            TcpUdpDestinationPort (bool): Indicates that the TCP/UDP destination port is supported.
-            TcpUdpSourcePort (bool): Indicates that the TCP/UDP source port is supported.
-            VlanId (bool): Indicates that the VLAN id is supported.
-            VlanPriority (bool): Indicates that the VLAN priority is supported.
+        Args
+        ----
+        - EthernetDestinationAddress (bool): Indicates that the Ethernet destination address is supported.
+        - EthernetFrameType (bool): Indicates that the Ethernet frame type is supported.
+        - EthernetSourceAddress (bool): Indicates that the Ethernet source address is supported.
+        - IpDestinationAddress (bool): Indicates that the IP destination address is supported.
+        - IpProtocol (bool): Indicates that the IP protocol is supported.
+        - IpSourceAddress (bool): Indicates that the IP source address is supported.
+        - IpTos (bool): Indicates that the IP ToS (DSCP field, 6 bits) is supported.
+        - SwitchInputPort (bool): Indicates that the Switch input port is supported.
+        - TcpUdpDestinationPort (bool): Indicates that the TCP/UDP destination port is supported.
+        - TcpUdpSourcePort (bool): Indicates that the TCP/UDP source port is supported.
+        - VlanId (bool): Indicates that the VLAN id is supported.
+        - VlanPriority (bool): Indicates that the VLAN priority is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

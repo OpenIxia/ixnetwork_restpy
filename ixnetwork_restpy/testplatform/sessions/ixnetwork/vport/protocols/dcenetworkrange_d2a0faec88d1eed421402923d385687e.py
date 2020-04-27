@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceNetworkRange(Base):
     """Sets the Network Range for a particular DCE ISIS router.
-    The DceNetworkRange class encapsulates a list of dceNetworkRange resources that is be managed by the user.
+    The DceNetworkRange class encapsulates a list of dceNetworkRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceNetworkRange.find() method.
-    The list can be managed by the user by using the DceNetworkRange.add() and DceNetworkRange.remove() methods.
+    The list can be managed by using the DceNetworkRange.add() and DceNetworkRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,94 +38,94 @@ class DceNetworkRange(Base):
 
     @property
     def DceNodeIpv4Groups(self):
-        """An instance of the DceNodeIpv4Groups class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_f157dd1a5ba514f4d5e93ea0f333025a.DceNodeIpv4Groups): An instance of the DceNodeIpv4Groups class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_f157dd1a5ba514f4d5e93ea0f333025a.DceNodeIpv4Groups)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_f157dd1a5ba514f4d5e93ea0f333025a import DceNodeIpv4Groups
         return DceNodeIpv4Groups(self)
 
     @property
     def DceNodeIpv6Groups(self):
-        """An instance of the DceNodeIpv6Groups class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_fec7192c182dcbedb5d6824db8482cb8.DceNodeIpv6Groups): An instance of the DceNodeIpv6Groups class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_fec7192c182dcbedb5d6824db8482cb8.DceNodeIpv6Groups)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_fec7192c182dcbedb5d6824db8482cb8 import DceNodeIpv6Groups
         return DceNodeIpv6Groups(self)
 
     @property
     def DceNodeMacGroups(self):
-        """An instance of the DceNodeMacGroups class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_398e7526dacbbde5879c903cd681abee.DceNodeMacGroups): An instance of the DceNodeMacGroups class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_398e7526dacbbde5879c903cd681abee.DceNodeMacGroups)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_398e7526dacbbde5879c903cd681abee import DceNodeMacGroups
         return DceNodeMacGroups(self)
 
     @property
     def DceNodeTopologyRange(self):
-        """An instance of the DceNodeTopologyRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_b68d1097ed806e2de31f7eb40658de72.DceNodeTopologyRange): An instance of the DceNodeTopologyRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_b68d1097ed806e2de31f7eb40658de72.DceNodeTopologyRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_b68d1097ed806e2de31f7eb40658de72 import DceNodeTopologyRange
         return DceNodeTopologyRange(self)
 
     @property
     def DceOutsideLinks(self):
-        """An instance of the DceOutsideLinks class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_ffbe872bddd4b647bc81443ac5ab845c.DceOutsideLinks): An instance of the DceOutsideLinks class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_ffbe872bddd4b647bc81443ac5ab845c.DceOutsideLinks)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_ffbe872bddd4b647bc81443ac5ab845c import DceOutsideLinks
         return DceOutsideLinks(self)
 
     @property
     def TrillNodeMacRanges(self):
-        """An instance of the TrillNodeMacRanges class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_6660ef9ea8ef9c7153834f7d4df2bacb.TrillNodeMacRanges): An instance of the TrillNodeMacRanges class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_6660ef9ea8ef9c7153834f7d4df2bacb.TrillNodeMacRanges)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_6660ef9ea8ef9c7153834f7d4df2bacb import TrillNodeMacRanges
         return TrillNodeMacRanges(self)
 
     @property
     def AdvertiseNetworkRange(self):
-        """If true, this DCE ISIS Network Range is advertised.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this DCE ISIS Network Range is advertised.
         """
         return self._get_attribute('advertiseNetworkRange')
     @AdvertiseNetworkRange.setter
@@ -134,10 +134,10 @@ class DceNetworkRange(Base):
 
     @property
     def BroadcastRootPriorityStep(self):
-        """DEPRECATED The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
         """
         return self._get_attribute('broadcastRootPriorityStep')
     @BroadcastRootPriorityStep.setter
@@ -146,10 +146,10 @@ class DceNetworkRange(Base):
 
     @property
     def CapabilityRouterId(self):
-        """The IP address format of Capability Router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address format of Capability Router.
         """
         return self._get_attribute('capabilityRouterId')
     @CapabilityRouterId.setter
@@ -158,10 +158,10 @@ class DceNetworkRange(Base):
 
     @property
     def EnableHostName(self):
-        """If true, the given dynamic host name is transmitted in all the packets sent from this router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
         return self._get_attribute('enableHostName')
     @EnableHostName.setter
@@ -170,10 +170,10 @@ class DceNetworkRange(Base):
 
     @property
     def EnableMultiTopology(self):
-        """Enables more than one topology (distribution tree) corresponding to the given R bridge.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables more than one topology (distribution tree) corresponding to the given R bridge.
         """
         return self._get_attribute('enableMultiTopology')
     @EnableMultiTopology.setter
@@ -182,10 +182,10 @@ class DceNetworkRange(Base):
 
     @property
     def EntryCol(self):
-        """The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
         return self._get_attribute('entryCol')
     @EntryCol.setter
@@ -194,10 +194,10 @@ class DceNetworkRange(Base):
 
     @property
     def EntryRow(self):
-        """The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
         return self._get_attribute('entryRow')
     @EntryRow.setter
@@ -206,10 +206,10 @@ class DceNetworkRange(Base):
 
     @property
     def HostNamePrefix(self):
-        """Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
         """
         return self._get_attribute('hostNamePrefix')
     @HostNamePrefix.setter
@@ -218,10 +218,10 @@ class DceNetworkRange(Base):
 
     @property
     def InterfaceMetric(self):
-        """The metric cost associated with this emulated DCE ISIS router.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The metric cost associated with this emulated DCE ISIS router.
         """
         return self._get_attribute('interfaceMetric')
     @InterfaceMetric.setter
@@ -230,19 +230,19 @@ class DceNetworkRange(Base):
 
     @property
     def LinkType(self):
-        """For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
-
-        Returns:
-            str(pointToPoint|broadcast)
+        """
+        Returns
+        -------
+        - str(pointToPoint | broadcast): For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
         """
         return self._get_attribute('linkType')
 
     @property
     def NoOfCols(self):
-        """The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
         """
         return self._get_attribute('noOfCols')
     @NoOfCols.setter
@@ -251,10 +251,10 @@ class DceNetworkRange(Base):
 
     @property
     def NoOfRows(self):
-        """The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
         """
         return self._get_attribute('noOfRows')
     @NoOfRows.setter
@@ -263,10 +263,10 @@ class DceNetworkRange(Base):
 
     @property
     def NumberOfMultiDestinationTrees(self):
-        """DEPRECATED The number of Multi-Destination Trees for the DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The number of Multi-Destination Trees for the DCE ISIS router.
         """
         return self._get_attribute('numberOfMultiDestinationTrees')
     @NumberOfMultiDestinationTrees.setter
@@ -275,10 +275,10 @@ class DceNetworkRange(Base):
 
     @property
     def StartBroadcastRootPriority(self):
-        """DEPRECATED The starting value of the Broadcast Root Priority of this DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The starting value of the Broadcast Root Priority of this DCE ISIS router.
         """
         return self._get_attribute('startBroadcastRootPriority')
     @StartBroadcastRootPriority.setter
@@ -287,10 +287,10 @@ class DceNetworkRange(Base):
 
     @property
     def StartSwitchId(self):
-        """DEPRECATED The Switch ID of this emulated DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The Switch ID of this emulated DCE ISIS router.
         """
         return self._get_attribute('startSwitchId')
     @StartSwitchId.setter
@@ -299,10 +299,10 @@ class DceNetworkRange(Base):
 
     @property
     def StartSystemId(self):
-        """The System ID assigned to the starting DCE ISIS router in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The System ID assigned to the starting DCE ISIS router in this network range.
         """
         return self._get_attribute('startSystemId')
     @StartSystemId.setter
@@ -311,10 +311,10 @@ class DceNetworkRange(Base):
 
     @property
     def SwitchIdPriority(self):
-        """DEPRECATED The Switch ID priority of this DCE ISIS router.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The Switch ID priority of this DCE ISIS router.
         """
         return self._get_attribute('switchIdPriority')
     @SwitchIdPriority.setter
@@ -323,10 +323,10 @@ class DceNetworkRange(Base):
 
     @property
     def SwitchIdStep(self):
-        """DEPRECATED The increment value by which the Switch ID of the DCE ISIS router increases.
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: The increment value by which the Switch ID of the DCE ISIS router increases.
         """
         return self._get_attribute('switchIdStep')
     @SwitchIdStep.setter
@@ -335,10 +335,10 @@ class DceNetworkRange(Base):
 
     @property
     def SystemIdIncrementBy(self):
-        """The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
         """
         return self._get_attribute('systemIdIncrementBy')
     @SystemIdIncrementBy.setter
@@ -346,119 +346,132 @@ class DceNetworkRange(Base):
         self._set_attribute('systemIdIncrementBy', value)
 
     def update(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
-        """Updates a child instance of dceNetworkRange on the server.
+        """Updates dceNetworkRange resource on the server.
 
-        Args:
-            AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
-            BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
-            CapabilityRouterId (str): The IP address format of Capability Router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
-            InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
-            NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
-            NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
-            StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
-            StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
-            StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
-            SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
-            SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
-            SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
+        - BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
+        - CapabilityRouterId (str): The IP address format of Capability Router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
+        - InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
+        - NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
+        - NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
+        - StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
+        - StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
+        - StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
+        - SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
+        - SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
+        - SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
-        """Adds a new dceNetworkRange node on the server and retrieves it in this instance.
+        """Adds a new dceNetworkRange resource on the server and adds it to the container.
 
-        Args:
-            AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
-            BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
-            CapabilityRouterId (str): The IP address format of Capability Router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
-            InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
-            NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
-            NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
-            StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
-            StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
-            StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
-            SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
-            SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
-            SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
+        - BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
+        - CapabilityRouterId (str): The IP address format of Capability Router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
+        - InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
+        - NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
+        - NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
+        - StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
+        - StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
+        - StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
+        - SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
+        - SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
+        - SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Returns:
-            self: This instance with all currently retrieved dceNetworkRange data using find and the newly added dceNetworkRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceNetworkRange resources using find and the newly added dceNetworkRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceNetworkRange data in this instance from server.
+        """Deletes all the contained dceNetworkRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
-        """Finds and retrieves dceNetworkRange data from the server.
+        """Finds and retrieves dceNetworkRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceNetworkRange data from the server.
-        By default the find method takes no parameters and will retrieve all dceNetworkRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceNetworkRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceNetworkRange resources from the server.
 
-        Args:
-            AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
-            BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
-            CapabilityRouterId (str): The IP address format of Capability Router.
-            EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
-            EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
-            EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
-            HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
-            InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
-            LinkType (str(pointToPoint|broadcast)): For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
-            NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
-            NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
-            NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
-            StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
-            StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
-            StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
-            SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
-            SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
-            SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+        Args
+        ----
+        - AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
+        - BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
+        - CapabilityRouterId (str): The IP address format of Capability Router.
+        - EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+        - EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+        - EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+        - HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
+        - InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
+        - LinkType (str(pointToPoint | broadcast)): For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
+        - NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
+        - NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
+        - NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
+        - StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
+        - StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
+        - StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
+        - SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
+        - SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
+        - SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
-        Returns:
-            self: This instance with matching dceNetworkRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceNetworkRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceNetworkRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceNetworkRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceNetworkRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Number(Base):
     """This specifies the number related properties of the parameter.
-    The Number class encapsulates a list of number resources that is managed by the system.
+    The Number class encapsulates a list of number resources that are managed by the system.
     A list of resources can be retrieved from the server using the Number.find() method.
     """
 
@@ -37,37 +37,37 @@ class Number(Base):
 
     @property
     def Default(self):
-        """(Read only) Parameter default value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) Parameter default value.
         """
         return self._get_attribute('default')
 
     @property
     def MaxValue(self):
-        """(Read only) Maximum supported value for parameter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) Maximum supported value for parameter.
         """
         return self._get_attribute('maxValue')
 
     @property
     def MinValue(self):
-        """(Read only) Minimum supported value for parameter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) Minimum supported value for parameter.
         """
         return self._get_attribute('minValue')
 
     @property
     def Value(self):
-        """Parameter integer value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Parameter integer value.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -75,47 +75,56 @@ class Number(Base):
         self._set_attribute('value', value)
 
     def update(self, Value=None):
-        """Updates a child instance of number on the server.
+        """Updates number resource on the server.
 
-        Args:
-            Value (number): Parameter integer value.
+        Args
+        ----
+        - Value (number): Parameter integer value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Default=None, MaxValue=None, MinValue=None, Value=None):
-        """Finds and retrieves number data from the server.
+        """Finds and retrieves number resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve number data from the server.
-        By default the find method takes no parameters and will retrieve all number data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve number resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all number resources from the server.
 
-        Args:
-            Default (number): (Read only) Parameter default value.
-            MaxValue (number): (Read only) Maximum supported value for parameter.
-            MinValue (number): (Read only) Minimum supported value for parameter.
-            Value (number): Parameter integer value.
+        Args
+        ----
+        - Default (number): (Read only) Parameter default value.
+        - MaxValue (number): (Read only) Maximum supported value for parameter.
+        - MinValue (number): (Read only) Minimum supported value for parameter.
+        - Value (number): Parameter integer value.
 
-        Returns:
-            self: This instance with matching number data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching number resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of number data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the number data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the number resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

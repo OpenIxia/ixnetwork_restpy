@@ -36,18 +36,18 @@ class InterfaceDiscoveredAddress(Base):
 
     @property
     def Description(self):
-        """Shows description of the interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Shows description of the interface.
         """
         return self._get_attribute('description')
 
     @property
     def IpAddress(self):
-        """Shows IP address of the interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Shows IP address of the interface.
         """
         return self._get_attribute('ipAddress')

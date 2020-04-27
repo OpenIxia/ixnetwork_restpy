@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CeVlanIdRange(Base):
     """It signifies the VLAN ranges configured for a particular EVC.
-    The CeVlanIdRange class encapsulates a list of ceVlanIdRange resources that is be managed by the user.
+    The CeVlanIdRange class encapsulates a list of ceVlanIdRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the CeVlanIdRange.find() method.
-    The list can be managed by the user by using the CeVlanIdRange.add() and CeVlanIdRange.remove() methods.
+    The list can be managed by using the CeVlanIdRange.add() and CeVlanIdRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CeVlanIdRange(Base):
 
     @property
     def Count(self):
-        """It signifies the number of Vlan Ids configured for the EVC.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the number of Vlan Ids configured for the EVC.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class CeVlanIdRange(Base):
 
     @property
     def Enabled(self):
-        """If enabled, CE VLAN Id range is in effect for the EVC.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, CE VLAN Id range is in effect for the EVC.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class CeVlanIdRange(Base):
 
     @property
     def IncrementStep(self):
-        """It shows the Increment Step of Vlan ID. Default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It shows the Increment Step of Vlan ID. Default is 1.
         """
         return self._get_attribute('incrementStep')
     @IncrementStep.setter
@@ -74,10 +74,10 @@ class CeVlanIdRange(Base):
 
     @property
     def StartVlanId(self):
-        """The VLAN Id of first VLAN. Default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VLAN Id of first VLAN. Default is 1.
         """
         return self._get_attribute('startVlanId')
     @StartVlanId.setter
@@ -85,76 +85,89 @@ class CeVlanIdRange(Base):
         self._set_attribute('startVlanId', value)
 
     def update(self, Count=None, Enabled=None, IncrementStep=None, StartVlanId=None):
-        """Updates a child instance of ceVlanIdRange on the server.
+        """Updates ceVlanIdRange resource on the server.
 
-        Args:
-            Count (number): It signifies the number of Vlan Ids configured for the EVC.
-            Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
-            IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        Args
+        ----
+        - Count (number): It signifies the number of Vlan Ids configured for the EVC.
+        - Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
+        - IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Enabled=None, IncrementStep=None, StartVlanId=None):
-        """Adds a new ceVlanIdRange node on the server and retrieves it in this instance.
+        """Adds a new ceVlanIdRange resource on the server and adds it to the container.
 
-        Args:
-            Count (number): It signifies the number of Vlan Ids configured for the EVC.
-            Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
-            IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        Args
+        ----
+        - Count (number): It signifies the number of Vlan Ids configured for the EVC.
+        - Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
+        - IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
 
-        Returns:
-            self: This instance with all currently retrieved ceVlanIdRange data using find and the newly added ceVlanIdRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ceVlanIdRange resources using find and the newly added ceVlanIdRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ceVlanIdRange data in this instance from server.
+        """Deletes all the contained ceVlanIdRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Enabled=None, IncrementStep=None, StartVlanId=None):
-        """Finds and retrieves ceVlanIdRange data from the server.
+        """Finds and retrieves ceVlanIdRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ceVlanIdRange data from the server.
-        By default the find method takes no parameters and will retrieve all ceVlanIdRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ceVlanIdRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ceVlanIdRange resources from the server.
 
-        Args:
-            Count (number): It signifies the number of Vlan Ids configured for the EVC.
-            Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
-            IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        Args
+        ----
+        - Count (number): It signifies the number of Vlan Ids configured for the EVC.
+        - Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
+        - IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
 
-        Returns:
-            self: This instance with matching ceVlanIdRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ceVlanIdRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ceVlanIdRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ceVlanIdRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ceVlanIdRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

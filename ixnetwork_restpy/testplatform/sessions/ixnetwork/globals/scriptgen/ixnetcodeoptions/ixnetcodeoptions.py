@@ -36,10 +36,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeAvailableHardware(self):
-        """Flag to include available hardware nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include available hardware nodes
         """
         return self._get_attribute('includeAvailableHardware')
     @IncludeAvailableHardware.setter
@@ -48,10 +48,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeConnect(self):
-        """DEPRECATED Flag to include the connect command
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Flag to include the connect command
         """
         return self._get_attribute('includeConnect')
     @IncludeConnect.setter
@@ -60,10 +60,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeDefaultValues(self):
-        """Flag to include attributes that have values which are default
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include attributes that have values which are default
         """
         return self._get_attribute('includeDefaultValues')
     @IncludeDefaultValues.setter
@@ -72,10 +72,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeQuickTest(self):
-        """Flag to include quickTest nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include quickTest nodes
         """
         return self._get_attribute('includeQuickTest')
     @IncludeQuickTest.setter
@@ -84,10 +84,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeStatistic(self):
-        """Flag to include statistic view nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include statistic view nodes
         """
         return self._get_attribute('includeStatistic')
     @IncludeStatistic.setter
@@ -97,9 +97,9 @@ class IxNetCodeOptions(Base):
     @property
     def IncludeTAPSettings(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('includeTAPSettings')
     @IncludeTAPSettings.setter
@@ -108,10 +108,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeTestComposer(self):
-        """DEPRECATED Flag to include test composer code
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Flag to include test composer code
         """
         return self._get_attribute('includeTestComposer')
     @IncludeTestComposer.setter
@@ -120,10 +120,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeTraffic(self):
-        """Flag to include traffic item nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include traffic item nodes
         """
         return self._get_attribute('includeTraffic')
     @IncludeTraffic.setter
@@ -132,10 +132,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeTrafficFlowGroup(self):
-        """Flag to include traffic item high level stream nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include traffic item high level stream nodes
         """
         return self._get_attribute('includeTrafficFlowGroup')
     @IncludeTrafficFlowGroup.setter
@@ -144,10 +144,10 @@ class IxNetCodeOptions(Base):
 
     @property
     def IncludeTrafficStack(self):
-        """Flag to include high level stream stack nodes
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include high level stream stack nodes
         """
         return self._get_attribute('includeTrafficStack')
     @IncludeTrafficStack.setter
@@ -155,21 +155,23 @@ class IxNetCodeOptions(Base):
         self._set_attribute('includeTrafficStack', value)
 
     def update(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
-        """Updates a child instance of ixNetCodeOptions on the server.
+        """Updates ixNetCodeOptions resource on the server.
 
-        Args:
-            IncludeAvailableHardware (bool): Flag to include available hardware nodes
-            IncludeConnect (bool): Flag to include the connect command
-            IncludeDefaultValues (bool): Flag to include attributes that have values which are default
-            IncludeQuickTest (bool): Flag to include quickTest nodes
-            IncludeStatistic (bool): Flag to include statistic view nodes
-            IncludeTAPSettings (bool): 
-            IncludeTestComposer (bool): Flag to include test composer code
-            IncludeTraffic (bool): Flag to include traffic item nodes
-            IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes
-            IncludeTrafficStack (bool): Flag to include high level stream stack nodes
+        Args
+        ----
+        - IncludeAvailableHardware (bool): Flag to include available hardware nodes
+        - IncludeConnect (bool): Flag to include the connect command
+        - IncludeDefaultValues (bool): Flag to include attributes that have values which are default
+        - IncludeQuickTest (bool): Flag to include quickTest nodes
+        - IncludeStatistic (bool): Flag to include statistic view nodes
+        - IncludeTAPSettings (bool): 
+        - IncludeTestComposer (bool): Flag to include test composer code
+        - IncludeTraffic (bool): Flag to include traffic item nodes
+        - IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes
+        - IncludeTrafficStack (bool): Flag to include high level stream stack nodes
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

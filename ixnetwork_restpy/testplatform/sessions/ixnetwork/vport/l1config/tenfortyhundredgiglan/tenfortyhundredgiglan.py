@@ -36,38 +36,38 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -76,10 +76,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def BadBlocksNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('badBlocksNumber')
     @BadBlocksNumber.setter
@@ -88,10 +88,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def EnableAutoNegotiation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAutoNegotiation')
     @EnableAutoNegotiation.setter
@@ -100,10 +100,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -112,10 +112,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def EnableRsFec(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableRsFec')
     @EnableRsFec.setter
@@ -124,10 +124,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def EnableRsFecStats(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableRsFecStats')
     @EnableRsFecStats.setter
@@ -136,10 +136,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -148,10 +148,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -160,10 +160,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def GoodBlocksNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('goodBlocksNumber')
     @GoodBlocksNumber.setter
@@ -172,10 +172,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def IeeeL1Defaults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ieeeL1Defaults')
     @IeeeL1Defaults.setter
@@ -184,10 +184,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def LaserOn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('laserOn')
     @LaserOn.setter
@@ -196,10 +196,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def LinkTraining(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('linkTraining')
     @LinkTraining.setter
@@ -208,10 +208,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def LoopContinuously(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('loopContinuously')
     @LoopContinuously.setter
@@ -220,10 +220,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def LoopCountNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('loopCountNumber')
     @LoopCountNumber.setter
@@ -232,10 +232,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -244,10 +244,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def LoopbackMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(internalLoopback|lineLoopback|none)
+        """
+        Returns
+        -------
+        - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
         return self._get_attribute('loopbackMode')
     @LoopbackMode.setter
@@ -256,10 +256,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -268,10 +268,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def SendSetsMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(alternate|typeAOnly|typeBOnly)
+        """
+        Returns
+        -------
+        - str(alternate | typeAOnly | typeBOnly): NOT DEFINED
         """
         return self._get_attribute('sendSetsMode')
     @SendSetsMode.setter
@@ -280,10 +280,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def Speed(self):
-        """The speed of the lan
-
-        Returns:
-            str(speed100g|speed10g|speed25g|speed40g|speed50g)
+        """
+        Returns
+        -------
+        - str(speed100g | speed10g | speed25g | speed40g | speed50g): The speed of the lan
         """
         return self._get_attribute('speed')
     @Speed.setter
@@ -292,10 +292,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def StartErrorInsertion(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('startErrorInsertion')
     @StartErrorInsertion.setter
@@ -304,10 +304,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """If enabled, will allow transmission of packets even if the receive link is down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -316,10 +316,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def TypeAOrderedSets(self):
-        """NOT DEFINED
-
-        Returns:
-            str(localFault|remoteFault)
+        """
+        Returns
+        -------
+        - str(localFault | remoteFault): NOT DEFINED
         """
         return self._get_attribute('typeAOrderedSets')
     @TypeAOrderedSets.setter
@@ -328,10 +328,10 @@ class TenFortyHundredGigLan(Base):
 
     @property
     def TypeBOrderedSets(self):
-        """NOT DEFINED
-
-        Returns:
-            str(localFault|remoteFault)
+        """
+        Returns
+        -------
+        - str(localFault | remoteFault): NOT DEFINED
         """
         return self._get_attribute('typeBOrderedSets')
     @TypeBOrderedSets.setter
@@ -339,34 +339,36 @@ class TenFortyHundredGigLan(Base):
         self._set_attribute('typeBOrderedSets', value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
-        """Updates a child instance of tenFortyHundredGigLan on the server.
+        """Updates tenFortyHundredGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            BadBlocksNumber (number): NOT DEFINED
-            EnableAutoNegotiation (bool): NOT DEFINED
-            EnablePPM (bool): If true, enables the portsppm.
-            EnableRsFec (bool): NOT DEFINED
-            EnableRsFecStats (bool): NOT DEFINED
-            EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): NOT DEFINED
-            GoodBlocksNumber (number): NOT DEFINED
-            IeeeL1Defaults (bool): NOT DEFINED
-            LaserOn (bool): NOT DEFINED
-            LinkTraining (bool): NOT DEFINED
-            LoopContinuously (bool): NOT DEFINED
-            LoopCountNumber (number): NOT DEFINED
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
-            SendSetsMode (str(alternate|typeAOnly|typeBOnly)): NOT DEFINED
-            Speed (str(speed100g|speed10g|speed25g|speed40g|speed50g)): The speed of the lan
-            StartErrorInsertion (bool): NOT DEFINED
-            TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
-            TypeAOrderedSets (str(localFault|remoteFault)): NOT DEFINED
-            TypeBOrderedSets (str(localFault|remoteFault)): NOT DEFINED
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - BadBlocksNumber (number): NOT DEFINED
+        - EnableAutoNegotiation (bool): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnableRsFec (bool): NOT DEFINED
+        - EnableRsFecStats (bool): NOT DEFINED
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): NOT DEFINED
+        - GoodBlocksNumber (number): NOT DEFINED
+        - IeeeL1Defaults (bool): NOT DEFINED
+        - LaserOn (bool): NOT DEFINED
+        - LinkTraining (bool): NOT DEFINED
+        - LoopContinuously (bool): NOT DEFINED
+        - LoopCountNumber (number): NOT DEFINED
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
+        - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): The speed of the lan
+        - StartErrorInsertion (bool): NOT DEFINED
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        - TypeAOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - TypeBOrderedSets (str(localFault | remoteFault)): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

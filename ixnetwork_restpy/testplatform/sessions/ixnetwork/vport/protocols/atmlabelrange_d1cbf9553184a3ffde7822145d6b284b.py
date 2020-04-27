@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AtmLabelRange(Base):
     """A single ATM label range of VPIs and VCIs used for ATM sessions.
-    The AtmLabelRange class encapsulates a list of atmLabelRange resources that is be managed by the user.
+    The AtmLabelRange class encapsulates a list of atmLabelRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the AtmLabelRange.find() method.
-    The list can be managed by the user by using the AtmLabelRange.add() and AtmLabelRange.remove() methods.
+    The list can be managed by using the AtmLabelRange.add() and AtmLabelRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AtmLabelRange(Base):
 
     @property
     def MaxVci(self):
-        """The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
         """
         return self._get_attribute('maxVci')
     @MaxVci.setter
@@ -50,10 +50,10 @@ class AtmLabelRange(Base):
 
     @property
     def MaxVpi(self):
-        """The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
         """
         return self._get_attribute('maxVpi')
     @MaxVpi.setter
@@ -62,10 +62,10 @@ class AtmLabelRange(Base):
 
     @property
     def MinVci(self):
-        """The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
         """
         return self._get_attribute('minVci')
     @MinVci.setter
@@ -74,10 +74,10 @@ class AtmLabelRange(Base):
 
     @property
     def MinVpi(self):
-        """The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
         """
         return self._get_attribute('minVpi')
     @MinVpi.setter
@@ -85,76 +85,89 @@ class AtmLabelRange(Base):
         self._set_attribute('minVpi', value)
 
     def update(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
-        """Updates a child instance of atmLabelRange on the server.
+        """Updates atmLabelRange resource on the server.
 
-        Args:
-            MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
-            MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
-            MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
-            MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
+        Args
+        ----
+        - MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
+        - MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
+        - MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
+        - MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
-        """Adds a new atmLabelRange node on the server and retrieves it in this instance.
+        """Adds a new atmLabelRange resource on the server and adds it to the container.
 
-        Args:
-            MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
-            MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
-            MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
-            MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
+        Args
+        ----
+        - MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
+        - MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
+        - MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
+        - MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
 
-        Returns:
-            self: This instance with all currently retrieved atmLabelRange data using find and the newly added atmLabelRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved atmLabelRange resources using find and the newly added atmLabelRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the atmLabelRange data in this instance from server.
+        """Deletes all the contained atmLabelRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
-        """Finds and retrieves atmLabelRange data from the server.
+        """Finds and retrieves atmLabelRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve atmLabelRange data from the server.
-        By default the find method takes no parameters and will retrieve all atmLabelRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve atmLabelRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all atmLabelRange resources from the server.
 
-        Args:
-            MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
-            MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
-            MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
-            MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
+        Args
+        ----
+        - MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
+        - MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
+        - MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
+        - MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
 
-        Returns:
-            self: This instance with matching atmLabelRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching atmLabelRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of atmLabelRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the atmLabelRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the atmLabelRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -39,18 +39,17 @@ class ResourceManager(Base):
 
         Export the entire configuration or fragments of it in a text based format
 
-        exportConfig(Arg2:list, Arg3:bool, Arg4:enum)string
-            Args:
-                args[0] is Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
-                args[1] is Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
-                args[2] is Arg4 (str(json)): The format of the exported configuration
+        exportConfig(Arg2=list, Arg3=bool, Arg4=enum)string
+        ---------------------------------------------------
+        - Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
+        - Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
+        - Arg4 (str(json)): The format of the exported configuration
+        - Returns str: JSON configuration as a string
 
-            Returns:
-                str: JSON configuration as a string
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -62,16 +61,17 @@ class ResourceManager(Base):
 
         Export the entire configuration or fragments of it in a text based format
 
-        exportConfigFile(Arg2:list, Arg3:bool, Arg4:enum, Arg5:href)
-            Args:
-                args[0] is Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
-                args[1] is Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
-                args[2] is Arg4 (str(json)): The format of the exported configuration
-                args[3] is Arg5 (obj(ixnetwork_restpy.files.Files)): The file object to write the configuration to
+        exportConfigFile(Arg2=list, Arg3=bool, Arg4=enum, Arg5=href)
+        ------------------------------------------------------------
+        - Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
+        - Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
+        - Arg4 (str(json)): The format of the exported configuration
+        - Arg5 (obj(ixnetwork_restpy.files.Files)): The file object to write the configuration to
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -83,17 +83,25 @@ class ResourceManager(Base):
 
         Create or update the test tool configuration
 
-        importConfig(Arg2:string, Arg3:bool)list
-            Args:
-                args[0] is Arg2 (str): The configuration as a string
-                args[1] is Arg3 (bool): True to create a new configuration, false to update the current configuration
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-            Returns:
-                list(str): A list of errors that occurred during import
+        importConfig(Arg2=string, Arg3=bool)list
+        ----------------------------------------
+        - Arg2 (str): The configuration as a string
+        - Arg3 (bool): True to create a new configuration, false to update the current configuration
+        - Returns list(str): A list of errors that occurred during import
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        importConfig(Arg2=string, Arg3=bool, Arg4=enum)list
+        ---------------------------------------------------
+        - Arg2 (str): 
+        - Arg3 (bool): 
+        - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
+        - Returns list(dict(arg1:str,arg2:str,arg3:str)): A list of errata that occurred during the import
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -105,17 +113,25 @@ class ResourceManager(Base):
 
         Create or update the test tool configuration
 
-        importConfigFile(Arg2:href, Arg3:bool)list
-            Args:
-                args[0] is Arg2 (obj(ixnetwork_restpy.files.Files)): The file object to read the configuration from
-                args[1] is Arg3 (bool): True to create a new configuration, false to update the current configuration
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-            Returns:
-                list(str): A list of errors that occurred during import
+        importConfigFile(Arg2=href, Arg3=bool)list
+        ------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg3 (bool): 
+        - Returns list(str): A list of errata that occurred during the import
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum)list
+        -----------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg3 (bool): 
+        - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
+        - Returns list(dict(arg1:str,arg2:str,arg3:str)): A list of errata that occurred during the import
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

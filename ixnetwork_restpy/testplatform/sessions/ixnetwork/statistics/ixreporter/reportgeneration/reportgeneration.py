@@ -36,10 +36,10 @@ class ReportGeneration(Base):
 
     @property
     def OutputFile(self):
-        """Signifies the output file
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the output file
         """
         return self._get_attribute('OutputFile')
     @OutputFile.setter
@@ -48,10 +48,10 @@ class ReportGeneration(Base):
 
     @property
     def OutputType(self):
-        """Signifies the output type
-
-        Returns:
-            str(Html|Pdf)
+        """
+        Returns
+        -------
+        - str(Html | Pdf): Signifies the output type
         """
         return self._get_attribute('OutputType')
     @OutputType.setter
@@ -60,10 +60,10 @@ class ReportGeneration(Base):
 
     @property
     def Template(self):
-        """Signifies the template for IxReporter
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the template for IxReporter
         """
         return self._get_attribute('Template')
     @Template.setter
@@ -72,10 +72,10 @@ class ReportGeneration(Base):
 
     @property
     def TestRunId(self):
-        """Signifies the identifier for the test run
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the identifier for the test run
         """
         return self._get_attribute('TestRunId')
     @TestRunId.setter
@@ -83,27 +83,30 @@ class ReportGeneration(Base):
         self._set_attribute('TestRunId', value)
 
     def update(self, OutputFile=None, OutputType=None, Template=None, TestRunId=None):
-        """Updates a child instance of reportGeneration on the server.
+        """Updates reportGeneration resource on the server.
 
-        Args:
-            OutputFile (str): Signifies the output file
-            OutputType (str(Html|Pdf)): Signifies the output type
-            Template (str): Signifies the template for IxReporter
-            TestRunId (number): Signifies the identifier for the test run
+        Args
+        ----
+        - OutputFile (str): Signifies the output file
+        - OutputType (str(Html | Pdf)): Signifies the output type
+        - Template (str): Signifies the template for IxReporter
+        - TestRunId (number): Signifies the identifier for the test run
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)

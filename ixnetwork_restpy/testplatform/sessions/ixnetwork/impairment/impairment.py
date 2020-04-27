@@ -36,70 +36,70 @@ class Impairment(Base):
 
     @property
     def DefaultProfile(self):
-        """An instance of the DefaultProfile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile.DefaultProfile): An instance of the DefaultProfile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile.DefaultProfile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile import DefaultProfile
         return DefaultProfile(self)._select()
 
     @property
     def Link(self):
-        """An instance of the Link class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link.Link): An instance of the Link class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link.Link)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link import Link
         return Link(self)
 
     @property
     def Profile(self):
-        """An instance of the Profile class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile.Profile): An instance of the Profile class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile.Profile)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile import Profile
         return Profile(self)
 
     @property
     def Errors(self):
-        """List of errors which occurred while applying changes to the impairment configuration.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of errors which occurred while applying changes to the impairment configuration.
         """
         return self._get_attribute('errors')
 
     @property
     def State(self):
-        """Indicates whether changes are being applied to the impairment configuration.
-
-        Returns:
-            str(applyingChanges|changesPending|errorOccurred|ready)
+        """
+        Returns
+        -------
+        - str(applyingChanges | changesPending | errorOccurred | ready): Indicates whether changes are being applied to the impairment configuration.
         """
         return self._get_attribute('state')
 
     @property
     def Warnings(self):
-        """List of warnings which occurred while applying changes to the impairment configuration.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of warnings which occurred while applying changes to the impairment configuration.
         """
         return self._get_attribute('warnings')
 
@@ -108,9 +108,10 @@ class Impairment(Base):
 
         Applies traffic impairments defined by user.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)

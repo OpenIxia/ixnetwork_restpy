@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VsiFiltersInfo(Base):
     """
-    The VsiFiltersInfo class encapsulates a list of vsiFiltersInfo resources that is be managed by the user.
+    The VsiFiltersInfo class encapsulates a list of vsiFiltersInfo resources that are managed by the user.
     A list of resources can be retrieved from the server using the VsiFiltersInfo.find() method.
-    The list can be managed by the user by using the VsiFiltersInfo.add() and VsiFiltersInfo.remove() methods.
+    The list can be managed by using the VsiFiltersInfo.add() and VsiFiltersInfo.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def CvlanFirstId(self):
-        """The first ID to be used for the C-VLAN tag.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first ID to be used for the C-VLAN tag.
         """
         return self._get_attribute('cvlanFirstId')
     @CvlanFirstId.setter
@@ -50,10 +50,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def CvlanIncrement(self):
-        """Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
         """
         return self._get_attribute('cvlanIncrement')
     @CvlanIncrement.setter
@@ -62,10 +62,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def CvlanIncrementStep(self):
-        """Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
         """
         return self._get_attribute('cvlanIncrementStep')
     @CvlanIncrementStep.setter
@@ -74,10 +74,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def CvlanUniqueCount(self):
-        """Number of unique C-VLAN IDs to use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of unique C-VLAN IDs to use.
         """
         return self._get_attribute('cvlanUniqueCount')
     @CvlanUniqueCount.setter
@@ -87,9 +87,9 @@ class VsiFiltersInfo(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -98,10 +98,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def GroupFirstId(self):
-        """The first Group ID to be used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first Group ID to be used.
         """
         return self._get_attribute('groupFirstId')
     @GroupFirstId.setter
@@ -110,10 +110,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def GroupIncrement(self):
-        """Amount of increment per increment step for Group ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Amount of increment per increment step for Group ID.
         """
         return self._get_attribute('groupIncrement')
     @GroupIncrement.setter
@@ -122,10 +122,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def GroupIncrementStep(self):
-        """Frequency of Group ID increment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Frequency of Group ID increment.
         """
         return self._get_attribute('groupIncrementStep')
     @GroupIncrementStep.setter
@@ -134,10 +134,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def GroupUniqueCount(self):
-        """Number of unique Group IDs to use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of unique Group IDs to use.
         """
         return self._get_attribute('groupUniqueCount')
     @GroupUniqueCount.setter
@@ -146,10 +146,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def Mac(self):
-        """The start MAC address for the interface. It is always available.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The start MAC address for the interface. It is always available.
         """
         return self._get_attribute('mac')
     @Mac.setter
@@ -158,10 +158,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def MacIncrementBy(self):
-        """The increment MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment MAC address.
         """
         return self._get_attribute('macIncrementBy')
     @MacIncrementBy.setter
@@ -170,19 +170,19 @@ class VsiFiltersInfo(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PcpFirstId(self):
-        """The first ID to be used for the PCP tag.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first ID to be used for the PCP tag.
         """
         return self._get_attribute('pcpFirstId')
     @PcpFirstId.setter
@@ -191,10 +191,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def PcpIncrement(self):
-        """Amount of increment per increment step for PCP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Amount of increment per increment step for PCP.
         """
         return self._get_attribute('pcpIncrement')
     @PcpIncrement.setter
@@ -203,10 +203,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def PcpIncrementStep(self):
-        """Frequency of PCP ID increment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Frequency of PCP ID increment.
         """
         return self._get_attribute('pcpIncrementStep')
     @PcpIncrementStep.setter
@@ -215,10 +215,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def PcpUniqueCount(self):
-        """Number of unique PCP IDs to use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of unique PCP IDs to use.
         """
         return self._get_attribute('pcpUniqueCount')
     @PcpUniqueCount.setter
@@ -227,10 +227,10 @@ class VsiFiltersInfo(Base):
 
     @property
     def Ps(self):
-        """Enable/disable priority.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/disable priority.
         """
         return self._get_attribute('ps')
     @Ps.setter
@@ -238,114 +238,127 @@ class VsiFiltersInfo(Base):
         self._set_attribute('ps', value)
 
     def update(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
-        """Updates a child instance of vsiFiltersInfo on the server.
+        """Updates vsiFiltersInfo resource on the server.
 
-        Args:
-            CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
-            CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
-            CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
-            CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-            Enabled (bool): 
-            GroupFirstId (number): The first Group ID to be used.
-            GroupIncrement (number): Amount of increment per increment step for Group ID.
-            GroupIncrementStep (number): Frequency of Group ID increment.
-            GroupUniqueCount (number): Number of unique Group IDs to use.
-            Mac (str): The start MAC address for the interface. It is always available.
-            MacIncrementBy (str): The increment MAC address.
-            PcpFirstId (number): The first ID to be used for the PCP tag.
-            PcpIncrement (number): Amount of increment per increment step for PCP.
-            PcpIncrementStep (number): Frequency of PCP ID increment.
-            PcpUniqueCount (number): Number of unique PCP IDs to use.
-            Ps (bool): Enable/disable priority.
+        Args
+        ----
+        - CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
+        - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
+        - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
+        - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
+        - Enabled (bool): 
+        - GroupFirstId (number): The first Group ID to be used.
+        - GroupIncrement (number): Amount of increment per increment step for Group ID.
+        - GroupIncrementStep (number): Frequency of Group ID increment.
+        - GroupUniqueCount (number): Number of unique Group IDs to use.
+        - Mac (str): The start MAC address for the interface. It is always available.
+        - MacIncrementBy (str): The increment MAC address.
+        - PcpFirstId (number): The first ID to be used for the PCP tag.
+        - PcpIncrement (number): Amount of increment per increment step for PCP.
+        - PcpIncrementStep (number): Frequency of PCP ID increment.
+        - PcpUniqueCount (number): Number of unique PCP IDs to use.
+        - Ps (bool): Enable/disable priority.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
-        """Adds a new vsiFiltersInfo node on the server and retrieves it in this instance.
+        """Adds a new vsiFiltersInfo resource on the server and adds it to the container.
 
-        Args:
-            CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
-            CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
-            CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
-            CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-            Enabled (bool): 
-            GroupFirstId (number): The first Group ID to be used.
-            GroupIncrement (number): Amount of increment per increment step for Group ID.
-            GroupIncrementStep (number): Frequency of Group ID increment.
-            GroupUniqueCount (number): Number of unique Group IDs to use.
-            Mac (str): The start MAC address for the interface. It is always available.
-            MacIncrementBy (str): The increment MAC address.
-            PcpFirstId (number): The first ID to be used for the PCP tag.
-            PcpIncrement (number): Amount of increment per increment step for PCP.
-            PcpIncrementStep (number): Frequency of PCP ID increment.
-            PcpUniqueCount (number): Number of unique PCP IDs to use.
-            Ps (bool): Enable/disable priority.
+        Args
+        ----
+        - CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
+        - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
+        - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
+        - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
+        - Enabled (bool): 
+        - GroupFirstId (number): The first Group ID to be used.
+        - GroupIncrement (number): Amount of increment per increment step for Group ID.
+        - GroupIncrementStep (number): Frequency of Group ID increment.
+        - GroupUniqueCount (number): Number of unique Group IDs to use.
+        - Mac (str): The start MAC address for the interface. It is always available.
+        - MacIncrementBy (str): The increment MAC address.
+        - PcpFirstId (number): The first ID to be used for the PCP tag.
+        - PcpIncrement (number): Amount of increment per increment step for PCP.
+        - PcpIncrementStep (number): Frequency of PCP ID increment.
+        - PcpUniqueCount (number): Number of unique PCP IDs to use.
+        - Ps (bool): Enable/disable priority.
 
-        Returns:
-            self: This instance with all currently retrieved vsiFiltersInfo data using find and the newly added vsiFiltersInfo data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vsiFiltersInfo resources using find and the newly added vsiFiltersInfo resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vsiFiltersInfo data in this instance from server.
+        """Deletes all the contained vsiFiltersInfo resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, ObjectId=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
-        """Finds and retrieves vsiFiltersInfo data from the server.
+        """Finds and retrieves vsiFiltersInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vsiFiltersInfo data from the server.
-        By default the find method takes no parameters and will retrieve all vsiFiltersInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vsiFiltersInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vsiFiltersInfo resources from the server.
 
-        Args:
-            CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
-            CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
-            CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
-            CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-            Enabled (bool): 
-            GroupFirstId (number): The first Group ID to be used.
-            GroupIncrement (number): Amount of increment per increment step for Group ID.
-            GroupIncrementStep (number): Frequency of Group ID increment.
-            GroupUniqueCount (number): Number of unique Group IDs to use.
-            Mac (str): The start MAC address for the interface. It is always available.
-            MacIncrementBy (str): The increment MAC address.
-            ObjectId (str): Unique identifier for this object
-            PcpFirstId (number): The first ID to be used for the PCP tag.
-            PcpIncrement (number): Amount of increment per increment step for PCP.
-            PcpIncrementStep (number): Frequency of PCP ID increment.
-            PcpUniqueCount (number): Number of unique PCP IDs to use.
-            Ps (bool): Enable/disable priority.
+        Args
+        ----
+        - CvlanFirstId (number): The first ID to be used for the C-VLAN tag.
+        - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
+        - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
+        - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
+        - Enabled (bool): 
+        - GroupFirstId (number): The first Group ID to be used.
+        - GroupIncrement (number): Amount of increment per increment step for Group ID.
+        - GroupIncrementStep (number): Frequency of Group ID increment.
+        - GroupUniqueCount (number): Number of unique Group IDs to use.
+        - Mac (str): The start MAC address for the interface. It is always available.
+        - MacIncrementBy (str): The increment MAC address.
+        - ObjectId (str): Unique identifier for this object
+        - PcpFirstId (number): The first ID to be used for the PCP tag.
+        - PcpIncrement (number): Amount of increment per increment step for PCP.
+        - PcpIncrementStep (number): Frequency of PCP ID increment.
+        - PcpUniqueCount (number): Number of unique PCP IDs to use.
+        - Ps (bool): Enable/disable priority.
 
-        Returns:
-            self: This instance with matching vsiFiltersInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vsiFiltersInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vsiFiltersInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vsiFiltersInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vsiFiltersInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -354,14 +367,15 @@ class VsiFiltersInfo(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -373,16 +387,15 @@ class VsiFiltersInfo(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -394,16 +407,15 @@ class VsiFiltersInfo(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

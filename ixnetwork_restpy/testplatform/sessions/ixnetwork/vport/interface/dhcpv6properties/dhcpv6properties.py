@@ -36,10 +36,10 @@ class DhcpV6Properties(Base):
 
     @property
     def Enabled(self):
-        """Enables the DHCPv6 client feature. DHCPv6 negotiation will be started and an IPv6 address learned from the DHCPv6 server will be assigned automatically to the protocol interface.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the DHCPv6 client feature. DHCPv6 negotiation will be started and an IPv6 address learned from the DHCPv6 server will be assigned automatically to the protocol interface.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class DhcpV6Properties(Base):
 
     @property
     def IaId(self):
-        """The unique identifier value for the Identity Association (IA).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier value for the Identity Association (IA).
         """
         return self._get_attribute('iaId')
     @IaId.setter
@@ -60,10 +60,10 @@ class DhcpV6Properties(Base):
 
     @property
     def IaType(self):
-        """The Identity Association (IA) Type.
-
-        Returns:
-            str(permanent|temporary|prefixDelegation)
+        """
+        Returns
+        -------
+        - str(permanent | temporary | prefixDelegation): The Identity Association (IA) Type.
         """
         return self._get_attribute('iaType')
     @IaType.setter
@@ -72,10 +72,10 @@ class DhcpV6Properties(Base):
 
     @property
     def RenewTimer(self):
-        """The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
         """
         return self._get_attribute('renewTimer')
     @RenewTimer.setter
@@ -84,10 +84,10 @@ class DhcpV6Properties(Base):
 
     @property
     def RequestRate(self):
-        """The user-specified maximum number of Request messages that can be sent per second from the client to the DHCPv6 server, requesting an IPv6 address. A value of zero (0) indicates that there will be no rate control, that is, requests will be sent as quickly as possible.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user-specified maximum number of Request messages that can be sent per second from the client to the DHCPv6 server, requesting an IPv6 address. A value of zero (0) indicates that there will be no rate control, that is, requests will be sent as quickly as possible.
         """
         return self._get_attribute('requestRate')
     @RequestRate.setter
@@ -96,10 +96,10 @@ class DhcpV6Properties(Base):
 
     @property
     def Tlvs(self):
-        """DHCP TLVs (type length value) for custom DHCP options.
-
-        Returns:
-            list(dict(arg1:number,arg2:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:str)): DHCP TLVs (type length value) for custom DHCP options.
         """
         return self._get_attribute('tlvs')
     @Tlvs.setter
@@ -107,17 +107,19 @@ class DhcpV6Properties(Base):
         self._set_attribute('tlvs', value)
 
     def update(self, Enabled=None, IaId=None, IaType=None, RenewTimer=None, RequestRate=None, Tlvs=None):
-        """Updates a child instance of dhcpV6Properties on the server.
+        """Updates dhcpV6Properties resource on the server.
 
-        Args:
-            Enabled (bool): Enables the DHCPv6 client feature. DHCPv6 negotiation will be started and an IPv6 address learned from the DHCPv6 server will be assigned automatically to the protocol interface.
-            IaId (number): The unique identifier value for the Identity Association (IA).
-            IaType (str(permanent|temporary|prefixDelegation)): The Identity Association (IA) Type.
-            RenewTimer (number): The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
-            RequestRate (number): The user-specified maximum number of Request messages that can be sent per second from the client to the DHCPv6 server, requesting an IPv6 address. A value of zero (0) indicates that there will be no rate control, that is, requests will be sent as quickly as possible.
-            Tlvs (list(dict(arg1:number,arg2:str))): DHCP TLVs (type length value) for custom DHCP options.
+        Args
+        ----
+        - Enabled (bool): Enables the DHCPv6 client feature. DHCPv6 negotiation will be started and an IPv6 address learned from the DHCPv6 server will be assigned automatically to the protocol interface.
+        - IaId (number): The unique identifier value for the Identity Association (IA).
+        - IaType (str(permanent | temporary | prefixDelegation)): The Identity Association (IA) Type.
+        - RenewTimer (number): The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
+        - RequestRate (number): The user-specified maximum number of Request messages that can be sent per second from the client to the DHCPv6 server, requesting an IPv6 address. A value of zero (0) indicates that there will be no rate control, that is, requests will be sent as quickly as possible.
+        - Tlvs (list(dict(arg1:number,arg2:str))): DHCP TLVs (type length value) for custom DHCP options.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

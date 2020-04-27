@@ -37,9 +37,9 @@ class TestConfig(Base):
     @property
     def CustomLoadUnit(self):
         """
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): 
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -49,9 +49,9 @@ class TestConfig(Base):
     @property
     def DataPlaneJitterWindow(self):
         """
-
-        Returns:
-            str(k_10485760|k_1310720|k_167772160|k_20971520|k_2621440|k_335544320|k_41943040|k_5242880|k_671088640|k_83886080)
+        Returns
+        -------
+        - str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080): 
         """
         return self._get_attribute('dataPlaneJitterWindow')
     @DataPlaneJitterWindow.setter
@@ -61,9 +61,9 @@ class TestConfig(Base):
     @property
     def Duration(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -73,9 +73,9 @@ class TestConfig(Base):
     @property
     def EnableBFD(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableBFD')
     @EnableBFD.setter
@@ -85,9 +85,9 @@ class TestConfig(Base):
     @property
     def EnableTolerance(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enableTolerance')
     @EnableTolerance.setter
@@ -97,9 +97,9 @@ class TestConfig(Base):
     @property
     def FixedFrameSize(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('fixedFrameSize')
     @FixedFrameSize.setter
@@ -109,9 +109,9 @@ class TestConfig(Base):
     @property
     def ForceContinuosTraffic(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('forceContinuosTraffic')
     @ForceContinuosTraffic.setter
@@ -121,9 +121,9 @@ class TestConfig(Base):
     @property
     def FrameSizeMode(self):
         """
-
-        Returns:
-            str(fixed)
+        Returns
+        -------
+        - str(fixed): 
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -133,9 +133,9 @@ class TestConfig(Base):
     @property
     def Framesize(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('framesize')
     @Framesize.setter
@@ -145,9 +145,9 @@ class TestConfig(Base):
     @property
     def HoldDownTimer(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('holdDownTimer')
     @HoldDownTimer.setter
@@ -157,9 +157,9 @@ class TestConfig(Base):
     @property
     def IpRatioMode(self):
         """
-
-        Returns:
-            str(custom|fixed|increment|random)
+        Returns
+        -------
+        - str(custom | fixed | increment | random): 
         """
         return self._get_attribute('ipRatioMode')
     @IpRatioMode.setter
@@ -169,9 +169,9 @@ class TestConfig(Base):
     @property
     def Ipv4rate(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('ipv4rate')
     @Ipv4rate.setter
@@ -181,9 +181,9 @@ class TestConfig(Base):
     @property
     def Ipv6rate(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('ipv6rate')
     @Ipv6rate.setter
@@ -193,9 +193,9 @@ class TestConfig(Base):
     @property
     def LoadRateValue(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('loadRateValue')
     @LoadRateValue.setter
@@ -205,9 +205,9 @@ class TestConfig(Base):
     @property
     def LoadType(self):
         """
-
-        Returns:
-            str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)
+        Returns
+        -------
+        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): 
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -217,9 +217,9 @@ class TestConfig(Base):
     @property
     def NetworkGroupRoutesType(self):
         """
-
-        Returns:
-            str(ipv4|ipv4/ipv6|ipv6)
+        Returns
+        -------
+        - str(ipv4 | ipv4/ipv6 | ipv6): 
         """
         return self._get_attribute('networkGroupRoutesType')
     @NetworkGroupRoutesType.setter
@@ -229,9 +229,9 @@ class TestConfig(Base):
     @property
     def NetworkGroupSizeListIpv4(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('networkGroupSizeListIpv4')
     @NetworkGroupSizeListIpv4.setter
@@ -241,9 +241,9 @@ class TestConfig(Base):
     @property
     def NetworkGroupSizeListIpv6(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('networkGroupSizeListIpv6')
     @NetworkGroupSizeListIpv6.setter
@@ -253,9 +253,9 @@ class TestConfig(Base):
     @property
     def NetworkGroupSizeModeIpv4(self):
         """
-
-        Returns:
-            str(custom)
+        Returns
+        -------
+        - str(custom): 
         """
         return self._get_attribute('networkGroupSizeModeIpv4')
     @NetworkGroupSizeModeIpv4.setter
@@ -265,9 +265,9 @@ class TestConfig(Base):
     @property
     def NetworkGroupSizeModeIpv6(self):
         """
-
-        Returns:
-            str(custom)
+        Returns
+        -------
+        - str(custom): 
         """
         return self._get_attribute('networkGroupSizeModeIpv6')
     @NetworkGroupSizeModeIpv6.setter
@@ -277,9 +277,9 @@ class TestConfig(Base):
     @property
     def NumberOfIterations(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('numberOfIterations')
     @NumberOfIterations.setter
@@ -289,9 +289,9 @@ class TestConfig(Base):
     @property
     def Numtrials(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -313,9 +313,9 @@ class TestConfig(Base):
     @property
     def ReportConvergenceUnit(self):
         """
-
-        Returns:
-            str(ms|s|us)
+        Returns
+        -------
+        - str(ms | s | us): 
         """
         return self._get_attribute('reportConvergenceUnit')
     @ReportConvergenceUnit.setter
@@ -325,9 +325,9 @@ class TestConfig(Base):
     @property
     def ReportTputRateUnit(self):
         """
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): 
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -337,9 +337,9 @@ class TestConfig(Base):
     @property
     def RoutesDistribution(self):
         """
-
-        Returns:
-            str(distributedAcrossPorts|equalCostOnEachPort)
+        Returns
+        -------
+        - str(distributedAcrossPorts | equalCostOnEachPort): 
         """
         return self._get_attribute('routesDistribution')
     @RoutesDistribution.setter
@@ -349,9 +349,9 @@ class TestConfig(Base):
     @property
     def TestTrafficType(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('testTrafficType')
     @TestTrafficType.setter
@@ -361,9 +361,9 @@ class TestConfig(Base):
     @property
     def Threshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('threshold')
     @Threshold.setter
@@ -373,9 +373,9 @@ class TestConfig(Base):
     @property
     def Tolerance(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('tolerance')
     @Tolerance.setter
@@ -385,9 +385,9 @@ class TestConfig(Base):
     @property
     def TrafficType(self):
         """
-
-        Returns:
-            str(burstyLoading|constantLoading)
+        Returns
+        -------
+        - str(burstyLoading | constantLoading): 
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -397,9 +397,9 @@ class TestConfig(Base):
     @property
     def WaitAfterThresholdReached(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('waitAfterThresholdReached')
     @WaitAfterThresholdReached.setter
@@ -409,9 +409,9 @@ class TestConfig(Base):
     @property
     def WaitBeforeAdvertise(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('waitBeforeAdvertise')
     @WaitBeforeAdvertise.setter
@@ -419,55 +419,58 @@ class TestConfig(Base):
         self._set_attribute('waitBeforeAdvertise', value)
 
     def update(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
-            DataPlaneJitterWindow (str(k_10485760|k_1310720|k_167772160|k_20971520|k_2621440|k_335544320|k_41943040|k_5242880|k_671088640|k_83886080)): 
-            Duration (number): 
-            EnableBFD (bool): 
-            EnableTolerance (bool): 
-            FixedFrameSize (number): 
-            ForceContinuosTraffic (bool): 
-            FrameSizeMode (str(fixed)): 
-            Framesize (str): 
-            HoldDownTimer (number): 
-            IpRatioMode (str(custom|fixed|increment|random)): 
-            Ipv4rate (number): 
-            Ipv6rate (number): 
-            LoadRateValue (number): 
-            LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): 
-            NetworkGroupRoutesType (str(ipv4|ipv4/ipv6|ipv6)): 
-            NetworkGroupSizeListIpv4 (list(str)): 
-            NetworkGroupSizeListIpv6 (list(str)): 
-            NetworkGroupSizeModeIpv4 (str(custom)): 
-            NetworkGroupSizeModeIpv6 (str(custom)): 
-            NumberOfIterations (number): 
-            Numtrials (number): 
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            ReportConvergenceUnit (str(ms|s|us)): 
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): 
-            RoutesDistribution (str(distributedAcrossPorts|equalCostOnEachPort)): 
-            TestTrafficType (str): 
-            Threshold (number): 
-            Tolerance (number): 
-            TrafficType (str(burstyLoading|constantLoading)): 
-            WaitAfterThresholdReached (number): 
-            WaitBeforeAdvertise (number): 
+        Args
+        ----
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
+        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)): 
+        - Duration (number): 
+        - EnableBFD (bool): 
+        - EnableTolerance (bool): 
+        - FixedFrameSize (number): 
+        - ForceContinuosTraffic (bool): 
+        - FrameSizeMode (str(fixed)): 
+        - Framesize (str): 
+        - HoldDownTimer (number): 
+        - IpRatioMode (str(custom | fixed | increment | random)): 
+        - Ipv4rate (number): 
+        - Ipv6rate (number): 
+        - LoadRateValue (number): 
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
+        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)): 
+        - NetworkGroupSizeListIpv4 (list(str)): 
+        - NetworkGroupSizeListIpv6 (list(str)): 
+        - NetworkGroupSizeModeIpv4 (str(custom)): 
+        - NetworkGroupSizeModeIpv6 (str(custom)): 
+        - NumberOfIterations (number): 
+        - Numtrials (number): 
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportConvergenceUnit (str(ms | s | us)): 
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
+        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)): 
+        - TestTrafficType (str): 
+        - Threshold (number): 
+        - Tolerance (number): 
+        - TrafficType (str(burstyLoading | constantLoading)): 
+        - WaitAfterThresholdReached (number): 
+        - WaitBeforeAdvertise (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -475,9 +478,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -485,12 +489,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -500,9 +502,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -512,12 +515,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -527,24 +528,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -556,18 +550,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -579,9 +571,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -591,12 +584,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Vlans(Base):
     """This object hold the VLAN configuration.
-    The Vlans class encapsulates a list of vlans resources that is be managed by the user.
+    The Vlans class encapsulates a list of vlans resources that are managed by the user.
     A list of resources can be retrieved from the server using the Vlans.find() method.
-    The list can be managed by the user by using the Vlans.add() and Vlans.remove() methods.
+    The list can be managed by using the Vlans.add() and Vlans.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Vlans(Base):
 
     @property
     def MacRanges(self):
-        """An instance of the MacRanges class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_2548634f9fc45eaa0e934f6d2059db36.MacRanges): An instance of the MacRanges class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_2548634f9fc45eaa0e934f6d2059db36.MacRanges)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_2548634f9fc45eaa0e934f6d2059db36 import MacRanges
         return MacRanges(self)
 
     @property
     def CVlanId(self):
-        """The stacked VLAN identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The stacked VLAN identifier.
         """
         return self._get_attribute('cVlanId')
     @CVlanId.setter
@@ -64,10 +64,10 @@ class Vlans(Base):
 
     @property
     def CVlanPriority(self):
-        """The stacked VLAN priority.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The stacked VLAN priority.
         """
         return self._get_attribute('cVlanPriority')
     @CVlanPriority.setter
@@ -76,10 +76,10 @@ class Vlans(Base):
 
     @property
     def CVlanTpId(self):
-        """The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
         return self._get_attribute('cVlanTpId')
     @CVlanTpId.setter
@@ -88,10 +88,10 @@ class Vlans(Base):
 
     @property
     def Enabled(self):
-        """If true, the VLAN is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the VLAN is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -100,10 +100,10 @@ class Vlans(Base):
 
     @property
     def SVlanId(self):
-        """The single VLAN identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The single VLAN identifier.
         """
         return self._get_attribute('sVlanId')
     @SVlanId.setter
@@ -112,10 +112,10 @@ class Vlans(Base):
 
     @property
     def SVlanPriority(self):
-        """The single VLAN priority.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The single VLAN priority.
         """
         return self._get_attribute('sVlanPriority')
     @SVlanPriority.setter
@@ -124,10 +124,10 @@ class Vlans(Base):
 
     @property
     def SVlanTpId(self):
-        """The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
         return self._get_attribute('sVlanTpId')
     @SVlanTpId.setter
@@ -136,10 +136,10 @@ class Vlans(Base):
 
     @property
     def Type(self):
-        """Sets the VLAN type.
-
-        Returns:
-            str(singleVlan|stackedVlan)
+        """
+        Returns
+        -------
+        - str(singleVlan | stackedVlan): Sets the VLAN type.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -147,88 +147,101 @@ class Vlans(Base):
         self._set_attribute('type', value)
 
     def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
-        """Updates a child instance of vlans on the server.
+        """Updates vlans resource on the server.
 
-        Args:
-            CVlanId (number): The stacked VLAN identifier.
-            CVlanPriority (number): The stacked VLAN priority.
-            CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Enabled (bool): If true, the VLAN is enabled.
-            SVlanId (number): The single VLAN identifier.
-            SVlanPriority (number): The single VLAN priority.
-            SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Type (str(singleVlan|stackedVlan)): Sets the VLAN type.
+        Args
+        ----
+        - CVlanId (number): The stacked VLAN identifier.
+        - CVlanPriority (number): The stacked VLAN priority.
+        - CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Enabled (bool): If true, the VLAN is enabled.
+        - SVlanId (number): The single VLAN identifier.
+        - SVlanPriority (number): The single VLAN priority.
+        - SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Type (str(singleVlan | stackedVlan)): Sets the VLAN type.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
-        """Adds a new vlans node on the server and retrieves it in this instance.
+        """Adds a new vlans resource on the server and adds it to the container.
 
-        Args:
-            CVlanId (number): The stacked VLAN identifier.
-            CVlanPriority (number): The stacked VLAN priority.
-            CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Enabled (bool): If true, the VLAN is enabled.
-            SVlanId (number): The single VLAN identifier.
-            SVlanPriority (number): The single VLAN priority.
-            SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Type (str(singleVlan|stackedVlan)): Sets the VLAN type.
+        Args
+        ----
+        - CVlanId (number): The stacked VLAN identifier.
+        - CVlanPriority (number): The stacked VLAN priority.
+        - CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Enabled (bool): If true, the VLAN is enabled.
+        - SVlanId (number): The single VLAN identifier.
+        - SVlanPriority (number): The single VLAN priority.
+        - SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Type (str(singleVlan | stackedVlan)): Sets the VLAN type.
 
-        Returns:
-            self: This instance with all currently retrieved vlans data using find and the newly added vlans data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vlans resources using find and the newly added vlans resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vlans data in this instance from server.
+        """Deletes all the contained vlans resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
-        """Finds and retrieves vlans data from the server.
+        """Finds and retrieves vlans resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vlans data from the server.
-        By default the find method takes no parameters and will retrieve all vlans data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vlans resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vlans resources from the server.
 
-        Args:
-            CVlanId (number): The stacked VLAN identifier.
-            CVlanPriority (number): The stacked VLAN priority.
-            CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Enabled (bool): If true, the VLAN is enabled.
-            SVlanId (number): The single VLAN identifier.
-            SVlanPriority (number): The single VLAN priority.
-            SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
-            Type (str(singleVlan|stackedVlan)): Sets the VLAN type.
+        Args
+        ----
+        - CVlanId (number): The stacked VLAN identifier.
+        - CVlanPriority (number): The stacked VLAN priority.
+        - CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Enabled (bool): If true, the VLAN is enabled.
+        - SVlanId (number): The single VLAN identifier.
+        - SVlanPriority (number): The single VLAN priority.
+        - SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - Type (str(singleVlan | stackedVlan)): Sets the VLAN type.
 
-        Returns:
-            self: This instance with matching vlans data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vlans resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vlans data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vlans data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vlans resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

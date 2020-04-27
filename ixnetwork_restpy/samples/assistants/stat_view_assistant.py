@@ -3,29 +3,26 @@
 This sample requires an already loaded configuration with at least 2 connected vports.
 
 """
-
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
-from ixnetwork_restpy.errors import *
+from ixnetwork_restpy import SessionAssistant, StatViewAssistant
 
 
-# connect to a windows test platform using the default api server rest port
-test_platform = TestPlatform('127.0.0.1', rest_port=11009, platform='windows')
-
-# use the default session and get the root node of the hierarchy
-ixnetwork = test_platform.Sessions.find().Ixnetwork
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=False)
+ixnetwork = session_assistant.Ixnetwork
 
 ixnetwork.info('negative test')
 try:
-    StatViewAssistant(ixnetwork, 'my test view', Timeout=5)
-except NotFoundError as e:
+    session_assistant.StatViewAssistant('my test view', Timeout=5)
+except Exception as e:
     ixnetwork.info(e)
 
 # get a list of all current statistic views that can be used in the StatViewAssistant
 print(StatViewAssistant.GetViewNames(ixnetwork))
 
 # create a stat view assistant for a statistics view
-port_statistics = StatViewAssistant(ixnetwork, 'Port Statistics')
+port_statistics = session_assistant.StatViewAssistant('Port Statistics')
 
 # print all the rows for a statistics view
 print(port_statistics)
@@ -48,17 +45,17 @@ print(rows[1]['Stat Name'])
 print(rows['(?i)port 1$']['Frames Tx.'])
 
 ixnetwork.info('check that all ipv4 protocols are up')
-protocols_summary = StatViewAssistant(ixnetwork, 'Protocols Summary')
+protocols_summary = session_assistant.StatViewAssistant('Protocols Summary')
 protocols_summary.AddRowFilter('Protocol Type', StatViewAssistant.REGEX, '(?i)^ipv4?')
 protocols_summary.CheckCondition('Sessions Not Started', StatViewAssistant.EQUAL, 0)
 protocols_summary.CheckCondition('Sessions Down', StatViewAssistant.EQUAL, 0)
 
 ixnetwork.info('traffic stat check')
-traffic_statistics = StatViewAssistant(ixnetwork, 'Traffic Item Statistics')
+traffic_statistics = session_assistant.StatViewAssistant('Traffic Item Statistics')
 tx_frames = traffic_statistics.Rows[0]['Tx Frames']
 ixnetwork.info('tx frames: %s' % tx_frames)
 
-transport.info('drilldown sample')
+ixnetwork.info('drilldown sample')
 ixnetwork.info(traffic_statistics.DrillDownOptions())
 ixnetwork.info(traffic_statistics.TargetRowFilters())
 drilldown = traffic_statistics.Drilldown(0, traffic_statistics.DrillDownOptions()[0], traffic_statistics.TargetRowFilters()[0])

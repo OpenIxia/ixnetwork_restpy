@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class InterAreaPrefix(Base):
     """
-    The InterAreaPrefix class encapsulates a list of interAreaPrefix resources that is managed by the system.
+    The InterAreaPrefix class encapsulates a list of interAreaPrefix resources that are managed by the system.
     A list of resources can be retrieved from the server using the InterAreaPrefix.find() method.
     """
 
@@ -38,9 +38,9 @@ class InterAreaPrefix(Base):
     @property
     def AddPrefixLength(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('addPrefixLength')
     @AddPrefixLength.setter
@@ -50,9 +50,9 @@ class InterAreaPrefix(Base):
     @property
     def AddressPrefix(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('addressPrefix')
     @AddressPrefix.setter
@@ -62,9 +62,9 @@ class InterAreaPrefix(Base):
     @property
     def IncrLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrLinkStateId')
     @IncrLinkStateId.setter
@@ -74,9 +74,9 @@ class InterAreaPrefix(Base):
     @property
     def LsaCount(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('lsaCount')
     @LsaCount.setter
@@ -86,9 +86,9 @@ class InterAreaPrefix(Base):
     @property
     def Metric(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('metric')
     @Metric.setter
@@ -98,9 +98,9 @@ class InterAreaPrefix(Base):
     @property
     def OptBitLa(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitLa')
     @OptBitLa.setter
@@ -110,9 +110,9 @@ class InterAreaPrefix(Base):
     @property
     def OptBitMc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMc')
     @OptBitMc.setter
@@ -122,9 +122,9 @@ class InterAreaPrefix(Base):
     @property
     def OptBitNu(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitNu')
     @OptBitNu.setter
@@ -134,9 +134,9 @@ class InterAreaPrefix(Base):
     @property
     def OptBitP(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitP')
     @OptBitP.setter
@@ -146,9 +146,9 @@ class InterAreaPrefix(Base):
     @property
     def Option(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('option')
     @Option.setter
@@ -158,9 +158,9 @@ class InterAreaPrefix(Base):
     @property
     def PrefixAddressIncrementBy(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('prefixAddressIncrementBy')
     @PrefixAddressIncrementBy.setter
@@ -168,64 +168,73 @@ class InterAreaPrefix(Base):
         self._set_attribute('prefixAddressIncrementBy', value)
 
     def update(self, AddPrefixLength=None, AddressPrefix=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, Option=None, PrefixAddressIncrementBy=None):
-        """Updates a child instance of interAreaPrefix on the server.
+        """Updates interAreaPrefix resource on the server.
 
-        Args:
-            AddPrefixLength (number): 
-            AddressPrefix (str): 
-            IncrLinkStateId (str): 
-            LsaCount (number): 
-            Metric (number): 
-            OptBitLa (bool): 
-            OptBitMc (bool): 
-            OptBitNu (bool): 
-            OptBitP (bool): 
-            Option (number): 
-            PrefixAddressIncrementBy (number): 
+        Args
+        ----
+        - AddPrefixLength (number): 
+        - AddressPrefix (str): 
+        - IncrLinkStateId (str): 
+        - LsaCount (number): 
+        - Metric (number): 
+        - OptBitLa (bool): 
+        - OptBitMc (bool): 
+        - OptBitNu (bool): 
+        - OptBitP (bool): 
+        - Option (number): 
+        - PrefixAddressIncrementBy (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AddPrefixLength=None, AddressPrefix=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, Option=None, PrefixAddressIncrementBy=None):
-        """Finds and retrieves interAreaPrefix data from the server.
+        """Finds and retrieves interAreaPrefix resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve interAreaPrefix data from the server.
-        By default the find method takes no parameters and will retrieve all interAreaPrefix data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interAreaPrefix resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all interAreaPrefix resources from the server.
 
-        Args:
-            AddPrefixLength (number): 
-            AddressPrefix (str): 
-            IncrLinkStateId (str): 
-            LsaCount (number): 
-            Metric (number): 
-            OptBitLa (bool): 
-            OptBitMc (bool): 
-            OptBitNu (bool): 
-            OptBitP (bool): 
-            Option (number): 
-            PrefixAddressIncrementBy (number): 
+        Args
+        ----
+        - AddPrefixLength (number): 
+        - AddressPrefix (str): 
+        - IncrLinkStateId (str): 
+        - LsaCount (number): 
+        - Metric (number): 
+        - OptBitLa (bool): 
+        - OptBitMc (bool): 
+        - OptBitNu (bool): 
+        - OptBitP (bool): 
+        - Option (number): 
+        - PrefixAddressIncrementBy (number): 
 
-        Returns:
-            self: This instance with matching interAreaPrefix data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching interAreaPrefix resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of interAreaPrefix data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the interAreaPrefix data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the interAreaPrefix resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

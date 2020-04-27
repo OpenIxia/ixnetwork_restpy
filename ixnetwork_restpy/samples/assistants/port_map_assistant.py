@@ -1,21 +1,19 @@
 """Demonstrates how to use the PortMapAssistant class
 
 """
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
+from ixnetwork_restpy import SessionAssistant
 
 
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-session = test_platform.Sessions.add()
-ixnetwork = session.Ixnetwork
-ixnetwork.NewConfig()
-
-# create a port map assistant instance
-port_map = PortMapAssistant(ixnetwork)
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # demonstrate different ways to add mappings between test port locations and vport names
-# if the vport name does not exist or is not supplied a new vport will be created using the system's default naming scheme 
+# if the vport name does not exist a new vport using that name will be created and mapped
+# if the vport name is None then a new vport will be created using the system's default naming scheme and mapped
+port_map = session_assistant.PortMapAssistant()
 port_map.Map('10.35.74.26', 2, 12)
 port_map.Map('10.35.74.26', 2, 11, Name='Port 11')
 port_map.Map(IpAddress='10.36.74.26', CardId=2, PortId=13, Name='Port 1')

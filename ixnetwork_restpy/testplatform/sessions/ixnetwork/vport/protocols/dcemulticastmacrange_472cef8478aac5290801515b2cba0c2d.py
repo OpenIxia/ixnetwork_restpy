@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceMulticastMacRange(Base):
     """Sets the Multicast MAC Range for the DCE ISIS router.
-    The DceMulticastMacRange class encapsulates a list of dceMulticastMacRange resources that is be managed by the user.
+    The DceMulticastMacRange class encapsulates a list of dceMulticastMacRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceMulticastMacRange.find() method.
-    The list can be managed by the user by using the DceMulticastMacRange.add() and DceMulticastMacRange.remove() methods.
+    The list can be managed by using the DceMulticastMacRange.add() and DceMulticastMacRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def InterGroupUnicastMacIncrement(self):
-        """The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
         """
         return self._get_attribute('interGroupUnicastMacIncrement')
     @InterGroupUnicastMacIncrement.setter
@@ -62,10 +62,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def IntraGroupUnicastMacIncrement(self):
-        """The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
         """
         return self._get_attribute('intraGroupUnicastMacIncrement')
     @IntraGroupUnicastMacIncrement.setter
@@ -74,10 +74,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def MulticastMacCount(self):
-        """The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
         """
         return self._get_attribute('multicastMacCount')
     @MulticastMacCount.setter
@@ -86,10 +86,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def MulticastMacStep(self):
-        """The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
         """
         return self._get_attribute('multicastMacStep')
     @MulticastMacStep.setter
@@ -98,10 +98,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def SourceGroupMapping(self):
-        """The Source Group mapping type.
-
-        Returns:
-            str(fullyMeshed|oneToOne|manualMapping)
+        """
+        Returns
+        -------
+        - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
         return self._get_attribute('sourceGroupMapping')
     @SourceGroupMapping.setter
@@ -110,10 +110,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def StartMulticastMac(self):
-        """The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
         """
         return self._get_attribute('startMulticastMac')
     @StartMulticastMac.setter
@@ -122,10 +122,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def StartUnicastSourceMac(self):
-        """The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
         """
         return self._get_attribute('startUnicastSourceMac')
     @StartUnicastSourceMac.setter
@@ -134,10 +134,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def Topology(self):
-        """The topology identifier to which the corresponding MAC belongs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The topology identifier to which the corresponding MAC belongs.
         """
         return self._get_attribute('topology')
     @Topology.setter
@@ -146,10 +146,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def UnicastSourcesPerMulticastMac(self):
-        """The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
         """
         return self._get_attribute('unicastSourcesPerMulticastMac')
     @UnicastSourcesPerMulticastMac.setter
@@ -158,10 +158,10 @@ class DceMulticastMacRange(Base):
 
     @property
     def VlanId(self):
-        """The VLAN ID of the enabled Multicast MAC Range. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VLAN ID of the enabled Multicast MAC Range. (default = 1)
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -169,97 +169,110 @@ class DceMulticastMacRange(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
-        """Updates a child instance of dceMulticastMacRange on the server.
+        """Updates dceMulticastMacRange resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
-            InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
-            MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
-            MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
-            StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
-            Topology (number): The topology identifier to which the corresponding MAC belongs.
-            UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
-            VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
+        - InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
+        - MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
+        - MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
+        - StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
+        - Topology (number): The topology identifier to which the corresponding MAC belongs.
+        - UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
+        - VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
-        """Adds a new dceMulticastMacRange node on the server and retrieves it in this instance.
+        """Adds a new dceMulticastMacRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
-            InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
-            MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
-            MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
-            StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
-            Topology (number): The topology identifier to which the corresponding MAC belongs.
-            UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
-            VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
+        - InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
+        - MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
+        - MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
+        - StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
+        - Topology (number): The topology identifier to which the corresponding MAC belongs.
+        - UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
+        - VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
 
-        Returns:
-            self: This instance with all currently retrieved dceMulticastMacRange data using find and the newly added dceMulticastMacRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceMulticastMacRange resources using find and the newly added dceMulticastMacRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceMulticastMacRange data in this instance from server.
+        """Deletes all the contained dceMulticastMacRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
-        """Finds and retrieves dceMulticastMacRange data from the server.
+        """Finds and retrieves dceMulticastMacRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceMulticastMacRange data from the server.
-        By default the find method takes no parameters and will retrieve all dceMulticastMacRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceMulticastMacRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceMulticastMacRange resources from the server.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
-            InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
-            MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
-            MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
-            StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
-            Topology (number): The topology identifier to which the corresponding MAC belongs.
-            UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
-            VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
+        - InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
+        - MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
+        - MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
+        - StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
+        - Topology (number): The topology identifier to which the corresponding MAC belongs.
+        - UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
+        - VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
 
-        Returns:
-            self: This instance with matching dceMulticastMacRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceMulticastMacRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceMulticastMacRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceMulticastMacRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceMulticastMacRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

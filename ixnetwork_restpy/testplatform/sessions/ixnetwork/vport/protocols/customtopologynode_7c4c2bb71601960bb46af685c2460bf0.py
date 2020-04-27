@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologyNode(Base):
     """NOT DEFINED
-    The CustomTopologyNode class encapsulates a list of customTopologyNode resources that is be managed by the user.
+    The CustomTopologyNode class encapsulates a list of customTopologyNode resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologyNode.find() method.
-    The list can be managed by the user by using the CustomTopologyNode.add() and CustomTopologyNode.remove() methods.
+    The list can be managed by using the CustomTopologyNode.add() and CustomTopologyNode.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class CustomTopologyNode(Base):
 
     @property
     def CustomNetworkTopologyLinks(self):
-        """An instance of the CustomNetworkTopologyLinks class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customnetworktopologylinks_c606f26506eade0428d464ad3708680e.CustomNetworkTopologyLinks): An instance of the CustomNetworkTopologyLinks class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customnetworktopologylinks_c606f26506eade0428d464ad3708680e.CustomNetworkTopologyLinks)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customnetworktopologylinks_c606f26506eade0428d464ad3708680e import CustomNetworkTopologyLinks
         return CustomNetworkTopologyLinks(self)
 
     @property
     def BridgePriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('bridgePriority')
     @BridgePriority.setter
@@ -64,10 +64,10 @@ class CustomTopologyNode(Base):
 
     @property
     def EdgeBridge(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('edgeBridge')
     @EdgeBridge.setter
@@ -76,10 +76,10 @@ class CustomTopologyNode(Base):
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -88,10 +88,10 @@ class CustomTopologyNode(Base):
 
     @property
     def Nickname(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('nickname')
     @Nickname.setter
@@ -100,10 +100,10 @@ class CustomTopologyNode(Base):
 
     @property
     def Priority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('priority')
     @Priority.setter
@@ -112,10 +112,10 @@ class CustomTopologyNode(Base):
 
     @property
     def SpSrcId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('spSrcId')
     @SpSrcId.setter
@@ -123,82 +123,95 @@ class CustomTopologyNode(Base):
         self._set_attribute('spSrcId', value)
 
     def update(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
-        """Updates a child instance of customTopologyNode on the server.
+        """Updates customTopologyNode resource on the server.
 
-        Args:
-            BridgePriority (number): NOT DEFINED
-            EdgeBridge (bool): NOT DEFINED
-            Enabled (bool): NOT DEFINED
-            Nickname (number): NOT DEFINED
-            Priority (number): NOT DEFINED
-            SpSrcId (number): NOT DEFINED
+        Args
+        ----
+        - BridgePriority (number): NOT DEFINED
+        - EdgeBridge (bool): NOT DEFINED
+        - Enabled (bool): NOT DEFINED
+        - Nickname (number): NOT DEFINED
+        - Priority (number): NOT DEFINED
+        - SpSrcId (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
-        """Adds a new customTopologyNode node on the server and retrieves it in this instance.
+        """Adds a new customTopologyNode resource on the server and adds it to the container.
 
-        Args:
-            BridgePriority (number): NOT DEFINED
-            EdgeBridge (bool): NOT DEFINED
-            Enabled (bool): NOT DEFINED
-            Nickname (number): NOT DEFINED
-            Priority (number): NOT DEFINED
-            SpSrcId (number): NOT DEFINED
+        Args
+        ----
+        - BridgePriority (number): NOT DEFINED
+        - EdgeBridge (bool): NOT DEFINED
+        - Enabled (bool): NOT DEFINED
+        - Nickname (number): NOT DEFINED
+        - Priority (number): NOT DEFINED
+        - SpSrcId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologyNode data using find and the newly added customTopologyNode data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologyNode resources using find and the newly added customTopologyNode resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologyNode data in this instance from server.
+        """Deletes all the contained customTopologyNode resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
-        """Finds and retrieves customTopologyNode data from the server.
+        """Finds and retrieves customTopologyNode resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologyNode data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologyNode data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyNode resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologyNode resources from the server.
 
-        Args:
-            BridgePriority (number): NOT DEFINED
-            EdgeBridge (bool): NOT DEFINED
-            Enabled (bool): NOT DEFINED
-            Nickname (number): NOT DEFINED
-            Priority (number): NOT DEFINED
-            SpSrcId (number): NOT DEFINED
+        Args
+        ----
+        - BridgePriority (number): NOT DEFINED
+        - EdgeBridge (bool): NOT DEFINED
+        - Enabled (bool): NOT DEFINED
+        - Nickname (number): NOT DEFINED
+        - Priority (number): NOT DEFINED
+        - SpSrcId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologyNode data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologyNode resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologyNode data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologyNode data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologyNode resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class PcepMetricSubObjectsList(Base):
     """
-    The PcepMetricSubObjectsList class encapsulates a list of pcepMetricSubObjectsList resources that is managed by the system.
+    The PcepMetricSubObjectsList class encapsulates a list of pcepMetricSubObjectsList resources that are managed by the system.
     A list of resources can be retrieved from the server using the PcepMetricSubObjectsList.find() method.
     """
 
@@ -37,64 +37,68 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def Active(self):
-        """Specifies whether the corresponding metric object is active or not.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies whether the corresponding metric object is active or not.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def BFlag(self):
-        """B (bound) flag MUST be set in the METRIC object, which specifies that the SID depth for the computed path MUST NOT exceed the metric-value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): B (bound) flag MUST be set in the METRIC object, which specifies that the SID depth for the computed path MUST NOT exceed the metric-value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bFlag'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def MetricType(self):
-        """This is a drop down which has 4 choices: IGP/ TE/ Hop count/ MSD.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metricType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a drop down which has 4 choices: IGP/ TE/ Hop count/ MSD.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metricType'))
 
     @property
     def MetricValue(self):
-        """User can specify the metric value corresponding to the metric type selected.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metricValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): User can specify the metric value corresponding to the metric type selected.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metricValue'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -102,50 +106,59 @@ class PcepMetricSubObjectsList(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of pcepMetricSubObjectsList on the server.
+        """Updates pcepMetricSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves pcepMetricSubObjectsList data from the server.
+        """Finds and retrieves pcepMetricSubObjectsList resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pcepMetricSubObjectsList data from the server.
-        By default the find method takes no parameters and will retrieve all pcepMetricSubObjectsList data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepMetricSubObjectsList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pcepMetricSubObjectsList resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching pcepMetricSubObjectsList data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pcepMetricSubObjectsList resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pcepMetricSubObjectsList data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pcepMetricSubObjectsList data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pcepMetricSubObjectsList resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -154,17 +167,20 @@ class PcepMetricSubObjectsList(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            BFlag (str): optional regex of bFlag
-            MetricType (str): optional regex of metricType
-            MetricValue (str): optional regex of metricValue
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - BFlag (str): optional regex of bFlag
+        - MetricType (str): optional regex of metricType
+        - MetricValue (str): optional regex of metricValue
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

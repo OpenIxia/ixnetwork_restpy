@@ -36,10 +36,10 @@ class LearnFrames(Base):
 
     @property
     def FastPathEnable(self):
-        """If true, the fast path is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the fast path is enabled.
         """
         return self._get_attribute('fastPathEnable')
     @FastPathEnable.setter
@@ -48,10 +48,10 @@ class LearnFrames(Base):
 
     @property
     def FastPathLearnFrameSize(self):
-        """The path in which the learnt frame sizes are saved.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The path in which the learnt frame sizes are saved.
         """
         return self._get_attribute('fastPathLearnFrameSize')
     @FastPathLearnFrameSize.setter
@@ -60,10 +60,10 @@ class LearnFrames(Base):
 
     @property
     def FastPathNumFrames(self):
-        """The learnt information on the number of frames to be tramsferred.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The learnt information on the number of frames to be tramsferred.
         """
         return self._get_attribute('fastPathNumFrames')
     @FastPathNumFrames.setter
@@ -72,10 +72,10 @@ class LearnFrames(Base):
 
     @property
     def FastPathRate(self):
-        """The learnt inofrmation on the rate the data is to be transferred.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The learnt inofrmation on the rate the data is to be transferred.
         """
         return self._get_attribute('fastPathRate')
     @FastPathRate.setter
@@ -84,10 +84,10 @@ class LearnFrames(Base):
 
     @property
     def LearnFrequency(self):
-        """The learn frequency.
-
-        Returns:
-            str(onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)
+        """
+        Returns
+        -------
+        - str(onBinaryIteration | oncePerFramesize | oncePerTest | onTrial): The learn frequency.
         """
         return self._get_attribute('learnFrequency')
     @LearnFrequency.setter
@@ -96,10 +96,10 @@ class LearnFrames(Base):
 
     @property
     def LearnNumFrames(self):
-        """The learned numbered of frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The learned numbered of frames.
         """
         return self._get_attribute('learnNumFrames')
     @LearnNumFrames.setter
@@ -108,10 +108,10 @@ class LearnFrames(Base):
 
     @property
     def LearnRate(self):
-        """The learn rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The learn rate.
         """
         return self._get_attribute('learnRate')
     @LearnRate.setter
@@ -120,10 +120,10 @@ class LearnFrames(Base):
 
     @property
     def LearnSendMacOnly(self):
-        """If true, sends the learned MAC only.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, sends the learned MAC only.
         """
         return self._get_attribute('learnSendMacOnly')
     @LearnSendMacOnly.setter
@@ -132,10 +132,10 @@ class LearnFrames(Base):
 
     @property
     def LearnSendRouterSolicitation(self):
-        """The learn send router solicitation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The learn send router solicitation.
         """
         return self._get_attribute('learnSendRouterSolicitation')
     @LearnSendRouterSolicitation.setter
@@ -144,10 +144,10 @@ class LearnFrames(Base):
 
     @property
     def LearnWaitTime(self):
-        """The learn wait time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The learn wait time.
         """
         return self._get_attribute('learnWaitTime')
     @LearnWaitTime.setter
@@ -156,10 +156,10 @@ class LearnFrames(Base):
 
     @property
     def SendArp(self):
-        """The send Arp.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The send Arp.
         """
         return self._get_attribute('sendArp')
     @SendArp.setter
@@ -167,34 +167,37 @@ class LearnFrames(Base):
         self._set_attribute('sendArp', value)
 
     def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, SendArp=None):
-        """Updates a child instance of learnFrames on the server.
+        """Updates learnFrames resource on the server.
 
-        Args:
-            FastPathEnable (bool): If true, the fast path is enabled.
-            FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
-            FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
-            FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
-            LearnFrequency (str(onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): The learn frequency.
-            LearnNumFrames (number): The learned numbered of frames.
-            LearnRate (number): The learn rate.
-            LearnSendMacOnly (bool): If true, sends the learned MAC only.
-            LearnSendRouterSolicitation (bool): The learn send router solicitation.
-            LearnWaitTime (number): The learn wait time.
-            SendArp (bool): The send Arp.
+        Args
+        ----
+        - FastPathEnable (bool): If true, the fast path is enabled.
+        - FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+        - FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+        - FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+        - LearnFrequency (str(onBinaryIteration | oncePerFramesize | oncePerTest | onTrial)): The learn frequency.
+        - LearnNumFrames (number): The learned numbered of frames.
+        - LearnRate (number): The learn rate.
+        - LearnSendMacOnly (bool): If true, sends the learned MAC only.
+        - LearnSendRouterSolicitation (bool): The learn send router solicitation.
+        - LearnWaitTime (number): The learn wait time.
+        - SendArp (bool): The send Arp.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -202,9 +205,10 @@ class LearnFrames(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -212,12 +216,10 @@ class LearnFrames(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -227,9 +229,10 @@ class LearnFrames(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -239,12 +242,10 @@ class LearnFrames(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -254,24 +255,17 @@ class LearnFrames(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -283,18 +277,16 @@ class LearnFrames(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -306,9 +298,10 @@ class LearnFrames(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -318,12 +311,10 @@ class LearnFrames(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

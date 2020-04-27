@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OpaqueRouteRange(Base):
     """Applies the route range information on the opaque route block.
-    The OpaqueRouteRange class encapsulates a list of opaqueRouteRange resources that is be managed by the user.
+    The OpaqueRouteRange class encapsulates a list of opaqueRouteRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the OpaqueRouteRange.find() method.
-    The list can be managed by the user by using the OpaqueRouteRange.add() and OpaqueRouteRange.remove() methods.
+    The list can be managed by using the OpaqueRouteRange.add() and OpaqueRouteRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def __id__(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('__id__')
     @__id__.setter
@@ -50,10 +50,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def Enabled(self):
-        """Appends the local AsNumber.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Appends the local AsNumber.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def ImportedFile(self):
-        """Location of the route import file.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Location of the route import file.
         """
         return self._get_attribute('importedFile')
     @ImportedFile.setter
@@ -74,10 +74,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def NextHopAsIs(self):
-        """If true, it takes the next Hop AsIs.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it takes the next Hop AsIs.
         """
         return self._get_attribute('nextHopAsIs')
     @NextHopAsIs.setter
@@ -86,10 +86,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def NumberOfRoutes(self):
-        """Total number of opaque routes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Total number of opaque routes.
         """
         return self._get_attribute('numberOfRoutes')
     @NumberOfRoutes.setter
@@ -98,10 +98,10 @@ class OpaqueRouteRange(Base):
 
     @property
     def SendMultiExitDiscovery(self):
-        """If true, sends a Multi Exit Discriminator attribute with the indicated value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, sends a Multi Exit Discriminator attribute with the indicated value.
         """
         return self._get_attribute('sendMultiExitDiscovery')
     @SendMultiExitDiscovery.setter
@@ -110,92 +110,105 @@ class OpaqueRouteRange(Base):
 
     @property
     def Status(self):
-        """Indicates the status of the imported file.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the status of the imported file.
         """
         return self._get_attribute('status')
 
     def update(self, __id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
-        """Updates a child instance of opaqueRouteRange on the server.
+        """Updates opaqueRouteRange resource on the server.
 
-        Args:
-            __id__ (str): NOT DEFINED
-            Enabled (bool): Appends the local AsNumber.
-            ImportedFile (str): Location of the route import file.
-            NextHopAsIs (bool): If true, it takes the next Hop AsIs.
-            NumberOfRoutes (number): Total number of opaque routes.
-            SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
+        Args
+        ----
+        - __id__ (str): NOT DEFINED
+        - Enabled (bool): Appends the local AsNumber.
+        - ImportedFile (str): Location of the route import file.
+        - NextHopAsIs (bool): If true, it takes the next Hop AsIs.
+        - NumberOfRoutes (number): Total number of opaque routes.
+        - SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, __id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
-        """Adds a new opaqueRouteRange node on the server and retrieves it in this instance.
+        """Adds a new opaqueRouteRange resource on the server and adds it to the container.
 
-        Args:
-            __id__ (str): NOT DEFINED
-            Enabled (bool): Appends the local AsNumber.
-            ImportedFile (str): Location of the route import file.
-            NextHopAsIs (bool): If true, it takes the next Hop AsIs.
-            NumberOfRoutes (number): Total number of opaque routes.
-            SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
+        Args
+        ----
+        - __id__ (str): NOT DEFINED
+        - Enabled (bool): Appends the local AsNumber.
+        - ImportedFile (str): Location of the route import file.
+        - NextHopAsIs (bool): If true, it takes the next Hop AsIs.
+        - NumberOfRoutes (number): Total number of opaque routes.
+        - SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
 
-        Returns:
-            self: This instance with all currently retrieved opaqueRouteRange data using find and the newly added opaqueRouteRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved opaqueRouteRange resources using find and the newly added opaqueRouteRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the opaqueRouteRange data in this instance from server.
+        """Deletes all the contained opaqueRouteRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, __id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None, Status=None):
-        """Finds and retrieves opaqueRouteRange data from the server.
+        """Finds and retrieves opaqueRouteRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve opaqueRouteRange data from the server.
-        By default the find method takes no parameters and will retrieve all opaqueRouteRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaqueRouteRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all opaqueRouteRange resources from the server.
 
-        Args:
-            __id__ (str): NOT DEFINED
-            Enabled (bool): Appends the local AsNumber.
-            ImportedFile (str): Location of the route import file.
-            NextHopAsIs (bool): If true, it takes the next Hop AsIs.
-            NumberOfRoutes (number): Total number of opaque routes.
-            SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
-            Status (str): Indicates the status of the imported file.
+        Args
+        ----
+        - __id__ (str): NOT DEFINED
+        - Enabled (bool): Appends the local AsNumber.
+        - ImportedFile (str): Location of the route import file.
+        - NextHopAsIs (bool): If true, it takes the next Hop AsIs.
+        - NumberOfRoutes (number): Total number of opaque routes.
+        - SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
+        - Status (str): Indicates the status of the imported file.
 
-        Returns:
-            self: This instance with matching opaqueRouteRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching opaqueRouteRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of opaqueRouteRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the opaqueRouteRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the opaqueRouteRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -204,12 +217,10 @@ class OpaqueRouteRange(Base):
 
         This function allows to Apply the route range information on the opaque route block.
 
-            Returns:
-                str: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyOpaqueRouteRange', payload=payload, response_object=None)

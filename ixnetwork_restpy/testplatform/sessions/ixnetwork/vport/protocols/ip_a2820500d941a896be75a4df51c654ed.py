@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ip(Base):
     """This object holds the list of statically-configured IP addresses for the port.
-    The Ip class encapsulates a list of ip resources that is be managed by the user.
+    The Ip class encapsulates a list of ip resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ip.find() method.
-    The list can be managed by the user by using the Ip.add() and Ip.remove() methods.
+    The list can be managed by using the Ip.add() and Ip.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Ip(Base):
 
     @property
     def Count(self):
-        """The total number of addresses to create for this range of IP addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of addresses to create for this range of IP addresses.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class Ip(Base):
 
     @property
     def Enabled(self):
-        """Enables this IP address entry.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this IP address entry.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class Ip(Base):
 
     @property
     def IpStart(self):
-        """The first IP address in the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first IP address in the range.
         """
         return self._get_attribute('ipStart')
     @IpStart.setter
@@ -74,10 +74,10 @@ class Ip(Base):
 
     @property
     def IpType(self):
-        """The Internet Protocol (IP version).
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): The Internet Protocol (IP version).
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -86,10 +86,10 @@ class Ip(Base):
 
     @property
     def Mask(self):
-        """The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
         """
         return self._get_attribute('mask')
     @Mask.setter
@@ -98,10 +98,10 @@ class Ip(Base):
 
     @property
     def ProtocolInterface(self):
-        """There may be multiple interfaces listed.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): There may be multiple interfaces listed.
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -110,10 +110,10 @@ class Ip(Base):
 
     @property
     def Step(self):
-        """The increment value to be used for each additional address, to create a range of IP addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment value to be used for each additional address, to create a range of IP addresses.
         """
         return self._get_attribute('step')
     @Step.setter
@@ -122,10 +122,10 @@ class Ip(Base):
 
     @property
     def TrafficGroupId(self):
-        """The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute('trafficGroupId')
     @TrafficGroupId.setter
@@ -133,88 +133,101 @@ class Ip(Base):
         self._set_attribute('trafficGroupId', value)
 
     def update(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
-        """Updates a child instance of ip on the server.
+        """Updates ip resource on the server.
 
-        Args:
-            Count (number): The total number of addresses to create for this range of IP addresses.
-            Enabled (bool): Enables this IP address entry.
-            IpStart (str): The first IP address in the range.
-            IpType (str(ipv4|ipv6)): The Internet Protocol (IP version).
-            Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): There may be multiple interfaces listed.
-            Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of addresses to create for this range of IP addresses.
+        - Enabled (bool): Enables this IP address entry.
+        - IpStart (str): The first IP address in the range.
+        - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
+        - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
-        """Adds a new ip node on the server and retrieves it in this instance.
+        """Adds a new ip resource on the server and adds it to the container.
 
-        Args:
-            Count (number): The total number of addresses to create for this range of IP addresses.
-            Enabled (bool): Enables this IP address entry.
-            IpStart (str): The first IP address in the range.
-            IpType (str(ipv4|ipv6)): The Internet Protocol (IP version).
-            Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): There may be multiple interfaces listed.
-            Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of addresses to create for this range of IP addresses.
+        - Enabled (bool): Enables this IP address entry.
+        - IpStart (str): The first IP address in the range.
+        - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
+        - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Returns:
-            self: This instance with all currently retrieved ip data using find and the newly added ip data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ip resources using find and the newly added ip resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ip data in this instance from server.
+        """Deletes all the contained ip resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
-        """Finds and retrieves ip data from the server.
+        """Finds and retrieves ip resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ip data from the server.
-        By default the find method takes no parameters and will retrieve all ip data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ip resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ip resources from the server.
 
-        Args:
-            Count (number): The total number of addresses to create for this range of IP addresses.
-            Enabled (bool): Enables this IP address entry.
-            IpStart (str): The first IP address in the range.
-            IpType (str(ipv4|ipv6)): The Internet Protocol (IP version).
-            Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): There may be multiple interfaces listed.
-            Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-            TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        Args
+        ----
+        - Count (number): The total number of addresses to create for this range of IP addresses.
+        - Enabled (bool): Enables this IP address entry.
+        - IpStart (str): The first IP address in the range.
+        - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
+        - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
-        Returns:
-            self: This instance with matching ip data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ip resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ip data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ip data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ip resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

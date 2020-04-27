@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EapoUdpOptions(Base):
     """
-    The EapoUdpOptions class encapsulates a list of eapoUdpOptions resources that is be managed by the user.
+    The EapoUdpOptions class encapsulates a list of eapoUdpOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the EapoUdpOptions.find() method.
-    The list can be managed by the user by using the EapoUdpOptions.add() and EapoUdpOptions.remove() methods.
+    The list can be managed by using the EapoUdpOptions.add() and EapoUdpOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class EapoUdpOptions(Base):
 
     @property
     def DutMac(self):
-        """The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
         """
         return self._get_attribute('dutMac')
     @DutMac.setter
@@ -50,10 +50,10 @@ class EapoUdpOptions(Base):
 
     @property
     def IcmpTriggerTargetAddress(self):
-        """The target address where ICMP messages are sent.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The target address where ICMP messages are sent.
         """
         return self._get_attribute('icmpTriggerTargetAddress')
     @IcmpTriggerTargetAddress.setter
@@ -62,10 +62,10 @@ class EapoUdpOptions(Base):
 
     @property
     def MaxClientsPerSecond(self):
-        """The number interfaces to setup per second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number interfaces to setup per second.
         """
         return self._get_attribute('maxClientsPerSecond')
     @MaxClientsPerSecond.setter
@@ -74,10 +74,10 @@ class EapoUdpOptions(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """The maximum number of sessions that can be negotiated at one moment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of sessions that can be negotiated at one moment.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -86,19 +86,19 @@ class EapoUdpOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalSetupRate(self):
-        """If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
         return self._get_attribute('overrideGlobalSetupRate')
     @OverrideGlobalSetupRate.setter
@@ -106,81 +106,94 @@ class EapoUdpOptions(Base):
         self._set_attribute('overrideGlobalSetupRate', value)
 
     def update(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
-        """Updates a child instance of eapoUdpOptions on the server.
+        """Updates eapoUdpOptions resource on the server.
 
-        Args:
-            DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
-            IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
+        - IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
-        """Adds a new eapoUdpOptions node on the server and retrieves it in this instance.
+        """Adds a new eapoUdpOptions resource on the server and adds it to the container.
 
-        Args:
-            DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
-            IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
+        - IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Returns:
-            self: This instance with all currently retrieved eapoUdpOptions data using find and the newly added eapoUdpOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved eapoUdpOptions resources using find and the newly added eapoUdpOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the eapoUdpOptions data in this instance from server.
+        """Deletes all the contained eapoUdpOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None):
-        """Finds and retrieves eapoUdpOptions data from the server.
+        """Finds and retrieves eapoUdpOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve eapoUdpOptions data from the server.
-        By default the find method takes no parameters and will retrieve all eapoUdpOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eapoUdpOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all eapoUdpOptions resources from the server.
 
-        Args:
-            DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
-            IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
-            MaxClientsPerSecond (number): The number interfaces to setup per second.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
+        Args
+        ----
+        - DutMac (str): The MAC address of a DUT port to which the PCPU is connected. This is needed when using ICMP, DHCP_ICMP internal triggers.
+        - IcmpTriggerTargetAddress (str): The target address where ICMP messages are sent.
+        - MaxClientsPerSecond (number): The number interfaces to setup per second.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment.
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalSetupRate (bool): If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
 
-        Returns:
-            self: This instance with matching eapoUdpOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching eapoUdpOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of eapoUdpOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the eapoUdpOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the eapoUdpOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -189,14 +202,15 @@ class EapoUdpOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -208,16 +222,15 @@ class EapoUdpOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -229,16 +242,15 @@ class EapoUdpOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

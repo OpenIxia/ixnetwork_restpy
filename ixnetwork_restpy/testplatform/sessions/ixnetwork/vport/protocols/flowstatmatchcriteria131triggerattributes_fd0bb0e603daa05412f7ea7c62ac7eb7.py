@@ -36,10 +36,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ArpDstHwAddr(self):
-        """Value of the ARP destination hardware address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the ARP destination hardware address.
         """
         return self._get_attribute('arpDstHwAddr')
     @ArpDstHwAddr.setter
@@ -48,10 +48,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ArpDstIpv4Addr(self):
-        """The ARP destination IPv4 address field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The ARP destination IPv4 address field value.
         """
         return self._get_attribute('arpDstIpv4Addr')
     @ArpDstIpv4Addr.setter
@@ -60,10 +60,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ArpOpcode(self):
-        """Value of the ARP opcode field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the ARP opcode field.
         """
         return self._get_attribute('arpOpcode')
     @ArpOpcode.setter
@@ -72,10 +72,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ArpSrcHwAddr(self):
-        """Value of the ARP source hardware address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the ARP source hardware address.
         """
         return self._get_attribute('arpSrcHwAddr')
     @ArpSrcHwAddr.setter
@@ -84,10 +84,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ArpSrcIpv4Addr(self):
-        """The ARP source IPv4 address field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The ARP source IPv4 address field value.
         """
         return self._get_attribute('arpSrcIpv4Addr')
     @ArpSrcIpv4Addr.setter
@@ -96,10 +96,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Cookie(self):
-        """The Cookie field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The Cookie field value.
         """
         return self._get_attribute('cookie')
     @Cookie.setter
@@ -108,10 +108,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def EthernetDestination(self):
-        """The Ethernet destination address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The Ethernet destination address.
         """
         return self._get_attribute('ethernetDestination')
     @EthernetDestination.setter
@@ -120,10 +120,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def EthernetSource(self):
-        """The Ethernet source address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The Ethernet source address.
         """
         return self._get_attribute('ethernetSource')
     @EthernetSource.setter
@@ -132,10 +132,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def EthernetType(self):
-        """The type of Ethernet port used.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The type of Ethernet port used.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -144,10 +144,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ExperimenterData(self):
-        """The experimenter data field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The experimenter data field value.
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -156,10 +156,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """Value of the Experimenter data length field.
-
-        Returns:
-            dict(arg1:number,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:number,arg2:str): Value of the Experimenter data length field.
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -168,10 +168,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ExperimenterField(self):
-        """Value of the Experimenter Field field.
-
-        Returns:
-            dict(arg1:number,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:number,arg2:str): Value of the Experimenter Field field.
         """
         return self._get_attribute('experimenterField')
     @ExperimenterField.setter
@@ -180,10 +180,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ExperimenterHashmask(self):
-        """The experimented hasmask field value.
-
-        Returns:
-            dict(arg1:bool,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:bool,arg2:str): The experimented hasmask field value.
         """
         return self._get_attribute('experimenterHashmask')
     @ExperimenterHashmask.setter
@@ -192,10 +192,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def ExperimenterId(self):
-        """Value of the experimenter ID field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the experimenter ID field.
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -204,10 +204,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Icmpv4Code(self):
-        """The code of ICMPv4 port used.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The code of ICMPv4 port used.
         """
         return self._get_attribute('icmpv4Code')
     @Icmpv4Code.setter
@@ -216,10 +216,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Icmpv4Type(self):
-        """The type of ICMPv4 port used.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The type of ICMPv4 port used.
         """
         return self._get_attribute('icmpv4Type')
     @Icmpv4Type.setter
@@ -228,10 +228,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Icmpv6Code(self):
-        """Value of the ICMPv4 code field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the ICMPv4 code field.
         """
         return self._get_attribute('icmpv6Code')
     @Icmpv6Code.setter
@@ -240,10 +240,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Icmpv6Type(self):
-        """Value of the ICMPv6 type field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the ICMPv6 type field.
         """
         return self._get_attribute('icmpv6Type')
     @Icmpv6Type.setter
@@ -252,10 +252,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def InPort(self):
-        """The input port used.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The input port used.
         """
         return self._get_attribute('inPort')
     @InPort.setter
@@ -264,10 +264,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def IpDscp(self):
-        """The IP DSCP value for advertising.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IP DSCP value for advertising.
         """
         return self._get_attribute('ipDscp')
     @IpDscp.setter
@@ -276,10 +276,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def IpEcn(self):
-        """The IP ECN field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IP ECN field value.
         """
         return self._get_attribute('ipEcn')
     @IpEcn.setter
@@ -288,10 +288,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def IpProtocol(self):
-        """The IP protocol used.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IP protocol used.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -300,10 +300,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv4Destination(self):
-        """The IPv4 destination address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IPv4 destination address.
         """
         return self._get_attribute('ipv4Destination')
     @Ipv4Destination.setter
@@ -312,10 +312,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv4Source(self):
-        """The IPv4 source address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IPv4 source address.
         """
         return self._get_attribute('ipv4Source')
     @Ipv4Source.setter
@@ -324,10 +324,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6Destination(self):
-        """Value of the IPv6 destination field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the IPv6 destination field.
         """
         return self._get_attribute('ipv6Destination')
     @Ipv6Destination.setter
@@ -336,10 +336,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6ExtHeader(self):
-        """The Ipv6 extension header field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The Ipv6 extension header field value.
         """
         return self._get_attribute('ipv6ExtHeader')
     @Ipv6ExtHeader.setter
@@ -348,10 +348,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """Value of the IPv6 flow label field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the IPv6 flow label field.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -360,10 +360,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6NdDll(self):
-        """The IPv6 ND DLL field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IPv6 ND DLL field value.
         """
         return self._get_attribute('ipv6NdDll')
     @Ipv6NdDll.setter
@@ -372,10 +372,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6NdSll(self):
-        """Source link-layer for IPv6 neighbour discovery.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Source link-layer for IPv6 neighbour discovery.
         """
         return self._get_attribute('ipv6NdSll')
     @Ipv6NdSll.setter
@@ -384,10 +384,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6NdTarget(self):
-        """The IPv6 ND target field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The IPv6 ND target field value.
         """
         return self._get_attribute('ipv6NdTarget')
     @Ipv6NdTarget.setter
@@ -396,10 +396,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def Ipv6Source(self):
-        """Value of the IPv6 source field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the IPv6 source field.
         """
         return self._get_attribute('ipv6Source')
     @Ipv6Source.setter
@@ -408,10 +408,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def MetaData(self):
-        """Value of the metadata field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the metadata field.
         """
         return self._get_attribute('metaData')
     @MetaData.setter
@@ -420,10 +420,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def MplsBos(self):
-        """Value of the MPLS BoS field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the MPLS BoS field.
         """
         return self._get_attribute('mplsBos')
     @MplsBos.setter
@@ -432,10 +432,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def MplsLabel(self):
-        """Value of the MPLS label field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the MPLS label field.
         """
         return self._get_attribute('mplsLabel')
     @MplsLabel.setter
@@ -444,10 +444,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def MplsTc(self):
-        """The MPLS TC field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The MPLS TC field value.
         """
         return self._get_attribute('mplsTc')
     @MplsTc.setter
@@ -456,10 +456,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def PbbISid(self):
-        """Value of the PBB I-SID field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the PBB I-SID field.
         """
         return self._get_attribute('pbbISid')
     @PbbISid.setter
@@ -468,10 +468,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def PhysicalInPort(self):
-        """Value of the Physical IN port field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the Physical IN port field.
         """
         return self._get_attribute('physicalInPort')
     @PhysicalInPort.setter
@@ -480,10 +480,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def SctpDestination(self):
-        """The SCTP destination field value.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The SCTP destination field value.
         """
         return self._get_attribute('sctpDestination')
     @SctpDestination.setter
@@ -492,10 +492,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def SctpSource(self):
-        """Value of the SCTP source field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the SCTP source field.
         """
         return self._get_attribute('sctpSource')
     @SctpSource.setter
@@ -504,10 +504,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def TcpDestination(self):
-        """The Transport destination address.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The Transport destination address.
         """
         return self._get_attribute('tcpDestination')
     @TcpDestination.setter
@@ -516,10 +516,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def TcpSource(self):
-        """Value of the TCP source field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the TCP source field.
         """
         return self._get_attribute('tcpSource')
     @TcpSource.setter
@@ -528,10 +528,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def TunnelId(self):
-        """Value of the tunnel ID field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the tunnel ID field.
         """
         return self._get_attribute('tunnelId')
     @TunnelId.setter
@@ -540,10 +540,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def UdpDestination(self):
-        """Value of the UDP destination field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the UDP destination field.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -552,10 +552,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def UdpSource(self):
-        """Value of the UDP source field.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): Value of the UDP source field.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -564,10 +564,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def VlanId(self):
-        """The unique VLAN Identifier.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The unique VLAN Identifier.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -576,10 +576,10 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
 
     @property
     def VlanPriority(self):
-        """The User Priority for this VLAN.
-
-        Returns:
-            dict(arg1:str,arg2:str)
+        """
+        Returns
+        -------
+        - dict(arg1:str,arg2:str): The User Priority for this VLAN.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -587,57 +587,59 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbISid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of flowStatMatchCriteria131TriggerAttributes on the server.
+        """Updates flowStatMatchCriteria131TriggerAttributes resource on the server.
 
-        Args:
-            ArpDstHwAddr (dict(arg1:str,arg2:str)): Value of the ARP destination hardware address.
-            ArpDstIpv4Addr (dict(arg1:str,arg2:str)): The ARP destination IPv4 address field value.
-            ArpOpcode (dict(arg1:str,arg2:str)): Value of the ARP opcode field.
-            ArpSrcHwAddr (dict(arg1:str,arg2:str)): Value of the ARP source hardware address.
-            ArpSrcIpv4Addr (dict(arg1:str,arg2:str)): The ARP source IPv4 address field value.
-            Cookie (dict(arg1:str,arg2:str)): The Cookie field value.
-            EthernetDestination (dict(arg1:str,arg2:str)): The Ethernet destination address.
-            EthernetSource (dict(arg1:str,arg2:str)): The Ethernet source address.
-            EthernetType (dict(arg1:str,arg2:str)): The type of Ethernet port used.
-            ExperimenterData (dict(arg1:str,arg2:str)): The experimenter data field value.
-            ExperimenterDataLength (dict(arg1:number,arg2:str)): Value of the Experimenter data length field.
-            ExperimenterField (dict(arg1:number,arg2:str)): Value of the Experimenter Field field.
-            ExperimenterHashmask (dict(arg1:bool,arg2:str)): The experimented hasmask field value.
-            ExperimenterId (dict(arg1:str,arg2:str)): Value of the experimenter ID field.
-            Icmpv4Code (dict(arg1:str,arg2:str)): The code of ICMPv4 port used.
-            Icmpv4Type (dict(arg1:str,arg2:str)): The type of ICMPv4 port used.
-            Icmpv6Code (dict(arg1:str,arg2:str)): Value of the ICMPv4 code field.
-            Icmpv6Type (dict(arg1:str,arg2:str)): Value of the ICMPv6 type field.
-            InPort (dict(arg1:str,arg2:str)): The input port used.
-            IpDscp (dict(arg1:str,arg2:str)): The IP DSCP value for advertising.
-            IpEcn (dict(arg1:str,arg2:str)): The IP ECN field value.
-            IpProtocol (dict(arg1:str,arg2:str)): The IP protocol used.
-            Ipv4Destination (dict(arg1:str,arg2:str)): The IPv4 destination address.
-            Ipv4Source (dict(arg1:str,arg2:str)): The IPv4 source address.
-            Ipv6Destination (dict(arg1:str,arg2:str)): Value of the IPv6 destination field.
-            Ipv6ExtHeader (dict(arg1:str,arg2:str)): The Ipv6 extension header field value.
-            Ipv6FlowLabel (dict(arg1:str,arg2:str)): Value of the IPv6 flow label field.
-            Ipv6NdDll (dict(arg1:str,arg2:str)): The IPv6 ND DLL field value.
-            Ipv6NdSll (dict(arg1:str,arg2:str)): Source link-layer for IPv6 neighbour discovery.
-            Ipv6NdTarget (dict(arg1:str,arg2:str)): The IPv6 ND target field value.
-            Ipv6Source (dict(arg1:str,arg2:str)): Value of the IPv6 source field.
-            MetaData (dict(arg1:str,arg2:str)): Value of the metadata field.
-            MplsBos (dict(arg1:str,arg2:str)): Value of the MPLS BoS field.
-            MplsLabel (dict(arg1:str,arg2:str)): Value of the MPLS label field.
-            MplsTc (dict(arg1:str,arg2:str)): The MPLS TC field value.
-            PbbISid (dict(arg1:str,arg2:str)): Value of the PBB I-SID field.
-            PhysicalInPort (dict(arg1:str,arg2:str)): Value of the Physical IN port field.
-            SctpDestination (dict(arg1:str,arg2:str)): The SCTP destination field value.
-            SctpSource (dict(arg1:str,arg2:str)): Value of the SCTP source field.
-            TcpDestination (dict(arg1:str,arg2:str)): The Transport destination address.
-            TcpSource (dict(arg1:str,arg2:str)): Value of the TCP source field.
-            TunnelId (dict(arg1:str,arg2:str)): Value of the tunnel ID field.
-            UdpDestination (dict(arg1:str,arg2:str)): Value of the UDP destination field.
-            UdpSource (dict(arg1:str,arg2:str)): Value of the UDP source field.
-            VlanId (dict(arg1:str,arg2:str)): The unique VLAN Identifier.
-            VlanPriority (dict(arg1:str,arg2:str)): The User Priority for this VLAN.
+        Args
+        ----
+        - ArpDstHwAddr (dict(arg1:str,arg2:str)): Value of the ARP destination hardware address.
+        - ArpDstIpv4Addr (dict(arg1:str,arg2:str)): The ARP destination IPv4 address field value.
+        - ArpOpcode (dict(arg1:str,arg2:str)): Value of the ARP opcode field.
+        - ArpSrcHwAddr (dict(arg1:str,arg2:str)): Value of the ARP source hardware address.
+        - ArpSrcIpv4Addr (dict(arg1:str,arg2:str)): The ARP source IPv4 address field value.
+        - Cookie (dict(arg1:str,arg2:str)): The Cookie field value.
+        - EthernetDestination (dict(arg1:str,arg2:str)): The Ethernet destination address.
+        - EthernetSource (dict(arg1:str,arg2:str)): The Ethernet source address.
+        - EthernetType (dict(arg1:str,arg2:str)): The type of Ethernet port used.
+        - ExperimenterData (dict(arg1:str,arg2:str)): The experimenter data field value.
+        - ExperimenterDataLength (dict(arg1:number,arg2:str)): Value of the Experimenter data length field.
+        - ExperimenterField (dict(arg1:number,arg2:str)): Value of the Experimenter Field field.
+        - ExperimenterHashmask (dict(arg1:bool,arg2:str)): The experimented hasmask field value.
+        - ExperimenterId (dict(arg1:str,arg2:str)): Value of the experimenter ID field.
+        - Icmpv4Code (dict(arg1:str,arg2:str)): The code of ICMPv4 port used.
+        - Icmpv4Type (dict(arg1:str,arg2:str)): The type of ICMPv4 port used.
+        - Icmpv6Code (dict(arg1:str,arg2:str)): Value of the ICMPv4 code field.
+        - Icmpv6Type (dict(arg1:str,arg2:str)): Value of the ICMPv6 type field.
+        - InPort (dict(arg1:str,arg2:str)): The input port used.
+        - IpDscp (dict(arg1:str,arg2:str)): The IP DSCP value for advertising.
+        - IpEcn (dict(arg1:str,arg2:str)): The IP ECN field value.
+        - IpProtocol (dict(arg1:str,arg2:str)): The IP protocol used.
+        - Ipv4Destination (dict(arg1:str,arg2:str)): The IPv4 destination address.
+        - Ipv4Source (dict(arg1:str,arg2:str)): The IPv4 source address.
+        - Ipv6Destination (dict(arg1:str,arg2:str)): Value of the IPv6 destination field.
+        - Ipv6ExtHeader (dict(arg1:str,arg2:str)): The Ipv6 extension header field value.
+        - Ipv6FlowLabel (dict(arg1:str,arg2:str)): Value of the IPv6 flow label field.
+        - Ipv6NdDll (dict(arg1:str,arg2:str)): The IPv6 ND DLL field value.
+        - Ipv6NdSll (dict(arg1:str,arg2:str)): Source link-layer for IPv6 neighbour discovery.
+        - Ipv6NdTarget (dict(arg1:str,arg2:str)): The IPv6 ND target field value.
+        - Ipv6Source (dict(arg1:str,arg2:str)): Value of the IPv6 source field.
+        - MetaData (dict(arg1:str,arg2:str)): Value of the metadata field.
+        - MplsBos (dict(arg1:str,arg2:str)): Value of the MPLS BoS field.
+        - MplsLabel (dict(arg1:str,arg2:str)): Value of the MPLS label field.
+        - MplsTc (dict(arg1:str,arg2:str)): The MPLS TC field value.
+        - PbbISid (dict(arg1:str,arg2:str)): Value of the PBB I-SID field.
+        - PhysicalInPort (dict(arg1:str,arg2:str)): Value of the Physical IN port field.
+        - SctpDestination (dict(arg1:str,arg2:str)): The SCTP destination field value.
+        - SctpSource (dict(arg1:str,arg2:str)): Value of the SCTP source field.
+        - TcpDestination (dict(arg1:str,arg2:str)): The Transport destination address.
+        - TcpSource (dict(arg1:str,arg2:str)): Value of the TCP source field.
+        - TunnelId (dict(arg1:str,arg2:str)): Value of the tunnel ID field.
+        - UdpDestination (dict(arg1:str,arg2:str)): Value of the UDP destination field.
+        - UdpSource (dict(arg1:str,arg2:str)): Value of the UDP source field.
+        - VlanId (dict(arg1:str,arg2:str)): The unique VLAN Identifier.
+        - VlanPriority (dict(arg1:str,arg2:str)): The User Priority for this VLAN.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

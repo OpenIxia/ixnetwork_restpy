@@ -36,10 +36,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def EnableSendTriggerMeterConfigStatsLearnedInformation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableSendTriggerMeterConfigStatsLearnedInformation')
     @EnableSendTriggerMeterConfigStatsLearnedInformation.setter
@@ -48,10 +48,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def EnableSendTriggerMeterFeatureStatsLearnedInformation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableSendTriggerMeterFeatureStatsLearnedInformation')
     @EnableSendTriggerMeterFeatureStatsLearnedInformation.setter
@@ -60,10 +60,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def EnableSendTriggerMeterStatLearnedInformation(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableSendTriggerMeterStatLearnedInformation')
     @EnableSendTriggerMeterStatLearnedInformation.setter
@@ -72,10 +72,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatOutGroup(self):
-        """The out group used.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The out group used.
         """
         return self._get_attribute('flowStatOutGroup')
     @FlowStatOutGroup.setter
@@ -84,10 +84,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatOutGroupInputMode(self):
-        """The input mode of the out group.
-
-        Returns:
-            str(allGroups|anyGroup|outGroupCustom)
+        """
+        Returns
+        -------
+        - str(allGroups | anyGroup | outGroupCustom): The input mode of the out group.
         """
         return self._get_attribute('flowStatOutGroupInputMode')
     @FlowStatOutGroupInputMode.setter
@@ -96,10 +96,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatOutPort(self):
-        """Specifies the Output port number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Output port number.
         """
         return self._get_attribute('flowStatOutPort')
     @FlowStatOutPort.setter
@@ -108,10 +108,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatOutPortInputMode(self):
-        """The output port used.
-
-        Returns:
-            str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)
+        """
+        Returns
+        -------
+        - str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom): The output port used.
         """
         return self._get_attribute('flowStatOutPortInputMode')
     @FlowStatOutPortInputMode.setter
@@ -120,10 +120,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatTableId(self):
-        """The identifier of the table.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier of the table.
         """
         return self._get_attribute('flowStatTableId')
     @FlowStatTableId.setter
@@ -132,10 +132,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def FlowStatTableIdInputMode(self):
-        """The identifier of the table.
-
-        Returns:
-            str(allTables|emergency|custom)
+        """
+        Returns
+        -------
+        - str(allTables | emergency | custom): The identifier of the table.
         """
         return self._get_attribute('flowStatTableIdInputMode')
     @FlowStatTableIdInputMode.setter
@@ -144,37 +144,37 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def IsMeterConfigStatLearnedInformationRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isMeterConfigStatLearnedInformationRefreshed')
 
     @property
     def IsMeterFeatureStatLearnedInformationRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isMeterFeatureStatLearnedInformationRefreshed')
 
     @property
     def IsMeterStatLearnedInformationRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isMeterStatLearnedInformationRefreshed')
 
     @property
     def MeterConfigStatMeterId(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ofpmController|ofpmSlowPath|ofpmAll|manual)
+        """
+        Returns
+        -------
+        - str(ofpmController | ofpmSlowPath | ofpmAll | manual): NOT DEFINED
         """
         return self._get_attribute('meterConfigStatMeterId')
     @MeterConfigStatMeterId.setter
@@ -183,10 +183,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterConfigStatMeterNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterConfigStatMeterNumber')
     @MeterConfigStatMeterNumber.setter
@@ -195,10 +195,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterConfigStatResponseTimeOut(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterConfigStatResponseTimeOut')
     @MeterConfigStatResponseTimeOut.setter
@@ -207,10 +207,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterFeatureStatResponseTimeOut(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterFeatureStatResponseTimeOut')
     @MeterFeatureStatResponseTimeOut.setter
@@ -219,10 +219,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterStatMeterId(self):
-        """NOT DEFINED
-
-        Returns:
-            str(ofpmController|ofpmSlowPath|ofpmAll|manual)
+        """
+        Returns
+        -------
+        - str(ofpmController | ofpmSlowPath | ofpmAll | manual): NOT DEFINED
         """
         return self._get_attribute('meterStatMeterId')
     @MeterStatMeterId.setter
@@ -231,10 +231,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterStatMeterNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterStatMeterNumber')
     @MeterStatMeterNumber.setter
@@ -243,10 +243,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterStatResponseTimeOut(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('meterStatResponseTimeOut')
     @MeterStatResponseTimeOut.setter
@@ -255,10 +255,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def PortStatPortNumber(self):
-        """The port number for port stat learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The port number for port stat learned information.
         """
         return self._get_attribute('portStatPortNumber')
     @PortStatPortNumber.setter
@@ -267,10 +267,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def PortStatPortNumberInputMode(self):
-        """The input mode of port number for port stat learned information.
-
-        Returns:
-            str(ofppAny|portNumberCustom)
+        """
+        Returns
+        -------
+        - str(ofppAny | portNumberCustom): The input mode of port number for port stat learned information.
         """
         return self._get_attribute('portStatPortNumberInputMode')
     @PortStatPortNumberInputMode.setter
@@ -279,10 +279,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def QueueConfigPortNumber(self):
-        """The port number for queue config learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The port number for queue config learned information.
         """
         return self._get_attribute('queueConfigPortNumber')
     @QueueConfigPortNumber.setter
@@ -291,10 +291,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def QueueConfigPortNumberInputMode(self):
-        """The input mode of port number for queue config learned information.
-
-        Returns:
-            str(ofppAny|portNumberCustom)
+        """
+        Returns
+        -------
+        - str(ofppAny | portNumberCustom): The input mode of port number for queue config learned information.
         """
         return self._get_attribute('queueConfigPortNumberInputMode')
     @QueueConfigPortNumberInputMode.setter
@@ -303,10 +303,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def QueueStatPortNumber(self):
-        """The port number for queue statistics learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The port number for queue statistics learned information.
         """
         return self._get_attribute('queueStatPortNumber')
     @QueueStatPortNumber.setter
@@ -315,10 +315,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def QueueStatPortNumberInputMode(self):
-        """The input mode of port number for queue statistics learned information.
-
-        Returns:
-            str(ofppAll|ofppAny|portNumberCustom)
+        """
+        Returns
+        -------
+        - str(ofppAll | ofppAny | portNumberCustom): The input mode of port number for queue statistics learned information.
         """
         return self._get_attribute('queueStatPortNumberInputMode')
     @QueueStatPortNumberInputMode.setter
@@ -327,10 +327,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def VendorMessageExperimenterType(self):
-        """Experimenter type for Vendor Message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Experimenter type for Vendor Message.
         """
         return self._get_attribute('vendorMessageExperimenterType')
     @VendorMessageExperimenterType.setter
@@ -339,10 +339,10 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def VendorStatExperimenterType(self):
-        """Experimenter type for Vendor stat.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Experimenter type for Vendor stat.
         """
         return self._get_attribute('vendorStatExperimenterType')
     @VendorStatExperimenterType.setter
@@ -350,35 +350,37 @@ class Controller131TriggerAttributes(Base):
         self._set_attribute('vendorStatExperimenterType', value)
 
     def update(self, EnableSendTriggerMeterConfigStatsLearnedInformation=None, EnableSendTriggerMeterFeatureStatsLearnedInformation=None, EnableSendTriggerMeterStatLearnedInformation=None, FlowStatOutGroup=None, FlowStatOutGroupInputMode=None, FlowStatOutPort=None, FlowStatOutPortInputMode=None, FlowStatTableId=None, FlowStatTableIdInputMode=None, MeterConfigStatMeterId=None, MeterConfigStatMeterNumber=None, MeterConfigStatResponseTimeOut=None, MeterFeatureStatResponseTimeOut=None, MeterStatMeterId=None, MeterStatMeterNumber=None, MeterStatResponseTimeOut=None, PortStatPortNumber=None, PortStatPortNumberInputMode=None, QueueConfigPortNumber=None, QueueConfigPortNumberInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, VendorMessageExperimenterType=None, VendorStatExperimenterType=None):
-        """Updates a child instance of controller131TriggerAttributes on the server.
+        """Updates controller131TriggerAttributes resource on the server.
 
-        Args:
-            EnableSendTriggerMeterConfigStatsLearnedInformation (bool): NOT DEFINED
-            EnableSendTriggerMeterFeatureStatsLearnedInformation (bool): NOT DEFINED
-            EnableSendTriggerMeterStatLearnedInformation (bool): NOT DEFINED
-            FlowStatOutGroup (number): The out group used.
-            FlowStatOutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): The input mode of the out group.
-            FlowStatOutPort (number): Specifies the Output port number.
-            FlowStatOutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): The output port used.
-            FlowStatTableId (number): The identifier of the table.
-            FlowStatTableIdInputMode (str(allTables|emergency|custom)): The identifier of the table.
-            MeterConfigStatMeterId (str(ofpmController|ofpmSlowPath|ofpmAll|manual)): NOT DEFINED
-            MeterConfigStatMeterNumber (number): NOT DEFINED
-            MeterConfigStatResponseTimeOut (number): NOT DEFINED
-            MeterFeatureStatResponseTimeOut (number): NOT DEFINED
-            MeterStatMeterId (str(ofpmController|ofpmSlowPath|ofpmAll|manual)): NOT DEFINED
-            MeterStatMeterNumber (number): NOT DEFINED
-            MeterStatResponseTimeOut (number): NOT DEFINED
-            PortStatPortNumber (number): The port number for port stat learned information.
-            PortStatPortNumberInputMode (str(ofppAny|portNumberCustom)): The input mode of port number for port stat learned information.
-            QueueConfigPortNumber (number): The port number for queue config learned information.
-            QueueConfigPortNumberInputMode (str(ofppAny|portNumberCustom)): The input mode of port number for queue config learned information.
-            QueueStatPortNumber (number): The port number for queue statistics learned information.
-            QueueStatPortNumberInputMode (str(ofppAll|ofppAny|portNumberCustom)): The input mode of port number for queue statistics learned information.
-            VendorMessageExperimenterType (number): Experimenter type for Vendor Message.
-            VendorStatExperimenterType (number): Experimenter type for Vendor stat.
+        Args
+        ----
+        - EnableSendTriggerMeterConfigStatsLearnedInformation (bool): NOT DEFINED
+        - EnableSendTriggerMeterFeatureStatsLearnedInformation (bool): NOT DEFINED
+        - EnableSendTriggerMeterStatLearnedInformation (bool): NOT DEFINED
+        - FlowStatOutGroup (number): The out group used.
+        - FlowStatOutGroupInputMode (str(allGroups | anyGroup | outGroupCustom)): The input mode of the out group.
+        - FlowStatOutPort (number): Specifies the Output port number.
+        - FlowStatOutPortInputMode (str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom)): The output port used.
+        - FlowStatTableId (number): The identifier of the table.
+        - FlowStatTableIdInputMode (str(allTables | emergency | custom)): The identifier of the table.
+        - MeterConfigStatMeterId (str(ofpmController | ofpmSlowPath | ofpmAll | manual)): NOT DEFINED
+        - MeterConfigStatMeterNumber (number): NOT DEFINED
+        - MeterConfigStatResponseTimeOut (number): NOT DEFINED
+        - MeterFeatureStatResponseTimeOut (number): NOT DEFINED
+        - MeterStatMeterId (str(ofpmController | ofpmSlowPath | ofpmAll | manual)): NOT DEFINED
+        - MeterStatMeterNumber (number): NOT DEFINED
+        - MeterStatResponseTimeOut (number): NOT DEFINED
+        - PortStatPortNumber (number): The port number for port stat learned information.
+        - PortStatPortNumberInputMode (str(ofppAny | portNumberCustom)): The input mode of port number for port stat learned information.
+        - QueueConfigPortNumber (number): The port number for queue config learned information.
+        - QueueConfigPortNumberInputMode (str(ofppAny | portNumberCustom)): The input mode of port number for queue config learned information.
+        - QueueStatPortNumber (number): The port number for queue statistics learned information.
+        - QueueStatPortNumberInputMode (str(ofppAll | ofppAny | portNumberCustom)): The input mode of port number for queue statistics learned information.
+        - VendorMessageExperimenterType (number): Experimenter type for Vendor Message.
+        - VendorStatExperimenterType (number): Experimenter type for Vendor stat.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

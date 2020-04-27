@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class TableUdf(Base):
     """This object specifies the UDF table properties.
-    The TableUdf class encapsulates a list of tableUdf resources that is managed by the system.
+    The TableUdf class encapsulates a list of tableUdf resources that are managed by the system.
     A list of resources can be retrieved from the server using the TableUdf.find() method.
     """
 
@@ -37,24 +37,24 @@ class TableUdf(Base):
 
     @property
     def Column(self):
-        """An instance of the Column class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column.Column): An instance of the Column class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column.Column)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import Column
         return Column(self)
 
     @property
     def Enabled(self):
-        """If enabled, enables the UDF table for this flow group if it is supported.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, enables the UDF table for this flow group if it is supported.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,44 +62,53 @@ class TableUdf(Base):
         self._set_attribute('enabled', value)
 
     def update(self, Enabled=None):
-        """Updates a child instance of tableUdf on the server.
+        """Updates tableUdf resource on the server.
 
-        Args:
-            Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
+        Args
+        ----
+        - Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Enabled=None):
-        """Finds and retrieves tableUdf data from the server.
+        """Finds and retrieves tableUdf resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve tableUdf data from the server.
-        By default the find method takes no parameters and will retrieve all tableUdf data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tableUdf resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tableUdf resources from the server.
 
-        Args:
-            Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
+        Args
+        ----
+        - Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
 
-        Returns:
-            self: This instance with matching tableUdf data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching tableUdf resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of tableUdf data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the tableUdf data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the tableUdf resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

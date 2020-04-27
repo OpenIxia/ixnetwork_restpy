@@ -36,38 +36,38 @@ class FortyGigLan(Base):
 
     @property
     def Fcoe(self):
-        """An instance of the Fcoe class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe.Fcoe)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
     def TxLane(self):
-        """An instance of the TxLane class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane.TxLane): An instance of the TxLane class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane.TxLane)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
-        """The auto instrumentation mode.
-
-        Returns:
-            str(endOfFrame|floating)
+        """
+        Returns
+        -------
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute('autoInstrumentation')
     @AutoInstrumentation.setter
@@ -76,10 +76,10 @@ class FortyGigLan(Base):
 
     @property
     def EnableLASIMonitoring(self):
-        """If selected, enables LASI monitoring.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, enables LASI monitoring.
         """
         return self._get_attribute('enableLASIMonitoring')
     @EnableLASIMonitoring.setter
@@ -88,10 +88,10 @@ class FortyGigLan(Base):
 
     @property
     def EnablePPM(self):
-        """If true, enables the portsppm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute('enablePPM')
     @EnablePPM.setter
@@ -100,10 +100,10 @@ class FortyGigLan(Base):
 
     @property
     def EnabledFlowControl(self):
-        """Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute('enabledFlowControl')
     @EnabledFlowControl.setter
@@ -112,10 +112,10 @@ class FortyGigLan(Base):
 
     @property
     def FlowControlDirectedAddress(self):
-        """This is the 48-bit MAC address that the port will listen on for a directed pause message.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
         return self._get_attribute('flowControlDirectedAddress')
     @FlowControlDirectedAddress.setter
@@ -124,10 +124,10 @@ class FortyGigLan(Base):
 
     @property
     def Loopback(self):
-        """If enabled, the port is set to internally loopback from transmit to receive.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
         return self._get_attribute('loopback')
     @Loopback.setter
@@ -136,10 +136,10 @@ class FortyGigLan(Base):
 
     @property
     def Ppm(self):
-        """Indicates the value that needs to be adjusted for the line transmit frequency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute('ppm')
     @Ppm.setter
@@ -148,10 +148,10 @@ class FortyGigLan(Base):
 
     @property
     def TransmitClocking(self):
-        """Allows to select the transmit clocing options.
-
-        Returns:
-            str(external|internal|recovered)
+        """
+        Returns
+        -------
+        - str(external | internal | recovered): Allows to select the transmit clocing options.
         """
         return self._get_attribute('transmitClocking')
     @TransmitClocking.setter
@@ -160,10 +160,10 @@ class FortyGigLan(Base):
 
     @property
     def TxIgnoreRxLinkFaults(self):
-        """Tx ignore Rx link fault.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Tx ignore Rx link fault.
         """
         return self._get_attribute('txIgnoreRxLinkFaults')
     @TxIgnoreRxLinkFaults.setter
@@ -171,20 +171,22 @@ class FortyGigLan(Base):
         self._set_attribute('txIgnoreRxLinkFaults', value)
 
     def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
-        """Updates a child instance of fortyGigLan on the server.
+        """Updates fortyGigLan resource on the server.
 
-        Args:
-            AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
-            EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
-            EnablePPM (bool): If true, enables the portsppm.
-            EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-            FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
-            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-            TransmitClocking (str(external|internal|recovered)): Allows to select the transmit clocing options.
-            TxIgnoreRxLinkFaults (bool): Tx ignore Rx link fault.
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - TransmitClocking (str(external | internal | recovered)): Allows to select the transmit clocing options.
+        - TxIgnoreRxLinkFaults (bool): Tx ignore Rx link fault.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologyMulticastMacRange(Base):
     """NOT DEFINED
-    The CustomTopologyMulticastMacRange class encapsulates a list of customTopologyMulticastMacRange resources that is be managed by the user.
+    The CustomTopologyMulticastMacRange class encapsulates a list of customTopologyMulticastMacRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologyMulticastMacRange.find() method.
-    The list can be managed by the user by using the CustomTopologyMulticastMacRange.add() and CustomTopologyMulticastMacRange.remove() methods.
+    The list can be managed by using the CustomTopologyMulticastMacRange.add() and CustomTopologyMulticastMacRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def IncludeMacGroup(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeMacGroup')
     @IncludeMacGroup.setter
@@ -50,10 +50,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def IntraGroupUnicastMacIncrement(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('intraGroupUnicastMacIncrement')
     @IntraGroupUnicastMacIncrement.setter
@@ -62,10 +62,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def MulticastAddressNodeStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('multicastAddressNodeStep')
     @MulticastAddressNodeStep.setter
@@ -74,10 +74,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def MulticastMacCount(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('multicastMacCount')
     @MulticastMacCount.setter
@@ -86,10 +86,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def MulticastMacStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('multicastMacStep')
     @MulticastMacStep.setter
@@ -98,10 +98,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def NumberOfUnicastSourceMacsPerMulticast(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numberOfUnicastSourceMacsPerMulticast')
     @NumberOfUnicastSourceMacsPerMulticast.setter
@@ -110,10 +110,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def SourceGroupMapping(self):
-        """NOT DEFINED
-
-        Returns:
-            str(fully-Meshed|one-To-One|manual-Mapping)
+        """
+        Returns
+        -------
+        - str(fully-Meshed | one-To-One | manual-Mapping): NOT DEFINED
         """
         return self._get_attribute('sourceGroupMapping')
     @SourceGroupMapping.setter
@@ -122,10 +122,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def StartMulticastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('startMulticastMac')
     @StartMulticastMac.setter
@@ -134,10 +134,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def StartUnicastSourceMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('startUnicastSourceMac')
     @StartUnicastSourceMac.setter
@@ -146,10 +146,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def UnicastAddressNodeStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('unicastAddressNodeStep')
     @UnicastAddressNodeStep.setter
@@ -158,10 +158,10 @@ class CustomTopologyMulticastMacRange(Base):
 
     @property
     def VlanId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -169,97 +169,110 @@ class CustomTopologyMulticastMacRange(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Updates a child instance of customTopologyMulticastMacRange on the server.
+        """Updates customTopologyMulticastMacRange resource on the server.
 
-        Args:
-            IncludeMacGroup (bool): NOT DEFINED
-            IntraGroupUnicastMacIncrement (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastMacCount (number): NOT DEFINED
-            MulticastMacStep (str): NOT DEFINED
-            NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastMac (str): NOT DEFINED
-            StartUnicastSourceMac (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeMacGroup (bool): NOT DEFINED
+        - IntraGroupUnicastMacIncrement (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastMacCount (number): NOT DEFINED
+        - MulticastMacStep (str): NOT DEFINED
+        - NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastMac (str): NOT DEFINED
+        - StartUnicastSourceMac (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Adds a new customTopologyMulticastMacRange node on the server and retrieves it in this instance.
+        """Adds a new customTopologyMulticastMacRange resource on the server and adds it to the container.
 
-        Args:
-            IncludeMacGroup (bool): NOT DEFINED
-            IntraGroupUnicastMacIncrement (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastMacCount (number): NOT DEFINED
-            MulticastMacStep (str): NOT DEFINED
-            NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastMac (str): NOT DEFINED
-            StartUnicastSourceMac (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeMacGroup (bool): NOT DEFINED
+        - IntraGroupUnicastMacIncrement (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastMacCount (number): NOT DEFINED
+        - MulticastMacStep (str): NOT DEFINED
+        - NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastMac (str): NOT DEFINED
+        - StartUnicastSourceMac (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologyMulticastMacRange data using find and the newly added customTopologyMulticastMacRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologyMulticastMacRange resources using find and the newly added customTopologyMulticastMacRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologyMulticastMacRange data in this instance from server.
+        """Deletes all the contained customTopologyMulticastMacRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Finds and retrieves customTopologyMulticastMacRange data from the server.
+        """Finds and retrieves customTopologyMulticastMacRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologyMulticastMacRange data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologyMulticastMacRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyMulticastMacRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologyMulticastMacRange resources from the server.
 
-        Args:
-            IncludeMacGroup (bool): NOT DEFINED
-            IntraGroupUnicastMacIncrement (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastMacCount (number): NOT DEFINED
-            MulticastMacStep (str): NOT DEFINED
-            NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastMac (str): NOT DEFINED
-            StartUnicastSourceMac (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeMacGroup (bool): NOT DEFINED
+        - IntraGroupUnicastMacIncrement (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastMacCount (number): NOT DEFINED
+        - MulticastMacStep (str): NOT DEFINED
+        - NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastMac (str): NOT DEFINED
+        - StartUnicastSourceMac (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologyMulticastMacRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologyMulticastMacRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologyMulticastMacRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologyMulticastMacRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologyMulticastMacRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

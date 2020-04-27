@@ -36,10 +36,10 @@ class AdvancedSequenceChecking(Base):
 
     @property
     def AdvancedSequenceThreshold(self):
-        """Signifies the threshold of advanced sequence
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the threshold of advanced sequence
         """
         return self._get_attribute('advancedSequenceThreshold')
     @AdvancedSequenceThreshold.setter
@@ -48,10 +48,10 @@ class AdvancedSequenceChecking(Base):
 
     @property
     def Enabled(self):
-        """If true, enables advanced sequence checking
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables advanced sequence checking
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -59,13 +59,15 @@ class AdvancedSequenceChecking(Base):
         self._set_attribute('enabled', value)
 
     def update(self, AdvancedSequenceThreshold=None, Enabled=None):
-        """Updates a child instance of advancedSequenceChecking on the server.
+        """Updates advancedSequenceChecking resource on the server.
 
-        Args:
-            AdvancedSequenceThreshold (number): Signifies the threshold of advanced sequence
-            Enabled (bool): If true, enables advanced sequence checking
+        Args
+        ----
+        - AdvancedSequenceThreshold (number): Signifies the threshold of advanced sequence
+        - Enabled (bool): If true, enables advanced sequence checking
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

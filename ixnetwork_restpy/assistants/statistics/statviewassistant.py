@@ -9,6 +9,10 @@ import re
 import os
 import time
 
+try:
+    basestring
+except NameError:
+    basestring = str
 
 class StatViewAssistant(object):
     REGEX = 'regex'
@@ -31,11 +35,12 @@ class StatViewAssistant(object):
 
     def __init__(self, IxNetwork, ViewName, Timeout=180, LocalCsvStorage=None):
         """
-        Args:
-            IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
-            ViewName (str): The name of a statistics view, supports regex
-            Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
-            LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. The path must exist and will not be created.
+        Args
+        ----
+        - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
+        - ViewName (str): The name of a statistics view, supports regex
+        - Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
+        - LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. The path must exist and will not be created.
         """
         assert(isinstance(IxNetwork, Ixnetwork))
         self._IxNetwork = IxNetwork
@@ -134,6 +139,8 @@ class StatViewAssistant(object):
             FilterValue (str): Only those rows where the column matches this value will be returned 
         """
         try:
+            if isinstance(FilterValue, basestring) is False:
+                FilterValue = str(FilterValue)
             column_index = self.ColumnHeaders.index(ColumnName)
             if column_index not in self._filters.keys():
                 self._filters[column_index] = []

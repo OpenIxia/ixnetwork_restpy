@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AsExternal(Base):
     """
-    The AsExternal class encapsulates a list of asExternal resources that is managed by the system.
+    The AsExternal class encapsulates a list of asExternal resources that are managed by the system.
     A list of resources can be retrieved from the server using the AsExternal.find() method.
     """
 
@@ -38,9 +38,9 @@ class AsExternal(Base):
     @property
     def AddPrefix(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('addPrefix')
     @AddPrefix.setter
@@ -50,9 +50,9 @@ class AsExternal(Base):
     @property
     def AddPrefixIncrementBy(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('addPrefixIncrementBy')
     @AddPrefixIncrementBy.setter
@@ -62,9 +62,9 @@ class AsExternal(Base):
     @property
     def AddPrefixLength(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('addPrefixLength')
     @AddPrefixLength.setter
@@ -74,9 +74,9 @@ class AsExternal(Base):
     @property
     def AddPrefixOption(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('addPrefixOption')
     @AddPrefixOption.setter
@@ -86,9 +86,9 @@ class AsExternal(Base):
     @property
     def EBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('eBit')
     @EBit.setter
@@ -98,9 +98,9 @@ class AsExternal(Base):
     @property
     def ExternalRouteTag(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('externalRouteTag')
     @ExternalRouteTag.setter
@@ -110,9 +110,9 @@ class AsExternal(Base):
     @property
     def FBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('fBit')
     @FBit.setter
@@ -122,9 +122,9 @@ class AsExternal(Base):
     @property
     def ForwardingAddress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('forwardingAddress')
     @ForwardingAddress.setter
@@ -134,9 +134,9 @@ class AsExternal(Base):
     @property
     def IncrLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrLinkStateId')
     @IncrLinkStateId.setter
@@ -146,9 +146,9 @@ class AsExternal(Base):
     @property
     def LsaCount(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('lsaCount')
     @LsaCount.setter
@@ -158,9 +158,9 @@ class AsExternal(Base):
     @property
     def Metric(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('metric')
     @Metric.setter
@@ -170,9 +170,9 @@ class AsExternal(Base):
     @property
     def OptBitLa(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitLa')
     @OptBitLa.setter
@@ -182,9 +182,9 @@ class AsExternal(Base):
     @property
     def OptBitMc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMc')
     @OptBitMc.setter
@@ -194,9 +194,9 @@ class AsExternal(Base):
     @property
     def OptBitNu(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitNu')
     @OptBitNu.setter
@@ -206,9 +206,9 @@ class AsExternal(Base):
     @property
     def OptBitP(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitP')
     @OptBitP.setter
@@ -218,9 +218,9 @@ class AsExternal(Base):
     @property
     def ReferenceLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('referenceLinkStateId')
     @ReferenceLinkStateId.setter
@@ -230,9 +230,9 @@ class AsExternal(Base):
     @property
     def ReferenceLsType(self):
         """
-
-        Returns:
-            str(ignore|routerLsa|networkLsa)
+        Returns
+        -------
+        - str(ignore | routerLsa | networkLsa): 
         """
         return self._get_attribute('referenceLsType')
     @ReferenceLsType.setter
@@ -242,9 +242,9 @@ class AsExternal(Base):
     @property
     def TBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('tBit')
     @TBit.setter
@@ -252,78 +252,87 @@ class AsExternal(Base):
         self._set_attribute('tBit', value)
 
     def update(self, AddPrefix=None, AddPrefixIncrementBy=None, AddPrefixLength=None, AddPrefixOption=None, EBit=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, ReferenceLinkStateId=None, ReferenceLsType=None, TBit=None):
-        """Updates a child instance of asExternal on the server.
+        """Updates asExternal resource on the server.
 
-        Args:
-            AddPrefix (str): 
-            AddPrefixIncrementBy (number): 
-            AddPrefixLength (number): 
-            AddPrefixOption (number): 
-            EBit (bool): 
-            ExternalRouteTag (str): 
-            FBit (bool): 
-            ForwardingAddress (str): 
-            IncrLinkStateId (str): 
-            LsaCount (number): 
-            Metric (number): 
-            OptBitLa (bool): 
-            OptBitMc (bool): 
-            OptBitNu (bool): 
-            OptBitP (bool): 
-            ReferenceLinkStateId (str): 
-            ReferenceLsType (str(ignore|routerLsa|networkLsa)): 
-            TBit (bool): 
+        Args
+        ----
+        - AddPrefix (str): 
+        - AddPrefixIncrementBy (number): 
+        - AddPrefixLength (number): 
+        - AddPrefixOption (number): 
+        - EBit (bool): 
+        - ExternalRouteTag (str): 
+        - FBit (bool): 
+        - ForwardingAddress (str): 
+        - IncrLinkStateId (str): 
+        - LsaCount (number): 
+        - Metric (number): 
+        - OptBitLa (bool): 
+        - OptBitMc (bool): 
+        - OptBitNu (bool): 
+        - OptBitP (bool): 
+        - ReferenceLinkStateId (str): 
+        - ReferenceLsType (str(ignore | routerLsa | networkLsa)): 
+        - TBit (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AddPrefix=None, AddPrefixIncrementBy=None, AddPrefixLength=None, AddPrefixOption=None, EBit=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, ReferenceLinkStateId=None, ReferenceLsType=None, TBit=None):
-        """Finds and retrieves asExternal data from the server.
+        """Finds and retrieves asExternal resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve asExternal data from the server.
-        By default the find method takes no parameters and will retrieve all asExternal data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve asExternal resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all asExternal resources from the server.
 
-        Args:
-            AddPrefix (str): 
-            AddPrefixIncrementBy (number): 
-            AddPrefixLength (number): 
-            AddPrefixOption (number): 
-            EBit (bool): 
-            ExternalRouteTag (str): 
-            FBit (bool): 
-            ForwardingAddress (str): 
-            IncrLinkStateId (str): 
-            LsaCount (number): 
-            Metric (number): 
-            OptBitLa (bool): 
-            OptBitMc (bool): 
-            OptBitNu (bool): 
-            OptBitP (bool): 
-            ReferenceLinkStateId (str): 
-            ReferenceLsType (str(ignore|routerLsa|networkLsa)): 
-            TBit (bool): 
+        Args
+        ----
+        - AddPrefix (str): 
+        - AddPrefixIncrementBy (number): 
+        - AddPrefixLength (number): 
+        - AddPrefixOption (number): 
+        - EBit (bool): 
+        - ExternalRouteTag (str): 
+        - FBit (bool): 
+        - ForwardingAddress (str): 
+        - IncrLinkStateId (str): 
+        - LsaCount (number): 
+        - Metric (number): 
+        - OptBitLa (bool): 
+        - OptBitMc (bool): 
+        - OptBitNu (bool): 
+        - OptBitP (bool): 
+        - ReferenceLinkStateId (str): 
+        - ReferenceLsType (str(ignore | routerLsa | networkLsa)): 
+        - TBit (bool): 
 
-        Returns:
-            self: This instance with matching asExternal data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching asExternal resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of asExternal data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the asExternal data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the asExternal resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

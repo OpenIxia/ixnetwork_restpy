@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Bool(Base):
     """This specifies the boolean properties of the parameter.
-    The Bool class encapsulates a list of bool resources that is managed by the system.
+    The Bool class encapsulates a list of bool resources that are managed by the system.
     A list of resources can be retrieved from the server using the Bool.find() method.
     """
 
@@ -37,19 +37,19 @@ class Bool(Base):
 
     @property
     def Default(self):
-        """(Read only) Parameter default value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (Read only) Parameter default value.
         """
         return self._get_attribute('default')
 
     @property
     def Value(self):
-        """Parameter bool value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Parameter bool value.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -57,45 +57,54 @@ class Bool(Base):
         self._set_attribute('value', value)
 
     def update(self, Value=None):
-        """Updates a child instance of bool on the server.
+        """Updates bool resource on the server.
 
-        Args:
-            Value (bool): Parameter bool value.
+        Args
+        ----
+        - Value (bool): Parameter bool value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Default=None, Value=None):
-        """Finds and retrieves bool data from the server.
+        """Finds and retrieves bool resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bool data from the server.
-        By default the find method takes no parameters and will retrieve all bool data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bool resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bool resources from the server.
 
-        Args:
-            Default (bool): (Read only) Parameter default value.
-            Value (bool): Parameter bool value.
+        Args
+        ----
+        - Default (bool): (Read only) Parameter default value.
+        - Value (bool): Parameter bool value.
 
-        Returns:
-            self: This instance with matching bool data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bool resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bool data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bool data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bool resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

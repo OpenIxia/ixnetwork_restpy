@@ -2,15 +2,14 @@
 	TestPlatform.Sessions.IxNetwork.Topology...Multivalue objects
 
 """
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
+from ixnetwork_restpy import SessionAssistant
 
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # add virtual ports
 vports = ixnetwork.Vport.add().add().add().add()

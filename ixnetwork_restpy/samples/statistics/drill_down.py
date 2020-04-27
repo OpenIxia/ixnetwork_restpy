@@ -3,15 +3,14 @@ This sample requires a running ixnetwork instance that has traffic being transmi
 """
 
 from time import sleep
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
+from ixnetwork_restpy import SessionAssistant
 
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # get the view you want to drill down on
 caption = 'Traffic Item Statistics'

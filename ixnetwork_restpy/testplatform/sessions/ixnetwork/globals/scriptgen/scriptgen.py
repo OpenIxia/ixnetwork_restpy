@@ -36,38 +36,38 @@ class Scriptgen(Base):
 
     @property
     def Base64CodeOptions(self):
-        """An instance of the Base64CodeOptions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions.Base64CodeOptions): An instance of the Base64CodeOptions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions.Base64CodeOptions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import Base64CodeOptions
         return Base64CodeOptions(self)._select()
 
     @property
     def IxNetCodeOptions(self):
-        """An instance of the IxNetCodeOptions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions.IxNetCodeOptions): An instance of the IxNetCodeOptions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions.IxNetCodeOptions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import IxNetCodeOptions
         return IxNetCodeOptions(self)._select()
 
     @property
     def ConnectHostname(self):
-        """The hostname to be used in the connect command
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The hostname to be used in the connect command
         """
         return self._get_attribute('connectHostname')
     @ConnectHostname.setter
@@ -76,10 +76,10 @@ class Scriptgen(Base):
 
     @property
     def ConnectPort(self):
-        """The port number to be used in the connect command
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The port number to be used in the connect command
         """
         return self._get_attribute('connectPort')
     @ConnectPort.setter
@@ -88,10 +88,10 @@ class Scriptgen(Base):
 
     @property
     def ConnectVersion(self):
-        """The version number to be used in the connect command
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The version number to be used in the connect command
         """
         return self._get_attribute('connectVersion')
     @ConnectVersion.setter
@@ -100,10 +100,10 @@ class Scriptgen(Base):
 
     @property
     def IncludeConnect(self):
-        """Flag to include the connect command
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include the connect command
         """
         return self._get_attribute('includeConnect')
     @IncludeConnect.setter
@@ -112,10 +112,10 @@ class Scriptgen(Base):
 
     @property
     def IncludeTestComposer(self):
-        """Flag to include test composer code
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include test composer code
         """
         return self._get_attribute('includeTestComposer')
     @IncludeTestComposer.setter
@@ -124,10 +124,10 @@ class Scriptgen(Base):
 
     @property
     def Language(self):
-        """Select the target scriptgen language
-
-        Returns:
-            str(perl|python|ruby|tcl)
+        """
+        Returns
+        -------
+        - str(perl | python | ruby | tcl): Select the target scriptgen language
         """
         return self._get_attribute('language')
     @Language.setter
@@ -136,10 +136,10 @@ class Scriptgen(Base):
 
     @property
     def LinePerAttribute(self):
-        """If true the scriptgen output will show each attribute on a separate line
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the scriptgen output will show each attribute on a separate line
         """
         return self._get_attribute('linePerAttribute')
     @LinePerAttribute.setter
@@ -148,10 +148,10 @@ class Scriptgen(Base):
 
     @property
     def OverwriteScriptFilename(self):
-        """If true the file indicated by the script filename will be overwritten
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the file indicated by the script filename will be overwritten
         """
         return self._get_attribute('overwriteScriptFilename')
     @OverwriteScriptFilename.setter
@@ -160,10 +160,10 @@ class Scriptgen(Base):
 
     @property
     def ScriptFilename(self):
-        """The name of the target scriptgen file
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the target scriptgen file
         """
         return self._get_attribute('scriptFilename')
     @ScriptFilename.setter
@@ -172,10 +172,10 @@ class Scriptgen(Base):
 
     @property
     def SerializationType(self):
-        """The scriptgen serialization type
-
-        Returns:
-            str(base64|ixNet)
+        """
+        Returns
+        -------
+        - str(base64 | ixNet): The scriptgen serialization type
         """
         return self._get_attribute('serializationType')
     @SerializationType.setter
@@ -183,42 +183,42 @@ class Scriptgen(Base):
         self._set_attribute('serializationType', value)
 
     def update(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
-        """Updates a child instance of scriptgen on the server.
+        """Updates scriptgen resource on the server.
 
-        Args:
-            ConnectHostname (str): The hostname to be used in the connect command
-            ConnectPort (number): The port number to be used in the connect command
-            ConnectVersion (str): The version number to be used in the connect command
-            IncludeConnect (bool): Flag to include the connect command
-            IncludeTestComposer (bool): Flag to include test composer code
-            Language (str(perl|python|ruby|tcl)): Select the target scriptgen language
-            LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
-            OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten
-            ScriptFilename (str): The name of the target scriptgen file
-            SerializationType (str(base64|ixNet)): The scriptgen serialization type
+        Args
+        ----
+        - ConnectHostname (str): The hostname to be used in the connect command
+        - ConnectPort (number): The port number to be used in the connect command
+        - ConnectVersion (str): The version number to be used in the connect command
+        - IncludeConnect (bool): Flag to include the connect command
+        - IncludeTestComposer (bool): Flag to include test composer code
+        - Language (str(perl | python | ruby | tcl)): Select the target scriptgen language
+        - LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
+        - OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten
+        - ScriptFilename (str): The name of the target scriptgen file
+        - SerializationType (str(base64 | ixNet)): The scriptgen serialization type
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Generate(self, *args, **kwargs):
         """Executes the generate operation on the server.
 
         Generate a script of the currently loaded configuration using the options in the /globals/scriptgen hierarchy.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        generate()
+        generate(Arg2=href)
+        -------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid writeTo file handle the script will be written to.
 
-        generate(Arg2:href)
-            Args:
-                args[0] is Arg2 (obj(ixnetwork_restpy.files.Files)): A valid writeTo file handle the script will be written to.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

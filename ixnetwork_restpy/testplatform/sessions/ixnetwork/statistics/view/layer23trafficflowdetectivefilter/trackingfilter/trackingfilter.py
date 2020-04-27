@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrackingFilter(Base):
     """Tracking filter specification.
-    The TrackingFilter class encapsulates a list of trackingFilter resources that is be managed by the user.
+    The TrackingFilter class encapsulates a list of trackingFilter resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrackingFilter.find() method.
-    The list can be managed by the user by using the TrackingFilter.add() and TrackingFilter.remove() methods.
+    The list can be managed by using the TrackingFilter.add() and TrackingFilter.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TrackingFilter(Base):
 
     @property
     def Operator(self):
-        """The logical operation to be performed.
-
-        Returns:
-            str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isInAnyRange|isNoneOf|isSmaller)
+        """
+        Returns
+        -------
+        - str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller): The logical operation to be performed.
         """
         return self._get_attribute('operator')
     @Operator.setter
@@ -50,10 +50,10 @@ class TrackingFilter(Base):
 
     @property
     def TrackingFilterId(self):
-        """Selected tracking filters from the availableTrackingFilter list.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute('trackingFilterId')
     @TrackingFilterId.setter
@@ -62,10 +62,10 @@ class TrackingFilter(Base):
 
     @property
     def Value(self):
-        """Value of the object
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Value of the object
         """
         return self._get_attribute('value')
     @Value.setter
@@ -73,73 +73,86 @@ class TrackingFilter(Base):
         self._set_attribute('value', value)
 
     def update(self, Operator=None, TrackingFilterId=None, Value=None):
-        """Updates a child instance of trackingFilter on the server.
+        """Updates trackingFilter resource on the server.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isInAnyRange|isNoneOf|isSmaller)): The logical operation to be performed.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Value (list(str)): Value of the object
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Operator=None, TrackingFilterId=None, Value=None):
-        """Adds a new trackingFilter node on the server and retrieves it in this instance.
+        """Adds a new trackingFilter resource on the server and adds it to the container.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isInAnyRange|isNoneOf|isSmaller)): The logical operation to be performed.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Value (list(str)): Value of the object
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object
 
-        Returns:
-            self: This instance with all currently retrieved trackingFilter data using find and the newly added trackingFilter data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trackingFilter resources using find and the newly added trackingFilter resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trackingFilter data in this instance from server.
+        """Deletes all the contained trackingFilter resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Operator=None, TrackingFilterId=None, Value=None):
-        """Finds and retrieves trackingFilter data from the server.
+        """Finds and retrieves trackingFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trackingFilter data from the server.
-        By default the find method takes no parameters and will retrieve all trackingFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trackingFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trackingFilter resources from the server.
 
-        Args:
-            Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isInAnyRange|isNoneOf|isSmaller)): The logical operation to be performed.
-            TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-            Value (list(str)): Value of the object
+        Args
+        ----
+        - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object
 
-        Returns:
-            self: This instance with matching trackingFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trackingFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trackingFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trackingFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trackingFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -37,36 +37,36 @@ interface.
 
     @property
     def GatewayIp(self):
-        """The IP address of the Gateway to the network, typically an interface on the DUT.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the Gateway to the network, typically an interface on the DUT.
         """
         return self._get_attribute('gatewayIp')
 
     @property
     def IpType(self):
-        """The IP version used with this option set: IPv4 or IPv6.
-
-        Returns:
-            str(kIpv4|kIpv6)
+        """
+        Returns
+        -------
+        - str(kIpv4 | kIpv6): The IP version used with this option set: IPv4 or IPv6.
         """
         return self._get_attribute('ipType')
 
     @property
     def OwnIp(self):
-        """The own ip type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The own ip type.
         """
         return self._get_attribute('ownIp')
 
     @property
     def PrefixLength(self):
-        """A learned/allocated IPv4 address prefix length (mask) for this interface.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A learned/allocated IPv4 address prefix length (mask) for this interface.
         """
         return self._get_attribute('prefixLength')

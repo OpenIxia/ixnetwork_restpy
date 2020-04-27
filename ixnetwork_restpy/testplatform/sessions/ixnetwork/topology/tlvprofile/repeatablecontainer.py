@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RepeatableContainer(Base):
     """Tlv repeatable field container used to group multiple fields
-    The RepeatableContainer class encapsulates a list of repeatableContainer resources that is managed by the system.
+    The RepeatableContainer class encapsulates a list of repeatableContainer resources that are managed by the system.
     A list of resources can be retrieved from the server using the RepeatableContainer.find() method.
     """
 
@@ -37,24 +37,24 @@ class RepeatableContainer(Base):
 
     @property
     def Object(self):
-        """An instance of the Object class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object): An instance of the Object class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object import Object
         return Object(self)
 
     @property
     def IsEnabled(self):
-        """Enables/disables this field
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/disables this field
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -63,10 +63,10 @@ class RepeatableContainer(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -74,46 +74,74 @@ class RepeatableContainer(Base):
         self._set_attribute('name', value)
 
     def update(self, IsEnabled=None, Name=None):
-        """Updates a child instance of repeatableContainer on the server.
+        """Updates repeatableContainer resource on the server.
 
-        Args:
-            IsEnabled (bool): Enables/disables this field
-            Name (str): Name of the tlv
+        Args
+        ----
+        - IsEnabled (bool): Enables/disables this field
+        - Name (str): Name of the tlv
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, IsEnabled=None, Name=None):
-        """Finds and retrieves repeatableContainer data from the server.
+        """Finds and retrieves repeatableContainer resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve repeatableContainer data from the server.
-        By default the find method takes no parameters and will retrieve all repeatableContainer data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve repeatableContainer resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all repeatableContainer resources from the server.
 
-        Args:
-            IsEnabled (bool): Enables/disables this field
-            Name (str): Name of the tlv
+        Args
+        ----
+        - IsEnabled (bool): Enables/disables this field
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with matching repeatableContainer data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching repeatableContainer resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of repeatableContainer data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the repeatableContainer data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the repeatableContainer resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def UpdateObjectsCount(self, *args, **kwargs):
+        """Executes the updateObjectsCount operation on the server.
+
+        Update the count in repeatable field
+
+        updateObjectsCount(Arg2=number)
+        -------------------------------
+        - Arg2 (number): The new value of child objects count in repeatable field
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('updateObjectsCount', payload=payload, response_object=None)

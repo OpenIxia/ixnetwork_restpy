@@ -36,10 +36,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplyActions(self):
-        """Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately.
         """
         return self._get_attribute('applyActions')
     @ApplyActions.setter
@@ -48,10 +48,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplyActionsMiss(self):
-        """Select the type of apply action miss capability that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of apply action miss capability that the table miss flow entry will support.
         """
         return self._get_attribute('applyActionsMiss')
     @ApplyActionsMiss.setter
@@ -60,10 +60,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplySetField(self):
-        """Apply set field property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply set field property.
         """
         return self._get_attribute('applySetField')
     @ApplySetField.setter
@@ -72,10 +72,10 @@ class FeaturesSupported(Base):
 
     @property
     def ApplySetFieldMiss(self):
-        """Apply set field for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Apply set field for table-miss.
         """
         return self._get_attribute('applySetFieldMiss')
     @ApplySetFieldMiss.setter
@@ -84,10 +84,10 @@ class FeaturesSupported(Base):
 
     @property
     def Instruction(self):
-        """Select the type of instructions that the table flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of instructions that the table flow entry will support.
         """
         return self._get_attribute('instruction')
     @Instruction.setter
@@ -96,10 +96,10 @@ class FeaturesSupported(Base):
 
     @property
     def InstructionMiss(self):
-        """Select the type of instruction miss capabilities that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of instruction miss capabilities that the table miss flow entry will support.
         """
         return self._get_attribute('instructionMiss')
     @InstructionMiss.setter
@@ -108,10 +108,10 @@ class FeaturesSupported(Base):
 
     @property
     def Match(self):
-        """Select the type of match capability that the table will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of match capability that the table will support.
         """
         return self._get_attribute('match')
     @Match.setter
@@ -120,10 +120,10 @@ class FeaturesSupported(Base):
 
     @property
     def NextTable(self):
-        """Specify the next table property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Specify the next table property.
         """
         return self._get_attribute('nextTable')
     @NextTable.setter
@@ -132,10 +132,10 @@ class FeaturesSupported(Base):
 
     @property
     def NextTableMiss(self):
-        """Specify the next table-miss property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Specify the next table-miss property.
         """
         return self._get_attribute('nextTableMiss')
     @NextTableMiss.setter
@@ -144,10 +144,10 @@ class FeaturesSupported(Base):
 
     @property
     def Wildcards(self):
-        """Select the type of wildcard capability that the table will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of wildcard capability that the table will support.
         """
         return self._get_attribute('wildcards')
     @Wildcards.setter
@@ -156,10 +156,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteActions(self):
-        """Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet.
         """
         return self._get_attribute('writeActions')
     @WriteActions.setter
@@ -168,10 +168,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteActionsMiss(self):
-        """Select the type of write action miss capability that the table miss flow entry will support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select the type of write action miss capability that the table miss flow entry will support.
         """
         return self._get_attribute('writeActionsMiss')
     @WriteActionsMiss.setter
@@ -180,10 +180,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteSetField(self):
-        """Write set field property.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Write set field property.
         """
         return self._get_attribute('writeSetField')
     @WriteSetField.setter
@@ -192,10 +192,10 @@ class FeaturesSupported(Base):
 
     @property
     def WriteSetFieldMiss(self):
-        """Write set field for table-miss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Write set field for table-miss.
         """
         return self._get_attribute('writeSetFieldMiss')
     @WriteSetFieldMiss.setter
@@ -203,25 +203,27 @@ class FeaturesSupported(Base):
         self._set_attribute('writeSetFieldMiss', value)
 
     def update(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
-        """Updates a child instance of featuresSupported on the server.
+        """Updates featuresSupported resource on the server.
 
-        Args:
-            ApplyActions (bool): Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately.
-            ApplyActionsMiss (bool): Select the type of apply action miss capability that the table miss flow entry will support.
-            ApplySetField (bool): Apply set field property.
-            ApplySetFieldMiss (bool): Apply set field for table-miss.
-            Instruction (bool): Select the type of instructions that the table flow entry will support.
-            InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
-            Match (bool): Select the type of match capability that the table will support.
-            NextTable (bool): Specify the next table property.
-            NextTableMiss (bool): Specify the next table-miss property.
-            Wildcards (bool): Select the type of wildcard capability that the table will support.
-            WriteActions (bool): Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet.
-            WriteActionsMiss (bool): Select the type of write action miss capability that the table miss flow entry will support.
-            WriteSetField (bool): Write set field property.
-            WriteSetFieldMiss (bool): Write set field for table-miss.
+        Args
+        ----
+        - ApplyActions (bool): Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately.
+        - ApplyActionsMiss (bool): Select the type of apply action miss capability that the table miss flow entry will support.
+        - ApplySetField (bool): Apply set field property.
+        - ApplySetFieldMiss (bool): Apply set field for table-miss.
+        - Instruction (bool): Select the type of instructions that the table flow entry will support.
+        - InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
+        - Match (bool): Select the type of match capability that the table will support.
+        - NextTable (bool): Specify the next table property.
+        - NextTableMiss (bool): Specify the next table-miss property.
+        - Wildcards (bool): Select the type of wildcard capability that the table will support.
+        - WriteActions (bool): Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet.
+        - WriteActionsMiss (bool): Select the type of write action miss capability that the table miss flow entry will support.
+        - WriteSetField (bool): Write set field property.
+        - WriteSetFieldMiss (bool): Write set field for table-miss.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

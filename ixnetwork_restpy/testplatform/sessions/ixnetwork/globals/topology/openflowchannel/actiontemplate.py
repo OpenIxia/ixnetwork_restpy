@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ActionTemplate(Base):
     """Action Builder Template.
-    The ActionTemplate class encapsulates a list of actionTemplate resources that is be managed by the user.
+    The ActionTemplate class encapsulates a list of actionTemplate resources that are managed by the user.
     A list of resources can be retrieved from the server using the ActionTemplate.find() method.
-    The list can be managed by the user by using the ActionTemplate.add() and ActionTemplate.remove() methods.
+    The list can be managed by using the ActionTemplate.add() and ActionTemplate.remove() methods.
     """
 
     __slots__ = ()
@@ -38,42 +38,42 @@ class ActionTemplate(Base):
 
     @property
     def Action(self):
-        """An instance of the Action class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action.Action): An instance of the Action class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action.Action)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action import Action
         return Action(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -82,10 +82,10 @@ class ActionTemplate(Base):
 
     @property
     def SavedInVersion(self):
-        """The cpf version of the session
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The cpf version of the session
         """
         return self._get_attribute('savedInVersion')
     @SavedInVersion.setter
@@ -93,72 +93,85 @@ class ActionTemplate(Base):
         self._set_attribute('savedInVersion', value)
 
     def update(self, Name=None, SavedInVersion=None):
-        """Updates a child instance of actionTemplate on the server.
+        """Updates actionTemplate resource on the server.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SavedInVersion (str): The cpf version of the session
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SavedInVersion (str): The cpf version of the session
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, SavedInVersion=None):
-        """Adds a new actionTemplate node on the server and retrieves it in this instance.
+        """Adds a new actionTemplate resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SavedInVersion (str): The cpf version of the session
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SavedInVersion (str): The cpf version of the session
 
-        Returns:
-            self: This instance with all currently retrieved actionTemplate data using find and the newly added actionTemplate data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved actionTemplate resources using find and the newly added actionTemplate resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the actionTemplate data in this instance from server.
+        """Deletes all the contained actionTemplate resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, SavedInVersion=None):
-        """Finds and retrieves actionTemplate data from the server.
+        """Finds and retrieves actionTemplate resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve actionTemplate data from the server.
-        By default the find method takes no parameters and will retrieve all actionTemplate data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actionTemplate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all actionTemplate resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SavedInVersion (str): The cpf version of the session
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SavedInVersion (str): The cpf version of the session
 
-        Returns:
-            self: This instance with matching actionTemplate data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching actionTemplate resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of actionTemplate data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the actionTemplate data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the actionTemplate resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

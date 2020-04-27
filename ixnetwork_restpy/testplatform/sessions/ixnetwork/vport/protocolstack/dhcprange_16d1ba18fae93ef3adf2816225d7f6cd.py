@@ -36,24 +36,24 @@ class DhcpRange(Base):
 
     @property
     def VlanIdInfo(self):
-        """An instance of the VlanIdInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_fdf918ae7768193a085064a201f94e15.VlanIdInfo): An instance of the VlanIdInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_fdf918ae7768193a085064a201f94e15.VlanIdInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_fdf918ae7768193a085064a201f94e15 import VlanIdInfo
         return VlanIdInfo(self)
 
     @property
     def ClientOptionSet(self):
-        """The DHCP client options associated with this range.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): The DHCP client options associated with this range.
         """
         return self._get_attribute('clientOptionSet')
     @ClientOptionSet.setter
@@ -62,10 +62,10 @@ class DhcpRange(Base):
 
     @property
     def Count(self):
-        """The number of DHCP clients to be created by this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of DHCP clients to be created by this range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -74,10 +74,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp4Broadcast(self):
-        """If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
         """
         return self._get_attribute('dhcp4Broadcast')
     @Dhcp4Broadcast.setter
@@ -86,10 +86,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp4ParamRequestList(self):
-        """The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         """
         return self._get_attribute('dhcp4ParamRequestList')
     @Dhcp4ParamRequestList.setter
@@ -98,10 +98,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp4ServerAddress(self):
-        """The address of the DHCP server from which the subnet will accept IP addresses.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The address of the DHCP server from which the subnet will accept IP addresses.
         """
         return self._get_attribute('dhcp4ServerAddress')
     @Dhcp4ServerAddress.setter
@@ -110,10 +110,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp4UseFirstServer(self):
-        """If enabled, the subnet accepts the IP addresses offered by the firstserver to respond with an offer of IP addresses.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the subnet accepts the IP addresses offered by the firstserver to respond with an offer of IP addresses.
         """
         return self._get_attribute('dhcp4UseFirstServer')
     @Dhcp4UseFirstServer.setter
@@ -122,10 +122,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6DuidEnterpriseId(self):
-        """The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         """
         return self._get_attribute('dhcp6DuidEnterpriseId')
     @Dhcp6DuidEnterpriseId.setter
@@ -134,10 +134,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6DuidType(self):
-        """DHCP Unique Identifier Type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: DHCP Unique Identifier Type.
         """
         return self._get_attribute('dhcp6DuidType')
     @Dhcp6DuidType.setter
@@ -146,10 +146,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6DuidVendorId(self):
-        """The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
         """
         return self._get_attribute('dhcp6DuidVendorId')
     @Dhcp6DuidVendorId.setter
@@ -158,10 +158,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6DuidVendorIdIncrement(self):
-        """The value by which the VENDOR-ID is incremented for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which the VENDOR-ID is incremented for each DHCP client.
         """
         return self._get_attribute('dhcp6DuidVendorIdIncrement')
     @Dhcp6DuidVendorIdIncrement.setter
@@ -170,10 +170,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6IaId(self):
-        """The identity association unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identity association unique ID for this range.This ID is incremented automaticaly for each DHCP client.
         """
         return self._get_attribute('dhcp6IaId')
     @Dhcp6IaId.setter
@@ -182,10 +182,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6IaIdIncrement(self):
-        """The value by which the IA-ID is incremented for each DHCP client.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which the IA-ID is incremented for each DHCP client.
         """
         return self._get_attribute('dhcp6IaIdIncrement')
     @Dhcp6IaIdIncrement.setter
@@ -194,10 +194,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6IaT1(self):
-        """The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
         """
         return self._get_attribute('dhcp6IaT1')
     @Dhcp6IaT1.setter
@@ -206,10 +206,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6IaT2(self):
-        """The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
         """
         return self._get_attribute('dhcp6IaT2')
     @Dhcp6IaT2.setter
@@ -218,10 +218,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6IaType(self):
-        """Identity Association Type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identity Association Type.
         """
         return self._get_attribute('dhcp6IaType')
     @Dhcp6IaType.setter
@@ -230,10 +230,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6MasterRange(self):
-        """The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=dhcpRange)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         """
         return self._get_attribute('dhcp6MasterRange')
     @Dhcp6MasterRange.setter
@@ -242,10 +242,10 @@ class DhcpRange(Base):
 
     @property
     def Dhcp6ParamRequestList(self):
-        """The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         """
         return self._get_attribute('dhcp6ParamRequestList')
     @Dhcp6ParamRequestList.setter
@@ -254,10 +254,10 @@ class DhcpRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -266,10 +266,10 @@ class DhcpRange(Base):
 
     @property
     def IpType(self):
-        """Defines the version of IP address style to be used for describing the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the version of IP address style to be used for describing the range.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -278,10 +278,10 @@ class DhcpRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -290,19 +290,19 @@ class DhcpRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Relay6HostsPerOptInterfaceId(self):
-        """Number of consecutive hosts with the same interfaceId option.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of consecutive hosts with the same interfaceId option.
         """
         return self._get_attribute('relay6HostsPerOptInterfaceId')
     @Relay6HostsPerOptInterfaceId.setter
@@ -311,10 +311,10 @@ class DhcpRange(Base):
 
     @property
     def Relay6OptInterfaceId(self):
-        """This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit (see RFC3315, section 22.18).The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit (see RFC3315, section 22.18).The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
         """
         return self._get_attribute('relay6OptInterfaceId')
     @Relay6OptInterfaceId.setter
@@ -323,10 +323,10 @@ class DhcpRange(Base):
 
     @property
     def Relay6UseOptInterfaceId(self):
-        """Select to add INTERFACE-ID option to outgoing messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select to add INTERFACE-ID option to outgoing messages.
         """
         return self._get_attribute('relay6UseOptInterfaceId')
     @Relay6UseOptInterfaceId.setter
@@ -335,10 +335,10 @@ class DhcpRange(Base):
 
     @property
     def RelayAddressIncrement(self):
-        """The value by which to increment the IP address for each relay agent.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The value by which to increment the IP address for each relay agent.
         """
         return self._get_attribute('relayAddressIncrement')
     @RelayAddressIncrement.setter
@@ -347,10 +347,10 @@ class DhcpRange(Base):
 
     @property
     def RelayCircuitId(self):
-        """This option is added by relay agents that terminate switched or permanent circuits.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This option is added by relay agents that terminate switched or permanent circuits.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
         """
         return self._get_attribute('relayCircuitId')
     @RelayCircuitId.setter
@@ -359,10 +359,10 @@ class DhcpRange(Base):
 
     @property
     def RelayCount(self):
-        """The number of relay agents to use in this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of relay agents to use in this range.
         """
         return self._get_attribute('relayCount')
     @RelayCount.setter
@@ -371,10 +371,10 @@ class DhcpRange(Base):
 
     @property
     def RelayDestination(self):
-        """The address to which the requests from DHCP clients are be forwarded.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The address to which the requests from DHCP clients are be forwarded.
         """
         return self._get_attribute('relayDestination')
     @RelayDestination.setter
@@ -383,10 +383,10 @@ class DhcpRange(Base):
 
     @property
     def RelayFirstAddress(self):
-        """The IP address used by first DHCP Relay Agent.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address used by first DHCP Relay Agent.
         """
         return self._get_attribute('relayFirstAddress')
     @RelayFirstAddress.setter
@@ -395,10 +395,10 @@ class DhcpRange(Base):
 
     @property
     def RelayFirstVlanId(self):
-        """The first (outer) vlan id to allocate to relay agent interfaces.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first (outer) vlan id to allocate to relay agent interfaces.
         """
         return self._get_attribute('relayFirstVlanId')
     @RelayFirstVlanId.setter
@@ -407,10 +407,10 @@ class DhcpRange(Base):
 
     @property
     def RelayGateway(self):
-        """The gateway address used for all relay agents.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The gateway address used for all relay agents.
         """
         return self._get_attribute('relayGateway')
     @RelayGateway.setter
@@ -419,10 +419,10 @@ class DhcpRange(Base):
 
     @property
     def RelayHostsPerCircuitId(self):
-        """Number of consecutive hosts with the same Circuit ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of consecutive hosts with the same Circuit ID.
         """
         return self._get_attribute('relayHostsPerCircuitId')
     @RelayHostsPerCircuitId.setter
@@ -431,10 +431,10 @@ class DhcpRange(Base):
 
     @property
     def RelayHostsPerRemoteId(self):
-        """Number of consecutive hosts with the same Remote ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of consecutive hosts with the same Remote ID.
         """
         return self._get_attribute('relayHostsPerRemoteId')
     @RelayHostsPerRemoteId.setter
@@ -443,10 +443,10 @@ class DhcpRange(Base):
 
     @property
     def RelayOptionSet(self):
-        """The DHCP relay options associated with this range.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): The DHCP relay options associated with this range.
         """
         return self._get_attribute('relayOptionSet')
     @RelayOptionSet.setter
@@ -455,10 +455,10 @@ class DhcpRange(Base):
 
     @property
     def RelayOverrideVlanSettings(self):
-        """If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
         """
         return self._get_attribute('relayOverrideVlanSettings')
     @RelayOverrideVlanSettings.setter
@@ -467,10 +467,10 @@ class DhcpRange(Base):
 
     @property
     def RelayRemoteId(self):
-        """This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
         """
         return self._get_attribute('relayRemoteId')
     @RelayRemoteId.setter
@@ -479,10 +479,10 @@ class DhcpRange(Base):
 
     @property
     def RelaySubnet(self):
-        """The network mask used for all relay agents.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The network mask used for all relay agents.
         """
         return self._get_attribute('relaySubnet')
     @RelaySubnet.setter
@@ -491,10 +491,10 @@ class DhcpRange(Base):
 
     @property
     def RelayUseCircuitId(self):
-        """Select to add CIRCUIT-ID option to outgoing messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select to add CIRCUIT-ID option to outgoing messages.
         """
         return self._get_attribute('relayUseCircuitId')
     @RelayUseCircuitId.setter
@@ -503,10 +503,10 @@ class DhcpRange(Base):
 
     @property
     def RelayUseRemoteId(self):
-        """Select to add REMOTE-ID option to outgoing messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select to add REMOTE-ID option to outgoing messages.
         """
         return self._get_attribute('relayUseRemoteId')
     @RelayUseRemoteId.setter
@@ -515,10 +515,10 @@ class DhcpRange(Base):
 
     @property
     def RelayUseSuboption6(self):
-        """If true then relays will add relay suboption6 (RFC3993) to the DHCP packages they send to DHCP servers.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true then relays will add relay suboption6 (RFC3993) to the DHCP packages they send to DHCP servers.
         """
         return self._get_attribute('relayUseSuboption6')
     @RelayUseSuboption6.setter
@@ -527,10 +527,10 @@ class DhcpRange(Base):
 
     @property
     def RelayVlanCount(self):
-        """The number of different vlan ids to use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of different vlan ids to use.
         """
         return self._get_attribute('relayVlanCount')
     @RelayVlanCount.setter
@@ -539,10 +539,10 @@ class DhcpRange(Base):
 
     @property
     def RelayVlanIncrMode(self):
-        """The method used to increment VLAN IDs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The method used to increment VLAN IDs.
         """
         return self._get_attribute('relayVlanIncrMode')
     @RelayVlanIncrMode.setter
@@ -551,10 +551,10 @@ class DhcpRange(Base):
 
     @property
     def RelayVlanIncrement(self):
-        """The vlan increment to use for relay interfaces.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The vlan increment to use for relay interfaces.
         """
         return self._get_attribute('relayVlanIncrement')
     @RelayVlanIncrement.setter
@@ -563,10 +563,10 @@ class DhcpRange(Base):
 
     @property
     def RenewTimer(self):
-        """The used-defined lease renewal timer.The value is estimated in seconds and will override the lease renewaltimer if it is not zero and is smaller than server-defined value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The used-defined lease renewal timer.The value is estimated in seconds and will override the lease renewaltimer if it is not zero and is smaller than server-defined value.
         """
         return self._get_attribute('renewTimer')
     @RenewTimer.setter
@@ -575,10 +575,10 @@ class DhcpRange(Base):
 
     @property
     def Suboption6AddressSubnet(self):
-        """The network mask used for all suboption6 addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The network mask used for all suboption6 addresses.
         """
         return self._get_attribute('suboption6AddressSubnet')
     @Suboption6AddressSubnet.setter
@@ -587,10 +587,10 @@ class DhcpRange(Base):
 
     @property
     def Suboption6FirstAddress(self):
-        """We only allow suboption6 to store the IP address of a host to which replies from the DHCP server should be sent.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: We only allow suboption6 to store the IP address of a host to which replies from the DHCP server should be sent.
         """
         return self._get_attribute('suboption6FirstAddress')
     @Suboption6FirstAddress.setter
@@ -599,10 +599,10 @@ class DhcpRange(Base):
 
     @property
     def UseRapidCommit(self):
-        """Enables DHCP clients to negotiate leases with rapid commit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables DHCP clients to negotiate leases with rapid commit.
         """
         return self._get_attribute('useRapidCommit')
     @UseRapidCommit.setter
@@ -611,10 +611,10 @@ class DhcpRange(Base):
 
     @property
     def UseRelayAgent(self):
-        """Activates DHCP Relay Agent Emulation.Use this if the DHCP server is located in a different network.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Activates DHCP Relay Agent Emulation.Use this if the DHCP server is located in a different network.
         """
         return self._get_attribute('useRelayAgent')
     @UseRelayAgent.setter
@@ -623,10 +623,10 @@ class DhcpRange(Base):
 
     @property
     def UseTrustedNetworkElement(self):
-        """Simulate trusted network elements on the port instead of relays - that is, the packets look like normal DHCP packets, but have the relay options added (in case the circuit and Remote ID are set). This makes the remote/circuit id fields available for edit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Simulate trusted network elements on the port instead of relays - that is, the packets look like normal DHCP packets, but have the relay options added (in case the circuit and Remote ID are set). This makes the remote/circuit id fields available for edit.
         """
         return self._get_attribute('useTrustedNetworkElement')
     @UseTrustedNetworkElement.setter
@@ -635,10 +635,10 @@ class DhcpRange(Base):
 
     @property
     def UseVendorClassId(self):
-        """Enables use of the Vendor Class Identifier configured in the field below.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables use of the Vendor Class Identifier configured in the field below.
         """
         return self._get_attribute('useVendorClassId')
     @UseVendorClassId.setter
@@ -647,10 +647,10 @@ class DhcpRange(Base):
 
     @property
     def VendorClassId(self):
-        """This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
         """
         return self._get_attribute('vendorClassId')
     @VendorClassId.setter
@@ -658,78 +658,81 @@ class DhcpRange(Base):
         self._set_attribute('vendorClassId', value)
 
     def update(self, ClientOptionSet=None, Count=None, Dhcp4Broadcast=None, Dhcp4ParamRequestList=None, Dhcp4ServerAddress=None, Dhcp4UseFirstServer=None, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6IaId=None, Dhcp6IaIdIncrement=None, Dhcp6IaT1=None, Dhcp6IaT2=None, Dhcp6IaType=None, Dhcp6MasterRange=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, Relay6HostsPerOptInterfaceId=None, Relay6OptInterfaceId=None, Relay6UseOptInterfaceId=None, RelayAddressIncrement=None, RelayCircuitId=None, RelayCount=None, RelayDestination=None, RelayFirstAddress=None, RelayFirstVlanId=None, RelayGateway=None, RelayHostsPerCircuitId=None, RelayHostsPerRemoteId=None, RelayOptionSet=None, RelayOverrideVlanSettings=None, RelayRemoteId=None, RelaySubnet=None, RelayUseCircuitId=None, RelayUseRemoteId=None, RelayUseSuboption6=None, RelayVlanCount=None, RelayVlanIncrMode=None, RelayVlanIncrement=None, RenewTimer=None, Suboption6AddressSubnet=None, Suboption6FirstAddress=None, UseRapidCommit=None, UseRelayAgent=None, UseTrustedNetworkElement=None, UseVendorClassId=None, VendorClassId=None):
-        """Updates a child instance of dhcpRange on the server.
+        """Updates dhcpRange resource on the server.
 
-        Args:
-            ClientOptionSet (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)): The DHCP client options associated with this range.
-            Count (number): The number of DHCP clients to be created by this range.
-            Dhcp4Broadcast (bool): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
-            Dhcp4ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-            Dhcp4ServerAddress (str): The address of the DHCP server from which the subnet will accept IP addresses.
-            Dhcp4UseFirstServer (bool): If enabled, the subnet accepts the IP addresses offered by the firstserver to respond with an offer of IP addresses.
-            Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
-            Dhcp6DuidType (str): DHCP Unique Identifier Type.
-            Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-            Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
-            Dhcp6IaId (number): The identity association unique ID for this range.This ID is incremented automaticaly for each DHCP client.
-            Dhcp6IaIdIncrement (number): The value by which the IA-ID is incremented for each DHCP client.
-            Dhcp6IaT1 (number): The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
-            Dhcp6IaT2 (number): The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
-            Dhcp6IaType (str): Identity Association Type.
-            Dhcp6MasterRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
-            Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): Defines the version of IP address style to be used for describing the range.
-            Name (str): Name of range
-            Relay6HostsPerOptInterfaceId (number): Number of consecutive hosts with the same interfaceId option.
-            Relay6OptInterfaceId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit (see RFC3315, section 22.18).The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-            Relay6UseOptInterfaceId (bool): Select to add INTERFACE-ID option to outgoing messages.
-            RelayAddressIncrement (str): The value by which to increment the IP address for each relay agent.
-            RelayCircuitId (str): This option is added by relay agents that terminate switched or permanent circuits.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-            RelayCount (number): The number of relay agents to use in this range.
-            RelayDestination (str): The address to which the requests from DHCP clients are be forwarded.
-            RelayFirstAddress (str): The IP address used by first DHCP Relay Agent.
-            RelayFirstVlanId (number): The first (outer) vlan id to allocate to relay agent interfaces.
-            RelayGateway (str): The gateway address used for all relay agents.
-            RelayHostsPerCircuitId (number): Number of consecutive hosts with the same Circuit ID.
-            RelayHostsPerRemoteId (number): Number of consecutive hosts with the same Remote ID.
-            RelayOptionSet (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=dhcpOptionSet)): The DHCP relay options associated with this range.
-            RelayOverrideVlanSettings (bool): If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
-            RelayRemoteId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
-            RelaySubnet (number): The network mask used for all relay agents.
-            RelayUseCircuitId (bool): Select to add CIRCUIT-ID option to outgoing messages.
-            RelayUseRemoteId (bool): Select to add REMOTE-ID option to outgoing messages.
-            RelayUseSuboption6 (bool): If true then relays will add relay suboption6 (RFC3993) to the DHCP packages they send to DHCP servers.
-            RelayVlanCount (number): The number of different vlan ids to use.
-            RelayVlanIncrMode (number): The method used to increment VLAN IDs.
-            RelayVlanIncrement (number): The vlan increment to use for relay interfaces.
-            RenewTimer (number): The used-defined lease renewal timer.The value is estimated in seconds and will override the lease renewaltimer if it is not zero and is smaller than server-defined value.
-            Suboption6AddressSubnet (number): The network mask used for all suboption6 addresses.
-            Suboption6FirstAddress (str): We only allow suboption6 to store the IP address of a host to which replies from the DHCP server should be sent.
-            UseRapidCommit (bool): Enables DHCP clients to negotiate leases with rapid commit.
-            UseRelayAgent (bool): Activates DHCP Relay Agent Emulation.Use this if the DHCP server is located in a different network.
-            UseTrustedNetworkElement (bool): Simulate trusted network elements on the port instead of relays - that is, the packets look like normal DHCP packets, but have the relay options added (in case the circuit and Remote ID are set). This makes the remote/circuit id fields available for edit.
-            UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
-            VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
+        Args
+        ----
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP client options associated with this range.
+        - Count (number): The number of DHCP clients to be created by this range.
+        - Dhcp4Broadcast (bool): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
+        - Dhcp4ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Dhcp4ServerAddress (str): The address of the DHCP server from which the subnet will accept IP addresses.
+        - Dhcp4UseFirstServer (bool): If enabled, the subnet accepts the IP addresses offered by the firstserver to respond with an offer of IP addresses.
+        - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
+        - Dhcp6DuidType (str): DHCP Unique Identifier Type.
+        - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
+        - Dhcp6IaId (number): The identity association unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6IaIdIncrement (number): The value by which the IA-ID is incremented for each DHCP client.
+        - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
+        - Dhcp6IaT2 (number): The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
+        - Dhcp6IaType (str): Identity Association Type.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Name (str): Name of range
+        - Relay6HostsPerOptInterfaceId (number): Number of consecutive hosts with the same interfaceId option.
+        - Relay6OptInterfaceId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit (see RFC3315, section 22.18).The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - Relay6UseOptInterfaceId (bool): Select to add INTERFACE-ID option to outgoing messages.
+        - RelayAddressIncrement (str): The value by which to increment the IP address for each relay agent.
+        - RelayCircuitId (str): This option is added by relay agents that terminate switched or permanent circuits.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - RelayCount (number): The number of relay agents to use in this range.
+        - RelayDestination (str): The address to which the requests from DHCP clients are be forwarded.
+        - RelayFirstAddress (str): The IP address used by first DHCP Relay Agent.
+        - RelayFirstVlanId (number): The first (outer) vlan id to allocate to relay agent interfaces.
+        - RelayGateway (str): The gateway address used for all relay agents.
+        - RelayHostsPerCircuitId (number): Number of consecutive hosts with the same Circuit ID.
+        - RelayHostsPerRemoteId (number): Number of consecutive hosts with the same Remote ID.
+        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP relay options associated with this range.
+        - RelayOverrideVlanSettings (bool): If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
+        - RelayRemoteId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - RelaySubnet (number): The network mask used for all relay agents.
+        - RelayUseCircuitId (bool): Select to add CIRCUIT-ID option to outgoing messages.
+        - RelayUseRemoteId (bool): Select to add REMOTE-ID option to outgoing messages.
+        - RelayUseSuboption6 (bool): If true then relays will add relay suboption6 (RFC3993) to the DHCP packages they send to DHCP servers.
+        - RelayVlanCount (number): The number of different vlan ids to use.
+        - RelayVlanIncrMode (number): The method used to increment VLAN IDs.
+        - RelayVlanIncrement (number): The vlan increment to use for relay interfaces.
+        - RenewTimer (number): The used-defined lease renewal timer.The value is estimated in seconds and will override the lease renewaltimer if it is not zero and is smaller than server-defined value.
+        - Suboption6AddressSubnet (number): The network mask used for all suboption6 addresses.
+        - Suboption6FirstAddress (str): We only allow suboption6 to store the IP address of a host to which replies from the DHCP server should be sent.
+        - UseRapidCommit (bool): Enables DHCP clients to negotiate leases with rapid commit.
+        - UseRelayAgent (bool): Activates DHCP Relay Agent Emulation.Use this if the DHCP server is located in a different network.
+        - UseTrustedNetworkElement (bool): Simulate trusted network elements on the port instead of relays - that is, the packets look like normal DHCP packets, but have the relay options added (in case the circuit and Remote ID are set). This makes the remote/circuit id fields available for edit.
+        - UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
+        - VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -741,16 +744,15 @@ class DhcpRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -762,16 +764,15 @@ class DhcpRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,10 +36,10 @@ class InstructionType(Base):
 
     @property
     def ApplyActions(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('applyActions')
     @ApplyActions.setter
@@ -48,10 +48,10 @@ class InstructionType(Base):
 
     @property
     def ClearActions(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('clearActions')
     @ClearActions.setter
@@ -60,10 +60,10 @@ class InstructionType(Base):
 
     @property
     def Experimenter(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -72,10 +72,10 @@ class InstructionType(Base):
 
     @property
     def GoToTable(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('goToTable')
     @GoToTable.setter
@@ -84,10 +84,10 @@ class InstructionType(Base):
 
     @property
     def Meter(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('meter')
     @Meter.setter
@@ -96,10 +96,10 @@ class InstructionType(Base):
 
     @property
     def WriteActions(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('writeActions')
     @WriteActions.setter
@@ -108,10 +108,10 @@ class InstructionType(Base):
 
     @property
     def WriteMetadata(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('writeMetadata')
     @WriteMetadata.setter
@@ -119,18 +119,20 @@ class InstructionType(Base):
         self._set_attribute('writeMetadata', value)
 
     def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
-        """Updates a child instance of instructionType on the server.
+        """Updates instructionType resource on the server.
 
-        Args:
-            ApplyActions (bool): NOT DEFINED
-            ClearActions (bool): NOT DEFINED
-            Experimenter (bool): NOT DEFINED
-            GoToTable (bool): NOT DEFINED
-            Meter (bool): NOT DEFINED
-            WriteActions (bool): NOT DEFINED
-            WriteMetadata (bool): NOT DEFINED
+        Args
+        ----
+        - ApplyActions (bool): NOT DEFINED
+        - ClearActions (bool): NOT DEFINED
+        - Experimenter (bool): NOT DEFINED
+        - GoToTable (bool): NOT DEFINED
+        - Meter (bool): NOT DEFINED
+        - WriteActions (bool): NOT DEFINED
+        - WriteMetadata (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

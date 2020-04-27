@@ -36,63 +36,63 @@ class DhcpV4DiscoveredInfo(Base):
 
     @property
     def Gateway(self):
-        """(Read only) A learned/allocated IPv4 Gateway address for this interface on the router that connects to the network segment on which the source host is located.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read only) A learned/allocated IPv4 Gateway address for this interface on the router that connects to the network segment on which the source host is located.
         """
         return self._get_attribute('gateway')
 
     @property
     def Ipv4Address(self):
-        """(Read only) A learned/allocated IPv4 address for this interface,
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read only) A learned/allocated IPv4 address for this interface,
         """
         return self._get_attribute('ipv4Address')
 
     @property
     def Ipv4Mask(self):
-        """(Read only) A 32-bit address mask used in IP to indicate the bits of an IP address that are being used for the subnet address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read only) A 32-bit address mask used in IP to indicate the bits of an IP address that are being used for the subnet address.
         """
         return self._get_attribute('ipv4Mask')
 
     @property
     def IsDhcpV4LearnedInfoRefreshed(self):
-        """(Read Only) When true, the DHCPv4 discovered information is refreshed automatically.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (Read Only) When true, the DHCPv4 discovered information is refreshed automatically.
         """
         return self._get_attribute('isDhcpV4LearnedInfoRefreshed')
 
     @property
     def LeaseDuration(self):
-        """(Read Only) The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read Only) The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
         """
         return self._get_attribute('leaseDuration')
 
     @property
     def ProtocolInterface(self):
-        """(Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
         """
         return self._get_attribute('protocolInterface')
 
     @property
     def Tlv(self):
-        """(Read only) Type Length Value for DHCPv4.
-
-        Returns:
-            list(dict(arg1:number,arg2:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:str)): (Read only) Type Length Value for DHCPv4.
         """
         return self._get_attribute('tlv')

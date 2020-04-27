@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableTargetRowFilters(Base):
     """Provides a list of filters that can be used to select the row used to perform the drill-down
-    The AvailableTargetRowFilters class encapsulates a list of availableTargetRowFilters resources that is managed by the system.
+    The AvailableTargetRowFilters class encapsulates a list of availableTargetRowFilters resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableTargetRowFilters.find() method.
     """
 
@@ -36,30 +36,36 @@ class AvailableTargetRowFilters(Base):
         super(AvailableTargetRowFilters, self).__init__(parent)
 
     def find(self):
-        """Finds and retrieves availableTargetRowFilters data from the server.
+        """Finds and retrieves availableTargetRowFilters resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableTargetRowFilters data from the server.
-        By default the find method takes no parameters and will retrieve all availableTargetRowFilters data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableTargetRowFilters resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableTargetRowFilters resources from the server.
 
-        Returns:
-            self: This instance with matching availableTargetRowFilters data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableTargetRowFilters resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableTargetRowFilters data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableTargetRowFilters data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableTargetRowFilters resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

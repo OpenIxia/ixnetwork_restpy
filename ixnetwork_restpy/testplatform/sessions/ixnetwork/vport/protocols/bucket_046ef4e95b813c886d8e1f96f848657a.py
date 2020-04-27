@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Bucket(Base):
     """Buckets imply some actions that are applied to packets sent to the group
-    The Bucket class encapsulates a list of bucket resources that is be managed by the user.
+    The Bucket class encapsulates a list of bucket resources that are managed by the user.
     A list of resources can be retrieved from the server using the Bucket.find() method.
-    The list can be managed by the user by using the Bucket.add() and Bucket.remove() methods.
+    The list can be managed by using the Bucket.add() and Bucket.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Bucket(Base):
 
     @property
     def BucketAction(self):
-        """An instance of the BucketAction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_f3d2d21723935ed5eae331dafe9eb9c6.BucketAction): An instance of the BucketAction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_f3d2d21723935ed5eae331dafe9eb9c6.BucketAction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_f3d2d21723935ed5eae331dafe9eb9c6 import BucketAction
         return BucketAction(self)
 
     @property
     def Description(self):
-        """A description of the bucket.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A description of the bucket.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -64,10 +64,10 @@ class Bucket(Base):
 
     @property
     def WatchGroup(self):
-        """A group whose state determines whether this bucket is live.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A group whose state determines whether this bucket is live.
         """
         return self._get_attribute('watchGroup')
     @WatchGroup.setter
@@ -76,10 +76,10 @@ class Bucket(Base):
 
     @property
     def WatchPort(self):
-        """A Port whose state determines whether this bucket is live.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A Port whose state determines whether this bucket is live.
         """
         return self._get_attribute('watchPort')
     @WatchPort.setter
@@ -88,10 +88,10 @@ class Bucket(Base):
 
     @property
     def Weight(self):
-        """Specify the weight of buckets. The range allowed is 0-65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the weight of buckets. The range allowed is 0-65535
         """
         return self._get_attribute('weight')
     @Weight.setter
@@ -99,76 +99,89 @@ class Bucket(Base):
         self._set_attribute('weight', value)
 
     def update(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
-        """Updates a child instance of bucket on the server.
+        """Updates bucket resource on the server.
 
-        Args:
-            Description (str): A description of the bucket.
-            WatchGroup (number): A group whose state determines whether this bucket is live.
-            WatchPort (number): A Port whose state determines whether this bucket is live.
-            Weight (number): Specify the weight of buckets. The range allowed is 0-65535
+        Args
+        ----
+        - Description (str): A description of the bucket.
+        - WatchGroup (number): A group whose state determines whether this bucket is live.
+        - WatchPort (number): A Port whose state determines whether this bucket is live.
+        - Weight (number): Specify the weight of buckets. The range allowed is 0-65535
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
-        """Adds a new bucket node on the server and retrieves it in this instance.
+        """Adds a new bucket resource on the server and adds it to the container.
 
-        Args:
-            Description (str): A description of the bucket.
-            WatchGroup (number): A group whose state determines whether this bucket is live.
-            WatchPort (number): A Port whose state determines whether this bucket is live.
-            Weight (number): Specify the weight of buckets. The range allowed is 0-65535
+        Args
+        ----
+        - Description (str): A description of the bucket.
+        - WatchGroup (number): A group whose state determines whether this bucket is live.
+        - WatchPort (number): A Port whose state determines whether this bucket is live.
+        - Weight (number): Specify the weight of buckets. The range allowed is 0-65535
 
-        Returns:
-            self: This instance with all currently retrieved bucket data using find and the newly added bucket data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bucket resources using find and the newly added bucket resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bucket data in this instance from server.
+        """Deletes all the contained bucket resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
-        """Finds and retrieves bucket data from the server.
+        """Finds and retrieves bucket resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bucket data from the server.
-        By default the find method takes no parameters and will retrieve all bucket data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bucket resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bucket resources from the server.
 
-        Args:
-            Description (str): A description of the bucket.
-            WatchGroup (number): A group whose state determines whether this bucket is live.
-            WatchPort (number): A Port whose state determines whether this bucket is live.
-            Weight (number): Specify the weight of buckets. The range allowed is 0-65535
+        Args
+        ----
+        - Description (str): A description of the bucket.
+        - WatchGroup (number): A group whose state determines whether this bucket is live.
+        - WatchPort (number): A Port whose state determines whether this bucket is live.
+        - Weight (number): Specify the weight of buckets. The range allowed is 0-65535
 
-        Returns:
-            self: This instance with matching bucket data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bucket resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bucket data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bucket data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bucket resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

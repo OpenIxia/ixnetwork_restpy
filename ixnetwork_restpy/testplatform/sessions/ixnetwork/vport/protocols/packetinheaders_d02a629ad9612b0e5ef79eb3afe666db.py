@@ -36,10 +36,10 @@ class PacketInHeaders(Base):
 
     @property
     def EthernetDestinationAddress(self):
-        """Indicates the Ethernet destination address for the packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the Ethernet destination address for the packet.
         """
         return self._get_attribute('ethernetDestinationAddress')
     @EthernetDestinationAddress.setter
@@ -48,10 +48,10 @@ class PacketInHeaders(Base):
 
     @property
     def EthernetSourceAddress(self):
-        """Indicates the ethernet address of the source from which this packet arrived.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the ethernet address of the source from which this packet arrived.
         """
         return self._get_attribute('ethernetSourceAddress')
     @EthernetSourceAddress.setter
@@ -60,10 +60,10 @@ class PacketInHeaders(Base):
 
     @property
     def EthernetType(self):
-        """Indicates the ethernet frame type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the ethernet frame type.
         """
         return self._get_attribute('ethernetType')
     @EthernetType.setter
@@ -72,10 +72,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4DestinationAddress(self):
-        """Indicates the IPv4 destination address for this packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv4 destination address for this packet.
         """
         return self._get_attribute('ipv4DestinationAddress')
     @Ipv4DestinationAddress.setter
@@ -84,10 +84,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4Protocol(self):
-        """Defines the protocol used in the data portion of the IP datagram.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the protocol used in the data portion of the IP datagram.
         """
         return self._get_attribute('ipv4Protocol')
     @Ipv4Protocol.setter
@@ -96,10 +96,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4SourceAddress(self):
-        """Indicates the IPv4 address of the source from which this packet arrived.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv4 address of the source from which this packet arrived.
         """
         return self._get_attribute('ipv4SourceAddress')
     @Ipv4SourceAddress.setter
@@ -108,10 +108,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6DestinationAddress(self):
-        """Indicates the IPv6 destination address for this packet.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv6 destination address for this packet.
         """
         return self._get_attribute('ipv6DestinationAddress')
     @Ipv6DestinationAddress.setter
@@ -120,10 +120,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6FlowLabel(self):
-        """Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
         """
         return self._get_attribute('ipv6FlowLabel')
     @Ipv6FlowLabel.setter
@@ -132,10 +132,10 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6SourceAddress(self):
-        """Indicates the IPv6 address of the source from which this packet arrived.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the IPv6 address of the source from which this packet arrived.
         """
         return self._get_attribute('ipv6SourceAddress')
     @Ipv6SourceAddress.setter
@@ -144,10 +144,10 @@ class PacketInHeaders(Base):
 
     @property
     def TcpDestinationPort(self):
-        """Identifies the TCP port number of the destination application program.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identifies the TCP port number of the destination application program.
         """
         return self._get_attribute('tcpDestinationPort')
     @TcpDestinationPort.setter
@@ -156,10 +156,10 @@ class PacketInHeaders(Base):
 
     @property
     def TcpSourcePort(self):
-        """Identifies the TCP port number of the source application program.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identifies the TCP port number of the source application program.
         """
         return self._get_attribute('tcpSourcePort')
     @TcpSourcePort.setter
@@ -168,10 +168,10 @@ class PacketInHeaders(Base):
 
     @property
     def UdpDestinationPort(self):
-        """Identifies the UDP port number of the destination application program.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identifies the UDP port number of the destination application program.
         """
         return self._get_attribute('udpDestinationPort')
     @UdpDestinationPort.setter
@@ -180,10 +180,10 @@ class PacketInHeaders(Base):
 
     @property
     def UdpSourcePort(self):
-        """Identifies the UDP port number of the source application program.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Identifies the UDP port number of the source application program.
         """
         return self._get_attribute('udpSourcePort')
     @UdpSourcePort.setter
@@ -192,19 +192,19 @@ class PacketInHeaders(Base):
 
     @property
     def UniquePacketCount(self):
-        """Indicates the packet-in count in this Range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the packet-in count in this Range.
         """
         return self._get_attribute('uniquePacketCount')
 
     @property
     def VlanId(self):
-        """Indicates the field specifying the VLAN to which the frame belongs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the field specifying the VLAN to which the frame belongs.
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -213,10 +213,10 @@ class PacketInHeaders(Base):
 
     @property
     def VlanPriority(self):
-        """Indicates the frame priority level.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the frame priority level.
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -224,26 +224,28 @@ class PacketInHeaders(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, EthernetDestinationAddress=None, EthernetSourceAddress=None, EthernetType=None, Ipv4DestinationAddress=None, Ipv4Protocol=None, Ipv4SourceAddress=None, Ipv6DestinationAddress=None, Ipv6FlowLabel=None, Ipv6SourceAddress=None, TcpDestinationPort=None, TcpSourcePort=None, UdpDestinationPort=None, UdpSourcePort=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of packetInHeaders on the server.
+        """Updates packetInHeaders resource on the server.
 
-        Args:
-            EthernetDestinationAddress (str): Indicates the Ethernet destination address for the packet.
-            EthernetSourceAddress (str): Indicates the ethernet address of the source from which this packet arrived.
-            EthernetType (str): Indicates the ethernet frame type.
-            Ipv4DestinationAddress (str): Indicates the IPv4 destination address for this packet.
-            Ipv4Protocol (str): Defines the protocol used in the data portion of the IP datagram.
-            Ipv4SourceAddress (str): Indicates the IPv4 address of the source from which this packet arrived.
-            Ipv6DestinationAddress (str): Indicates the IPv6 destination address for this packet.
-            Ipv6FlowLabel (str): Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
-            Ipv6SourceAddress (str): Indicates the IPv6 address of the source from which this packet arrived.
-            TcpDestinationPort (str): Identifies the TCP port number of the destination application program.
-            TcpSourcePort (str): Identifies the TCP port number of the source application program.
-            UdpDestinationPort (str): Identifies the UDP port number of the destination application program.
-            UdpSourcePort (str): Identifies the UDP port number of the source application program.
-            VlanId (str): Indicates the field specifying the VLAN to which the frame belongs.
-            VlanPriority (str): Indicates the frame priority level.
+        Args
+        ----
+        - EthernetDestinationAddress (str): Indicates the Ethernet destination address for the packet.
+        - EthernetSourceAddress (str): Indicates the ethernet address of the source from which this packet arrived.
+        - EthernetType (str): Indicates the ethernet frame type.
+        - Ipv4DestinationAddress (str): Indicates the IPv4 destination address for this packet.
+        - Ipv4Protocol (str): Defines the protocol used in the data portion of the IP datagram.
+        - Ipv4SourceAddress (str): Indicates the IPv4 address of the source from which this packet arrived.
+        - Ipv6DestinationAddress (str): Indicates the IPv6 destination address for this packet.
+        - Ipv6FlowLabel (str): Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
+        - Ipv6SourceAddress (str): Indicates the IPv6 address of the source from which this packet arrived.
+        - TcpDestinationPort (str): Identifies the TCP port number of the destination application program.
+        - TcpSourcePort (str): Identifies the TCP port number of the source application program.
+        - UdpDestinationPort (str): Identifies the UDP port number of the destination application program.
+        - UdpSourcePort (str): Identifies the UDP port number of the source application program.
+        - VlanId (str): Indicates the field specifying the VLAN to which the frame belongs.
+        - VlanPriority (str): Indicates the frame priority level.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,28 +36,28 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FlowStatOutGroupMode(self):
-        """Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
-
-        Returns:
-            str(oFPGALL|oFPGANY|outGroupCustom)
+        """
+        Returns
+        -------
+        - str(oFPGALL | oFPGANY | outGroupCustom): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
         """
         return self._get_attribute('flowStatOutGroupMode')
     @FlowStatOutGroupMode.setter
@@ -66,10 +66,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatOutGroupValue(self):
-        """If Out Group is Custom/Manual, type the output group value in the box provided
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If Out Group is Custom/Manual, type the output group value in the box provided
         """
         return self._get_attribute('flowStatOutGroupValue')
     @FlowStatOutGroupValue.setter
@@ -78,10 +78,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatOutPortMode(self):
-        """Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
-
-        Returns:
-            str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|oFPP_ANY|outPortCustom)
+        """
+        Returns
+        -------
+        - str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | oFPP_ANY | outPortCustom): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
         """
         return self._get_attribute('flowStatOutPortMode')
     @FlowStatOutPortMode.setter
@@ -90,10 +90,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatOutPortValue(self):
-        """If Out Port is Custom/Manual, type the output port value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If Out Port is Custom/Manual, type the output port value.
         """
         return self._get_attribute('flowStatOutPortValue')
     @FlowStatOutPortValue.setter
@@ -102,10 +102,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatTableIdMode(self):
-        """The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
-
-        Returns:
-            str(tableIdAllTables|tableIdCustom)
+        """
+        Returns
+        -------
+        - str(tableIdAllTables | tableIdCustom): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
         """
         return self._get_attribute('flowStatTableIdMode')
     @FlowStatTableIdMode.setter
@@ -114,10 +114,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatTableIdValue(self):
-        """If Table ID is Custom/ Manual, type the Table ID Number
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If Table ID is Custom/ Manual, type the Table ID Number
         """
         return self._get_attribute('flowStatTableIdValue')
     @FlowStatTableIdValue.setter
@@ -126,10 +126,10 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -137,18 +137,20 @@ class OFSwitchLearnedInfoConfig(Base):
         self._set_attribute('name', value)
 
     def update(self, FlowStatOutGroupMode=None, FlowStatOutGroupValue=None, FlowStatOutPortMode=None, FlowStatOutPortValue=None, FlowStatTableIdMode=None, FlowStatTableIdValue=None, Name=None):
-        """Updates a child instance of oFSwitchLearnedInfoConfig on the server.
+        """Updates oFSwitchLearnedInfoConfig resource on the server.
 
-        Args:
-            FlowStatOutGroupMode (str(oFPGALL|oFPGANY|outGroupCustom)): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
-            FlowStatOutGroupValue (number): If Out Group is Custom/Manual, type the output group value in the box provided
-            FlowStatOutPortMode (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|oFPP_ANY|outPortCustom)): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
-            FlowStatOutPortValue (number): If Out Port is Custom/Manual, type the output port value.
-            FlowStatTableIdMode (str(tableIdAllTables|tableIdCustom)): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
-            FlowStatTableIdValue (number): If Table ID is Custom/ Manual, type the Table ID Number
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - FlowStatOutGroupMode (str(oFPGALL | oFPGANY | outGroupCustom)): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
+        - FlowStatOutGroupValue (number): If Out Group is Custom/Manual, type the output group value in the box provided
+        - FlowStatOutPortMode (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | oFPP_ANY | outPortCustom)): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
+        - FlowStatOutPortValue (number): If Out Port is Custom/Manual, type the output port value.
+        - FlowStatTableIdMode (str(tableIdAllTables | tableIdCustom)): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
+        - FlowStatTableIdValue (number): If Table ID is Custom/ Manual, type the Table ID Number
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,494 +36,538 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def BgpAsPathSegmentList(self):
-        """An instance of the BgpAsPathSegmentList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList): An instance of the BgpAsPathSegmentList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist.BgpAsPathSegmentList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist import BgpAsPathSegmentList
         return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
-        """An instance of the BgpClusterIdList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList): An instance of the BgpClusterIdList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist.BgpClusterIdList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist import BgpClusterIdList
         return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
-        """An instance of the BgpCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList): An instance of the BgpCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist.BgpCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist import BgpCommunitiesList
         return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
-        """An instance of the BgpExtendedCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist.BgpExtendedCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist import BgpExtendedCommunitiesList
         return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpLargeCommunitiesList(self):
-        """An instance of the BgpLargeCommunitiesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist.BgpLargeCommunitiesList): An instance of the BgpLargeCommunitiesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist.BgpLargeCommunitiesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist import BgpLargeCommunitiesList
         return BgpLargeCommunitiesList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AggregatorAs(self):
-        """Aggregator AS
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorAs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorAs'))
 
     @property
     def AggregatorId(self):
-        """Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('aggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('aggregatorId'))
 
     @property
     def AsNumber2Bytes(self):
-        """AS 2-Bytes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumber2Bytes')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS 2-Bytes
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumber2Bytes'))
 
     @property
     def AsNumber4Bytes(self):
-        """AS 4-Bytes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumber4Bytes')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS 4-Bytes
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumber4Bytes'))
 
     @property
     def AsSetMode(self):
-        """AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asSetMode'))
 
     @property
     def AssignedNumber2Bytes(self):
-        """Assigned Number(2 Octets)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumber2Bytes')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(2 Octets)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumber2Bytes'))
 
     @property
     def AssignedNumber4Bytes(self):
-        """Assigned Number(4 Octets)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumber4Bytes')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(4 Octets)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumber4Bytes'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DestPortMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destPortMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destPortMatch'))
 
     @property
     def DestPrefixLengthV6(self):
-        """Destination Prefix Length (bits) - Controlled by Enable Destination Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destPrefixLengthV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Length (bits) - Controlled by Enable Destination Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destPrefixLengthV6'))
 
     @property
     def DestPrefixOffset(self):
-        """Destination Prefix Offset (bits) - Controlled by Enable Destination Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destPrefixOffset')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Offset (bits) - Controlled by Enable Destination Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destPrefixOffset'))
 
     @property
     def DestPrefixV6(self):
-        """Destination Prefix - Controlled by Enable Destination Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destPrefixV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix - Controlled by Enable Destination Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destPrefixV6'))
 
     @property
     def DscpMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 10, 10-20, <10, 10&20, 10|20-30&!25|>=50 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dscpMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 10, 10-20, <10, 10&20, 10|20-30&!25|>=50 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dscpMatch'))
 
     @property
     def EnableAggregatorId(self):
-        """Enable Aggregator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAggregatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAggregatorId'))
 
     @property
     def EnableAsPathSegments(self):
-        """Enable AS Path Segments
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAsPathSegments')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAsPathSegments'))
 
     @property
     def EnableAtomicAggregate(self):
-        """Enable Atomic Aggregate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAtomicAggregate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAtomicAggregate'))
 
     @property
     def EnableCluster(self):
-        """Enable Cluster
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCluster')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCluster'))
 
     @property
     def EnableCommunity(self):
-        """Enable Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableCommunity'))
 
     @property
     def EnableDestPrefixV6(self):
-        """Click to Enable Destination Prefix and Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableDestPrefixV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Click to Enable Destination Prefix and Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableDestPrefixV6'))
 
     @property
     def EnableExtendedCommunity(self):
-        """Enable Extended Community
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableExtendedCommunity')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableExtendedCommunity'))
 
     @property
     def EnableLargeCommunities(self):
-        """Enable Large Communities Attribute
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableLargeCommunities')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Large Communities Attribute
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLargeCommunities'))
 
     @property
     def EnableLocalPreference(self):
-        """Enable Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableLocalPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableLocalPreference'))
 
     @property
     def EnableMultiExitDiscriminator(self):
-        """Enable Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMultiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMultiExitDiscriminator'))
 
     @property
     def EnableNextHop(self):
-        """Enable Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableNextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableNextHop'))
 
     @property
     def EnableOrigin(self):
-        """Enable Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOrigin'))
 
     @property
     def EnableOriginatorId(self):
-        """Enable Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableOriginatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOriginatorId'))
 
     @property
     def EnableRedirect(self):
-        """Enable Redirect
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRedirect')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Redirect
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRedirect'))
 
     @property
     def EnableReirectIPv6(self):
-        """Enable Redirect-IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableReirectIPv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Redirect-IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableReirectIPv6'))
 
     @property
     def EnableSourcePrefixV6(self):
-        """Click to Enable Source Prefix and Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableSourcePrefixV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Click to Enable Source Prefix and Prefix Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableSourcePrefixV6'))
 
     @property
     def EnableTrafficAction(self):
-        """Enable Traffic Action
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableTrafficAction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Action
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableTrafficAction'))
 
     @property
     def EnableTrafficMarketing(self):
-        """Enable Traffic Marketing
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableTrafficMarketing')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Marketing
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableTrafficMarketing'))
 
     @property
     def EnableTrafficMarking(self):
-        """Enable Traffic Marking
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableTrafficMarking')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Marking
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableTrafficMarking'))
 
     @property
     def EnableTrafficRate(self):
-        """Enable Traffic Rate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableTrafficRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Rate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableTrafficRate'))
 
     @property
     def FlowLabel(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flowLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flowLabel'))
 
     @property
     def FlowSpecName(self):
-        """Flow Spec Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flowSpecName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flow Spec Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flowSpecName'))
 
     @property
     def FragmentMatchV6(self):
-        """Supported Flags: lf,ff,isf join different matchcriteria using | or & join flags using | (bitwise or) Eg. (lf), (lf|ff|isf), (not)(lf|isf), (not|match)(ff)|(isf|lf) Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fragmentMatchV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: lf,ff,isf join different matchcriteria using | or & join flags using | (bitwise or) Eg. (lf), (lf|ff|isf), (not)(lf|isf), (not|match)(ff)|(isf|lf) Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fragmentMatchV6'))
 
     @property
     def IcmpCodeMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('icmpCodeMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('icmpCodeMatch'))
 
     @property
     def IcmpTypeMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('icmpTypeMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('icmpTypeMatch'))
 
     @property
     def Ip(self):
-        """IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ip')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ip'))
 
     @property
     def IpPacketLenMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipPacketLenMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipPacketLenMatch'))
 
     @property
     def Ipv4NextHop(self):
-        """IPv4 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4NextHop'))
 
     @property
     def Ipv6NextHop(self):
-        """IPv6 Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6NextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NextHop'))
 
     @property
     def LocalPreference(self):
-        """Local Preference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('localPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('localPreference'))
 
     @property
     def MultiExitDiscriminator(self):
-        """Multi Exit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('multiExitDiscriminator')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('multiExitDiscriminator'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -532,19 +576,20 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NextHeader(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nextHeader')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nextHeader'))
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
-        """Number Of AS Path Segments Per Route Range
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number Of AS Path Segments Per Route Range
         """
         return self._get_attribute('noOfASPathSegmentsPerRouteRange')
     @NoOfASPathSegmentsPerRouteRange.setter
@@ -553,10 +598,10 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NoOfClusters(self):
-        """Number of Clusters
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Clusters
         """
         return self._get_attribute('noOfClusters')
     @NoOfClusters.setter
@@ -565,10 +610,10 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NoOfCommunities(self):
-        """Number of Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Communities
         """
         return self._get_attribute('noOfCommunities')
     @NoOfCommunities.setter
@@ -577,10 +622,10 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NoOfExtendedCommunity(self):
-        """Number of Extended Communities
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Extended Communities
         """
         return self._get_attribute('noOfExtendedCommunity')
     @NoOfExtendedCommunity.setter
@@ -589,10 +634,10 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NoOfLargeCommunities(self):
-        """Number of Large Communities (Should be in the range 1-32)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Large Communities (Should be in the range 1-32)
         """
         return self._get_attribute('noOfLargeCommunities')
     @NoOfLargeCommunities.setter
@@ -601,280 +646,305 @@ class BgpFlowSpecRangesListV6(Base):
 
     @property
     def NumberOfFlows(self):
-        """Number of Flows in a Flow Range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberOfFlows')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Flows in a Flow Range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberOfFlows'))
 
     @property
     def Origin(self):
-        """Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('origin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('origin'))
 
     @property
     def OriginatorId(self):
-        """Originator ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('originatorId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('originatorId'))
 
     @property
     def OverridePeerAsSetMode(self):
-        """Override Peer AS# Set Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('overridePeerAsSetMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('overridePeerAsSetMode'))
 
     @property
     def PortMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried This Field Matches Source OR Destination TCP/UDP Ports
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('portMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried This Field Matches Source OR Destination TCP/UDP Ports
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('portMatch'))
 
     @property
     def RedirectCBit(self):
-        """C Bit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redirectCBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): C Bit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redirectCBit'))
 
     @property
     def RedirectExtCommunityType(self):
-        """Extended Community Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redirectExtCommunityType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Extended Community Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redirectExtCommunityType'))
 
     @property
     def RedirectIPv6(self):
-        """Redirect-IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redirectIPv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redirect-IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redirectIPv6'))
 
     @property
     def Redirectnexthop(self):
-        """Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redirectnexthop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redirectnexthop'))
 
     @property
     def SetNextHop(self):
-        """Set Next Hop
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('setNextHop')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHop'))
 
     @property
     def SetNextHopIpType(self):
-        """Set Next Hop IP Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('setNextHopIpType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setNextHopIpType'))
 
     @property
     def SourcePortMatch(self):
-        """Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourcePortMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourcePortMatch'))
 
     @property
     def SourcePrefixLengthV6(self):
-        """Source Prefix Length (bits) - Controlled by Enable Source Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourcePrefixLengthV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Prefix Length (bits) - Controlled by Enable Source Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourcePrefixLengthV6'))
 
     @property
     def SourcePrefixV6(self):
-        """Source Prefix - Controlled by Enable Source Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourcePrefixV6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Prefix - Controlled by Enable Source Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourcePrefixV6'))
 
     @property
     def SrcPrefixOffset(self):
-        """Source Prefix Offset (bits) - Controlled by Enable Source Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srcPrefixOffset')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Prefix Offset (bits) - Controlled by Enable Source Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srcPrefixOffset'))
 
     @property
     def TcpFlagsMatch(self):
-        """Supported Flags: ns,cwr,ece,urg,ack,psh,rst,syn,fin join different matchcriteria using | or & join flags using | (bitwise or) Eg. (cwr), (ece|urg|psh|syn), (not)(cwr|syn), (not|match)(ece|psh)|(psh|rst)&(not)(ns) Keep Empty If Not Requried
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tcpFlagsMatch')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: ns,cwr,ece,urg,ack,psh,rst,syn,fin join different matchcriteria using | or & join flags using | (bitwise or) Eg. (cwr), (ece|urg|psh|syn), (not)(cwr|syn), (not|match)(ece|psh)|(psh|rst)&(not)(ns) Keep Empty If Not Requried
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tcpFlagsMatch'))
 
     @property
     def TerminalAction(self):
-        """Terminal Action
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('terminalAction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Terminal Action
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('terminalAction'))
 
     @property
     def TrafficActionSample(self):
-        """Sample
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('trafficActionSample')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Sample
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('trafficActionSample'))
 
     @property
     def TrafficDscp(self):
-        """DSCP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('trafficDscp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DSCP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('trafficDscp'))
 
     @property
     def TrafficRate(self):
-        """Traffic Rate (Bytes/s)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('trafficRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Rate (Bytes/s)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('trafficRate'))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
-        """Updates a child instance of bgpFlowSpecRangesListV6 on the server.
+        """Updates bgpFlowSpecRangesListV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
-            NoOfClusters (number): Number of Clusters
-            NoOfCommunities (number): Number of Communities
-            NoOfExtendedCommunity (number): Number of Extended Communities
-            NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExtendedCommunity (number): Number of Extended Communities
+        - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AsSetMode=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, DestPortMatch=None, DestPrefixLengthV6=None, DestPrefixOffset=None, DestPrefixV6=None, DscpMatch=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableDestPrefixV6=None, EnableExtendedCommunity=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRedirect=None, EnableReirectIPv6=None, EnableSourcePrefixV6=None, EnableTrafficAction=None, EnableTrafficMarketing=None, EnableTrafficMarking=None, EnableTrafficRate=None, FlowLabel=None, FlowSpecName=None, FragmentMatchV6=None, IcmpCodeMatch=None, IcmpTypeMatch=None, Ip=None, IpPacketLenMatch=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, NextHeader=None, NumberOfFlows=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PortMatch=None, RedirectCBit=None, RedirectExtCommunityType=None, RedirectIPv6=None, Redirectnexthop=None, SetNextHop=None, SetNextHopIpType=None, SourcePortMatch=None, SourcePrefixLengthV6=None, SourcePrefixV6=None, SrcPrefixOffset=None, TcpFlagsMatch=None, TerminalAction=None, TrafficActionSample=None, TrafficDscp=None, TrafficRate=None):
         """Base class infrastructure that gets a list of bgpFlowSpecRangesListV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AggregatorAs (str): optional regex of aggregatorAs
-            AggregatorId (str): optional regex of aggregatorId
-            AsNumber2Bytes (str): optional regex of asNumber2Bytes
-            AsNumber4Bytes (str): optional regex of asNumber4Bytes
-            AsSetMode (str): optional regex of asSetMode
-            AssignedNumber2Bytes (str): optional regex of assignedNumber2Bytes
-            AssignedNumber4Bytes (str): optional regex of assignedNumber4Bytes
-            DestPortMatch (str): optional regex of destPortMatch
-            DestPrefixLengthV6 (str): optional regex of destPrefixLengthV6
-            DestPrefixOffset (str): optional regex of destPrefixOffset
-            DestPrefixV6 (str): optional regex of destPrefixV6
-            DscpMatch (str): optional regex of dscpMatch
-            EnableAggregatorId (str): optional regex of enableAggregatorId
-            EnableAsPathSegments (str): optional regex of enableAsPathSegments
-            EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
-            EnableCluster (str): optional regex of enableCluster
-            EnableCommunity (str): optional regex of enableCommunity
-            EnableDestPrefixV6 (str): optional regex of enableDestPrefixV6
-            EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
-            EnableLargeCommunities (str): optional regex of enableLargeCommunities
-            EnableLocalPreference (str): optional regex of enableLocalPreference
-            EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
-            EnableNextHop (str): optional regex of enableNextHop
-            EnableOrigin (str): optional regex of enableOrigin
-            EnableOriginatorId (str): optional regex of enableOriginatorId
-            EnableRedirect (str): optional regex of enableRedirect
-            EnableReirectIPv6 (str): optional regex of enableReirectIPv6
-            EnableSourcePrefixV6 (str): optional regex of enableSourcePrefixV6
-            EnableTrafficAction (str): optional regex of enableTrafficAction
-            EnableTrafficMarketing (str): optional regex of enableTrafficMarketing
-            EnableTrafficMarking (str): optional regex of enableTrafficMarking
-            EnableTrafficRate (str): optional regex of enableTrafficRate
-            FlowLabel (str): optional regex of flowLabel
-            FlowSpecName (str): optional regex of flowSpecName
-            FragmentMatchV6 (str): optional regex of fragmentMatchV6
-            IcmpCodeMatch (str): optional regex of icmpCodeMatch
-            IcmpTypeMatch (str): optional regex of icmpTypeMatch
-            Ip (str): optional regex of ip
-            IpPacketLenMatch (str): optional regex of ipPacketLenMatch
-            Ipv4NextHop (str): optional regex of ipv4NextHop
-            Ipv6NextHop (str): optional regex of ipv6NextHop
-            LocalPreference (str): optional regex of localPreference
-            MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
-            NextHeader (str): optional regex of nextHeader
-            NumberOfFlows (str): optional regex of numberOfFlows
-            Origin (str): optional regex of origin
-            OriginatorId (str): optional regex of originatorId
-            OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
-            PortMatch (str): optional regex of portMatch
-            RedirectCBit (str): optional regex of redirectCBit
-            RedirectExtCommunityType (str): optional regex of redirectExtCommunityType
-            RedirectIPv6 (str): optional regex of redirectIPv6
-            Redirectnexthop (str): optional regex of redirectnexthop
-            SetNextHop (str): optional regex of setNextHop
-            SetNextHopIpType (str): optional regex of setNextHopIpType
-            SourcePortMatch (str): optional regex of sourcePortMatch
-            SourcePrefixLengthV6 (str): optional regex of sourcePrefixLengthV6
-            SourcePrefixV6 (str): optional regex of sourcePrefixV6
-            SrcPrefixOffset (str): optional regex of srcPrefixOffset
-            TcpFlagsMatch (str): optional regex of tcpFlagsMatch
-            TerminalAction (str): optional regex of terminalAction
-            TrafficActionSample (str): optional regex of trafficActionSample
-            TrafficDscp (str): optional regex of trafficDscp
-            TrafficRate (str): optional regex of trafficRate
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AggregatorAs (str): optional regex of aggregatorAs
+        - AggregatorId (str): optional regex of aggregatorId
+        - AsNumber2Bytes (str): optional regex of asNumber2Bytes
+        - AsNumber4Bytes (str): optional regex of asNumber4Bytes
+        - AsSetMode (str): optional regex of asSetMode
+        - AssignedNumber2Bytes (str): optional regex of assignedNumber2Bytes
+        - AssignedNumber4Bytes (str): optional regex of assignedNumber4Bytes
+        - DestPortMatch (str): optional regex of destPortMatch
+        - DestPrefixLengthV6 (str): optional regex of destPrefixLengthV6
+        - DestPrefixOffset (str): optional regex of destPrefixOffset
+        - DestPrefixV6 (str): optional regex of destPrefixV6
+        - DscpMatch (str): optional regex of dscpMatch
+        - EnableAggregatorId (str): optional regex of enableAggregatorId
+        - EnableAsPathSegments (str): optional regex of enableAsPathSegments
+        - EnableAtomicAggregate (str): optional regex of enableAtomicAggregate
+        - EnableCluster (str): optional regex of enableCluster
+        - EnableCommunity (str): optional regex of enableCommunity
+        - EnableDestPrefixV6 (str): optional regex of enableDestPrefixV6
+        - EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
+        - EnableLargeCommunities (str): optional regex of enableLargeCommunities
+        - EnableLocalPreference (str): optional regex of enableLocalPreference
+        - EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
+        - EnableNextHop (str): optional regex of enableNextHop
+        - EnableOrigin (str): optional regex of enableOrigin
+        - EnableOriginatorId (str): optional regex of enableOriginatorId
+        - EnableRedirect (str): optional regex of enableRedirect
+        - EnableReirectIPv6 (str): optional regex of enableReirectIPv6
+        - EnableSourcePrefixV6 (str): optional regex of enableSourcePrefixV6
+        - EnableTrafficAction (str): optional regex of enableTrafficAction
+        - EnableTrafficMarketing (str): optional regex of enableTrafficMarketing
+        - EnableTrafficMarking (str): optional regex of enableTrafficMarking
+        - EnableTrafficRate (str): optional regex of enableTrafficRate
+        - FlowLabel (str): optional regex of flowLabel
+        - FlowSpecName (str): optional regex of flowSpecName
+        - FragmentMatchV6 (str): optional regex of fragmentMatchV6
+        - IcmpCodeMatch (str): optional regex of icmpCodeMatch
+        - IcmpTypeMatch (str): optional regex of icmpTypeMatch
+        - Ip (str): optional regex of ip
+        - IpPacketLenMatch (str): optional regex of ipPacketLenMatch
+        - Ipv4NextHop (str): optional regex of ipv4NextHop
+        - Ipv6NextHop (str): optional regex of ipv6NextHop
+        - LocalPreference (str): optional regex of localPreference
+        - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
+        - NextHeader (str): optional regex of nextHeader
+        - NumberOfFlows (str): optional regex of numberOfFlows
+        - Origin (str): optional regex of origin
+        - OriginatorId (str): optional regex of originatorId
+        - OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
+        - PortMatch (str): optional regex of portMatch
+        - RedirectCBit (str): optional regex of redirectCBit
+        - RedirectExtCommunityType (str): optional regex of redirectExtCommunityType
+        - RedirectIPv6 (str): optional regex of redirectIPv6
+        - Redirectnexthop (str): optional regex of redirectnexthop
+        - SetNextHop (str): optional regex of setNextHop
+        - SetNextHopIpType (str): optional regex of setNextHopIpType
+        - SourcePortMatch (str): optional regex of sourcePortMatch
+        - SourcePrefixLengthV6 (str): optional regex of sourcePrefixLengthV6
+        - SourcePrefixV6 (str): optional regex of sourcePrefixV6
+        - SrcPrefixOffset (str): optional regex of srcPrefixOffset
+        - TcpFlagsMatch (str): optional regex of tcpFlagsMatch
+        - TerminalAction (str): optional regex of terminalAction
+        - TrafficActionSample (str): optional regex of trafficActionSample
+        - TrafficDscp (str): optional regex of trafficDscp
+        - TrafficRate (str): optional regex of trafficRate
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

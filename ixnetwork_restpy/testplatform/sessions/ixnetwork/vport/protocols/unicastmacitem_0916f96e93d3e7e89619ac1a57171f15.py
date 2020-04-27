@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class UnicastMacItem(Base):
     """The DCE ISIS Learned Information option fetches the learned information for the Unicast MAC Item of a particular DCE ISIS router.
-    The UnicastMacItem class encapsulates a list of unicastMacItem resources that is managed by the system.
+    The UnicastMacItem class encapsulates a list of unicastMacItem resources that are managed by the system.
     A list of resources can be retrieved from the server using the UnicastMacItem.find() method.
     """
 
@@ -37,41 +37,48 @@ class UnicastMacItem(Base):
 
     @property
     def UnicastSourceMacAddress(self):
-        """This indicates the MAC Source, if any, associated with the MAC Multicast Group Address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the MAC Source, if any, associated with the MAC Multicast Group Address.
         """
         return self._get_attribute('unicastSourceMacAddress')
 
     def find(self, UnicastSourceMacAddress=None):
-        """Finds and retrieves unicastMacItem data from the server.
+        """Finds and retrieves unicastMacItem resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve unicastMacItem data from the server.
-        By default the find method takes no parameters and will retrieve all unicastMacItem data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve unicastMacItem resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all unicastMacItem resources from the server.
 
-        Args:
-            UnicastSourceMacAddress (str): This indicates the MAC Source, if any, associated with the MAC Multicast Group Address.
+        Args
+        ----
+        - UnicastSourceMacAddress (str): This indicates the MAC Source, if any, associated with the MAC Multicast Group Address.
 
-        Returns:
-            self: This instance with matching unicastMacItem data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching unicastMacItem resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of unicastMacItem data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the unicastMacItem data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the unicastMacItem resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

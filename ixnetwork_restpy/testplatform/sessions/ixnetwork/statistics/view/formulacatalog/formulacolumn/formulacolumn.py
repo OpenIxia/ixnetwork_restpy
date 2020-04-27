@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FormulaColumn(Base):
     """The formula is filtered and maintained in columns.
-    The FormulaColumn class encapsulates a list of formulaColumn resources that is be managed by the user.
+    The FormulaColumn class encapsulates a list of formulaColumn resources that are managed by the user.
     A list of resources can be retrieved from the server using the FormulaColumn.find() method.
-    The list can be managed by the user by using the FormulaColumn.add() and FormulaColumn.remove() methods.
+    The list can be managed by using the FormulaColumn.add() and FormulaColumn.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class FormulaColumn(Base):
 
     @property
     def Caption(self):
-        """The name of the formula.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the formula.
         """
         return self._get_attribute('caption')
     @Caption.setter
@@ -50,10 +50,10 @@ class FormulaColumn(Base):
 
     @property
     def Formula(self):
-        """The formula that is filtered.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The formula that is filtered.
         """
         return self._get_attribute('formula')
     @Formula.setter
@@ -61,70 +61,83 @@ class FormulaColumn(Base):
         self._set_attribute('formula', value)
 
     def update(self, Caption=None, Formula=None):
-        """Updates a child instance of formulaColumn on the server.
+        """Updates formulaColumn resource on the server.
 
-        Args:
-            Caption (str): The name of the formula.
-            Formula (str): The formula that is filtered.
+        Args
+        ----
+        - Caption (str): The name of the formula.
+        - Formula (str): The formula that is filtered.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Caption=None, Formula=None):
-        """Adds a new formulaColumn node on the server and retrieves it in this instance.
+        """Adds a new formulaColumn resource on the server and adds it to the container.
 
-        Args:
-            Caption (str): The name of the formula.
-            Formula (str): The formula that is filtered.
+        Args
+        ----
+        - Caption (str): The name of the formula.
+        - Formula (str): The formula that is filtered.
 
-        Returns:
-            self: This instance with all currently retrieved formulaColumn data using find and the newly added formulaColumn data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved formulaColumn resources using find and the newly added formulaColumn resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the formulaColumn data in this instance from server.
+        """Deletes all the contained formulaColumn resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Caption=None, Formula=None):
-        """Finds and retrieves formulaColumn data from the server.
+        """Finds and retrieves formulaColumn resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve formulaColumn data from the server.
-        By default the find method takes no parameters and will retrieve all formulaColumn data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve formulaColumn resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all formulaColumn resources from the server.
 
-        Args:
-            Caption (str): The name of the formula.
-            Formula (str): The formula that is filtered.
+        Args
+        ----
+        - Caption (str): The name of the formula.
+        - Formula (str): The formula that is filtered.
 
-        Returns:
-            self: This instance with matching formulaColumn data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching formulaColumn resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of formulaColumn data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the formulaColumn data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the formulaColumn resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

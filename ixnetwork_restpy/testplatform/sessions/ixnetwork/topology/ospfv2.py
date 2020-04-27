@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv2(Base):
     """Ospf Interface level Configuration
-    The Ospfv2 class encapsulates a list of ospfv2 resources that is be managed by the user.
+    The Ospfv2 class encapsulates a list of ospfv2 resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ospfv2.find() method.
-    The list can be managed by the user by using the Ospfv2.add() and Ospfv2.remove() methods.
+    The list can be managed by using the Ospfv2.add() and Ospfv2.remove() methods.
     """
 
     __slots__ = ()
@@ -38,143 +38,150 @@ class Ospfv2(Base):
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def LearnedInfo(self):
-        """An instance of the LearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo.LearnedInfo): An instance of the LearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo.LearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo import LearnedInfo
         return LearnedInfo(self)
 
     @property
     def OspfSRMappingServerList(self):
-        """An instance of the OspfSRMappingServerList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist.OspfSRMappingServerList): An instance of the OspfSRMappingServerList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist.OspfSRMappingServerList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist import OspfSRMappingServerList
         return OspfSRMappingServerList(self)._select()
 
     @property
     def OspfTrafficEngineering(self):
-        """An instance of the OspfTrafficEngineering class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering.OspfTrafficEngineering): An instance of the OspfTrafficEngineering class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering.OspfTrafficEngineering)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering import OspfTrafficEngineering
         return OspfTrafficEngineering(self)._select()
 
     @property
     def SrlgValueList(self):
-        """An instance of the SrlgValueList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist.SrlgValueList): An instance of the SrlgValueList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist.SrlgValueList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist import SrlgValueList
         return SrlgValueList(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdjSID(self):
-        """Adjacency SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('adjSID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Adjacency SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('adjSID'))
 
     @property
     def AreaId(self):
-        """OSPF Area ID for a non-connected interface, displayed in Interger format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): OSPF Area ID for a non-connected interface, displayed in Interger format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaId'))
 
     @property
     def AreaIdIp(self):
-        """OSPF Area ID for a non-connected interface, displayed in IP Address format
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaIdIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): OSPF Area ID for a non-connected interface, displayed in IP Address format
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaIdIp'))
 
     @property
     def Authentication(self):
-        """Authentication
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authentication')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authentication'))
 
     @property
     def AuthenticationPassword(self):
-        """Authentication Password
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationPassword')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Password
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationPassword'))
 
     @property
     def BFlag(self):
-        """Backup Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Backup Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bFlag'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -183,91 +190,98 @@ class Ospfv2(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DeadInterval(self):
-        """Dead Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('deadInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Dead Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('deadInterval'))
 
     @property
     def Dedicated1Plus1(self):
-        """This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dedicated1Plus1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dedicated1Plus1'))
 
     @property
     def Dedicated1To1(self):
-        """This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dedicated1To1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dedicated1To1'))
 
     @property
     def DemandCircuit(self):
-        """Option bit 7
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('demandCircuit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('demandCircuit'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnLinkProtection(self):
-        """This enables the link protection on the OSPF link between two mentioned interfaces.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enLinkProtection')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the link protection on the OSPF link between two mentioned interfaces.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enLinkProtection'))
 
     @property
     def EnableAdjSID(self):
-        """Enable Adj SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableAdjSID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Adj SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableAdjSID'))
 
     @property
     def EnableBfdRegistration(self):
-        """Enable BFD Registration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableBfdRegistration')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableBfdRegistration'))
 
     @property
     def EnableFast2wayConvergence(self):
-        """Enable 2-way Adj Fast Convergence
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable 2-way Adj Fast Convergence
         """
         return self._get_attribute('enableFast2wayConvergence')
     @EnableFast2wayConvergence.setter
@@ -276,154 +290,168 @@ class Ospfv2(Base):
 
     @property
     def EnableFastHello(self):
-        """Enable Fast Hello
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableFastHello')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Fast Hello
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableFastHello'))
 
     @property
     def EnableSRLG(self):
-        """This enables the SRLG on the OSPF link between two mentioned interfaces.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableSRLG')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the SRLG on the OSPF link between two mentioned interfaces.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableSRLG'))
 
     @property
     def Enhanced(self):
-        """This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enhanced')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enhanced'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def ExternalAttribute(self):
-        """Option bit 4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('externalAttribute')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('externalAttribute'))
 
     @property
     def ExternalCapability(self):
-        """Option bit 1
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('externalCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('externalCapability'))
 
     @property
     def ExtraTraffic(self):
-        """This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('extraTraffic')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('extraTraffic'))
 
     @property
     def HelloInterval(self):
-        """Hello Interval
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Interval
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloInterval'))
 
     @property
     def HelloMultiplier(self):
-        """Hello Multiplier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloMultiplier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Multiplier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloMultiplier'))
 
     @property
     def LFlag(self):
-        """Local/Global Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local/Global Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def LocalRouterID(self):
-        """Router ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Router ID
         """
         return self._get_attribute('localRouterID')
 
     @property
     def MaxMtu(self):
-        """Max MTU Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxMtu')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max MTU Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxMtu'))
 
     @property
     def Md5Key(self):
-        """MD5 Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('md5Key')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): MD5 Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('md5Key'))
 
     @property
     def Md5KeyId(self):
-        """MD5 Key ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('md5KeyId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): MD5 Key ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('md5KeyId'))
 
     @property
     def Metric(self):
-        """Routing Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Routing Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def MulticastCapability(self):
-        """Option bit 2
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('multicastCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('multicastCapability'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -432,10 +460,10 @@ class Ospfv2(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -444,127 +472,146 @@ class Ospfv2(Base):
 
     @property
     def NeighborIp(self):
-        """Neighbor IP when connected network is Point to Multipoint
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('neighborIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Neighbor IP when connected network is Point to Multipoint
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('neighborIp'))
 
     @property
     def NetworkType(self):
-        """Network Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkType'))
 
     @property
     def NssaCapability(self):
-        """Option bit 3
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nssaCapability')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nssaCapability'))
 
     @property
     def OpaqueLsaForwarded(self):
-        """Option bit 6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('opaqueLsaForwarded')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('opaqueLsaForwarded'))
 
     @property
     def OspfIfaceState(self):
-        """Logs additional information about the Interface State
-
-        Returns:
-            list(str[backup|down|dr|drOther|pointToPoint|unrecognized|waiting])
+        """
+        Returns
+        -------
+        - list(str[backup | down | dr | drOther | pointToPoint | unrecognized | waiting]): Logs additional information about the Interface State
         """
         return self._get_attribute('ospfIfaceState')
 
     @property
     def OspfNeighborState(self):
-        """Logs additional information about the Neighbor State
-
-        Returns:
-            list(str[attempt|down|exchange|exStart|full|init|loading|multiNeighbor|none|twoWay])
+        """
+        Returns
+        -------
+        - list(str[attempt | down | exchange | exStart | full | init | loading | multiNeighbor | none | twoWay]): Logs additional information about the Neighbor State
         """
         return self._get_attribute('ospfNeighborState')
 
     @property
-    def Priority(self):
-        """Priority (when DR/BDR)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def PFlag(self):
         """
-        return self._get_attribute('priority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Persistent Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
+
+    @property
+    def Priority(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Priority (when DR/BDR)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('priority'))
 
     @property
     def Reserved40(self):
-        """This is a Protection Scheme with value 0x40.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reserved40')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x40.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reserved40'))
 
     @property
     def Reserved80(self):
-        """This is a Protection Scheme with value 0x80.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reserved80')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x80.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reserved80'))
 
     @property
     def SFlag(self):
-        """Set Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Set/Group Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sFlag'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the session state
-
-        Returns:
-            list(str[ifaceSessInfoAllNbrIn2Way|ifaceSessInfoAllNbrInattempt|ifaceSessInfoAllNbrInDown|ifaceSessInfoAllNbrInExchange|ifaceSessInfoAllNbrInExStart|ifaceSessInfoAllNbrInInit|ifaceSessInfoAllNbrInLoading|ifaceSessInfoFsmNotStarted|ifaceSessInfoSameNbrId|iPAddressNotRcvd|none])
+        """
+        Returns
+        -------
+        - list(str[ifaceSessInfoAllNbrIn2Way | ifaceSessInfoAllNbrInattempt | ifaceSessInfoAllNbrInDown | ifaceSessInfoAllNbrInExchange | ifaceSessInfoAllNbrInExStart | ifaceSessInfoAllNbrInInit | ifaceSessInfoAllNbrInLoading | ifaceSessInfoFsmNotStarted | ifaceSessInfoSameNbrId | iPAddressNotRcvd | none]): Logs additional information about the session state
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def Shared(self):
-        """This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('shared')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('shared'))
 
     @property
     def SrlgCount(self):
-        """This field value shows how many SRLG Value columns would be there in the GUI.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This field value shows how many SRLG Value columns would be there in the GUI.
         """
         return self._get_attribute('srlgCount')
     @SrlgCount.setter
@@ -573,10 +620,10 @@ class Ospfv2(Base):
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -585,246 +632,271 @@ class Ospfv2(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def SuppressHello(self):
-        """Suppress Hello for BGP-LS
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('suppressHello')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Suppress Hello for BGP-LS
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('suppressHello'))
 
     @property
     def TypeAreaId(self):
-        """Area ID Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeAreaId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area ID Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeAreaId'))
 
     @property
     def TypeOfServiceRouting(self):
-        """Option bit 0
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeOfServiceRouting')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeOfServiceRouting'))
 
     @property
     def Unprotected(self):
-        """This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unprotected')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unprotected'))
 
     @property
     def Unused(self):
-        """Option bit 7
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('unused')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('unused'))
 
     @property
     def VFlag(self):
-        """Value/Index Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value/Index Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
     @property
     def ValidateRxMtu(self):
-        """Validate Received MTU
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('validateRxMtu')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Validate Received MTU
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('validateRxMtu'))
 
     @property
     def Weight(self):
-        """Weight
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
 
     def update(self, ConnectedVia=None, EnableFast2wayConvergence=None, Multiplier=None, Name=None, SrlgCount=None, StackedLayers=None):
-        """Updates a child instance of ospfv2 on the server.
+        """Updates ospfv2 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, EnableFast2wayConvergence=None, Multiplier=None, Name=None, SrlgCount=None, StackedLayers=None):
-        """Adds a new ospfv2 node on the server and retrieves it in this instance.
+        """Adds a new ospfv2 resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved ospfv2 data using find and the newly added ospfv2 data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfv2 resources using find and the newly added ospfv2 resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ospfv2 data in this instance from server.
+        """Deletes all the contained ospfv2 resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableFast2wayConvergence=None, Errors=None, LocalRouterID=None, Multiplier=None, Name=None, OspfIfaceState=None, OspfNeighborState=None, SessionInfo=None, SessionStatus=None, SrlgCount=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves ospfv2 data from the server.
+        """Finds and retrieves ospfv2 resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfv2 data from the server.
-        By default the find method takes no parameters and will retrieve all ospfv2 data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv2 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfv2 resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LocalRouterID (list(str)): Router ID
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            OspfIfaceState (list(str[backup|down|dr|drOther|pointToPoint|unrecognized|waiting])): Logs additional information about the Interface State
-            OspfNeighborState (list(str[attempt|down|exchange|exStart|full|init|loading|multiNeighbor|none|twoWay])): Logs additional information about the Neighbor State
-            SessionInfo (list(str[ifaceSessInfoAllNbrIn2Way|ifaceSessInfoAllNbrInattempt|ifaceSessInfoAllNbrInDown|ifaceSessInfoAllNbrInExchange|ifaceSessInfoAllNbrInExStart|ifaceSessInfoAllNbrInInit|ifaceSessInfoAllNbrInLoading|ifaceSessInfoFsmNotStarted|ifaceSessInfoSameNbrId|iPAddressNotRcvd|none])): Logs additional information about the session state
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableFast2wayConvergence (bool): Enable 2-way Adj Fast Convergence
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LocalRouterID (list(str)): Router ID
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - OspfIfaceState (list(str[backup | down | dr | drOther | pointToPoint | unrecognized | waiting])): Logs additional information about the Interface State
+        - OspfNeighborState (list(str[attempt | down | exchange | exStart | full | init | loading | multiNeighbor | none | twoWay])): Logs additional information about the Neighbor State
+        - SessionInfo (list(str[ifaceSessInfoAllNbrIn2Way | ifaceSessInfoAllNbrInattempt | ifaceSessInfoAllNbrInDown | ifaceSessInfoAllNbrInExchange | ifaceSessInfoAllNbrInExStart | ifaceSessInfoAllNbrInInit | ifaceSessInfoAllNbrInLoading | ifaceSessInfoFsmNotStarted | ifaceSessInfoSameNbrId | iPAddressNotRcvd | none])): Logs additional information about the session state
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching ospfv2 data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfv2 resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfv2 data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfv2 data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfv2 resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AreaId=None, AreaIdIp=None, Authentication=None, AuthenticationPassword=None, BFlag=None, DeadInterval=None, Dedicated1Plus1=None, Dedicated1To1=None, DemandCircuit=None, EnLinkProtection=None, EnableAdjSID=None, EnableBfdRegistration=None, EnableFastHello=None, EnableSRLG=None, Enhanced=None, ExternalAttribute=None, ExternalCapability=None, ExtraTraffic=None, HelloInterval=None, HelloMultiplier=None, LFlag=None, MaxMtu=None, Md5Key=None, Md5KeyId=None, Metric=None, MulticastCapability=None, NeighborIp=None, NetworkType=None, NssaCapability=None, OpaqueLsaForwarded=None, Priority=None, Reserved40=None, Reserved80=None, SFlag=None, Shared=None, SuppressHello=None, TypeAreaId=None, TypeOfServiceRouting=None, Unprotected=None, Unused=None, VFlag=None, ValidateRxMtu=None, Weight=None):
+    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AreaId=None, AreaIdIp=None, Authentication=None, AuthenticationPassword=None, BFlag=None, DeadInterval=None, Dedicated1Plus1=None, Dedicated1To1=None, DemandCircuit=None, EnLinkProtection=None, EnableAdjSID=None, EnableBfdRegistration=None, EnableFastHello=None, EnableSRLG=None, Enhanced=None, ExternalAttribute=None, ExternalCapability=None, ExtraTraffic=None, HelloInterval=None, HelloMultiplier=None, LFlag=None, MaxMtu=None, Md5Key=None, Md5KeyId=None, Metric=None, MulticastCapability=None, NeighborIp=None, NetworkType=None, NssaCapability=None, OpaqueLsaForwarded=None, PFlag=None, Priority=None, Reserved40=None, Reserved80=None, SFlag=None, Shared=None, SuppressHello=None, TypeAreaId=None, TypeOfServiceRouting=None, Unprotected=None, Unused=None, VFlag=None, ValidateRxMtu=None, Weight=None):
         """Base class infrastructure that gets a list of ospfv2 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AdjSID (str): optional regex of adjSID
-            AreaId (str): optional regex of areaId
-            AreaIdIp (str): optional regex of areaIdIp
-            Authentication (str): optional regex of authentication
-            AuthenticationPassword (str): optional regex of authenticationPassword
-            BFlag (str): optional regex of bFlag
-            DeadInterval (str): optional regex of deadInterval
-            Dedicated1Plus1 (str): optional regex of dedicated1Plus1
-            Dedicated1To1 (str): optional regex of dedicated1To1
-            DemandCircuit (str): optional regex of demandCircuit
-            EnLinkProtection (str): optional regex of enLinkProtection
-            EnableAdjSID (str): optional regex of enableAdjSID
-            EnableBfdRegistration (str): optional regex of enableBfdRegistration
-            EnableFastHello (str): optional regex of enableFastHello
-            EnableSRLG (str): optional regex of enableSRLG
-            Enhanced (str): optional regex of enhanced
-            ExternalAttribute (str): optional regex of externalAttribute
-            ExternalCapability (str): optional regex of externalCapability
-            ExtraTraffic (str): optional regex of extraTraffic
-            HelloInterval (str): optional regex of helloInterval
-            HelloMultiplier (str): optional regex of helloMultiplier
-            LFlag (str): optional regex of lFlag
-            MaxMtu (str): optional regex of maxMtu
-            Md5Key (str): optional regex of md5Key
-            Md5KeyId (str): optional regex of md5KeyId
-            Metric (str): optional regex of metric
-            MulticastCapability (str): optional regex of multicastCapability
-            NeighborIp (str): optional regex of neighborIp
-            NetworkType (str): optional regex of networkType
-            NssaCapability (str): optional regex of nssaCapability
-            OpaqueLsaForwarded (str): optional regex of opaqueLsaForwarded
-            Priority (str): optional regex of priority
-            Reserved40 (str): optional regex of reserved40
-            Reserved80 (str): optional regex of reserved80
-            SFlag (str): optional regex of sFlag
-            Shared (str): optional regex of shared
-            SuppressHello (str): optional regex of suppressHello
-            TypeAreaId (str): optional regex of typeAreaId
-            TypeOfServiceRouting (str): optional regex of typeOfServiceRouting
-            Unprotected (str): optional regex of unprotected
-            Unused (str): optional regex of unused
-            VFlag (str): optional regex of vFlag
-            ValidateRxMtu (str): optional regex of validateRxMtu
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AdjSID (str): optional regex of adjSID
+        - AreaId (str): optional regex of areaId
+        - AreaIdIp (str): optional regex of areaIdIp
+        - Authentication (str): optional regex of authentication
+        - AuthenticationPassword (str): optional regex of authenticationPassword
+        - BFlag (str): optional regex of bFlag
+        - DeadInterval (str): optional regex of deadInterval
+        - Dedicated1Plus1 (str): optional regex of dedicated1Plus1
+        - Dedicated1To1 (str): optional regex of dedicated1To1
+        - DemandCircuit (str): optional regex of demandCircuit
+        - EnLinkProtection (str): optional regex of enLinkProtection
+        - EnableAdjSID (str): optional regex of enableAdjSID
+        - EnableBfdRegistration (str): optional regex of enableBfdRegistration
+        - EnableFastHello (str): optional regex of enableFastHello
+        - EnableSRLG (str): optional regex of enableSRLG
+        - Enhanced (str): optional regex of enhanced
+        - ExternalAttribute (str): optional regex of externalAttribute
+        - ExternalCapability (str): optional regex of externalCapability
+        - ExtraTraffic (str): optional regex of extraTraffic
+        - HelloInterval (str): optional regex of helloInterval
+        - HelloMultiplier (str): optional regex of helloMultiplier
+        - LFlag (str): optional regex of lFlag
+        - MaxMtu (str): optional regex of maxMtu
+        - Md5Key (str): optional regex of md5Key
+        - Md5KeyId (str): optional regex of md5KeyId
+        - Metric (str): optional regex of metric
+        - MulticastCapability (str): optional regex of multicastCapability
+        - NeighborIp (str): optional regex of neighborIp
+        - NetworkType (str): optional regex of networkType
+        - NssaCapability (str): optional regex of nssaCapability
+        - OpaqueLsaForwarded (str): optional regex of opaqueLsaForwarded
+        - PFlag (str): optional regex of pFlag
+        - Priority (str): optional regex of priority
+        - Reserved40 (str): optional regex of reserved40
+        - Reserved80 (str): optional regex of reserved80
+        - SFlag (str): optional regex of sFlag
+        - Shared (str): optional regex of shared
+        - SuppressHello (str): optional regex of suppressHello
+        - TypeAreaId (str): optional regex of typeAreaId
+        - TypeOfServiceRouting (str): optional regex of typeOfServiceRouting
+        - Unprotected (str): optional regex of unprotected
+        - Unused (str): optional regex of unused
+        - VFlag (str): optional regex of vFlag
+        - ValidateRxMtu (str): optional regex of validateRxMtu
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -833,22 +905,20 @@ class Ospfv2(Base):
 
         Clear All Learned Info
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        clearAllLearnedInfo()
+        clearAllLearnedInfo(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        clearAllLearnedInfo(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        clearAllLearnedInfo(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        clearAllLearnedInfo(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -860,16 +930,15 @@ class Ospfv2(Base):
 
         Clears ALL routes from GUI grid for the selected OSPF router.
 
-        clearAllLearnedInfoInClient(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        clearAllLearnedInfoInClient(Arg2=list)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -881,29 +950,25 @@ class Ospfv2(Base):
 
         Get Basic Learned Info
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        getBasicLearnedInfo()
+        getBasicLearnedInfo(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        getBasicLearnedInfo(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        getBasicLearnedInfo(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        getBasicLearnedInfo(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        getBasicLearnedInfo(Arg2=list)list
+        ----------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        getBasicLearnedInfo(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -915,22 +980,20 @@ class Ospfv2(Base):
 
         Get Detailed Learned Info
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        getDetailedLearnedInfo()
+        getDetailedLearnedInfo(SessionIndices=list)
+        -------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        getDetailedLearnedInfo(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        getDetailedLearnedInfo(SessionIndices=string)
+        ---------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        getDetailedLearnedInfo(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -942,22 +1005,20 @@ class Ospfv2(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -969,22 +1030,20 @@ class Ospfv2(Base):
 
         Resume sending OSPFv2 Hellos
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        resumeHello()
+        resumeHello(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        resumeHello(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        resumeHello(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        resumeHello(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -996,16 +1055,15 @@ class Ospfv2(Base):
 
         Starts the protocol state machine for the given protocol session instances.
 
-        resumehello(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        resumehello(Arg2=list)list
+        --------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1017,22 +1075,20 @@ class Ospfv2(Base):
 
         Start OSPF Interface
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1044,22 +1100,20 @@ class Ospfv2(Base):
 
         Stop OSPF Interface
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1071,22 +1125,20 @@ class Ospfv2(Base):
 
         Stop sending OSPFv2 Hellos
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stopHello()
+        stopHello(SessionIndices=list)
+        ------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stopHello(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stopHello(SessionIndices=string)
+        --------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stopHello(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1098,16 +1150,15 @@ class Ospfv2(Base):
 
         Stops the protocol state machine for the given protocol session instances.
 
-        stophello(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        stophello(Arg2=list)list
+        ------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

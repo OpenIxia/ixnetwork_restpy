@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FcoeClientOptions(Base):
     """StackManager FCoE PortGroup Settings
-    The FcoeClientOptions class encapsulates a list of fcoeClientOptions resources that is be managed by the user.
+    The FcoeClientOptions class encapsulates a list of fcoeClientOptions resources that are managed by the user.
     A list of resources can be retrieved from the server using the FcoeClientOptions.find() method.
-    The list can be managed by the user by using the FcoeClientOptions.add() and FcoeClientOptions.remove() methods.
+    The list can be managed by using the FcoeClientOptions.add() and FcoeClientOptions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class FcoeClientOptions(Base):
 
     @property
     def Associates(self):
-        """The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
         return self._get_attribute('associates')
     @Associates.setter
@@ -50,10 +50,10 @@ class FcoeClientOptions(Base):
 
     @property
     def MaxPacketsPerSecond(self):
-        """The maximum number of requests transmitted in each second, for this port group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of requests transmitted in each second, for this port group.
         """
         return self._get_attribute('maxPacketsPerSecond')
     @MaxPacketsPerSecond.setter
@@ -62,19 +62,19 @@ class FcoeClientOptions(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OverrideGlobalRate(self):
-        """Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
         """
         return self._get_attribute('overrideGlobalRate')
     @OverrideGlobalRate.setter
@@ -83,10 +83,10 @@ class FcoeClientOptions(Base):
 
     @property
     def SetupRate(self):
-        """The number of interfaces scheduled to be configured in each second, for this port group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces scheduled to be configured in each second, for this port group.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -95,10 +95,10 @@ class FcoeClientOptions(Base):
 
     @property
     def TeardownRate(self):
-        """The number of interfaces scheduled to be deconfigured in each second, for this port group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces scheduled to be deconfigured in each second, for this port group.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -106,81 +106,94 @@ class FcoeClientOptions(Base):
         self._set_attribute('teardownRate', value)
 
     def update(self, Associates=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
-        """Updates a child instance of fcoeClientOptions on the server.
+        """Updates fcoeClientOptions resource on the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
-            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
+        - OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Associates=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
-        """Adds a new fcoeClientOptions node on the server and retrieves it in this instance.
+        """Adds a new fcoeClientOptions resource on the server and adds it to the container.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
-            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
+        - OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
 
-        Returns:
-            self: This instance with all currently retrieved fcoeClientOptions data using find and the newly added fcoeClientOptions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved fcoeClientOptions resources using find and the newly added fcoeClientOptions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the fcoeClientOptions data in this instance from server.
+        """Deletes all the contained fcoeClientOptions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Associates=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
-        """Finds and retrieves fcoeClientOptions data from the server.
+        """Finds and retrieves fcoeClientOptions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve fcoeClientOptions data from the server.
-        By default the find method takes no parameters and will retrieve all fcoeClientOptions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeClientOptions resources from the server.
 
-        Args:
-            Associates (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
-            ObjectId (str): Unique identifier for this object
-            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
+        Args
+        ----
+        - Associates (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack])): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second, for this port group.
+        - ObjectId (str): Unique identifier for this object
+        - OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second, for this port group.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second, for this port group.
 
-        Returns:
-            self: This instance with matching fcoeClientOptions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching fcoeClientOptions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientOptions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the fcoeClientOptions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the fcoeClientOptions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -189,14 +202,15 @@ class FcoeClientOptions(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -208,16 +222,15 @@ class FcoeClientOptions(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -229,16 +242,15 @@ class FcoeClientOptions(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

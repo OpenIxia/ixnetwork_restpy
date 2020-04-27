@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Error(Base):
     """This node is a specific application error instance
-    The Error class encapsulates a list of error resources that is managed by the system.
+    The Error class encapsulates a list of error resources that are managed by the system.
     A list of resources can be retrieved from the server using the Error.find() method.
     """
 
@@ -37,135 +37,142 @@ class Error(Base):
 
     @property
     def Instance(self):
-        """An instance of the Instance class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance.Instance): An instance of the Instance class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance.Instance)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance import Instance
         return Instance(self)
 
     @property
     def Description(self):
-        """The description of the error
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The description of the error
         """
         return self._get_attribute('description')
 
     @property
     def ErrorCode(self):
-        """The error code of the error
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The error code of the error
         """
         return self._get_attribute('errorCode')
 
     @property
     def ErrorLevel(self):
-        """The error level of the error
-
-        Returns:
-            str(kAnalysis|kCount|kError|kMessage|kWarning)
+        """
+        Returns
+        -------
+        - str(kAnalysis | kCount | kError | kMessage | kWarning): The error level of the error
         """
         return self._get_attribute('errorLevel')
 
     @property
     def InstanceCount(self):
-        """The number of instances of the error
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of instances of the error
         """
         return self._get_attribute('instanceCount')
 
     @property
     def LastModified(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('lastModified')
 
     @property
     def Name(self):
-        """The name of the error
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the error
         """
         return self._get_attribute('name')
 
     @property
     def Provider(self):
-        """The error provider of the error
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The error provider of the error
         """
         return self._get_attribute('provider')
 
     @property
     def SourceColumns(self):
-        """If the error content originated from an xml meta file, these are the source column names if any for this error.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): If the error content originated from an xml meta file, these are the source column names if any for this error.
         """
         return self._get_attribute('sourceColumns')
 
     @property
     def SourceColumnsDisplayName(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('sourceColumnsDisplayName')
 
     def find(self, Description=None, ErrorCode=None, ErrorLevel=None, InstanceCount=None, LastModified=None, Name=None, Provider=None, SourceColumns=None, SourceColumnsDisplayName=None):
-        """Finds and retrieves error data from the server.
+        """Finds and retrieves error resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve error data from the server.
-        By default the find method takes no parameters and will retrieve all error data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve error resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all error resources from the server.
 
-        Args:
-            Description (str): The description of the error
-            ErrorCode (number): The error code of the error
-            ErrorLevel (str(kAnalysis|kCount|kError|kMessage|kWarning)): The error level of the error
-            InstanceCount (number): The number of instances of the error
-            LastModified (str): 
-            Name (str): The name of the error
-            Provider (str): The error provider of the error
-            SourceColumns (list(str)): If the error content originated from an xml meta file, these are the source column names if any for this error.
-            SourceColumnsDisplayName (list(str)): 
+        Args
+        ----
+        - Description (str): The description of the error
+        - ErrorCode (number): The error code of the error
+        - ErrorLevel (str(kAnalysis | kCount | kError | kMessage | kWarning)): The error level of the error
+        - InstanceCount (number): The number of instances of the error
+        - LastModified (str): 
+        - Name (str): The name of the error
+        - Provider (str): The error provider of the error
+        - SourceColumns (list(str)): If the error content originated from an xml meta file, these are the source column names if any for this error.
+        - SourceColumnsDisplayName (list(str)): 
 
-        Returns:
-            self: This instance with matching error data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching error resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of error data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the error data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the error resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

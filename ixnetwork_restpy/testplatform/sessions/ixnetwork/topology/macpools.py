@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MacPools(Base):
     """Represents an Ethernet device set
-    The MacPools class encapsulates a list of macPools resources that is be managed by the user.
+    The MacPools class encapsulates a list of macPools resources that are managed by the user.
     A list of resources can be retrieved from the server using the MacPools.find() method.
-    The list can be managed by the user by using the MacPools.add() and MacPools.remove() methods.
+    The list can be managed by using the MacPools.add() and MacPools.remove() methods.
     """
 
     __slots__ = ()
@@ -38,195 +38,197 @@ class MacPools(Base):
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
     def Ipv4PrefixPools(self):
-        """An instance of the Ipv4PrefixPools class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools.Ipv4PrefixPools): An instance of the Ipv4PrefixPools class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools.Ipv4PrefixPools)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools import Ipv4PrefixPools
         return Ipv4PrefixPools(self)
 
     @property
     def Ipv6PrefixPools(self):
-        """An instance of the Ipv6PrefixPools class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools.Ipv6PrefixPools): An instance of the Ipv6PrefixPools class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools.Ipv6PrefixPools)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools import Ipv6PrefixPools
         return Ipv6PrefixPools(self)
 
     @property
     def IsisSpbMacCloudConfig(self):
-        """An instance of the IsisSpbMacCloudConfig class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig.IsisSpbMacCloudConfig): An instance of the IsisSpbMacCloudConfig class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig.IsisSpbMacCloudConfig)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig import IsisSpbMacCloudConfig
         return IsisSpbMacCloudConfig(self)
 
     @property
     def IsisTrillUCastMacConfig(self):
-        """An instance of the IsisTrillUCastMacConfig class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig.IsisTrillUCastMacConfig): An instance of the IsisTrillUCastMacConfig class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig.IsisTrillUCastMacConfig)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig import IsisTrillUCastMacConfig
         return IsisTrillUCastMacConfig(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Vlan(self):
-        """An instance of the Vlan class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan.Vlan): An instance of the Vlan class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan.Vlan)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan import Vlan
         return Vlan(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableVlans(self):
-        """Enables VLANs for the sessions
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableVlans')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables VLANs for the sessions
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableVlans'))
 
     @property
     def LastMacAddress(self):
-        """Last Address of network addresses in the simulated MAC network range
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Last Address of network addresses in the simulated MAC network range
         """
         return self._get_attribute('lastMacAddress')
 
     @property
     def Mac(self):
-        """MAC addresses of the devices
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mac')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): MAC addresses of the devices
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mac'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -235,10 +237,10 @@ class MacPools(Base):
 
     @property
     def NumberOfAddresses(self):
-        """DEPRECATED Number of MAC addresses in the simulated MAC range
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Number of MAC addresses in the simulated MAC range
         """
         return self._get_attribute('numberOfAddresses')
     @NumberOfAddresses.setter
@@ -247,28 +249,30 @@ class MacPools(Base):
 
     @property
     def NumberOfAddressesAsy(self):
-        """Number of MAC addresses in the simulated MAC range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberOfAddressesAsy')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of MAC addresses in the simulated MAC range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberOfAddressesAsy'))
 
     @property
     def PrefixLength(self):
-        """The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def UseVlans(self):
-        """DEPRECATED Flag to determine whether VLANs are enabled
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Flag to determine whether VLANs are enabled
         """
         return self._get_attribute('useVlans')
     @UseVlans.setter
@@ -277,10 +281,10 @@ class MacPools(Base):
 
     @property
     def VlanCount(self):
-        """Number of active VLANs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of active VLANs
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -288,83 +292,96 @@ class MacPools(Base):
         self._set_attribute('vlanCount', value)
 
     def update(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
-        """Updates a child instance of macPools on the server.
+        """Updates macPools resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
-            UseVlans (bool): Flag to determine whether VLANs are enabled
-            VlanCount (number): Number of active VLANs
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
+        - UseVlans (bool): Flag to determine whether VLANs are enabled
+        - VlanCount (number): Number of active VLANs
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
-        """Adds a new macPools node on the server and retrieves it in this instance.
+        """Adds a new macPools resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
-            UseVlans (bool): Flag to determine whether VLANs are enabled
-            VlanCount (number): Number of active VLANs
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
+        - UseVlans (bool): Flag to determine whether VLANs are enabled
+        - VlanCount (number): Number of active VLANs
 
-        Returns:
-            self: This instance with all currently retrieved macPools data using find and the newly added macPools data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved macPools resources using find and the newly added macPools resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the macPools data in this instance from server.
+        """Deletes all the contained macPools resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, LastMacAddress=None, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
-        """Finds and retrieves macPools data from the server.
+        """Finds and retrieves macPools resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve macPools data from the server.
-        By default the find method takes no parameters and will retrieve all macPools data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macPools resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all macPools resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            LastMacAddress (list(str)): Last Address of network addresses in the simulated MAC network range
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
-            UseVlans (bool): Flag to determine whether VLANs are enabled
-            VlanCount (number): Number of active VLANs
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - LastMacAddress (list(str)): Last Address of network addresses in the simulated MAC network range
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
+        - UseVlans (bool): Flag to determine whether VLANs are enabled
+        - VlanCount (number): Number of active VLANs
 
-        Returns:
-            self: This instance with matching macPools data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching macPools resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of macPools data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the macPools data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the macPools resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -373,18 +390,21 @@ class MacPools(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            EnableVlans (str): optional regex of enableVlans
-            Mac (str): optional regex of mac
-            NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
-            PrefixLength (str): optional regex of prefixLength
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - EnableVlans (str): optional regex of enableVlans
+        - Mac (str): optional regex of mac
+        - NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
+        - PrefixLength (str): optional regex of prefixLength
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -393,9 +413,10 @@ class MacPools(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -405,9 +426,10 @@ class MacPools(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

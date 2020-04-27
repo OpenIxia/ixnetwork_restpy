@@ -34,8 +34,9 @@ class Steps(Base):
     def Description(self):
         """The description of this step
 
-        Returns:
-            str: The description of the step
+        Returns
+        -------
+        - str: The description of the step
         """
         return self._get_attribute('description')
 
@@ -43,8 +44,9 @@ class Steps(Base):
     def Owner(self):
         """The owner of this step
 
-        Returns:
-            str: The href of the owner
+        Returns
+        -------
+        - str: The href of the owner
         """
         return self._get_attribute('owner')
 
@@ -52,8 +54,9 @@ class Steps(Base):
     def Enabled(self):
         """Enable/disable the step
 
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: Enable the step or disable the step
         """
         return self._get_attribute('enabled')
 
@@ -65,8 +68,9 @@ class Steps(Base):
     def Step(self):
         """The value of the step. This value must be in the same format as the parent multivalue
 
-        Returns:
-            str
+        Returns
+        -------
+        - str: The value of the step
         """
         return self._get_attribute('step')
 
@@ -75,19 +79,22 @@ class Steps(Base):
         self._set_attribute('step', value)
 
     def find(self, Description=None):
-        """Finds and retrieves multivalue step data from the server.
+        """Finds and retrieves multivalue step resources from the server.
 
         All named parameters support regex and can be used to selectively retrieve step data from the server.
         By default the find method takes no parameters and will retrieve all step data from the server.
 
-        Args:
-            Description (str): The description of the Step
+        Args
+        ----
+        - Description (str): The description of the Step
 
-         Returns:
-            self: This instance with matching step data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching step data retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._custom_select(Description)
 

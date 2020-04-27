@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisL3RouteProperty(Base):
     """ISIS L3 Route Range Table
-    The IsisL3RouteProperty class encapsulates a list of isisL3RouteProperty resources that is managed by the system.
+    The IsisL3RouteProperty class encapsulates a list of isisL3RouteProperty resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisL3RouteProperty.find() method.
     """
 
@@ -37,187 +37,214 @@ class IsisL3RouteProperty(Base):
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
-    def BAR(self):
-        """BIER Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def IsisL3PrefixesSrSid(self):
         """
-        return self._get_attribute('BAR')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid.IsisL3PrefixesSrSid): An instance of the IsisL3PrefixesSrSid class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid import IsisL3PrefixesSrSid
+        return IsisL3PrefixesSrSid(self)._select()
+
+    @property
+    def BAR(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BIER Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BAR'))
 
     @property
     def BFRId(self):
-        """BFR Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('BFRId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BFR Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BFRId'))
 
     @property
     def BFRIdStep(self):
-        """BFR Id Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('BFRIdStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): BFR Id Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BFRIdStep'))
 
     @property
     def BIERBitStringLength(self):
-        """Bit String Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('BIERBitStringLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bit String Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BIERBitStringLength'))
 
     @property
     def IPA(self):
-        """IGP Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('IPA')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IGP Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('IPA'))
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdvIPv6Prefix(self):
-        """DEPRECATED Advertise IPv6 Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise IPv6 Prefix
         """
-        return self._get_attribute('advIPv6Prefix')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advIPv6Prefix'))
 
     @property
     def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
-        return self._get_attribute('algorithm')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def ConfigureSIDIndexLabel(self):
-        """Configure SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
         """
-        return self._get_attribute('configureSIDIndexLabel')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('configureSIDIndexLabel'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DBitInsideSRv6SidTLV(self):
-        """DEPRECATED When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
         """
-        return self._get_attribute('dBitInsideSRv6SidTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dBitInsideSRv6SidTLV'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EFlag(self):
-        """Explicit NULL flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
         """
-        return self._get_attribute('eFlag')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
 
     @property
     def Funcflags(self):
-        """DEPRECATED This is the function flags
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the function flags
         """
-        return self._get_attribute('funcflags')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('funcflags'))
 
     @property
     def Function(self):
-        """DEPRECATED This specifies endpoint function codes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies endpoint function codes
         """
-        return self._get_attribute('function')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('function'))
 
     @property
     def IncludeBIERInfo(self):
-        """Include BIER Info
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Include BIER Info
         """
         return self._get_attribute('includeBIERInfo')
     @IncludeBIERInfo.setter
@@ -226,91 +253,99 @@ class IsisL3RouteProperty(Base):
 
     @property
     def IncludeBSLObject(self):
-        """If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeBSLObject')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeBSLObject'))
 
     @property
     def Ipv6SID(self):
-        """DEPRECATED This refers to the IPv6 SID that is being used to reach the advertised IPv6 Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This refers to the IPv6 SID that is being used to reach the advertised IPv6 Prefix
         """
-        return self._get_attribute('ipv6SID')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6SID'))
 
     @property
     def Ipv6Srh(self):
-        """DEPRECATED Advertise IPv6 SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise IPv6 SID
         """
-        return self._get_attribute('ipv6Srh')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6Srh'))
 
     @property
     def LFlag(self):
-        """Local Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
         """
-        return self._get_attribute('lFlag')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def LabelRangeSize(self):
-        """Maximum Set Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelRangeSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Set Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelRangeSize'))
 
     @property
     def LabelStart(self):
-        """Label Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelStart'))
 
     @property
     def LocalSystemID(self):
-        """System ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): System ID
         """
         return self._get_attribute('localSystemID')
 
     @property
     def Metric(self):
-        """Route Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def NFlag(self):
-        """Nodal prefix flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Nodal prefix flag
         """
-        return self._get_attribute('nFlag')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nFlag'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -318,125 +353,156 @@ class IsisL3RouteProperty(Base):
         self._set_attribute('name', value)
 
     @property
-    def PFlag(self):
-        """No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def NoOfSidperPrefix(self):
         """
-        return self._get_attribute('pFlag')
+        Returns
+        -------
+        - number: Number of SID's per prefix
+        """
+        return self._get_attribute('noOfSidperPrefix')
+    @NoOfSidperPrefix.setter
+    def NoOfSidperPrefix(self, value):
+        self._set_attribute('noOfSidperPrefix', value)
+
+    @property
+    def PFlag(self):
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
 
     @property
     def RFlag(self):
-        """Redistribution flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
         """
-        return self._get_attribute('rFlag')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rFlag'))
 
     @property
     def Redistribution(self):
-        """Redistribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redistribution')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redistribution'))
 
     @property
     def ReservedInsideFlagsOfSRv6SidTLV(self):
-        """DEPRECATED This is the reserved field (part of Flags field of SRv6 SID TLV)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the reserved field (part of Flags field of SRv6 SID TLV)
         """
-        return self._get_attribute('reservedInsideFlagsOfSRv6SidTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedInsideFlagsOfSRv6SidTLV'))
 
     @property
     def RouteOrigin(self):
-        """Route Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routeOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeOrigin'))
 
     @property
     def SIDIndexLabel(self):
-        """SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
-        return self._get_attribute('sIDIndexLabel')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sIDIndexLabel'))
 
     @property
     def SubDomainId(self):
-        """Sub Domain Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('subDomainId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Sub Domain Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('subDomainId'))
 
     @property
     def VFlag(self):
-        """Value Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
         """
-        return self._get_attribute('vFlag')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
-    def update(self, IncludeBIERInfo=None, Name=None):
-        """Updates a child instance of isisL3RouteProperty on the server.
+    def update(self, IncludeBIERInfo=None, Name=None, NoOfSidperPrefix=None):
+        """Updates isisL3RouteProperty resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            IncludeBIERInfo (bool): Include BIER Info
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - IncludeBIERInfo (bool): Include BIER Info
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSidperPrefix (number): Number of SID's per prefix
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, LocalSystemID=None, Name=None):
-        """Finds and retrieves isisL3RouteProperty data from the server.
+    def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, LocalSystemID=None, Name=None, NoOfSidperPrefix=None):
+        """Finds and retrieves isisL3RouteProperty resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisL3RouteProperty data from the server.
-        By default the find method takes no parameters and will retrieve all isisL3RouteProperty data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3RouteProperty resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisL3RouteProperty resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            IncludeBIERInfo (bool): Include BIER Info
-            LocalSystemID (list(str)): System ID
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - IncludeBIERInfo (bool): Include BIER Info
+        - LocalSystemID (list(str)): System ID
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSidperPrefix (number): Number of SID's per prefix
 
-        Returns:
-            self: This instance with matching isisL3RouteProperty data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisL3RouteProperty resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisL3RouteProperty data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisL3RouteProperty data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisL3RouteProperty resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -445,43 +511,46 @@ class IsisL3RouteProperty(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BAR (str): optional regex of BAR
-            BFRId (str): optional regex of BFRId
-            BFRIdStep (str): optional regex of BFRIdStep
-            BIERBitStringLength (str): optional regex of BIERBitStringLength
-            IPA (str): optional regex of IPA
-            Active (str): optional regex of active
-            AdvIPv6Prefix (str): optional regex of advIPv6Prefix
-            Algorithm (str): optional regex of algorithm
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
-            DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
-            EFlag (str): optional regex of eFlag
-            Funcflags (str): optional regex of funcflags
-            Function (str): optional regex of function
-            IncludeBSLObject (str): optional regex of includeBSLObject
-            Ipv6SID (str): optional regex of ipv6SID
-            Ipv6Srh (str): optional regex of ipv6Srh
-            LFlag (str): optional regex of lFlag
-            LabelRangeSize (str): optional regex of labelRangeSize
-            LabelStart (str): optional regex of labelStart
-            Metric (str): optional regex of metric
-            NFlag (str): optional regex of nFlag
-            PFlag (str): optional regex of pFlag
-            RFlag (str): optional regex of rFlag
-            Redistribution (str): optional regex of redistribution
-            ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
-            RouteOrigin (str): optional regex of routeOrigin
-            SIDIndexLabel (str): optional regex of sIDIndexLabel
-            SubDomainId (str): optional regex of subDomainId
-            VFlag (str): optional regex of vFlag
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BAR (str): optional regex of BAR
+        - BFRId (str): optional regex of BFRId
+        - BFRIdStep (str): optional regex of BFRIdStep
+        - BIERBitStringLength (str): optional regex of BIERBitStringLength
+        - IPA (str): optional regex of IPA
+        - Active (str): optional regex of active
+        - AdvIPv6Prefix (str): optional regex of advIPv6Prefix
+        - Algorithm (str): optional regex of algorithm
+        - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
+        - EFlag (str): optional regex of eFlag
+        - Funcflags (str): optional regex of funcflags
+        - Function (str): optional regex of function
+        - IncludeBSLObject (str): optional regex of includeBSLObject
+        - Ipv6SID (str): optional regex of ipv6SID
+        - Ipv6Srh (str): optional regex of ipv6Srh
+        - LFlag (str): optional regex of lFlag
+        - LabelRangeSize (str): optional regex of labelRangeSize
+        - LabelStart (str): optional regex of labelStart
+        - Metric (str): optional regex of metric
+        - NFlag (str): optional regex of nFlag
+        - PFlag (str): optional regex of pFlag
+        - RFlag (str): optional regex of rFlag
+        - Redistribution (str): optional regex of redistribution
+        - ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
+        - RouteOrigin (str): optional regex of routeOrigin
+        - SIDIndexLabel (str): optional regex of sIDIndexLabel
+        - SubDomainId (str): optional regex of subDomainId
+        - VFlag (str): optional regex of vFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -490,26 +559,26 @@ class IsisL3RouteProperty(Base):
 
         Age out percentage of ISIS Routes in a L3 Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ageOutRoutes(Percentage:number)
-            Args:
-                args[0] is Percentage (number): This parameter requires a percentage of type kInteger
+        ageOutRoutes(Percentage=number)
+        -------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
 
-        ageOutRoutes(Percentage:number, SessionIndices:list)
-            Args:
-                args[0] is Percentage (number): This parameter requires a percentage of type kInteger
-                args[1] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        ageOutRoutes(Percentage=number, SessionIndices=list)
+        ----------------------------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        ageOutRoutes(SessionIndices:string, Percentage:number)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a percentage of type kInteger
-                args[1] is Percentage (number): This parameter requires a string of session numbers 1-4;6;7-12
+        ageOutRoutes(SessionIndices=string, Percentage=number)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a percentage of type kInteger
+        - Percentage (number): This parameter requires a string of session numbers 1-4;6;7-12
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -521,17 +590,16 @@ class IsisL3RouteProperty(Base):
 
         Completely/Partially age out routes contained in this route range.
 
-        ageoutroutes(Arg2:list, Arg3:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-                args[1] is Arg3 (number): What percentage of routes to age out. 100% means all routes.
+        ageoutroutes(Arg2=list, Arg3=number)list
+        ----------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Arg3 (number): What percentage of routes to age out. 100% means all routes.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -543,22 +611,20 @@ class IsisL3RouteProperty(Base):
 
         Re-advertise Aged out ISIS Routes in a L3 Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        readvertiseRoutes()
+        readvertiseRoutes(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        readvertiseRoutes(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        readvertiseRoutes(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        readvertiseRoutes(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -570,16 +636,15 @@ class IsisL3RouteProperty(Base):
 
         Readvertise only the aged-out routes contained in this route range.
 
-        readvertiseroutes(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        readvertiseroutes(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -591,22 +656,20 @@ class IsisL3RouteProperty(Base):
 
         Start ISIS L3 Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -618,22 +681,20 @@ class IsisL3RouteProperty(Base):
 
         Stop ISIS L3 Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

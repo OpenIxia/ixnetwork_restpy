@@ -36,10 +36,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def HundredMbFd(self):
-        """Indicates that the advertized features include 100 Mb full-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 100 Mb full-duplex rate support.
         """
         return self._get_attribute('100MbFd')
     @HundredMbFd.setter
@@ -48,10 +48,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def HundredMbHd(self):
-        """Indicates that the advertized features include 100 Mb half-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 100 Mb half-duplex rate support.
         """
         return self._get_attribute('100MbHd')
     @HundredMbHd.setter
@@ -60,10 +60,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def TenGbFd(self):
-        """Indicates that the advertized features include 10 Gb full-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 10 Gb full-duplex rate support.
         """
         return self._get_attribute('10GbFd')
     @TenGbFd.setter
@@ -72,10 +72,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def TenMbFd(self):
-        """Indicates that the advertized features include 10 Mb full-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 10 Mb full-duplex rate support.
         """
         return self._get_attribute('10MbFd')
     @TenMbFd.setter
@@ -84,10 +84,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def TenMbHd(self):
-        """Indicates that the advertized features include 10 Mb half-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 10 Mb half-duplex rate support.
         """
         return self._get_attribute('10MbHd')
     @TenMbHd.setter
@@ -96,10 +96,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def OneGbFd(self):
-        """Indicates that the advertized features include 1 Gb full-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 1 Gb full-duplex rate support.
         """
         return self._get_attribute('1GbFd')
     @OneGbFd.setter
@@ -108,10 +108,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def OneGbHd(self):
-        """Indicates that the advertized features include 1 Gb half-duplex rate support.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include 1 Gb half-duplex rate support.
         """
         return self._get_attribute('1GbHd')
     @OneGbHd.setter
@@ -120,10 +120,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def AsymmetricPause(self):
-        """Indicates that the advertized features include Asymmetric pause.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include Asymmetric pause.
         """
         return self._get_attribute('asymmetricPause')
     @AsymmetricPause.setter
@@ -132,10 +132,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def AutoNegotiation(self):
-        """Indicates that the advertized features include Auto-negotiation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include Auto-negotiation.
         """
         return self._get_attribute('autoNegotiation')
     @AutoNegotiation.setter
@@ -144,10 +144,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def CopperMedium(self):
-        """Indicates that the advertized features include Copper medium.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include Copper medium.
         """
         return self._get_attribute('copperMedium')
     @CopperMedium.setter
@@ -156,10 +156,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def FiberMedium(self):
-        """Indicates that the advertized features include Fiber medium.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include Fiber medium.
         """
         return self._get_attribute('fiberMedium')
     @FiberMedium.setter
@@ -168,10 +168,10 @@ class AdvertisedFeatures(Base):
 
     @property
     def Pause(self):
-        """Indicates that the advertized features include Pause.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the advertized features include Pause.
         """
         return self._get_attribute('pause')
     @Pause.setter
@@ -179,23 +179,25 @@ class AdvertisedFeatures(Base):
         self._set_attribute('pause', value)
 
     def update(self, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, Pause=None):
-        """Updates a child instance of advertisedFeatures on the server.
+        """Updates advertisedFeatures resource on the server.
 
-        Args:
-            HundredMbFd (bool): Indicates that the advertized features include 100 Mb full-duplex rate support.
-            HundredMbHd (bool): Indicates that the advertized features include 100 Mb half-duplex rate support.
-            TenGbFd (bool): Indicates that the advertized features include 10 Gb full-duplex rate support.
-            TenMbFd (bool): Indicates that the advertized features include 10 Mb full-duplex rate support.
-            TenMbHd (bool): Indicates that the advertized features include 10 Mb half-duplex rate support.
-            OneGbFd (bool): Indicates that the advertized features include 1 Gb full-duplex rate support.
-            OneGbHd (bool): Indicates that the advertized features include 1 Gb half-duplex rate support.
-            AsymmetricPause (bool): Indicates that the advertized features include Asymmetric pause.
-            AutoNegotiation (bool): Indicates that the advertized features include Auto-negotiation.
-            CopperMedium (bool): Indicates that the advertized features include Copper medium.
-            FiberMedium (bool): Indicates that the advertized features include Fiber medium.
-            Pause (bool): Indicates that the advertized features include Pause.
+        Args
+        ----
+        - HundredMbFd (bool): Indicates that the advertized features include 100 Mb full-duplex rate support.
+        - HundredMbHd (bool): Indicates that the advertized features include 100 Mb half-duplex rate support.
+        - TenGbFd (bool): Indicates that the advertized features include 10 Gb full-duplex rate support.
+        - TenMbFd (bool): Indicates that the advertized features include 10 Mb full-duplex rate support.
+        - TenMbHd (bool): Indicates that the advertized features include 10 Mb half-duplex rate support.
+        - OneGbFd (bool): Indicates that the advertized features include 1 Gb full-duplex rate support.
+        - OneGbHd (bool): Indicates that the advertized features include 1 Gb half-duplex rate support.
+        - AsymmetricPause (bool): Indicates that the advertized features include Asymmetric pause.
+        - AutoNegotiation (bool): Indicates that the advertized features include Auto-negotiation.
+        - CopperMedium (bool): Indicates that the advertized features include Copper medium.
+        - FiberMedium (bool): Indicates that the advertized features include Fiber medium.
+        - Pause (bool): Indicates that the advertized features include Pause.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

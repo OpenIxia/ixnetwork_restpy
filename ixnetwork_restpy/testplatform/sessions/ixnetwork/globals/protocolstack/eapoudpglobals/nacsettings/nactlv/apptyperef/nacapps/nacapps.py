@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NacApps(Base):
     """TLV Application Code
-    The NacApps class encapsulates a list of nacApps resources that is be managed by the user.
+    The NacApps class encapsulates a list of nacApps resources that are managed by the user.
     A list of resources can be retrieved from the server using the NacApps.find() method.
-    The list can be managed by the user by using the NacApps.add() and NacApps.remove() methods.
+    The list can be managed by using the NacApps.add() and NacApps.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class NacApps(Base):
 
     @property
     def Name(self):
-        """AppCode Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: AppCode Name.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -50,19 +50,19 @@ class NacApps(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def Value(self):
-        """AppCode ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: AppCode ID.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -70,71 +70,84 @@ class NacApps(Base):
         self._set_attribute('value', value)
 
     def update(self, Name=None, Value=None):
-        """Updates a child instance of nacApps on the server.
+        """Updates nacApps resource on the server.
 
-        Args:
-            Name (str): AppCode Name.
-            Value (number): AppCode ID.
+        Args
+        ----
+        - Name (str): AppCode Name.
+        - Value (number): AppCode ID.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None, Value=None):
-        """Adds a new nacApps node on the server and retrieves it in this instance.
+        """Adds a new nacApps resource on the server and adds it to the container.
 
-        Args:
-            Name (str): AppCode Name.
-            Value (number): AppCode ID.
+        Args
+        ----
+        - Name (str): AppCode Name.
+        - Value (number): AppCode ID.
 
-        Returns:
-            self: This instance with all currently retrieved nacApps data using find and the newly added nacApps data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved nacApps resources using find and the newly added nacApps resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the nacApps data in this instance from server.
+        """Deletes all the contained nacApps resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Name=None, ObjectId=None, Value=None):
-        """Finds and retrieves nacApps data from the server.
+        """Finds and retrieves nacApps resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve nacApps data from the server.
-        By default the find method takes no parameters and will retrieve all nacApps data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacApps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all nacApps resources from the server.
 
-        Args:
-            Name (str): AppCode Name.
-            ObjectId (str): Unique identifier for this object
-            Value (number): AppCode ID.
+        Args
+        ----
+        - Name (str): AppCode Name.
+        - ObjectId (str): Unique identifier for this object
+        - Value (number): AppCode ID.
 
-        Returns:
-            self: This instance with matching nacApps data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching nacApps resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of nacApps data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the nacApps data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the nacApps resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

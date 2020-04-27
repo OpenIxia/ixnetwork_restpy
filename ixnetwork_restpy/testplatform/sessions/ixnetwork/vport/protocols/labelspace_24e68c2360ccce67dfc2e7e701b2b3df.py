@@ -36,10 +36,10 @@ class LabelSpace(Base):
 
     @property
     def End(self):
-        """The last label value available in the label space (range).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The last label value available in the label space (range).
         """
         return self._get_attribute('end')
     @End.setter
@@ -48,10 +48,10 @@ class LabelSpace(Base):
 
     @property
     def LabelId(self):
-        """The identifier for the label space.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for the label space.
         """
         return self._get_attribute('labelId')
     @LabelId.setter
@@ -60,10 +60,10 @@ class LabelSpace(Base):
 
     @property
     def Mode(self):
-        """Sets the Label mode.
-
-        Returns:
-            str(fixedLabel|incrementLabel)
+        """
+        Returns
+        -------
+        - str(fixedLabel | incrementLabel): Sets the Label mode.
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -72,10 +72,10 @@ class LabelSpace(Base):
 
     @property
     def Start(self):
-        """The first label value available in the label space (range). The default is 16.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first label value available in the label space (range). The default is 16.
         """
         return self._get_attribute('start')
     @Start.setter
@@ -84,10 +84,10 @@ class LabelSpace(Base):
 
     @property
     def Step(self):
-        """The value to add for creating each additional label value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value to add for creating each additional label value.
         """
         return self._get_attribute('step')
     @Step.setter
@@ -95,16 +95,18 @@ class LabelSpace(Base):
         self._set_attribute('step', value)
 
     def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
-        """Updates a child instance of labelSpace on the server.
+        """Updates labelSpace resource on the server.
 
-        Args:
-            End (number): The last label value available in the label space (range).
-            LabelId (number): The identifier for the label space.
-            Mode (str(fixedLabel|incrementLabel)): Sets the Label mode.
-            Start (number): The first label value available in the label space (range). The default is 16.
-            Step (number): The value to add for creating each additional label value.
+        Args
+        ----
+        - End (number): The last label value available in the label space (range).
+        - LabelId (number): The identifier for the label space.
+        - Mode (str(fixedLabel | incrementLabel)): Sets the Label mode.
+        - Start (number): The first label value available in the label space (range). The default is 16.
+        - Step (number): The value to add for creating each additional label value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

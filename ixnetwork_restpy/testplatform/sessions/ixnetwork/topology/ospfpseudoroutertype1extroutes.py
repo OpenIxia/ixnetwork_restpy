@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OspfPseudoRouterType1ExtRoutes(Base):
     """External routes without external metric
-    The OspfPseudoRouterType1ExtRoutes class encapsulates a list of ospfPseudoRouterType1ExtRoutes resources that is managed by the system.
+    The OspfPseudoRouterType1ExtRoutes class encapsulates a list of ospfPseudoRouterType1ExtRoutes resources that are managed by the system.
     A list of resources can be retrieved from the server using the OspfPseudoRouterType1ExtRoutes.find() method.
     """
 
@@ -37,91 +37,98 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
     @property
     def Active(self):
-        """Whether this is to be advertised or not
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('algorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def ConfigureSIDIndexLabel(self):
-        """Configure SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('configureSIDIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('configureSIDIndexLabel'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EFlag(self):
-        """Explicit-Null Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
 
     @property
     def LFlag(self):
-        """Local or Global Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def MFlag(self):
-        """Mapping Server Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mFlag'))
 
     @property
     def Metric(self):
-        """Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -130,103 +137,118 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
     @property
     def NetworkAddress(self):
-        """Network addresses of the simulated IPv4 network
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network addresses of the simulated IPv4 network
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkAddress'))
 
     @property
     def NpFlag(self):
-        """No-PHP Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('npFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('npFlag'))
 
     @property
     def PrefixLength(self):
-        """Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def RangeSize(self):
-        """Range Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rangeSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rangeSize'))
 
     @property
     def SidIndexLabel(self):
-        """SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sidIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sidIndexLabel'))
 
     @property
     def VFlag(self):
-        """Value or Index Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
     def update(self, Name=None):
-        """Updates a child instance of ospfPseudoRouterType1ExtRoutes on the server.
+        """Updates ospfPseudoRouterType1ExtRoutes resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves ospfPseudoRouterType1ExtRoutes data from the server.
+        """Finds and retrieves ospfPseudoRouterType1ExtRoutes resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfPseudoRouterType1ExtRoutes data from the server.
-        By default the find method takes no parameters and will retrieve all ospfPseudoRouterType1ExtRoutes data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfPseudoRouterType1ExtRoutes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfPseudoRouterType1ExtRoutes resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching ospfPseudoRouterType1ExtRoutes data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfPseudoRouterType1ExtRoutes resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfPseudoRouterType1ExtRoutes data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfPseudoRouterType1ExtRoutes data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfPseudoRouterType1ExtRoutes resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -235,27 +257,30 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            Algorithm (str): optional regex of algorithm
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
-            EFlag (str): optional regex of eFlag
-            LFlag (str): optional regex of lFlag
-            MFlag (str): optional regex of mFlag
-            Metric (str): optional regex of metric
-            NetworkAddress (str): optional regex of networkAddress
-            NpFlag (str): optional regex of npFlag
-            PrefixLength (str): optional regex of prefixLength
-            RangeSize (str): optional regex of rangeSize
-            SidIndexLabel (str): optional regex of sidIndexLabel
-            VFlag (str): optional regex of vFlag
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - Algorithm (str): optional regex of algorithm
+        - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - EFlag (str): optional regex of eFlag
+        - LFlag (str): optional regex of lFlag
+        - MFlag (str): optional regex of mFlag
+        - Metric (str): optional regex of metric
+        - NetworkAddress (str): optional regex of networkAddress
+        - NpFlag (str): optional regex of npFlag
+        - PrefixLength (str): optional regex of prefixLength
+        - RangeSize (str): optional regex of rangeSize
+        - SidIndexLabel (str): optional regex of sidIndexLabel
+        - VFlag (str): optional regex of vFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -264,22 +289,20 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
         Advertise selected routes
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        advertise()
+        advertise(SessionIndices=list)
+        ------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        advertise(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        advertise(SessionIndices=string)
+        --------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        advertise(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -291,9 +314,10 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -303,9 +327,10 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)
@@ -315,22 +340,20 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
         Withdraw selected routes
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        withdraw()
+        withdraw(SessionIndices=list)
+        -----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        withdraw(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        withdraw(SessionIndices=string)
+        -------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        withdraw(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

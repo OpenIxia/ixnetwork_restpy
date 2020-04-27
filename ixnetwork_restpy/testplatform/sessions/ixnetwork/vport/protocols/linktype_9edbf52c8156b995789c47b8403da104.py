@@ -36,10 +36,10 @@ class LinkType(Base):
 
     @property
     def OfppfCopper(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfCopper')
     @OfppfCopper.setter
@@ -48,10 +48,10 @@ class LinkType(Base):
 
     @property
     def OfppfFiber(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ofppfFiber')
     @OfppfFiber.setter
@@ -59,13 +59,15 @@ class LinkType(Base):
         self._set_attribute('ofppfFiber', value)
 
     def update(self, OfppfCopper=None, OfppfFiber=None):
-        """Updates a child instance of linkType on the server.
+        """Updates linkType resource on the server.
 
-        Args:
-            OfppfCopper (bool): NOT DEFINED
-            OfppfFiber (bool): NOT DEFINED
+        Args
+        ----
+        - OfppfCopper (bool): NOT DEFINED
+        - OfppfFiber (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

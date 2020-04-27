@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Parameter(Base):
     """A TAP paramter that can be used.
-    The Parameter class encapsulates a list of parameter resources that is managed by the system.
+    The Parameter class encapsulates a list of parameter resources that are managed by the system.
     A list of resources can be retrieved from the server using the Parameter.find() method.
     """
 
@@ -37,19 +37,19 @@ class Parameter(Base):
 
     @property
     def AvailableChoices(self):
-        """Available Choices
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Available Choices
         """
         return self._get_attribute('availableChoices')
 
     @property
     def CurrentValue(self):
-        """Parameter UI Display Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter UI Display Value
         """
         return self._get_attribute('currentValue')
     @CurrentValue.setter
@@ -58,104 +58,113 @@ class Parameter(Base):
 
     @property
     def CustomDefaultValue(self):
-        """Parameter Custom Default Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter Custom Default Value
         """
         return self._get_attribute('customDefaultValue')
 
     @property
     def DefaultValue(self):
-        """Parameter Default Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter Default Value
         """
         return self._get_attribute('defaultValue')
 
     @property
     def IsReadOnly(self):
-        """Parameter value type
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Parameter value type
         """
         return self._get_attribute('isReadOnly')
 
     @property
     def MaxValue(self):
-        """Parameter Maximum Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter Maximum Value
         """
         return self._get_attribute('maxValue')
 
     @property
     def MinValue(self):
-        """Parameter Minimum Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter Minimum Value
         """
         return self._get_attribute('minValue')
 
     @property
     def Name(self):
-        """Parameter Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter Name.
         """
         return self._get_attribute('name')
 
     def update(self, CurrentValue=None):
-        """Updates a child instance of parameter on the server.
+        """Updates parameter resource on the server.
 
-        Args:
-            CurrentValue (str): Parameter UI Display Value
+        Args
+        ----
+        - CurrentValue (str): Parameter UI Display Value
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, AvailableChoices=None, CurrentValue=None, CustomDefaultValue=None, DefaultValue=None, IsReadOnly=None, MaxValue=None, MinValue=None, Name=None):
-        """Finds and retrieves parameter data from the server.
+        """Finds and retrieves parameter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve parameter data from the server.
-        By default the find method takes no parameters and will retrieve all parameter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve parameter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all parameter resources from the server.
 
-        Args:
-            AvailableChoices (list(str)): Available Choices
-            CurrentValue (str): Parameter UI Display Value
-            CustomDefaultValue (str): Parameter Custom Default Value
-            DefaultValue (str): Parameter Default Value
-            IsReadOnly (bool): Parameter value type
-            MaxValue (str): Parameter Maximum Value
-            MinValue (str): Parameter Minimum Value
-            Name (str): Parameter Name.
+        Args
+        ----
+        - AvailableChoices (list(str)): Available Choices
+        - CurrentValue (str): Parameter UI Display Value
+        - CustomDefaultValue (str): Parameter Custom Default Value
+        - DefaultValue (str): Parameter Default Value
+        - IsReadOnly (bool): Parameter value type
+        - MaxValue (str): Parameter Maximum Value
+        - MinValue (str): Parameter Minimum Value
+        - Name (str): Parameter Name.
 
-        Returns:
-            self: This instance with matching parameter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching parameter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of parameter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the parameter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the parameter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

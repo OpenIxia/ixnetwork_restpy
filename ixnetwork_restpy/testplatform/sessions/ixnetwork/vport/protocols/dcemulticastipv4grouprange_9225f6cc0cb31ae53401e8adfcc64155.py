@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceMulticastIpv4GroupRange(Base):
     """Sets the Multicast IPv4 Group Range for the DCE ISIS router.
-    The DceMulticastIpv4GroupRange class encapsulates a list of dceMulticastIpv4GroupRange resources that is be managed by the user.
+    The DceMulticastIpv4GroupRange class encapsulates a list of dceMulticastIpv4GroupRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceMulticastIpv4GroupRange.find() method.
-    The list can be managed by the user by using the DceMulticastIpv4GroupRange.add() and DceMulticastIpv4GroupRange.remove() methods.
+    The list can be managed by using the DceMulticastIpv4GroupRange.add() and DceMulticastIpv4GroupRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def InterGroupUnicastIpv4Increment(self):
-        """The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
         """
         return self._get_attribute('interGroupUnicastIpv4Increment')
     @InterGroupUnicastIpv4Increment.setter
@@ -62,10 +62,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def IntraGroupUnicastIpv4Increment(self):
-        """The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
         """
         return self._get_attribute('intraGroupUnicastIpv4Increment')
     @IntraGroupUnicastIpv4Increment.setter
@@ -74,10 +74,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def MulticastIpv4Count(self):
-        """The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
         """
         return self._get_attribute('multicastIpv4Count')
     @MulticastIpv4Count.setter
@@ -86,10 +86,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def MulticastIpv4Step(self):
-        """The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
         """
         return self._get_attribute('multicastIpv4Step')
     @MulticastIpv4Step.setter
@@ -98,10 +98,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def SourceGroupMapping(self):
-        """The Source Group mapping type.
-
-        Returns:
-            str(fullyMeshed|oneToOne|manualMapping)
+        """
+        Returns
+        -------
+        - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
         return self._get_attribute('sourceGroupMapping')
     @SourceGroupMapping.setter
@@ -110,10 +110,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def StartMulticastIpv4(self):
-        """The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
         """
         return self._get_attribute('startMulticastIpv4')
     @StartMulticastIpv4.setter
@@ -122,10 +122,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def StartUnicastSourceIpv4(self):
-        """The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
         """
         return self._get_attribute('startUnicastSourceIpv4')
     @StartUnicastSourceIpv4.setter
@@ -134,10 +134,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def Topology(self):
-        """The topology identifier to which the corresponding IpV4 belongs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The topology identifier to which the corresponding IpV4 belongs.
         """
         return self._get_attribute('topology')
     @Topology.setter
@@ -146,10 +146,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def UnicastSourcesPerMulticastIpv4(self):
-        """The number of Unicast Source for each Multicast IPv4 address. (default = 1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of Unicast Source for each Multicast IPv4 address. (default = 1)
         """
         return self._get_attribute('unicastSourcesPerMulticastIpv4')
     @UnicastSourcesPerMulticastIpv4.setter
@@ -158,10 +158,10 @@ class DceMulticastIpv4GroupRange(Base):
 
     @property
     def VlanId(self):
-        """The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -169,97 +169,110 @@ class DceMulticastIpv4GroupRange(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
-        """Updates a child instance of dceMulticastIpv4GroupRange on the server.
+        """Updates dceMulticastIpv4GroupRange resource on the server.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
-            Topology (number): The topology identifier to which the corresponding IpV4 belongs.
-            UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
+        - Topology (number): The topology identifier to which the corresponding IpV4 belongs.
+        - UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
-        """Adds a new dceMulticastIpv4GroupRange node on the server and retrieves it in this instance.
+        """Adds a new dceMulticastIpv4GroupRange resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
-            Topology (number): The topology identifier to which the corresponding IpV4 belongs.
-            UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
+        - Topology (number): The topology identifier to which the corresponding IpV4 belongs.
+        - UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
 
-        Returns:
-            self: This instance with all currently retrieved dceMulticastIpv4GroupRange data using find and the newly added dceMulticastIpv4GroupRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceMulticastIpv4GroupRange resources using find and the newly added dceMulticastIpv4GroupRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceMulticastIpv4GroupRange data in this instance from server.
+        """Deletes all the contained dceMulticastIpv4GroupRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
-        """Finds and retrieves dceMulticastIpv4GroupRange data from the server.
+        """Finds and retrieves dceMulticastIpv4GroupRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceMulticastIpv4GroupRange data from the server.
-        By default the find method takes no parameters and will retrieve all dceMulticastIpv4GroupRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceMulticastIpv4GroupRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceMulticastIpv4GroupRange resources from the server.
 
-        Args:
-            Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
-            InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
-            IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
-            MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
-            MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
-            SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
-            StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
-            StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
-            Topology (number): The topology identifier to which the corresponding IpV4 belongs.
-            UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
-            VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
+        Args
+        ----
+        - Enabled (bool): If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
+        - InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
+        - IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
+        - MulticastIpv4Count (number): The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
+        - MulticastIpv4Step (str): The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
+        - SourceGroupMapping (str(fullyMeshed | oneToOne | manualMapping)): The Source Group mapping type.
+        - StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
+        - StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
+        - Topology (number): The topology identifier to which the corresponding IpV4 belongs.
+        - UnicastSourcesPerMulticastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address. (default = 1)
+        - VlanId (number): The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
 
-        Returns:
-            self: This instance with matching dceMulticastIpv4GroupRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceMulticastIpv4GroupRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceMulticastIpv4GroupRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceMulticastIpv4GroupRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceMulticastIpv4GroupRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

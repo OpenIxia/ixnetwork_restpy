@@ -36,64 +36,68 @@ class IsisL3ipv4NodeRouteList(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def FirstIpv4Route(self):
-        """First IPv4 Route
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('firstIpv4Route')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): First IPv4 Route
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('firstIpv4Route'))
 
     @property
     def MaskWidth(self):
-        """Mask Width for IPv4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maskWidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mask Width for IPv4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maskWidth'))
 
     @property
     def Metric(self):
-        """Route Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('metric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metric'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -102,84 +106,94 @@ class IsisL3ipv4NodeRouteList(Base):
 
     @property
     def NoOfRoutes(self):
-        """No. of Routes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('noOfRoutes')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Routes
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('noOfRoutes'))
 
     @property
     def NodeStep(self):
-        """Node Step
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nodeStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Node Step
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nodeStep'))
 
     @property
     def Redistribution(self):
-        """Redistribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redistribution')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redistribution'))
 
     @property
     def RouteOrigin(self):
-        """Route Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routeOrigin')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeOrigin'))
 
     @property
     def RouteStep(self):
-        """RouteStep
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('routeStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RouteStep
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeStep'))
 
     def update(self, Name=None):
-        """Updates a child instance of isisL3ipv4NodeRouteList on the server.
+        """Updates isisL3ipv4NodeRouteList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, FirstIpv4Route=None, MaskWidth=None, Metric=None, NoOfRoutes=None, NodeStep=None, Redistribution=None, RouteOrigin=None, RouteStep=None):
         """Base class infrastructure that gets a list of isisL3ipv4NodeRouteList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            FirstIpv4Route (str): optional regex of firstIpv4Route
-            MaskWidth (str): optional regex of maskWidth
-            Metric (str): optional regex of metric
-            NoOfRoutes (str): optional regex of noOfRoutes
-            NodeStep (str): optional regex of nodeStep
-            Redistribution (str): optional regex of redistribution
-            RouteOrigin (str): optional regex of routeOrigin
-            RouteStep (str): optional regex of routeStep
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - FirstIpv4Route (str): optional regex of firstIpv4Route
+        - MaskWidth (str): optional regex of maskWidth
+        - Metric (str): optional regex of metric
+        - NoOfRoutes (str): optional regex of noOfRoutes
+        - NodeStep (str): optional regex of nodeStep
+        - Redistribution (str): optional regex of redistribution
+        - RouteOrigin (str): optional regex of routeOrigin
+        - RouteStep (str): optional regex of routeStep
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

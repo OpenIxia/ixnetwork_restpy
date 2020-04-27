@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class GroupTrafficRange(Base):
     """Configures the values for the group traffic range.
-    The GroupTrafficRange class encapsulates a list of groupTrafficRange resources that is be managed by the user.
+    The GroupTrafficRange class encapsulates a list of groupTrafficRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the GroupTrafficRange.find() method.
-    The list can be managed by the user by using the GroupTrafficRange.add() and GroupTrafficRange.remove() methods.
+    The list can be managed by using the GroupTrafficRange.add() and GroupTrafficRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class GroupTrafficRange(Base):
 
     @property
     def AddrFamilyType(self):
-        """The address family of group address.
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): The address family of group address.
         """
         return self._get_attribute('addrFamilyType')
     @AddrFamilyType.setter
@@ -50,10 +50,10 @@ class GroupTrafficRange(Base):
 
     @property
     def GrpAddress(self):
-        """Group Address for traffic destination address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Group Address for traffic destination address.
         """
         return self._get_attribute('grpAddress')
     @GrpAddress.setter
@@ -62,10 +62,10 @@ class GroupTrafficRange(Base):
 
     @property
     def GrpCount(self):
-        """The group address count per LSP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The group address count per LSP.
         """
         return self._get_attribute('grpCount')
     @GrpCount.setter
@@ -73,73 +73,86 @@ class GroupTrafficRange(Base):
         self._set_attribute('grpCount', value)
 
     def update(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
-        """Updates a child instance of groupTrafficRange on the server.
+        """Updates groupTrafficRange resource on the server.
 
-        Args:
-            AddrFamilyType (str(ipv4|ipv6)): The address family of group address.
-            GrpAddress (str): Group Address for traffic destination address.
-            GrpCount (number): The group address count per LSP.
+        Args
+        ----
+        - AddrFamilyType (str(ipv4 | ipv6)): The address family of group address.
+        - GrpAddress (str): Group Address for traffic destination address.
+        - GrpCount (number): The group address count per LSP.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
-        """Adds a new groupTrafficRange node on the server and retrieves it in this instance.
+        """Adds a new groupTrafficRange resource on the server and adds it to the container.
 
-        Args:
-            AddrFamilyType (str(ipv4|ipv6)): The address family of group address.
-            GrpAddress (str): Group Address for traffic destination address.
-            GrpCount (number): The group address count per LSP.
+        Args
+        ----
+        - AddrFamilyType (str(ipv4 | ipv6)): The address family of group address.
+        - GrpAddress (str): Group Address for traffic destination address.
+        - GrpCount (number): The group address count per LSP.
 
-        Returns:
-            self: This instance with all currently retrieved groupTrafficRange data using find and the newly added groupTrafficRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved groupTrafficRange resources using find and the newly added groupTrafficRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the groupTrafficRange data in this instance from server.
+        """Deletes all the contained groupTrafficRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
-        """Finds and retrieves groupTrafficRange data from the server.
+        """Finds and retrieves groupTrafficRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve groupTrafficRange data from the server.
-        By default the find method takes no parameters and will retrieve all groupTrafficRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupTrafficRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all groupTrafficRange resources from the server.
 
-        Args:
-            AddrFamilyType (str(ipv4|ipv6)): The address family of group address.
-            GrpAddress (str): Group Address for traffic destination address.
-            GrpCount (number): The group address count per LSP.
+        Args
+        ----
+        - AddrFamilyType (str(ipv4 | ipv6)): The address family of group address.
+        - GrpAddress (str): Group Address for traffic destination address.
+        - GrpCount (number): The group address count per LSP.
 
-        Returns:
-            self: This instance with matching groupTrafficRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching groupTrafficRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of groupTrafficRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the groupTrafficRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the groupTrafficRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Router(Base):
     """
-    The Router class encapsulates a list of router resources that is managed by the system.
+    The Router class encapsulates a list of router resources that are managed by the system.
     A list of resources can be retrieved from the server using the Router.find() method.
     """
 
@@ -38,9 +38,9 @@ class Router(Base):
     @property
     def BBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('bBit')
     @BBit.setter
@@ -50,9 +50,9 @@ class Router(Base):
     @property
     def EBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('eBit')
     @EBit.setter
@@ -62,9 +62,9 @@ class Router(Base):
     @property
     def Interfaces(self):
         """
-
-        Returns:
-            list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit|pointToPoint|virtual],arg5:number))
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number)): 
         """
         return self._get_attribute('interfaces')
     @Interfaces.setter
@@ -74,9 +74,9 @@ class Router(Base):
     @property
     def OptBitDc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitDc')
     @OptBitDc.setter
@@ -86,9 +86,9 @@ class Router(Base):
     @property
     def OptBitE(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitE')
     @OptBitE.setter
@@ -98,9 +98,9 @@ class Router(Base):
     @property
     def OptBitMc(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitMc')
     @OptBitMc.setter
@@ -110,9 +110,9 @@ class Router(Base):
     @property
     def OptBitN(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitN')
     @OptBitN.setter
@@ -122,9 +122,9 @@ class Router(Base):
     @property
     def OptBitR(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitR')
     @OptBitR.setter
@@ -134,9 +134,9 @@ class Router(Base):
     @property
     def OptBitV6(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('optBitV6')
     @OptBitV6.setter
@@ -146,9 +146,9 @@ class Router(Base):
     @property
     def Option(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('option')
     @Option.setter
@@ -158,9 +158,9 @@ class Router(Base):
     @property
     def VBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('vBit')
     @VBit.setter
@@ -170,9 +170,9 @@ class Router(Base):
     @property
     def WBit(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('wBit')
     @WBit.setter
@@ -180,66 +180,75 @@ class Router(Base):
         self._set_attribute('wBit', value)
 
     def update(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
-        """Updates a child instance of router on the server.
+        """Updates router resource on the server.
 
-        Args:
-            BBit (bool): 
-            EBit (bool): 
-            Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit|pointToPoint|virtual],arg5:number))): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
-            VBit (bool): 
-            WBit (bool): 
+        Args
+        ----
+        - BBit (bool): 
+        - EBit (bool): 
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - VBit (bool): 
+        - WBit (bool): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
-        """Finds and retrieves router data from the server.
+        """Finds and retrieves router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve router data from the server.
-        By default the find method takes no parameters and will retrieve all router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all router resources from the server.
 
-        Args:
-            BBit (bool): 
-            EBit (bool): 
-            Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit|pointToPoint|virtual],arg5:number))): 
-            OptBitDc (bool): 
-            OptBitE (bool): 
-            OptBitMc (bool): 
-            OptBitN (bool): 
-            OptBitR (bool): 
-            OptBitV6 (bool): 
-            Option (number): 
-            VBit (bool): 
-            WBit (bool): 
+        Args
+        ----
+        - BBit (bool): 
+        - EBit (bool): 
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - VBit (bool): 
+        - WBit (bool): 
 
-        Returns:
-            self: This instance with matching router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

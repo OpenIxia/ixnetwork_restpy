@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class RdInfo(Base):
     """(Read Only) List of RDs learned from a next hop.
-    The RdInfo class encapsulates a list of rdInfo resources that is managed by the system.
+    The RdInfo class encapsulates a list of rdInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the RdInfo.find() method.
     """
 
@@ -37,55 +37,62 @@ class RdInfo(Base):
 
     @property
     def EthernetTagInfo(self):
-        """An instance of the EthernetTagInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_c03e2b61b081921ccc52bd241665cc8b.EthernetTagInfo): An instance of the EthernetTagInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_c03e2b61b081921ccc52bd241665cc8b.EthernetTagInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_c03e2b61b081921ccc52bd241665cc8b import EthernetTagInfo
         return EthernetTagInfo(self)
 
     @property
     def Rd(self):
-        """RD value in X:Y format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: RD value in X:Y format.
         """
         return self._get_attribute('rd')
 
     def find(self, Rd=None):
-        """Finds and retrieves rdInfo data from the server.
+        """Finds and retrieves rdInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rdInfo data from the server.
-        By default the find method takes no parameters and will retrieve all rdInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rdInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rdInfo resources from the server.
 
-        Args:
-            Rd (str): RD value in X:Y format.
+        Args
+        ----
+        - Rd (str): RD value in X:Y format.
 
-        Returns:
-            self: This instance with matching rdInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rdInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rdInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rdInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rdInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,10 +36,10 @@ class Target(Base):
 
     @property
     def TargetList(self):
-        """DEPRECATED Configures a target attribute to be associated with advertised L3 VPN route ranges.
-
-        Returns:
-            list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))
+        """DEPRECATED 
+        Returns
+        -------
+        - list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number)): Configures a target attribute to be associated with advertised L3 VPN route ranges.
         """
         return self._get_attribute('targetList')
     @TargetList.setter
@@ -48,10 +48,10 @@ class Target(Base):
 
     @property
     def TargetListEx(self):
-        """Configures a list of export targets to be associated with advertised L3 VPN route ranges.
-
-        Returns:
-            list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str)): Configures a list of export targets to be associated with advertised L3 VPN route ranges.
         """
         return self._get_attribute('targetListEx')
     @TargetListEx.setter
@@ -59,13 +59,15 @@ class Target(Base):
         self._set_attribute('targetListEx', value)
 
     def update(self, TargetList=None, TargetListEx=None):
-        """Updates a child instance of target on the server.
+        """Updates target resource on the server.
 
-        Args:
-            TargetList (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
-            TargetListEx (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN route ranges.
+        Args
+        ----
+        - TargetList (list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
+        - TargetListEx (list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN route ranges.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

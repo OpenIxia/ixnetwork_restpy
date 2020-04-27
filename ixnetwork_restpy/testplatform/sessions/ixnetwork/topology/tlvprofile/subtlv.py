@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SubTlv(Base):
     """Sub Tlv container
-    The SubTlv class encapsulates a list of subTlv resources that is managed by the system.
+    The SubTlv class encapsulates a list of subTlv resources that are managed by the system.
     A list of resources can be retrieved from the server using the SubTlv.find() method.
     """
 
@@ -37,24 +37,24 @@ class SubTlv(Base):
 
     @property
     def Value(self):
-        """An instance of the Value class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value.Value): An instance of the Value class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value.Value)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value import Value
         return Value(self)._select()
 
     @property
     def Description(self):
-        """Description of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the tlv
         """
         return self._get_attribute('description')
     @Description.setter
@@ -63,19 +63,20 @@ class SubTlv(Base):
 
     @property
     def EnablePerSession(self):
-        """Enable TLV per session
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enablePerSession')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable TLV per session
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enablePerSession'))
 
     @property
     def IsEnabled(self):
-        """Enables/disables this tlv
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/disables this tlv
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -84,10 +85,10 @@ class SubTlv(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -95,52 +96,61 @@ class SubTlv(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEnabled=None, Name=None):
-        """Updates a child instance of subTlv on the server.
+        """Updates subTlv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEnabled (bool): Enables/disables this tlv
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEnabled (bool): Enables/disables this tlv
+        - Name (str): Name of the tlv
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Description=None, IsEnabled=None, Name=None):
-        """Finds and retrieves subTlv data from the server.
+        """Finds and retrieves subTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve subTlv data from the server.
-        By default the find method takes no parameters and will retrieve all subTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve subTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all subTlv resources from the server.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEnabled (bool): Enables/disables this tlv
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEnabled (bool): Enables/disables this tlv
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with matching subTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching subTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of subTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the subTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the subTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -149,14 +159,17 @@ class SubTlv(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            EnablePerSession (str): optional regex of enablePerSession
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - EnablePerSession (str): optional regex of enablePerSession
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

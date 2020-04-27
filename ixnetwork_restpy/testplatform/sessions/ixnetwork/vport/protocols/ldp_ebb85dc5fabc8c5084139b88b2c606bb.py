@@ -36,24 +36,24 @@ class Ldp(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_d6d09ce6211168dd1205ca2dc43a8e72.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_d6d09ce6211168dd1205ca2dc43a8e72.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_d6d09ce6211168dd1205ca2dc43a8e72 import Router
         return Router(self)
 
     @property
     def EnableDiscardSelfAdvFecs(self):
-        """Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
         """
         return self._get_attribute('enableDiscardSelfAdvFecs')
     @EnableDiscardSelfAdvFecs.setter
@@ -62,10 +62,10 @@ class Ldp(Base):
 
     @property
     def EnableHelloJitter(self):
-        """Allows staggered transmission of many HELLO messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allows staggered transmission of many HELLO messages.
         """
         return self._get_attribute('enableHelloJitter')
     @EnableHelloJitter.setter
@@ -74,10 +74,10 @@ class Ldp(Base):
 
     @property
     def EnableLabelExchangeOverLsp(self):
-        """DEPRECATED Enables the ability to exchange labels over LSP for VPNs.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: Enables the ability to exchange labels over LSP for VPNs.
         """
         return self._get_attribute('enableLabelExchangeOverLsp')
     @EnableLabelExchangeOverLsp.setter
@@ -86,10 +86,10 @@ class Ldp(Base):
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableVpnLabelExchangeOverLsp')
     @EnableVpnLabelExchangeOverLsp.setter
@@ -98,10 +98,10 @@ class Ldp(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class Ldp(Base):
 
     @property
     def HelloHoldTime(self):
-        """One of the timers associated with maintaining adjacencies based on hello messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining adjacencies based on hello messages.
         """
         return self._get_attribute('helloHoldTime')
     @HelloHoldTime.setter
@@ -122,10 +122,10 @@ class Ldp(Base):
 
     @property
     def HelloInterval(self):
-        """One of the timers associated with maintaining adjacencies based on hello messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining adjacencies based on hello messages.
         """
         return self._get_attribute('helloInterval')
     @HelloInterval.setter
@@ -134,10 +134,10 @@ class Ldp(Base):
 
     @property
     def KeepAliveHoldTime(self):
-        """One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
         """
         return self._get_attribute('keepAliveHoldTime')
     @KeepAliveHoldTime.setter
@@ -146,10 +146,10 @@ class Ldp(Base):
 
     @property
     def KeepAliveInterval(self):
-        """One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
         """
         return self._get_attribute('keepAliveInterval')
     @KeepAliveInterval.setter
@@ -158,10 +158,10 @@ class Ldp(Base):
 
     @property
     def P2mpCapabilityParam(self):
-        """The P2MP capability parameter value in hexadecimal.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The P2MP capability parameter value in hexadecimal.
         """
         return self._get_attribute('p2mpCapabilityParam')
     @P2mpCapabilityParam.setter
@@ -170,10 +170,10 @@ class Ldp(Base):
 
     @property
     def P2mpFecType(self):
-        """The MLDP P2MP FEC type value in hexadecimal.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The MLDP P2MP FEC type value in hexadecimal.
         """
         return self._get_attribute('p2mpFecType')
     @P2mpFecType.setter
@@ -182,19 +182,19 @@ class Ldp(Base):
 
     @property
     def RunningState(self):
-        """The current state of the LDP server.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current state of the LDP server.
         """
         return self._get_attribute('runningState')
 
     @property
     def TargetedHelloInterval(self):
-        """One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
         """
         return self._get_attribute('targetedHelloInterval')
     @TargetedHelloInterval.setter
@@ -203,10 +203,10 @@ class Ldp(Base):
 
     @property
     def TargetedHoldTime(self):
-        """One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
         """
         return self._get_attribute('targetedHoldTime')
     @TargetedHoldTime.setter
@@ -215,10 +215,10 @@ class Ldp(Base):
 
     @property
     def UseTransportLabelsForMplsOam(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('useTransportLabelsForMplsOam')
     @UseTransportLabelsForMplsOam.setter
@@ -226,37 +226,40 @@ class Ldp(Base):
         self._set_attribute('useTransportLabelsForMplsOam', value)
 
     def update(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
-        """Updates a child instance of ldp on the server.
+        """Updates ldp resource on the server.
 
-        Args:
-            EnableDiscardSelfAdvFecs (bool): Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
-            EnableHelloJitter (bool): Allows staggered transmission of many HELLO messages.
-            EnableLabelExchangeOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
-            EnableVpnLabelExchangeOverLsp (bool): NOT DEFINED
-            Enabled (bool): Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
-            HelloHoldTime (number): One of the timers associated with maintaining adjacencies based on hello messages.
-            HelloInterval (number): One of the timers associated with maintaining adjacencies based on hello messages.
-            KeepAliveHoldTime (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
-            KeepAliveInterval (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
-            P2mpCapabilityParam (number): The P2MP capability parameter value in hexadecimal.
-            P2mpFecType (number): The MLDP P2MP FEC type value in hexadecimal.
-            TargetedHelloInterval (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
-            TargetedHoldTime (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
-            UseTransportLabelsForMplsOam (bool): NOT DEFINED
+        Args
+        ----
+        - EnableDiscardSelfAdvFecs (bool): Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
+        - EnableHelloJitter (bool): Allows staggered transmission of many HELLO messages.
+        - EnableLabelExchangeOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+        - EnableVpnLabelExchangeOverLsp (bool): NOT DEFINED
+        - Enabled (bool): Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
+        - HelloHoldTime (number): One of the timers associated with maintaining adjacencies based on hello messages.
+        - HelloInterval (number): One of the timers associated with maintaining adjacencies based on hello messages.
+        - KeepAliveHoldTime (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+        - KeepAliveInterval (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+        - P2mpCapabilityParam (number): The P2MP capability parameter value in hexadecimal.
+        - P2mpFecType (number): The MLDP P2MP FEC type value in hexadecimal.
+        - TargetedHelloInterval (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+        - TargetedHoldTime (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+        - UseTransportLabelsForMplsOam (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the LDP protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -266,9 +269,10 @@ class Ldp(Base):
 
         Stops the LDP protocol on a port of group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

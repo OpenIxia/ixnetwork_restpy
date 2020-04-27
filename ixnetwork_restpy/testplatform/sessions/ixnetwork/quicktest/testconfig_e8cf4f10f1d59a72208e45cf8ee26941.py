@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def BinaryBackoff(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binaryBackoff')
     @BinaryBackoff.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def BinaryFrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('binaryFrameLossUnit')
     @BinaryFrameLossUnit.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def BinaryLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('binaryLoadUnit')
     @BinaryLoadUnit.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binaryResolution')
     @BinaryResolution.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def BinarySearchType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(linear|perFlow|perPort)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort): NOT DEFINED
         """
         return self._get_attribute('binarySearchType')
     @BinarySearchType.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def BinaryTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('binaryTolerance')
     @BinaryTolerance.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def CalculateJitter(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('calculateJitter')
     @CalculateJitter.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def ComboBackoff(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('comboBackoff')
     @ComboBackoff.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def ComboFrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('comboFrameLossUnit')
     @ComboFrameLossUnit.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def ComboLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('comboLoadUnit')
     @ComboLoadUnit.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def ComboResolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('comboResolution')
     @ComboResolution.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def ComboTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('comboTolerance')
     @ComboTolerance.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def CustomLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -241,9 +241,9 @@ class TestConfig(Base):
     @property
     def DetailedResultsEnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('detailedResultsEnabled')
     @DetailedResultsEnabled.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def EnableExtraIterations(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableExtraIterations')
     @EnableExtraIterations.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def EnableFastConvergence(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableFastConvergence')
     @EnableFastConvergence.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer1Rate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLayer1Rate')
     @EnableLayer1Rate.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def EnableOldStatsForReef(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableOldStatsForReef')
     @EnableOldStatsForReef.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def ExtraIterationOffsets(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('extraIterationOffsets')
     @ExtraIterationOffsets.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceDuration(self):
-        """sec
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: sec
         """
         return self._get_attribute('fastConvergenceDuration')
     @FastConvergenceDuration.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceThreshold(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('fastConvergenceThreshold')
     @FastConvergenceThreshold.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def FrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('frameLossUnit')
     @FrameLossUnit.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def FrameOrderingByRfc2889(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('frameOrderingByRfc2889')
     @FrameOrderingByRfc2889.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(custom|fixed|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | fixed | increment | random): NOT DEFINED
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def FramesPerBurstGap(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('framesPerBurstGap')
     @FramesPerBurstGap.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def Framesize(self):
-        """Bytes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Bytes
         """
         return self._get_attribute('framesize')
     @Framesize.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """NOT DEFINED
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): NOT DEFINED
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('generateTrackingOptionAggregationFiles')
     @GenerateTrackingOptionAggregationFiles.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def InitialBinaryLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('initialBinaryLoadRate')
     @InitialBinaryLoadRate.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def InitialComboLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('initialComboLoadRate')
     @InitialComboLoadRate.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def InitialStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('initialStepLoadRate')
     @InitialStepLoadRate.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBins(self):
-        """DEPRECATED NOT DEFINED
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('latencyBins')
     @LatencyBins.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBinsEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('latencyBinsEnabled')
     @LatencyBinsEnabled.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def LatencyType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(cutThrough|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | storeForward): NOT DEFINED
         """
         return self._get_attribute('latencyType')
     @LatencyType.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateList(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(binary|combo|custom|quickSearch|step|unchanged)
+        """
+        Returns
+        -------
+        - str(binary | combo | custom | quickSearch | step | unchanged): NOT DEFINED
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def MaxBinaryLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxBinaryLoadRate')
     @MaxBinaryLoadRate.setter
@@ -600,10 +600,10 @@ class TestConfig(Base):
 
     @property
     def MaxComboLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxComboLoadRate')
     @MaxComboLoadRate.setter
@@ -612,10 +612,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -624,10 +624,10 @@ class TestConfig(Base):
 
     @property
     def MaxQuickSearchLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxQuickSearchLoadRate')
     @MaxQuickSearchLoadRate.setter
@@ -636,10 +636,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -648,10 +648,10 @@ class TestConfig(Base):
 
     @property
     def MaxStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('maxStepLoadRate')
     @MaxStepLoadRate.setter
@@ -660,10 +660,10 @@ class TestConfig(Base):
 
     @property
     def MinBinaryLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minBinaryLoadRate')
     @MinBinaryLoadRate.setter
@@ -672,10 +672,10 @@ class TestConfig(Base):
 
     @property
     def MinComboLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minComboLoadRate')
     @MinComboLoadRate.setter
@@ -684,10 +684,10 @@ class TestConfig(Base):
 
     @property
     def MinFpsRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minFpsRate')
     @MinFpsRate.setter
@@ -696,10 +696,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -708,10 +708,10 @@ class TestConfig(Base):
 
     @property
     def MinKbpsRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minKbpsRate')
     @MinKbpsRate.setter
@@ -720,10 +720,10 @@ class TestConfig(Base):
 
     @property
     def MinQuickSearchLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minQuickSearchLoadRate')
     @MinQuickSearchLoadRate.setter
@@ -732,10 +732,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -744,10 +744,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -756,10 +756,10 @@ class TestConfig(Base):
 
     @property
     def PercentMaxRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('percentMaxRate')
     @PercentMaxRate.setter
@@ -768,10 +768,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -780,10 +780,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): NOT DEFINED
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -792,10 +792,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -804,10 +804,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -816,10 +816,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchFrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%)
+        """
+        Returns
+        -------
+        - str(%): NOT DEFINED
         """
         return self._get_attribute('quickSearchFrameLossUnit')
     @QuickSearchFrameLossUnit.setter
@@ -828,10 +828,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('quickSearchLoadUnit')
     @QuickSearchLoadUnit.setter
@@ -840,10 +840,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchResolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('quickSearchResolution')
     @QuickSearchResolution.setter
@@ -852,10 +852,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchSearchType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(linear|perFlow|perPort|perTrafficItem)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort | perTrafficItem): NOT DEFINED
         """
         return self._get_attribute('quickSearchSearchType')
     @QuickSearchSearchType.setter
@@ -864,10 +864,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('quickSearchTolerance')
     @QuickSearchTolerance.setter
@@ -876,10 +876,10 @@ class TestConfig(Base):
 
     @property
     def RateSelect(self):
-        """NOT DEFINED
-
-        Returns:
-            str(fpsRate|kbpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(fpsRate | kbpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('rateSelect')
     @RateSelect.setter
@@ -888,10 +888,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -900,10 +900,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): NOT DEFINED
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -912,10 +912,10 @@ class TestConfig(Base):
 
     @property
     def Resolution(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('resolution')
     @Resolution.setter
@@ -924,10 +924,10 @@ class TestConfig(Base):
 
     @property
     def Rfc2889ordering(self):
-        """NOT DEFINED
-
-        Returns:
-            str(noOrdering|unchanged|val2889Ordering)
+        """
+        Returns
+        -------
+        - str(noOrdering | unchanged | val2889Ordering): NOT DEFINED
         """
         return self._get_attribute('rfc2889ordering')
     @Rfc2889ordering.setter
@@ -936,10 +936,10 @@ class TestConfig(Base):
 
     @property
     def SendFullyMeshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('sendFullyMeshed')
     @SendFullyMeshed.setter
@@ -948,10 +948,10 @@ class TestConfig(Base):
 
     @property
     def ShowDetailedBinaryResults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('showDetailedBinaryResults')
     @ShowDetailedBinaryResults.setter
@@ -960,10 +960,10 @@ class TestConfig(Base):
 
     @property
     def StepComboLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('stepComboLoadRate')
     @StepComboLoadRate.setter
@@ -972,10 +972,10 @@ class TestConfig(Base):
 
     @property
     def StepFrameLossUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): NOT DEFINED
         """
         return self._get_attribute('stepFrameLossUnit')
     @StepFrameLossUnit.setter
@@ -984,10 +984,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -996,10 +996,10 @@ class TestConfig(Base):
 
     @property
     def StepLoadUnit(self):
-        """NOT DEFINED
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): NOT DEFINED
         """
         return self._get_attribute('stepLoadUnit')
     @StepLoadUnit.setter
@@ -1008,10 +1008,10 @@ class TestConfig(Base):
 
     @property
     def StepStepLoadRate(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('stepStepLoadRate')
     @StepStepLoadRate.setter
@@ -1020,10 +1020,10 @@ class TestConfig(Base):
 
     @property
     def StepTolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('stepTolerance')
     @StepTolerance.setter
@@ -1032,10 +1032,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -1044,10 +1044,10 @@ class TestConfig(Base):
 
     @property
     def Tolerance(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tolerance')
     @Tolerance.setter
@@ -1056,10 +1056,10 @@ class TestConfig(Base):
 
     @property
     def TrafficType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(burstyLoading|constantLoading)
+        """
+        Returns
+        -------
+        - str(burstyLoading | constantLoading): NOT DEFINED
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -1068,10 +1068,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -1080,10 +1080,10 @@ class TestConfig(Base):
 
     @property
     def UsePercentOffsets(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('usePercentOffsets')
     @UsePercentOffsets.setter
@@ -1091,111 +1091,114 @@ class TestConfig(Base):
         self._set_attribute('usePercentOffsets', value)
 
     def update(self, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FrameLossUnit=None, FrameOrderingByRfc2889=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialStepLoadRate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2889ordering=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UsePercentOffsets=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            BinaryBackoff (number): NOT DEFINED
-            BinaryFrameLossUnit (str(%|frames)): NOT DEFINED
-            BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            BinaryResolution (number): NOT DEFINED
-            BinarySearchType (str(linear|perFlow|perPort)): NOT DEFINED
-            BinaryTolerance (number): NOT DEFINED
-            BurstSize (number): NOT DEFINED
-            CalculateJitter (bool): NOT DEFINED
-            CalculateLatency (bool): NOT DEFINED
-            ComboBackoff (number): NOT DEFINED
-            ComboFrameLossUnit (str(%|frames)): NOT DEFINED
-            ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            ComboResolution (number): NOT DEFINED
-            ComboTolerance (number): NOT DEFINED
-            CountRandomFrameSize (number): NOT DEFINED
-            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            DelayAfterTransmit (number): NOT DEFINED
-            DetailedResultsEnabled (bool): 
-            Duration (number): NOT DEFINED
-            EnableDataIntegrity (bool): NOT DEFINED
-            EnableExtraIterations (bool): NOT DEFINED
-            EnableFastConvergence (bool): NOT DEFINED
-            EnableLayer1Rate (bool): NOT DEFINED
-            EnableMinFrameSize (bool): NOT DEFINED
-            EnableOldStatsForReef (bool): NOT DEFINED
-            ExtraIterationOffsets (str): NOT DEFINED
-            FastConvergenceDuration (number): sec
-            FastConvergenceThreshold (number): NOT DEFINED
-            ForceRegenerate (bool): NOT DEFINED
-            FrameLossUnit (str): NOT DEFINED
-            FrameOrderingByRfc2889 (bool): NOT DEFINED
-            FrameSizeMode (str(custom|fixed|increment|random)): NOT DEFINED
-            FramesPerBurstGap (number): NOT DEFINED
-            Framesize (number): Bytes
-            FramesizeList (list(str)): NOT DEFINED
-            Gap (number): NOT DEFINED
-            GenerateTrackingOptionAggregationFiles (bool): NOT DEFINED
-            InitialBinaryLoadRate (number): NOT DEFINED
-            InitialComboLoadRate (number): NOT DEFINED
-            InitialStepLoadRate (number): NOT DEFINED
-            LatencyBins (str): NOT DEFINED
-            LatencyBinsEnabled (bool): NOT DEFINED
-            LatencyType (str(cutThrough|storeForward)): NOT DEFINED
-            LoadRateList (str): NOT DEFINED
-            LoadType (str(binary|combo|custom|quickSearch|step|unchanged)): NOT DEFINED
-            MapType (str): NOT DEFINED
-            MaxBinaryLoadRate (number): NOT DEFINED
-            MaxComboLoadRate (number): NOT DEFINED
-            MaxIncrementFrameSize (number): NOT DEFINED
-            MaxQuickSearchLoadRate (number): NOT DEFINED
-            MaxRandomFrameSize (number): NOT DEFINED
-            MaxStepLoadRate (number): NOT DEFINED
-            MinBinaryLoadRate (number): NOT DEFINED
-            MinComboLoadRate (number): NOT DEFINED
-            MinFpsRate (number): NOT DEFINED
-            MinIncrementFrameSize (number): NOT DEFINED
-            MinKbpsRate (number): NOT DEFINED
-            MinQuickSearchLoadRate (number): NOT DEFINED
-            MinRandomFrameSize (number): NOT DEFINED
-            Numtrials (number): NOT DEFINED
-            PercentMaxRate (number): NOT DEFINED
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): NOT DEFINED
-            PortDelayValue (number): NOT DEFINED
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            QuickSearchFrameLossUnit (str(%)): NOT DEFINED
-            QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            QuickSearchResolution (number): NOT DEFINED
-            QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): NOT DEFINED
-            QuickSearchTolerance (number): NOT DEFINED
-            RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): NOT DEFINED
-            ReportSequenceError (bool): NOT DEFINED
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): NOT DEFINED
-            Resolution (number): NOT DEFINED
-            Rfc2889ordering (str(noOrdering|unchanged|val2889Ordering)): NOT DEFINED
-            SendFullyMeshed (bool): NOT DEFINED
-            ShowDetailedBinaryResults (bool): NOT DEFINED
-            StepComboLoadRate (number): NOT DEFINED
-            StepFrameLossUnit (str(%|frames)): NOT DEFINED
-            StepIncrementFrameSize (number): NOT DEFINED
-            StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
-            StepStepLoadRate (number): NOT DEFINED
-            StepTolerance (number): NOT DEFINED
-            SupportedTrafficTypes (str): NOT DEFINED
-            Tolerance (number): NOT DEFINED
-            TrafficType (str(burstyLoading|constantLoading)): NOT DEFINED
-            TxDelay (number): NOT DEFINED
-            UsePercentOffsets (bool): NOT DEFINED
+        Args
+        ----
+        - BinaryBackoff (number): NOT DEFINED
+        - BinaryFrameLossUnit (str(% | frames)): NOT DEFINED
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - BinaryResolution (number): NOT DEFINED
+        - BinarySearchType (str(linear | perFlow | perPort)): NOT DEFINED
+        - BinaryTolerance (number): NOT DEFINED
+        - BurstSize (number): NOT DEFINED
+        - CalculateJitter (bool): NOT DEFINED
+        - CalculateLatency (bool): NOT DEFINED
+        - ComboBackoff (number): NOT DEFINED
+        - ComboFrameLossUnit (str(% | frames)): NOT DEFINED
+        - ComboLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - ComboResolution (number): NOT DEFINED
+        - ComboTolerance (number): NOT DEFINED
+        - CountRandomFrameSize (number): NOT DEFINED
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - DelayAfterTransmit (number): NOT DEFINED
+        - DetailedResultsEnabled (bool): 
+        - Duration (number): NOT DEFINED
+        - EnableDataIntegrity (bool): NOT DEFINED
+        - EnableExtraIterations (bool): NOT DEFINED
+        - EnableFastConvergence (bool): NOT DEFINED
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): NOT DEFINED
+        - EnableOldStatsForReef (bool): NOT DEFINED
+        - ExtraIterationOffsets (str): NOT DEFINED
+        - FastConvergenceDuration (number): sec
+        - FastConvergenceThreshold (number): NOT DEFINED
+        - ForceRegenerate (bool): NOT DEFINED
+        - FrameLossUnit (str): NOT DEFINED
+        - FrameOrderingByRfc2889 (bool): NOT DEFINED
+        - FrameSizeMode (str(custom | fixed | increment | random)): NOT DEFINED
+        - FramesPerBurstGap (number): NOT DEFINED
+        - Framesize (number): Bytes
+        - FramesizeList (list(str)): NOT DEFINED
+        - Gap (number): NOT DEFINED
+        - GenerateTrackingOptionAggregationFiles (bool): NOT DEFINED
+        - InitialBinaryLoadRate (number): NOT DEFINED
+        - InitialComboLoadRate (number): NOT DEFINED
+        - InitialStepLoadRate (number): NOT DEFINED
+        - LatencyBins (str): NOT DEFINED
+        - LatencyBinsEnabled (bool): NOT DEFINED
+        - LatencyType (str(cutThrough | storeForward)): NOT DEFINED
+        - LoadRateList (str): NOT DEFINED
+        - LoadType (str(binary | combo | custom | quickSearch | step | unchanged)): NOT DEFINED
+        - MapType (str): NOT DEFINED
+        - MaxBinaryLoadRate (number): NOT DEFINED
+        - MaxComboLoadRate (number): NOT DEFINED
+        - MaxIncrementFrameSize (number): NOT DEFINED
+        - MaxQuickSearchLoadRate (number): NOT DEFINED
+        - MaxRandomFrameSize (number): NOT DEFINED
+        - MaxStepLoadRate (number): NOT DEFINED
+        - MinBinaryLoadRate (number): NOT DEFINED
+        - MinComboLoadRate (number): NOT DEFINED
+        - MinFpsRate (number): NOT DEFINED
+        - MinIncrementFrameSize (number): NOT DEFINED
+        - MinKbpsRate (number): NOT DEFINED
+        - MinQuickSearchLoadRate (number): NOT DEFINED
+        - MinRandomFrameSize (number): NOT DEFINED
+        - Numtrials (number): NOT DEFINED
+        - PercentMaxRate (number): NOT DEFINED
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): NOT DEFINED
+        - PortDelayValue (number): NOT DEFINED
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - QuickSearchFrameLossUnit (str(%)): NOT DEFINED
+        - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - QuickSearchResolution (number): NOT DEFINED
+        - QuickSearchSearchType (str(linear | perFlow | perPort | perTrafficItem)): NOT DEFINED
+        - QuickSearchTolerance (number): NOT DEFINED
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): NOT DEFINED
+        - ReportSequenceError (bool): NOT DEFINED
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): NOT DEFINED
+        - Resolution (number): NOT DEFINED
+        - Rfc2889ordering (str(noOrdering | unchanged | val2889Ordering)): NOT DEFINED
+        - SendFullyMeshed (bool): NOT DEFINED
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - StepComboLoadRate (number): NOT DEFINED
+        - StepFrameLossUnit (str(% | frames)): NOT DEFINED
+        - StepIncrementFrameSize (number): NOT DEFINED
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - StepStepLoadRate (number): NOT DEFINED
+        - StepTolerance (number): NOT DEFINED
+        - SupportedTrafficTypes (str): NOT DEFINED
+        - Tolerance (number): NOT DEFINED
+        - TrafficType (str(burstyLoading | constantLoading)): NOT DEFINED
+        - TxDelay (number): NOT DEFINED
+        - UsePercentOffsets (bool): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -1203,9 +1206,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -1213,12 +1217,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -1228,9 +1230,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -1240,12 +1243,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -1255,24 +1256,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1284,18 +1278,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1307,9 +1299,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -1319,12 +1312,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

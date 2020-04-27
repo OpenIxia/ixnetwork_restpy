@@ -36,28 +36,28 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -66,47 +66,49 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def TabbedDiscoveredAddresses(self):
-        """The discovered IPv6 addresses.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered IPv6 addresses.
         """
         return self._get_attribute('tabbedDiscoveredAddresses')
 
     @property
     def TabbedDiscoveredGateways(self):
-        """The discovered gateway IPv6 addresses.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered gateway IPv6 addresses.
         """
         return self._get_attribute('tabbedDiscoveredGateways')
 
     @property
     def TabbedDiscoveredPrefix(self):
-        """The discovered IPv6 prefix.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The discovered IPv6 prefix.
         """
         return self._get_attribute('tabbedDiscoveredPrefix')
 
     @property
     def TabbedDiscoveredPrefixLength(self):
-        """The length of the discovered IPv6 prefix.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): The length of the discovered IPv6 prefix.
         """
         return self._get_attribute('tabbedDiscoveredPrefixLength')
 
     def update(self, Name=None):
-        """Updates a child instance of dhcp6LearnedInfo on the server.
+        """Updates dhcp6LearnedInfo resource on the server.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

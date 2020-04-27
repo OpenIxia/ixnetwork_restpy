@@ -36,18 +36,18 @@ class Ixnet(Base):
 
     @property
     def ConnectedClients(self):
-        """Returns the remote address and remote port for each of the currently connected ixNet clients.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Returns the remote address and remote port for each of the currently connected ixNet clients.
         """
         return self._get_attribute('connectedClients')
 
     @property
     def IsActive(self):
-        """Returns true if any remote clients are connected, false if no remote clients are connected.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Returns true if any remote clients are connected, false if no remote clients are connected.
         """
         return self._get_attribute('isActive')

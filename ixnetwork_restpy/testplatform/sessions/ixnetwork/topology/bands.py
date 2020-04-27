@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Bands(Base):
     """Openflow Controller Bands Configuration
-    The Bands class encapsulates a list of bands resources that is managed by the system.
+    The Bands class encapsulates a list of bands resources that are managed by the system.
     A list of resources can be retrieved from the server using the Bands.find() method.
     """
 
@@ -37,73 +37,77 @@ class Bands(Base):
 
     @property
     def BandDescription(self):
-        """The description of the Meter. It is a read-only field.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bandDescription')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the Meter. It is a read-only field.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandDescription'))
 
     @property
     def BandType(self):
-        """Select the band type from the list. Options are as follows: 1) Drop 2) DSCP Remark 3) Experimenter
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bandType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select the band type from the list. Options are as follows: 1) Drop 2) DSCP Remark 3) Experimenter
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandType'))
 
     @property
     def BurstSize(self):
-        """This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('burstSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('burstSize'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Experimenter(self):
-        """Indicats the experimenter ID. The default value is 1.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('experimenter')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicats the experimenter ID. The default value is 1.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('experimenter'))
 
     @property
     def MeterIndex(self):
-        """Indicats the Parent Meter Index
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Indicats the Parent Meter Index
         """
         return self._get_attribute('meterIndex')
 
     @property
     def Multiplier(self):
-        """Number of instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -112,10 +116,10 @@ class Bands(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -124,70 +128,81 @@ class Bands(Base):
 
     @property
     def PrecedenceLevel(self):
-        """This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('precedenceLevel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('precedenceLevel'))
 
     @property
     def Rate(self):
-        """This indicates the rate value above which the corresponding band may apply to packets. The default value is 1.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the rate value above which the corresponding band may apply to packets. The default value is 1.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rate'))
 
     def update(self, Multiplier=None, Name=None):
-        """Updates a child instance of bands on the server.
+        """Updates bands resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Multiplier (number): Number of instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, MeterIndex=None, Multiplier=None, Name=None):
-        """Finds and retrieves bands data from the server.
+        """Finds and retrieves bands resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bands data from the server.
-        By default the find method takes no parameters and will retrieve all bands data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bands resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bands resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            MeterIndex (list(str)): Indicats the Parent Meter Index
-            Multiplier (number): Number of instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - MeterIndex (list(str)): Indicats the Parent Meter Index
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching bands data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bands resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bands data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bands data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bands resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -196,19 +211,22 @@ class Bands(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BandDescription (str): optional regex of bandDescription
-            BandType (str): optional regex of bandType
-            BurstSize (str): optional regex of burstSize
-            Experimenter (str): optional regex of experimenter
-            PrecedenceLevel (str): optional regex of precedenceLevel
-            Rate (str): optional regex of rate
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BandDescription (str): optional regex of bandDescription
+        - BandType (str): optional regex of bandType
+        - BurstSize (str): optional regex of burstSize
+        - Experimenter (str): optional regex of experimenter
+        - PrecedenceLevel (str): optional regex of precedenceLevel
+        - Rate (str): optional regex of rate
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

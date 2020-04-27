@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def AddrRateNumFrames(self):
-        """The number of addresses that are to be used for each port in the current configuration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of addresses that are to be used for each port in the current configuration.
         """
         return self._get_attribute('addrRateNumFrames')
     @AddrRateNumFrames.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def AddrRateValidationFpsRate(self):
-        """The rate at which validation frames are sent.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The rate at which validation frames are sent.
         """
         return self._get_attribute('addrRateValidationFpsRate')
     @AddrRateValidationFpsRate.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def AddrRateValidationRate(self):
-        """The number of validation frames that IxNetwork sends for each address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of validation frames that IxNetwork sends for each address.
         """
         return self._get_attribute('addrRateValidationRate')
     @AddrRateValidationRate.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def AddrRateValidationRateUnit(self):
-        """The unit of rate at which validation frames are sent.
-
-        Returns:
-            str(fps|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(fps | percentMaxRate): The unit of rate at which validation frames are sent.
         """
         return self._get_attribute('addrRateValidationRateUnit')
     @AddrRateValidationRateUnit.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def AddressCachePassCriteriaMode(self):
-        """Signifies the address cache pass criteria mode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the address cache pass criteria mode.
         """
         return self._get_attribute('addressCachePassCriteriaMode')
     @AddressCachePassCriteriaMode.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def AddressRatePassFailValue(self):
-        """Signifies the address pass and fail rate value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the address pass and fail rate value.
         """
         return self._get_attribute('addressRatePassFailValue')
     @AddressRatePassFailValue.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def Age(self):
-        """New table size for each retry.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: New table size for each retry.
         """
         return self._get_attribute('age')
     @Age.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def BidirectionalOptionEnabled(self):
-        """If true, allows bidirectional traffic.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows bidirectional traffic.
         """
         return self._get_attribute('bidirectionalOptionEnabled')
     @BidirectionalOptionEnabled.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def BinaryBackoff(self):
-        """Specifies the percentage of binary backoff.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the percentage of binary backoff.
         """
         return self._get_attribute('binaryBackoff')
     @BinaryBackoff.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolution(self):
-        """Specifies the resolution of the iteration. The difference between the real ratetransmission in two consecutive iterations, expressed as a percentage, iscompared with the resolution value. When the difference is smaller than thevalue specified for the resolution, the test stops.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the resolution of the iteration. The difference between the real ratetransmission in two consecutive iterations, expressed as a percentage, iscompared with the resolution value. When the difference is smaller than thevalue specified for the resolution, the test stops.
         """
         return self._get_attribute('binaryResolution')
     @BinaryResolution.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def BinarySearchType(self):
-        """Signifies the binary search type.
-
-        Returns:
-            str(linear)
+        """
+        Returns
+        -------
+        - str(linear): Signifies the binary search type.
         """
         return self._get_attribute('binarySearchType')
     @BinarySearchType.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def BinaryTolerance(self):
-        """The binary tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The binary tolerance level.
         """
         return self._get_attribute('binaryTolerance')
     @BinaryTolerance.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """If true, the latency is calculated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the latency is calculated.
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """If true, randomly counts the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, randomly counts the frame size.
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """Specifies the amount of delay after every transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the amount of delay after every transmit.
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def EnableAddressRatePassFail(self):
-        """If true, the rate of pass and fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the rate of pass and fail criteria is set.
         """
         return self._get_attribute('enableAddressRatePassFail')
     @EnableAddressRatePassFail.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """If true, enables data integrity test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables data integrity test.
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def EnableDropLink(self):
-        """If true, allows to drop link.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows to drop link.
         """
         return self._get_attribute('enableDropLink')
     @EnableDropLink.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, enables minimum frame size.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables minimum frame size.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def EnforceBidirectional(self):
-        """If true, uses bidirectional traffic mapping.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, uses bidirectional traffic mapping.
         """
         return self._get_attribute('enforceBidirectional')
     @EnforceBidirectional.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian.
-
-        Returns:
-            str(custom|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """List containing the frame sizes used in the test.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List containing the frame sizes used in the test.
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """It signifies the gap value for the protocol.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the gap value for the protocol.
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def InitialAddressNum(self):
-        """The initial number of addresses used in the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial number of addresses used in the test.
         """
         return self._get_attribute('initialAddressNum')
     @InitialAddressNum.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def InitialBinaryLoadRate(self):
-        """Specifies the initial rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the initial rate of the binary algorithm.
         """
         return self._get_attribute('initialBinaryLoadRate')
     @InitialBinaryLoadRate.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """The type of load used to modify the variable parameter value.
-
-        Returns:
-            str(binary)
+        """
+        Returns
+        -------
+        - str(binary): The type of load used to modify the variable parameter value.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def LoadUnit(self):
-        """The load unit value.
-
-        Returns:
-            str(fpsRate)
+        """
+        Returns
+        -------
+        - str(fpsRate): The load unit value.
         """
         return self._get_attribute('loadUnit')
     @LoadUnit.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """The mapping type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The mapping type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def MaxBinaryLoadRate(self):
-        """Specifies the maximum rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the maximum rate of the binary algorithm.
         """
         return self._get_attribute('maxBinaryLoadRate')
     @MaxBinaryLoadRate.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """The maximum incremental value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum incremental value of the frame size.
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """The maximum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random frame size to be sent.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def MinAddressNum(self):
-        """The minimum number of addresses used in the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum number of addresses used in the test.
         """
         return self._get_attribute('minAddressNum')
     @MinAddressNum.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def MinBinaryLoadRate(self):
-        """Specifies the minimum rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the minimum rate of the binary algorithm.
         """
         return self._get_attribute('minBinaryLoadRate')
     @MinBinaryLoadRate.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """The minimum incremental value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum incremental value of the frame size.
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The minimum random frame size to be sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum random frame size to be sent.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """Defines how many times each frame size will be tested.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Defines how many times each frame size will be tested.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured.
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured.
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value.
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def PortDownTime(self):
-        """The time interval during the port is down.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time interval during the port is down.
         """
         return self._get_attribute('portDownTime')
     @PortDownTime.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def Rfc2889ordering(self):
-        """Enables ordering.
-
-        Returns:
-            str(noOrdering|unchanged|val2889Ordering)
+        """
+        Returns
+        -------
+        - str(noOrdering | unchanged | val2889Ordering): Enables ordering.
         """
         return self._get_attribute('rfc2889ordering')
     @Rfc2889ordering.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def ShowDetailedBinaryResults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('showDetailedBinaryResults')
     @ShowDetailedBinaryResults.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """The incremental step value of the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of the frame size.
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """The traffic types supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The traffic types supported.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def Tablesize(self):
-        """The number of addresses that are to be used for the test.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of addresses that are to be used for the test.
         """
         return self._get_attribute('tablesize')
     @Tablesize.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """Signifies the transmission delay time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the transmission delay time.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -599,70 +599,73 @@ class TestConfig(Base):
         self._set_attribute('txDelay', value)
 
     def update(self, AddrRateNumFrames=None, AddrRateValidationFpsRate=None, AddrRateValidationRate=None, AddrRateValidationRateUnit=None, AddressCachePassCriteriaMode=None, AddressRatePassFailValue=None, Age=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, EnableAddressRatePassFail=None, EnableDataIntegrity=None, EnableDropLink=None, EnableMinFrameSize=None, EnforceBidirectional=None, FrameSizeMode=None, FramesizeList=None, Gap=None, InitialAddressNum=None, InitialBinaryLoadRate=None, LoadType=None, LoadUnit=None, MapType=None, MaxBinaryLoadRate=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinAddressNum=None, MinBinaryLoadRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortDownTime=None, ProtocolItem=None, Rfc2889ordering=None, ShowDetailedBinaryResults=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, Tablesize=None, TxDelay=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            AddrRateNumFrames (number): The number of addresses that are to be used for each port in the current configuration.
-            AddrRateValidationFpsRate (str): The rate at which validation frames are sent.
-            AddrRateValidationRate (number): The number of validation frames that IxNetwork sends for each address.
-            AddrRateValidationRateUnit (str(fps|percentMaxRate)): The unit of rate at which validation frames are sent.
-            AddressCachePassCriteriaMode (str): Signifies the address cache pass criteria mode.
-            AddressRatePassFailValue (number): Signifies the address pass and fail rate value.
-            Age (number): New table size for each retry.
-            BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
-            BinaryBackoff (number): Specifies the percentage of binary backoff.
-            BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real ratetransmission in two consecutive iterations, expressed as a percentage, iscompared with the resolution value. When the difference is smaller than thevalue specified for the resolution, the test stops.
-            BinarySearchType (str(linear)): Signifies the binary search type.
-            BinaryTolerance (number): The binary tolerance level.
-            CalculateLatency (bool): If true, the latency is calculated.
-            CountRandomFrameSize (number): If true, randomly counts the frame size.
-            DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
-            EnableAddressRatePassFail (bool): If true, the rate of pass and fail criteria is set.
-            EnableDataIntegrity (bool): If true, enables data integrity test.
-            EnableDropLink (bool): If true, allows to drop link.
-            EnableMinFrameSize (bool): If true, enables minimum frame size.
-            EnforceBidirectional (bool): If true, uses bidirectional traffic mapping.
-            FrameSizeMode (str(custom|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
-            FramesizeList (list(str)): List containing the frame sizes used in the test.
-            Gap (number): It signifies the gap value for the protocol.
-            InitialAddressNum (number): The initial number of addresses used in the test.
-            InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
-            LoadType (str(binary)): The type of load used to modify the variable parameter value.
-            LoadUnit (str(fpsRate)): The load unit value.
-            MapType (str): The mapping type.
-            MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
-            MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
-            MaxRandomFrameSize (number): The maximum random frame size to be sent.
-            MinAddressNum (number): The minimum number of addresses used in the test.
-            MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
-            MinIncrementFrameSize (number): The minimum incremental value of the frame size.
-            MinRandomFrameSize (number): The minimum random frame size to be sent.
-            Numtrials (number): Defines how many times each frame size will be tested.
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
-            PortDelayValue (number): Sets the port delay value.
-            PortDownTime (number): The time interval during the port is down.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            Rfc2889ordering (str(noOrdering|unchanged|val2889Ordering)): Enables ordering.
-            ShowDetailedBinaryResults (bool): NOT DEFINED
-            StepIncrementFrameSize (number): The incremental step value of the frame size.
-            SupportedTrafficTypes (str): The traffic types supported.
-            Tablesize (number): The number of addresses that are to be used for the test.
-            TxDelay (number): Signifies the transmission delay time.
+        Args
+        ----
+        - AddrRateNumFrames (number): The number of addresses that are to be used for each port in the current configuration.
+        - AddrRateValidationFpsRate (str): The rate at which validation frames are sent.
+        - AddrRateValidationRate (number): The number of validation frames that IxNetwork sends for each address.
+        - AddrRateValidationRateUnit (str(fps | percentMaxRate)): The unit of rate at which validation frames are sent.
+        - AddressCachePassCriteriaMode (str): Signifies the address cache pass criteria mode.
+        - AddressRatePassFailValue (number): Signifies the address pass and fail rate value.
+        - Age (number): New table size for each retry.
+        - BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+        - BinaryBackoff (number): Specifies the percentage of binary backoff.
+        - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real ratetransmission in two consecutive iterations, expressed as a percentage, iscompared with the resolution value. When the difference is smaller than thevalue specified for the resolution, the test stops.
+        - BinarySearchType (str(linear)): Signifies the binary search type.
+        - BinaryTolerance (number): The binary tolerance level.
+        - CalculateLatency (bool): If true, the latency is calculated.
+        - CountRandomFrameSize (number): If true, randomly counts the frame size.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - EnableAddressRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableDropLink (bool): If true, allows to drop link.
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnforceBidirectional (bool): If true, uses bidirectional traffic mapping.
+        - FrameSizeMode (str(custom | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - FramesizeList (list(str)): List containing the frame sizes used in the test.
+        - Gap (number): It signifies the gap value for the protocol.
+        - InitialAddressNum (number): The initial number of addresses used in the test.
+        - InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
+        - LoadType (str(binary)): The type of load used to modify the variable parameter value.
+        - LoadUnit (str(fpsRate)): The load unit value.
+        - MapType (str): The mapping type.
+        - MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
+        - MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MinAddressNum (number): The minimum number of addresses used in the test.
+        - MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+        - MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - Numtrials (number): Defines how many times each frame size will be tested.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - PortDownTime (number): The time interval during the port is down.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - Rfc2889ordering (str(noOrdering | unchanged | val2889Ordering)): Enables ordering.
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - StepIncrementFrameSize (number): The incremental step value of the frame size.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - Tablesize (number): The number of addresses that are to be used for the test.
+        - TxDelay (number): Signifies the transmission delay time.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -670,9 +673,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -680,12 +684,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -695,9 +697,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -707,12 +710,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -722,24 +723,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -751,18 +745,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -774,9 +766,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -786,12 +779,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

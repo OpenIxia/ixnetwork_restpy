@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Ipv4UnicastItem(Base):
     """The DCE ISIS Learned Information option fetches the learned information for the IPv4 Unicast Item of a particular DCE ISIS router.
-    The Ipv4UnicastItem class encapsulates a list of ipv4UnicastItem resources that is managed by the system.
+    The Ipv4UnicastItem class encapsulates a list of ipv4UnicastItem resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ipv4UnicastItem.find() method.
     """
 
@@ -37,41 +37,48 @@ class Ipv4UnicastItem(Base):
 
     @property
     def Ipv4UnicastSourceAddress(self):
-        """This indicates the IPv4 Source, if any, associated with the IPv4 Multicast Group Address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This indicates the IPv4 Source, if any, associated with the IPv4 Multicast Group Address.
         """
         return self._get_attribute('ipv4UnicastSourceAddress')
 
     def find(self, Ipv4UnicastSourceAddress=None):
-        """Finds and retrieves ipv4UnicastItem data from the server.
+        """Finds and retrieves ipv4UnicastItem resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv4UnicastItem data from the server.
-        By default the find method takes no parameters and will retrieve all ipv4UnicastItem data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4UnicastItem resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv4UnicastItem resources from the server.
 
-        Args:
-            Ipv4UnicastSourceAddress (str): This indicates the IPv4 Source, if any, associated with the IPv4 Multicast Group Address.
+        Args
+        ----
+        - Ipv4UnicastSourceAddress (str): This indicates the IPv4 Source, if any, associated with the IPv4 Multicast Group Address.
 
-        Returns:
-            self: This instance with matching ipv4UnicastItem data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv4UnicastItem resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv4UnicastItem data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv4UnicastItem data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv4UnicastItem resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

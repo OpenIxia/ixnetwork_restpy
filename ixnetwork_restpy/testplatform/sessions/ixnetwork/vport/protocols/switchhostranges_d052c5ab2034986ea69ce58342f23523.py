@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SwitchHostRanges(Base):
     """The Swicth Host Ranges window describes the switch Host Ranges and its configuration parameters. This window is available for Switch configuration only. When the user selects a column in the grid view, the entire composite column break-up appears in a split pane. When a user selects a non-composite cell or column in the grid, like, Enable, the Preview pane displays empty cells for all the rows.
-    The SwitchHostRanges class encapsulates a list of switchHostRanges resources that is be managed by the user.
+    The SwitchHostRanges class encapsulates a list of switchHostRanges resources that are managed by the user.
     A list of resources can be retrieved from the server using the SwitchHostRanges.find() method.
-    The list can be managed by the user by using the SwitchHostRanges.add() and SwitchHostRanges.remove() methods.
+    The list can be managed by using the SwitchHostRanges.add() and SwitchHostRanges.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class SwitchHostRanges(Base):
 
     @property
     def EnableStaticIp(self):
-        """If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
         """
         return self._get_attribute('enableStaticIp')
     @EnableStaticIp.setter
@@ -50,10 +50,10 @@ class SwitchHostRanges(Base):
 
     @property
     def EnableVlan(self):
-        """If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
         """
         return self._get_attribute('enableVlan')
     @EnableVlan.setter
@@ -62,10 +62,10 @@ class SwitchHostRanges(Base):
 
     @property
     def Enabled(self):
-        """If selected, the Host Range gets configured in the switch.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, the Host Range gets configured in the switch.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class SwitchHostRanges(Base):
 
     @property
     def HostMacAddress(self):
-        """The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
         """
         return self._get_attribute('hostMacAddress')
     @HostMacAddress.setter
@@ -86,10 +86,10 @@ class SwitchHostRanges(Base):
 
     @property
     def HostStaticIpv4Address(self):
-        """The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
         """
         return self._get_attribute('hostStaticIpv4Address')
     @HostStaticIpv4Address.setter
@@ -98,10 +98,10 @@ class SwitchHostRanges(Base):
 
     @property
     def HostVlanid(self):
-        """The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
         """
         return self._get_attribute('hostVlanid')
     @HostVlanid.setter
@@ -110,10 +110,10 @@ class SwitchHostRanges(Base):
 
     @property
     def NumberOfHostsPerPort(self):
-        """Specify the number of switches to be configured for every switch port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the number of switches to be configured for every switch port.
         """
         return self._get_attribute('numberOfHostsPerPort')
     @NumberOfHostsPerPort.setter
@@ -121,85 +121,98 @@ class SwitchHostRanges(Base):
         self._set_attribute('numberOfHostsPerPort', value)
 
     def update(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
-        """Updates a child instance of switchHostRanges on the server.
+        """Updates switchHostRanges resource on the server.
 
-        Args:
-            EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
-            EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
-            Enabled (bool): If selected, the Host Range gets configured in the switch.
-            HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
-            HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
-            HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
-            NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
+        Args
+        ----
+        - EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
+        - EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
+        - Enabled (bool): If selected, the Host Range gets configured in the switch.
+        - HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
+        - HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
+        - HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
+        - NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
-        """Adds a new switchHostRanges node on the server and retrieves it in this instance.
+        """Adds a new switchHostRanges resource on the server and adds it to the container.
 
-        Args:
-            EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
-            EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
-            Enabled (bool): If selected, the Host Range gets configured in the switch.
-            HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
-            HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
-            HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
-            NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
+        Args
+        ----
+        - EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
+        - EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
+        - Enabled (bool): If selected, the Host Range gets configured in the switch.
+        - HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
+        - HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
+        - HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
+        - NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
 
-        Returns:
-            self: This instance with all currently retrieved switchHostRanges data using find and the newly added switchHostRanges data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchHostRanges resources using find and the newly added switchHostRanges resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the switchHostRanges data in this instance from server.
+        """Deletes all the contained switchHostRanges resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
-        """Finds and retrieves switchHostRanges data from the server.
+        """Finds and retrieves switchHostRanges resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchHostRanges data from the server.
-        By default the find method takes no parameters and will retrieve all switchHostRanges data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRanges resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchHostRanges resources from the server.
 
-        Args:
-            EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
-            EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
-            Enabled (bool): If selected, the Host Range gets configured in the switch.
-            HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
-            HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
-            HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
-            NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
+        Args
+        ----
+        - EnableStaticIp (bool): If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
+        - EnableVlan (bool): If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
+        - Enabled (bool): If selected, the Host Range gets configured in the switch.
+        - HostMacAddress (str): The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
+        - HostStaticIpv4Address (str): The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
+        - HostVlanid (str): The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
+        - NumberOfHostsPerPort (number): Specify the number of switches to be configured for every switch port.
 
-        Returns:
-            self: This instance with matching switchHostRanges data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchHostRanges resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchHostRanges data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchHostRanges data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchHostRanges resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

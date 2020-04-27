@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DedicatedBearer(Base):
     """Bearer
-    The DedicatedBearer class encapsulates a list of dedicatedBearer resources that is be managed by the user.
+    The DedicatedBearer class encapsulates a list of dedicatedBearer resources that are managed by the user.
     A list of resources can be retrieved from the server using the DedicatedBearer.find() method.
-    The list can be managed by the user by using the DedicatedBearer.add() and DedicatedBearer.remove() methods.
+    The list can be managed by using the DedicatedBearer.add() and DedicatedBearer.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DedicatedBearer(Base):
 
     @property
     def ApnAmbrUpdateValue(self):
-        """APN_AMBR update value (in %).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: APN_AMBR update value (in %).
         """
         return self._get_attribute('apnAmbrUpdateValue')
     @ApnAmbrUpdateValue.setter
@@ -50,10 +50,10 @@ class DedicatedBearer(Base):
 
     @property
     def Arp(self):
-        """OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
         """
         return self._get_attribute('arp')
     @Arp.setter
@@ -63,9 +63,9 @@ class DedicatedBearer(Base):
     @property
     def CustomTft(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('customTft')
     @CustomTft.setter
@@ -74,10 +74,10 @@ class DedicatedBearer(Base):
 
     @property
     def EnableLifetime(self):
-        """Enable bearer lifetime control
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable bearer lifetime control
         """
         return self._get_attribute('enableLifetime')
     @EnableLifetime.setter
@@ -86,10 +86,10 @@ class DedicatedBearer(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -98,10 +98,10 @@ class DedicatedBearer(Base):
 
     @property
     def Gbrd(self):
-        """Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('gbrd')
     @Gbrd.setter
@@ -110,10 +110,10 @@ class DedicatedBearer(Base):
 
     @property
     def Gbru(self):
-        """Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('gbru')
     @Gbru.setter
@@ -122,10 +122,10 @@ class DedicatedBearer(Base):
 
     @property
     def Lifetime(self):
-        """Bearer lifetime (seconds)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Bearer lifetime (seconds)
         """
         return self._get_attribute('lifetime')
     @Lifetime.setter
@@ -134,10 +134,10 @@ class DedicatedBearer(Base):
 
     @property
     def Mbrd(self):
-        """Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('mbrd')
     @Mbrd.setter
@@ -146,10 +146,10 @@ class DedicatedBearer(Base):
 
     @property
     def Mbru(self):
-        """Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
         return self._get_attribute('mbru')
     @Mbru.setter
@@ -158,10 +158,10 @@ class DedicatedBearer(Base):
 
     @property
     def Mode(self):
-        """A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -170,10 +170,10 @@ class DedicatedBearer(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -182,19 +182,19 @@ class DedicatedBearer(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PreemptionCapability(self):
-        """If true preemption capability is enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true preemption capability is enabled
         """
         return self._get_attribute('preemptionCapability')
     @PreemptionCapability.setter
@@ -203,10 +203,10 @@ class DedicatedBearer(Base):
 
     @property
     def PreemptionVulnerability(self):
-        """If true preemption vulnerability is enabled
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true preemption vulnerability is enabled
         """
         return self._get_attribute('preemptionVulnerability')
     @PreemptionVulnerability.setter
@@ -215,10 +215,10 @@ class DedicatedBearer(Base):
 
     @property
     def PriorityLevel(self):
-        """Priority Level 1=highest 15=lowest
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Priority Level 1=highest 15=lowest
         """
         return self._get_attribute('priorityLevel')
     @PriorityLevel.setter
@@ -227,10 +227,10 @@ class DedicatedBearer(Base):
 
     @property
     def Qci(self):
-        """QoS Class Identifier
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: QoS Class Identifier
         """
         return self._get_attribute('qci')
     @Qci.setter
@@ -239,10 +239,10 @@ class DedicatedBearer(Base):
 
     @property
     def QosLabel(self):
-        """Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
         """
         return self._get_attribute('qosLabel')
     @QosLabel.setter
@@ -251,10 +251,10 @@ class DedicatedBearer(Base):
 
     @property
     def QosUpdateValue(self):
-        """QoS update value (in %).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: QoS update value (in %).
         """
         return self._get_attribute('qosUpdateValue')
     @QosUpdateValue.setter
@@ -263,10 +263,10 @@ class DedicatedBearer(Base):
 
     @property
     def Tft(self):
-        """Traffic Flow Template
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Traffic Flow Template
         """
         return self._get_attribute('tft')
     @Tft.setter
@@ -275,10 +275,10 @@ class DedicatedBearer(Base):
 
     @property
     def TimeoutAction(self):
-        """Action to be execute when a bearer lifetime expires
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Action to be execute when a bearer lifetime expires
         """
         return self._get_attribute('timeoutAction')
     @TimeoutAction.setter
@@ -286,126 +286,139 @@ class DedicatedBearer(Base):
         self._set_attribute('timeoutAction', value)
 
     def update(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
-        """Updates a child instance of dedicatedBearer on the server.
+        """Updates dedicatedBearer resource on the server.
 
-        Args:
-            ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
-            Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-            CustomTft (str): 
-            EnableLifetime (bool): Enable bearer lifetime control
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Lifetime (number): Bearer lifetime (seconds)
-            Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
-            Name (str): Name of range
-            PreemptionCapability (bool): If true preemption capability is enabled
-            PreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            PriorityLevel (number): Priority Level 1=highest 15=lowest
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            QosUpdateValue (number): QoS update value (in %).
-            Tft (str): Traffic Flow Template
-            TimeoutAction (str): Action to be execute when a bearer lifetime expires
+        Args
+        ----
+        - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
+        - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
+        - CustomTft (str): 
+        - EnableLifetime (bool): Enable bearer lifetime control
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Lifetime (number): Bearer lifetime (seconds)
+        - Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
+        - Name (str): Name of range
+        - PreemptionCapability (bool): If true preemption capability is enabled
+        - PreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - PriorityLevel (number): Priority Level 1=highest 15=lowest
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - QosUpdateValue (number): QoS update value (in %).
+        - Tft (str): Traffic Flow Template
+        - TimeoutAction (str): Action to be execute when a bearer lifetime expires
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
-        """Adds a new dedicatedBearer node on the server and retrieves it in this instance.
+        """Adds a new dedicatedBearer resource on the server and adds it to the container.
 
-        Args:
-            ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
-            Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-            CustomTft (str): 
-            EnableLifetime (bool): Enable bearer lifetime control
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Lifetime (number): Bearer lifetime (seconds)
-            Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
-            Name (str): Name of range
-            PreemptionCapability (bool): If true preemption capability is enabled
-            PreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            PriorityLevel (number): Priority Level 1=highest 15=lowest
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            QosUpdateValue (number): QoS update value (in %).
-            Tft (str): Traffic Flow Template
-            TimeoutAction (str): Action to be execute when a bearer lifetime expires
+        Args
+        ----
+        - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
+        - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
+        - CustomTft (str): 
+        - EnableLifetime (bool): Enable bearer lifetime control
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Lifetime (number): Bearer lifetime (seconds)
+        - Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
+        - Name (str): Name of range
+        - PreemptionCapability (bool): If true preemption capability is enabled
+        - PreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - PriorityLevel (number): Priority Level 1=highest 15=lowest
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - QosUpdateValue (number): QoS update value (in %).
+        - Tft (str): Traffic Flow Template
+        - TimeoutAction (str): Action to be execute when a bearer lifetime expires
 
-        Returns:
-            self: This instance with all currently retrieved dedicatedBearer data using find and the newly added dedicatedBearer data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dedicatedBearer resources using find and the newly added dedicatedBearer resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dedicatedBearer data in this instance from server.
+        """Deletes all the contained dedicatedBearer resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, ObjectId=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
-        """Finds and retrieves dedicatedBearer data from the server.
+        """Finds and retrieves dedicatedBearer resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dedicatedBearer data from the server.
-        By default the find method takes no parameters and will retrieve all dedicatedBearer data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dedicatedBearer resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dedicatedBearer resources from the server.
 
-        Args:
-            ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
-            Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-            CustomTft (str): 
-            EnableLifetime (bool): Enable bearer lifetime control
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Lifetime (number): Bearer lifetime (seconds)
-            Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
-            Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            PreemptionCapability (bool): If true preemption capability is enabled
-            PreemptionVulnerability (bool): If true preemption vulnerability is enabled
-            PriorityLevel (number): Priority Level 1=highest 15=lowest
-            Qci (number): QoS Class Identifier
-            QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
-            QosUpdateValue (number): QoS update value (in %).
-            Tft (str): Traffic Flow Template
-            TimeoutAction (str): Action to be execute when a bearer lifetime expires
+        Args
+        ----
+        - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
+        - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
+        - CustomTft (str): 
+        - EnableLifetime (bool): Enable bearer lifetime control
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Gbru (number): Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Lifetime (number): Bearer lifetime (seconds)
+        - Mbrd (number): Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mbru (number): Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Mode (str): A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - PreemptionCapability (bool): If true preemption capability is enabled
+        - PreemptionVulnerability (bool): If true preemption vulnerability is enabled
+        - PriorityLevel (number): Priority Level 1=highest 15=lowest
+        - Qci (number): QoS Class Identifier
+        - QosLabel (str): Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
+        - QosUpdateValue (number): QoS update value (in %).
+        - Tft (str): Traffic Flow Template
+        - TimeoutAction (str): Action to be execute when a bearer lifetime expires
 
-        Returns:
-            self: This instance with matching dedicatedBearer data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dedicatedBearer resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dedicatedBearer data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dedicatedBearer data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dedicatedBearer resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -414,14 +427,15 @@ class DedicatedBearer(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -433,16 +447,15 @@ class DedicatedBearer(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -454,16 +467,15 @@ class DedicatedBearer(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

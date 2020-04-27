@@ -36,10 +36,10 @@ class Options(Base):
 
     @property
     def ActOnGratArp(self):
-        """When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
         """
         return self._get_attribute('actOnGratArp')
     @ActOnGratArp.setter
@@ -48,10 +48,10 @@ class Options(Base):
 
     @property
     def ArpRefreshInterval(self):
-        """The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
         """
         return self._get_attribute('arpRefreshInterval')
     @ArpRefreshInterval.setter
@@ -60,10 +60,10 @@ class Options(Base):
 
     @property
     def DadEnabled(self):
-        """When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
         """
         return self._get_attribute('dadEnabled')
     @DadEnabled.setter
@@ -72,10 +72,10 @@ class Options(Base):
 
     @property
     def DadTransmits(self):
-        """Number of Neighbor Solicitations to send until assuming no routers are present.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Neighbor Solicitations to send until assuming no routers are present.
         """
         return self._get_attribute('dadTransmits')
     @DadTransmits.setter
@@ -84,10 +84,10 @@ class Options(Base):
 
     @property
     def IgnoreMldQueries(self):
-        """When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
         """
         return self._get_attribute('ignoreMldQueries')
     @IgnoreMldQueries.setter
@@ -96,10 +96,10 @@ class Options(Base):
 
     @property
     def Ipv4McastSolicit(self):
-        """Maximum number of ARP requests to send to resolve one MAC address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of ARP requests to send to resolve one MAC address.
         """
         return self._get_attribute('ipv4McastSolicit')
     @Ipv4McastSolicit.setter
@@ -108,10 +108,10 @@ class Options(Base):
 
     @property
     def Ipv4RetransTime(self):
-        """Number of milliseconds to wait between ARP requests.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of milliseconds to wait between ARP requests.
         """
         return self._get_attribute('ipv4RetransTime')
     @Ipv4RetransTime.setter
@@ -120,10 +120,10 @@ class Options(Base):
 
     @property
     def Mcast_solicit(self):
-        """Number of Neighbor Solicitations to send until giving up on link layer address resolution.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Neighbor Solicitations to send until giving up on link layer address resolution.
         """
         return self._get_attribute('mcast_solicit')
     @Mcast_solicit.setter
@@ -132,10 +132,10 @@ class Options(Base):
 
     @property
     def NsRefreshInterval(self):
-        """The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
         """
         return self._get_attribute('nsRefreshInterval')
     @NsRefreshInterval.setter
@@ -144,19 +144,19 @@ class Options(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RetransTime(self):
-        """Number of milliseconds to wait between Neighbor Solicitations.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of milliseconds to wait between Neighbor Solicitations.
         """
         return self._get_attribute('retransTime')
     @RetransTime.setter
@@ -165,10 +165,10 @@ class Options(Base):
 
     @property
     def RouterSolicitationDelay(self):
-        """Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
         """
         return self._get_attribute('routerSolicitationDelay')
     @RouterSolicitationDelay.setter
@@ -177,10 +177,10 @@ class Options(Base):
 
     @property
     def RouterSolicitationInterval(self):
-        """Number of seconds to wait between Router Solicitations.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of seconds to wait between Router Solicitations.
         """
         return self._get_attribute('routerSolicitationInterval')
     @RouterSolicitationInterval.setter
@@ -189,10 +189,10 @@ class Options(Base):
 
     @property
     def RouterSolicitations(self):
-        """Number of Router Solicitations to send until assuming no routers are present.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Router Solicitations to send until assuming no routers are present.
         """
         return self._get_attribute('routerSolicitations')
     @RouterSolicitations.setter
@@ -200,41 +200,44 @@ class Options(Base):
         self._set_attribute('routerSolicitations', value)
 
     def update(self, ActOnGratArp=None, ArpRefreshInterval=None, DadEnabled=None, DadTransmits=None, IgnoreMldQueries=None, Ipv4McastSolicit=None, Ipv4RetransTime=None, Mcast_solicit=None, NsRefreshInterval=None, RetransTime=None, RouterSolicitationDelay=None, RouterSolicitationInterval=None, RouterSolicitations=None):
-        """Updates a child instance of options on the server.
+        """Updates options resource on the server.
 
-        Args:
-            ActOnGratArp (bool): When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
-            ArpRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
-            DadEnabled (bool): When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
-            DadTransmits (number): Number of Neighbor Solicitations to send until assuming no routers are present.
-            IgnoreMldQueries (bool): When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
-            Ipv4McastSolicit (number): Maximum number of ARP requests to send to resolve one MAC address.
-            Ipv4RetransTime (number): Number of milliseconds to wait between ARP requests.
-            Mcast_solicit (number): Number of Neighbor Solicitations to send until giving up on link layer address resolution.
-            NsRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
-            RetransTime (number): Number of milliseconds to wait between Neighbor Solicitations.
-            RouterSolicitationDelay (number): Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
-            RouterSolicitationInterval (number): Number of seconds to wait between Router Solicitations.
-            RouterSolicitations (number): Number of Router Solicitations to send until assuming no routers are present.
+        Args
+        ----
+        - ActOnGratArp (bool): When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
+        - ArpRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
+        - DadEnabled (bool): When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
+        - DadTransmits (number): Number of Neighbor Solicitations to send until assuming no routers are present.
+        - IgnoreMldQueries (bool): When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
+        - Ipv4McastSolicit (number): Maximum number of ARP requests to send to resolve one MAC address.
+        - Ipv4RetransTime (number): Number of milliseconds to wait between ARP requests.
+        - Mcast_solicit (number): Number of Neighbor Solicitations to send until giving up on link layer address resolution.
+        - NsRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
+        - RetransTime (number): Number of milliseconds to wait between Neighbor Solicitations.
+        - RouterSolicitationDelay (number): Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
+        - RouterSolicitationInterval (number): Number of seconds to wait between Router Solicitations.
+        - RouterSolicitations (number): Number of Router Solicitations to send until assuming no routers are present.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -246,16 +249,15 @@ class Options(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -267,16 +269,15 @@ class Options(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

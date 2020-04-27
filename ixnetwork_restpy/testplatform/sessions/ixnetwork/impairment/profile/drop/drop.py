@@ -36,10 +36,10 @@ class Drop(Base):
 
     @property
     def ClusterSize(self):
-        """Number of packets to drop on each occurrence.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of packets to drop on each occurrence.
         """
         return self._get_attribute('clusterSize')
     @ClusterSize.setter
@@ -48,10 +48,10 @@ class Drop(Base):
 
     @property
     def Enabled(self):
-        """If true, periodically drop received packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, periodically drop received packets.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class Drop(Base):
 
     @property
     def PercentRate(self):
-        """How often to drop packets, as a percentage.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How often to drop packets, as a percentage.
         """
         return self._get_attribute('percentRate')
     @PercentRate.setter
@@ -71,14 +71,16 @@ class Drop(Base):
         self._set_attribute('percentRate', value)
 
     def update(self, ClusterSize=None, Enabled=None, PercentRate=None):
-        """Updates a child instance of drop on the server.
+        """Updates drop resource on the server.
 
-        Args:
-            ClusterSize (number): Number of packets to drop on each occurrence.
-            Enabled (bool): If true, periodically drop received packets.
-            PercentRate (number): How often to drop packets, as a percentage.
+        Args
+        ----
+        - ClusterSize (number): Number of packets to drop on each occurrence.
+        - Enabled (bool): If true, periodically drop received packets.
+        - PercentRate (number): How often to drop packets, as a percentage.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

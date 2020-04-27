@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DceInterestedVlanRange(Base):
     """This object holds a list of DCE Interested Vlan Ranges.
-    The DceInterestedVlanRange class encapsulates a list of dceInterestedVlanRange resources that is be managed by the user.
+    The DceInterestedVlanRange class encapsulates a list of dceInterestedVlanRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the DceInterestedVlanRange.find() method.
-    The list can be managed by the user by using the DceInterestedVlanRange.add() and DceInterestedVlanRange.remove() methods.
+    The list can be managed by using the DceInterestedVlanRange.add() and DceInterestedVlanRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def EnableIncludeInLsp(self):
-        """If true, enable a custom VLAN in the LSP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enable a custom VLAN in the LSP.
         """
         return self._get_attribute('enableIncludeInLsp')
     @EnableIncludeInLsp.setter
@@ -50,10 +50,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def EnableIncludeInMgroupPdu(self):
-        """If true, enable and include VLAN in Mgroup PDU
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enable and include VLAN in Mgroup PDU
         """
         return self._get_attribute('enableIncludeInMgroupPdu')
     @EnableIncludeInMgroupPdu.setter
@@ -62,10 +62,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def EnableM4Bit(self):
-        """If true, the M4 bit is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the M4 bit is enabled.
         """
         return self._get_attribute('enableM4Bit')
     @EnableM4Bit.setter
@@ -74,10 +74,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def EnableM6Bit(self):
-        """If true, the M6 bit is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the M6 bit is enabled.
         """
         return self._get_attribute('enableM6Bit')
     @EnableM6Bit.setter
@@ -86,10 +86,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def Enabled(self):
-        """Signifies if DCE Interested Vlan range is enabled or disabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Signifies if DCE Interested Vlan range is enabled or disabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -98,10 +98,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def Nickname(self):
-        """The nickname of the VLAN range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The nickname of the VLAN range.
         """
         return self._get_attribute('nickname')
     @Nickname.setter
@@ -110,10 +110,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def NoOfSpanningTreeRoots(self):
-        """The number of spanning tree roots for the VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of spanning tree roots for the VLAN.
         """
         return self._get_attribute('noOfSpanningTreeRoots')
     @NoOfSpanningTreeRoots.setter
@@ -122,10 +122,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def StartSpanningTreeRootBridgeId(self):
-        """If true, starts the spanning tree root Bridge Id.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, starts the spanning tree root Bridge Id.
         """
         return self._get_attribute('startSpanningTreeRootBridgeId')
     @StartSpanningTreeRootBridgeId.setter
@@ -134,10 +134,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def StartVlanId(self):
-        """The VLAN Id of first VLAN. Default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VLAN Id of first VLAN. Default is 1.
         """
         return self._get_attribute('startVlanId')
     @StartVlanId.setter
@@ -146,10 +146,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def VlanCount(self):
-        """The count of the VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count of the VLAN.
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -158,10 +158,10 @@ class DceInterestedVlanRange(Base):
 
     @property
     def VlanIdStep(self):
-        """It shows the increment step of the VLAN. the default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It shows the increment step of the VLAN. the default is 1.
         """
         return self._get_attribute('vlanIdStep')
     @VlanIdStep.setter
@@ -169,97 +169,110 @@ class DceInterestedVlanRange(Base):
         self._set_attribute('vlanIdStep', value)
 
     def update(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
-        """Updates a child instance of dceInterestedVlanRange on the server.
+        """Updates dceInterestedVlanRange resource on the server.
 
-        Args:
-            EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
-            EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
-            EnableM4Bit (bool): If true, the M4 bit is enabled.
-            EnableM6Bit (bool): If true, the M6 bit is enabled.
-            Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
-            Nickname (number): The nickname of the VLAN range.
-            NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
-            StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
-            VlanCount (number): The count of the VLAN.
-            VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
+        Args
+        ----
+        - EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
+        - EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
+        - EnableM4Bit (bool): If true, the M4 bit is enabled.
+        - EnableM6Bit (bool): If true, the M6 bit is enabled.
+        - Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
+        - Nickname (number): The nickname of the VLAN range.
+        - NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
+        - StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        - VlanCount (number): The count of the VLAN.
+        - VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
-        """Adds a new dceInterestedVlanRange node on the server and retrieves it in this instance.
+        """Adds a new dceInterestedVlanRange resource on the server and adds it to the container.
 
-        Args:
-            EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
-            EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
-            EnableM4Bit (bool): If true, the M4 bit is enabled.
-            EnableM6Bit (bool): If true, the M6 bit is enabled.
-            Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
-            Nickname (number): The nickname of the VLAN range.
-            NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
-            StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
-            VlanCount (number): The count of the VLAN.
-            VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
+        Args
+        ----
+        - EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
+        - EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
+        - EnableM4Bit (bool): If true, the M4 bit is enabled.
+        - EnableM6Bit (bool): If true, the M6 bit is enabled.
+        - Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
+        - Nickname (number): The nickname of the VLAN range.
+        - NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
+        - StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        - VlanCount (number): The count of the VLAN.
+        - VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
 
-        Returns:
-            self: This instance with all currently retrieved dceInterestedVlanRange data using find and the newly added dceInterestedVlanRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dceInterestedVlanRange resources using find and the newly added dceInterestedVlanRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dceInterestedVlanRange data in this instance from server.
+        """Deletes all the contained dceInterestedVlanRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
-        """Finds and retrieves dceInterestedVlanRange data from the server.
+        """Finds and retrieves dceInterestedVlanRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dceInterestedVlanRange data from the server.
-        By default the find method takes no parameters and will retrieve all dceInterestedVlanRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceInterestedVlanRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceInterestedVlanRange resources from the server.
 
-        Args:
-            EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
-            EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
-            EnableM4Bit (bool): If true, the M4 bit is enabled.
-            EnableM6Bit (bool): If true, the M6 bit is enabled.
-            Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
-            Nickname (number): The nickname of the VLAN range.
-            NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
-            StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
-            StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
-            VlanCount (number): The count of the VLAN.
-            VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
+        Args
+        ----
+        - EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
+        - EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
+        - EnableM4Bit (bool): If true, the M4 bit is enabled.
+        - EnableM6Bit (bool): If true, the M6 bit is enabled.
+        - Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
+        - Nickname (number): The nickname of the VLAN range.
+        - NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
+        - StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
+        - StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+        - VlanCount (number): The count of the VLAN.
+        - VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
 
-        Returns:
-            self: This instance with matching dceInterestedVlanRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dceInterestedVlanRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dceInterestedVlanRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dceInterestedVlanRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dceInterestedVlanRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

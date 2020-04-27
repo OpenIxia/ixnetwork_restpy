@@ -36,65 +36,66 @@ class Ptp(Base):
 
     @property
     def StartRate(self):
-        """An instance of the StartRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.startrate.startrate.StartRate): An instance of the StartRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.startrate.startrate.StartRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.startrate.startrate import StartRate
         return StartRate(self)._select()
 
     @property
     def StopRate(self):
-        """An instance of the StopRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.stoprate.stoprate.StopRate): An instance of the StopRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.stoprate.stoprate.StopRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptp.stoprate.stoprate import StopRate
         return StopRate(self)._select()
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def HopLimit(self):
-        """Hop Limit set for PTP packets over IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hopLimit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hop Limit set for PTP packets over IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hopLimit'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -103,80 +104,89 @@ class Ptp(Base):
 
     @property
     def RowNames(self):
-        """Name of rows
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Name of rows
         """
         return self._get_attribute('rowNames')
 
     @property
     def Timestamps(self):
-        """Use PTP UTC timestamps, PTC Local Clock timestamps or Traffic engine timestamps
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('timestamps')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use PTP UTC timestamps, PTC Local Clock timestamps or Traffic engine timestamps
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('timestamps'))
 
     @property
     def Tos(self):
-        """TOS/DSCP set for PTP packets over IPv4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tos')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TOS/DSCP set for PTP packets over IPv4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tos'))
 
     @property
     def TrafficClass(self):
-        """Traffic Class set for PTP packets over IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('trafficClass')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Class set for PTP packets over IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('trafficClass'))
 
     @property
     def Ttl(self):
-        """TTL set for PTP packets over IPv4
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ttl')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TTL set for PTP packets over IPv4
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ttl'))
 
     def update(self, Name=None):
-        """Updates a child instance of ptp on the server.
+        """Updates ptp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, HopLimit=None, Timestamps=None, Tos=None, TrafficClass=None, Ttl=None):
         """Base class infrastructure that gets a list of ptp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            HopLimit (str): optional regex of hopLimit
-            Timestamps (str): optional regex of timestamps
-            Tos (str): optional regex of tos
-            TrafficClass (str): optional regex of trafficClass
-            Ttl (str): optional regex of ttl
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - HopLimit (str): optional regex of hopLimit
+        - Timestamps (str): optional regex of timestamps
+        - Tos (str): optional regex of tos
+        - TrafficClass (str): optional regex of trafficClass
+        - Ttl (str): optional regex of ttl
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

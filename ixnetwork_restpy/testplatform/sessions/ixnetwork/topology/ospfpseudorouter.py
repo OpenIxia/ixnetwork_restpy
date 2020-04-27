@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OspfPseudoRouter(Base):
     """Simulated Router Information
-    The OspfPseudoRouter class encapsulates a list of ospfPseudoRouter resources that is managed by the system.
+    The OspfPseudoRouter class encapsulates a list of ospfPseudoRouter resources that are managed by the system.
     A list of resources can be retrieved from the server using the OspfPseudoRouter.find() method.
     """
 
@@ -37,189 +37,210 @@ class OspfPseudoRouter(Base):
 
     @property
     def OspfPseudoRouterStubNetworks(self):
-        """An instance of the OspfPseudoRouterStubNetworks class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks.OspfPseudoRouterStubNetworks): An instance of the OspfPseudoRouterStubNetworks class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks.OspfPseudoRouterStubNetworks)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks import OspfPseudoRouterStubNetworks
         return OspfPseudoRouterStubNetworks(self)
 
     @property
     def OspfPseudoRouterStubRoutes(self):
-        """An instance of the OspfPseudoRouterStubRoutes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes.OspfPseudoRouterStubRoutes): An instance of the OspfPseudoRouterStubRoutes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes.OspfPseudoRouterStubRoutes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes import OspfPseudoRouterStubRoutes
         return OspfPseudoRouterStubRoutes(self)
 
     @property
     def OspfPseudoRouterSummaryRoutes(self):
-        """An instance of the OspfPseudoRouterSummaryRoutes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes.OspfPseudoRouterSummaryRoutes): An instance of the OspfPseudoRouterSummaryRoutes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes.OspfPseudoRouterSummaryRoutes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes import OspfPseudoRouterSummaryRoutes
         return OspfPseudoRouterSummaryRoutes(self)
 
     @property
     def OspfPseudoRouterType1ExtRoutes(self):
-        """An instance of the OspfPseudoRouterType1ExtRoutes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes.OspfPseudoRouterType1ExtRoutes): An instance of the OspfPseudoRouterType1ExtRoutes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes.OspfPseudoRouterType1ExtRoutes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes import OspfPseudoRouterType1ExtRoutes
         return OspfPseudoRouterType1ExtRoutes(self)
 
     @property
     def OspfPseudoRouterType2ExtRoutes(self):
-        """An instance of the OspfPseudoRouterType2ExtRoutes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes.OspfPseudoRouterType2ExtRoutes): An instance of the OspfPseudoRouterType2ExtRoutes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes.OspfPseudoRouterType2ExtRoutes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes import OspfPseudoRouterType2ExtRoutes
         return OspfPseudoRouterType2ExtRoutes(self)
 
     @property
     def OspfSRAlgorithmList(self):
-        """An instance of the OspfSRAlgorithmList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist.OspfSRAlgorithmList): An instance of the OspfSRAlgorithmList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist.OspfSRAlgorithmList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist import OspfSRAlgorithmList
         return OspfSRAlgorithmList(self)
 
     @property
     def OspfSRGBRangeSubObjectsList(self):
-        """An instance of the OspfSRGBRangeSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist.OspfSRGBRangeSubObjectsList): An instance of the OspfSRGBRangeSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist.OspfSRGBRangeSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist import OspfSRGBRangeSubObjectsList
         return OspfSRGBRangeSubObjectsList(self)
 
     @property
-    def Active(self):
-        """Activate/DeActivate OSPF Simulated Router
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def OspfSRLBRangeSubObjectsList(self):
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist.OspfSRLBRangeSubObjectsList): An instance of the OspfSRLBRangeSubObjectsList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist import OspfSRLBRangeSubObjectsList
+        return OspfSRLBRangeSubObjectsList(self)
+
+    @property
+    def Active(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/DeActivate OSPF Simulated Router
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdvertiseRouterIdAsStubNetwork(self):
-        """Advertise RouterId As Stub Network
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseRouterIdAsStubNetwork')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise RouterId As Stub Network
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseRouterIdAsStubNetwork'))
 
     @property
     def Algorithm(self):
-        """Algorithm for the Node SID/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('algorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm for the Node SID/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def BBit(self):
-        """Router-LSA B-Bit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA B-Bit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bBit'))
 
     @property
     def ConfigureSIDIndexLabel(self):
-        """Configure SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('configureSIDIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('configureSIDIndexLabel'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EBit(self):
-        """Router-LSA E-Bit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA E-Bit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eBit'))
 
     @property
     def EFlag(self):
-        """Explicit-Null Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
 
     @property
     def EnableSegmentRouting(self):
-        """Enable Segment Routing
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Segment Routing
         """
         return self._get_attribute('enableSegmentRouting')
     @EnableSegmentRouting.setter
@@ -227,29 +248,43 @@ class OspfPseudoRouter(Base):
         self._set_attribute('enableSegmentRouting', value)
 
     @property
-    def LFlag(self):
-        """Local or Global Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def EnableSrlb(self):
         """
-        return self._get_attribute('lFlag')
+        Returns
+        -------
+        - bool: Enable SRLB
+        """
+        return self._get_attribute('enableSrlb')
+    @EnableSrlb.setter
+    def EnableSrlb(self, value):
+        self._set_attribute('enableSrlb', value)
+
+    @property
+    def LFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def MFlag(self):
-        """Mapping Server Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mFlag'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -258,19 +293,20 @@ class OspfPseudoRouter(Base):
 
     @property
     def NpFlag(self):
-        """No-PHP Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('npFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('npFlag'))
 
     @property
     def SRAlgorithmCount(self):
-        """SR Algorithm Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SR Algorithm Count
         """
         return self._get_attribute('sRAlgorithmCount')
     @SRAlgorithmCount.setter
@@ -279,19 +315,20 @@ class OspfPseudoRouter(Base):
 
     @property
     def SidIndexLabel(self):
-        """SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sidIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sidIndexLabel'))
 
     @property
     def SrgbRangeCount(self):
-        """SRGB Range Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SRGB Range Count
         """
         return self._get_attribute('srgbRangeCount')
     @SrgbRangeCount.setter
@@ -299,65 +336,91 @@ class OspfPseudoRouter(Base):
         self._set_attribute('srgbRangeCount', value)
 
     @property
-    def VFlag(self):
-        """Value or Index Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def SrlbRangeCount(self):
         """
-        return self._get_attribute('vFlag')
+        Returns
+        -------
+        - number: SRLB Range Count
+        """
+        return self._get_attribute('srlbRangeCount')
+    @SrlbRangeCount.setter
+    def SrlbRangeCount(self, value):
+        self._set_attribute('srlbRangeCount', value)
 
-    def update(self, EnableSegmentRouting=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None):
-        """Updates a child instance of ospfPseudoRouter on the server.
+    @property
+    def VFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
+
+    def update(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        """Updates ospfPseudoRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            EnableSegmentRouting (bool): Enable Segment Routing
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SRAlgorithmCount (number): SR Algorithm Count
-            SrgbRangeCount (number): SRGB Range Count
+        Args
+        ----
+        - EnableSegmentRouting (bool): Enable Segment Routing
+        - EnableSrlb (bool): Enable SRLB
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SrgbRangeCount (number): SRGB Range Count
+        - SrlbRangeCount (number): SRLB Range Count
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def find(self, Count=None, DescriptiveName=None, EnableSegmentRouting=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None):
-        """Finds and retrieves ospfPseudoRouter data from the server.
+    def find(self, Count=None, DescriptiveName=None, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        """Finds and retrieves ospfPseudoRouter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfPseudoRouter data from the server.
-        By default the find method takes no parameters and will retrieve all ospfPseudoRouter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfPseudoRouter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfPseudoRouter resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableSegmentRouting (bool): Enable Segment Routing
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SRAlgorithmCount (number): SR Algorithm Count
-            SrgbRangeCount (number): SRGB Range Count
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableSegmentRouting (bool): Enable Segment Routing
+        - EnableSrlb (bool): Enable SRLB
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SrgbRangeCount (number): SRGB Range Count
+        - SrlbRangeCount (number): SRLB Range Count
 
-        Returns:
-            self: This instance with matching ospfPseudoRouter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ospfPseudoRouter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ospfPseudoRouter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ospfPseudoRouter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ospfPseudoRouter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -366,26 +429,29 @@ class OspfPseudoRouter(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AdvertiseRouterIdAsStubNetwork (str): optional regex of advertiseRouterIdAsStubNetwork
-            Algorithm (str): optional regex of algorithm
-            BBit (str): optional regex of bBit
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
-            EBit (str): optional regex of eBit
-            EFlag (str): optional regex of eFlag
-            LFlag (str): optional regex of lFlag
-            MFlag (str): optional regex of mFlag
-            NpFlag (str): optional regex of npFlag
-            SidIndexLabel (str): optional regex of sidIndexLabel
-            VFlag (str): optional regex of vFlag
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AdvertiseRouterIdAsStubNetwork (str): optional regex of advertiseRouterIdAsStubNetwork
+        - Algorithm (str): optional regex of algorithm
+        - BBit (str): optional regex of bBit
+        - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - EBit (str): optional regex of eBit
+        - EFlag (str): optional regex of eFlag
+        - LFlag (str): optional regex of lFlag
+        - MFlag (str): optional regex of mFlag
+        - NpFlag (str): optional regex of npFlag
+        - SidIndexLabel (str): optional regex of sidIndexLabel
+        - VFlag (str): optional regex of vFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -394,22 +460,20 @@ class OspfPseudoRouter(Base):
 
         Start Pseudo Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -421,22 +485,20 @@ class OspfPseudoRouter(Base):
 
         Stop Pseudo Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

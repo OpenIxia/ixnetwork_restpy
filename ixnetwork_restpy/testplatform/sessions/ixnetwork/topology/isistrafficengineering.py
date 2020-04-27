@@ -36,136 +36,148 @@ class IsisTrafficEngineering(Base):
 
     @property
     def AdministratorGroup(self):
-        """Administrator Group
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Administrator Group
         """
-        return self._get_attribute('administratorGroup')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('administratorGroup'))
 
     @property
     def BandwidthPriority0(self):
-        """Bandwidth for Priority 0 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 0 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority0')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority0'))
 
     @property
     def BandwidthPriority1(self):
-        """Bandwidth for Priority 1 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 1 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority1')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority1'))
 
     @property
     def BandwidthPriority2(self):
-        """Bandwidth for Priority 2 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 2 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority2')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority2'))
 
     @property
     def BandwidthPriority3(self):
-        """Bandwidth for Priority 3 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 3 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority3')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority3'))
 
     @property
     def BandwidthPriority4(self):
-        """Bandwidth for Priority 4 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 4 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority4')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority4'))
 
     @property
     def BandwidthPriority5(self):
-        """Bandwidth for Priority 5 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 5 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority5')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority5'))
 
     @property
     def BandwidthPriority6(self):
-        """Bandwidth for Priority 6 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 6 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority6')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority6'))
 
     @property
     def BandwidthPriority7(self):
-        """Bandwidth for Priority 7 (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 7 (B/sec)
         """
-        return self._get_attribute('bandwidthPriority7')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidthPriority7'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def MaxBandwidth(self):
-        """Maximum Bandwidth (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Bandwidth (B/sec)
         """
-        return self._get_attribute('maxBandwidth')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxBandwidth'))
 
     @property
     def MaxReservableBandwidth(self):
-        """Maximum Reservable Bandwidth (B/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Reservable Bandwidth (B/sec)
         """
-        return self._get_attribute('maxReservableBandwidth')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxReservableBandwidth'))
 
     @property
     def MetricLevel(self):
-        """TE Metric Level
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TE Metric Level
         """
-        return self._get_attribute('metricLevel')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('metricLevel'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -173,43 +185,48 @@ class IsisTrafficEngineering(Base):
         self._set_attribute('name', value)
 
     def update(self, Name=None):
-        """Updates a child instance of isisTrafficEngineering on the server.
+        """Updates isisTrafficEngineering resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, AdministratorGroup=None, BandwidthPriority0=None, BandwidthPriority1=None, BandwidthPriority2=None, BandwidthPriority3=None, BandwidthPriority4=None, BandwidthPriority5=None, BandwidthPriority6=None, BandwidthPriority7=None, MaxBandwidth=None, MaxReservableBandwidth=None, MetricLevel=None):
         """Base class infrastructure that gets a list of isisTrafficEngineering device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            AdministratorGroup (str): optional regex of administratorGroup
-            BandwidthPriority0 (str): optional regex of bandwidthPriority0
-            BandwidthPriority1 (str): optional regex of bandwidthPriority1
-            BandwidthPriority2 (str): optional regex of bandwidthPriority2
-            BandwidthPriority3 (str): optional regex of bandwidthPriority3
-            BandwidthPriority4 (str): optional regex of bandwidthPriority4
-            BandwidthPriority5 (str): optional regex of bandwidthPriority5
-            BandwidthPriority6 (str): optional regex of bandwidthPriority6
-            BandwidthPriority7 (str): optional regex of bandwidthPriority7
-            MaxBandwidth (str): optional regex of maxBandwidth
-            MaxReservableBandwidth (str): optional regex of maxReservableBandwidth
-            MetricLevel (str): optional regex of metricLevel
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - AdministratorGroup (str): optional regex of administratorGroup
+        - BandwidthPriority0 (str): optional regex of bandwidthPriority0
+        - BandwidthPriority1 (str): optional regex of bandwidthPriority1
+        - BandwidthPriority2 (str): optional regex of bandwidthPriority2
+        - BandwidthPriority3 (str): optional regex of bandwidthPriority3
+        - BandwidthPriority4 (str): optional regex of bandwidthPriority4
+        - BandwidthPriority5 (str): optional regex of bandwidthPriority5
+        - BandwidthPriority6 (str): optional regex of bandwidthPriority6
+        - BandwidthPriority7 (str): optional regex of bandwidthPriority7
+        - MaxBandwidth (str): optional regex of maxBandwidth
+        - MaxReservableBandwidth (str): optional regex of maxReservableBandwidth
+        - MetricLevel (str): optional regex of metricLevel
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

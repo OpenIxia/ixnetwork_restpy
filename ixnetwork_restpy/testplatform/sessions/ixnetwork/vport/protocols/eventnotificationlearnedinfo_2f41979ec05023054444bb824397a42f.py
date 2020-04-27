@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class EventNotificationLearnedInfo(Base):
     """
-    The EventNotificationLearnedInfo class encapsulates a list of eventNotificationLearnedInfo resources that is managed by the system.
+    The EventNotificationLearnedInfo class encapsulates a list of eventNotificationLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the EventNotificationLearnedInfo.find() method.
     """
 
@@ -38,310 +38,317 @@ class EventNotificationLearnedInfo(Base):
     @property
     def LocalFrameErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFrameErrorRunningTotal')
 
     @property
     def LocalFrameEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFrameEventRunningTotal')
 
     @property
     def LocalFramePeriodErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFramePeriodErrorRunningTotal')
 
     @property
     def LocalFramePeriodEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFramePeriodEventRunningTotal')
 
     @property
     def LocalFrameSecSumErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFrameSecSumErrorRunningTotal')
 
     @property
     def LocalFrameSecSumEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localFrameSecSumEventRunningTotal')
 
     @property
     def LocalSymbolPeriodErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localSymbolPeriodErrorRunningTotal')
 
     @property
     def LocalSymbolPeriodEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('localSymbolPeriodEventRunningTotal')
 
     @property
     def RemoteFrameError(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameError')
 
     @property
     def RemoteFrameErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameErrorRunningTotal')
 
     @property
     def RemoteFrameEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameEventRunningTotal')
 
     @property
     def RemoteFramePeriodError(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFramePeriodError')
 
     @property
     def RemoteFramePeriodErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFramePeriodErrorRunningTotal')
 
     @property
     def RemoteFramePeriodEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFramePeriodEventRunningTotal')
 
     @property
     def RemoteFramePeriodThreshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFramePeriodThreshold')
 
     @property
     def RemoteFramePeriodWindow(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFramePeriodWindow')
 
     @property
     def RemoteFrameSecSumError(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameSecSumError')
 
     @property
     def RemoteFrameSecSumErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameSecSumErrorRunningTotal')
 
     @property
     def RemoteFrameSecSumEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameSecSumEventRunningTotal')
 
     @property
     def RemoteFrameSecSumThreshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameSecSumThreshold')
 
     @property
     def RemoteFrameSecSumWindow(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameSecSumWindow')
 
     @property
     def RemoteFrameThreshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameThreshold')
 
     @property
     def RemoteFrameWindow(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteFrameWindow')
 
     @property
     def RemoteSymbolPeriodErrorRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteSymbolPeriodErrorRunningTotal')
 
     @property
     def RemoteSymbolPeriodErrors(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteSymbolPeriodErrors')
 
     @property
     def RemoteSymbolPeriodEventRunningTotal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteSymbolPeriodEventRunningTotal')
 
     @property
     def RemoteSymbolPeriodThreshold(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteSymbolPeriodThreshold')
 
     @property
     def RemoteSymbolPeriodWindow(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('remoteSymbolPeriodWindow')
 
     def find(self, LocalFrameErrorRunningTotal=None, LocalFrameEventRunningTotal=None, LocalFramePeriodErrorRunningTotal=None, LocalFramePeriodEventRunningTotal=None, LocalFrameSecSumErrorRunningTotal=None, LocalFrameSecSumEventRunningTotal=None, LocalSymbolPeriodErrorRunningTotal=None, LocalSymbolPeriodEventRunningTotal=None, RemoteFrameError=None, RemoteFrameErrorRunningTotal=None, RemoteFrameEventRunningTotal=None, RemoteFramePeriodError=None, RemoteFramePeriodErrorRunningTotal=None, RemoteFramePeriodEventRunningTotal=None, RemoteFramePeriodThreshold=None, RemoteFramePeriodWindow=None, RemoteFrameSecSumError=None, RemoteFrameSecSumErrorRunningTotal=None, RemoteFrameSecSumEventRunningTotal=None, RemoteFrameSecSumThreshold=None, RemoteFrameSecSumWindow=None, RemoteFrameThreshold=None, RemoteFrameWindow=None, RemoteSymbolPeriodErrorRunningTotal=None, RemoteSymbolPeriodErrors=None, RemoteSymbolPeriodEventRunningTotal=None, RemoteSymbolPeriodThreshold=None, RemoteSymbolPeriodWindow=None):
-        """Finds and retrieves eventNotificationLearnedInfo data from the server.
+        """Finds and retrieves eventNotificationLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve eventNotificationLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all eventNotificationLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eventNotificationLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all eventNotificationLearnedInfo resources from the server.
 
-        Args:
-            LocalFrameErrorRunningTotal (number): 
-            LocalFrameEventRunningTotal (number): 
-            LocalFramePeriodErrorRunningTotal (number): 
-            LocalFramePeriodEventRunningTotal (number): 
-            LocalFrameSecSumErrorRunningTotal (number): 
-            LocalFrameSecSumEventRunningTotal (number): 
-            LocalSymbolPeriodErrorRunningTotal (number): 
-            LocalSymbolPeriodEventRunningTotal (number): 
-            RemoteFrameError (number): 
-            RemoteFrameErrorRunningTotal (number): 
-            RemoteFrameEventRunningTotal (number): 
-            RemoteFramePeriodError (number): 
-            RemoteFramePeriodErrorRunningTotal (number): 
-            RemoteFramePeriodEventRunningTotal (number): 
-            RemoteFramePeriodThreshold (number): 
-            RemoteFramePeriodWindow (number): 
-            RemoteFrameSecSumError (number): 
-            RemoteFrameSecSumErrorRunningTotal (number): 
-            RemoteFrameSecSumEventRunningTotal (number): 
-            RemoteFrameSecSumThreshold (number): 
-            RemoteFrameSecSumWindow (number): 
-            RemoteFrameThreshold (number): 
-            RemoteFrameWindow (number): 
-            RemoteSymbolPeriodErrorRunningTotal (number): 
-            RemoteSymbolPeriodErrors (number): 
-            RemoteSymbolPeriodEventRunningTotal (number): 
-            RemoteSymbolPeriodThreshold (number): 
-            RemoteSymbolPeriodWindow (number): 
+        Args
+        ----
+        - LocalFrameErrorRunningTotal (number): 
+        - LocalFrameEventRunningTotal (number): 
+        - LocalFramePeriodErrorRunningTotal (number): 
+        - LocalFramePeriodEventRunningTotal (number): 
+        - LocalFrameSecSumErrorRunningTotal (number): 
+        - LocalFrameSecSumEventRunningTotal (number): 
+        - LocalSymbolPeriodErrorRunningTotal (number): 
+        - LocalSymbolPeriodEventRunningTotal (number): 
+        - RemoteFrameError (number): 
+        - RemoteFrameErrorRunningTotal (number): 
+        - RemoteFrameEventRunningTotal (number): 
+        - RemoteFramePeriodError (number): 
+        - RemoteFramePeriodErrorRunningTotal (number): 
+        - RemoteFramePeriodEventRunningTotal (number): 
+        - RemoteFramePeriodThreshold (number): 
+        - RemoteFramePeriodWindow (number): 
+        - RemoteFrameSecSumError (number): 
+        - RemoteFrameSecSumErrorRunningTotal (number): 
+        - RemoteFrameSecSumEventRunningTotal (number): 
+        - RemoteFrameSecSumThreshold (number): 
+        - RemoteFrameSecSumWindow (number): 
+        - RemoteFrameThreshold (number): 
+        - RemoteFrameWindow (number): 
+        - RemoteSymbolPeriodErrorRunningTotal (number): 
+        - RemoteSymbolPeriodErrors (number): 
+        - RemoteSymbolPeriodEventRunningTotal (number): 
+        - RemoteSymbolPeriodThreshold (number): 
+        - RemoteSymbolPeriodWindow (number): 
 
-        Returns:
-            self: This instance with matching eventNotificationLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching eventNotificationLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of eventNotificationLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the eventNotificationLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the eventNotificationLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

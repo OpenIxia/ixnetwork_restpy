@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Instructions(Base):
     """This object allows to configure the instructions in Controller Table Flow Ranges.
-    The Instructions class encapsulates a list of instructions resources that is be managed by the user.
+    The Instructions class encapsulates a list of instructions resources that are managed by the user.
     A list of resources can be retrieved from the server using the Instructions.find() method.
-    The list can be managed by the user by using the Instructions.add() and Instructions.remove() methods.
+    The list can be managed by using the Instructions.add() and Instructions.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Instructions(Base):
 
     @property
     def InstructionActions(self):
-        """An instance of the InstructionActions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_565f953b734c5ee58d83b7a131c15df2.InstructionActions): An instance of the InstructionActions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_565f953b734c5ee58d83b7a131c15df2.InstructionActions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_565f953b734c5ee58d83b7a131c15df2 import InstructionActions
         return InstructionActions(self)
 
     @property
     def Experimenter(self):
-        """The unique identifier for the Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for the Experimenter.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -64,10 +64,10 @@ class Instructions(Base):
 
     @property
     def ExperimenterData(self):
-        """The experimenter data field value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The experimenter data field value.
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -76,10 +76,10 @@ class Instructions(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """The Value of the data length of the Experimenter. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Value of the data length of the Experimenter. The default value is 1.
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -88,10 +88,10 @@ class Instructions(Base):
 
     @property
     def InstructionType(self):
-        """The instruction type associated with this Flow Range.
-
-        Returns:
-            str(meter|applyActions|clearActions|experimenter|goToTable|writeActions|writeMetadata)
+        """
+        Returns
+        -------
+        - str(meter | applyActions | clearActions | experimenter | goToTable | writeActions | writeMetadata): The instruction type associated with this Flow Range.
         """
         return self._get_attribute('instructionType')
     @InstructionType.setter
@@ -100,10 +100,10 @@ class Instructions(Base):
 
     @property
     def Metadata(self):
-        """Value of the metadata field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Value of the metadata field.
         """
         return self._get_attribute('metadata')
     @Metadata.setter
@@ -112,10 +112,10 @@ class Instructions(Base):
 
     @property
     def MetadataInHex(self):
-        """Specify the table metadata value in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the table metadata value in hexadecimal format.
         """
         return self._get_attribute('metadataInHex')
     @MetadataInHex.setter
@@ -124,10 +124,10 @@ class Instructions(Base):
 
     @property
     def MetadataMask(self):
-        """Specify the metadata bitmask value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the metadata bitmask value.
         """
         return self._get_attribute('metadataMask')
     @MetadataMask.setter
@@ -136,10 +136,10 @@ class Instructions(Base):
 
     @property
     def MeterId(self):
-        """The value by which a meter is uniquely identified within a switch. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which a meter is uniquely identified within a switch. The default value is 1.
         """
         return self._get_attribute('meterId')
     @MeterId.setter
@@ -148,10 +148,10 @@ class Instructions(Base):
 
     @property
     def TableId(self):
-        """The ID of the table to go to.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The ID of the table to go to.
         """
         return self._get_attribute('tableId')
     @TableId.setter
@@ -159,91 +159,104 @@ class Instructions(Base):
         self._set_attribute('tableId', value)
 
     def update(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
-        """Updates a child instance of instructions on the server.
+        """Updates instructions resource on the server.
 
-        Args:
-            Experimenter (number): The unique identifier for the Experimenter.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
-            InstructionType (str(meter|applyActions|clearActions|experimenter|goToTable|writeActions|writeMetadata)): The instruction type associated with this Flow Range.
-            Metadata (str): Value of the metadata field.
-            MetadataInHex (str): Specify the table metadata value in hexadecimal format.
-            MetadataMask (str): Specify the metadata bitmask value.
-            MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
-            TableId (number): The ID of the table to go to.
+        Args
+        ----
+        - Experimenter (number): The unique identifier for the Experimenter.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
+        - InstructionType (str(meter | applyActions | clearActions | experimenter | goToTable | writeActions | writeMetadata)): The instruction type associated with this Flow Range.
+        - Metadata (str): Value of the metadata field.
+        - MetadataInHex (str): Specify the table metadata value in hexadecimal format.
+        - MetadataMask (str): Specify the metadata bitmask value.
+        - MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
+        - TableId (number): The ID of the table to go to.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
-        """Adds a new instructions node on the server and retrieves it in this instance.
+        """Adds a new instructions resource on the server and adds it to the container.
 
-        Args:
-            Experimenter (number): The unique identifier for the Experimenter.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
-            InstructionType (str(meter|applyActions|clearActions|experimenter|goToTable|writeActions|writeMetadata)): The instruction type associated with this Flow Range.
-            Metadata (str): Value of the metadata field.
-            MetadataInHex (str): Specify the table metadata value in hexadecimal format.
-            MetadataMask (str): Specify the metadata bitmask value.
-            MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
-            TableId (number): The ID of the table to go to.
+        Args
+        ----
+        - Experimenter (number): The unique identifier for the Experimenter.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
+        - InstructionType (str(meter | applyActions | clearActions | experimenter | goToTable | writeActions | writeMetadata)): The instruction type associated with this Flow Range.
+        - Metadata (str): Value of the metadata field.
+        - MetadataInHex (str): Specify the table metadata value in hexadecimal format.
+        - MetadataMask (str): Specify the metadata bitmask value.
+        - MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
+        - TableId (number): The ID of the table to go to.
 
-        Returns:
-            self: This instance with all currently retrieved instructions data using find and the newly added instructions data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved instructions resources using find and the newly added instructions resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the instructions data in this instance from server.
+        """Deletes all the contained instructions resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
-        """Finds and retrieves instructions data from the server.
+        """Finds and retrieves instructions resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve instructions data from the server.
-        By default the find method takes no parameters and will retrieve all instructions data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instructions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all instructions resources from the server.
 
-        Args:
-            Experimenter (number): The unique identifier for the Experimenter.
-            ExperimenterData (str): The experimenter data field value.
-            ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
-            InstructionType (str(meter|applyActions|clearActions|experimenter|goToTable|writeActions|writeMetadata)): The instruction type associated with this Flow Range.
-            Metadata (str): Value of the metadata field.
-            MetadataInHex (str): Specify the table metadata value in hexadecimal format.
-            MetadataMask (str): Specify the metadata bitmask value.
-            MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
-            TableId (number): The ID of the table to go to.
+        Args
+        ----
+        - Experimenter (number): The unique identifier for the Experimenter.
+        - ExperimenterData (str): The experimenter data field value.
+        - ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
+        - InstructionType (str(meter | applyActions | clearActions | experimenter | goToTable | writeActions | writeMetadata)): The instruction type associated with this Flow Range.
+        - Metadata (str): Value of the metadata field.
+        - MetadataInHex (str): Specify the table metadata value in hexadecimal format.
+        - MetadataMask (str): Specify the metadata bitmask value.
+        - MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
+        - TableId (number): The ID of the table to go to.
 
-        Returns:
-            self: This instance with matching instructions data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching instructions resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of instructions data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the instructions data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the instructions resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

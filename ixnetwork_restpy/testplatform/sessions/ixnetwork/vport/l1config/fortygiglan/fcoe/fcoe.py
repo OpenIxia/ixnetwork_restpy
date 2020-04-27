@@ -36,10 +36,10 @@ class Fcoe(Base):
 
     @property
     def EnablePFCPauseDelay(self):
-        """If true, PFC pause delay is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, PFC pause delay is enabled.
         """
         return self._get_attribute('enablePFCPauseDelay')
     @EnablePFCPauseDelay.setter
@@ -48,10 +48,10 @@ class Fcoe(Base):
 
     @property
     def FlowControlType(self):
-        """The type of flow control to be selected.
-
-        Returns:
-            str(ieee802.1Qbb|ieee802.3x)
+        """
+        Returns
+        -------
+        - str(ieee802.1Qbb | ieee802.3x): The type of flow control to be selected.
         """
         return self._get_attribute('flowControlType')
     @FlowControlType.setter
@@ -60,10 +60,10 @@ class Fcoe(Base):
 
     @property
     def PfcPauseDelay(self):
-        """If selected, enables to increase the number of frames that is sent when a pause frame is received.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If selected, enables to increase the number of frames that is sent when a pause frame is received.
         """
         return self._get_attribute('pfcPauseDelay')
     @PfcPauseDelay.setter
@@ -72,10 +72,10 @@ class Fcoe(Base):
 
     @property
     def PfcPriorityGroups(self):
-        """When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
         """
         return self._get_attribute('pfcPriorityGroups')
     @PfcPriorityGroups.setter
@@ -84,10 +84,10 @@ class Fcoe(Base):
 
     @property
     def PriorityGroupSize(self):
-        """The maximum size of a Priority Group.
-
-        Returns:
-            str(priorityGroupSize-4|priorityGroupSize-8)
+        """
+        Returns
+        -------
+        - str(priorityGroupSize-4 | priorityGroupSize-8): The maximum size of a Priority Group.
         """
         return self._get_attribute('priorityGroupSize')
     @PriorityGroupSize.setter
@@ -96,10 +96,10 @@ class Fcoe(Base):
 
     @property
     def SupportDataCenterMode(self):
-        """If true, this mode automatically sets Transmit Mode to Interleaved Streams.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this mode automatically sets Transmit Mode to Interleaved Streams.
         """
         return self._get_attribute('supportDataCenterMode')
     @SupportDataCenterMode.setter
@@ -107,17 +107,19 @@ class Fcoe(Base):
         self._set_attribute('supportDataCenterMode', value)
 
     def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
-        """Updates a child instance of fcoe on the server.
+        """Updates fcoe resource on the server.
 
-        Args:
-            EnablePFCPauseDelay (bool): If true, PFC pause delay is enabled.
-            FlowControlType (str(ieee802.1Qbb|ieee802.3x)): The type of flow control to be selected.
-            PfcPauseDelay (number): If selected, enables to increase the number of frames that is sent when a pause frame is received.
-            PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
-            PriorityGroupSize (str(priorityGroupSize-4|priorityGroupSize-8)): The maximum size of a Priority Group.
-            SupportDataCenterMode (bool): If true, this mode automatically sets Transmit Mode to Interleaved Streams.
+        Args
+        ----
+        - EnablePFCPauseDelay (bool): If true, PFC pause delay is enabled.
+        - FlowControlType (str(ieee802.1Qbb | ieee802.3x)): The type of flow control to be selected.
+        - PfcPauseDelay (number): If selected, enables to increase the number of frames that is sent when a pause frame is received.
+        - PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
+        - PriorityGroupSize (str(priorityGroupSize-4 | priorityGroupSize-8)): The maximum size of a Priority Group.
+        - SupportDataCenterMode (bool): If true, this mode automatically sets Transmit Mode to Interleaved Streams.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

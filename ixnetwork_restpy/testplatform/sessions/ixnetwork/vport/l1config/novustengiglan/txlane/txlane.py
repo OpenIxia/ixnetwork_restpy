@@ -37,9 +37,9 @@ class TxLane(Base):
     @property
     def IsSkewSynchronized(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isSkewSynchronized')
     @IsSkewSynchronized.setter
@@ -49,9 +49,9 @@ class TxLane(Base):
     @property
     def LaneMappingType(self):
         """
-
-        Returns:
-            str(custom|decrement|default|increment|random)
+        Returns
+        -------
+        - str(custom | decrement | default | increment | random): 
         """
         return self._get_attribute('laneMappingType')
     @LaneMappingType.setter
@@ -61,36 +61,36 @@ class TxLane(Base):
     @property
     def MaxSkewVal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxSkewVal')
 
     @property
     def MinSkewVal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('minSkewVal')
 
     @property
     def NoOfLanes(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('noOfLanes')
 
     @property
     def PcsLane(self):
         """
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('pcsLane')
     @PcsLane.setter
@@ -100,27 +100,27 @@ class TxLane(Base):
     @property
     def PhysicalLanes(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('physicalLanes')
 
     @property
     def Resolution(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('resolution')
 
     @property
     def SkewValues(self):
         """
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('skewValues')
     @SkewValues.setter
@@ -130,9 +130,9 @@ class TxLane(Base):
     @property
     def SynchronizedSkewVal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('synchronizedSkewVal')
     @SynchronizedSkewVal.setter
@@ -140,16 +140,18 @@ class TxLane(Base):
         self._set_attribute('synchronizedSkewVal', value)
 
     def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
-        """Updates a child instance of txLane on the server.
+        """Updates txLane resource on the server.
 
-        Args:
-            IsSkewSynchronized (bool): 
-            LaneMappingType (str(custom|decrement|default|increment|random)): 
-            PcsLane (list(number)): 
-            SkewValues (list(number)): 
-            SynchronizedSkewVal (number): 
+        Args
+        ----
+        - IsSkewSynchronized (bool): 
+        - LaneMappingType (str(custom | decrement | default | increment | random)): 
+        - PcsLane (list(number)): 
+        - SkewValues (list(number)): 
+        - SynchronizedSkewVal (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

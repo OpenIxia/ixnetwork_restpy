@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SourceTrafficRange(Base):
     """Configures the source traffic range values.
-    The SourceTrafficRange class encapsulates a list of sourceTrafficRange resources that is be managed by the user.
+    The SourceTrafficRange class encapsulates a list of sourceTrafficRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SourceTrafficRange.find() method.
-    The list can be managed by the user by using the SourceTrafficRange.add() and SourceTrafficRange.remove() methods.
+    The list can be managed by using the SourceTrafficRange.add() and SourceTrafficRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class SourceTrafficRange(Base):
 
     @property
     def AddrFamily(self):
-        """The address familyt value.
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): The address familyt value.
         """
         return self._get_attribute('addrFamily')
     @AddrFamily.setter
@@ -50,10 +50,10 @@ class SourceTrafficRange(Base):
 
     @property
     def FilterOnGroupAddress(self):
-        """The available filters on group address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The available filters on group address.
         """
         return self._get_attribute('filterOnGroupAddress')
     @FilterOnGroupAddress.setter
@@ -62,10 +62,10 @@ class SourceTrafficRange(Base):
 
     @property
     def GroupAddress(self):
-        """The group address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The group address.
         """
         return self._get_attribute('groupAddress')
     @GroupAddress.setter
@@ -74,10 +74,10 @@ class SourceTrafficRange(Base):
 
     @property
     def GrpCountPerLsp(self):
-        """The total group count per LSP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total group count per LSP.
         """
         return self._get_attribute('grpCountPerLsp')
     @GrpCountPerLsp.setter
@@ -86,10 +86,10 @@ class SourceTrafficRange(Base):
 
     @property
     def SourceAddress(self):
-        """The source address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The source address.
         """
         return self._get_attribute('sourceAddress')
     @SourceAddress.setter
@@ -98,10 +98,10 @@ class SourceTrafficRange(Base):
 
     @property
     def SrcCountPerLsp(self):
-        """The total source count per LSP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total source count per LSP.
         """
         return self._get_attribute('srcCountPerLsp')
     @SrcCountPerLsp.setter
@@ -109,82 +109,95 @@ class SourceTrafficRange(Base):
         self._set_attribute('srcCountPerLsp', value)
 
     def update(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
-        """Updates a child instance of sourceTrafficRange on the server.
+        """Updates sourceTrafficRange resource on the server.
 
-        Args:
-            AddrFamily (str(ipv4|ipv6)): The address familyt value.
-            FilterOnGroupAddress (bool): The available filters on group address.
-            GroupAddress (str): The group address.
-            GrpCountPerLsp (number): The total group count per LSP.
-            SourceAddress (str): The source address.
-            SrcCountPerLsp (number): The total source count per LSP.
+        Args
+        ----
+        - AddrFamily (str(ipv4 | ipv6)): The address familyt value.
+        - FilterOnGroupAddress (bool): The available filters on group address.
+        - GroupAddress (str): The group address.
+        - GrpCountPerLsp (number): The total group count per LSP.
+        - SourceAddress (str): The source address.
+        - SrcCountPerLsp (number): The total source count per LSP.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
-        """Adds a new sourceTrafficRange node on the server and retrieves it in this instance.
+        """Adds a new sourceTrafficRange resource on the server and adds it to the container.
 
-        Args:
-            AddrFamily (str(ipv4|ipv6)): The address familyt value.
-            FilterOnGroupAddress (bool): The available filters on group address.
-            GroupAddress (str): The group address.
-            GrpCountPerLsp (number): The total group count per LSP.
-            SourceAddress (str): The source address.
-            SrcCountPerLsp (number): The total source count per LSP.
+        Args
+        ----
+        - AddrFamily (str(ipv4 | ipv6)): The address familyt value.
+        - FilterOnGroupAddress (bool): The available filters on group address.
+        - GroupAddress (str): The group address.
+        - GrpCountPerLsp (number): The total group count per LSP.
+        - SourceAddress (str): The source address.
+        - SrcCountPerLsp (number): The total source count per LSP.
 
-        Returns:
-            self: This instance with all currently retrieved sourceTrafficRange data using find and the newly added sourceTrafficRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved sourceTrafficRange resources using find and the newly added sourceTrafficRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the sourceTrafficRange data in this instance from server.
+        """Deletes all the contained sourceTrafficRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
-        """Finds and retrieves sourceTrafficRange data from the server.
+        """Finds and retrieves sourceTrafficRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve sourceTrafficRange data from the server.
-        By default the find method takes no parameters and will retrieve all sourceTrafficRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve sourceTrafficRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all sourceTrafficRange resources from the server.
 
-        Args:
-            AddrFamily (str(ipv4|ipv6)): The address familyt value.
-            FilterOnGroupAddress (bool): The available filters on group address.
-            GroupAddress (str): The group address.
-            GrpCountPerLsp (number): The total group count per LSP.
-            SourceAddress (str): The source address.
-            SrcCountPerLsp (number): The total source count per LSP.
+        Args
+        ----
+        - AddrFamily (str(ipv4 | ipv6)): The address familyt value.
+        - FilterOnGroupAddress (bool): The available filters on group address.
+        - GroupAddress (str): The group address.
+        - GrpCountPerLsp (number): The total group count per LSP.
+        - SourceAddress (str): The source address.
+        - SrcCountPerLsp (number): The total source count per LSP.
 
-        Returns:
-            self: This instance with matching sourceTrafficRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching sourceTrafficRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of sourceTrafficRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the sourceTrafficRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the sourceTrafficRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

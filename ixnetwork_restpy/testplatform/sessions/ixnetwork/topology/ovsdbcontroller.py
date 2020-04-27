@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ovsdbcontroller(Base):
     """
-    The Ovsdbcontroller class encapsulates a list of ovsdbcontroller resources that is be managed by the user.
+    The Ovsdbcontroller class encapsulates a list of ovsdbcontroller resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ovsdbcontroller.find() method.
-    The list can be managed by the user by using the Ovsdbcontroller.add() and Ovsdbcontroller.remove() methods.
+    The list can be managed by using the Ovsdbcontroller.add() and Ovsdbcontroller.remove() methods.
     """
 
     __slots__ = ()
@@ -38,28 +38,28 @@ class Ovsdbcontroller(Base):
 
     @property
     def ClusterData(self):
-        """An instance of the ClusterData class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterdata.ClusterData): An instance of the ClusterData class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterdata.ClusterData)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterdata import ClusterData
         return ClusterData(self)._select()
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
@@ -67,18 +67,19 @@ class Ovsdbcontroller(Base):
     @property
     def ClearDumpDbFiles(self):
         """
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 
         """
-        return self._get_attribute('clearDumpDbFiles')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('clearDumpDbFiles'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -87,64 +88,68 @@ class Ovsdbcontroller(Base):
 
     @property
     def ConnectionType(self):
-        """Connection should use TCP or TLS
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('connectionType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Connection should use TCP or TLS
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('connectionType'))
 
     @property
     def ControllerTcpPort(self):
-        """Specify the TCP port for the Controller
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('controllerTcpPort')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the TCP port for the Controller
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('controllerTcpPort'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DirectoryName(self):
-        """Location of Directory in Client where the Certificate and Key Files are available
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('directoryName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory in Client where the Certificate and Key Files are available
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('directoryName'))
 
     @property
     def DumpdbDirectoryName(self):
-        """Location of Directory in Client where the DumpDb Files are available
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dumpdbDirectoryName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory in Client where the DumpDb Files are available
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dumpdbDirectoryName'))
 
     @property
     def EnableLogging(self):
-        """If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
         """
         return self._get_attribute('enableLogging')
     @EnableLogging.setter
@@ -154,126 +159,138 @@ class Ovsdbcontroller(Base):
     @property
     def EnableOvsdbServerIp(self):
         """
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 
         """
-        return self._get_attribute('enableOvsdbServerIp')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableOvsdbServerIp'))
 
     @property
     def ErrorCode(self):
-        """Error Code
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorCode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Error Code
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorCode'))
 
     @property
     def ErrorDesc(self):
-        """Description of Error occured
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorDesc')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Description of Error occured
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorDesc'))
 
     @property
     def ErrorLogDirectoryName(self):
-        """Location of Directory in Client where the ErrorLog Files are available
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorLogDirectoryName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory in Client where the ErrorLog Files are available
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorLogDirectoryName'))
 
     @property
     def ErrorLogicalSwitchName(self):
-        """Error occured for this Logical Switch Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorLogicalSwitchName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Error occured for this Logical Switch Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorLogicalSwitchName'))
 
     @property
     def ErrorPhysicalSwitchName(self):
-        """Error occured for this Physical Switch Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorPhysicalSwitchName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Error occured for this Physical Switch Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorPhysicalSwitchName'))
 
     @property
     def ErrorTimeStamp(self):
-        """Time Stamp at which Last Error occurred
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('errorTimeStamp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time Stamp at which Last Error occurred
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('errorTimeStamp'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def FileCaCertificate(self):
-        """CA Certificate File
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fileCaCertificate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CA Certificate File
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fileCaCertificate'))
 
     @property
     def FileCertificate(self):
-        """Certificate File
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fileCertificate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Certificate File
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fileCertificate'))
 
     @property
     def FileHWGatewayCertificate(self):
-        """HW Gateway Certificate File
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('fileHWGatewayCertificate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): HW Gateway Certificate File
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('fileHWGatewayCertificate'))
 
     @property
     def FilePrivKey(self):
-        """Private Key File
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('filePrivKey')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Private Key File
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('filePrivKey'))
 
     @property
     def HSCConfiguration(self):
-        """Each VTEP has its own Hardware Switch Controller.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hSCConfiguration')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Each VTEP has its own Hardware Switch Controller.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hSCConfiguration'))
 
     @property
     def LatestDumpDbFileNames(self):
-        """Api to fetch latest DumpDb Files
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Api to fetch latest DumpDb Files
         """
         return self._get_attribute('latestDumpDbFileNames')
     @LatestDumpDbFileNames.setter
@@ -282,10 +299,10 @@ class Ovsdbcontroller(Base):
 
     @property
     def LatestErrorFileNames(self):
-        """Api to fetch latest Error Files
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Api to fetch latest Error Files
         """
         return self._get_attribute('latestErrorFileNames')
     @LatestErrorFileNames.setter
@@ -294,10 +311,10 @@ class Ovsdbcontroller(Base):
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -306,10 +323,10 @@ class Ovsdbcontroller(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -318,28 +335,30 @@ class Ovsdbcontroller(Base):
 
     @property
     def OvsdbSchema(self):
-        """Database schema
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ovsdbSchema')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Database schema
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ovsdbSchema'))
 
     @property
     def OvsdbServerIp(self):
-        """The IP address of the DUT or Ovs Server.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ovsdbServerIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the DUT or Ovs Server.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ovsdbServerIp'))
 
     @property
     def PseudoConnectedTo(self):
-        """GUI-only connection
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
         """
         return self._get_attribute('pseudoConnectedTo')
     @PseudoConnectedTo.setter
@@ -348,10 +367,10 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoConnectedToBfd(self):
-        """GUI-only connection
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
         """
         return self._get_attribute('pseudoConnectedToBfd')
     @PseudoConnectedToBfd.setter
@@ -360,10 +379,10 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoConnectedToVxlanReplicator(self):
-        """GUI-only connection
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
         """
         return self._get_attribute('pseudoConnectedToVxlanReplicator')
     @PseudoConnectedToVxlanReplicator.setter
@@ -372,46 +391,46 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoMultiplier(self):
-        """Multiplier for GUI-only connection
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Multiplier for GUI-only connection
         """
         return self._get_attribute('pseudoMultiplier')
 
     @property
     def PseudoMultiplierBfd(self):
-        """Multiplier for GUI-only connection
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Multiplier for GUI-only connection
         """
         return self._get_attribute('pseudoMultiplierBfd')
 
     @property
     def PseudoMultiplierVxlanReplicator(self):
-        """Multiplier for GUI-only connection
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Multiplier for GUI-only connection
         """
         return self._get_attribute('pseudoMultiplierVxlanReplicator')
 
     @property
     def Role(self):
-        """The role of the OVSDB Controller.
-
-        Returns:
-            list(str[master|none|slave])
+        """
+        Returns
+        -------
+        - list(str[master | none | slave]): The role of the OVSDB Controller.
         """
         return self._get_attribute('role')
 
     @property
     def ServerAddDeleteConnectionError(self):
-        """API to retrieve error occured while Adding/ Deleting Server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: API to retrieve error occured while Adding/ Deleting Server
         """
         return self._get_attribute('serverAddDeleteConnectionError')
     @ServerAddDeleteConnectionError.setter
@@ -420,37 +439,38 @@ class Ovsdbcontroller(Base):
 
     @property
     def ServerAddDeleteStatus(self):
-        """Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
         """
         return self._get_attribute('serverAddDeleteStatus')
 
     @property
     def ServerConnectionIp(self):
-        """The IP address of the DUT or Ovs Server which needs to be Added/Deleted.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('serverConnectionIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the DUT or Ovs Server which needs to be Added/Deleted.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('serverConnectionIp'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -459,37 +479,38 @@ class Ovsdbcontroller(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TableNames(self):
         """
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 
         """
-        return self._get_attribute('tableNames')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tableNames'))
 
     @property
     def TimeOut(self):
-        """Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
         """
         return self._get_attribute('timeOut')
     @TimeOut.setter
@@ -498,28 +519,30 @@ class Ovsdbcontroller(Base):
 
     @property
     def VerifyHWGatewayCertificate(self):
-        """Verify HW Gateway Certificate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('verifyHWGatewayCertificate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Verify HW Gateway Certificate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('verifyHWGatewayCertificate'))
 
     @property
     def VerifyPeerCertificate(self):
-        """Verify Peer Certificate
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('verifyPeerCertificate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Verify Peer Certificate
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('verifyPeerCertificate'))
 
     @property
     def Vxlan(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
         """
         return self._get_attribute('vxlan')
     @Vxlan.setter
@@ -529,9 +552,9 @@ class Ovsdbcontroller(Base):
     @property
     def VxlanReplicator(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
         """
         return self._get_attribute('vxlanReplicator')
     @VxlanReplicator.setter
@@ -539,121 +562,134 @@ class Ovsdbcontroller(Base):
         self._set_attribute('vxlanReplicator', value)
 
     def update(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
-        """Updates a child instance of ovsdbcontroller on the server.
+        """Updates ovsdbcontroller resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
-            LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
-            LatestErrorFileNames (str): Api to fetch latest Error Files
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PseudoConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToBfd (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToVxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-            Vxlan (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
-            VxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
+        - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
+        - LatestErrorFileNames (str): Api to fetch latest Error Files
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
-        """Adds a new ovsdbcontroller node on the server and retrieves it in this instance.
+        """Adds a new ovsdbcontroller resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
-            LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
-            LatestErrorFileNames (str): Api to fetch latest Error Files
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PseudoConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToBfd (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToVxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-            Vxlan (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
-            VxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
+        - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
+        - LatestErrorFileNames (str): Api to fetch latest Error Files
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
-        Returns:
-            self: This instance with all currently retrieved ovsdbcontroller data using find and the newly added ovsdbcontroller data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ovsdbcontroller resources using find and the newly added ovsdbcontroller resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ovsdbcontroller data in this instance from server.
+        """Deletes all the contained ovsdbcontroller resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableLogging=None, Errors=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, PseudoMultiplier=None, PseudoMultiplierBfd=None, PseudoMultiplierVxlanReplicator=None, Role=None, ServerAddDeleteConnectionError=None, ServerAddDeleteStatus=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
-        """Finds and retrieves ovsdbcontroller data from the server.
+        """Finds and retrieves ovsdbcontroller resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ovsdbcontroller data from the server.
-        By default the find method takes no parameters and will retrieve all ovsdbcontroller data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ovsdbcontroller resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ovsdbcontroller resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
-            LatestErrorFileNames (str): Api to fetch latest Error Files
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            PseudoConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToBfd (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoConnectedToVxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
-            PseudoMultiplier (number): Multiplier for GUI-only connection
-            PseudoMultiplierBfd (number): Multiplier for GUI-only connection
-            PseudoMultiplierVxlanReplicator (number): Multiplier for GUI-only connection
-            Role (list(str[master|none|slave])): The role of the OVSDB Controller.
-            ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
-            ServerAddDeleteStatus (str): Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-            TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-            Vxlan (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
-            VxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
+        - LatestErrorFileNames (str): Api to fetch latest Error Files
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoMultiplier (number): Multiplier for GUI-only connection
+        - PseudoMultiplierBfd (number): Multiplier for GUI-only connection
+        - PseudoMultiplierVxlanReplicator (number): Multiplier for GUI-only connection
+        - Role (list(str[master | none | slave])): The role of the OVSDB Controller.
+        - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
+        - ServerAddDeleteStatus (str): Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
-        Returns:
-            self: This instance with matching ovsdbcontroller data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ovsdbcontroller resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ovsdbcontroller data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ovsdbcontroller data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ovsdbcontroller resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -662,37 +698,40 @@ class Ovsdbcontroller(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            ClearDumpDbFiles (str): optional regex of clearDumpDbFiles
-            ConnectionType (str): optional regex of connectionType
-            ControllerTcpPort (str): optional regex of controllerTcpPort
-            DirectoryName (str): optional regex of directoryName
-            DumpdbDirectoryName (str): optional regex of dumpdbDirectoryName
-            EnableOvsdbServerIp (str): optional regex of enableOvsdbServerIp
-            ErrorCode (str): optional regex of errorCode
-            ErrorDesc (str): optional regex of errorDesc
-            ErrorLogDirectoryName (str): optional regex of errorLogDirectoryName
-            ErrorLogicalSwitchName (str): optional regex of errorLogicalSwitchName
-            ErrorPhysicalSwitchName (str): optional regex of errorPhysicalSwitchName
-            ErrorTimeStamp (str): optional regex of errorTimeStamp
-            FileCaCertificate (str): optional regex of fileCaCertificate
-            FileCertificate (str): optional regex of fileCertificate
-            FileHWGatewayCertificate (str): optional regex of fileHWGatewayCertificate
-            FilePrivKey (str): optional regex of filePrivKey
-            HSCConfiguration (str): optional regex of hSCConfiguration
-            OvsdbSchema (str): optional regex of ovsdbSchema
-            OvsdbServerIp (str): optional regex of ovsdbServerIp
-            ServerConnectionIp (str): optional regex of serverConnectionIp
-            TableNames (str): optional regex of tableNames
-            VerifyHWGatewayCertificate (str): optional regex of verifyHWGatewayCertificate
-            VerifyPeerCertificate (str): optional regex of verifyPeerCertificate
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ClearDumpDbFiles (str): optional regex of clearDumpDbFiles
+        - ConnectionType (str): optional regex of connectionType
+        - ControllerTcpPort (str): optional regex of controllerTcpPort
+        - DirectoryName (str): optional regex of directoryName
+        - DumpdbDirectoryName (str): optional regex of dumpdbDirectoryName
+        - EnableOvsdbServerIp (str): optional regex of enableOvsdbServerIp
+        - ErrorCode (str): optional regex of errorCode
+        - ErrorDesc (str): optional regex of errorDesc
+        - ErrorLogDirectoryName (str): optional regex of errorLogDirectoryName
+        - ErrorLogicalSwitchName (str): optional regex of errorLogicalSwitchName
+        - ErrorPhysicalSwitchName (str): optional regex of errorPhysicalSwitchName
+        - ErrorTimeStamp (str): optional regex of errorTimeStamp
+        - FileCaCertificate (str): optional regex of fileCaCertificate
+        - FileCertificate (str): optional regex of fileCertificate
+        - FileHWGatewayCertificate (str): optional regex of fileHWGatewayCertificate
+        - FilePrivKey (str): optional regex of filePrivKey
+        - HSCConfiguration (str): optional regex of hSCConfiguration
+        - OvsdbSchema (str): optional regex of ovsdbSchema
+        - OvsdbServerIp (str): optional regex of ovsdbServerIp
+        - ServerConnectionIp (str): optional regex of serverConnectionIp
+        - TableNames (str): optional regex of tableNames
+        - VerifyHWGatewayCertificate (str): optional regex of verifyHWGatewayCertificate
+        - VerifyPeerCertificate (str): optional regex of verifyPeerCertificate
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -701,16 +740,15 @@ class Ovsdbcontroller(Base):
 
         Add Server.
 
-        addServer(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Add Server.
+        addServer(Arg2=list)list
+        ------------------------
+        - Arg2 (list(number)): List of indices for which to Add Server.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -722,16 +760,15 @@ class Ovsdbcontroller(Base):
 
         Clear Error Messages reported due to Last Action.
 
-        clearLastErrors(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to clear last reported error messages.
+        clearLastErrors(Arg2=list)list
+        ------------------------------
+        - Arg2 (list(number)): List of indices for which to clear last reported error messages.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -743,16 +780,15 @@ class Ovsdbcontroller(Base):
 
         Add Server.
 
-        clearPortLogs(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Add Server.
+        clearPortLogs(Arg2=list)list
+        ----------------------------
+        - Arg2 (list(number)): List of indices for which to Add Server.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -764,16 +800,15 @@ class Ovsdbcontroller(Base):
 
         Command to fetch Tor Information stored internally.
 
-        controllerDumpDB(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the device group.
+        controllerDumpDB(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -785,16 +820,15 @@ class Ovsdbcontroller(Base):
 
         Delete Server.
 
-        deleteServer(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to Delete Server.
+        deleteServer(Arg2=list)list
+        ---------------------------
+        - Arg2 (list(number)): List of indices for which to Delete Server.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -806,16 +840,15 @@ class Ovsdbcontroller(Base):
 
         Attach.
 
-        dumpDB(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the device group.
+        dumpDB(Arg2=list)list
+        ---------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -827,16 +860,15 @@ class Ovsdbcontroller(Base):
 
         Get Server Status.
 
-        getServerAddDeleteStatus(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices for which to get Server Status.
+        getServerAddDeleteStatus(Arg2=list)list
+        ---------------------------------------
+        - Arg2 (list(number)): List of indices for which to get Server Status.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -848,22 +880,20 @@ class Ovsdbcontroller(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -875,22 +905,20 @@ class Ovsdbcontroller(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -902,22 +930,20 @@ class Ovsdbcontroller(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

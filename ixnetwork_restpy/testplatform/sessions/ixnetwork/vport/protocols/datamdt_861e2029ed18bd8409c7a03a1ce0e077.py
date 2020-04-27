@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class DataMdt(Base):
     """A set of Data MDT Ranges to be included in this PIM-SM interface.
-    The DataMdt class encapsulates a list of dataMdt resources that is be managed by the user.
+    The DataMdt class encapsulates a list of dataMdt resources that are managed by the user.
     A list of resources can be retrieved from the server using the DataMdt.find() method.
-    The list can be managed by the user by using the DataMdt.add() and DataMdt.remove() methods.
+    The list can be managed by using the DataMdt.add() and DataMdt.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class DataMdt(Base):
 
     @property
     def LearnedMdtState(self):
-        """An instance of the LearnedMdtState class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_abd4e328482a95c54b6dada14a2efced.LearnedMdtState): An instance of the LearnedMdtState class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_abd4e328482a95c54b6dada14a2efced.LearnedMdtState)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_abd4e328482a95c54b6dada14a2efced import LearnedMdtState
         return LearnedMdtState(self)
 
     @property
     def ActivationInterval(self):
-        """The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
         """
         return self._get_attribute('activationInterval')
     @ActivationInterval.setter
@@ -64,10 +64,10 @@ class DataMdt(Base):
 
     @property
     def CeGroupAddress(self):
-        """A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
         """
         return self._get_attribute('ceGroupAddress')
     @CeGroupAddress.setter
@@ -76,10 +76,10 @@ class DataMdt(Base):
 
     @property
     def CeGroupCount(self):
-        """The number of CE group addresses in the range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of CE group addresses in the range.
         """
         return self._get_attribute('ceGroupCount')
     @CeGroupCount.setter
@@ -88,10 +88,10 @@ class DataMdt(Base):
 
     @property
     def CeSourceAddress(self):
-        """A unicast IPv4 address for the first CE source.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A unicast IPv4 address for the first CE source.
         """
         return self._get_attribute('ceSourceAddress')
     @CeSourceAddress.setter
@@ -100,10 +100,10 @@ class DataMdt(Base):
 
     @property
     def CeSourceCount(self):
-        """The number of CE Source Addresses in the range. Used with fully-meshed range type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of CE Source Addresses in the range. Used with fully-meshed range type.
         """
         return self._get_attribute('ceSourceCount')
     @CeSourceCount.setter
@@ -112,10 +112,10 @@ class DataMdt(Base):
 
     @property
     def DataMdtGroupAddress(self):
-        """The first multicast group address in the data MDT range. The default is 230.0.0.0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first multicast group address in the data MDT range. The default is 230.0.0.0.
         """
         return self._get_attribute('dataMdtGroupAddress')
     @DataMdtGroupAddress.setter
@@ -124,10 +124,10 @@ class DataMdt(Base):
 
     @property
     def DataMdtGroupAddressCount(self):
-        """The number of group addresses in the data MDT range. The default is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of group addresses in the data MDT range. The default is 1.
         """
         return self._get_attribute('dataMdtGroupAddressCount')
     @DataMdtGroupAddressCount.setter
@@ -136,10 +136,10 @@ class DataMdt(Base):
 
     @property
     def DiscardLearnedState(self):
-        """If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
         """
         return self._get_attribute('discardLearnedState')
     @DiscardLearnedState.setter
@@ -148,10 +148,10 @@ class DataMdt(Base):
 
     @property
     def Enabled(self):
-        """If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -160,10 +160,10 @@ class DataMdt(Base):
 
     @property
     def PackTlv(self):
-        """Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
         """
         return self._get_attribute('packTlv')
     @PackTlv.setter
@@ -172,10 +172,10 @@ class DataMdt(Base):
 
     @property
     def RangeType(self):
-        """The type of data MDT range.
-
-        Returns:
-            str(fullyMeshed|oneToOne)
+        """
+        Returns
+        -------
+        - str(fullyMeshed | oneToOne): The type of data MDT range.
         """
         return self._get_attribute('rangeType')
     @RangeType.setter
@@ -183,97 +183,110 @@ class DataMdt(Base):
         self._set_attribute('rangeType', value)
 
     def update(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
-        """Updates a child instance of dataMdt on the server.
+        """Updates dataMdt resource on the server.
 
-        Args:
-            ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
-            CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
-            CeGroupCount (number): The number of CE group addresses in the range.
-            CeSourceAddress (str): A unicast IPv4 address for the first CE source.
-            CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
-            DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
-            DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
-            DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
-            Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
-            PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
-            RangeType (str(fullyMeshed|oneToOne)): The type of data MDT range.
+        Args
+        ----
+        - ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
+        - CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
+        - CeGroupCount (number): The number of CE group addresses in the range.
+        - CeSourceAddress (str): A unicast IPv4 address for the first CE source.
+        - CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
+        - DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
+        - DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
+        - DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
+        - Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
+        - PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
+        - RangeType (str(fullyMeshed | oneToOne)): The type of data MDT range.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
-        """Adds a new dataMdt node on the server and retrieves it in this instance.
+        """Adds a new dataMdt resource on the server and adds it to the container.
 
-        Args:
-            ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
-            CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
-            CeGroupCount (number): The number of CE group addresses in the range.
-            CeSourceAddress (str): A unicast IPv4 address for the first CE source.
-            CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
-            DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
-            DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
-            DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
-            Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
-            PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
-            RangeType (str(fullyMeshed|oneToOne)): The type of data MDT range.
+        Args
+        ----
+        - ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
+        - CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
+        - CeGroupCount (number): The number of CE group addresses in the range.
+        - CeSourceAddress (str): A unicast IPv4 address for the first CE source.
+        - CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
+        - DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
+        - DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
+        - DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
+        - Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
+        - PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
+        - RangeType (str(fullyMeshed | oneToOne)): The type of data MDT range.
 
-        Returns:
-            self: This instance with all currently retrieved dataMdt data using find and the newly added dataMdt data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dataMdt resources using find and the newly added dataMdt resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dataMdt data in this instance from server.
+        """Deletes all the contained dataMdt resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
-        """Finds and retrieves dataMdt data from the server.
+        """Finds and retrieves dataMdt resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dataMdt data from the server.
-        By default the find method takes no parameters and will retrieve all dataMdt data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dataMdt resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dataMdt resources from the server.
 
-        Args:
-            ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
-            CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
-            CeGroupCount (number): The number of CE group addresses in the range.
-            CeSourceAddress (str): A unicast IPv4 address for the first CE source.
-            CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
-            DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
-            DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
-            DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
-            Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
-            PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
-            RangeType (str(fullyMeshed|oneToOne)): The type of data MDT range.
+        Args
+        ----
+        - ActivationInterval (number): The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
+        - CeGroupAddress (str): A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
+        - CeGroupCount (number): The number of CE group addresses in the range.
+        - CeSourceAddress (str): A unicast IPv4 address for the first CE source.
+        - CeSourceCount (number): The number of CE Source Addresses in the range. Used with fully-meshed range type.
+        - DataMdtGroupAddress (str): The first multicast group address in the data MDT range. The default is 230.0.0.0.
+        - DataMdtGroupAddressCount (number): The number of group addresses in the data MDT range. The default is 1.
+        - DiscardLearnedState (bool): If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
+        - Enabled (bool): If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
+        - PackTlv (bool): Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
+        - RangeType (str(fullyMeshed | oneToOne)): The type of data MDT range.
 
-        Returns:
-            self: This instance with matching dataMdt data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dataMdt resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dataMdt data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dataMdt data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dataMdt resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

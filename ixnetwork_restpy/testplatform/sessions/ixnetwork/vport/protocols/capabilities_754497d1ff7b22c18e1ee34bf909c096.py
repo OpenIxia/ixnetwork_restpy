@@ -36,10 +36,10 @@ class Capabilities(Base):
 
     @property
     def AdVpls(self):
-        """If true, enables the BGP autodiscovery VPLS tunnels.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the BGP autodiscovery VPLS tunnels.
         """
         return self._get_attribute('adVpls')
     @AdVpls.setter
@@ -48,10 +48,10 @@ class Capabilities(Base):
 
     @property
     def Evpn(self):
-        """If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
         """
         return self._get_attribute('evpn')
     @Evpn.setter
@@ -60,10 +60,10 @@ class Capabilities(Base):
 
     @property
     def FetchDetailedIpV4UnicastInfo(self):
-        """If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
         """
         return self._get_attribute('fetchDetailedIpV4UnicastInfo')
     @FetchDetailedIpV4UnicastInfo.setter
@@ -72,10 +72,10 @@ class Capabilities(Base):
 
     @property
     def FetchDetailedIpV6UnicastInfo(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('fetchDetailedIpV6UnicastInfo')
     @FetchDetailedIpV6UnicastInfo.setter
@@ -84,10 +84,10 @@ class Capabilities(Base):
 
     @property
     def IpV4Mpls(self):
-        """If true, learns IPv4 MPLS routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv4 MPLS routes.
         """
         return self._get_attribute('ipV4Mpls')
     @IpV4Mpls.setter
@@ -96,10 +96,10 @@ class Capabilities(Base):
 
     @property
     def IpV4MplsVpn(self):
-        """If true, learns MPLS VPN routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns MPLS VPN routes.
         """
         return self._get_attribute('ipV4MplsVpn')
     @IpV4MplsVpn.setter
@@ -108,10 +108,10 @@ class Capabilities(Base):
 
     @property
     def IpV4Multicast(self):
-        """If true, learns IPv4 Multicast routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv4 Multicast routes.
         """
         return self._get_attribute('ipV4Multicast')
     @IpV4Multicast.setter
@@ -120,10 +120,10 @@ class Capabilities(Base):
 
     @property
     def IpV4MulticastMplsVpn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipV4MulticastMplsVpn')
     @IpV4MulticastMplsVpn.setter
@@ -132,10 +132,10 @@ class Capabilities(Base):
 
     @property
     def IpV4MulticastVpn(self):
-        """If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
         """
         return self._get_attribute('ipV4MulticastVpn')
     @IpV4MulticastVpn.setter
@@ -144,10 +144,10 @@ class Capabilities(Base):
 
     @property
     def IpV4Unicast(self):
-        """If true, learns IPv4 Unicast routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv4 Unicast routes.
         """
         return self._get_attribute('ipV4Unicast')
     @IpV4Unicast.setter
@@ -156,10 +156,10 @@ class Capabilities(Base):
 
     @property
     def IpV6Mpls(self):
-        """If true, learns IPv6 MPLS routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv6 MPLS routes.
         """
         return self._get_attribute('ipV6Mpls')
     @IpV6Mpls.setter
@@ -168,10 +168,10 @@ class Capabilities(Base):
 
     @property
     def IpV6MplsVpn(self):
-        """If true, learns IPv6 MPLS VPN routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv6 MPLS VPN routes.
         """
         return self._get_attribute('ipV6MplsVpn')
     @IpV6MplsVpn.setter
@@ -180,10 +180,10 @@ class Capabilities(Base):
 
     @property
     def IpV6Multicast(self):
-        """If true, learns IPv6 Multicast routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv6 Multicast routes.
         """
         return self._get_attribute('ipV6Multicast')
     @IpV6Multicast.setter
@@ -192,10 +192,10 @@ class Capabilities(Base):
 
     @property
     def IpV6MulticastMplsVpn(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('ipV6MulticastMplsVpn')
     @IpV6MulticastMplsVpn.setter
@@ -204,10 +204,10 @@ class Capabilities(Base):
 
     @property
     def IpV6MulticastVpn(self):
-        """If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
         """
         return self._get_attribute('ipV6MulticastVpn')
     @IpV6MulticastVpn.setter
@@ -216,10 +216,10 @@ class Capabilities(Base):
 
     @property
     def IpV6Unicast(self):
-        """If true, learns IPv6 Unicast routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns IPv6 Unicast routes.
         """
         return self._get_attribute('ipV6Unicast')
     @IpV6Unicast.setter
@@ -228,10 +228,10 @@ class Capabilities(Base):
 
     @property
     def Vpls(self):
-        """If true, learns VPLS routes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, learns VPLS routes.
         """
         return self._get_attribute('vpls')
     @Vpls.setter
@@ -239,28 +239,30 @@ class Capabilities(Base):
         self._set_attribute('vpls', value)
 
     def update(self, AdVpls=None, Evpn=None, FetchDetailedIpV4UnicastInfo=None, FetchDetailedIpV6UnicastInfo=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastMplsVpn=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastMplsVpn=None, IpV6MulticastVpn=None, IpV6Unicast=None, Vpls=None):
-        """Updates a child instance of capabilities on the server.
+        """Updates capabilities resource on the server.
 
-        Args:
-            AdVpls (bool): If true, enables the BGP autodiscovery VPLS tunnels.
-            Evpn (bool): If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
-            FetchDetailedIpV4UnicastInfo (bool): If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
-            FetchDetailedIpV6UnicastInfo (bool): NOT DEFINED
-            IpV4Mpls (bool): If true, learns IPv4 MPLS routes.
-            IpV4MplsVpn (bool): If true, learns MPLS VPN routes.
-            IpV4Multicast (bool): If true, learns IPv4 Multicast routes.
-            IpV4MulticastMplsVpn (bool): NOT DEFINED
-            IpV4MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
-            IpV4Unicast (bool): If true, learns IPv4 Unicast routes.
-            IpV6Mpls (bool): If true, learns IPv6 MPLS routes.
-            IpV6MplsVpn (bool): If true, learns IPv6 MPLS VPN routes.
-            IpV6Multicast (bool): If true, learns IPv6 Multicast routes.
-            IpV6MulticastMplsVpn (bool): NOT DEFINED
-            IpV6MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
-            IpV6Unicast (bool): If true, learns IPv6 Unicast routes.
-            Vpls (bool): If true, learns VPLS routes.
+        Args
+        ----
+        - AdVpls (bool): If true, enables the BGP autodiscovery VPLS tunnels.
+        - Evpn (bool): If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
+        - FetchDetailedIpV4UnicastInfo (bool): If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
+        - FetchDetailedIpV6UnicastInfo (bool): NOT DEFINED
+        - IpV4Mpls (bool): If true, learns IPv4 MPLS routes.
+        - IpV4MplsVpn (bool): If true, learns MPLS VPN routes.
+        - IpV4Multicast (bool): If true, learns IPv4 Multicast routes.
+        - IpV4MulticastMplsVpn (bool): NOT DEFINED
+        - IpV4MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
+        - IpV4Unicast (bool): If true, learns IPv4 Unicast routes.
+        - IpV6Mpls (bool): If true, learns IPv6 MPLS routes.
+        - IpV6MplsVpn (bool): If true, learns IPv6 MPLS VPN routes.
+        - IpV6Multicast (bool): If true, learns IPv6 Multicast routes.
+        - IpV6MulticastMplsVpn (bool): NOT DEFINED
+        - IpV6MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
+        - IpV6Unicast (bool): If true, learns IPv6 Unicast routes.
+        - Vpls (bool): If true, learns VPLS routes.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

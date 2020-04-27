@@ -36,94 +36,94 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def CpIpRangeS5S8(self):
-        """An instance of the CpIpRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_31f958f8129f1c8e625eadbaca2d541e.CpIpRangeS5S8): An instance of the CpIpRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_31f958f8129f1c8e625eadbaca2d541e.CpIpRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_31f958f8129f1c8e625eadbaca2d541e import CpIpRangeS5S8
         return CpIpRangeS5S8(self)._select()
 
     @property
     def CpMacRangeS5S8(self):
-        """An instance of the CpMacRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_e00f958bd0e63ca21599e5c7b46e8cdf.CpMacRangeS5S8): An instance of the CpMacRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_e00f958bd0e63ca21599e5c7b46e8cdf.CpMacRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_e00f958bd0e63ca21599e5c7b46e8cdf import CpMacRangeS5S8
         return CpMacRangeS5S8(self)._select()
 
     @property
     def CpVlanRangeS5S8(self):
-        """An instance of the CpVlanRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_9aa104f9746628d58010003ffae67e9b.CpVlanRangeS5S8): An instance of the CpVlanRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_9aa104f9746628d58010003ffae67e9b.CpVlanRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_9aa104f9746628d58010003ffae67e9b import CpVlanRangeS5S8
         return CpVlanRangeS5S8(self)._select()
 
     @property
     def UpIpRangeS5S8(self):
-        """An instance of the UpIpRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_a31af3b3e8f8528c03b565617139706b.UpIpRangeS5S8): An instance of the UpIpRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_a31af3b3e8f8528c03b565617139706b.UpIpRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_a31af3b3e8f8528c03b565617139706b import UpIpRangeS5S8
         return UpIpRangeS5S8(self)._select()
 
     @property
     def UpMacRangeS5S8(self):
-        """An instance of the UpMacRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_f6e220f47c00c5a3493348b6cd4d2342.UpMacRangeS5S8): An instance of the UpMacRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_f6e220f47c00c5a3493348b6cd4d2342.UpMacRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_f6e220f47c00c5a3493348b6cd4d2342 import UpMacRangeS5S8
         return UpMacRangeS5S8(self)._select()
 
     @property
     def UpVlanRangeS5S8(self):
-        """An instance of the UpVlanRangeS5S8 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_7e5628dd5e52e6158d034cb9f8679ccb.UpVlanRangeS5S8): An instance of the UpVlanRangeS5S8 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_7e5628dd5e52e6158d034cb9f8679ccb.UpVlanRangeS5S8)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_7e5628dd5e52e6158d034cb9f8679ccb import UpVlanRangeS5S8
         return UpVlanRangeS5S8(self)._select()
 
     @property
     def ChangeReportingMode(self):
-        """OBSOLETE: Use changeReportingList instead.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: OBSOLETE: Use changeReportingList instead.
         """
         return self._get_attribute('changeReportingMode')
     @ChangeReportingMode.setter
@@ -132,10 +132,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def EnableEchoRequest(self):
-        """Set to true to send echo request
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Set to true to send echo request
         """
         return self._get_attribute('enableEchoRequest')
     @EnableEchoRequest.setter
@@ -144,10 +144,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -156,10 +156,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def IpType(self):
-        """The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -168,10 +168,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def N3CreateBearerReq(self):
-        """Number of retransmissions for Create Bearer request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of retransmissions for Create Bearer request
         """
         return self._get_attribute('n3CreateBearerReq')
     @N3CreateBearerReq.setter
@@ -180,10 +180,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def N3DeleteBearerReq(self):
-        """Number of retransmissions for Delete Bearer request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of retransmissions for Delete Bearer request
         """
         return self._get_attribute('n3DeleteBearerReq')
     @N3DeleteBearerReq.setter
@@ -192,10 +192,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def N3EchoReq(self):
-        """Number of retransmissions for Echo request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of retransmissions for Echo request
         """
         return self._get_attribute('n3EchoReq')
     @N3EchoReq.setter
@@ -204,10 +204,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def N3UpdateBearerReq(self):
-        """Number of retransmissions for Update Bearer request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of retransmissions for Update Bearer request
         """
         return self._get_attribute('n3UpdateBearerReq')
     @N3UpdateBearerReq.setter
@@ -216,10 +216,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -228,19 +228,19 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def T3CreateBearerReq(self):
-        """Response timeout for a Create Bearer request (seconds)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Response timeout for a Create Bearer request (seconds)
         """
         return self._get_attribute('t3CreateBearerReq')
     @T3CreateBearerReq.setter
@@ -249,10 +249,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def T3DeleteBearerReq(self):
-        """Response timeout for a Delete Bearer request (seconds)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Response timeout for a Delete Bearer request (seconds)
         """
         return self._get_attribute('t3DeleteBearerReq')
     @T3DeleteBearerReq.setter
@@ -261,10 +261,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def T3EchoReq(self):
-        """Response timeout for a Echo request (seconds).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Response timeout for a Echo request (seconds).
         """
         return self._get_attribute('t3EchoReq')
     @T3EchoReq.setter
@@ -273,10 +273,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def T3UpdateBearerReq(self):
-        """Response timeout for a Update Bearer request (seconds)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Response timeout for a Update Bearer request (seconds)
         """
         return self._get_attribute('t3UpdateBearerReq')
     @T3UpdateBearerReq.setter
@@ -285,10 +285,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def UseCpIp(self):
-        """Use Control Plane Load Balancer
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use Control Plane Load Balancer
         """
         return self._get_attribute('useCpIp')
     @UseCpIp.setter
@@ -297,10 +297,10 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def UseUpIp(self):
-        """Use User Plane Load Balancer
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use User Plane Load Balancer
         """
         return self._get_attribute('useUpIp')
     @UseUpIp.setter
@@ -308,43 +308,46 @@ class EgtpPgwS5S8Range(Base):
         self._set_attribute('useUpIp', value)
 
     def update(self, ChangeReportingMode=None, EnableEchoRequest=None, Enabled=None, IpType=None, N3CreateBearerReq=None, N3DeleteBearerReq=None, N3EchoReq=None, N3UpdateBearerReq=None, Name=None, T3CreateBearerReq=None, T3DeleteBearerReq=None, T3EchoReq=None, T3UpdateBearerReq=None, UseCpIp=None, UseUpIp=None):
-        """Updates a child instance of egtpPgwS5S8Range on the server.
+        """Updates egtpPgwS5S8Range resource on the server.
 
-        Args:
-            ChangeReportingMode (number): OBSOLETE: Use changeReportingList instead.
-            EnableEchoRequest (bool): Set to true to send echo request
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
-            N3CreateBearerReq (number): Number of retransmissions for Create Bearer request
-            N3DeleteBearerReq (number): Number of retransmissions for Delete Bearer request
-            N3EchoReq (number): Number of retransmissions for Echo request
-            N3UpdateBearerReq (number): Number of retransmissions for Update Bearer request
-            Name (str): Name of range
-            T3CreateBearerReq (number): Response timeout for a Create Bearer request (seconds)
-            T3DeleteBearerReq (number): Response timeout for a Delete Bearer request (seconds)
-            T3EchoReq (number): Response timeout for a Echo request (seconds).
-            T3UpdateBearerReq (number): Response timeout for a Update Bearer request (seconds)
-            UseCpIp (bool): Use Control Plane Load Balancer
-            UseUpIp (bool): Use User Plane Load Balancer
+        Args
+        ----
+        - ChangeReportingMode (number): OBSOLETE: Use changeReportingList instead.
+        - EnableEchoRequest (bool): Set to true to send echo request
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
+        - N3CreateBearerReq (number): Number of retransmissions for Create Bearer request
+        - N3DeleteBearerReq (number): Number of retransmissions for Delete Bearer request
+        - N3EchoReq (number): Number of retransmissions for Echo request
+        - N3UpdateBearerReq (number): Number of retransmissions for Update Bearer request
+        - Name (str): Name of range
+        - T3CreateBearerReq (number): Response timeout for a Create Bearer request (seconds)
+        - T3DeleteBearerReq (number): Response timeout for a Delete Bearer request (seconds)
+        - T3EchoReq (number): Response timeout for a Echo request (seconds).
+        - T3UpdateBearerReq (number): Response timeout for a Update Bearer request (seconds)
+        - UseCpIp (bool): Use Control Plane Load Balancer
+        - UseUpIp (bool): Use User Plane Load Balancer
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -356,16 +359,15 @@ class EgtpPgwS5S8Range(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -377,16 +379,15 @@ class EgtpPgwS5S8Range(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

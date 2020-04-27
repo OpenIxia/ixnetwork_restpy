@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IntraAreaPrefix(Base):
     """
-    The IntraAreaPrefix class encapsulates a list of intraAreaPrefix resources that is managed by the system.
+    The IntraAreaPrefix class encapsulates a list of intraAreaPrefix resources that are managed by the system.
     A list of resources can be retrieved from the server using the IntraAreaPrefix.find() method.
     """
 
@@ -38,9 +38,9 @@ class IntraAreaPrefix(Base):
     @property
     def CountLsa(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('countLsa')
     @CountLsa.setter
@@ -50,9 +50,9 @@ class IntraAreaPrefix(Base):
     @property
     def IncrLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrLinkStateId')
     @IncrLinkStateId.setter
@@ -62,9 +62,9 @@ class IntraAreaPrefix(Base):
     @property
     def Prefixes(self):
         """
-
-        Returns:
-            list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number)): 
         """
         return self._get_attribute('prefixes')
     @Prefixes.setter
@@ -74,9 +74,9 @@ class IntraAreaPrefix(Base):
     @property
     def RefLinkStateId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('refLinkStateId')
     @RefLinkStateId.setter
@@ -86,9 +86,9 @@ class IntraAreaPrefix(Base):
     @property
     def RefRouterId(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('refRouterId')
     @RefRouterId.setter
@@ -98,9 +98,9 @@ class IntraAreaPrefix(Base):
     @property
     def ReferenceType(self):
         """
-
-        Returns:
-            str(routerLsa|networkLsa)
+        Returns
+        -------
+        - str(routerLsa | networkLsa): 
         """
         return self._get_attribute('referenceType')
     @ReferenceType.setter
@@ -108,54 +108,63 @@ class IntraAreaPrefix(Base):
         self._set_attribute('referenceType', value)
 
     def update(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
-        """Updates a child instance of intraAreaPrefix on the server.
+        """Updates intraAreaPrefix resource on the server.
 
-        Args:
-            CountLsa (number): 
-            IncrLinkStateId (str): 
-            Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
-            RefLinkStateId (str): 
-            RefRouterId (str): 
-            ReferenceType (str(routerLsa|networkLsa)): 
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
+        - RefLinkStateId (str): 
+        - RefRouterId (str): 
+        - ReferenceType (str(routerLsa | networkLsa)): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
-        """Finds and retrieves intraAreaPrefix data from the server.
+        """Finds and retrieves intraAreaPrefix resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve intraAreaPrefix data from the server.
-        By default the find method takes no parameters and will retrieve all intraAreaPrefix data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve intraAreaPrefix resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all intraAreaPrefix resources from the server.
 
-        Args:
-            CountLsa (number): 
-            IncrLinkStateId (str): 
-            Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
-            RefLinkStateId (str): 
-            RefRouterId (str): 
-            ReferenceType (str(routerLsa|networkLsa)): 
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
+        - RefLinkStateId (str): 
+        - RefRouterId (str): 
+        - ReferenceType (str(routerLsa | networkLsa)): 
 
-        Returns:
-            self: This instance with matching intraAreaPrefix data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching intraAreaPrefix resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of intraAreaPrefix data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the intraAreaPrefix data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the intraAreaPrefix resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

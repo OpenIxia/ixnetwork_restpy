@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ipv4PrefixPools(Base):
     """Represents an IPv4 address
-    The Ipv4PrefixPools class encapsulates a list of ipv4PrefixPools resources that is be managed by the user.
+    The Ipv4PrefixPools class encapsulates a list of ipv4PrefixPools resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ipv4PrefixPools.find() method.
-    The list can be managed by the user by using the Ipv4PrefixPools.add() and Ipv4PrefixPools.remove() methods.
+    The list can be managed by using the Ipv4PrefixPools.add() and Ipv4PrefixPools.remove() methods.
     """
 
     __slots__ = ()
@@ -38,262 +38,262 @@ class Ipv4PrefixPools(Base):
 
     @property
     def BgpIPRouteProperty(self):
-        """An instance of the BgpIPRouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty.BgpIPRouteProperty): An instance of the BgpIPRouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty.BgpIPRouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty import BgpIPRouteProperty
         return BgpIPRouteProperty(self)
 
     @property
     def BgpL3VpnRouteProperty(self):
-        """An instance of the BgpL3VpnRouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty.BgpL3VpnRouteProperty): An instance of the BgpL3VpnRouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty.BgpL3VpnRouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty import BgpL3VpnRouteProperty
         return BgpL3VpnRouteProperty(self)
 
     @property
     def BgpMVpnReceiverSitesIpv4(self):
-        """An instance of the BgpMVpnReceiverSitesIpv4 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv4.BgpMVpnReceiverSitesIpv4): An instance of the BgpMVpnReceiverSitesIpv4 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv4.BgpMVpnReceiverSitesIpv4)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv4 import BgpMVpnReceiverSitesIpv4
         return BgpMVpnReceiverSitesIpv4(self)
 
     @property
     def BgpMVpnReceiverSitesIpv6(self):
-        """An instance of the BgpMVpnReceiverSitesIpv6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv6.BgpMVpnReceiverSitesIpv6): An instance of the BgpMVpnReceiverSitesIpv6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv6.BgpMVpnReceiverSitesIpv6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv6 import BgpMVpnReceiverSitesIpv6
         return BgpMVpnReceiverSitesIpv6(self)
 
     @property
     def BgpMVpnSenderSitesIpv4(self):
-        """An instance of the BgpMVpnSenderSitesIpv4 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv4.BgpMVpnSenderSitesIpv4): An instance of the BgpMVpnSenderSitesIpv4 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv4.BgpMVpnSenderSitesIpv4)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv4 import BgpMVpnSenderSitesIpv4
         return BgpMVpnSenderSitesIpv4(self)
 
     @property
     def BgpMVpnSenderSitesIpv6(self):
-        """An instance of the BgpMVpnSenderSitesIpv6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv6.BgpMVpnSenderSitesIpv6): An instance of the BgpMVpnSenderSitesIpv6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv6.BgpMVpnSenderSitesIpv6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv6 import BgpMVpnSenderSitesIpv6
         return BgpMVpnSenderSitesIpv6(self)
 
     @property
     def BgpV6IPRouteProperty(self):
-        """An instance of the BgpV6IPRouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty.BgpV6IPRouteProperty): An instance of the BgpV6IPRouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty.BgpV6IPRouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty import BgpV6IPRouteProperty
         return BgpV6IPRouteProperty(self)
 
     @property
     def BgpV6L3VpnRouteProperty(self):
-        """An instance of the BgpV6L3VpnRouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty.BgpV6L3VpnRouteProperty): An instance of the BgpV6L3VpnRouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty.BgpV6L3VpnRouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty import BgpV6L3VpnRouteProperty
         return BgpV6L3VpnRouteProperty(self)
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def Connector(self):
-        """An instance of the Connector class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector): An instance of the Connector class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
         return Connector(self)
 
     @property
     def ECpriReRadioChannelsOrUsers(self):
-        """An instance of the ECpriReRadioChannelsOrUsers class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers.ECpriReRadioChannelsOrUsers): An instance of the ECpriReRadioChannelsOrUsers class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers.ECpriReRadioChannelsOrUsers)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers import ECpriReRadioChannelsOrUsers
         return ECpriReRadioChannelsOrUsers(self)
 
     @property
     def ECpriRecRadioChannelsOrUsers(self):
-        """An instance of the ECpriRecRadioChannelsOrUsers class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers.ECpriRecRadioChannelsOrUsers): An instance of the ECpriRecRadioChannelsOrUsers class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers.ECpriRecRadioChannelsOrUsers)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers import ECpriRecRadioChannelsOrUsers
         return ECpriRecRadioChannelsOrUsers(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
     def IsisL3RouteProperty(self):
-        """An instance of the IsisL3RouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty.IsisL3RouteProperty): An instance of the IsisL3RouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty.IsisL3RouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty import IsisL3RouteProperty
         return IsisL3RouteProperty(self)
 
     @property
     def LdpFECProperty(self):
-        """An instance of the LdpFECProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpfecproperty.LdpFECProperty): An instance of the LdpFECProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpfecproperty.LdpFECProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpfecproperty import LdpFECProperty
         return LdpFECProperty(self)
 
     @property
     def OspfRouteProperty(self):
-        """An instance of the OspfRouteProperty class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouteproperty.OspfRouteProperty): An instance of the OspfRouteProperty class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouteproperty.OspfRouteProperty)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouteproperty import OspfRouteProperty
         return OspfRouteProperty(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def AddrStepSupported(self):
-        """Indicates whether the Route Range provider allows route range address increment step of more than one
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether the Route Range provider allows route range address increment step of more than one
         """
         return self._get_attribute('addrStepSupported')
     @AddrStepSupported.setter
@@ -302,37 +302,37 @@ class Ipv4PrefixPools(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def LastNetworkAddress(self):
-        """Last Address of host/network address pool in the simulated IPv4 host/network range
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Last Address of host/network address pool in the simulated IPv4 host/network range
         """
         return self._get_attribute('lastNetworkAddress')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -341,19 +341,20 @@ class Ipv4PrefixPools(Base):
 
     @property
     def NetworkAddress(self):
-        """First address of host/network address pool in the simulated IPv4 host/network range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): First address of host/network address pool in the simulated IPv4 host/network range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkAddress'))
 
     @property
     def NumberOfAddresses(self):
-        """DEPRECATED Number of host/network addresses in the simulated IPv4 host/network range
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Number of host/network addresses in the simulated IPv4 host/network range
         """
         return self._get_attribute('numberOfAddresses')
     @NumberOfAddresses.setter
@@ -362,106 +363,122 @@ class Ipv4PrefixPools(Base):
 
     @property
     def NumberOfAddressesAsy(self):
-        """Number of host/network addresses in the simulated IPv4 host/network range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberOfAddressesAsy')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of host/network addresses in the simulated IPv4 host/network range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberOfAddressesAsy'))
 
     @property
     def PrefixAddrStep(self):
-        """The difference between each address, and its next, in the IPv4 host/network range.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixAddrStep')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The difference between each address, and its next, in the IPv4 host/network range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixAddrStep'))
 
     @property
     def PrefixLength(self):
-        """The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     def update(self, AddrStepSupported=None, Name=None, NumberOfAddresses=None):
-        """Updates a child instance of ipv4PrefixPools on the server.
+        """Updates ipv4PrefixPools resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
+        Args
+        ----
+        - AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AddrStepSupported=None, Name=None, NumberOfAddresses=None):
-        """Adds a new ipv4PrefixPools node on the server and retrieves it in this instance.
+        """Adds a new ipv4PrefixPools resource on the server and adds it to the container.
 
-        Args:
-            AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
+        Args
+        ----
+        - AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
 
-        Returns:
-            self: This instance with all currently retrieved ipv4PrefixPools data using find and the newly added ipv4PrefixPools data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4PrefixPools resources using find and the newly added ipv4PrefixPools resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipv4PrefixPools data in this instance from server.
+        """Deletes all the contained ipv4PrefixPools resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AddrStepSupported=None, Count=None, DescriptiveName=None, LastNetworkAddress=None, Name=None, NumberOfAddresses=None):
-        """Finds and retrieves ipv4PrefixPools data from the server.
+        """Finds and retrieves ipv4PrefixPools resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv4PrefixPools data from the server.
-        By default the find method takes no parameters and will retrieve all ipv4PrefixPools data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4PrefixPools resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv4PrefixPools resources from the server.
 
-        Args:
-            AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            LastNetworkAddress (list(str)): Last Address of host/network address pool in the simulated IPv4 host/network range
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
+        Args
+        ----
+        - AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - LastNetworkAddress (list(str)): Last Address of host/network address pool in the simulated IPv4 host/network range
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
 
-        Returns:
-            self: This instance with matching ipv4PrefixPools data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv4PrefixPools resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv4PrefixPools data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv4PrefixPools data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv4PrefixPools resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -470,18 +487,21 @@ class Ipv4PrefixPools(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            NetworkAddress (str): optional regex of networkAddress
-            NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
-            PrefixAddrStep (str): optional regex of prefixAddrStep
-            PrefixLength (str): optional regex of prefixLength
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - NetworkAddress (str): optional regex of networkAddress
+        - NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
+        - PrefixAddrStep (str): optional regex of prefixAddrStep
+        - PrefixLength (str): optional regex of prefixLength
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -490,9 +510,10 @@ class Ipv4PrefixPools(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -502,9 +523,10 @@ class Ipv4PrefixPools(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

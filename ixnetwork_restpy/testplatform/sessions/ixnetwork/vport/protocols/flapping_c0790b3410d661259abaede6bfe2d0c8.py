@@ -36,10 +36,10 @@ class Flapping(Base):
 
     @property
     def DownTime(self):
-        """During route flapping operation, the amount of time that the route ranges are withdrawn/down.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: During route flapping operation, the amount of time that the route ranges are withdrawn/down.
         """
         return self._get_attribute('downTime')
     @DownTime.setter
@@ -48,10 +48,10 @@ class Flapping(Base):
 
     @property
     def EnablePartialFlap(self):
-        """If enabled, only a specified range of routes is flapped.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, only a specified range of routes is flapped.
         """
         return self._get_attribute('enablePartialFlap')
     @EnablePartialFlap.setter
@@ -60,10 +60,10 @@ class Flapping(Base):
 
     @property
     def Enabled(self):
-        """If true, enables route flapping.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables route flapping.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -72,10 +72,10 @@ class Flapping(Base):
 
     @property
     def RoutesToFlapFrom(self):
-        """The first route in the route range to be flapped.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first route in the route range to be flapped.
         """
         return self._get_attribute('routesToFlapFrom')
     @RoutesToFlapFrom.setter
@@ -84,10 +84,10 @@ class Flapping(Base):
 
     @property
     def RoutesToFlapTo(self):
-        """The last route in the route range to be flapped.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The last route in the route range to be flapped.
         """
         return self._get_attribute('routesToFlapTo')
     @RoutesToFlapTo.setter
@@ -96,10 +96,10 @@ class Flapping(Base):
 
     @property
     def UpTime(self):
-        """During the route flapping operation, the amount of time that the route ranges are up.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: During the route flapping operation, the amount of time that the route ranges are up.
         """
         return self._get_attribute('upTime')
     @UpTime.setter
@@ -107,17 +107,19 @@ class Flapping(Base):
         self._set_attribute('upTime', value)
 
     def update(self, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
-        """Updates a child instance of flapping on the server.
+        """Updates flapping resource on the server.
 
-        Args:
-            DownTime (number): During route flapping operation, the amount of time that the route ranges are withdrawn/down.
-            EnablePartialFlap (bool): If enabled, only a specified range of routes is flapped.
-            Enabled (bool): If true, enables route flapping.
-            RoutesToFlapFrom (number): The first route in the route range to be flapped.
-            RoutesToFlapTo (number): The last route in the route range to be flapped.
-            UpTime (number): During the route flapping operation, the amount of time that the route ranges are up.
+        Args
+        ----
+        - DownTime (number): During route flapping operation, the amount of time that the route ranges are withdrawn/down.
+        - EnablePartialFlap (bool): If enabled, only a specified range of routes is flapped.
+        - Enabled (bool): If true, enables route flapping.
+        - RoutesToFlapFrom (number): The first route in the route range to be flapped.
+        - RoutesToFlapTo (number): The last route in the route range to be flapped.
+        - UpTime (number): During the route flapping operation, the amount of time that the route ranges are up.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

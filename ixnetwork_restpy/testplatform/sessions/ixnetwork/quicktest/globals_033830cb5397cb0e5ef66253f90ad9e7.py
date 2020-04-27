@@ -36,10 +36,10 @@ class Globals(Base):
 
     @property
     def Comments(self):
-        """User-specified comments for reporting
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User-specified comments for reporting
         """
         return self._get_attribute('comments')
     @Comments.setter
@@ -48,10 +48,10 @@ class Globals(Base):
 
     @property
     def EnableAbortIfLinkDown(self):
-        """Controls how long to wait for an up link state before aborting the test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Controls how long to wait for an up link state before aborting the test.
         """
         return self._get_attribute('enableAbortIfLinkDown')
     @EnableAbortIfLinkDown.setter
@@ -60,10 +60,10 @@ class Globals(Base):
 
     @property
     def EnableCapture(self):
-        """Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
         """
         return self._get_attribute('enableCapture')
     @EnableCapture.setter
@@ -72,10 +72,10 @@ class Globals(Base):
 
     @property
     def EnableCheckLinkState(self):
-        """Initiates a link state check of the port before a test is run.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Initiates a link state check of the port before a test is run.
         """
         return self._get_attribute('enableCheckLinkState')
     @EnableCheckLinkState.setter
@@ -84,10 +84,10 @@ class Globals(Base):
 
     @property
     def EnableGenerateReportAfterRun(self):
-        """When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
         """
         return self._get_attribute('enableGenerateReportAfterRun')
     @EnableGenerateReportAfterRun.setter
@@ -96,10 +96,10 @@ class Globals(Base):
 
     @property
     def EnableRebootCpu(self):
-        """Reboots the port CPU before a test is run.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Reboots the port CPU before a test is run.
         """
         return self._get_attribute('enableRebootCpu')
     @EnableRebootCpu.setter
@@ -108,10 +108,10 @@ class Globals(Base):
 
     @property
     def EnableSwitchToResult(self):
-        """When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
         """
         return self._get_attribute('enableSwitchToResult')
     @EnableSwitchToResult.setter
@@ -120,10 +120,10 @@ class Globals(Base):
 
     @property
     def EnableSwitchToStats(self):
-        """If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
         """
         return self._get_attribute('enableSwitchToStats')
     @EnableSwitchToStats.setter
@@ -132,10 +132,10 @@ class Globals(Base):
 
     @property
     def LinkDownTimeout(self):
-        """Select this option to simulate a port link being down.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Select this option to simulate a port link being down.
         """
         return self._get_attribute('linkDownTimeout')
     @LinkDownTimeout.setter
@@ -144,10 +144,10 @@ class Globals(Base):
 
     @property
     def MaxLinesToDisplay(self):
-        """The maximum number of lines to display.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of lines to display.
         """
         return self._get_attribute('maxLinesToDisplay')
     @MaxLinesToDisplay.setter
@@ -156,10 +156,10 @@ class Globals(Base):
 
     @property
     def OutputRootPath(self):
-        """This object holds the configurable output root path of IxNetwork for quick test.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This object holds the configurable output root path of IxNetwork for quick test.
         """
         return self._get_attribute('outputRootPath')
     @OutputRootPath.setter
@@ -168,10 +168,10 @@ class Globals(Base):
 
     @property
     def ProductLabel(self):
-        """User-specified product label for reporting
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User-specified product label for reporting
         """
         return self._get_attribute('productLabel')
     @ProductLabel.setter
@@ -180,10 +180,10 @@ class Globals(Base):
 
     @property
     def SaveCaptureBeforeRun(self):
-        """This command saves the current capture data to the specified directory before run.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This command saves the current capture data to the specified directory before run.
         """
         return self._get_attribute('saveCaptureBeforeRun')
     @SaveCaptureBeforeRun.setter
@@ -192,10 +192,10 @@ class Globals(Base):
 
     @property
     def SerialNumber(self):
-        """User-specified serial number for reporting
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User-specified serial number for reporting
         """
         return self._get_attribute('serialNumber')
     @SerialNumber.setter
@@ -204,10 +204,10 @@ class Globals(Base):
 
     @property
     def SleepTimeAfterReboot(self):
-        """If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
         """
         return self._get_attribute('sleepTimeAfterReboot')
     @SleepTimeAfterReboot.setter
@@ -216,10 +216,10 @@ class Globals(Base):
 
     @property
     def TitlePageComments(self):
-        """User-specified comments for title page
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User-specified comments for title page
         """
         return self._get_attribute('titlePageComments')
     @TitlePageComments.setter
@@ -228,10 +228,10 @@ class Globals(Base):
 
     @property
     def UseDefaultRootPath(self):
-        """This object uses the default root path for quick test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This object uses the default root path for quick test.
         """
         return self._get_attribute('useDefaultRootPath')
     @UseDefaultRootPath.setter
@@ -240,10 +240,10 @@ class Globals(Base):
 
     @property
     def Version(self):
-        """User-specified version for reporting
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: User-specified version for reporting
         """
         return self._get_attribute('version')
     @Version.setter
@@ -251,41 +251,44 @@ class Globals(Base):
         self._set_attribute('version', value)
 
     def update(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
-        """Updates a child instance of globals on the server.
+        """Updates globals resource on the server.
 
-        Args:
-            Comments (str): User-specified comments for reporting
-            EnableAbortIfLinkDown (bool): Controls how long to wait for an up link state before aborting the test.
-            EnableCapture (bool): Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
-            EnableCheckLinkState (bool): Initiates a link state check of the port before a test is run.
-            EnableGenerateReportAfterRun (bool): When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
-            EnableRebootCpu (bool): Reboots the port CPU before a test is run.
-            EnableSwitchToResult (bool): When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
-            EnableSwitchToStats (bool): If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
-            LinkDownTimeout (number): Select this option to simulate a port link being down.
-            MaxLinesToDisplay (number): The maximum number of lines to display.
-            OutputRootPath (str): This object holds the configurable output root path of IxNetwork for quick test.
-            ProductLabel (str): User-specified product label for reporting
-            SaveCaptureBeforeRun (bool): This command saves the current capture data to the specified directory before run.
-            SerialNumber (str): User-specified serial number for reporting
-            SleepTimeAfterReboot (number): If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
-            TitlePageComments (str): User-specified comments for title page
-            UseDefaultRootPath (bool): This object uses the default root path for quick test.
-            Version (str): User-specified version for reporting
+        Args
+        ----
+        - Comments (str): User-specified comments for reporting
+        - EnableAbortIfLinkDown (bool): Controls how long to wait for an up link state before aborting the test.
+        - EnableCapture (bool): Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
+        - EnableCheckLinkState (bool): Initiates a link state check of the port before a test is run.
+        - EnableGenerateReportAfterRun (bool): When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
+        - EnableRebootCpu (bool): Reboots the port CPU before a test is run.
+        - EnableSwitchToResult (bool): When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
+        - EnableSwitchToStats (bool): If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
+        - LinkDownTimeout (number): Select this option to simulate a port link being down.
+        - MaxLinesToDisplay (number): The maximum number of lines to display.
+        - OutputRootPath (str): This object holds the configurable output root path of IxNetwork for quick test.
+        - ProductLabel (str): User-specified product label for reporting
+        - SaveCaptureBeforeRun (bool): This command saves the current capture data to the specified directory before run.
+        - SerialNumber (str): User-specified serial number for reporting
+        - SleepTimeAfterReboot (number): If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
+        - TitlePageComments (str): User-specified comments for title page
+        - UseDefaultRootPath (bool): This object uses the default root path for quick test.
+        - Version (str): User-specified version for reporting
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -293,9 +296,10 @@ class Globals(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -303,12 +307,10 @@ class Globals(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -318,9 +320,10 @@ class Globals(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -330,12 +333,10 @@ class Globals(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -345,24 +346,17 @@ class Globals(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -374,18 +368,16 @@ class Globals(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -397,9 +389,10 @@ class Globals(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -409,12 +402,10 @@ class Globals(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

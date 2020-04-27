@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class IpGlobals(Base):
     """Global settings for IP plugin.
-    The IpGlobals class encapsulates a list of ipGlobals resources that is be managed by the user.
+    The IpGlobals class encapsulates a list of ipGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the IpGlobals.find() method.
-    The list can be managed by the user by using the IpGlobals.add() and IpGlobals.remove() methods.
+    The list can be managed by using the IpGlobals.add() and IpGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class IpGlobals(Base):
 
     @property
     def EnableGatewayArp(self):
-        """When enabled, every IP address will ARP the specified gateway.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When enabled, every IP address will ARP the specified gateway.
         """
         return self._get_attribute('enableGatewayArp')
     @EnableGatewayArp.setter
@@ -50,10 +50,10 @@ class IpGlobals(Base):
 
     @property
     def GatewayArpRequestRate(self):
-        """Maximum ARP request rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum ARP request rate
         """
         return self._get_attribute('gatewayArpRequestRate')
     @GatewayArpRequestRate.setter
@@ -62,10 +62,10 @@ class IpGlobals(Base):
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
-        """Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
         """
         return self._get_attribute('maxOutstandingGatewayArpRequests')
     @MaxOutstandingGatewayArpRequests.setter
@@ -74,19 +74,19 @@ class IpGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SendOneArpFromEachInterface(self):
-        """When set, each interface will send one ARP request.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When set, each interface will send one ARP request.
         """
         return self._get_attribute('sendOneArpFromEachInterface')
     @SendOneArpFromEachInterface.setter
@@ -94,77 +94,90 @@ class IpGlobals(Base):
         self._set_attribute('sendOneArpFromEachInterface', value)
 
     def update(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
-        """Updates a child instance of ipGlobals on the server.
+        """Updates ipGlobals resource on the server.
 
-        Args:
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        Args
+        ----
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
-        """Adds a new ipGlobals node on the server and retrieves it in this instance.
+        """Adds a new ipGlobals resource on the server and adds it to the container.
 
-        Args:
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        Args
+        ----
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
 
-        Returns:
-            self: This instance with all currently retrieved ipGlobals data using find and the newly added ipGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipGlobals resources using find and the newly added ipGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipGlobals data in this instance from server.
+        """Deletes all the contained ipGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, ObjectId=None, SendOneArpFromEachInterface=None):
-        """Finds and retrieves ipGlobals data from the server.
+        """Finds and retrieves ipGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all ipGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipGlobals resources from the server.
 
-        Args:
-            EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-            GatewayArpRequestRate (number): Maximum ARP request rate
-            MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-            ObjectId (str): Unique identifier for this object
-            SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
+        Args
+        ----
+        - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
+        - GatewayArpRequestRate (number): Maximum ARP request rate
+        - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
+        - ObjectId (str): Unique identifier for this object
+        - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
 
-        Returns:
-            self: This instance with matching ipGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Interface(Base):
     """This object contains the CFM interface configuration.
-    The Interface class encapsulates a list of interface resources that is be managed by the user.
+    The Interface class encapsulates a list of interface resources that are managed by the user.
     A list of resources can be retrieved from the server using the Interface.find() method.
-    The list can be managed by the user by using the Interface.add() and Interface.remove() methods.
+    The list can be managed by using the Interface.add() and Interface.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Interface(Base):
 
     @property
     def Enabled(self):
-        """If true, the interface is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the interface is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class Interface(Base):
 
     @property
     def InterfaceId(self):
-        """The interface identifier for the interface.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The interface identifier for the interface.
         """
         return self._get_attribute('interfaceId')
     @InterfaceId.setter
@@ -61,70 +61,83 @@ class Interface(Base):
         self._set_attribute('interfaceId', value)
 
     def update(self, Enabled=None, InterfaceId=None):
-        """Updates a child instance of interface on the server.
+        """Updates interface resource on the server.
 
-        Args:
-            Enabled (bool): If true, the interface is enabled.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface identifier for the interface.
+        Args
+        ----
+        - Enabled (bool): If true, the interface is enabled.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, InterfaceId=None):
-        """Adds a new interface node on the server and retrieves it in this instance.
+        """Adds a new interface resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, the interface is enabled.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface identifier for the interface.
+        Args
+        ----
+        - Enabled (bool): If true, the interface is enabled.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
-        Returns:
-            self: This instance with all currently retrieved interface data using find and the newly added interface data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved interface resources using find and the newly added interface resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the interface data in this instance from server.
+        """Deletes all the contained interface resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, InterfaceId=None):
-        """Finds and retrieves interface data from the server.
+        """Finds and retrieves interface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve interface data from the server.
-        By default the find method takes no parameters and will retrieve all interface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all interface resources from the server.
 
-        Args:
-            Enabled (bool): If true, the interface is enabled.
-            InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface identifier for the interface.
+        Args
+        ----
+        - Enabled (bool): If true, the interface is enabled.
+        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
-        Returns:
-            self: This instance with matching interface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching interface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of interface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the interface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the interface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Choice(Base):
     """This specifies the particular choice related properties for the parameter.
-    The Choice class encapsulates a list of choice resources that is managed by the system.
+    The Choice class encapsulates a list of choice resources that are managed by the system.
     A list of resources can be retrieved from the server using the Choice.find() method.
     """
 
@@ -37,28 +37,28 @@ class Choice(Base):
 
     @property
     def Default(self):
-        """(Read only) Parameter choice default value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read only) Parameter choice default value.
         """
         return self._get_attribute('default')
 
     @property
     def SupportedValues(self):
-        """(Read only) Parameter supported choice values.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read only) Parameter supported choice values.
         """
         return self._get_attribute('supportedValues')
 
     @property
     def Value(self):
-        """Parameter choice selected value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parameter choice selected value.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -66,46 +66,55 @@ class Choice(Base):
         self._set_attribute('value', value)
 
     def update(self, Value=None):
-        """Updates a child instance of choice on the server.
+        """Updates choice resource on the server.
 
-        Args:
-            Value (str): Parameter choice selected value.
+        Args
+        ----
+        - Value (str): Parameter choice selected value.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Default=None, SupportedValues=None, Value=None):
-        """Finds and retrieves choice data from the server.
+        """Finds and retrieves choice resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve choice data from the server.
-        By default the find method takes no parameters and will retrieve all choice data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve choice resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all choice resources from the server.
 
-        Args:
-            Default (str): (Read only) Parameter choice default value.
-            SupportedValues (list(str)): (Read only) Parameter supported choice values.
-            Value (str): Parameter choice selected value.
+        Args
+        ----
+        - Default (str): (Read only) Parameter choice default value.
+        - SupportedValues (list(str)): (Read only) Parameter supported choice values.
+        - Value (str): Parameter choice selected value.
 
-        Returns:
-            self: This instance with matching choice data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching choice resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of choice data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the choice data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the choice resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

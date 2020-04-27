@@ -36,10 +36,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def Cbs(self):
-        """Indicates whether the station supports credit-based shaper transmission selection algorithm.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether the station supports credit-based shaper transmission selection algorithm.
         """
         return self._get_attribute('cbs')
     @Cbs.setter
@@ -48,10 +48,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def MaxTcs(self):
-        """Number of traffic classes supported by device.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of traffic classes supported by device.
         """
         return self._get_attribute('maxTcs')
     @MaxTcs.setter
@@ -60,19 +60,19 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def TcGroupBwPercentMap(self):
-        """Bandwidth percentage
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Bandwidth percentage
         """
         return self._get_attribute('tcGroupBwPercentMap')
     @TcGroupBwPercentMap.setter
@@ -82,9 +82,9 @@ class DcbxTlvEtsQaz(Base):
     @property
     def TcGroupPriorityMap(self):
         """
-
-        Returns:
-            list(number)
+        Returns
+        -------
+        - list(number): 
         """
         return self._get_attribute('tcGroupPriorityMap')
     @TcGroupPriorityMap.setter
@@ -93,10 +93,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def TcGroupTsaMap(self):
-        """Transmission selection algorithm
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Transmission selection algorithm
         """
         return self._get_attribute('tcGroupTsaMap')
     @TcGroupTsaMap.setter
@@ -105,10 +105,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def TlvSendOrder(self):
-        """Configure the order in which the ETS TLVs are sent
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Configure the order in which the ETS TLVs are sent
         """
         return self._get_attribute('tlvSendOrder')
     @TlvSendOrder.setter
@@ -117,10 +117,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def TlvSendRestriction(self):
-        """Configure if ETS will send the Configuration TLV, Recommendation TLV or both
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Configure if ETS will send the Configuration TLV, Recommendation TLV or both
         """
         return self._get_attribute('tlvSendRestriction')
     @TlvSendRestriction.setter
@@ -129,10 +129,10 @@ class DcbxTlvEtsQaz(Base):
 
     @property
     def Willing(self):
-        """Indicates whether this feature accepts its configuration from remote peers.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this feature accepts its configuration from remote peers.
         """
         return self._get_attribute('willing')
     @Willing.setter
@@ -140,36 +140,39 @@ class DcbxTlvEtsQaz(Base):
         self._set_attribute('willing', value)
 
     def update(self, Cbs=None, MaxTcs=None, TcGroupBwPercentMap=None, TcGroupPriorityMap=None, TcGroupTsaMap=None, TlvSendOrder=None, TlvSendRestriction=None, Willing=None):
-        """Updates a child instance of dcbxTlvEtsQaz on the server.
+        """Updates dcbxTlvEtsQaz resource on the server.
 
-        Args:
-            Cbs (bool): Indicates whether the station supports credit-based shaper transmission selection algorithm.
-            MaxTcs (number): Number of traffic classes supported by device.
-            TcGroupBwPercentMap (list(number)): Bandwidth percentage
-            TcGroupPriorityMap (list(number)): 
-            TcGroupTsaMap (list(number)): Transmission selection algorithm
-            TlvSendOrder (number): Configure the order in which the ETS TLVs are sent
-            TlvSendRestriction (number): Configure if ETS will send the Configuration TLV, Recommendation TLV or both
-            Willing (bool): Indicates whether this feature accepts its configuration from remote peers.
+        Args
+        ----
+        - Cbs (bool): Indicates whether the station supports credit-based shaper transmission selection algorithm.
+        - MaxTcs (number): Number of traffic classes supported by device.
+        - TcGroupBwPercentMap (list(number)): Bandwidth percentage
+        - TcGroupPriorityMap (list(number)): 
+        - TcGroupTsaMap (list(number)): Transmission selection algorithm
+        - TlvSendOrder (number): Configure the order in which the ETS TLVs are sent
+        - TlvSendRestriction (number): Configure if ETS will send the Configuration TLV, Recommendation TLV or both
+        - Willing (bool): Indicates whether this feature accepts its configuration from remote peers.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -181,16 +184,15 @@ class DcbxTlvEtsQaz(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -202,16 +204,15 @@ class DcbxTlvEtsQaz(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

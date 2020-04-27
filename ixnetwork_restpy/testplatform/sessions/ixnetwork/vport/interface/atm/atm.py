@@ -36,10 +36,10 @@ class Atm(Base):
 
     @property
     def Encapsulation(self):
-        """The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
-
-        Returns:
-            str(vcMuxIpv4|vcMuxIpv6|vcMuxBridgeFcs|vcMuxBridgeNoFcs|llcClip|llcBridgeFcs|llcBridgeNoFcs)
+        """
+        Returns
+        -------
+        - str(vcMuxIpv4 | vcMuxIpv6 | vcMuxBridgeFcs | vcMuxBridgeNoFcs | llcClip | llcBridgeFcs | llcBridgeNoFcs): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
         """
         return self._get_attribute('encapsulation')
     @Encapsulation.setter
@@ -48,10 +48,10 @@ class Atm(Base):
 
     @property
     def Vci(self):
-        """Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
         """
         return self._get_attribute('vci')
     @Vci.setter
@@ -60,10 +60,10 @@ class Atm(Base):
 
     @property
     def Vpi(self):
-        """Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
         """
         return self._get_attribute('vpi')
     @Vpi.setter
@@ -71,14 +71,16 @@ class Atm(Base):
         self._set_attribute('vpi', value)
 
     def update(self, Encapsulation=None, Vci=None, Vpi=None):
-        """Updates a child instance of atm on the server.
+        """Updates atm resource on the server.
 
-        Args:
-            Encapsulation (str(vcMuxIpv4|vcMuxIpv6|vcMuxBridgeFcs|vcMuxBridgeNoFcs|llcClip|llcBridgeFcs|llcBridgeNoFcs)): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
-            Vci (number): Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
-            Vpi (number): Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
+        Args
+        ----
+        - Encapsulation (str(vcMuxIpv4 | vcMuxIpv6 | vcMuxBridgeFcs | vcMuxBridgeNoFcs | llcClip | llcBridgeFcs | llcBridgeNoFcs)): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
+        - Vci (number): Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
+        - Vpi (number): Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

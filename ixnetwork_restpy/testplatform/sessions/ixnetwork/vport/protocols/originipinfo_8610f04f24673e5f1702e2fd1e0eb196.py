@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class OriginIpInfo(Base):
     """(Read Only) List of learned as well as self Origin IP.
-    The OriginIpInfo class encapsulates a list of originIpInfo resources that is managed by the system.
+    The OriginIpInfo class encapsulates a list of originIpInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the OriginIpInfo.find() method.
     """
 
@@ -37,55 +37,62 @@ class OriginIpInfo(Base):
 
     @property
     def RdInfo(self):
-        """An instance of the RdInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_77a9880a38db3e028f503063c5d305dd.RdInfo): An instance of the RdInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_77a9880a38db3e028f503063c5d305dd.RdInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_77a9880a38db3e028f503063c5d305dd import RdInfo
         return RdInfo(self)
 
     @property
     def OriginIp(self):
-        """(Read Only) Origin IP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) Origin IP.
         """
         return self._get_attribute('originIp')
 
     def find(self, OriginIp=None):
-        """Finds and retrieves originIpInfo data from the server.
+        """Finds and retrieves originIpInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve originIpInfo data from the server.
-        By default the find method takes no parameters and will retrieve all originIpInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve originIpInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all originIpInfo resources from the server.
 
-        Args:
-            OriginIp (str): (Read Only) Origin IP.
+        Args
+        ----
+        - OriginIp (str): (Read Only) Origin IP.
 
-        Returns:
-            self: This instance with matching originIpInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching originIpInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of originIpInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the originIpInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the originIpInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

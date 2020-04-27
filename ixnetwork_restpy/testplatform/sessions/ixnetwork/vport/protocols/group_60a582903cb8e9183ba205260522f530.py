@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Group(Base):
     """This object configures a set of multicast addresses that a host wishes to receive traffic from.
-    The Group class encapsulates a list of group resources that is be managed by the user.
+    The Group class encapsulates a list of group resources that are managed by the user.
     A list of resources can be retrieved from the server using the Group.find() method.
-    The list can be managed by the user by using the Group.add() and Group.remove() methods.
+    The list can be managed by using the Group.add() and Group.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Group(Base):
 
     @property
     def Source(self):
-        """An instance of the Source class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_2be2bb8ab889272532a2af12b8769de4.Source): An instance of the Source class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_2be2bb8ab889272532a2af12b8769de4.Source)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_2be2bb8ab889272532a2af12b8769de4 import Source
         return Source(self)
 
     @property
     def EnablePacking(self):
-        """If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
         """
         return self._get_attribute('enablePacking')
     @EnablePacking.setter
@@ -64,10 +64,10 @@ class Group(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of the group range in the IGMP simulation.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of the group range in the IGMP simulation.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -76,10 +76,10 @@ class Group(Base):
 
     @property
     def GroupCount(self):
-        """Specifies the set of IPv4 multicast addresses in the group range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the set of IPv4 multicast addresses in the group range.
         """
         return self._get_attribute('groupCount')
     @GroupCount.setter
@@ -88,10 +88,10 @@ class Group(Base):
 
     @property
     def GroupFrom(self):
-        """The IP address of the first member of the group (multicast address).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the first member of the group (multicast address).
         """
         return self._get_attribute('groupFrom')
     @GroupFrom.setter
@@ -100,10 +100,10 @@ class Group(Base):
 
     @property
     def IncrementStep(self):
-        """The value used to increment the IP address for each additional member of the group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value used to increment the IP address for each additional member of the group.
         """
         return self._get_attribute('incrementStep')
     @IncrementStep.setter
@@ -112,10 +112,10 @@ class Group(Base):
 
     @property
     def RecordsPerFrame(self):
-        """If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
         """
         return self._get_attribute('recordsPerFrame')
     @RecordsPerFrame.setter
@@ -124,10 +124,10 @@ class Group(Base):
 
     @property
     def SourceMode(self):
-        """Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-
-        Returns:
-            str(include|exclude)
+        """
+        Returns
+        -------
+        - str(include | exclude): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
         """
         return self._get_attribute('sourceMode')
     @SourceMode.setter
@@ -136,10 +136,10 @@ class Group(Base):
 
     @property
     def SourcesPerRecord(self):
-        """The number of multicast sources that will be included in each listener report for this group range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of multicast sources that will be included in each listener report for this group range.
         """
         return self._get_attribute('sourcesPerRecord')
     @SourcesPerRecord.setter
@@ -148,10 +148,10 @@ class Group(Base):
 
     @property
     def UpdateRequired(self):
-        """Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
         """
         return self._get_attribute('updateRequired')
     @UpdateRequired.setter
@@ -159,92 +159,105 @@ class Group(Base):
         self._set_attribute('updateRequired', value)
 
     def update(self, EnablePacking=None, Enabled=None, GroupCount=None, GroupFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None, UpdateRequired=None):
-        """Updates a child instance of group on the server.
+        """Updates group resource on the server.
 
-        Args:
-            EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
-            Enabled (bool): Enables the use of the group range in the IGMP simulation.
-            GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
-            GroupFrom (str): The IP address of the first member of the group (multicast address).
-            IncrementStep (number): The value used to increment the IP address for each additional member of the group.
-            RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
-            UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
+        - Enabled (bool): Enables the use of the group range in the IGMP simulation.
+        - GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
+        - GroupFrom (str): The IP address of the first member of the group (multicast address).
+        - IncrementStep (number): The value used to increment the IP address for each additional member of the group.
+        - RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
+        - UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnablePacking=None, Enabled=None, GroupCount=None, GroupFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None, UpdateRequired=None):
-        """Adds a new group node on the server and retrieves it in this instance.
+        """Adds a new group resource on the server and adds it to the container.
 
-        Args:
-            EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
-            Enabled (bool): Enables the use of the group range in the IGMP simulation.
-            GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
-            GroupFrom (str): The IP address of the first member of the group (multicast address).
-            IncrementStep (number): The value used to increment the IP address for each additional member of the group.
-            RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
-            UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
+        - Enabled (bool): Enables the use of the group range in the IGMP simulation.
+        - GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
+        - GroupFrom (str): The IP address of the first member of the group (multicast address).
+        - IncrementStep (number): The value used to increment the IP address for each additional member of the group.
+        - RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
+        - UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
 
-        Returns:
-            self: This instance with all currently retrieved group data using find and the newly added group data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved group resources using find and the newly added group resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the group data in this instance from server.
+        """Deletes all the contained group resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnablePacking=None, Enabled=None, GroupCount=None, GroupFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None, UpdateRequired=None):
-        """Finds and retrieves group data from the server.
+        """Finds and retrieves group resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve group data from the server.
-        By default the find method takes no parameters and will retrieve all group data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve group resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all group resources from the server.
 
-        Args:
-            EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
-            Enabled (bool): Enables the use of the group range in the IGMP simulation.
-            GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
-            GroupFrom (str): The IP address of the first member of the group (multicast address).
-            IncrementStep (number): The value used to increment the IP address for each additional member of the group.
-            RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
-            SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
-            SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
-            UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
+        Args
+        ----
+        - EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
+        - Enabled (bool): Enables the use of the group range in the IGMP simulation.
+        - GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
+        - GroupFrom (str): The IP address of the first member of the group (multicast address).
+        - IncrementStep (number): The value used to increment the IP address for each additional member of the group.
+        - RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
+        - SourceMode (str(include | exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+        - SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
+        - UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
 
-        Returns:
-            self: This instance with matching group data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching group resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of group data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the group data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the group resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -253,9 +266,10 @@ class Group(Base):
 
         This command is used to update the host group source information for IGMP.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('updateSources', payload=payload, response_object=None)

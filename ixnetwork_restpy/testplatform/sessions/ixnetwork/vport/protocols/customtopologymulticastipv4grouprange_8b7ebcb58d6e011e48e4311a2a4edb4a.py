@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologyMulticastIpv4GroupRange(Base):
     """NOT DEFINED
-    The CustomTopologyMulticastIpv4GroupRange class encapsulates a list of customTopologyMulticastIpv4GroupRange resources that is be managed by the user.
+    The CustomTopologyMulticastIpv4GroupRange class encapsulates a list of customTopologyMulticastIpv4GroupRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologyMulticastIpv4GroupRange.find() method.
-    The list can be managed by the user by using the CustomTopologyMulticastIpv4GroupRange.add() and CustomTopologyMulticastIpv4GroupRange.remove() methods.
+    The list can be managed by using the CustomTopologyMulticastIpv4GroupRange.add() and CustomTopologyMulticastIpv4GroupRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def IncludeIpv4Groups(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeIpv4Groups')
     @IncludeIpv4Groups.setter
@@ -50,10 +50,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def IntraGroupUnicastIpv4Increment(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('intraGroupUnicastIpv4Increment')
     @IntraGroupUnicastIpv4Increment.setter
@@ -62,10 +62,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def MulticastAddressNodeStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('multicastAddressNodeStep')
     @MulticastAddressNodeStep.setter
@@ -74,10 +74,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def MulticastIpv4Count(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('multicastIpv4Count')
     @MulticastIpv4Count.setter
@@ -86,10 +86,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def MulticastIpv4Step(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('multicastIpv4Step')
     @MulticastIpv4Step.setter
@@ -98,10 +98,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def NoOfUcSrcIpv4MacsPerMcIpv4(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('noOfUcSrcIpv4MacsPerMcIpv4')
     @NoOfUcSrcIpv4MacsPerMcIpv4.setter
@@ -110,10 +110,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def SourceGroupMapping(self):
-        """NOT DEFINED
-
-        Returns:
-            str(fully-Meshed|one-To-One|manual-Mapping)
+        """
+        Returns
+        -------
+        - str(fully-Meshed | one-To-One | manual-Mapping): NOT DEFINED
         """
         return self._get_attribute('sourceGroupMapping')
     @SourceGroupMapping.setter
@@ -122,10 +122,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def StartMulticastIpv4(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('startMulticastIpv4')
     @StartMulticastIpv4.setter
@@ -134,10 +134,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def StartUnicastSourceIpv4(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('startUnicastSourceIpv4')
     @StartUnicastSourceIpv4.setter
@@ -146,10 +146,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def UnicastAddressNodeStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('unicastAddressNodeStep')
     @UnicastAddressNodeStep.setter
@@ -158,10 +158,10 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
 
     @property
     def VlanId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -169,97 +169,110 @@ class CustomTopologyMulticastIpv4GroupRange(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, IncludeIpv4Groups=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUcSrcIpv4MacsPerMcIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Updates a child instance of customTopologyMulticastIpv4GroupRange on the server.
+        """Updates customTopologyMulticastIpv4GroupRange resource on the server.
 
-        Args:
-            IncludeIpv4Groups (bool): NOT DEFINED
-            IntraGroupUnicastIpv4Increment (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastIpv4Count (number): NOT DEFINED
-            MulticastIpv4Step (str): NOT DEFINED
-            NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastIpv4 (str): NOT DEFINED
-            StartUnicastSourceIpv4 (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeIpv4Groups (bool): NOT DEFINED
+        - IntraGroupUnicastIpv4Increment (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastIpv4Count (number): NOT DEFINED
+        - MulticastIpv4Step (str): NOT DEFINED
+        - NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastIpv4 (str): NOT DEFINED
+        - StartUnicastSourceIpv4 (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, IncludeIpv4Groups=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUcSrcIpv4MacsPerMcIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Adds a new customTopologyMulticastIpv4GroupRange node on the server and retrieves it in this instance.
+        """Adds a new customTopologyMulticastIpv4GroupRange resource on the server and adds it to the container.
 
-        Args:
-            IncludeIpv4Groups (bool): NOT DEFINED
-            IntraGroupUnicastIpv4Increment (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastIpv4Count (number): NOT DEFINED
-            MulticastIpv4Step (str): NOT DEFINED
-            NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastIpv4 (str): NOT DEFINED
-            StartUnicastSourceIpv4 (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeIpv4Groups (bool): NOT DEFINED
+        - IntraGroupUnicastIpv4Increment (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastIpv4Count (number): NOT DEFINED
+        - MulticastIpv4Step (str): NOT DEFINED
+        - NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastIpv4 (str): NOT DEFINED
+        - StartUnicastSourceIpv4 (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologyMulticastIpv4GroupRange data using find and the newly added customTopologyMulticastIpv4GroupRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologyMulticastIpv4GroupRange resources using find and the newly added customTopologyMulticastIpv4GroupRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologyMulticastIpv4GroupRange data in this instance from server.
+        """Deletes all the contained customTopologyMulticastIpv4GroupRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, IncludeIpv4Groups=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUcSrcIpv4MacsPerMcIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
-        """Finds and retrieves customTopologyMulticastIpv4GroupRange data from the server.
+        """Finds and retrieves customTopologyMulticastIpv4GroupRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologyMulticastIpv4GroupRange data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologyMulticastIpv4GroupRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyMulticastIpv4GroupRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologyMulticastIpv4GroupRange resources from the server.
 
-        Args:
-            IncludeIpv4Groups (bool): NOT DEFINED
-            IntraGroupUnicastIpv4Increment (str): NOT DEFINED
-            MulticastAddressNodeStep (str): NOT DEFINED
-            MulticastIpv4Count (number): NOT DEFINED
-            MulticastIpv4Step (str): NOT DEFINED
-            NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
-            SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
-            StartMulticastIpv4 (str): NOT DEFINED
-            StartUnicastSourceIpv4 (str): NOT DEFINED
-            UnicastAddressNodeStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - IncludeIpv4Groups (bool): NOT DEFINED
+        - IntraGroupUnicastIpv4Increment (str): NOT DEFINED
+        - MulticastAddressNodeStep (str): NOT DEFINED
+        - MulticastIpv4Count (number): NOT DEFINED
+        - MulticastIpv4Step (str): NOT DEFINED
+        - NoOfUcSrcIpv4MacsPerMcIpv4 (number): NOT DEFINED
+        - SourceGroupMapping (str(fully-Meshed | one-To-One | manual-Mapping)): NOT DEFINED
+        - StartMulticastIpv4 (str): NOT DEFINED
+        - StartUnicastSourceIpv4 (str): NOT DEFINED
+        - UnicastAddressNodeStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologyMulticastIpv4GroupRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologyMulticastIpv4GroupRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologyMulticastIpv4GroupRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologyMulticastIpv4GroupRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologyMulticastIpv4GroupRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

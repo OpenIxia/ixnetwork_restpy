@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VariableResponseDatabase(Base):
     """
-    The VariableResponseDatabase class encapsulates a list of variableResponseDatabase resources that is be managed by the user.
+    The VariableResponseDatabase class encapsulates a list of variableResponseDatabase resources that are managed by the user.
     A list of resources can be retrieved from the server using the VariableResponseDatabase.find() method.
-    The list can be managed by the user by using the VariableResponseDatabase.add() and VariableResponseDatabase.remove() methods.
+    The list can be managed by using the VariableResponseDatabase.add() and VariableResponseDatabase.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class VariableResponseDatabase(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -51,9 +51,9 @@ class VariableResponseDatabase(Base):
     @property
     def VariableBranch(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableBranch')
     @VariableBranch.setter
@@ -63,9 +63,9 @@ class VariableResponseDatabase(Base):
     @property
     def VariableIndication(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('variableIndication')
     @VariableIndication.setter
@@ -75,9 +75,9 @@ class VariableResponseDatabase(Base):
     @property
     def VariableLeaf(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableLeaf')
     @VariableLeaf.setter
@@ -87,9 +87,9 @@ class VariableResponseDatabase(Base):
     @property
     def VariableValue(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('variableValue')
     @VariableValue.setter
@@ -99,9 +99,9 @@ class VariableResponseDatabase(Base):
     @property
     def VariableWidth(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('variableWidth')
     @VariableWidth.setter
@@ -109,82 +109,95 @@ class VariableResponseDatabase(Base):
         self._set_attribute('variableWidth', value)
 
     def update(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
-        """Updates a child instance of variableResponseDatabase on the server.
+        """Updates variableResponseDatabase resource on the server.
 
-        Args:
-            Enabled (bool): 
-            VariableBranch (number): 
-            VariableIndication (bool): 
-            VariableLeaf (number): 
-            VariableValue (str): 
-            VariableWidth (number): 
+        Args
+        ----
+        - Enabled (bool): 
+        - VariableBranch (number): 
+        - VariableIndication (bool): 
+        - VariableLeaf (number): 
+        - VariableValue (str): 
+        - VariableWidth (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
-        """Adds a new variableResponseDatabase node on the server and retrieves it in this instance.
+        """Adds a new variableResponseDatabase resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): 
-            VariableBranch (number): 
-            VariableIndication (bool): 
-            VariableLeaf (number): 
-            VariableValue (str): 
-            VariableWidth (number): 
+        Args
+        ----
+        - Enabled (bool): 
+        - VariableBranch (number): 
+        - VariableIndication (bool): 
+        - VariableLeaf (number): 
+        - VariableValue (str): 
+        - VariableWidth (number): 
 
-        Returns:
-            self: This instance with all currently retrieved variableResponseDatabase data using find and the newly added variableResponseDatabase data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved variableResponseDatabase resources using find and the newly added variableResponseDatabase resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the variableResponseDatabase data in this instance from server.
+        """Deletes all the contained variableResponseDatabase resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
-        """Finds and retrieves variableResponseDatabase data from the server.
+        """Finds and retrieves variableResponseDatabase resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve variableResponseDatabase data from the server.
-        By default the find method takes no parameters and will retrieve all variableResponseDatabase data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve variableResponseDatabase resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all variableResponseDatabase resources from the server.
 
-        Args:
-            Enabled (bool): 
-            VariableBranch (number): 
-            VariableIndication (bool): 
-            VariableLeaf (number): 
-            VariableValue (str): 
-            VariableWidth (number): 
+        Args
+        ----
+        - Enabled (bool): 
+        - VariableBranch (number): 
+        - VariableIndication (bool): 
+        - VariableLeaf (number): 
+        - VariableValue (str): 
+        - VariableWidth (number): 
 
-        Returns:
-            self: This instance with matching variableResponseDatabase data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching variableResponseDatabase resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of variableResponseDatabase data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the variableResponseDatabase data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the variableResponseDatabase resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

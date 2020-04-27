@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgressTracking(Base):
     """Provides different options for Egress Tracking.
-    The EgressTracking class encapsulates a list of egressTracking resources that is be managed by the user.
+    The EgressTracking class encapsulates a list of egressTracking resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgressTracking.find() method.
-    The list can be managed by the user by using the EgressTracking.add() and EgressTracking.remove() methods.
+    The list can be managed by using the EgressTracking.add() and EgressTracking.remove() methods.
     """
 
     __slots__ = ()
@@ -38,42 +38,42 @@ class EgressTracking(Base):
 
     @property
     def FieldOffset(self):
-        """An instance of the FieldOffset class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset.FieldOffset): An instance of the FieldOffset class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset.FieldOffset)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset import FieldOffset
         return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
-        """(Read only) Specifies the available Encapsulations for Egress Tracking.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read only) Specifies the available Encapsulations for Egress Tracking.
         """
         return self._get_attribute('availableEncapsulations')
 
     @property
     def AvailableOffsets(self):
-        """(Read only) Specifies the available Offsets for Egress Tracking.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): (Read only) Specifies the available Offsets for Egress Tracking.
         """
         return self._get_attribute('availableOffsets')
 
     @property
     def CustomOffsetBits(self):
-        """Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
         """
         return self._get_attribute('customOffsetBits')
     @CustomOffsetBits.setter
@@ -82,10 +82,10 @@ class EgressTracking(Base):
 
     @property
     def CustomWidthBits(self):
-        """Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
         """
         return self._get_attribute('customWidthBits')
     @CustomWidthBits.setter
@@ -94,10 +94,10 @@ class EgressTracking(Base):
 
     @property
     def Encapsulation(self):
-        """Specifies the Encapsulation for Egress Tracking.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Encapsulation for Egress Tracking.
         """
         return self._get_attribute('encapsulation')
     @Encapsulation.setter
@@ -106,10 +106,10 @@ class EgressTracking(Base):
 
     @property
     def Offset(self):
-        """Specifies the Offset for Egress Tracking.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Offset for Egress Tracking.
         """
         return self._get_attribute('offset')
     @Offset.setter
@@ -117,78 +117,91 @@ class EgressTracking(Base):
         self._set_attribute('offset', value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
-        """Updates a child instance of egressTracking on the server.
+        """Updates egressTracking resource on the server.
 
-        Args:
-            CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
-            Offset (str): Specifies the Offset for Egress Tracking.
+        Args
+        ----
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+        - Offset (str): Specifies the Offset for Egress Tracking.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
-        """Adds a new egressTracking node on the server and retrieves it in this instance.
+        """Adds a new egressTracking resource on the server and adds it to the container.
 
-        Args:
-            CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
-            Offset (str): Specifies the Offset for Egress Tracking.
+        Args
+        ----
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+        - Offset (str): Specifies the Offset for Egress Tracking.
 
-        Returns:
-            self: This instance with all currently retrieved egressTracking data using find and the newly added egressTracking data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egressTracking resources using find and the newly added egressTracking resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egressTracking data in this instance from server.
+        """Deletes all the contained egressTracking resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AvailableEncapsulations=None, AvailableOffsets=None, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
-        """Finds and retrieves egressTracking data from the server.
+        """Finds and retrieves egressTracking resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egressTracking data from the server.
-        By default the find method takes no parameters and will retrieve all egressTracking data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egressTracking resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egressTracking resources from the server.
 
-        Args:
-            AvailableEncapsulations (list(str)): (Read only) Specifies the available Encapsulations for Egress Tracking.
-            AvailableOffsets (list(str)): (Read only) Specifies the available Offsets for Egress Tracking.
-            CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-            Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
-            Offset (str): Specifies the Offset for Egress Tracking.
+        Args
+        ----
+        - AvailableEncapsulations (list(str)): (Read only) Specifies the available Encapsulations for Egress Tracking.
+        - AvailableOffsets (list(str)): (Read only) Specifies the available Offsets for Egress Tracking.
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+        - Offset (str): Specifies the Offset for Egress Tracking.
 
-        Returns:
-            self: This instance with matching egressTracking data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egressTracking resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egressTracking data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egressTracking data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egressTracking resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

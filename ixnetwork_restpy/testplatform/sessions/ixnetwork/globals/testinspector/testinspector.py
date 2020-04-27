@@ -36,24 +36,24 @@ class TestInspector(Base):
 
     @property
     def Statistic(self):
-        """An instance of the Statistic class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic): An instance of the Statistic class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
         return Statistic(self)
 
     @property
     def EnableTestInspector(self):
-        """Enable/Disable Test Inspector
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable/Disable Test Inspector
         """
         return self._get_attribute('enableTestInspector')
     @EnableTestInspector.setter
@@ -62,10 +62,10 @@ class TestInspector(Base):
 
     @property
     def PollingInterval(self):
-        """Polling Interval
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Polling Interval
         """
         return self._get_attribute('pollingInterval')
     @PollingInterval.setter
@@ -73,13 +73,15 @@ class TestInspector(Base):
         self._set_attribute('pollingInterval', value)
 
     def update(self, EnableTestInspector=None, PollingInterval=None):
-        """Updates a child instance of testInspector on the server.
+        """Updates testInspector resource on the server.
 
-        Args:
-            EnableTestInspector (bool): Enable/Disable Test Inspector
-            PollingInterval (number): Polling Interval
+        Args
+        ----
+        - EnableTestInspector (bool): Enable/Disable Test Inspector
+        - PollingInterval (number): Polling Interval
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,24 +36,24 @@ class RawData(Base):
 
     @property
     def Statistic(self):
-        """An instance of the Statistic class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.statistic.statistic.Statistic): An instance of the Statistic class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.statistic.statistic.Statistic)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.statistic.statistic import Statistic
         return Statistic(self)
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,19 +62,19 @@ class RawData(Base):
 
     @property
     def LastRawDataFolder(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('lastRawDataFolder')
 
     @property
     def Path(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('path')
     @Path.setter
@@ -82,25 +82,28 @@ class RawData(Base):
         self._set_attribute('path', value)
 
     def update(self, Enabled=None, Path=None):
-        """Updates a child instance of rawData on the server.
+        """Updates rawData resource on the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            Path (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - Path (str): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def StopCollection(self):
         """Executes the stopCollection operation on the server.
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stopCollection', payload=payload, response_object=None)

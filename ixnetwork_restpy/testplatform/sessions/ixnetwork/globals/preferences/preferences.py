@@ -36,10 +36,10 @@ class Preferences(Base):
 
     @property
     def ClientTraceLevel(self):
-        """Set the IxNetwork Client side Log/Trace level
-
-        Returns:
-            str(debug|error|fatal|info|warn)
+        """
+        Returns
+        -------
+        - str(debug | error | fatal | info | warn): Set the IxNetwork Client side Log/Trace level
         """
         return self._get_attribute('clientTraceLevel')
     @ClientTraceLevel.setter
@@ -48,10 +48,10 @@ class Preferences(Base):
 
     @property
     def ConnectPortsOnLoadConfig(self):
-        """If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
         """
         return self._get_attribute('connectPortsOnLoadConfig')
     @ConnectPortsOnLoadConfig.setter
@@ -61,9 +61,9 @@ class Preferences(Base):
     @property
     def LatestConfigInDiagEnabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('latestConfigInDiagEnabled')
     @LatestConfigInDiagEnabled.setter
@@ -72,10 +72,10 @@ class Preferences(Base):
 
     @property
     def RebootPortsOnConnect(self):
-        """If true the application will reboot any connected virtual ports when the configuration is loaded
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the application will reboot any connected virtual ports when the configuration is loaded
         """
         return self._get_attribute('rebootPortsOnConnect')
     @RebootPortsOnConnect.setter
@@ -84,10 +84,10 @@ class Preferences(Base):
 
     @property
     def RecentChassisList(self):
-        """List of recently used chassis
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of recently used chassis
         """
         return self._get_attribute('recentChassisList')
     @RecentChassisList.setter
@@ -96,24 +96,26 @@ class Preferences(Base):
 
     @property
     def RecentFiles(self):
-        """List of recently used files
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): List of recently used files
         """
         return self._get_attribute('recentFiles')
 
     def update(self, ClientTraceLevel=None, ConnectPortsOnLoadConfig=None, LatestConfigInDiagEnabled=None, RebootPortsOnConnect=None, RecentChassisList=None):
-        """Updates a child instance of preferences on the server.
+        """Updates preferences resource on the server.
 
-        Args:
-            ClientTraceLevel (str(debug|error|fatal|info|warn)): Set the IxNetwork Client side Log/Trace level
-            ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
-            LatestConfigInDiagEnabled (bool): 
-            RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
-            RecentChassisList (list(str)): List of recently used chassis
+        Args
+        ----
+        - ClientTraceLevel (str(debug | error | fatal | info | warn)): Set the IxNetwork Client side Log/Trace level
+        - ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
+        - LatestConfigInDiagEnabled (bool): 
+        - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
+        - RecentChassisList (list(str)): List of recently used chassis
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

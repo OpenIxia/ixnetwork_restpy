@@ -36,10 +36,10 @@ class StaticHostsRange(Base):
 
     @property
     def Count(self):
-        """The number of hosts.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of hosts.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -48,10 +48,10 @@ class StaticHostsRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -60,10 +60,10 @@ class StaticHostsRange(Base):
 
     @property
     def EuiIncrement(self):
-        """Defines the EUI increment.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the EUI increment.
         """
         return self._get_attribute('euiIncrement')
     @EuiIncrement.setter
@@ -72,10 +72,10 @@ class StaticHostsRange(Base):
 
     @property
     def FirstEui(self):
-        """Defines the first EUI to be used.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the first EUI to be used.
         """
         return self._get_attribute('firstEui')
     @FirstEui.setter
@@ -84,10 +84,10 @@ class StaticHostsRange(Base):
 
     @property
     def IpPrefix(self):
-        """The network prefix length associated with this address pool.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The network prefix length associated with this address pool.
         """
         return self._get_attribute('ipPrefix')
     @IpPrefix.setter
@@ -96,10 +96,10 @@ class StaticHostsRange(Base):
 
     @property
     def IpPrefixAddr(self):
-        """Defines the IP prefix to be used.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Defines the IP prefix to be used.
         """
         return self._get_attribute('ipPrefixAddr')
     @IpPrefixAddr.setter
@@ -108,10 +108,10 @@ class StaticHostsRange(Base):
 
     @property
     def IpPrefixPrefix(self):
-        """The network prefix length for this IP prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The network prefix length for this IP prefix.
         """
         return self._get_attribute('ipPrefixPrefix')
     @IpPrefixPrefix.setter
@@ -120,10 +120,10 @@ class StaticHostsRange(Base):
 
     @property
     def IpType(self):
-        """The IP version to be used for describing the range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP version to be used for describing the range.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -132,10 +132,10 @@ class StaticHostsRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -144,19 +144,19 @@ class StaticHostsRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SubnetCount(self):
-        """The number of subnets.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of subnets.
         """
         return self._get_attribute('subnetCount')
     @SubnetCount.setter
@@ -164,38 +164,41 @@ class StaticHostsRange(Base):
         self._set_attribute('subnetCount', value)
 
     def update(self, Count=None, Enabled=None, EuiIncrement=None, FirstEui=None, IpPrefix=None, IpPrefixAddr=None, IpPrefixPrefix=None, IpType=None, Name=None, SubnetCount=None):
-        """Updates a child instance of staticHostsRange on the server.
+        """Updates staticHostsRange resource on the server.
 
-        Args:
-            Count (number): The number of hosts.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            EuiIncrement (str): Defines the EUI increment.
-            FirstEui (str): Defines the first EUI to be used.
-            IpPrefix (number): The network prefix length associated with this address pool.
-            IpPrefixAddr (str): Defines the IP prefix to be used.
-            IpPrefixPrefix (number): The network prefix length for this IP prefix.
-            IpType (str): The IP version to be used for describing the range.
-            Name (str): Name of range
-            SubnetCount (number): The number of subnets.
+        Args
+        ----
+        - Count (number): The number of hosts.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - EuiIncrement (str): Defines the EUI increment.
+        - FirstEui (str): Defines the first EUI to be used.
+        - IpPrefix (number): The network prefix length associated with this address pool.
+        - IpPrefixAddr (str): Defines the IP prefix to be used.
+        - IpPrefixPrefix (number): The network prefix length for this IP prefix.
+        - IpType (str): The IP version to be used for describing the range.
+        - Name (str): Name of range
+        - SubnetCount (number): The number of subnets.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -207,16 +210,15 @@ class StaticHostsRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -228,16 +230,15 @@ class StaticHostsRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

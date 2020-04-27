@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Dot1xGlobals(Base):
     """Global settings placeholder for Dot1x
-    The Dot1xGlobals class encapsulates a list of dot1xGlobals resources that is be managed by the user.
+    The Dot1xGlobals class encapsulates a list of dot1xGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dot1xGlobals.find() method.
-    The list can be managed by the user by using the Dot1xGlobals.add() and Dot1xGlobals.remove() methods.
+    The list can be managed by using the Dot1xGlobals.add() and Dot1xGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class Dot1xGlobals(Base):
 
     @property
     def CertInfo(self):
-        """An instance of the CertInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.certinfo.certinfo.CertInfo): An instance of the CertInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.certinfo.certinfo.CertInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.certinfo.certinfo import CertInfo
         return CertInfo(self)._select()
 
     @property
     def NacSettings(self):
-        """An instance of the NacSettings class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsettings.NacSettings): An instance of the NacSettings class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsettings.NacSettings)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsettings import NacSettings
         return NacSettings(self)._select()
 
     @property
     def AuthOnNoResponse(self):
-        """If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
         """
         return self._get_attribute('authOnNoResponse')
     @AuthOnNoResponse.setter
@@ -78,10 +78,10 @@ class Dot1xGlobals(Base):
 
     @property
     def AuthPeriod(self):
-        """Time to wait for Authentication request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait for Authentication request
         """
         return self._get_attribute('authPeriod')
     @AuthPeriod.setter
@@ -90,10 +90,10 @@ class Dot1xGlobals(Base):
 
     @property
     def Authenticator(self):
-        """Mac address used to send frames if multicast is used.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Mac address used to send frames if multicast is used.
         """
         return self._get_attribute('authenticator')
     @Authenticator.setter
@@ -102,10 +102,10 @@ class Dot1xGlobals(Base):
 
     @property
     def AuthenticatorMulticast(self):
-        """When using vlan and multicast, this value need to be true.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: When using vlan and multicast, this value need to be true.
         """
         return self._get_attribute('authenticatorMulticast')
     @AuthenticatorMulticast.setter
@@ -114,10 +114,10 @@ class Dot1xGlobals(Base):
 
     @property
     def DisableLogoff(self):
-        """Do not send Logoff message when closing a session.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Do not send Logoff message when closing a session.
         """
         return self._get_attribute('disableLogoff')
     @DisableLogoff.setter
@@ -126,10 +126,10 @@ class Dot1xGlobals(Base):
 
     @property
     def DutTestMode(self):
-        """Specify what is the dut port mode.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify what is the dut port mode.
         """
         return self._get_attribute('dutTestMode')
     @DutTestMode.setter
@@ -138,10 +138,10 @@ class Dot1xGlobals(Base):
 
     @property
     def FragmentSize(self):
-        """Size of the frame sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Size of the frame sent.
         """
         return self._get_attribute('fragmentSize')
     @FragmentSize.setter
@@ -150,10 +150,10 @@ class Dot1xGlobals(Base):
 
     @property
     def HeldPeriod(self):
-        """Time to wait before sending new authentication requests after a failure
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait before sending new authentication requests after a failure
         """
         return self._get_attribute('heldPeriod')
     @HeldPeriod.setter
@@ -162,10 +162,10 @@ class Dot1xGlobals(Base):
 
     @property
     def LogoffMaxClientsPerSecond(self):
-        """The number of interfaces to logoff per second. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces to logoff per second. Zero value means maximum with no limit.
         """
         return self._get_attribute('logoffMaxClientsPerSecond')
     @LogoffMaxClientsPerSecond.setter
@@ -174,10 +174,10 @@ class Dot1xGlobals(Base):
 
     @property
     def LogoffMaxOutstandingRequests(self):
-        """The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
         return self._get_attribute('logoffMaxOutstandingRequests')
     @LogoffMaxOutstandingRequests.setter
@@ -186,10 +186,10 @@ class Dot1xGlobals(Base):
 
     @property
     def MacAuthPrefix(self):
-        """When using machine authentication, a prefix is needed to differentiate between users and machines.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: When using machine authentication, a prefix is needed to differentiate between users and machines.
         """
         return self._get_attribute('macAuthPrefix')
     @MacAuthPrefix.setter
@@ -198,10 +198,10 @@ class Dot1xGlobals(Base):
 
     @property
     def MaxClientsPerSecond(self):
-        """The number of interfaces to setup per second. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces to setup per second. Zero value means maximum with no limit.
         """
         return self._get_attribute('maxClientsPerSecond')
     @MaxClientsPerSecond.setter
@@ -210,10 +210,10 @@ class Dot1xGlobals(Base):
 
     @property
     def MaxOutstandingRequests(self):
-        """The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
         return self._get_attribute('maxOutstandingRequests')
     @MaxOutstandingRequests.setter
@@ -222,10 +222,10 @@ class Dot1xGlobals(Base):
 
     @property
     def MaxStart(self):
-        """Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
         """
         return self._get_attribute('maxStart')
     @MaxStart.setter
@@ -234,19 +234,19 @@ class Dot1xGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def OnlyMulticast(self):
-        """Specify if destination MAC address can be multicast.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Specify if destination MAC address can be multicast.
         """
         return self._get_attribute('onlyMulticast')
     @OnlyMulticast.setter
@@ -255,10 +255,10 @@ class Dot1xGlobals(Base):
 
     @property
     def StartPeriod(self):
-        """Time to wait for ID request
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait for ID request
         """
         return self._get_attribute('startPeriod')
     @StartPeriod.setter
@@ -267,10 +267,10 @@ class Dot1xGlobals(Base):
 
     @property
     def StatsPeriod(self):
-        """Protocol option.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Protocol option.
         """
         return self._get_attribute('statsPeriod')
     @StatsPeriod.setter
@@ -279,10 +279,10 @@ class Dot1xGlobals(Base):
 
     @property
     def SuccessiveStart(self):
-        """Number of EAPoL Start messages that are sent when a client is started.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of EAPoL Start messages that are sent when a client is started.
         """
         return self._get_attribute('successiveStart')
     @SuccessiveStart.setter
@@ -291,10 +291,10 @@ class Dot1xGlobals(Base):
 
     @property
     def WaitBeforeRun(self):
-        """Time to wait before running this protocol
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to wait before running this protocol
         """
         return self._get_attribute('waitBeforeRun')
     @WaitBeforeRun.setter
@@ -303,10 +303,10 @@ class Dot1xGlobals(Base):
 
     @property
     def WaitForCompletion(self):
-        """If true the configuration will end after all interfaces are configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the configuration will end after all interfaces are configured.
         """
         return self._get_attribute('waitForCompletion')
     @WaitForCompletion.setter
@@ -314,125 +314,138 @@ class Dot1xGlobals(Base):
         self._set_attribute('waitForCompletion', value)
 
     def update(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Updates a child instance of dot1xGlobals on the server.
+        """Updates dot1xGlobals resource on the server.
 
-        Args:
-            AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
-            AuthPeriod (number): Time to wait for Authentication request
-            Authenticator (str): Mac address used to send frames if multicast is used.
-            AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
-            DisableLogoff (bool): Do not send Logoff message when closing a session.
-            DutTestMode (str): Specify what is the dut port mode.
-            FragmentSize (number): Size of the frame sent.
-            HeldPeriod (number): Time to wait before sending new authentication requests after a failure
-            LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
-            LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
-            OnlyMulticast (bool): Specify if destination MAC address can be multicast.
-            StartPeriod (number): Time to wait for ID request
-            StatsPeriod (number): Protocol option.
-            SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
+        - AuthPeriod (number): Time to wait for Authentication request
+        - Authenticator (str): Mac address used to send frames if multicast is used.
+        - AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
+        - DisableLogoff (bool): Do not send Logoff message when closing a session.
+        - DutTestMode (str): Specify what is the dut port mode.
+        - FragmentSize (number): Size of the frame sent.
+        - HeldPeriod (number): Time to wait before sending new authentication requests after a failure
+        - LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
+        - LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
+        - OnlyMulticast (bool): Specify if destination MAC address can be multicast.
+        - StartPeriod (number): Time to wait for ID request
+        - StatsPeriod (number): Protocol option.
+        - SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Adds a new dot1xGlobals node on the server and retrieves it in this instance.
+        """Adds a new dot1xGlobals resource on the server and adds it to the container.
 
-        Args:
-            AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
-            AuthPeriod (number): Time to wait for Authentication request
-            Authenticator (str): Mac address used to send frames if multicast is used.
-            AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
-            DisableLogoff (bool): Do not send Logoff message when closing a session.
-            DutTestMode (str): Specify what is the dut port mode.
-            FragmentSize (number): Size of the frame sent.
-            HeldPeriod (number): Time to wait before sending new authentication requests after a failure
-            LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
-            LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
-            OnlyMulticast (bool): Specify if destination MAC address can be multicast.
-            StartPeriod (number): Time to wait for ID request
-            StatsPeriod (number): Protocol option.
-            SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
+        - AuthPeriod (number): Time to wait for Authentication request
+        - Authenticator (str): Mac address used to send frames if multicast is used.
+        - AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
+        - DisableLogoff (bool): Do not send Logoff message when closing a session.
+        - DutTestMode (str): Specify what is the dut port mode.
+        - FragmentSize (number): Size of the frame sent.
+        - HeldPeriod (number): Time to wait before sending new authentication requests after a failure
+        - LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
+        - LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
+        - OnlyMulticast (bool): Specify if destination MAC address can be multicast.
+        - StartPeriod (number): Time to wait for ID request
+        - StatsPeriod (number): Protocol option.
+        - SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Returns:
-            self: This instance with all currently retrieved dot1xGlobals data using find and the newly added dot1xGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved dot1xGlobals resources using find and the newly added dot1xGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the dot1xGlobals data in this instance from server.
+        """Deletes all the contained dot1xGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, ObjectId=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
-        """Finds and retrieves dot1xGlobals data from the server.
+        """Finds and retrieves dot1xGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve dot1xGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all dot1xGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dot1xGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dot1xGlobals resources from the server.
 
-        Args:
-            AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
-            AuthPeriod (number): Time to wait for Authentication request
-            Authenticator (str): Mac address used to send frames if multicast is used.
-            AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
-            DisableLogoff (bool): Do not send Logoff message when closing a session.
-            DutTestMode (str): Specify what is the dut port mode.
-            FragmentSize (number): Size of the frame sent.
-            HeldPeriod (number): Time to wait before sending new authentication requests after a failure
-            LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
-            LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
-            MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
-            MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
-            MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
-            ObjectId (str): Unique identifier for this object
-            OnlyMulticast (bool): Specify if destination MAC address can be multicast.
-            StartPeriod (number): Time to wait for ID request
-            StatsPeriod (number): Protocol option.
-            SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
-            WaitBeforeRun (number): Time to wait before running this protocol
-            WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
+        Args
+        ----
+        - AuthOnNoResponse (bool): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
+        - AuthPeriod (number): Time to wait for Authentication request
+        - Authenticator (str): Mac address used to send frames if multicast is used.
+        - AuthenticatorMulticast (bool): When using vlan and multicast, this value need to be true.
+        - DisableLogoff (bool): Do not send Logoff message when closing a session.
+        - DutTestMode (str): Specify what is the dut port mode.
+        - FragmentSize (number): Size of the frame sent.
+        - HeldPeriod (number): Time to wait before sending new authentication requests after a failure
+        - LogoffMaxClientsPerSecond (number): The number of interfaces to logoff per second. Zero value means maximum with no limit.
+        - LogoffMaxOutstandingRequests (number): The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MacAuthPrefix (str): When using machine authentication, a prefix is needed to differentiate between users and machines.
+        - MaxClientsPerSecond (number): The number of interfaces to setup per second. Zero value means maximum with no limit.
+        - MaxOutstandingRequests (number): The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
+        - MaxStart (number): Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
+        - ObjectId (str): Unique identifier for this object
+        - OnlyMulticast (bool): Specify if destination MAC address can be multicast.
+        - StartPeriod (number): Time to wait for ID request
+        - StatsPeriod (number): Protocol option.
+        - SuccessiveStart (number): Number of EAPoL Start messages that are sent when a client is started.
+        - WaitBeforeRun (number): Time to wait before running this protocol
+        - WaitForCompletion (bool): If true the configuration will end after all interfaces are configured.
 
-        Returns:
-            self: This instance with matching dot1xGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching dot1xGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of dot1xGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the dot1xGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the dot1xGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

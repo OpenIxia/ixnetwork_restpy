@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class RsvpteIf(Base):
     """Rsvp Neighbor (Device) level Configuration
-    The RsvpteIf class encapsulates a list of rsvpteIf resources that is be managed by the user.
+    The RsvpteIf class encapsulates a list of rsvpteIf resources that are managed by the user.
     A list of resources can be retrieved from the server using the RsvpteIf.find() method.
-    The list can be managed by the user by using the RsvpteIf.add() and RsvpteIf.remove() methods.
+    The list can be managed by using the RsvpteIf.add() and RsvpteIf.remove() methods.
     """
 
     __slots__ = ()
@@ -38,114 +38,124 @@ class RsvpteIf(Base):
 
     @property
     def LearnedInfo(self):
-        """An instance of the LearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo.LearnedInfo): An instance of the LearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo.LearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo import LearnedInfo
         return LearnedInfo(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ActualRestartTime(self):
-        """Actual Restart Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('actualRestartTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Actual Restart Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('actualRestartTime'))
 
     @property
     def AdvertisedRestartTime(self):
-        """Advertised Restart Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertisedRestartTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertised Restart Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertisedRestartTime'))
 
     @property
     def AuthenticationAlgorithm(self):
-        """Authentication Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationAlgorithm')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Algorithm
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationAlgorithm'))
 
     @property
     def AuthenticationKeyForReceivedPackets(self):
-        """Authentication Key for Received Packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationKeyForReceivedPackets')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key for Received Packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationKeyForReceivedPackets'))
 
     @property
     def AuthenticationKeyForSentPackets(self):
-        """Authentication Key for Sent Packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationKeyForSentPackets')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key for Sent Packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationKeyForSentPackets'))
 
     @property
     def AuthenticationKeyIdentifier(self):
-        """Authentication Key Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('authenticationKeyIdentifier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('authenticationKeyIdentifier'))
 
     @property
     def AutoGenerateAuthenticationKeyIdentifier(self):
-        """Auto Generate Authentication Key Identifier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('autoGenerateAuthenticationKeyIdentifier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Generate Authentication Key Identifier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('autoGenerateAuthenticationKeyIdentifier'))
 
     @property
     def BundleMessageThresholdTime(self):
-        """Bundle Message Threshold Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bundleMessageThresholdTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bundle Message Threshold Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bundleMessageThresholdTime'))
 
     @property
     def CheckIntegrityForReceivedPackets(self):
-        """Check Integrity for Received Packets
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('checkIntegrityForReceivedPackets')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Check Integrity for Received Packets
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('checkIntegrityForReceivedPackets'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -154,154 +164,167 @@ class RsvpteIf(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DutIp(self):
-        """DUT IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dutIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DUT IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dutIp'))
 
     @property
     def EnableBfdRegistration(self):
-        """Enable BFD Registration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableBfdRegistration')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableBfdRegistration'))
 
     @property
     def EnableBundleMessageSending(self):
-        """Enable Bundle Message Sending
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableBundleMessageSending')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Bundle Message Sending
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableBundleMessageSending'))
 
     @property
     def EnableBundleMessageThresholdTimer(self):
-        """Enable Bundle Message Threshold Timer
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableBundleMessageThresholdTimer')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Bundle Message Threshold Timer
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableBundleMessageThresholdTimer'))
 
     @property
     def EnableGracefulRestartHelperMode(self):
-        """Enable Helper-Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableGracefulRestartHelperMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Helper-Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableGracefulRestartHelperMode'))
 
     @property
     def EnableGracefulRestartRestartingMode(self):
-        """Enable Restarting-Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableGracefulRestartRestartingMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Restarting-Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableGracefulRestartRestartingMode'))
 
     @property
     def EnableHelloExtension(self):
-        """Enable Hello Extension
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHelloExtension')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Extension
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHelloExtension'))
 
     @property
     def EnableRefreshReduction(self):
-        """Enable Refresh Reduction
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableRefreshReduction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Refresh Reduction
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableRefreshReduction'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def GenerateSequenceNumberBasedOnRealTime(self):
-        """Generate Sequence Number Based on Real Time
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('generateSequenceNumberBasedOnRealTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Generate Sequence Number Based on Real Time
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('generateSequenceNumberBasedOnRealTime'))
 
     @property
     def HandshakeRequired(self):
-        """Handshake Required
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('handshakeRequired')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Handshake Required
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('handshakeRequired'))
 
     @property
     def HelloInterval(self):
-        """Hello Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloInterval'))
 
     @property
     def HelloTimeoutMultiplier(self):
-        """Hello Timeout Multiplier
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('helloTimeoutMultiplier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Timeout Multiplier
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('helloTimeoutMultiplier'))
 
     @property
     def InitialSequenceNumber(self):
-        """Initial Sequence Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('initialSequenceNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Sequence Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('initialSequenceNumber'))
 
     @property
     def LabelReqRefCount(self):
-        """Number of Label Req in RSVP-TE DG
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Label Req in RSVP-TE DG
         """
         return self._get_attribute('labelReqRefCount')
     @LabelReqRefCount.setter
@@ -310,28 +333,30 @@ class RsvpteIf(Base):
 
     @property
     def LabelSpaceEnd(self):
-        """Label Space End
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelSpaceEnd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Space End
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelSpaceEnd'))
 
     @property
     def LabelSpaceStart(self):
-        """Label Space Start
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('labelSpaceStart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Label Space Start
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('labelSpaceStart'))
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -340,10 +365,10 @@ class RsvpteIf(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -352,64 +377,68 @@ class RsvpteIf(Base):
 
     @property
     def NumberOfRestarts(self):
-        """Number of Restarts
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberOfRestarts')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Restarts
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberOfRestarts'))
 
     @property
     def OurIp(self):
-        """Local IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Local IP
         """
         return self._get_attribute('ourIp')
 
     @property
     def RecoveryTime(self):
-        """Recovery Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('recoveryTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Recovery Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('recoveryTime'))
 
     @property
     def RestartStartTime(self):
-        """Restart Start Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('restartStartTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Start Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('restartStartTime'))
 
     @property
     def RestartUpTime(self):
-        """Restart Up Time (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('restartUpTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Up Time (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('restartUpTime'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -418,134 +447,150 @@ class RsvpteIf(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def SummaryRefreshInterval(self):
-        """Summary Refresh Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('summaryRefreshInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Summary Refresh Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('summaryRefreshInterval'))
 
     @property
     def UseSameAuthenticationKeyForPeer(self):
-        """Use Same Authentication Key for Peer
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useSameAuthenticationKeyForPeer')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use Same Authentication Key for Peer
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useSameAuthenticationKeyForPeer'))
 
     @property
     def UsingGatewayIp(self):
-        """Using Gateway IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('usingGatewayIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Using Gateway IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('usingGatewayIp'))
 
     def update(self, ConnectedVia=None, LabelReqRefCount=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of rsvpteIf on the server.
+        """Updates rsvpteIf resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, LabelReqRefCount=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new rsvpteIf node on the server and retrieves it in this instance.
+        """Adds a new rsvpteIf resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved rsvpteIf data using find and the newly added rsvpteIf data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved rsvpteIf resources using find and the newly added rsvpteIf resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the rsvpteIf data in this instance from server.
+        """Deletes all the contained rsvpteIf resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LabelReqRefCount=None, Multiplier=None, Name=None, OurIp=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves rsvpteIf data from the server.
+        """Finds and retrieves rsvpteIf resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rsvpteIf data from the server.
-        By default the find method takes no parameters and will retrieve all rsvpteIf data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpteIf resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpteIf resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            OurIp (list(str)): Local IP
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LabelReqRefCount (number): Number of Label Req in RSVP-TE DG
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - OurIp (list(str)): Local IP
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching rsvpteIf data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rsvpteIf resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rsvpteIf data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rsvpteIf data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rsvpteIf resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -554,46 +599,49 @@ class RsvpteIf(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            ActualRestartTime (str): optional regex of actualRestartTime
-            AdvertisedRestartTime (str): optional regex of advertisedRestartTime
-            AuthenticationAlgorithm (str): optional regex of authenticationAlgorithm
-            AuthenticationKeyForReceivedPackets (str): optional regex of authenticationKeyForReceivedPackets
-            AuthenticationKeyForSentPackets (str): optional regex of authenticationKeyForSentPackets
-            AuthenticationKeyIdentifier (str): optional regex of authenticationKeyIdentifier
-            AutoGenerateAuthenticationKeyIdentifier (str): optional regex of autoGenerateAuthenticationKeyIdentifier
-            BundleMessageThresholdTime (str): optional regex of bundleMessageThresholdTime
-            CheckIntegrityForReceivedPackets (str): optional regex of checkIntegrityForReceivedPackets
-            DutIp (str): optional regex of dutIp
-            EnableBfdRegistration (str): optional regex of enableBfdRegistration
-            EnableBundleMessageSending (str): optional regex of enableBundleMessageSending
-            EnableBundleMessageThresholdTimer (str): optional regex of enableBundleMessageThresholdTimer
-            EnableGracefulRestartHelperMode (str): optional regex of enableGracefulRestartHelperMode
-            EnableGracefulRestartRestartingMode (str): optional regex of enableGracefulRestartRestartingMode
-            EnableHelloExtension (str): optional regex of enableHelloExtension
-            EnableRefreshReduction (str): optional regex of enableRefreshReduction
-            GenerateSequenceNumberBasedOnRealTime (str): optional regex of generateSequenceNumberBasedOnRealTime
-            HandshakeRequired (str): optional regex of handshakeRequired
-            HelloInterval (str): optional regex of helloInterval
-            HelloTimeoutMultiplier (str): optional regex of helloTimeoutMultiplier
-            InitialSequenceNumber (str): optional regex of initialSequenceNumber
-            LabelSpaceEnd (str): optional regex of labelSpaceEnd
-            LabelSpaceStart (str): optional regex of labelSpaceStart
-            NumberOfRestarts (str): optional regex of numberOfRestarts
-            RecoveryTime (str): optional regex of recoveryTime
-            RestartStartTime (str): optional regex of restartStartTime
-            RestartUpTime (str): optional regex of restartUpTime
-            SummaryRefreshInterval (str): optional regex of summaryRefreshInterval
-            UseSameAuthenticationKeyForPeer (str): optional regex of useSameAuthenticationKeyForPeer
-            UsingGatewayIp (str): optional regex of usingGatewayIp
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ActualRestartTime (str): optional regex of actualRestartTime
+        - AdvertisedRestartTime (str): optional regex of advertisedRestartTime
+        - AuthenticationAlgorithm (str): optional regex of authenticationAlgorithm
+        - AuthenticationKeyForReceivedPackets (str): optional regex of authenticationKeyForReceivedPackets
+        - AuthenticationKeyForSentPackets (str): optional regex of authenticationKeyForSentPackets
+        - AuthenticationKeyIdentifier (str): optional regex of authenticationKeyIdentifier
+        - AutoGenerateAuthenticationKeyIdentifier (str): optional regex of autoGenerateAuthenticationKeyIdentifier
+        - BundleMessageThresholdTime (str): optional regex of bundleMessageThresholdTime
+        - CheckIntegrityForReceivedPackets (str): optional regex of checkIntegrityForReceivedPackets
+        - DutIp (str): optional regex of dutIp
+        - EnableBfdRegistration (str): optional regex of enableBfdRegistration
+        - EnableBundleMessageSending (str): optional regex of enableBundleMessageSending
+        - EnableBundleMessageThresholdTimer (str): optional regex of enableBundleMessageThresholdTimer
+        - EnableGracefulRestartHelperMode (str): optional regex of enableGracefulRestartHelperMode
+        - EnableGracefulRestartRestartingMode (str): optional regex of enableGracefulRestartRestartingMode
+        - EnableHelloExtension (str): optional regex of enableHelloExtension
+        - EnableRefreshReduction (str): optional regex of enableRefreshReduction
+        - GenerateSequenceNumberBasedOnRealTime (str): optional regex of generateSequenceNumberBasedOnRealTime
+        - HandshakeRequired (str): optional regex of handshakeRequired
+        - HelloInterval (str): optional regex of helloInterval
+        - HelloTimeoutMultiplier (str): optional regex of helloTimeoutMultiplier
+        - InitialSequenceNumber (str): optional regex of initialSequenceNumber
+        - LabelSpaceEnd (str): optional regex of labelSpaceEnd
+        - LabelSpaceStart (str): optional regex of labelSpaceStart
+        - NumberOfRestarts (str): optional regex of numberOfRestarts
+        - RecoveryTime (str): optional regex of recoveryTime
+        - RestartStartTime (str): optional regex of restartStartTime
+        - RestartUpTime (str): optional regex of restartUpTime
+        - SummaryRefreshInterval (str): optional regex of summaryRefreshInterval
+        - UseSameAuthenticationKeyForPeer (str): optional regex of useSameAuthenticationKeyForPeer
+        - UsingGatewayIp (str): optional regex of usingGatewayIp
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -602,29 +650,25 @@ class RsvpteIf(Base):
 
         Get Learned Info
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        getLearnedInfo()
+        getLearnedInfo(SessionIndices=list)
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        getLearnedInfo(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        getLearnedInfo(SessionIndices=string)
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        getLearnedInfo(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        getLearnedInfo(Arg2=list)list
+        -----------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        getLearnedInfo(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -636,22 +680,20 @@ class RsvpteIf(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -663,16 +705,15 @@ class RsvpteIf(Base):
 
         Restart Neighbor
 
-        restartNeighbor(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        restartNeighbor(Arg2=list)list
+        ------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -684,22 +725,20 @@ class RsvpteIf(Base):
 
         Gracefully restart selected Neighbors
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        rsvpRestartNeighbor()
+        rsvpRestartNeighbor(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        rsvpRestartNeighbor(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        rsvpRestartNeighbor(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        rsvpRestartNeighbor(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -711,22 +750,20 @@ class RsvpteIf(Base):
 
         Resume sending Hello messages from selected Neighbors
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        rsvpResumeHello()
+        rsvpResumeHello(SessionIndices=list)
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        rsvpResumeHello(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        rsvpResumeHello(SessionIndices=string)
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        rsvpResumeHello(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -738,22 +775,20 @@ class RsvpteIf(Base):
 
         Start sending SRefresh messages from selected Neighbors
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        rsvpStartSRefresh()
+        rsvpStartSRefresh(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        rsvpStartSRefresh(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        rsvpStartSRefresh(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        rsvpStartSRefresh(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -765,22 +800,20 @@ class RsvpteIf(Base):
 
         Stop sending Hello messages from selected Neighbors
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        rsvpStopHello()
+        rsvpStopHello(SessionIndices=list)
+        ----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        rsvpStopHello(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        rsvpStopHello(SessionIndices=string)
+        ------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        rsvpStopHello(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -792,22 +825,20 @@ class RsvpteIf(Base):
 
         Stop sending SRefresh messages from selected Neighbors
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        rsvpStopSRefresh()
+        rsvpStopSRefresh(SessionIndices=list)
+        -------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        rsvpStopSRefresh(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        rsvpStopSRefresh(SessionIndices=string)
+        ---------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        rsvpStopSRefresh(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -819,22 +850,20 @@ class RsvpteIf(Base):
 
         Activate/Enable selected Neighbor Pairs
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -846,16 +875,15 @@ class RsvpteIf(Base):
 
         Start Hello
 
-        startHello(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        startHello(Arg2=list)list
+        -------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -867,16 +895,15 @@ class RsvpteIf(Base):
 
         Start SRefresh
 
-        startSRefresh(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        startSRefresh(Arg2=list)list
+        ----------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -888,22 +915,20 @@ class RsvpteIf(Base):
 
         Deactivate/Disable selected Neighbor Pairs
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -915,16 +940,15 @@ class RsvpteIf(Base):
 
         Stop Hello
 
-        stopHello(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        stopHello(Arg2=list)list
+        ------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -936,16 +960,15 @@ class RsvpteIf(Base):
 
         Stop SRefresh
 
-        stopSRefresh(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        stopSRefresh(Arg2=list)list
+        ---------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

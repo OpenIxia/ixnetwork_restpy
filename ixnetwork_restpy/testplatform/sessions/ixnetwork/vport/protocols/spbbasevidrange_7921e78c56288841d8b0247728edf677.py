@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class SpbBaseVidRange(Base):
     """The Base VLAN ID of the SPB Topology Range.
-    The SpbBaseVidRange class encapsulates a list of spbBaseVidRange resources that is be managed by the user.
+    The SpbBaseVidRange class encapsulates a list of spbBaseVidRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the SpbBaseVidRange.find() method.
-    The list can be managed by the user by using the SpbBaseVidRange.add() and SpbBaseVidRange.remove() methods.
+    The list can be managed by using the SpbBaseVidRange.add() and SpbBaseVidRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class SpbBaseVidRange(Base):
 
     @property
     def SpbIsIdRange(self):
-        """An instance of the SpbIsIdRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_0c8bfbd10c3cfd3c0847dc6fd1f8abcc.SpbIsIdRange): An instance of the SpbIsIdRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_0c8bfbd10c3cfd3c0847dc6fd1f8abcc.SpbIsIdRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_0c8bfbd10c3cfd3c0847dc6fd1f8abcc import SpbIsIdRange
         return SpbIsIdRange(self)
 
     @property
     def BMacAddress(self):
-        """The B-MAC address. The default value is the System ID of the router.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The B-MAC address. The default value is the System ID of the router.
         """
         return self._get_attribute('bMacAddress')
     @BMacAddress.setter
@@ -64,10 +64,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def BVlanPriority(self):
-        """The user priority of the Base VLAN tag.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The user priority of the Base VLAN tag.
         """
         return self._get_attribute('bVlanPriority')
     @BVlanPriority.setter
@@ -76,10 +76,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def BVlanTpId(self):
-        """The tag priority identifier for base VLAN.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The tag priority identifier for base VLAN.
         """
         return self._get_attribute('bVlanTpId')
     @BVlanTpId.setter
@@ -88,10 +88,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def BaseVid(self):
-        """The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
         """
         return self._get_attribute('baseVid')
     @BaseVid.setter
@@ -100,10 +100,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def EctAlgorithmType(self):
-        """The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
         """
         return self._get_attribute('ectAlgorithmType')
     @EctAlgorithmType.setter
@@ -112,10 +112,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def EnableAutoBmacEnabled(self):
-        """If true, enables auto base MAC address.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables auto base MAC address.
         """
         return self._get_attribute('enableAutoBmacEnabled')
     @EnableAutoBmacEnabled.setter
@@ -124,10 +124,10 @@ class SpbBaseVidRange(Base):
 
     @property
     def EnableUseFlagBit(self):
-        """If set to true, allows to use flag bit.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If set to true, allows to use flag bit.
         """
         return self._get_attribute('enableUseFlagBit')
     @EnableUseFlagBit.setter
@@ -135,85 +135,98 @@ class SpbBaseVidRange(Base):
         self._set_attribute('enableUseFlagBit', value)
 
     def update(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
-        """Updates a child instance of spbBaseVidRange on the server.
+        """Updates spbBaseVidRange resource on the server.
 
-        Args:
-            BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
-            BVlanPriority (number): The user priority of the Base VLAN tag.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
-            EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
-            EnableUseFlagBit (bool): If set to true, allows to use flag bit.
+        Args
+        ----
+        - BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
+        - BVlanPriority (number): The user priority of the Base VLAN tag.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
+        - EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
+        - EnableUseFlagBit (bool): If set to true, allows to use flag bit.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
-        """Adds a new spbBaseVidRange node on the server and retrieves it in this instance.
+        """Adds a new spbBaseVidRange resource on the server and adds it to the container.
 
-        Args:
-            BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
-            BVlanPriority (number): The user priority of the Base VLAN tag.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
-            EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
-            EnableUseFlagBit (bool): If set to true, allows to use flag bit.
+        Args
+        ----
+        - BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
+        - BVlanPriority (number): The user priority of the Base VLAN tag.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
+        - EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
+        - EnableUseFlagBit (bool): If set to true, allows to use flag bit.
 
-        Returns:
-            self: This instance with all currently retrieved spbBaseVidRange data using find and the newly added spbBaseVidRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbBaseVidRange resources using find and the newly added spbBaseVidRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the spbBaseVidRange data in this instance from server.
+        """Deletes all the contained spbBaseVidRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
-        """Finds and retrieves spbBaseVidRange data from the server.
+        """Finds and retrieves spbBaseVidRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve spbBaseVidRange data from the server.
-        By default the find method takes no parameters and will retrieve all spbBaseVidRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbBaseVidRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all spbBaseVidRange resources from the server.
 
-        Args:
-            BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
-            BVlanPriority (number): The user priority of the Base VLAN tag.
-            BVlanTpId (number): The tag priority identifier for base VLAN.
-            BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
-            EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
-            EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
-            EnableUseFlagBit (bool): If set to true, allows to use flag bit.
+        Args
+        ----
+        - BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
+        - BVlanPriority (number): The user priority of the Base VLAN tag.
+        - BVlanTpId (number): The tag priority identifier for base VLAN.
+        - BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+        - EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
+        - EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
+        - EnableUseFlagBit (bool): If set to true, allows to use flag bit.
 
-        Returns:
-            self: This instance with matching spbBaseVidRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching spbBaseVidRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of spbBaseVidRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the spbBaseVidRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the spbBaseVidRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

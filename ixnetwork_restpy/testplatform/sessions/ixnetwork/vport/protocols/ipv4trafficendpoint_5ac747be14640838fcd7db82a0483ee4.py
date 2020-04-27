@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Ipv4TrafficEndPoint(Base):
     """NOT DEFINED
-    The Ipv4TrafficEndPoint class encapsulates a list of ipv4TrafficEndPoint resources that is be managed by the user.
+    The Ipv4TrafficEndPoint class encapsulates a list of ipv4TrafficEndPoint resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ipv4TrafficEndPoint.find() method.
-    The list can be managed by the user by using the Ipv4TrafficEndPoint.add() and Ipv4TrafficEndPoint.remove() methods.
+    The list can be managed by using the Ipv4TrafficEndPoint.add() and Ipv4TrafficEndPoint.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def ArpViaInterface(self):
-        """If selected, ARP request is conveyed through an Interface.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, ARP request is conveyed through an Interface.
         """
         return self._get_attribute('arpViaInterface')
     @ArpViaInterface.setter
@@ -50,10 +50,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def CustomIpHeaderLength(self):
-        """The Custom IPv4 Header Length value. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Custom IPv4 Header Length value. The default value is 1.
         """
         return self._get_attribute('customIpHeaderLength')
     @CustomIpHeaderLength.setter
@@ -62,10 +62,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def CustomIpHeaderValue(self):
-        """The Custom IPv4 Header Value. The default value is 00
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Custom IPv4 Header Value. The default value is 00
         """
         return self._get_attribute('customIpHeaderValue')
     @CustomIpHeaderValue.setter
@@ -74,10 +74,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def CustomIpProtocol(self):
-        """Specify the custom IP Protocol for the Source Traffic Endpoints.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the custom IP Protocol for the Source Traffic Endpoints.
         """
         return self._get_attribute('customIpProtocol')
     @CustomIpProtocol.setter
@@ -86,10 +86,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def DestinationPort(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('destinationPort')
     @DestinationPort.setter
@@ -98,10 +98,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def EnableVlan(self):
-        """Select this check box to make VLAN available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Select this check box to make VLAN available.
         """
         return self._get_attribute('enableVlan')
     @EnableVlan.setter
@@ -110,10 +110,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def GatewayMac(self):
-        """The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         """
         return self._get_attribute('gatewayMac')
     @GatewayMac.setter
@@ -122,10 +122,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def IpAddress(self):
-        """Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -134,10 +134,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def IpMask(self):
-        """Specify the Mask value. The default value is 24.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the Mask value. The default value is 24.
         """
         return self._get_attribute('ipMask')
     @IpMask.setter
@@ -146,10 +146,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def IpProtocol(self):
-        """Click the IP Protocol type to be used.
-
-        Returns:
-            str(custom|tcp|udp)
+        """
+        Returns
+        -------
+        - str(custom | tcp | udp): Click the IP Protocol type to be used.
         """
         return self._get_attribute('ipProtocol')
     @IpProtocol.setter
@@ -158,10 +158,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def Ipv4Dscp(self):
-        """The priority specified for the IP address. The default value is 0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The priority specified for the IP address. The default value is 0.
         """
         return self._get_attribute('ipv4Dscp')
     @Ipv4Dscp.setter
@@ -170,10 +170,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def Ipv4Ecn(self):
-        """The ECN value specified for the IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The ECN value specified for the IP address.
         """
         return self._get_attribute('ipv4Ecn')
     @Ipv4Ecn.setter
@@ -182,10 +182,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def MacAddress(self):
-        """The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -194,10 +194,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def Name(self):
-        """The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -206,10 +206,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def ProtocolInterface(self):
-        """NOT DEFINED
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
         """
         return self._get_attribute('protocolInterface')
     @ProtocolInterface.setter
@@ -218,10 +218,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def RangeSize(self):
-        """Specify the size of the traffic range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the size of the traffic range.
         """
         return self._get_attribute('rangeSize')
     @RangeSize.setter
@@ -230,10 +230,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def SourcePort(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('sourcePort')
     @SourcePort.setter
@@ -242,10 +242,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def UdpDestination(self):
-        """Specify the UDP Destination. The default value is 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the UDP Destination. The default value is 1.
         """
         return self._get_attribute('udpDestination')
     @UdpDestination.setter
@@ -254,10 +254,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def UdpSource(self):
-        """Specify the UDP Source. The default value is 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the UDP Source. The default value is 1.
         """
         return self._get_attribute('udpSource')
     @UdpSource.setter
@@ -266,10 +266,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def VlanCount(self):
-        """Specify the VLAN count. The default value is 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the VLAN count. The default value is 1.
         """
         return self._get_attribute('vlanCount')
     @VlanCount.setter
@@ -278,10 +278,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def VlanId(self):
-        """Specify the VLAN ID (Outer and Inner).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the VLAN ID (Outer and Inner).
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -290,10 +290,10 @@ class Ipv4TrafficEndPoint(Base):
 
     @property
     def VlanPriority(self):
-        """Specify the VLAN Priority (Outer and Inner).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the VLAN Priority (Outer and Inner).
         """
         return self._get_attribute('vlanPriority')
     @VlanPriority.setter
@@ -301,130 +301,143 @@ class Ipv4TrafficEndPoint(Base):
         self._set_attribute('vlanPriority', value)
 
     def update(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Updates a child instance of ipv4TrafficEndPoint on the server.
+        """Updates ipv4TrafficEndPoint resource on the server.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
-            CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
-            CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
-            DestinationPort (str): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
-            IpMask (number): Specify the Mask value. The default value is 24.
-            IpProtocol (str(custom|tcp|udp)): Click the IP Protocol type to be used.
-            Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
-            Ipv4Ecn (str): The ECN value specified for the IP address.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the traffic range.
-            SourcePort (str): NOT DEFINED
-            UdpDestination (str): Specify the UDP Destination. The default value is 1.
-            UdpSource (str): Specify the UDP Source. The default value is 1.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
+        - CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
+        - CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
+        - DestinationPort (str): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
+        - IpMask (number): Specify the Mask value. The default value is 24.
+        - IpProtocol (str(custom | tcp | udp)): Click the IP Protocol type to be used.
+        - Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
+        - Ipv4Ecn (str): The ECN value specified for the IP address.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the traffic range.
+        - SourcePort (str): NOT DEFINED
+        - UdpDestination (str): Specify the UDP Destination. The default value is 1.
+        - UdpSource (str): Specify the UDP Source. The default value is 1.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Adds a new ipv4TrafficEndPoint node on the server and retrieves it in this instance.
+        """Adds a new ipv4TrafficEndPoint resource on the server and adds it to the container.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
-            CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
-            CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
-            DestinationPort (str): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
-            IpMask (number): Specify the Mask value. The default value is 24.
-            IpProtocol (str(custom|tcp|udp)): Click the IP Protocol type to be used.
-            Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
-            Ipv4Ecn (str): The ECN value specified for the IP address.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the traffic range.
-            SourcePort (str): NOT DEFINED
-            UdpDestination (str): Specify the UDP Destination. The default value is 1.
-            UdpSource (str): Specify the UDP Source. The default value is 1.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
+        - CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
+        - CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
+        - DestinationPort (str): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
+        - IpMask (number): Specify the Mask value. The default value is 24.
+        - IpProtocol (str(custom | tcp | udp)): Click the IP Protocol type to be used.
+        - Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
+        - Ipv4Ecn (str): The ECN value specified for the IP address.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the traffic range.
+        - SourcePort (str): NOT DEFINED
+        - UdpDestination (str): Specify the UDP Destination. The default value is 1.
+        - UdpSource (str): Specify the UDP Source. The default value is 1.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Returns:
-            self: This instance with all currently retrieved ipv4TrafficEndPoint data using find and the newly added ipv4TrafficEndPoint data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4TrafficEndPoint resources using find and the newly added ipv4TrafficEndPoint resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ipv4TrafficEndPoint data in this instance from server.
+        """Deletes all the contained ipv4TrafficEndPoint resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
-        """Finds and retrieves ipv4TrafficEndPoint data from the server.
+        """Finds and retrieves ipv4TrafficEndPoint resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ipv4TrafficEndPoint data from the server.
-        By default the find method takes no parameters and will retrieve all ipv4TrafficEndPoint data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4TrafficEndPoint resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ipv4TrafficEndPoint resources from the server.
 
-        Args:
-            ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
-            CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
-            CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
-            CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
-            DestinationPort (str): NOT DEFINED
-            EnableVlan (bool): Select this check box to make VLAN available.
-            GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
-            IpMask (number): Specify the Mask value. The default value is 24.
-            IpProtocol (str(custom|tcp|udp)): Click the IP Protocol type to be used.
-            Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
-            Ipv4Ecn (str): The ECN value specified for the IP address.
-            MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
-            Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-            ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
-            RangeSize (number): Specify the size of the traffic range.
-            SourcePort (str): NOT DEFINED
-            UdpDestination (str): Specify the UDP Destination. The default value is 1.
-            UdpSource (str): Specify the UDP Source. The default value is 1.
-            VlanCount (number): Specify the VLAN count. The default value is 1.
-            VlanId (str): Specify the VLAN ID (Outer and Inner).
-            VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+        Args
+        ----
+        - ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+        - CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
+        - CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
+        - CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
+        - DestinationPort (str): NOT DEFINED
+        - EnableVlan (bool): Select this check box to make VLAN available.
+        - GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
+        - IpMask (number): Specify the Mask value. The default value is 24.
+        - IpProtocol (str(custom | tcp | udp)): Click the IP Protocol type to be used.
+        - Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
+        - Ipv4Ecn (str): The ECN value specified for the IP address.
+        - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+        - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - RangeSize (number): Specify the size of the traffic range.
+        - SourcePort (str): NOT DEFINED
+        - UdpDestination (str): Specify the UDP Destination. The default value is 1.
+        - UdpSource (str): Specify the UDP Source. The default value is 1.
+        - VlanCount (number): Specify the VLAN count. The default value is 1.
+        - VlanId (str): Specify the VLAN ID (Outer and Inner).
+        - VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
 
-        Returns:
-            self: This instance with matching ipv4TrafficEndPoint data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ipv4TrafficEndPoint resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ipv4TrafficEndPoint data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ipv4TrafficEndPoint data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ipv4TrafficEndPoint resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

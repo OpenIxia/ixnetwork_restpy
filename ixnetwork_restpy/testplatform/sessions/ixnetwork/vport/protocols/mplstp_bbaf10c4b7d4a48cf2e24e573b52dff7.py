@@ -36,24 +36,24 @@ class MplsTp(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_8bb274b34003209d4965465d50800ded.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_8bb274b34003209d4965465d50800ded.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_8bb274b34003209d4965465d50800ded import Router
         return Router(self)
 
     @property
     def ApsChannelType(self):
-        """DEPRECATED This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
         """
         return self._get_attribute('apsChannelType')
     @ApsChannelType.setter
@@ -62,10 +62,10 @@ class MplsTp(Base):
 
     @property
     def BfdCcChannelType(self):
-        """DEPRECATED This signifies the BFD Continuity Check Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the BFD Continuity Check Channel Type in hexadecimal format.
         """
         return self._get_attribute('bfdCcChannelType')
     @BfdCcChannelType.setter
@@ -74,10 +74,10 @@ class MplsTp(Base):
 
     @property
     def DelayManagementChannelType(self):
-        """DEPRECATED This signifies the Delay Measurement Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Delay Measurement Channel Type in hexadecimal format.
         """
         return self._get_attribute('delayManagementChannelType')
     @DelayManagementChannelType.setter
@@ -86,10 +86,10 @@ class MplsTp(Base):
 
     @property
     def EnableHighPerformanceMode(self):
-        """This signifies select the checkbox to enable high performance mode.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies select the checkbox to enable high performance mode.
         """
         return self._get_attribute('enableHighPerformanceMode')
     @EnableHighPerformanceMode.setter
@@ -98,10 +98,10 @@ class MplsTp(Base):
 
     @property
     def Enabled(self):
-        """This signifies that the mplsTp protocol is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This signifies that the mplsTp protocol is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -110,10 +110,10 @@ class MplsTp(Base):
 
     @property
     def FaultManagementChannelType(self):
-        """DEPRECATED This signifies the Fault Management Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Fault Management Channel Type in hexadecimal format.
         """
         return self._get_attribute('faultManagementChannelType')
     @FaultManagementChannelType.setter
@@ -122,10 +122,10 @@ class MplsTp(Base):
 
     @property
     def LossMeasurementChannelType(self):
-        """DEPRECATED This signifies the Loss Measurement Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Loss Measurement Channel Type in hexadecimal format.
         """
         return self._get_attribute('lossMeasurementChannelType')
     @LossMeasurementChannelType.setter
@@ -134,10 +134,10 @@ class MplsTp(Base):
 
     @property
     def OnDemandCvChannelType(self):
-        """DEPRECATED This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
         """
         return self._get_attribute('onDemandCvChannelType')
     @OnDemandCvChannelType.setter
@@ -146,10 +146,10 @@ class MplsTp(Base):
 
     @property
     def PwStatusChannelType(self):
-        """DEPRECATED This signifies the Pseudowire Status Channel Type.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Pseudowire Status Channel Type.
         """
         return self._get_attribute('pwStatusChannelType')
     @PwStatusChannelType.setter
@@ -158,19 +158,19 @@ class MplsTp(Base):
 
     @property
     def RunningState(self):
-        """This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
         """
         return self._get_attribute('runningState')
 
     @property
     def Y1731ChannelType(self):
-        """DEPRECATED This signifies the Y.1731 Channel Type in hexadecimal format.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Y.1731 Channel Type in hexadecimal format.
         """
         return self._get_attribute('y1731ChannelType')
     @Y1731ChannelType.setter
@@ -178,33 +178,36 @@ class MplsTp(Base):
         self._set_attribute('y1731ChannelType', value)
 
     def update(self, ApsChannelType=None, BfdCcChannelType=None, DelayManagementChannelType=None, EnableHighPerformanceMode=None, Enabled=None, FaultManagementChannelType=None, LossMeasurementChannelType=None, OnDemandCvChannelType=None, PwStatusChannelType=None, Y1731ChannelType=None):
-        """Updates a child instance of mplsTp on the server.
+        """Updates mplsTp resource on the server.
 
-        Args:
-            ApsChannelType (str): This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
-            BfdCcChannelType (str): This signifies the BFD Continuity Check Channel Type in hexadecimal format.
-            DelayManagementChannelType (str): This signifies the Delay Measurement Channel Type in hexadecimal format.
-            EnableHighPerformanceMode (bool): This signifies select the checkbox to enable high performance mode.
-            Enabled (bool): This signifies that the mplsTp protocol is enabled.
-            FaultManagementChannelType (str): This signifies the Fault Management Channel Type in hexadecimal format.
-            LossMeasurementChannelType (str): This signifies the Loss Measurement Channel Type in hexadecimal format.
-            OnDemandCvChannelType (str): This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
-            PwStatusChannelType (str): This signifies the Pseudowire Status Channel Type.
-            Y1731ChannelType (str): This signifies the Y.1731 Channel Type in hexadecimal format.
+        Args
+        ----
+        - ApsChannelType (str): This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
+        - BfdCcChannelType (str): This signifies the BFD Continuity Check Channel Type in hexadecimal format.
+        - DelayManagementChannelType (str): This signifies the Delay Measurement Channel Type in hexadecimal format.
+        - EnableHighPerformanceMode (bool): This signifies select the checkbox to enable high performance mode.
+        - Enabled (bool): This signifies that the mplsTp protocol is enabled.
+        - FaultManagementChannelType (str): This signifies the Fault Management Channel Type in hexadecimal format.
+        - LossMeasurementChannelType (str): This signifies the Loss Measurement Channel Type in hexadecimal format.
+        - OnDemandCvChannelType (str): This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
+        - PwStatusChannelType (str): This signifies the Pseudowire Status Channel Type.
+        - Y1731ChannelType (str): This signifies the Y.1731 Channel Type in hexadecimal format.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         This signifies the starting of the MPLSTP protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -214,9 +217,10 @@ class MplsTp(Base):
 
         This signifies the stopping of the MPLSTP protocol on a port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

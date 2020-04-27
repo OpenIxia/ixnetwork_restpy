@@ -36,10 +36,10 @@ class DhcpServerRange(Base):
 
     @property
     def Count(self):
-        """The number of leases to be allocated per each server address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of leases to be allocated per each server address.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -48,10 +48,10 @@ class DhcpServerRange(Base):
 
     @property
     def Dhcp4EchoRelayInfo(self):
-        """Enable echoing of DHCP option 82.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable echoing of DHCP option 82.
         """
         return self._get_attribute('dhcp4EchoRelayInfo')
     @Dhcp4EchoRelayInfo.setter
@@ -60,10 +60,10 @@ class DhcpServerRange(Base):
 
     @property
     def Dhcp6IaType(self):
-        """The Identity Association type supported by IPv6 address pools.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Identity Association type supported by IPv6 address pools.
         """
         return self._get_attribute('dhcp6IaType')
     @Dhcp6IaType.setter
@@ -72,10 +72,10 @@ class DhcpServerRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -84,10 +84,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddress(self):
-        """The IP address of the first lease pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the first lease pool.
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -96,10 +96,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddressIncrement(self):
-        """The increment value for the lease address within the lease pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the lease address within the lease pool.
         """
         return self._get_attribute('ipAddressIncrement')
     @IpAddressIncrement.setter
@@ -108,10 +108,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddressPoolIncrement(self):
-        """The increment value for the starting lease address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the starting lease address.
         """
         return self._get_attribute('ipAddressPoolIncrement')
     @IpAddressPoolIncrement.setter
@@ -120,10 +120,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddressPrefix(self):
-        """The prefix of the first lease pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The prefix of the first lease pool.
         """
         return self._get_attribute('ipAddressPrefix')
     @IpAddressPrefix.setter
@@ -132,10 +132,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddressPrefixIncrement(self):
-        """The increment value for the prefix of the lease address within the lease pool.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the prefix of the lease address within the lease pool.
         """
         return self._get_attribute('ipAddressPrefixIncrement')
     @IpAddressPrefixIncrement.setter
@@ -144,10 +144,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpAddressPrefixPoolIncrement(self):
-        """The increment value for the prefix of the starting lease.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the prefix of the starting lease.
         """
         return self._get_attribute('ipAddressPrefixPoolIncrement')
     @IpAddressPrefixPoolIncrement.setter
@@ -156,10 +156,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpDns1(self):
-        """The first DNS address advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first DNS address advertised in DHCP Offer and Reply messages.
         """
         return self._get_attribute('ipDns1')
     @IpDns1.setter
@@ -168,10 +168,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpDns2(self):
-        """The second DNS address advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The second DNS address advertised in DHCP Offer and Reply messages.
         """
         return self._get_attribute('ipDns2')
     @IpDns2.setter
@@ -180,10 +180,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpGateway(self):
-        """The Router address advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Router address advertised in DHCP Offer and Reply messages.
         """
         return self._get_attribute('ipGateway')
     @IpGateway.setter
@@ -192,10 +192,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpGatewayIncrement(self):
-        """The increment value for the Router address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the Router address.
         """
         return self._get_attribute('ipGatewayIncrement')
     @IpGatewayIncrement.setter
@@ -204,10 +204,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpPrefix(self):
-        """The Subnet Address length used to compute the subnetwork the advertised lease is part of.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Subnet Address length used to compute the subnetwork the advertised lease is part of.
         """
         return self._get_attribute('ipPrefix')
     @IpPrefix.setter
@@ -216,10 +216,10 @@ class DhcpServerRange(Base):
 
     @property
     def IpType(self):
-        """The type of IP addresses to be created by this range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The type of IP addresses to be created by this range.
         """
         return self._get_attribute('ipType')
     @IpType.setter
@@ -228,10 +228,10 @@ class DhcpServerRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -240,19 +240,19 @@ class DhcpServerRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PrefixCount(self):
-        """The number of leases to be allocated per each server prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of leases to be allocated per each server prefix.
         """
         return self._get_attribute('prefixCount')
     @PrefixCount.setter
@@ -261,10 +261,10 @@ class DhcpServerRange(Base):
 
     @property
     def PrefixLength(self):
-        """The Subnet Prefix length advertised in DHCP Offer and Reply messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Subnet Prefix length advertised in DHCP Offer and Reply messages.
         """
         return self._get_attribute('prefixLength')
     @PrefixLength.setter
@@ -273,10 +273,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerAddress(self):
-        """The IP address of the first server interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address of the first server interface.
         """
         return self._get_attribute('serverAddress')
     @ServerAddress.setter
@@ -285,10 +285,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerAddressIncrement(self):
-        """The increment value for the server address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the server address.
         """
         return self._get_attribute('serverAddressIncrement')
     @ServerAddressIncrement.setter
@@ -297,10 +297,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerCount(self):
-        """The number of server addresses to create for this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of server addresses to create for this range.
         """
         return self._get_attribute('serverCount')
     @ServerCount.setter
@@ -309,10 +309,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerGateway(self):
-        """The gateway address associated with DHCP server interfaces.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The gateway address associated with DHCP server interfaces.
         """
         return self._get_attribute('serverGateway')
     @ServerGateway.setter
@@ -321,10 +321,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerGatewayIncrement(self):
-        """The increment value for the gateway addresses.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment value for the gateway addresses.
         """
         return self._get_attribute('serverGatewayIncrement')
     @ServerGatewayIncrement.setter
@@ -333,10 +333,10 @@ class DhcpServerRange(Base):
 
     @property
     def ServerPrefix(self):
-        """The subnet prefix length associated with server interfaces.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The subnet prefix length associated with server interfaces.
         """
         return self._get_attribute('serverPrefix')
     @ServerPrefix.setter
@@ -345,10 +345,10 @@ class DhcpServerRange(Base):
 
     @property
     def UseRapidCommit(self):
-        """Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
         """
         return self._get_attribute('useRapidCommit')
     @UseRapidCommit.setter
@@ -356,54 +356,57 @@ class DhcpServerRange(Base):
         self._set_attribute('useRapidCommit', value)
 
     def update(self, Count=None, Dhcp4EchoRelayInfo=None, Dhcp6IaType=None, Enabled=None, IpAddress=None, IpAddressIncrement=None, IpAddressPoolIncrement=None, IpAddressPrefix=None, IpAddressPrefixIncrement=None, IpAddressPrefixPoolIncrement=None, IpDns1=None, IpDns2=None, IpGateway=None, IpGatewayIncrement=None, IpPrefix=None, IpType=None, Name=None, PrefixCount=None, PrefixLength=None, ServerAddress=None, ServerAddressIncrement=None, ServerCount=None, ServerGateway=None, ServerGatewayIncrement=None, ServerPrefix=None, UseRapidCommit=None):
-        """Updates a child instance of dhcpServerRange on the server.
+        """Updates dhcpServerRange resource on the server.
 
-        Args:
-            Count (number): The number of leases to be allocated per each server address.
-            Dhcp4EchoRelayInfo (bool): Enable echoing of DHCP option 82.
-            Dhcp6IaType (str): The Identity Association type supported by IPv6 address pools.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IpAddress (str): The IP address of the first lease pool.
-            IpAddressIncrement (str): The increment value for the lease address within the lease pool.
-            IpAddressPoolIncrement (str): The increment value for the starting lease address.
-            IpAddressPrefix (str): The prefix of the first lease pool.
-            IpAddressPrefixIncrement (str): The increment value for the prefix of the lease address within the lease pool.
-            IpAddressPrefixPoolIncrement (str): The increment value for the prefix of the starting lease.
-            IpDns1 (str): The first DNS address advertised in DHCP Offer and Reply messages.
-            IpDns2 (str): The second DNS address advertised in DHCP Offer and Reply messages.
-            IpGateway (str): The Router address advertised in DHCP Offer and Reply messages.
-            IpGatewayIncrement (str): The increment value for the Router address.
-            IpPrefix (number): The Subnet Address length used to compute the subnetwork the advertised lease is part of.
-            IpType (str): The type of IP addresses to be created by this range.
-            Name (str): Name of range
-            PrefixCount (number): The number of leases to be allocated per each server prefix.
-            PrefixLength (number): The Subnet Prefix length advertised in DHCP Offer and Reply messages.
-            ServerAddress (str): The IP address of the first server interface.
-            ServerAddressIncrement (str): The increment value for the server address.
-            ServerCount (number): The number of server addresses to create for this range.
-            ServerGateway (str): The gateway address associated with DHCP server interfaces.
-            ServerGatewayIncrement (str): The increment value for the gateway addresses.
-            ServerPrefix (number): The subnet prefix length associated with server interfaces.
-            UseRapidCommit (bool): Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
+        Args
+        ----
+        - Count (number): The number of leases to be allocated per each server address.
+        - Dhcp4EchoRelayInfo (bool): Enable echoing of DHCP option 82.
+        - Dhcp6IaType (str): The Identity Association type supported by IPv6 address pools.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpAddress (str): The IP address of the first lease pool.
+        - IpAddressIncrement (str): The increment value for the lease address within the lease pool.
+        - IpAddressPoolIncrement (str): The increment value for the starting lease address.
+        - IpAddressPrefix (str): The prefix of the first lease pool.
+        - IpAddressPrefixIncrement (str): The increment value for the prefix of the lease address within the lease pool.
+        - IpAddressPrefixPoolIncrement (str): The increment value for the prefix of the starting lease.
+        - IpDns1 (str): The first DNS address advertised in DHCP Offer and Reply messages.
+        - IpDns2 (str): The second DNS address advertised in DHCP Offer and Reply messages.
+        - IpGateway (str): The Router address advertised in DHCP Offer and Reply messages.
+        - IpGatewayIncrement (str): The increment value for the Router address.
+        - IpPrefix (number): The Subnet Address length used to compute the subnetwork the advertised lease is part of.
+        - IpType (str): The type of IP addresses to be created by this range.
+        - Name (str): Name of range
+        - PrefixCount (number): The number of leases to be allocated per each server prefix.
+        - PrefixLength (number): The Subnet Prefix length advertised in DHCP Offer and Reply messages.
+        - ServerAddress (str): The IP address of the first server interface.
+        - ServerAddressIncrement (str): The increment value for the server address.
+        - ServerCount (number): The number of server addresses to create for this range.
+        - ServerGateway (str): The gateway address associated with DHCP server interfaces.
+        - ServerGatewayIncrement (str): The increment value for the gateway addresses.
+        - ServerPrefix (number): The subnet prefix length associated with server interfaces.
+        - UseRapidCommit (bool): Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -415,16 +418,15 @@ class DhcpServerRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -436,16 +438,15 @@ class DhcpServerRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

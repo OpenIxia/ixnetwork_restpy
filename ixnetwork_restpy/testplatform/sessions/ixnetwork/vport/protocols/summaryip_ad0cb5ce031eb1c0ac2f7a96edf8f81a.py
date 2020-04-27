@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SummaryIp(Base):
     """
-    The SummaryIp class encapsulates a list of summaryIp resources that is managed by the system.
+    The SummaryIp class encapsulates a list of summaryIp resources that are managed by the system.
     A list of resources can be retrieved from the server using the SummaryIp.find() method.
     """
 
@@ -38,9 +38,9 @@ class SummaryIp(Base):
     @property
     def IncrementLinkStateIdBy(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('incrementLinkStateIdBy')
     @IncrementLinkStateIdBy.setter
@@ -50,9 +50,9 @@ class SummaryIp(Base):
     @property
     def Metric(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('metric')
     @Metric.setter
@@ -62,9 +62,9 @@ class SummaryIp(Base):
     @property
     def NetworkMask(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('networkMask')
     @NetworkMask.setter
@@ -74,9 +74,9 @@ class SummaryIp(Base):
     @property
     def NumberOfLsa(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('numberOfLsa')
     @NumberOfLsa.setter
@@ -84,50 +84,59 @@ class SummaryIp(Base):
         self._set_attribute('numberOfLsa', value)
 
     def update(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
-        """Updates a child instance of summaryIp on the server.
+        """Updates summaryIp resource on the server.
 
-        Args:
-            IncrementLinkStateIdBy (str): 
-            Metric (number): 
-            NetworkMask (str): 
-            NumberOfLsa (number): 
+        Args
+        ----
+        - IncrementLinkStateIdBy (str): 
+        - Metric (number): 
+        - NetworkMask (str): 
+        - NumberOfLsa (number): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
-        """Finds and retrieves summaryIp data from the server.
+        """Finds and retrieves summaryIp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve summaryIp data from the server.
-        By default the find method takes no parameters and will retrieve all summaryIp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve summaryIp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all summaryIp resources from the server.
 
-        Args:
-            IncrementLinkStateIdBy (str): 
-            Metric (number): 
-            NetworkMask (str): 
-            NumberOfLsa (number): 
+        Args
+        ----
+        - IncrementLinkStateIdBy (str): 
+        - Metric (number): 
+        - NetworkMask (str): 
+        - NumberOfLsa (number): 
 
-        Returns:
-            self: This instance with matching summaryIp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching summaryIp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of summaryIp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the summaryIp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the summaryIp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

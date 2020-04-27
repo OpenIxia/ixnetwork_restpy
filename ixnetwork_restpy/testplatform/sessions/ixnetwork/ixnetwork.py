@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Ixnetwork(Base):
     """This is the root node of the hierarchy
-    The Ixnetwork class encapsulates a list of / resources that is managed by the system.
+    The Ixnetwork class encapsulates a list of / resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ixnetwork.find() method.
     """
 
@@ -37,168 +37,168 @@ class Ixnetwork(Base):
 
     @property
     def AvailableHardware(self):
-        """An instance of the AvailableHardware class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware.AvailableHardware): An instance of the AvailableHardware class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware.AvailableHardware)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware import AvailableHardware
         return AvailableHardware(self)._select()
 
     @property
     def Globals(self):
-        """An instance of the Globals class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals.Globals): An instance of the Globals class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals.Globals)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals import Globals
         return Globals(self)._select()
 
     @property
     def Impairment(self):
-        """An instance of the Impairment class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment.Impairment): An instance of the Impairment class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment.Impairment)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment import Impairment
         return Impairment(self)._select()
 
     @property
     def Lag(self):
-        """An instance of the Lag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag.Lag): An instance of the Lag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag.Lag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag import Lag
         return Lag(self)
 
     @property
     def QuickTest(self):
-        """An instance of the QuickTest class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest.QuickTest): An instance of the QuickTest class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest.QuickTest)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import QuickTest
         return QuickTest(self)._select()
 
     @property
     def ResourceManager(self):
-        """An instance of the ResourceManager class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager.ResourceManager): An instance of the ResourceManager class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager.ResourceManager)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager import ResourceManager
         return ResourceManager(self)._select()
 
     @property
     def Statistics(self):
-        """An instance of the Statistics class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics.Statistics): An instance of the Statistics class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics.Statistics)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics import Statistics
         return Statistics(self)._select()
 
     @property
     def Timeline(self):
-        """An instance of the Timeline class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline): An instance of the Timeline class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import Timeline
         return Timeline(self)._select()
 
     @property
     def Topology(self):
-        """An instance of the Topology class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology.Topology): An instance of the Topology class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology.Topology)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology import Topology
         return Topology(self)
 
     @property
     def Traffic(self):
-        """An instance of the Traffic class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic.Traffic): An instance of the Traffic class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic.Traffic)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic import Traffic
         return Traffic(self)._select()
 
     @property
     def Vport(self):
-        """An instance of the Vport class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport.Vport): An instance of the Vport class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport.Vport)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport import Vport
         return Vport(self)
 
     @property
     def Watch(self):
-        """An instance of the Watch class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch.Watch): An instance of the Watch class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch.Watch)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch import Watch
         return Watch(self)._select()
@@ -208,18 +208,16 @@ class Ixnetwork(Base):
 
         Applies the first Quick Test found in the current configuration.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        applyITWizardConfiguration()
+        applyITWizardConfiguration(TestName=string)
+        -------------------------------------------
+        - TestName (str): The name of the test.
 
-        applyITWizardConfiguration(TestName:string)
-            Args:
-                args[0] is TestName (str): The name of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -231,9 +229,10 @@ class Ixnetwork(Base):
 
         Apply L1 blocking.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('applyL1Blocking', payload=payload, response_object=None)
@@ -243,19 +242,18 @@ class Ixnetwork(Base):
 
         Assign hardware ports to virtual ports.
 
-        assignPorts(Arg1:list, Arg2:list, Arg3:list, Arg4:bool)list
-            Args:
-                args[0] is Arg1 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to include.
-                args[1] is Arg2 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to exclude.
-                args[2] is Arg3 (list(str[None|/api/v1/sessions/1/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
-                args[3] is Arg4 (bool): If true, it will clear ownership on the hardware ports.
+        assignPorts(Arg1=list, Arg2=list, Arg3=list, Arg4=bool)list
+        -----------------------------------------------------------
+        - Arg1 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to include.
+        - Arg2 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to exclude.
+        - Arg3 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
+        - Arg4 (bool): If true, it will clear ownership on the hardware ports.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
-            Returns:
-                list(str[None|/api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -267,9 +265,10 @@ class Ixnetwork(Base):
 
         Clears the statistics published by AppLibrary.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('clearAppLibraryStats', payload=payload, response_object=None)
@@ -279,16 +278,15 @@ class Ixnetwork(Base):
 
         Clear ownership on all ports from the given IxVM card.
 
-        clearCardOwnershipById(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): The card ID.
+        clearCardOwnershipById(Arg1=string)number
+        -----------------------------------------
+        - Arg1 (str): The card ID.
+        - Returns number: Returns the card ID.
 
-            Returns:
-                number: Returns the card ID.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -300,9 +298,10 @@ class Ixnetwork(Base):
 
         Clear control pland and data plane statistics.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('clearCPDPStats', payload=payload, response_object=None)
@@ -312,18 +311,16 @@ class Ixnetwork(Base):
 
         The command to clear the existing port and traffic statistics.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        clearPortsAndTrafficStats()
+        clearPortsAndTrafficStats(Arg1=list)
+        ------------------------------------
+        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])): 
 
-        clearPortsAndTrafficStats(Arg1:list)
-            Args:
-                args[0] is Arg1 (list(str[waitForPortStatsRefresh|waitForTrafficStatsRefresh])): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -335,9 +332,10 @@ class Ixnetwork(Base):
 
         Clear the protocol statistics.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('clearProtocolStats', payload=payload, response_object=None)
@@ -347,18 +345,16 @@ class Ixnetwork(Base):
 
         The command to clear the existing statistics.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        clearStats()
+        clearStats(Arg1=list)
+        ---------------------
+        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])): 
 
-        clearStats(Arg1:list)
-            Args:
-                args[0] is Arg1 (list(str[waitForPortStatsRefresh|waitForTrafficStatsRefresh])): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -370,18 +366,16 @@ class Ixnetwork(Base):
 
         This command closes all the captures if no parameter is specified; or a specific list of online captures
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        closeAllTabs()
+        closeAllTabs(Arg1=list)
+        -----------------------
+        - Arg1 (list(str)): The list of capture names to be closed.
 
-        closeAllTabs(Arg1:list)
-            Args:
-                args[0] is Arg1 (list(str)): The list of capture names to be closed.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -393,53 +387,53 @@ class Ixnetwork(Base):
 
         This command collects all of the IxNetwork logs and puts them in a .zip file
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        collectLogs(Arg1:href)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        collectLogs(Arg1=href)
+        ----------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
 
-        collectLogs(Arg1:href, Arg2:list)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+        collectLogs(Arg1=href, Arg2=list)
+        ---------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
 
-        collectLogs(Arg1:href, Arg2:list, Arg3:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
-                args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
+        collectLogs(Arg1=href, Arg2=list, Arg3=string)
+        ----------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+        - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
 
-        collectLogs(Arg1:href, Arg2:list, Arg3:string, Arg4:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
-                args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
-                args[3] is Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string)
+        -----------------------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+        - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
+        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
 
-        collectLogs(Arg1:href, Arg2:list, Arg3:string, Arg4:string, Arg5:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
-                args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
-                args[3] is Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
-                args[4] is Arg5 (str): End Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string, Arg5=string)
+        ------------------------------------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+        - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
+        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+        - Arg5 (str): End Date in format yyyy-M-d H:mm (2019-01-01 00:00)
 
-        collectLogs(Arg1:href, Arg2:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (str): A string value.
+        collectLogs(Arg1=href, Arg2=string)
+        -----------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (str): A string value.
 
-        collectLogs(Arg1:href, Arg2:string, Arg3:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-                args[1] is Arg2 (str): A string value.
-                args[2] is Arg3 (str): A string value.
+        collectLogs(Arg1=href, Arg2=string, Arg3=string)
+        ------------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+        - Arg2 (str): A string value.
+        - Arg3 (str): A string value.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -451,16 +445,15 @@ class Ixnetwork(Base):
 
         Establish connection to the IxVM card.
 
-        connectCardById(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): Card ID to which connection is required.
+        connectCardById(Arg1=string)number
+        ----------------------------------
+        - Arg1 (str): Card ID to which connection is required.
+        - Returns number: Returns the connected card ID or error, if any.
 
-            Returns:
-                number: Returns the connected card ID or error, if any.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -472,13 +465,14 @@ class Ixnetwork(Base):
 
         Connect to a virtual chassis.
 
-        connectToChassis(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): The hostname or IP address of the chassis.
+        connectToChassis(Arg1=string)
+        -----------------------------
+        - Arg1 (str): The hostname or IP address of the chassis.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -490,14 +484,15 @@ class Ixnetwork(Base):
 
         Copies from first stream into the second stream.
 
-        copyFile(Arg1:href, Arg2:href)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): The source file for the copy operation. This stream must be readable.
-                args[1] is Arg2 (obj(ixnetwork_restpy.files.Files)): The destination file for the copy operation. This stream must be writable.
+        copyFile(Arg1=href, Arg2=href)
+        ------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): The source file for the copy operation. This stream must be readable.
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): The destination file for the copy operation. This stream must be writable.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -509,16 +504,15 @@ class Ixnetwork(Base):
 
         Close connection to the IxVM card.
 
-        disconnectCardById(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): The card ID.
+        disconnectCardById(Arg1=string)number
+        -------------------------------------
+        - Arg1 (str): The card ID.
+        - Returns number: Returns the card ID.
 
-            Returns:
-                number: Returns the card ID.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -530,9 +524,10 @@ class Ixnetwork(Base):
 
         This report feature generates an integrated test report file.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -540,12 +535,10 @@ class Ixnetwork(Base):
     def GetAggregatedDeviceGroupStatus(self):
         """Executes the getAggregatedDeviceGroupStatus operation on the server.
 
-            Returns:
-                list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:list[dict(arg1:str,arg2:number)])): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getAggregatedDeviceGroupStatus', payload=payload, response_object=None)
@@ -555,12 +548,10 @@ class Ixnetwork(Base):
 
         The command to get all the ports.
 
-            Returns:
-                str: A string with all the ports.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getAllPorts', payload=payload, response_object=None)
@@ -570,12 +561,10 @@ class Ixnetwork(Base):
 
         The command to get available protocol statistics.
 
-            Returns:
-                str: A string with all the legacy protocols statistics.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getAvailableProtocolStats', payload=payload, response_object=None)
@@ -585,16 +574,15 @@ class Ixnetwork(Base):
 
         This exec returns number of AppLibrary Slot License avaibale for use in the chassis.
 
-        getAvailableSlotLicense(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): The IPv4 address of the chassis.
+        getAvailableSlotLicense(Arg1=string)number
+        ------------------------------------------
+        - Arg1 (str): The IPv4 address of the chassis.
+        - Returns number: The number of AppLibrary Slot License available for use in the chassis.
 
-            Returns:
-                number: The number of AppLibrary Slot License available for use in the chassis.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -606,16 +594,15 @@ class Ixnetwork(Base):
 
         The command to get available statistics for the protocol.
 
-        getAvailableStatsForProtocol(Arg1:string)string
-            Args:
-                args[0] is Arg1 (str): Protocol name.
+        getAvailableStatsForProtocol(Arg1=string)string
+        -----------------------------------------------
+        - Arg1 (str): Protocol name.
+        - Returns str: A string with all the available statistics.
 
-            Returns:
-                str: A string with all the available statistics.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -627,16 +614,15 @@ class Ixnetwork(Base):
 
         The command to get available statistics for the source type.
 
-        getAvailableStatsForSourceType(Arg1:string)string
-            Args:
-                args[0] is Arg1 (str): Source type.
+        getAvailableStatsForSourceType(Arg1=string)string
+        -------------------------------------------------
+        - Arg1 (str): Source type.
+        - Returns str: A string with all the available statistics.
 
-            Returns:
-                str: A string with all the available statistics.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -648,12 +634,10 @@ class Ixnetwork(Base):
 
         The command to get the configured protocols.
 
-            Returns:
-                str: A list with all the protocols configured in the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getConfiguredProtocols', payload=payload, response_object=None)
@@ -663,16 +647,15 @@ class Ixnetwork(Base):
 
         The command to get the configured protocols for the port.
 
-        getConfiguredProtocolsForPort(Arg1:number)string
-            Args:
-                args[0] is Arg1 (number): Port ID.
+        getConfiguredProtocolsForPort(Arg1=number)string
+        ------------------------------------------------
+        - Arg1 (number): Port ID.
+        - Returns str: A string with all the available protocols configured on the port.
 
-            Returns:
-                str: A string with all the available protocols configured on the port.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -682,16 +665,15 @@ class Ixnetwork(Base):
     def GetCsvColumnNames(self, *args, **kwargs):
         """Executes the getCsvColumnNames operation on the server.
 
-        getCsvColumnNames(Arg1:href)list
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): 
+        getCsvColumnNames(Arg1=href)list
+        --------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): 
+        - Returns list(str): 
 
-            Returns:
-                list(str): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -703,12 +685,10 @@ class Ixnetwork(Base):
 
         This command sets the current Ixia file format type version.
 
-            Returns:
-                number: Returns current Ixia file format type version.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getCurrentIxiaFileFormatTypeVersion', payload=payload, response_object=None)
@@ -718,12 +698,10 @@ class Ixnetwork(Base):
 
         Gets the default snapshot settings.
 
-            Returns:
-                list(str): An array with settings.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('GetDefaultSnapshotSettings', payload=payload, response_object=None)
@@ -733,16 +711,15 @@ class Ixnetwork(Base):
 
         This exec returns number of AppLibrary Slot License installed in the chassis.
 
-        getInstalledSlotLicenseCount(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): The IPv4 address of the chassis.
+        getInstalledSlotLicenseCount(Arg1=string)number
+        -----------------------------------------------
+        - Arg1 (str): The IPv4 address of the chassis.
+        - Returns number: The number of AppLibrary Slot License installed in the chassis.
 
-            Returns:
-                number: The number of AppLibrary Slot License installed in the chassis.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -754,16 +731,15 @@ class Ixnetwork(Base):
 
         The command to get intersection ports for the protocols.
 
-        getIntersectionPortsForProtocols(Arg1:list)string
-            Args:
-                args[0] is Arg1 (list(str)): A list of protocol names.
+        getIntersectionPortsForProtocols(Arg1=list)string
+        -------------------------------------------------
+        - Arg1 (list(str)): A list of protocol names.
+        - Returns str: The list of port IDs that have all the given protocols configured.
 
-            Returns:
-                str: The list of port IDs that have all the given protocols configured.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -775,16 +751,15 @@ class Ixnetwork(Base):
 
         Obtain IxVM card ID by providing management IP address.
 
-        getIxVmCardByIp(Arg1:string)number
-            Args:
-                args[0] is Arg1 (str): Management IP address of the card.
+        getIxVmCardByIp(Arg1=string)number
+        ----------------------------------
+        - Arg1 (str): Management IP address of the card.
+        - Returns number: Returns the card ID which has corresponding IP address on the management interface.
 
-            Returns:
-                number: Returns the card ID which has corresponding IP address on the management interface.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -796,12 +771,10 @@ class Ixnetwork(Base):
 
         Retrieve memory usage information
 
-            Returns:
-                str: String containing memory usage: virtual, private, peak virtual bytes and bytes in all heaps
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getMemoryUsageInfo', payload=payload, response_object=None)
@@ -809,12 +782,10 @@ class Ixnetwork(Base):
     def GetNetworkGroupSize(self):
         """Executes the getNetworkGroupSize operation on the server.
 
-            Returns:
-                list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:list[dict(arg1:str,arg2:number)])): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getNetworkGroupSize', payload=payload, response_object=None)
@@ -824,16 +795,15 @@ class Ixnetwork(Base):
 
         The command to get ports for the protocol.
 
-        getPortsForProtocol(Arg1:string)string
-            Args:
-                args[0] is Arg1 (str): Protocol name.
+        getPortsForProtocol(Arg1=string)string
+        --------------------------------------
+        - Arg1 (str): Protocol name.
+        - Returns str: A string with all the port IDs having the protocol configured.
 
-            Returns:
-                str: A string with all the port IDs having the protocol configured.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -845,12 +815,10 @@ class Ixnetwork(Base):
 
         Fetch the memory usage information by RB protocols.
 
-            Returns:
-                str: Returns memory usage information by RB protocols.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getRbMemoryUsageInfo', payload=payload, response_object=None)
@@ -860,14 +828,15 @@ class Ixnetwork(Base):
 
         It will get the recommended settings for the given copper type. Available choices are: oneMeter, threeMeters, fiveMeters.
 
-        getRecommendedSettings(Arg1:string, Arg2:list)
-            Args:
-                args[0] is Arg1 (str): 
-                args[1] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port])): 
+        getRecommendedSettings(Arg1=string, Arg2=list)
+        ----------------------------------------------
+        - Arg1 (str): 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -879,16 +848,15 @@ class Ixnetwork(Base):
 
         This exec returns a list of slots/cards of the chassis that are currently using the AppLibrary Slot Licenses.
 
-        getSlotLicenseInUse(Arg1:string)list
-            Args:
-                args[0] is Arg1 (str): The IPv4 address of the chassis.
+        getSlotLicenseInUse(Arg1=string)list
+        ------------------------------------
+        - Arg1 (str): The IPv4 address of the chassis.
+        - Returns list(number): An array of slot/card numbers of the chassis that currently checked-out AppLibrary Slot Licenses.
 
-            Returns:
-                list(number): An array of slot/card numbers of the chassis that currently checked-out AppLibrary Slot Licenses.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -900,9 +868,10 @@ class Ixnetwork(Base):
 
         Get TAP Settings for all the connected chassis.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getTapSettings', payload=payload, response_object=None)
@@ -910,12 +879,10 @@ class Ixnetwork(Base):
     def GetTopologyStatus(self):
         """Executes the getTopologyStatus operation on the server.
 
-            Returns:
-                list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*],arg2:list[dict(arg1:str,arg2:number)],arg3:str[notstarted\~starting\~started\~stopping\~error\~mixed])): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('getTopologyStatus', payload=payload, response_object=None)
@@ -925,16 +892,15 @@ class Ixnetwork(Base):
 
         The command to get union ports for the protocols.
 
-        getUnionPortsForProtocols(Arg1:list)string
-            Args:
-                args[0] is Arg1 (list(str)): A list of protocol names.
+        getUnionPortsForProtocols(Arg1=list)string
+        ------------------------------------------
+        - Arg1 (list(str)): A list of protocol names.
+        - Returns str: The list of port IDs that have at least one of the given protocols configured.
 
-            Returns:
-                str: The list of port IDs that have at least one of the given protocols configured.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -946,16 +912,15 @@ class Ixnetwork(Base):
 
         Perform hard reboot on virtual cards.
 
-        hwRebootCardByIDs(Arg1:list)bool
-            Args:
-                args[0] is Arg1 (list(number)): An array of card IDs.
+        hwRebootCardByIDs(Arg1=list)bool
+        --------------------------------
+        - Arg1 (list(number)): An array of card IDs.
+        - Returns bool: Returns whether or not the command is successful.
 
-            Returns:
-                bool: Returns whether or not the command is successful.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -967,21 +932,21 @@ class Ixnetwork(Base):
 
         Executing this command sends IGMP join message.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpJoin(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): This is a multicast IPv4 address as an argument to igmpJoin.
+        igmpJoin(Arg1=string)
+        ---------------------
+        - Arg1 (str): This is a multicast IPv4 address as an argument to igmpJoin.
 
-        igmpJoin(Arg1:string, Arg2:number)
-            Args:
-                args[0] is Arg1 (str): This is a multicast IPv4 address as an argument to igmpJoin.
-                args[1] is Arg2 (number): This is an integer value as an argument to igmpJoin.
+        igmpJoin(Arg1=string, Arg2=number)
+        ----------------------------------
+        - Arg1 (str): This is a multicast IPv4 address as an argument to igmpJoin.
+        - Arg2 (number): This is an integer value as an argument to igmpJoin.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -993,21 +958,21 @@ class Ixnetwork(Base):
 
         Executing this command sends IGMP leave message.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpLeave(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): This is a multicast IPv4 address as an argument to igmpLeave.
+        igmpLeave(Arg1=string)
+        ----------------------
+        - Arg1 (str): This is a multicast IPv4 address as an argument to igmpLeave.
 
-        igmpLeave(Arg1:string, Arg2:number)
-            Args:
-                args[0] is Arg1 (str): This is a multicast IPv4 address as an argument to igmpLeave.
-                args[1] is Arg2 (number): This is an integer value as an argument to igmpLeave.
+        igmpLeave(Arg1=string, Arg2=number)
+        -----------------------------------
+        - Arg1 (str): This is a multicast IPv4 address as an argument to igmpLeave.
+        - Arg2 (number): This is an integer value as an argument to igmpLeave.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1019,13 +984,14 @@ class Ixnetwork(Base):
 
         Imports a legacy IxAutomate configuration from the specified file.
 
-        import(File:string)
-            Args:
-                args[0] is File (str): The IxAutomate configuration file that will be imported.
+        import(File=string)
+        -------------------
+        - File (str): The IxAutomate configuration file that will be imported.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1037,13 +1003,14 @@ class Ixnetwork(Base):
 
         Load an existing configuration file.
 
-        loadConfig(Arg1:href)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A readFrom file handle
+        loadConfig(Arg1=href)
+        ---------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A readFrom file handle
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1055,16 +1022,15 @@ class Ixnetwork(Base):
 
         Load a chassis topology from file.
 
-        loadTopology(Arg1:string)string
-            Args:
-                args[0] is Arg1 (str): Path to the CSV configuration file.
+        loadTopology(Arg1=string)string
+        -------------------------------
+        - Arg1 (str): Path to the CSV configuration file.
+        - Returns str: Returns an array of objects containing information about each port from the loaded chassis topology.
 
-            Returns:
-                str: Returns an array of objects containing information about each port from the loaded chassis topology.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1076,25 +1042,25 @@ class Ixnetwork(Base):
 
         This command will merge one offline capture with on running capture.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        mergeCapture(Arg1:string, Arg2:href, Arg3:enum, Arg4:string)
-            Args:
-                args[0] is Arg1 (str): Full path to the capture file.
-                args[1] is Arg2 (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=capture)): The port capture object.
-                args[2] is Arg3 (str(control|data)): The type of the capture, either data or control.
-                args[3] is Arg4 (str): The full path where the resulted merged capture will be saved, the resulted capture name needs to contain extension also.
+        mergeCapture(Arg1=string, Arg2=href, Arg3=enum, Arg4=string)
+        ------------------------------------------------------------
+        - Arg1 (str): Full path to the capture file.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The port capture object.
+        - Arg3 (str(control | data)): The type of the capture, either data or control.
+        - Arg4 (str): The full path where the resulted merged capture will be saved, the resulted capture name needs to contain extension also.
 
-        mergeCapture(Arg1:string, Arg2:string, Arg3:string)
-            Args:
-                args[0] is Arg1 (str): Full path to the first capture file.
-                args[1] is Arg2 (str): Full path to the second capture file.
-                args[2] is Arg3 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
+        mergeCapture(Arg1=string, Arg2=string, Arg3=string)
+        ---------------------------------------------------
+        - Arg1 (str): Full path to the first capture file.
+        - Arg2 (str): Full path to the second capture file.
+        - Arg3 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1106,9 +1072,10 @@ class Ixnetwork(Base):
 
         Clear the current configuration and create an empty configuration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('newConfig', payload=payload, response_object=None)
@@ -1118,9 +1085,10 @@ class Ixnetwork(Base):
 
         Perform hard reboot on the connected virtual chassis.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('rebootVirtualChassis', payload=payload, response_object=None)
@@ -1130,15 +1098,16 @@ class Ixnetwork(Base):
 
         Rebuild the chassis topology using automatically discovered appliances.
 
-        rebuildChassisTopology(Arg1:string, Arg2:bool, Arg3:bool)
-            Args:
-                args[0] is Arg1 (str): IxNetwork version that should be used to filter appliances.
-                args[1] is Arg2 (bool): Flag that enables reconfiguration on the same slots for the previous cards.
-                args[2] is Arg3 (bool): Promiscuous mode.
+        rebuildChassisTopology(Arg1=string, Arg2=bool, Arg3=bool)
+        ---------------------------------------------------------
+        - Arg1 (str): IxNetwork version that should be used to filter appliances.
+        - Arg2 (bool): Flag that enables reconfiguration on the same slots for the previous cards.
+        - Arg3 (bool): Promiscuous mode.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1150,12 +1119,10 @@ class Ixnetwork(Base):
 
         Return a list of discovered machines after performing rediscovery on all systems.
 
-            Returns:
-                str: Returns a list of discovered machines in XML format.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('rediscoverAppliances', payload=payload, response_object=None)
@@ -1165,13 +1132,14 @@ class Ixnetwork(Base):
 
         NOT DEFINED
 
-        refresh(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): NOT DEFINED
+        refresh(Arg1=string)
+        --------------------
+        - Arg1 (str): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1183,12 +1151,10 @@ class Ixnetwork(Base):
 
         Obtain updated configuration of the chassis topology.
 
-            Returns:
-                str: Returns an array of objects containing information about each port from the new chassis topology.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('refreshChassisTopology', payload=payload, response_object=None)
@@ -1198,9 +1164,10 @@ class Ixnetwork(Base):
 
         Deletes all the views that were created from using this API.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('removeAllTclViews', payload=payload, response_object=None)
@@ -1210,21 +1177,21 @@ class Ixnetwork(Base):
 
         This command saves the current capture data to the specified directory.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        DEPRECATED saveCapture(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): Directory for saving the captures
+        DEPRECATED saveCapture(Arg1=string)
+        -----------------------------------
+        - Arg1 (str): Directory for saving the captures
 
-        DEPRECATED saveCapture(Arg1:string, Arg2:string)
-            Args:
-                args[0] is Arg1 (str): Directory for saving the captures
-                args[1] is Arg2 (str): Suffix used for naming the capture files
+        DEPRECATED saveCapture(Arg1=string, Arg2=string)
+        ------------------------------------------------
+        - Arg1 (str): Directory for saving the captures
+        - Arg2 (str): Suffix used for naming the capture files
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1236,27 +1203,23 @@ class Ixnetwork(Base):
 
         Save existing capture files to a new user specified location
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        saveCaptureFiles(Arg1:string)list
-            Args:
-                args[0] is Arg1 (str): Directory for saving the captures
+        saveCaptureFiles(Arg1=string)list
+        ---------------------------------
+        - Arg1 (str): Directory for saving the captures
+        - Returns list(str): A list of relative paths of all the captures saved
 
-            Returns:
-                list(str): A list of relative paths of all the captures saved
+        saveCaptureFiles(Arg1=string, Arg2=string)list
+        ----------------------------------------------
+        - Arg1 (str): Directory for saving the captures
+        - Arg2 (str): Suffix used for naming the capture files
+        - Returns list(str): A list of relative paths of all the captures saved
 
-        saveCaptureFiles(Arg1:string, Arg2:string)list
-            Args:
-                args[0] is Arg1 (str): Directory for saving the captures
-                args[1] is Arg2 (str): Suffix used for naming the capture files
-
-            Returns:
-                list(str): A list of relative paths of all the captures saved
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1268,13 +1231,14 @@ class Ixnetwork(Base):
 
         Save the current configuration to a file.
 
-        saveConfig(Arg1:href)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+        saveConfig(Arg1=href)
+        ---------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1286,40 +1250,35 @@ class Ixnetwork(Base):
 
         Create a script of the current configuration.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        scriptgen()string
+        DEPRECATED scriptgen(Arg1=href)
+        -------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command.
 
-            Returns:
-                str: A string value.
+        DEPRECATED scriptgen(Arg1=href, Arg2=string)
+        --------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+        - Arg2 (str): A string value.
 
-        DEPRECATED scriptgen(Arg1:href)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command.
+        DEPRECATED scriptgen(Arg1=href, Arg2=string, Arg3=list)
+        -------------------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+        - Arg2 (str): The type of script to create.
+        - Arg3 (list(str)): The scriptgen options.
 
-        DEPRECATED scriptgen(Arg1:href, Arg2:string)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
-                args[1] is Arg2 (str): A string value.
+        DEPRECATED scriptgen(Arg1=href, Arg2=string, Arg3=list, Arg4=number, Arg5=number)
+        ---------------------------------------------------------------------------------
+        - Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+        - Arg2 (str): A string value.
+        - Arg3 (list(str)): A list of string values.
+        - Arg4 (number): An integer.
+        - Arg5 (number): An integer.
 
-        DEPRECATED scriptgen(Arg1:href, Arg2:string, Arg3:list)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
-                args[1] is Arg2 (str): The type of script to create.
-                args[2] is Arg3 (list(str)): The scriptgen options.
-
-        DEPRECATED scriptgen(Arg1:href, Arg2:string, Arg3:list, Arg4:number, Arg5:number)
-            Args:
-                args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
-                args[1] is Arg2 (str): A string value.
-                args[2] is Arg3 (list(str)): A list of string values.
-                args[3] is Arg4 (number): An integer.
-                args[4] is Arg5 (number): An integer.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1331,16 +1290,15 @@ class Ixnetwork(Base):
 
         Select nodes and properties from the hierarchy
 
-        select(Selects:list)string
-            Args:
-                args[0] is Selects (list(dict(from:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
+        select(Selects=list)string
+        --------------------------
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
+        - Returns str: A json encoded string of result sets.The encoded string will contain a list of result sets with each select producing a result set.
 
-            Returns:
-                str: A json encoded string of result sets.The encoded string will contain a list of result sets with each select producing a result set.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1352,9 +1310,10 @@ class Ixnetwork(Base):
 
         Send ARP for all interfaces.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('sendArpAll', payload=payload, response_object=None)
@@ -1364,9 +1323,10 @@ class Ixnetwork(Base):
 
         Send neighbor solicitation to all interfaces.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('sendNsAll', payload=payload, response_object=None)
@@ -1376,9 +1336,10 @@ class Ixnetwork(Base):
 
         Send router solicitation to all interfaces.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('sendRsAll', payload=payload, response_object=None)
@@ -1388,13 +1349,14 @@ class Ixnetwork(Base):
 
         Disables GuardRail for TCL.
 
-        setGuardRailVersion(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): Deprecated.
+        setGuardRailVersion(Arg1=string)
+        --------------------------------
+        - Arg1 (str): Deprecated.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1404,13 +1366,14 @@ class Ixnetwork(Base):
     def SetLoggingLevel(self, *args, **kwargs):
         """Executes the setLoggingLevel operation on the server.
 
-        setLoggingLevel(Arg1:enum)
-            Args:
-                args[0] is Arg1 (str(kDebug|kError|kFatal|kInfo|kNothing|kWarn)): 
+        setLoggingLevel(Arg1=enum)
+        --------------------------
+        - Arg1 (str(kDebug | kError | kFatal | kInfo | kNothing | kWarn)): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1422,13 +1385,14 @@ class Ixnetwork(Base):
 
         Set the port transmit duration.
 
-        setPortTransmitDuration(Arg1:list)
-            Args:
-                args[0] is Arg1 (list(dict(arg1:number,arg2:list[str[None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/traffic|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem|/api/v1/sessions/1/ixnetwork/traffic?deepchild=highLevelStream|/api/v1/sessions/1/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
+        setPortTransmitDuration(Arg1=list)
+        ----------------------------------
+        - Arg1 (list(dict(arg1:number,arg2:list[str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/traffic | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream | /api/v1/sessions/1/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1440,13 +1404,14 @@ class Ixnetwork(Base):
 
         Set the settings of snapshot to default.
 
-        SetSnapshotSettingsToDefault(Arg1:string)
-            Args:
-                args[0] is Arg1 (str): The setting name.
+        SetSnapshotSettingsToDefault(Arg1=string)
+        -----------------------------------------
+        - Arg1 (str): The setting name.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1458,9 +1423,10 @@ class Ixnetwork(Base):
 
         Send TAP Settings to IxServer for all the connected chassis.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('setTapSettings', payload=payload, response_object=None)
@@ -1470,18 +1436,16 @@ class Ixnetwork(Base):
 
         Starts all configured protocols under /vport/protocols, /vport/protocolStack and /topology
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startAllProtocols()
+        startAllProtocols(Arg1=enum)
+        ----------------------------
+        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
 
-        startAllProtocols(Arg1:enum)
-            Args:
-                args[0] is Arg1 (str(async|sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1493,9 +1457,10 @@ class Ixnetwork(Base):
 
         The command to start the packet capture for the selected port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('startCapture', payload=payload, response_object=None)
@@ -1505,18 +1470,16 @@ class Ixnetwork(Base):
 
         Starts the first Quick Test found in the current configuration.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startTestConfiguration()
+        startTestConfiguration(TestName=string)
+        ---------------------------------------
+        - TestName (str): The name of the test.
 
-        startTestConfiguration(TestName:string)
-            Args:
-                args[0] is TestName (str): The name of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1528,18 +1491,16 @@ class Ixnetwork(Base):
 
         Stops all configured protocols under /vport/protocols, /vport/protocolStack and /topology
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stopAllProtocols()
+        stopAllProtocols(Arg1=enum)
+        ---------------------------
+        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
 
-        stopAllProtocols(Arg1:enum)
-            Args:
-                args[0] is Arg1 (str(async|sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1551,9 +1512,10 @@ class Ixnetwork(Base):
 
         The command to stop the packet capture on the selected port or group of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('stopCapture', payload=payload, response_object=None)
@@ -1563,9 +1525,10 @@ class Ixnetwork(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = None
         return self._execute('stopTestConfiguration', payload=payload, response_object=None)
@@ -1575,13 +1538,14 @@ class Ixnetwork(Base):
 
         Make the statistics timestamps relative to the time on the client machine or relative to the test start.
 
-        syncStatisticsStartTimeWithClientClock(Arg1:bool)
-            Args:
-                args[0] is Arg1 (bool): True = relative to system time, false = relative to test start.
+        syncStatisticsStartTimeWithClientClock(Arg1=bool)
+        -------------------------------------------------
+        - Arg1 (bool): True = relative to system time, false = relative to test start.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1593,14 +1557,15 @@ class Ixnetwork(Base):
 
         Performs Snapshot CSV on the given views.
 
-        TakeViewCSVSnapshot(Arg1:list, Arg2:list)
-            Args:
-                args[0] is Arg1 (list(str)): A list of views for which to take a snapshot.
-                args[1] is Arg2 (list(str)): A list of settings, given in the form of SettingName:SettingValue.
+        TakeViewCSVSnapshot(Arg1=list, Arg2=list)
+        -----------------------------------------
+        - Arg1 (list(str)): A list of views for which to take a snapshot.
+        - Arg2 (list(str)): A list of settings, given in the form of SettingName:SettingValue.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
@@ -1612,13 +1577,14 @@ class Ixnetwork(Base):
 
         Wait for the license broadcast to be complete.
 
-        waitForLicenseBroadcast(Arg1:number)
-            Args:
-                args[0] is Arg1 (number): Seconds to wait.
+        waitForLicenseBroadcast(Arg1=number)
+        ------------------------------------
+        - Arg1 (number): Seconds to wait.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]

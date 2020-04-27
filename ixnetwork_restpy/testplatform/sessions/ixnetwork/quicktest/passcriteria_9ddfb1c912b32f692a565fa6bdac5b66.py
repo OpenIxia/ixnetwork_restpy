@@ -37,10 +37,10 @@ trial passed or failed.
 
     @property
     def DataErrorThresholdMode(self):
-        """The mode in which the interger value for the threshold data error is measured.
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): The mode in which the interger value for the threshold data error is measured.
         """
         return self._get_attribute('dataErrorThresholdMode')
     @DataErrorThresholdMode.setter
@@ -49,10 +49,10 @@ trial passed or failed.
 
     @property
     def DataErrorThresholdValue(self):
-        """The interger value for the threshold data error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interger value for the threshold data error.
         """
         return self._get_attribute('dataErrorThresholdValue')
     @DataErrorThresholdValue.setter
@@ -61,10 +61,10 @@ trial passed or failed.
 
     @property
     def EnableDataIntegrityPassFail(self):
-        """If true, enables data integrity test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables data integrity test.
         """
         return self._get_attribute('enableDataIntegrityPassFail')
     @EnableDataIntegrityPassFail.setter
@@ -73,10 +73,10 @@ trial passed or failed.
 
     @property
     def EnableLatencyPassFail(self):
-        """If true, the latency pass fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the latency pass fail criteria is set.
         """
         return self._get_attribute('enableLatencyPassFail')
     @EnableLatencyPassFail.setter
@@ -85,10 +85,10 @@ trial passed or failed.
 
     @property
     def EnablePassFail(self):
-        """If true, the pass or fail conditions are applied to each trial of the test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the pass or fail conditions are applied to each trial of the test.
         """
         return self._get_attribute('enablePassFail')
     @EnablePassFail.setter
@@ -97,10 +97,10 @@ trial passed or failed.
 
     @property
     def EnableRatePassFail(self):
-        """If true, the rate of pass and fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the rate of pass and fail criteria is set.
         """
         return self._get_attribute('enableRatePassFail')
     @EnableRatePassFail.setter
@@ -109,10 +109,10 @@ trial passed or failed.
 
     @property
     def EnableSequenceErrorsPassFail(self):
-        """If true, the sequence errors for the pass and fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the sequence errors for the pass and fail criteria is set.
         """
         return self._get_attribute('enableSequenceErrorsPassFail')
     @EnableSequenceErrorsPassFail.setter
@@ -121,10 +121,10 @@ trial passed or failed.
 
     @property
     def EnableStandardDeviationPassFail(self):
-        """If true, Standard Deviation for the Pass/Fail criteria is set.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, Standard Deviation for the Pass/Fail criteria is set.
         """
         return self._get_attribute('enableStandardDeviationPassFail')
     @EnableStandardDeviationPassFail.setter
@@ -133,10 +133,10 @@ trial passed or failed.
 
     @property
     def LatencyThresholdMode(self):
-        """The latency threshold mode.
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): The latency threshold mode.
         """
         return self._get_attribute('latencyThresholdMode')
     @LatencyThresholdMode.setter
@@ -145,10 +145,10 @@ trial passed or failed.
 
     @property
     def LatencyThresholdScale(self):
-        """The scale by which leagcy threshold value is to be measured.
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): The scale by which leagcy threshold value is to be measured.
         """
         return self._get_attribute('latencyThresholdScale')
     @LatencyThresholdScale.setter
@@ -157,10 +157,10 @@ trial passed or failed.
 
     @property
     def LatencyThresholdValue(self):
-        """The value by which leagcy threshold value is to be measured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which leagcy threshold value is to be measured.
         """
         return self._get_attribute('latencyThresholdValue')
     @LatencyThresholdValue.setter
@@ -169,10 +169,10 @@ trial passed or failed.
 
     @property
     def LatencyVarThresholdMode(self):
-        """The mode by which the variation in latency threshold is measured.
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): The mode by which the variation in latency threshold is measured.
         """
         return self._get_attribute('latencyVarThresholdMode')
     @LatencyVarThresholdMode.setter
@@ -181,10 +181,10 @@ trial passed or failed.
 
     @property
     def LatencyVariationThresholdScale(self):
-        """The scale by which the variation in latency threshold is measured.
-
-        Returns:
-            str(ms|ns|us)
+        """
+        Returns
+        -------
+        - str(ms | ns | us): The scale by which the variation in latency threshold is measured.
         """
         return self._get_attribute('latencyVariationThresholdScale')
     @LatencyVariationThresholdScale.setter
@@ -193,10 +193,10 @@ trial passed or failed.
 
     @property
     def LatencyVariationThresholdValue(self):
-        """The value by which the variation in latency threshold is measured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The value by which the variation in latency threshold is measured.
         """
         return self._get_attribute('latencyVariationThresholdValue')
     @LatencyVariationThresholdValue.setter
@@ -205,10 +205,10 @@ trial passed or failed.
 
     @property
     def PassCriteriaLoadRateMode(self):
-        """The pass criteria load rate mode.
-
-        Returns:
-            str(average|minimum)
+        """
+        Returns
+        -------
+        - str(average | minimum): The pass criteria load rate mode.
         """
         return self._get_attribute('passCriteriaLoadRateMode')
     @PassCriteriaLoadRateMode.setter
@@ -217,10 +217,10 @@ trial passed or failed.
 
     @property
     def PassCriteriaLoadRateScale(self):
-        """The pass criteria load rate scale.
-
-        Returns:
-            str(fps|gbps|kbps|mbps|percent)
+        """
+        Returns
+        -------
+        - str(fps | gbps | kbps | mbps | percent): The pass criteria load rate scale.
         """
         return self._get_attribute('passCriteriaLoadRateScale')
     @PassCriteriaLoadRateScale.setter
@@ -229,10 +229,10 @@ trial passed or failed.
 
     @property
     def PassCriteriaLoadRateValue(self):
-        """The pass criteria load rate value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The pass criteria load rate value.
         """
         return self._get_attribute('passCriteriaLoadRateValue')
     @PassCriteriaLoadRateValue.setter
@@ -241,10 +241,10 @@ trial passed or failed.
 
     @property
     def PassFailFrequency(self):
-        """NOT DEFINED
-
-        Returns:
-            str(framesizes|trials)
+        """
+        Returns
+        -------
+        - str(framesizes | trials): NOT DEFINED
         """
         return self._get_attribute('passFailFrequency')
     @PassFailFrequency.setter
@@ -253,10 +253,10 @@ trial passed or failed.
 
     @property
     def SeqErrorsThresholdMode(self):
-        """The threshold mode of the sequence errors.
-
-        Returns:
-            str(average|maximum)
+        """
+        Returns
+        -------
+        - str(average | maximum): The threshold mode of the sequence errors.
         """
         return self._get_attribute('seqErrorsThresholdMode')
     @SeqErrorsThresholdMode.setter
@@ -265,10 +265,10 @@ trial passed or failed.
 
     @property
     def SeqErrorsThresholdValue(self):
-        """The threshold value of the sequence errors.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The threshold value of the sequence errors.
         """
         return self._get_attribute('seqErrorsThresholdValue')
     @SeqErrorsThresholdValue.setter
@@ -276,43 +276,46 @@ trial passed or failed.
         self._set_attribute('seqErrorsThresholdValue', value)
 
     def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
-        """Updates a child instance of passCriteria on the server.
+        """Updates passCriteria resource on the server.
 
-        Args:
-            DataErrorThresholdMode (str(average|maximum)): The mode in which the interger value for the threshold data error is measured.
-            DataErrorThresholdValue (number): The interger value for the threshold data error.
-            EnableDataIntegrityPassFail (bool): If true, enables data integrity test.
-            EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
-            EnablePassFail (bool): If true, the pass or fail conditions are applied to each trial of the test.
-            EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
-            EnableSequenceErrorsPassFail (bool): If true, the sequence errors for the pass and fail criteria is set.
-            EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
-            LatencyThresholdMode (str(average|maximum)): The latency threshold mode.
-            LatencyThresholdScale (str(ms|ns|us)): The scale by which leagcy threshold value is to be measured.
-            LatencyThresholdValue (number): The value by which leagcy threshold value is to be measured.
-            LatencyVarThresholdMode (str(average|maximum)): The mode by which the variation in latency threshold is measured.
-            LatencyVariationThresholdScale (str(ms|ns|us)): The scale by which the variation in latency threshold is measured.
-            LatencyVariationThresholdValue (number): The value by which the variation in latency threshold is measured.
-            PassCriteriaLoadRateMode (str(average|minimum)): The pass criteria load rate mode.
-            PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass criteria load rate scale.
-            PassCriteriaLoadRateValue (number): The pass criteria load rate value.
-            PassFailFrequency (str(framesizes|trials)): NOT DEFINED
-            SeqErrorsThresholdMode (str(average|maximum)): The threshold mode of the sequence errors.
-            SeqErrorsThresholdValue (number): The threshold value of the sequence errors.
+        Args
+        ----
+        - DataErrorThresholdMode (str(average | maximum)): The mode in which the interger value for the threshold data error is measured.
+        - DataErrorThresholdValue (number): The interger value for the threshold data error.
+        - EnableDataIntegrityPassFail (bool): If true, enables data integrity test.
+        - EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+        - EnablePassFail (bool): If true, the pass or fail conditions are applied to each trial of the test.
+        - EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+        - EnableSequenceErrorsPassFail (bool): If true, the sequence errors for the pass and fail criteria is set.
+        - EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
+        - LatencyThresholdMode (str(average | maximum)): The latency threshold mode.
+        - LatencyThresholdScale (str(ms | ns | us)): The scale by which leagcy threshold value is to be measured.
+        - LatencyThresholdValue (number): The value by which leagcy threshold value is to be measured.
+        - LatencyVarThresholdMode (str(average | maximum)): The mode by which the variation in latency threshold is measured.
+        - LatencyVariationThresholdScale (str(ms | ns | us)): The scale by which the variation in latency threshold is measured.
+        - LatencyVariationThresholdValue (number): The value by which the variation in latency threshold is measured.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The pass criteria load rate mode.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The pass criteria load rate scale.
+        - PassCriteriaLoadRateValue (number): The pass criteria load rate value.
+        - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
+        - SeqErrorsThresholdMode (str(average | maximum)): The threshold mode of the sequence errors.
+        - SeqErrorsThresholdValue (number): The threshold value of the sequence errors.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -320,9 +323,10 @@ trial passed or failed.
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -330,12 +334,10 @@ trial passed or failed.
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -345,9 +347,10 @@ trial passed or failed.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -357,12 +360,10 @@ trial passed or failed.
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -372,24 +373,17 @@ trial passed or failed.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -401,18 +395,16 @@ trial passed or failed.
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -424,9 +416,10 @@ trial passed or failed.
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -436,12 +429,10 @@ trial passed or failed.
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

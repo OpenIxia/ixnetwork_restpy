@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class WriteSetFieldMissLearnedInfo(Base):
     """NOT DEFINED
-    The WriteSetFieldMissLearnedInfo class encapsulates a list of writeSetFieldMissLearnedInfo resources that is managed by the system.
+    The WriteSetFieldMissLearnedInfo class encapsulates a list of writeSetFieldMissLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the WriteSetFieldMissLearnedInfo.find() method.
     """
 
@@ -37,61 +37,68 @@ class WriteSetFieldMissLearnedInfo(Base):
 
     @property
     def NextTableIds(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('nextTableIds')
 
     @property
     def Property(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('property')
 
     @property
     def SupportedField(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('supportedField')
 
     def find(self, NextTableIds=None, Property=None, SupportedField=None):
-        """Finds and retrieves writeSetFieldMissLearnedInfo data from the server.
+        """Finds and retrieves writeSetFieldMissLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve writeSetFieldMissLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all writeSetFieldMissLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeSetFieldMissLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all writeSetFieldMissLearnedInfo resources from the server.
 
-        Args:
-            NextTableIds (str): NOT DEFINED
-            Property (str): NOT DEFINED
-            SupportedField (str): NOT DEFINED
+        Args
+        ----
+        - NextTableIds (str): NOT DEFINED
+        - Property (str): NOT DEFINED
+        - SupportedField (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching writeSetFieldMissLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching writeSetFieldMissLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of writeSetFieldMissLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the writeSetFieldMissLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the writeSetFieldMissLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

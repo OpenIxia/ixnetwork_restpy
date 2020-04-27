@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class ConfigElement(Base):
     """A grouping of endpoints under the Traffic Item per unique encapsulation/packet structure. The user sees each configElement as rows in the Pages of the wizard after the first page of the Wizard and also on the First Page under Endpoint sets as below. The user can then configure QOS, Frame Size, Rate etc per configElement. The configElements control the rate/frame size/qos properties of one or more flowGroups/highLevelStreams that are generated from the Traffic Item.
-    The ConfigElement class encapsulates a list of configElement resources that is managed by the system.
+    The ConfigElement class encapsulates a list of configElement resources that are managed by the system.
     A list of resources can be retrieved from the server using the ConfigElement.find() method.
     """
 
@@ -37,122 +37,122 @@ class ConfigElement(Base):
 
     @property
     def FramePayload(self):
-        """An instance of the FramePayload class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload.FramePayload): An instance of the FramePayload class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload.FramePayload)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
         return FramePayload(self)._select()
 
     @property
     def FrameRate(self):
-        """An instance of the FrameRate class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate.FrameRate): An instance of the FrameRate class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate.FrameRate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
         return FrameRate(self)._select()
 
     @property
     def FrameRateDistribution(self):
-        """An instance of the FrameRateDistribution class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution.FrameRateDistribution): An instance of the FrameRateDistribution class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution.FrameRateDistribution)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution import FrameRateDistribution
         return FrameRateDistribution(self)._select()
 
     @property
     def FrameSize(self):
-        """An instance of the FrameSize class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize.FrameSize): An instance of the FrameSize class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize.FrameSize)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
         return FrameSize(self)._select()
 
     @property
     def Stack(self):
-        """An instance of the Stack class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack.Stack): An instance of the Stack class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack.Stack)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
         return Stack(self)
 
     @property
     def StackLink(self):
-        """An instance of the StackLink class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink.StackLink): An instance of the StackLink class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink.StackLink)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
         return StackLink(self)
 
     @property
     def TransmissionControl(self):
-        """An instance of the TransmissionControl class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol.TransmissionControl): An instance of the TransmissionControl class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol.TransmissionControl)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
         return TransmissionControl(self)._select()
 
     @property
     def TransmissionDistribution(self):
-        """An instance of the TransmissionDistribution class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution.TransmissionDistribution): An instance of the TransmissionDistribution class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution.TransmissionDistribution)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution import TransmissionDistribution
         return TransmissionDistribution(self)
 
     @property
     def Crc(self):
-        """The Cyclic Redundancy Check frame of the configured encapsulation set.
-
-        Returns:
-            str(badCrc|goodCrc)
+        """
+        Returns
+        -------
+        - str(badCrc | goodCrc): The Cyclic Redundancy Check frame of the configured encapsulation set.
         """
         return self._get_attribute('crc')
     @Crc.setter
@@ -161,10 +161,10 @@ class ConfigElement(Base):
 
     @property
     def DestinationMacMode(self):
-        """The destination MAC address that is to be configured.
-
-        Returns:
-            str(arp|manual)
+        """
+        Returns
+        -------
+        - str(arp | manual): The destination MAC address that is to be configured.
         """
         return self._get_attribute('destinationMacMode')
     @DestinationMacMode.setter
@@ -173,10 +173,10 @@ class ConfigElement(Base):
 
     @property
     def EnableDisparityError(self):
-        """If true, enables disparity error
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables disparity error
         """
         return self._get_attribute('enableDisparityError')
     @EnableDisparityError.setter
@@ -185,28 +185,28 @@ class ConfigElement(Base):
 
     @property
     def EncapsulationName(self):
-        """Indicates the name of the encapsulation set.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the name of the encapsulation set.
         """
         return self._get_attribute('encapsulationName')
 
     @property
     def EndpointSetId(self):
-        """Indicates the identification of the endpoint set.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the identification of the endpoint set.
         """
         return self._get_attribute('endpointSetId')
 
     @property
     def PreambleCustomSize(self):
-        """Indicates the customized preamble size of the frame.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Indicates the customized preamble size of the frame.
         """
         return self._get_attribute('preambleCustomSize')
     @PreambleCustomSize.setter
@@ -215,10 +215,10 @@ class ConfigElement(Base):
 
     @property
     def PreambleFrameSizeMode(self):
-        """The preamble size to synchronize sender and receiver of the configured encapsulation set.
-
-        Returns:
-            str(auto|custom)
+        """
+        Returns
+        -------
+        - str(auto | custom): The preamble size to synchronize sender and receiver of the configured encapsulation set.
         """
         return self._get_attribute('preambleFrameSizeMode')
     @PreambleFrameSizeMode.setter
@@ -226,54 +226,63 @@ class ConfigElement(Base):
         self._set_attribute('preambleFrameSizeMode', value)
 
     def update(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
-        """Updates a child instance of configElement on the server.
+        """Updates configElement resource on the server.
 
-        Args:
-            Crc (str(badCrc|goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
-            DestinationMacMode (str(arp|manual)): The destination MAC address that is to be configured.
-            EnableDisparityError (bool): If true, enables disparity error
-            PreambleCustomSize (number): Indicates the customized preamble size of the frame.
-            PreambleFrameSizeMode (str(auto|custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        Args
+        ----
+        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
+        - EnableDisparityError (bool): If true, enables disparity error
+        - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, EncapsulationName=None, EndpointSetId=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
-        """Finds and retrieves configElement data from the server.
+        """Finds and retrieves configElement resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve configElement data from the server.
-        By default the find method takes no parameters and will retrieve all configElement data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve configElement resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all configElement resources from the server.
 
-        Args:
-            Crc (str(badCrc|goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
-            DestinationMacMode (str(arp|manual)): The destination MAC address that is to be configured.
-            EnableDisparityError (bool): If true, enables disparity error
-            EncapsulationName (str): Indicates the name of the encapsulation set.
-            EndpointSetId (number): Indicates the identification of the endpoint set.
-            PreambleCustomSize (number): Indicates the customized preamble size of the frame.
-            PreambleFrameSizeMode (str(auto|custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        Args
+        ----
+        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
+        - EnableDisparityError (bool): If true, enables disparity error
+        - EncapsulationName (str): Indicates the name of the encapsulation set.
+        - EndpointSetId (number): Indicates the identification of the endpoint set.
+        - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
 
-        Returns:
-            self: This instance with matching configElement data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching configElement resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of configElement data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the configElement data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the configElement resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

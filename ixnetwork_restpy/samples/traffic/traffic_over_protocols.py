@@ -1,15 +1,14 @@
 """Demonstrates creating a traffic item that uses ipv4 endpoints.
 
 """
+from ixnetwork_restpy import SessionAssistant
 
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # create 2 ipv4 endpoints
 ipv4_1 = ixnetwork.Topology.add(Vports=ixnetwork.Vport.add()).DeviceGroup.add().Ethernet.add().Ipv4.add(Name='Ipv4 West')

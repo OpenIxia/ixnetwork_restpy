@@ -36,10 +36,10 @@ class WriteActions(Base):
 
     @property
     def CopyTtlIn(self):
-        """If selected, table supports Copy TTL In Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Copy TTL In Write Actions.
         """
         return self._get_attribute('copyTtlIn')
     @CopyTtlIn.setter
@@ -48,10 +48,10 @@ class WriteActions(Base):
 
     @property
     def CopyTtlOut(self):
-        """If selected, table supports Copy TTL Out Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Copy TTL Out Write Actions.
         """
         return self._get_attribute('copyTtlOut')
     @CopyTtlOut.setter
@@ -60,10 +60,10 @@ class WriteActions(Base):
 
     @property
     def DecrementMplsTtl(self):
-        """If selected, table supports Decrement MPLS TTL Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Decrement MPLS TTL Write Actions.
         """
         return self._get_attribute('decrementMplsTtl')
     @DecrementMplsTtl.setter
@@ -72,10 +72,10 @@ class WriteActions(Base):
 
     @property
     def DecrementNetworkTtl(self):
-        """If selected, table supports Decrement Network TTL Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Decrement Network TTL Write Actions.
         """
         return self._get_attribute('decrementNetworkTtl')
     @DecrementNetworkTtl.setter
@@ -84,10 +84,10 @@ class WriteActions(Base):
 
     @property
     def Group(self):
-        """If selected, table supports Group Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Group Write Actions.
         """
         return self._get_attribute('group')
     @Group.setter
@@ -96,10 +96,10 @@ class WriteActions(Base):
 
     @property
     def Output(self):
-        """If selected, table supports Output Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Output Write Actions.
         """
         return self._get_attribute('output')
     @Output.setter
@@ -108,10 +108,10 @@ class WriteActions(Base):
 
     @property
     def PopMpls(self):
-        """If selected, table supports Pop MPLS Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Pop MPLS Write Actions.
         """
         return self._get_attribute('popMpls')
     @PopMpls.setter
@@ -120,10 +120,10 @@ class WriteActions(Base):
 
     @property
     def PopPbb(self):
-        """If selected, table supports Pop PBB Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Pop PBB Write Actions.
         """
         return self._get_attribute('popPbb')
     @PopPbb.setter
@@ -132,10 +132,10 @@ class WriteActions(Base):
 
     @property
     def PopVlan(self):
-        """If selected, table supports Pop VLAN Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Pop VLAN Write Actions.
         """
         return self._get_attribute('popVlan')
     @PopVlan.setter
@@ -144,10 +144,10 @@ class WriteActions(Base):
 
     @property
     def PushMpls(self):
-        """If selected, table supports Push MPLS Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push MPLS Write Actions.
         """
         return self._get_attribute('pushMpls')
     @PushMpls.setter
@@ -156,10 +156,10 @@ class WriteActions(Base):
 
     @property
     def PushPbb(self):
-        """If selected, table supports Push PBB Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push PBB Write Actions.
         """
         return self._get_attribute('pushPbb')
     @PushPbb.setter
@@ -168,10 +168,10 @@ class WriteActions(Base):
 
     @property
     def PushVlan(self):
-        """If selected, table supports Push VLAN Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Push VLAN Write Actions.
         """
         return self._get_attribute('pushVlan')
     @PushVlan.setter
@@ -180,10 +180,10 @@ class WriteActions(Base):
 
     @property
     def SetField(self):
-        """If selected, table supports Set Field Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Field Write Actions.
         """
         return self._get_attribute('setField')
     @SetField.setter
@@ -192,10 +192,10 @@ class WriteActions(Base):
 
     @property
     def SetMplsTtl(self):
-        """If selected, table supports Set MPLS TTL Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set MPLS TTL Write Actions.
         """
         return self._get_attribute('setMplsTtl')
     @SetMplsTtl.setter
@@ -204,10 +204,10 @@ class WriteActions(Base):
 
     @property
     def SetNetworkTtl(self):
-        """If selected, table supports Set Network TTL Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Network TTL Write Actions.
         """
         return self._get_attribute('setNetworkTtl')
     @SetNetworkTtl.setter
@@ -216,10 +216,10 @@ class WriteActions(Base):
 
     @property
     def SetQueue(self):
-        """If selected, table supports Set Queue Write Actions.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, table supports Set Queue Write Actions.
         """
         return self._get_attribute('setQueue')
     @SetQueue.setter
@@ -227,27 +227,29 @@ class WriteActions(Base):
         self._set_attribute('setQueue', value)
 
     def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-        """Updates a child instance of writeActions on the server.
+        """Updates writeActions resource on the server.
 
-        Args:
-            CopyTtlIn (bool): If selected, table supports Copy TTL In Write Actions.
-            CopyTtlOut (bool): If selected, table supports Copy TTL Out Write Actions.
-            DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL Write Actions.
-            DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
-            Group (bool): If selected, table supports Group Write Actions.
-            Output (bool): If selected, table supports Output Write Actions.
-            PopMpls (bool): If selected, table supports Pop MPLS Write Actions.
-            PopPbb (bool): If selected, table supports Pop PBB Write Actions.
-            PopVlan (bool): If selected, table supports Pop VLAN Write Actions.
-            PushMpls (bool): If selected, table supports Push MPLS Write Actions.
-            PushPbb (bool): If selected, table supports Push PBB Write Actions.
-            PushVlan (bool): If selected, table supports Push VLAN Write Actions.
-            SetField (bool): If selected, table supports Set Field Write Actions.
-            SetMplsTtl (bool): If selected, table supports Set MPLS TTL Write Actions.
-            SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
-            SetQueue (bool): If selected, table supports Set Queue Write Actions.
+        Args
+        ----
+        - CopyTtlIn (bool): If selected, table supports Copy TTL In Write Actions.
+        - CopyTtlOut (bool): If selected, table supports Copy TTL Out Write Actions.
+        - DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL Write Actions.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
+        - Group (bool): If selected, table supports Group Write Actions.
+        - Output (bool): If selected, table supports Output Write Actions.
+        - PopMpls (bool): If selected, table supports Pop MPLS Write Actions.
+        - PopPbb (bool): If selected, table supports Pop PBB Write Actions.
+        - PopVlan (bool): If selected, table supports Pop VLAN Write Actions.
+        - PushMpls (bool): If selected, table supports Push MPLS Write Actions.
+        - PushPbb (bool): If selected, table supports Push PBB Write Actions.
+        - PushVlan (bool): If selected, table supports Push VLAN Write Actions.
+        - SetField (bool): If selected, table supports Set Field Write Actions.
+        - SetMplsTtl (bool): If selected, table supports Set MPLS TTL Write Actions.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
+        - SetQueue (bool): If selected, table supports Set Queue Write Actions.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

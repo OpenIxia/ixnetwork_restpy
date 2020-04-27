@@ -36,10 +36,10 @@ class TxLane(Base):
 
     @property
     def IsSkewSynchronized(self):
-        """If true, skew value will apply for all the lanes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, skew value will apply for all the lanes.
         """
         return self._get_attribute('isSkewSynchronized')
     @IsSkewSynchronized.setter
@@ -48,10 +48,10 @@ class TxLane(Base):
 
     @property
     def LaneMappingType(self):
-        """Lane Mapping
-
-        Returns:
-            str(custom|decrement|default|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | decrement | default | increment | random): Lane Mapping
         """
         return self._get_attribute('laneMappingType')
     @LaneMappingType.setter
@@ -61,36 +61,36 @@ class TxLane(Base):
     @property
     def MaxSkewVal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('maxSkewVal')
 
     @property
     def MinSkewVal(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('minSkewVal')
 
     @property
     def NoOfLanes(self):
-        """Number of lanes
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of lanes
         """
         return self._get_attribute('noOfLanes')
 
     @property
     def PcsLane(self):
-        """Pcs Lane
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Pcs Lane
         """
         return self._get_attribute('pcsLane')
     @PcsLane.setter
@@ -100,27 +100,27 @@ class TxLane(Base):
     @property
     def PhysicalLanes(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('physicalLanes')
 
     @property
     def Resolution(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('resolution')
 
     @property
     def SkewValues(self):
-        """Skew Values
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Skew Values
         """
         return self._get_attribute('skewValues')
     @SkewValues.setter
@@ -129,10 +129,10 @@ class TxLane(Base):
 
     @property
     def SynchronizedSkewVal(self):
-        """Synchronized Skew Values
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Synchronized Skew Values
         """
         return self._get_attribute('synchronizedSkewVal')
     @SynchronizedSkewVal.setter
@@ -140,16 +140,18 @@ class TxLane(Base):
         self._set_attribute('synchronizedSkewVal', value)
 
     def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
-        """Updates a child instance of txLane on the server.
+        """Updates txLane resource on the server.
 
-        Args:
-            IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
-            LaneMappingType (str(custom|decrement|default|increment|random)): Lane Mapping
-            PcsLane (list(number)): Pcs Lane
-            SkewValues (list(number)): Skew Values
-            SynchronizedSkewVal (number): Synchronized Skew Values
+        Args
+        ----
+        - IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
+        - LaneMappingType (str(custom | decrement | default | increment | random)): Lane Mapping
+        - PcsLane (list(number)): Pcs Lane
+        - SkewValues (list(number)): Skew Values
+        - SynchronizedSkewVal (number): Synchronized Skew Values
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

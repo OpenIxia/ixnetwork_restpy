@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Vport(Base):
     """This is the virtual port hierarchy, which is used to configure IxNetwork.
-    The Vport class encapsulates a list of vport resources that is be managed by the user.
+    The Vport class encapsulates a list of vport resources that are managed by the user.
     A list of resources can be retrieved from the server using the Vport.find() method.
-    The list can be managed by the user by using the Vport.add() and Vport.remove() methods.
+    The list can be managed by using the Vport.add() and Vport.remove() methods.
     """
 
     __slots__ = ()
@@ -38,140 +38,140 @@ class Vport(Base):
 
     @property
     def Capture(self):
-        """An instance of the Capture class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture.Capture): An instance of the Capture class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture.Capture)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture import Capture
         return Capture(self)._select()
 
     @property
     def DiscoveredNeighbor(self):
-        """An instance of the DiscoveredNeighbor class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor.DiscoveredNeighbor): An instance of the DiscoveredNeighbor class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor.DiscoveredNeighbor)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor import DiscoveredNeighbor
         return DiscoveredNeighbor(self)
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface import Interface
         return Interface(self)
 
     @property
     def InterfaceDiscoveredAddress(self):
-        """An instance of the InterfaceDiscoveredAddress class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress.InterfaceDiscoveredAddress): An instance of the InterfaceDiscoveredAddress class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress.InterfaceDiscoveredAddress)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress import InterfaceDiscoveredAddress
         return InterfaceDiscoveredAddress(self)._select()
 
     @property
     def L1Config(self):
-        """An instance of the L1Config class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config.L1Config): An instance of the L1Config class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config.L1Config)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config import L1Config
         return L1Config(self)._select()
 
     @property
     def ProtocolStack(self):
-        """An instance of the ProtocolStack class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack.ProtocolStack): An instance of the ProtocolStack class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack.ProtocolStack)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack import ProtocolStack
         return ProtocolStack(self)._select()
 
     @property
     def Protocols(self):
-        """An instance of the Protocols class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols.Protocols): An instance of the Protocols class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols.Protocols)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols import Protocols
         return Protocols(self)
 
     @property
     def RateControlParameters(self):
-        """An instance of the RateControlParameters class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters.RateControlParameters): An instance of the RateControlParameters class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters.RateControlParameters)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters import RateControlParameters
         return RateControlParameters(self)._select()
 
     @property
     def ActualSpeed(self):
-        """The actual speed.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The actual speed.
         """
         return self._get_attribute('actualSpeed')
 
     @property
     def AssignedTo(self):
-        """(Read Only) A new port is assigned with this option.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) A new port is assigned with this option.
         """
         return self._get_attribute('assignedTo')
 
     @property
     def ConnectedTo(self):
-        """The physical port to which the unassigned port is assigned.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
         return self._get_attribute('connectedTo')
     @ConnectedTo.setter
@@ -180,82 +180,82 @@ class Vport(Base):
 
     @property
     def ConnectionInfo(self):
-        """Detailed information about location of the physical port that is assigned to this port configuration.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Detailed information about location of the physical port that is assigned to this port configuration.
         """
         return self._get_attribute('connectionInfo')
 
     @property
     def ConnectionState(self):
-        """Consolidated state of the vport. This combines the connection state with link state.
-
-        Returns:
-            str(assignedInUseByOther|assignedUnconnected|connectedLinkDown|connectedLinkUp|connecting|unassigned)
+        """
+        Returns
+        -------
+        - str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned): Consolidated state of the vport. This combines the connection state with link state.
         """
         return self._get_attribute('connectionState')
 
     @property
     def ConnectionStatus(self):
-        """A string describing the status of the hardware connected to this vport
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: A string describing the status of the hardware connected to this vport
         """
         return self._get_attribute('connectionStatus')
 
     @property
     def InternalId(self):
-        """For internal use.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: For internal use.
         """
         return self._get_attribute('internalId')
 
     @property
     def IsAvailable(self):
-        """If true, this virtual port is available for assigning to a physical port.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this virtual port is available for assigning to a physical port.
         """
         return self._get_attribute('isAvailable')
 
     @property
     def IsConnected(self):
-        """If true, indicates that the port is connected.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates that the port is connected.
         """
         return self._get_attribute('isConnected')
 
     @property
     def IsFramePreemptionSupported(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('isFramePreemptionSupported')
 
     @property
     def IsMapped(self):
-        """If true, this virtual port is mapped.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, this virtual port is mapped.
         """
         return self._get_attribute('isMapped')
 
     @property
     def IsPullOnly(self):
-        """(This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         """
         return self._get_attribute('isPullOnly')
     @IsPullOnly.setter
@@ -264,55 +264,55 @@ class Vport(Base):
 
     @property
     def IsVMPort(self):
-        """If true the hardware connected to this vport is a virtual machine port
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true the hardware connected to this vport is a virtual machine port
         """
         return self._get_attribute('isVMPort')
 
     @property
     def IxnChassisVersion(self):
-        """(Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
         """
         return self._get_attribute('ixnChassisVersion')
 
     @property
     def IxnClientVersion(self):
-        """(Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
         """
         return self._get_attribute('ixnClientVersion')
 
     @property
     def IxosChassisVersion(self):
-        """(Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         """
         return self._get_attribute('ixosChassisVersion')
 
     @property
     def Licenses(self):
-        """Number of licenses.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Number of licenses.
         """
         return self._get_attribute('licenses')
 
     @property
     def Name(self):
-        """The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         """
         return self._get_attribute('name')
     @Name.setter
@@ -321,10 +321,10 @@ class Vport(Base):
 
     @property
     def RxMode(self):
-        """The receive mode of the virtual port.
-
-        Returns:
-            str(capture|captureAndMeasure|measure|packetImpairment)
+        """
+        Returns
+        -------
+        - str(capture | captureAndMeasure | measure | packetImpairment): The receive mode of the virtual port.
         """
         return self._get_attribute('rxMode')
     @RxMode.setter
@@ -333,28 +333,28 @@ class Vport(Base):
 
     @property
     def State(self):
-        """DEPRECATED The virtual port state.
-
-        Returns:
-            str(busy|down|unassigned|up|versionMismatch)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(busy | down | unassigned | up | versionMismatch): The virtual port state.
         """
         return self._get_attribute('state')
 
     @property
     def StateDetail(self):
-        """DEPRECATED This attribute describes the state of the port.
-
-        Returns:
-            str(busy|cpuNotReady|idle|inActive|l1ConfigFailed|protocolsNotSupported|versionMismatched|waitingForCPUStatus)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus): This attribute describes the state of the port.
         """
         return self._get_attribute('stateDetail')
 
     @property
     def TraceEnabled(self):
-        """Enables/Disables rpf port trace for this port
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/Disables rpf port trace for this port
         """
         return self._get_attribute('traceEnabled')
     @TraceEnabled.setter
@@ -363,10 +363,10 @@ class Vport(Base):
 
     @property
     def TraceLevel(self):
-        """PCPU Trace level
-
-        Returns:
-            str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)
+        """
+        Returns
+        -------
+        - str(kCritical | kDebug | kError | kInfo | kTrace | kWarning): PCPU Trace level
         """
         return self._get_attribute('traceLevel')
     @TraceLevel.setter
@@ -375,10 +375,10 @@ class Vport(Base):
 
     @property
     def TraceTag(self):
-        """PCPU Trace Tag
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PCPU Trace Tag
         """
         return self._get_attribute('traceTag')
     @TraceTag.setter
@@ -387,10 +387,10 @@ class Vport(Base):
 
     @property
     def TransmitIgnoreLinkStatus(self):
-        """If true, the port ingores the link status when transmitting data.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the port ingores the link status when transmitting data.
         """
         return self._get_attribute('transmitIgnoreLinkStatus')
     @TransmitIgnoreLinkStatus.setter
@@ -399,10 +399,10 @@ class Vport(Base):
 
     @property
     def TxGapControlMode(self):
-        """This object controls the Gap Control mode of the port.
-
-        Returns:
-            str(averageMode|fixedMode)
+        """
+        Returns
+        -------
+        - str(averageMode | fixedMode): This object controls the Gap Control mode of the port.
         """
         return self._get_attribute('txGapControlMode')
     @TxGapControlMode.setter
@@ -411,10 +411,10 @@ class Vport(Base):
 
     @property
     def TxMode(self):
-        """The transmit mode.
-
-        Returns:
-            str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)
+        """
+        Returns
+        -------
+        - str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse): The transmit mode.
         """
         return self._get_attribute('txMode')
     @TxMode.setter
@@ -423,10 +423,10 @@ class Vport(Base):
 
     @property
     def Type(self):
-        """The type of port selection.
-
-        Returns:
-            str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)
+        """
+        Returns
+        -------
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe): The type of port selection.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -435,10 +435,10 @@ class Vport(Base):
 
     @property
     def UseGlobalSettings(self):
-        """Enables/Disables use of global settings instead of local settings on port
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/Disables use of global settings instead of local settings on port
         """
         return self._get_attribute('useGlobalSettings')
     @UseGlobalSettings.setter
@@ -448,126 +448,139 @@ class Vport(Base):
     @property
     def ValidTxModes(self):
         """
-
-        Returns:
-            list(str[interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse])
+        Returns
+        -------
+        - list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse]): 
         """
         return self._get_attribute('validTxModes')
 
     def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
-        """Updates a child instance of vport on the server.
+        """Updates vport resource on the server.
 
-        Args:
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)): The physical port to which the unassigned port is assigned.
-            IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-            Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-            RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
-            TraceEnabled (bool): Enables/Disables rpf port trace for this port
-            TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
-            TraceTag (str): PCPU Trace Tag
-            TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-            TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
-            TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-            Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
-            UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
+        Args
+        ----
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+        - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
+        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - TraceEnabled (bool): Enables/Disables rpf port trace for this port
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceTag (str): PCPU Trace Tag
+        - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
+        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
-        """Adds a new vport node on the server and retrieves it in this instance.
+        """Adds a new vport resource on the server and adds it to the container.
 
-        Args:
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)): The physical port to which the unassigned port is assigned.
-            IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-            Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-            RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
-            TraceEnabled (bool): Enables/Disables rpf port trace for this port
-            TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
-            TraceTag (str): PCPU Trace Tag
-            TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-            TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
-            TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-            Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
-            UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
+        Args
+        ----
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+        - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
+        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - TraceEnabled (bool): Enables/Disables rpf port trace for this port
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceTag (str): PCPU Trace Tag
+        - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
+        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
-        Returns:
-            self: This instance with all currently retrieved vport data using find and the newly added vport data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vport resources using find and the newly added vport resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vport data in this instance from server.
+        """Deletes all the contained vport resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ActualSpeed=None, AssignedTo=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Name=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
-        """Finds and retrieves vport data from the server.
+        """Finds and retrieves vport resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vport data from the server.
-        By default the find method takes no parameters and will retrieve all vport data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vport resources from the server.
 
-        Args:
-            ActualSpeed (number): The actual speed.
-            AssignedTo (str): (Read Only) A new port is assigned with this option.
-            ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)): The physical port to which the unassigned port is assigned.
-            ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
-            ConnectionState (str(assignedInUseByOther|assignedUnconnected|connectedLinkDown|connectedLinkUp|connecting|unassigned)): Consolidated state of the vport. This combines the connection state with link state.
-            ConnectionStatus (str): A string describing the status of the hardware connected to this vport
-            InternalId (number): For internal use.
-            IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
-            IsConnected (bool): If true, indicates that the port is connected.
-            IsFramePreemptionSupported (bool): 
-            IsMapped (bool): If true, this virtual port is mapped.
-            IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-            IsVMPort (bool): If true the hardware connected to this vport is a virtual machine port
-            IxnChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
-            IxnClientVersion (str): (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
-            IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
-            Licenses (str): Number of licenses.
-            Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-            RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
-            State (str(busy|down|unassigned|up|versionMismatch)): The virtual port state.
-            StateDetail (str(busy|cpuNotReady|idle|inActive|l1ConfigFailed|protocolsNotSupported|versionMismatched|waitingForCPUStatus)): This attribute describes the state of the port.
-            TraceEnabled (bool): Enables/Disables rpf port trace for this port
-            TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
-            TraceTag (str): PCPU Trace Tag
-            TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-            TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
-            TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-            Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
-            UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
-            ValidTxModes (list(str[interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse])): 
+        Args
+        ----
+        - ActualSpeed (number): The actual speed.
+        - AssignedTo (str): (Read Only) A new port is assigned with this option.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
+        - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
+        - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
+        - InternalId (number): For internal use.
+        - IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
+        - IsConnected (bool): If true, indicates that the port is connected.
+        - IsFramePreemptionSupported (bool): 
+        - IsMapped (bool): If true, this virtual port is mapped.
+        - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+        - IsVMPort (bool): If true the hardware connected to this vport is a virtual machine port
+        - IxnChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
+        - IxnClientVersion (str): (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
+        - IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
+        - Licenses (str): Number of licenses.
+        - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
+        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - State (str(busy | down | unassigned | up | versionMismatch)): The virtual port state.
+        - StateDetail (str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus)): This attribute describes the state of the port.
+        - TraceEnabled (bool): Enables/Disables rpf port trace for this port
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceTag (str): PCPU Trace Tag
+        - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
+        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
+        - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])): 
 
-        Returns:
-            self: This instance with matching vport data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vport resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vport data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vport data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vport resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -576,13 +589,14 @@ class Vport(Base):
 
         Add quick flow traffic items to the configuration.
 
-        addQuickFlowGroups(Arg2:number)
-            Args:
-                args[0] is Arg2 (number): The number of quick flow groups to add.
+        addQuickFlowGroups(Arg2=number)
+        -------------------------------
+        - Arg2 (number): The number of quick flow groups to add.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -594,19 +608,12 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        clearNeighborSolicitation()
-
-        clearNeighborSolicitation()bool
-
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('clearNeighborSolicitation', payload=payload, response_object=None)
@@ -616,12 +623,10 @@ class Vport(Base):
 
         This exec clears the learned neighbor table for the specified vport.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('clearNeighborTable', payload=payload, response_object=None)
@@ -631,9 +636,10 @@ class Vport(Base):
 
         Clear the port transmit duration.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('clearPortTransmitDuration', payload=payload, response_object=None)
@@ -643,9 +649,10 @@ class Vport(Base):
 
         Connect a list of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('connectPort', payload=payload, response_object=None)
@@ -655,18 +662,16 @@ class Vport(Base):
 
         Connect a list of ports.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        connectPorts()
+        connectPorts(Arg2=bool)
+        -----------------------
+        - Arg2 (bool): a boolean indicating if ownership should be taken forcefully
 
-        connectPorts(Arg2:bool)
-            Args:
-                args[0] is Arg2 (bool): a boolean indicating if ownership should be taken forcefully
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -678,13 +683,14 @@ class Vport(Base):
 
         Enable/Disable OAM on a list of ports.
 
-        enableOAM(Arg2:bool)
-            Args:
-                args[0] is Arg2 (bool): If true, it will enable OAM. Otherwise, it will disable OAM.
+        enableOAM(Arg2=bool)
+        --------------------
+        - Arg2 (bool): If true, it will enable OAM. Otherwise, it will disable OAM.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -696,12 +702,10 @@ class Vport(Base):
 
         get chassis used in this config
 
-            Returns:
-                list(str): Returns a list of chassis used in config <chassisDns>
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('getChassisInConfig', payload=payload, response_object=None)
@@ -711,21 +715,21 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpJoin(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
+        igmpJoin(Arg2=string)
+        ---------------------
+        - Arg2 (str): NOT DEFINED
 
-        igmpJoin(Arg2:string, Arg3:number)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
-                args[1] is Arg3 (number): NOT DEFINED
+        igmpJoin(Arg2=string, Arg3=number)
+        ----------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (number): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -737,21 +741,21 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpLeave(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
+        igmpLeave(Arg2=string)
+        ----------------------
+        - Arg2 (str): NOT DEFINED
 
-        igmpLeave(Arg2:string, Arg3:number)
-            Args:
-                args[0] is Arg2 (str): NOT DEFINED
-                args[1] is Arg3 (number): NOT DEFINED
+        igmpLeave(Arg2=string, Arg3=number)
+        -----------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (number): NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -763,13 +767,14 @@ class Vport(Base):
 
         Imports the port file (also supports legacy port files).
 
-        import(Arg2:href)
-            Args:
-                args[0] is Arg2 (obj(ixnetwork_restpy.files.Files)): The file to be imported.
+        import(Arg2=href)
+        -----------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): The file to be imported.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -781,13 +786,14 @@ class Vport(Base):
 
         Simulate port link up/down.
 
-        linkUpDn(Arg2:enum)
-            Args:
-                args[0] is Arg2 (str(down|up)): A valid enum value as specified by the restriction.
+        linkUpDn(Arg2=enum)
+        -------------------
+        - Arg2 (str(down | up)): A valid enum value as specified by the restriction.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -799,9 +805,10 @@ class Vport(Base):
 
         Pulls config onto vport or group of vports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('pullPort', payload=payload, response_object=None)
@@ -811,12 +818,10 @@ class Vport(Base):
 
         Refresh unresolved neighbours.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshUnresolvedNeighbors', payload=payload, response_object=None)
@@ -826,9 +831,10 @@ class Vport(Base):
 
         Release capture buffer from a list of ports.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('releaseCapturePorts', payload=payload, response_object=None)
@@ -838,9 +844,10 @@ class Vport(Base):
 
         Release a hardware port.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('releasePort', payload=payload, response_object=None)
@@ -850,9 +857,10 @@ class Vport(Base):
 
         Reboot port CPU.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('resetPortCpu', payload=payload, response_object=None)
@@ -862,9 +870,10 @@ class Vport(Base):
 
         Reboots the port CPU and restores the default settings.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('resetPortCpuAndFactoryDefault', payload=payload, response_object=None)
@@ -874,9 +883,10 @@ class Vport(Base):
 
         Restarts the PPP negotiation on the port.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('restartPppNegotiation', payload=payload, response_object=None)
@@ -886,24 +896,17 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendArp()bool
+        sendArp(Arg2=list)bool
+        ----------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        sendArp(Arg2:list)bool
-            Args:
-                args[0] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface])): NOT DEFINED
-
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -915,9 +918,10 @@ class Vport(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('sendArpAll', payload=payload, response_object=None)
@@ -927,24 +931,17 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendNs()bool
+        sendNs(Arg2=list)bool
+        ---------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        sendNs(Arg2:list)bool
-            Args:
-                args[0] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface])): NOT DEFINED
-
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -956,9 +953,10 @@ class Vport(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('sendNsAll', payload=payload, response_object=None)
@@ -968,24 +966,17 @@ class Vport(Base):
 
         NOT DEFINED
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendRs()bool
+        sendRs(Arg2=list)bool
+        ---------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        sendRs(Arg2:list)bool
-            Args:
-                args[0] is Arg2 (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface])): NOT DEFINED
-
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -997,9 +988,10 @@ class Vport(Base):
 
         NOT DEFINED
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('sendRsAll', payload=payload, response_object=None)
@@ -1009,13 +1001,14 @@ class Vport(Base):
 
         Sets the aggregation mode into Spyder Config. The selected mode is applied at the time the test is started
 
-        setCardAggregation(Arg2:list)
-            Args:
-                args[0] is Arg2 (list(dict(arg1:str,arg2:number,arg3:number,arg4:str,arg5:list[number]))): list of aggregation structs [chassisdns, cardid, aggrgroupid, aggremode]
+        setCardAggregation(Arg2=list)
+        -----------------------------
+        - Arg2 (list(dict(arg1:str,arg2:number,arg3:number,arg4:str,arg5:list[number]))): list of aggregation structs [chassisdns, cardid, aggrgroupid, aggremode]
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1027,13 +1020,14 @@ class Vport(Base):
 
         Ensure the chain exist as defined. Any missing chassis (by dns) will be added. Any existing slaves of the given master will not be removed.
 
-        setChassisChain(Arg2:list)
-            Args:
-                args[0] is Arg2 (list(dict(arg1:str,arg2:str,arg3:number,arg4:number))): Array of { dns, master dns } pairs. if only dns is given, then any existing masterdns will be removed
+        setChassisChain(Arg2=list)
+        --------------------------
+        - Arg2 (list(dict(arg1:str,arg2:str,arg3:number,arg4:number))): Array of { dns, master dns } pairs. if only dns is given, then any existing masterdns will be removed
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1045,9 +1039,10 @@ class Vport(Base):
 
         Set default values for port settings.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('setFactoryDefaults', payload=payload, response_object=None)
@@ -1057,9 +1052,10 @@ class Vport(Base):
 
         Start the traffic configuration for stateless traffic items only.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTraffic', payload=payload, response_object=None)
@@ -1069,9 +1065,10 @@ class Vport(Base):
 
         Start the traffic configuration for stateless traffic items only. This will block until traffic is fully started.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
@@ -1081,9 +1078,10 @@ class Vport(Base):
 
         Stop the stateless traffic items.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
@@ -1093,9 +1091,10 @@ class Vport(Base):
 
         Stop the traffic configuration for stateless traffic items only. This will block until traffic is fully stopped.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
@@ -1105,13 +1104,14 @@ class Vport(Base):
 
         Unassign hardware ports.
 
-        unassignPorts(Arg2:bool)
-            Args:
-                args[0] is Arg2 (bool): If true, virtual ports will be deleted.
+        unassignPorts(Arg2=bool)
+        ------------------------
+        - Arg2 (bool): If true, virtual ports will be deleted.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

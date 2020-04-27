@@ -9,21 +9,22 @@ The AssignPorts method on the test platform does the following:
 	- waits until port statistic view for all test ports are ready
 	- returns a list of abstract test ports that have not been connected to test ports
 """
+from ixnetwork_restpy import SessionAssistant
 
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
-
-# connect the virtual ports to test ports
-chassis_ip = '10.36.24.55'
+# setup test ports and virtual ports
+chassis_ip = '10.36.74.26'
 test_ports = [
-	dict(Arg1=chassis_ip, Arg2=1, Arg3=1),
-	dict(Arg1=chassis_ip, Arg2=1, Arg3=2)
+	dict(Arg1=chassis_ip, Arg2=2, Arg3=13),
+	dict(Arg1=chassis_ip, Arg2=2, Arg3=14)
 ]
-connected_ports = ixnetwork.AssignPorts(test_ports, [], vports.add().add(), True)
+virtual_ports = ixnetwork.Vport.add().add()
+
+connected_ports = ixnetwork.AssignPorts(test_ports, [], virtual_ports, True)
 

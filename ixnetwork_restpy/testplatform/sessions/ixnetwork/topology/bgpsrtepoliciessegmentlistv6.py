@@ -36,60 +36,62 @@ class BgpSRTEPoliciesSegmentListV6(Base):
 
     @property
     def BgpSRTEPoliciesSegmentsCollectionV6(self):
-        """An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6.BgpSRTEPoliciesSegmentsCollectionV6): An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6.BgpSRTEPoliciesSegmentsCollectionV6)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6 import BgpSRTEPoliciesSegmentsCollectionV6
         return BgpSRTEPoliciesSegmentsCollectionV6(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnWeight(self):
-        """Enable Weight Sub-TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enWeight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Weight Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enWeight'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -98,19 +100,20 @@ class BgpSRTEPoliciesSegmentListV6(Base):
 
     @property
     def NumberOfActiveSegments(self):
-        """Count of Segment
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberOfActiveSegments')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Count of Segment
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberOfActiveSegments'))
 
     @property
     def NumberOfSegmentsV6(self):
-        """Count of Segments Per Segment List
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Count of Segments Per Segment List
         """
         return self._get_attribute('numberOfSegmentsV6')
     @NumberOfSegmentsV6.setter
@@ -119,63 +122,70 @@ class BgpSRTEPoliciesSegmentListV6(Base):
 
     @property
     def SegmentListNumber(self):
-        """Segment List Number For Reference
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('segmentListNumber')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Segment List Number For Reference
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('segmentListNumber'))
 
     @property
     def SrtepolicyName(self):
-        """Policy Name For Reference
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Policy Name For Reference
         """
         return self._get_attribute('srtepolicyName')
 
     @property
     def Weight(self):
-        """Weight Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('weight')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Weight Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('weight'))
 
     def update(self, Name=None, NumberOfSegmentsV6=None):
-        """Updates a child instance of bgpSRTEPoliciesSegmentListV6 on the server.
+        """Updates bgpSRTEPoliciesSegmentListV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NumberOfSegmentsV6 (number): Count of Segments Per Segment List
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfSegmentsV6 (number): Count of Segments Per Segment List
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, EnWeight=None, NumberOfActiveSegments=None, SegmentListNumber=None, Weight=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesSegmentListV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            EnWeight (str): optional regex of enWeight
-            NumberOfActiveSegments (str): optional regex of numberOfActiveSegments
-            SegmentListNumber (str): optional regex of segmentListNumber
-            Weight (str): optional regex of weight
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - EnWeight (str): optional regex of enWeight
+        - NumberOfActiveSegments (str): optional regex of numberOfActiveSegments
+        - SegmentListNumber (str): optional regex of segmentListNumber
+        - Weight (str): optional regex of weight
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

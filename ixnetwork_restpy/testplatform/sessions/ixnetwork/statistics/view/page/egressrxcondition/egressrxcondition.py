@@ -36,10 +36,10 @@ class EgressRxCondition(Base):
 
     @property
     def Operator(self):
-        """The logical operation to be performed.
-
-        Returns:
-            str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)
+        """
+        Returns
+        -------
+        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller): The logical operation to be performed.
         """
         return self._get_attribute('operator')
     @Operator.setter
@@ -48,10 +48,10 @@ class EgressRxCondition(Base):
 
     @property
     def Values(self):
-        """Value to be matched for the condition.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Value to be matched for the condition.
         """
         return self._get_attribute('values')
     @Values.setter
@@ -59,13 +59,15 @@ class EgressRxCondition(Base):
         self._set_attribute('values', value)
 
     def update(self, Operator=None, Values=None):
-        """Updates a child instance of egressRxCondition on the server.
+        """Updates egressRxCondition resource on the server.
 
-        Args:
-            Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
-            Values (list(number)): Value to be matched for the condition.
+        Args
+        ----
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
+        - Values (list(number)): Value to be matched for the condition.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

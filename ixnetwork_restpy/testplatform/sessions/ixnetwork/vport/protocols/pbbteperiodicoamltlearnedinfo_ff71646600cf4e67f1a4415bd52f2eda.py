@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class PbbTePeriodicOamLtLearnedInfo(Base):
     """The pbbTeperiodicOamLtLearnedInfo object holds the PBB-TE periodic OAM link trace learned information.
-    The PbbTePeriodicOamLtLearnedInfo class encapsulates a list of pbbTePeriodicOamLtLearnedInfo resources that is managed by the system.
+    The PbbTePeriodicOamLtLearnedInfo class encapsulates a list of pbbTePeriodicOamLtLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the PbbTePeriodicOamLtLearnedInfo.find() method.
     """
 
@@ -37,165 +37,172 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
 
     @property
     def LtLearnedHop(self):
-        """An instance of the LtLearnedHop class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_fdc64709fa36b91b7769ebea593a61e5.LtLearnedHop): An instance of the LtLearnedHop class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_fdc64709fa36b91b7769ebea593a61e5.LtLearnedHop)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_fdc64709fa36b91b7769ebea593a61e5 import LtLearnedHop
         return LtLearnedHop(self)
 
     @property
     def AverageHopCount(self):
-        """(read only) The learned average hop count.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned average hop count.
         """
         return self._get_attribute('averageHopCount')
 
     @property
     def BVlan(self):
-        """(read only) The learned B-VLAN identifier.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned B-VLAN identifier.
         """
         return self._get_attribute('bVlan')
 
     @property
     def CompleteReplyCount(self):
-        """(read only) The learned number of complete replies.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of complete replies.
         """
         return self._get_attribute('completeReplyCount')
 
     @property
     def DstMacAddress(self):
-        """(read only) The learned destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned destination MAC address.
         """
         return self._get_attribute('dstMacAddress')
 
     @property
     def LtmSentCount(self):
-        """(read only) The learned number of Link Trace messages sent.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of Link Trace messages sent.
         """
         return self._get_attribute('ltmSentCount')
 
     @property
     def MdLevel(self):
-        """(read only) The learned MD level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned MD level.
         """
         return self._get_attribute('mdLevel')
 
     @property
     def NoReplyCount(self):
-        """(read only) The learned number of no replies.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of no replies.
         """
         return self._get_attribute('noReplyCount')
 
     @property
     def PartialReplyCount(self):
-        """(read only) The learned number of partial replies.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned number of partial replies.
         """
         return self._get_attribute('partialReplyCount')
 
     @property
     def RecentHopCount(self):
-        """(read only) The learned recent hop count.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (read only) The learned recent hop count.
         """
         return self._get_attribute('recentHopCount')
 
     @property
     def RecentHops(self):
-        """(read only) The learned recent hops.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned recent hops.
         """
         return self._get_attribute('recentHops')
 
     @property
     def RecentReplyStatus(self):
-        """(read only) The learned recent replies.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned recent replies.
         """
         return self._get_attribute('recentReplyStatus')
 
     @property
     def SrcMacAddress(self):
-        """(read only) The learned source MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned source MAC address.
         """
         return self._get_attribute('srcMacAddress')
 
     def find(self, AverageHopCount=None, BVlan=None, CompleteReplyCount=None, DstMacAddress=None, LtmSentCount=None, MdLevel=None, NoReplyCount=None, PartialReplyCount=None, RecentHopCount=None, RecentHops=None, RecentReplyStatus=None, SrcMacAddress=None):
-        """Finds and retrieves pbbTePeriodicOamLtLearnedInfo data from the server.
+        """Finds and retrieves pbbTePeriodicOamLtLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve pbbTePeriodicOamLtLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all pbbTePeriodicOamLtLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbTePeriodicOamLtLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pbbTePeriodicOamLtLearnedInfo resources from the server.
 
-        Args:
-            AverageHopCount (number): (read only) The learned average hop count.
-            BVlan (str): (read only) The learned B-VLAN identifier.
-            CompleteReplyCount (number): (read only) The learned number of complete replies.
-            DstMacAddress (str): (read only) The learned destination MAC address.
-            LtmSentCount (number): (read only) The learned number of Link Trace messages sent.
-            MdLevel (number): (read only) The learned MD level.
-            NoReplyCount (number): (read only) The learned number of no replies.
-            PartialReplyCount (number): (read only) The learned number of partial replies.
-            RecentHopCount (number): (read only) The learned recent hop count.
-            RecentHops (str): (read only) The learned recent hops.
-            RecentReplyStatus (str): (read only) The learned recent replies.
-            SrcMacAddress (str): (read only) The learned source MAC address.
+        Args
+        ----
+        - AverageHopCount (number): (read only) The learned average hop count.
+        - BVlan (str): (read only) The learned B-VLAN identifier.
+        - CompleteReplyCount (number): (read only) The learned number of complete replies.
+        - DstMacAddress (str): (read only) The learned destination MAC address.
+        - LtmSentCount (number): (read only) The learned number of Link Trace messages sent.
+        - MdLevel (number): (read only) The learned MD level.
+        - NoReplyCount (number): (read only) The learned number of no replies.
+        - PartialReplyCount (number): (read only) The learned number of partial replies.
+        - RecentHopCount (number): (read only) The learned recent hop count.
+        - RecentHops (str): (read only) The learned recent hops.
+        - RecentReplyStatus (str): (read only) The learned recent replies.
+        - SrcMacAddress (str): (read only) The learned source MAC address.
 
-        Returns:
-            self: This instance with matching pbbTePeriodicOamLtLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching pbbTePeriodicOamLtLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of pbbTePeriodicOamLtLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the pbbTePeriodicOamLtLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the pbbTePeriodicOamLtLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

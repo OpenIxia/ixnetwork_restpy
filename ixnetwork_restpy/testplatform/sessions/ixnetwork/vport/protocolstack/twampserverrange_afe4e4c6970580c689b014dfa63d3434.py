@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TwampServerRange(Base):
     """A network stack element representing an RFC 4656 TWAMP Control-Server and Session-Reflector.
-    The TwampServerRange class encapsulates a list of twampServerRange resources that is be managed by the user.
+    The TwampServerRange class encapsulates a list of twampServerRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the TwampServerRange.find() method.
-    The list can be managed by the user by using the TwampServerRange.add() and TwampServerRange.remove() methods.
+    The list can be managed by using the TwampServerRange.add() and TwampServerRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TwampServerRange(Base):
 
     @property
     def ControlPort(self):
-        """TWAMP Control-Server TCP port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: TWAMP Control-Server TCP port.
         """
         return self._get_attribute('controlPort')
     @ControlPort.setter
@@ -50,10 +50,10 @@ class TwampServerRange(Base):
 
     @property
     def Count(self):
-        """Maximum number of sessions the TWAMP Server will accept
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of sessions the TWAMP Server will accept
         """
         return self._get_attribute('count')
     @Count.setter
@@ -62,10 +62,10 @@ class TwampServerRange(Base):
 
     @property
     def EnableAccessControl(self):
-        """Restrict access to the TWAMP server
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Restrict access to the TWAMP server
         """
         return self._get_attribute('enableAccessControl')
     @EnableAccessControl.setter
@@ -74,10 +74,10 @@ class TwampServerRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -86,10 +86,10 @@ class TwampServerRange(Base):
 
     @property
     def IterationCount(self):
-        """Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
         """
         return self._get_attribute('iterationCount')
     @IterationCount.setter
@@ -98,10 +98,10 @@ class TwampServerRange(Base):
 
     @property
     def KeyId(self):
-        """Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
         """
         return self._get_attribute('keyId')
     @KeyId.setter
@@ -110,10 +110,10 @@ class TwampServerRange(Base):
 
     @property
     def MaxTestSessions(self):
-        """Maximum number of test sessions the TWAMP Server will accept per control connection
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Maximum number of test sessions the TWAMP Server will accept per control connection
         """
         return self._get_attribute('maxTestSessions')
     @MaxTestSessions.setter
@@ -122,10 +122,10 @@ class TwampServerRange(Base):
 
     @property
     def Mode(self):
-        """TWAMP mode of operation for the Control and Test Sessions
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: TWAMP mode of operation for the Control and Test Sessions
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -134,10 +134,10 @@ class TwampServerRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -146,19 +146,19 @@ class TwampServerRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PermittedIp(self):
-        """IP address from which clients are permitted to access the TWAMP server
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IP address from which clients are permitted to access the TWAMP server
         """
         return self._get_attribute('permittedIp')
     @PermittedIp.setter
@@ -167,10 +167,10 @@ class TwampServerRange(Base):
 
     @property
     def PermittedIpIncrement(self):
-        """Increment, allowing specification of several permitted client IPs
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Increment, allowing specification of several permitted client IPs
         """
         return self._get_attribute('permittedIpIncrement')
     @PermittedIpIncrement.setter
@@ -179,10 +179,10 @@ class TwampServerRange(Base):
 
     @property
     def PermittedSenderPort(self):
-        """Permitted TWAMP Session-Sender UDP port number, all other will be rejected
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Permitted TWAMP Session-Sender UDP port number, all other will be rejected
         """
         return self._get_attribute('permittedSenderPort')
     @PermittedSenderPort.setter
@@ -191,10 +191,10 @@ class TwampServerRange(Base):
 
     @property
     def ReflectorPort(self):
-        """TWAMP Session-Reflector TCP port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: TWAMP Session-Reflector TCP port.
         """
         return self._get_attribute('reflectorPort')
     @ReflectorPort.setter
@@ -203,10 +203,10 @@ class TwampServerRange(Base):
 
     @property
     def Secret(self):
-        """Shared secret used for key derivation
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Shared secret used for key derivation
         """
         return self._get_attribute('secret')
     @Secret.setter
@@ -214,108 +214,121 @@ class TwampServerRange(Base):
         self._set_attribute('secret', value)
 
     def update(self, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
-        """Updates a child instance of twampServerRange on the server.
+        """Updates twampServerRange resource on the server.
 
-        Args:
-            ControlPort (number): TWAMP Control-Server TCP port.
-            Count (number): Maximum number of sessions the TWAMP Server will accept
-            EnableAccessControl (bool): Restrict access to the TWAMP server
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
-            KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
-            MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
-            Mode (str): TWAMP mode of operation for the Control and Test Sessions
-            Name (str): Name of range
-            PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
-            PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
-            PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
-            ReflectorPort (number): TWAMP Session-Reflector TCP port.
-            Secret (str): Shared secret used for key derivation
+        Args
+        ----
+        - ControlPort (number): TWAMP Control-Server TCP port.
+        - Count (number): Maximum number of sessions the TWAMP Server will accept
+        - EnableAccessControl (bool): Restrict access to the TWAMP server
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
+        - KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
+        - MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
+        - Mode (str): TWAMP mode of operation for the Control and Test Sessions
+        - Name (str): Name of range
+        - PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
+        - PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
+        - PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
+        - ReflectorPort (number): TWAMP Session-Reflector TCP port.
+        - Secret (str): Shared secret used for key derivation
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
-        """Adds a new twampServerRange node on the server and retrieves it in this instance.
+        """Adds a new twampServerRange resource on the server and adds it to the container.
 
-        Args:
-            ControlPort (number): TWAMP Control-Server TCP port.
-            Count (number): Maximum number of sessions the TWAMP Server will accept
-            EnableAccessControl (bool): Restrict access to the TWAMP server
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
-            KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
-            MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
-            Mode (str): TWAMP mode of operation for the Control and Test Sessions
-            Name (str): Name of range
-            PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
-            PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
-            PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
-            ReflectorPort (number): TWAMP Session-Reflector TCP port.
-            Secret (str): Shared secret used for key derivation
+        Args
+        ----
+        - ControlPort (number): TWAMP Control-Server TCP port.
+        - Count (number): Maximum number of sessions the TWAMP Server will accept
+        - EnableAccessControl (bool): Restrict access to the TWAMP server
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
+        - KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
+        - MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
+        - Mode (str): TWAMP mode of operation for the Control and Test Sessions
+        - Name (str): Name of range
+        - PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
+        - PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
+        - PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
+        - ReflectorPort (number): TWAMP Session-Reflector TCP port.
+        - Secret (str): Shared secret used for key derivation
 
-        Returns:
-            self: This instance with all currently retrieved twampServerRange data using find and the newly added twampServerRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved twampServerRange resources using find and the newly added twampServerRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the twampServerRange data in this instance from server.
+        """Deletes all the contained twampServerRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, ObjectId=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
-        """Finds and retrieves twampServerRange data from the server.
+        """Finds and retrieves twampServerRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve twampServerRange data from the server.
-        By default the find method takes no parameters and will retrieve all twampServerRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampServerRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all twampServerRange resources from the server.
 
-        Args:
-            ControlPort (number): TWAMP Control-Server TCP port.
-            Count (number): Maximum number of sessions the TWAMP Server will accept
-            EnableAccessControl (bool): Restrict access to the TWAMP server
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
-            KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
-            MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
-            Mode (str): TWAMP mode of operation for the Control and Test Sessions
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
-            PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
-            PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
-            ReflectorPort (number): TWAMP Session-Reflector TCP port.
-            Secret (str): Shared secret used for key derivation
+        Args
+        ----
+        - ControlPort (number): TWAMP Control-Server TCP port.
+        - Count (number): Maximum number of sessions the TWAMP Server will accept
+        - EnableAccessControl (bool): Restrict access to the TWAMP server
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IterationCount (number): Iteration count required for password-based key derivation function PBKDF2 (PKCS #5) [RFC2898] Count MUST be a power of 2. Count MUST be at least 1024. Count SHOULD be increased as more computing power becomes common.
+        - KeyId (str): Indicates which shared secret the client wishes to use to authenticate or encrypt. [RFC 4656]
+        - MaxTestSessions (number): Maximum number of test sessions the TWAMP Server will accept per control connection
+        - Mode (str): TWAMP mode of operation for the Control and Test Sessions
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - PermittedIp (str): IP address from which clients are permitted to access the TWAMP server
+        - PermittedIpIncrement (str): Increment, allowing specification of several permitted client IPs
+        - PermittedSenderPort (number): Permitted TWAMP Session-Sender UDP port number, all other will be rejected
+        - ReflectorPort (number): TWAMP Session-Reflector TCP port.
+        - Secret (str): Shared secret used for key derivation
 
-        Returns:
-            self: This instance with matching twampServerRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching twampServerRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of twampServerRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the twampServerRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the twampServerRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -324,14 +337,15 @@ class TwampServerRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -343,16 +357,15 @@ class TwampServerRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -364,16 +377,15 @@ class TwampServerRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

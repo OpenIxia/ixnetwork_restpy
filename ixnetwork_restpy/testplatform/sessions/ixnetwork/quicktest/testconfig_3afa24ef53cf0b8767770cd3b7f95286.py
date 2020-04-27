@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolutionSlaveNumber(self):
-        """Specifies the binary resolution slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the binary resolution slave number.
         """
         return self._get_attribute('binaryResolutionSlaveNumber')
     @BinaryResolutionSlaveNumber.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """The duration of the test in hours, minutes, or seconds, which is used to calculate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The duration of the test in hours, minutes, or seconds, which is used to calculate.
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def EnableSlavesPassFail(self):
-        """If true, enables slaves pass fail.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, enables slaves pass fail.
         """
         return self._get_attribute('enableSlavesPassFail')
     @EnableSlavesPassFail.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def IncrementStepSlaveNumber(self):
-        """The incremental step value for the slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value for the slave number.
         """
         return self._get_attribute('incrementStepSlaveNumber')
     @IncrementStepSlaveNumber.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def InitialBinarySlaveNumber(self):
-        """The initial incremental value of the binary slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial incremental value of the binary slave number.
         """
         return self._get_attribute('initialBinarySlaveNumber')
     @InitialBinarySlaveNumber.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def InitialStepSlaveNumber(self):
-        """The initial step value of the slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial step value of the slave number.
         """
         return self._get_attribute('initialStepSlaveNumber')
     @InitialStepSlaveNumber.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """The type of the payload setting.
-
-        Returns:
-            str(binary|step)
+        """
+        Returns
+        -------
+        - str(binary | step): The type of the payload setting.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def MaxBinarySlaveNumber(self):
-        """The maximum value of the binary slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum value of the binary slave number.
         """
         return self._get_attribute('maxBinarySlaveNumber')
     @MaxBinarySlaveNumber.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def MaxOutstanding(self):
-        """The maximum oustanding value of the slave scalability.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum oustanding value of the slave scalability.
         """
         return self._get_attribute('maxOutstanding')
     @MaxOutstanding.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def MaxStepSlaveNumber(self):
-        """The maximum step value of the slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum step value of the slave number.
         """
         return self._get_attribute('maxStepSlaveNumber')
     @MaxStepSlaveNumber.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def MinBinarySlaveNumber(self):
-        """The minimum binary value of the slave number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum binary value of the slave number.
         """
         return self._get_attribute('minBinarySlaveNumber')
     @MinBinarySlaveNumber.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def NumberOfSlavesPassFail(self):
-        """The number of slaves pass fail.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of slaves pass fail.
         """
         return self._get_attribute('numberOfSlavesPassFail')
     @NumberOfSlavesPassFail.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The number of trials.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of trials.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def Runmode(self):
-        """It gives the run mode
-
-        Returns:
-            str(duration|noframes)
+        """
+        Returns
+        -------
+        - str(duration | noframes): It gives the run mode
         """
         return self._get_attribute('runmode')
     @Runmode.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def SetupRate(self):
-        """The setup rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The setup rate.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def StartTraffic(self):
-        """It starts the traffic
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It starts the traffic
         """
         return self._get_attribute('startTraffic')
     @StartTraffic.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def TeardownRate(self):
-        """The teardown rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The teardown rate.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def UseExistingSetupRate(self):
-        """If True, it uses the Existing Setup rate
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If True, it uses the Existing Setup rate
         """
         return self._get_attribute('useExistingSetupRate')
     @UseExistingSetupRate.setter
@@ -263,42 +263,45 @@ class TestConfig(Base):
         self._set_attribute('useExistingSetupRate', value)
 
     def update(self, BinaryResolutionSlaveNumber=None, Duration=None, EnableSlavesPassFail=None, IncrementStepSlaveNumber=None, InitialBinarySlaveNumber=None, InitialStepSlaveNumber=None, LoadType=None, MaxBinarySlaveNumber=None, MaxOutstanding=None, MaxStepSlaveNumber=None, MinBinarySlaveNumber=None, NumberOfSlavesPassFail=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            BinaryResolutionSlaveNumber (number): Specifies the binary resolution slave number.
-            Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate.
-            EnableSlavesPassFail (str): If true, enables slaves pass fail.
-            IncrementStepSlaveNumber (number): The incremental step value for the slave number.
-            InitialBinarySlaveNumber (number): The initial incremental value of the binary slave number.
-            InitialStepSlaveNumber (number): The initial step value of the slave number.
-            LoadType (str(binary|step)): The type of the payload setting.
-            MaxBinarySlaveNumber (number): The maximum value of the binary slave number.
-            MaxOutstanding (number): The maximum oustanding value of the slave scalability.
-            MaxStepSlaveNumber (number): The maximum step value of the slave number.
-            MinBinarySlaveNumber (number): The minimum binary value of the slave number.
-            NumberOfSlavesPassFail (number): The number of slaves pass fail.
-            Numtrials (number): The number of trials.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            Runmode (str(duration|noframes)): It gives the run mode
-            SetupRate (number): The setup rate.
-            StartTraffic (str): It starts the traffic
-            TeardownRate (number): The teardown rate.
-            UseExistingSetupRate (bool): If True, it uses the Existing Setup rate
+        Args
+        ----
+        - BinaryResolutionSlaveNumber (number): Specifies the binary resolution slave number.
+        - Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate.
+        - EnableSlavesPassFail (str): If true, enables slaves pass fail.
+        - IncrementStepSlaveNumber (number): The incremental step value for the slave number.
+        - InitialBinarySlaveNumber (number): The initial incremental value of the binary slave number.
+        - InitialStepSlaveNumber (number): The initial step value of the slave number.
+        - LoadType (str(binary | step)): The type of the payload setting.
+        - MaxBinarySlaveNumber (number): The maximum value of the binary slave number.
+        - MaxOutstanding (number): The maximum oustanding value of the slave scalability.
+        - MaxStepSlaveNumber (number): The maximum step value of the slave number.
+        - MinBinarySlaveNumber (number): The minimum binary value of the slave number.
+        - NumberOfSlavesPassFail (number): The number of slaves pass fail.
+        - Numtrials (number): The number of trials.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - Runmode (str(duration | noframes)): It gives the run mode
+        - SetupRate (number): The setup rate.
+        - StartTraffic (str): It starts the traffic
+        - TeardownRate (number): The teardown rate.
+        - UseExistingSetupRate (bool): If True, it uses the Existing Setup rate
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -306,9 +309,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -316,12 +320,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -331,9 +333,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -343,12 +346,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -358,24 +359,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -387,18 +381,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -410,9 +402,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -422,12 +415,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

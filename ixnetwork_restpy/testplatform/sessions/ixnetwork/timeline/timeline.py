@@ -36,14 +36,14 @@ class Timeline(Base):
 
     @property
     def Test(self):
-        """An instance of the Test class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.test.test.Test): An instance of the Test class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.test.test.Test)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.test.test import Test
         return Test(self)
@@ -51,27 +51,27 @@ class Timeline(Base):
     @property
     def CurrentTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('currentTime')
 
     @property
     def EndTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('endTime')
 
     @property
     def EndTimeAsTicks(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('endTimeAsTicks')
     @EndTimeAsTicks.setter
@@ -81,9 +81,9 @@ class Timeline(Base):
     @property
     def ExecutingTest(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test): 
         """
         return self._get_attribute('executingTest')
     @ExecutingTest.setter
@@ -93,18 +93,18 @@ class Timeline(Base):
     @property
     def ExecutingTestProgress(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('executingTestProgress')
 
     @property
     def ForceTakePorts(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('forceTakePorts')
     @ForceTakePorts.setter
@@ -114,18 +114,18 @@ class Timeline(Base):
     @property
     def MonitorTopologyId(self):
         """
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/topology)
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/topology): 
         """
         return self._get_attribute('monitorTopologyId')
 
     @property
     def PauseOnError(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('pauseOnError')
     @PauseOnError.setter
@@ -135,18 +135,18 @@ class Timeline(Base):
     @property
     def StartTime(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('startTime')
 
     @property
     def StartTimeAsTicks(self):
         """
-
-        Returns:
-            number
+        Returns
+        -------
+        - number: 
         """
         return self._get_attribute('startTimeAsTicks')
     @StartTimeAsTicks.setter
@@ -156,18 +156,18 @@ class Timeline(Base):
     @property
     def State(self):
         """
-
-        Returns:
-            dict(arg1:str,arg2:str[cancelled|complete|idle|postflightReleasingPorts|postflightStoppingProtocols|postflightStoppingTimeline|preflightAggregatingCards|preflightCheckingPorts|preflightConnectingPorts|preflightFailed|preflightSettingUpChassisChain|preflightSettingUpPorts|preflightStart|preflightValidateTopologyPortCount|preflightValidatingTimeline|preflightWaitingForChassisConnect|running])
+        Returns
+        -------
+        - dict(arg1:str,arg2:str[cancelled | complete | idle | postflightReleasingPorts | postflightStoppingProtocols | postflightStoppingTimeline | preflightAggregatingCards | preflightCheckingPorts | preflightConnectingPorts | preflightFailed | preflightSettingUpChassisChain | preflightSettingUpPorts | preflightStart | preflightValidateTopologyPortCount | preflightValidatingTimeline | preflightWaitingForChassisConnect | running]): 
         """
         return self._get_attribute('state')
 
     @property
     def TestOrder(self):
         """
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test])
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test]): 
         """
         return self._get_attribute('testOrder')
     @TestOrder.setter
@@ -177,42 +177,43 @@ class Timeline(Base):
     @property
     def TimingTopologyIds(self):
         """
-
-        Returns:
-            list(str)
+        Returns
+        -------
+        - list(str): 
         """
         return self._get_attribute('timingTopologyIds')
 
     def update(self, EndTimeAsTicks=None, ExecutingTest=None, ForceTakePorts=None, PauseOnError=None, StartTimeAsTicks=None, TestOrder=None):
-        """Updates a child instance of timeline on the server.
+        """Updates timeline resource on the server.
 
-        Args:
-            EndTimeAsTicks (number): 
-            ExecutingTest (str(None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test)): 
-            ForceTakePorts (bool): 
-            PauseOnError (bool): 
-            StartTimeAsTicks (number): 
-            TestOrder (list(str[None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test])): 
+        Args
+        ----
+        - EndTimeAsTicks (number): 
+        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test)): 
+        - ForceTakePorts (bool): 
+        - PauseOnError (bool): 
+        - StartTimeAsTicks (number): 
+        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test])): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CreateProtocol(self, *args, **kwargs):
         """Executes the createProtocol operation on the server.
 
-        createProtocol(Arg2:enum, Arg3:href)href
-            Args:
-                args[0] is Arg2 (str(bfdv4Interface|bfdv6Interface|bgpBfdIpv4Ipv6Peer|bgpBfdIpv4Peer|bgpBfdIpv4PeerIpv4Pools|bgpBfdIpv6Peer|bgpBfdIpv6PeerIpv6Pools|bgpBfdMixedPeerPools|bgpIpv4Ipv6Peer|bgpIpv4Peer|bgpIpv4PeerIpv4Pools|bgpIpv6Peer|bgpIpv6PeerIpv6Pools|bgpMixedPeerPools|chainedIpv4|chainedIpv6|ethernetVlan|ipv4|ipv4IgmpHost|ipv4IgmpQuerierHost|ipv4ipv6|ipv6|ipv6MldHost|ipv6MldQuerierHost|none)): 
-                args[1] is Arg3 (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=deviceGroup)): 
+        createProtocol(Arg2=enum, Arg3=href)href
+        ----------------------------------------
+        - Arg2 (str(bfdv4Interface | bfdv6Interface | bgpBfdIpv4Ipv6Peer | bgpBfdIpv4Peer | bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6Peer | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4Ipv6Peer | bgpIpv4Peer | bgpIpv4PeerIpv4Pools | bgpIpv6Peer | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost | none)): 
+        - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup)): 
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
 
-            Returns:
-                str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -222,17 +223,16 @@ class Timeline(Base):
     def CreateTest(self, *args, **kwargs):
         """Executes the createTest operation on the server.
 
-        createTest(Arg2:enum, Arg3:enum)object
-            Args:
-                args[0] is Arg2 (str(rfc2544back2back|rfc2544frameLoss|rfc2544throughput|rfc2889addressCache|rfc2889addressRate|rfc3918joinLeaveDelay|rfc3918mixedClassThroughput|rfc7747failover|rfc7747ribIn|trafficTest)): 
-                args[1] is Arg3 (str(bfdv4Interface|bfdv6Interface|bgpBfdIpv4Ipv6Peer|bgpBfdIpv4Peer|bgpBfdIpv4PeerIpv4Pools|bgpBfdIpv6Peer|bgpBfdIpv6PeerIpv6Pools|bgpBfdMixedPeerPools|bgpIpv4Ipv6Peer|bgpIpv4Peer|bgpIpv4PeerIpv4Pools|bgpIpv6Peer|bgpIpv6PeerIpv6Pools|bgpMixedPeerPools|chainedIpv4|chainedIpv6|ethernetVlan|ipv4|ipv4IgmpHost|ipv4IgmpQuerierHost|ipv4ipv6|ipv6|ipv6MldHost|ipv6MldQuerierHost|none)): 
+        createTest(Arg2=enum, Arg3=enum)object
+        --------------------------------------
+        - Arg2 (str(rfc2544back2back | rfc2544frameLoss | rfc2544throughput | rfc2889addressCache | rfc2889addressRate | rfc3918joinLeaveDelay | rfc3918mixedClassThroughput | rfc7747failover | rfc7747ribIn | trafficTest)): 
+        - Arg3 (str(bfdv4Interface | bfdv6Interface | bgpBfdIpv4Ipv6Peer | bgpBfdIpv4Peer | bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6Peer | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4Ipv6Peer | bgpIpv4Peer | bgpIpv4PeerIpv4Pools | bgpIpv6Peer | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost | none)): 
+        - Returns dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test],arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*],arg3:list[str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]]): 
 
-            Returns:
-                dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test],arg2:str[None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=*],arg3:list[str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem]]): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -242,16 +242,15 @@ class Timeline(Base):
     def CreateTraffic(self, *args, **kwargs):
         """Executes the createTraffic operation on the server.
 
-        createTraffic(Arg2:enum)href
-            Args:
-                args[0] is Arg2 (str(ethernetVlan|ipv4|ipv4WithChainedDG|ipv4WithDG|ipv6|ipv6WithChainedDG|ipv6WithDG)): 
+        createTraffic(Arg2=enum)href
+        ----------------------------
+        - Arg2 (str(ethernetVlan | ipv4 | ipv4WithChainedDG | ipv4WithDG | ipv6 | ipv6WithChainedDG | ipv6WithDG)): 
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
 
-            Returns:
-                str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem): 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -261,9 +260,10 @@ class Timeline(Base):
     def Retry(self):
         """Executes the retry operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('retry', payload=payload, response_object=None)
@@ -271,9 +271,10 @@ class Timeline(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -281,9 +282,10 @@ class Timeline(Base):
     def Stop(self):
         """Executes the stop operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

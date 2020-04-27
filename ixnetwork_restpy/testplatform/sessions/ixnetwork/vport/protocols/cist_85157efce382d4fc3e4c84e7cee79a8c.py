@@ -36,28 +36,28 @@ class Cist(Base):
 
     @property
     def CistLearnedInfo(self):
-        """An instance of the CistLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_cd6f60baaaf5fc5f677452f5d46d0cfa.CistLearnedInfo): An instance of the CistLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_cd6f60baaaf5fc5f677452f5d46d0cfa.CistLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_cd6f60baaaf5fc5f677452f5d46d0cfa import CistLearnedInfo
         return CistLearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
-        """An instance of the LearnedInterface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_24a49ee1b0fdfd2363f0d4295eb615c6.LearnedInterface): An instance of the LearnedInterface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_24a49ee1b0fdfd2363f0d4295eb615c6.LearnedInterface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_24a49ee1b0fdfd2363f0d4295eb615c6 import LearnedInterface
         return LearnedInterface(self)

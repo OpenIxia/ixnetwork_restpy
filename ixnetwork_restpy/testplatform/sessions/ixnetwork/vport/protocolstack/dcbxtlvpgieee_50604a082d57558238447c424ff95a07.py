@@ -36,19 +36,19 @@ class DcbxTlvPgIeee(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PriorityGroupIdMap(self):
-        """Priority group ID associated to each priority.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Priority group ID associated to each priority.
         """
         return self._get_attribute('priorityGroupIdMap')
     @PriorityGroupIdMap.setter
@@ -57,10 +57,10 @@ class DcbxTlvPgIeee(Base):
 
     @property
     def PriorityGroupPercentageMap(self):
-        """Percentage associated to each priority group id.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): Percentage associated to each priority group id.
         """
         return self._get_attribute('priorityGroupPercentageMap')
     @PriorityGroupPercentageMap.setter
@@ -69,10 +69,10 @@ class DcbxTlvPgIeee(Base):
 
     @property
     def TcsSupported(self):
-        """Number of traffic classes supported by device.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of traffic classes supported by device.
         """
         return self._get_attribute('tcsSupported')
     @TcsSupported.setter
@@ -80,31 +80,34 @@ class DcbxTlvPgIeee(Base):
         self._set_attribute('tcsSupported', value)
 
     def update(self, PriorityGroupIdMap=None, PriorityGroupPercentageMap=None, TcsSupported=None):
-        """Updates a child instance of dcbxTlvPgIeee on the server.
+        """Updates dcbxTlvPgIeee resource on the server.
 
-        Args:
-            PriorityGroupIdMap (list(number)): Priority group ID associated to each priority.
-            PriorityGroupPercentageMap (list(number)): Percentage associated to each priority group id.
-            TcsSupported (number): Number of traffic classes supported by device.
+        Args
+        ----
+        - PriorityGroupIdMap (list(number)): Priority group ID associated to each priority.
+        - PriorityGroupPercentageMap (list(number)): Percentage associated to each priority group id.
+        - TcsSupported (number): Number of traffic classes supported by device.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -116,16 +119,15 @@ class DcbxTlvPgIeee(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -137,16 +139,15 @@ class DcbxTlvPgIeee(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

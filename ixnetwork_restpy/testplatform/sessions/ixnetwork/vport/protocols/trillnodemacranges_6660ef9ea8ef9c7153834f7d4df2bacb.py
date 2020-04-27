@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class TrillNodeMacRanges(Base):
     """NOT DEFINED
-    The TrillNodeMacRanges class encapsulates a list of trillNodeMacRanges resources that is be managed by the user.
+    The TrillNodeMacRanges class encapsulates a list of trillNodeMacRanges resources that are managed by the user.
     A list of resources can be retrieved from the server using the TrillNodeMacRanges.find() method.
-    The list can be managed by the user by using the TrillNodeMacRanges.add() and TrillNodeMacRanges.remove() methods.
+    The list can be managed by using the TrillNodeMacRanges.add() and TrillNodeMacRanges.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class TrillNodeMacRanges(Base):
 
     @property
     def Count(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class TrillNodeMacRanges(Base):
 
     @property
     def EnableMacRanges(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableMacRanges')
     @EnableMacRanges.setter
@@ -62,10 +62,10 @@ class TrillNodeMacRanges(Base):
 
     @property
     def InterNodeMacStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('interNodeMacStep')
     @InterNodeMacStep.setter
@@ -74,10 +74,10 @@ class TrillNodeMacRanges(Base):
 
     @property
     def StartUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('startUnicastMac')
     @StartUnicastMac.setter
@@ -86,19 +86,19 @@ class TrillNodeMacRanges(Base):
 
     @property
     def TopologyId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('topologyId')
 
     @property
     def UnicastMacStep(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('unicastMacStep')
     @UnicastMacStep.setter
@@ -107,10 +107,10 @@ class TrillNodeMacRanges(Base):
 
     @property
     def VlanId(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('vlanId')
     @VlanId.setter
@@ -118,83 +118,96 @@ class TrillNodeMacRanges(Base):
         self._set_attribute('vlanId', value)
 
     def update(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
-        """Updates a child instance of trillNodeMacRanges on the server.
+        """Updates trillNodeMacRanges resource on the server.
 
-        Args:
-            Count (number): NOT DEFINED
-            EnableMacRanges (bool): NOT DEFINED
-            InterNodeMacStep (str): NOT DEFINED
-            StartUnicastMac (str): NOT DEFINED
-            UnicastMacStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - Count (number): NOT DEFINED
+        - EnableMacRanges (bool): NOT DEFINED
+        - InterNodeMacStep (str): NOT DEFINED
+        - StartUnicastMac (str): NOT DEFINED
+        - UnicastMacStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
-        """Adds a new trillNodeMacRanges node on the server and retrieves it in this instance.
+        """Adds a new trillNodeMacRanges resource on the server and adds it to the container.
 
-        Args:
-            Count (number): NOT DEFINED
-            EnableMacRanges (bool): NOT DEFINED
-            InterNodeMacStep (str): NOT DEFINED
-            StartUnicastMac (str): NOT DEFINED
-            UnicastMacStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - Count (number): NOT DEFINED
+        - EnableMacRanges (bool): NOT DEFINED
+        - InterNodeMacStep (str): NOT DEFINED
+        - StartUnicastMac (str): NOT DEFINED
+        - UnicastMacStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved trillNodeMacRanges data using find and the newly added trillNodeMacRanges data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved trillNodeMacRanges resources using find and the newly added trillNodeMacRanges resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the trillNodeMacRanges data in this instance from server.
+        """Deletes all the contained trillNodeMacRanges resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, TopologyId=None, UnicastMacStep=None, VlanId=None):
-        """Finds and retrieves trillNodeMacRanges data from the server.
+        """Finds and retrieves trillNodeMacRanges resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve trillNodeMacRanges data from the server.
-        By default the find method takes no parameters and will retrieve all trillNodeMacRanges data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillNodeMacRanges resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all trillNodeMacRanges resources from the server.
 
-        Args:
-            Count (number): NOT DEFINED
-            EnableMacRanges (bool): NOT DEFINED
-            InterNodeMacStep (str): NOT DEFINED
-            StartUnicastMac (str): NOT DEFINED
-            TopologyId (number): NOT DEFINED
-            UnicastMacStep (str): NOT DEFINED
-            VlanId (number): NOT DEFINED
+        Args
+        ----
+        - Count (number): NOT DEFINED
+        - EnableMacRanges (bool): NOT DEFINED
+        - InterNodeMacStep (str): NOT DEFINED
+        - StartUnicastMac (str): NOT DEFINED
+        - TopologyId (number): NOT DEFINED
+        - UnicastMacStep (str): NOT DEFINED
+        - VlanId (number): NOT DEFINED
 
-        Returns:
-            self: This instance with matching trillNodeMacRanges data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching trillNodeMacRanges resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of trillNodeMacRanges data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the trillNodeMacRanges data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the trillNodeMacRanges resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

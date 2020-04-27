@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Instruction(Base):
     """Instruction
-    The Instruction class encapsulates a list of instruction resources that is be managed by the user.
+    The Instruction class encapsulates a list of instruction resources that are managed by the user.
     A list of resources can be retrieved from the server using the Instruction.find() method.
-    The list can be managed by the user by using the Instruction.add() and Instruction.remove() methods.
+    The list can be managed by using the Instruction.add() and Instruction.remove() methods.
     """
 
     __slots__ = ()
@@ -38,47 +38,47 @@ class Instruction(Base):
 
     @property
     def Actions(self):
-        """An instance of the Actions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actions.Actions): An instance of the Actions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actions.Actions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actions import Actions
         return Actions(self)
 
     @property
     def Field(self):
-        """An instance of the Field class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field.Field): An instance of the Field class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field.Field)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field import Field
         return Field(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def Description(self):
-        """Description of the field.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the field.
         """
         return self._get_attribute('description')
     @Description.setter
@@ -87,19 +87,19 @@ class Instruction(Base):
 
     @property
     def DisplayName(self):
-        """Display name used by GUI.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Display name used by GUI.
         """
         return self._get_attribute('displayName')
 
     @property
     def IsEditable(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -108,10 +108,10 @@ class Instruction(Base):
 
     @property
     def IsEnabled(self):
-        """Enables disables the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables disables the field.
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -120,10 +120,10 @@ class Instruction(Base):
 
     @property
     def IsRequired(self):
-        """Information on the requirement of the field.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Information on the requirement of the field.
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -132,10 +132,10 @@ class Instruction(Base):
 
     @property
     def Name(self):
-        """Name of packet field
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of packet field
         """
         return self._get_attribute('name')
     @Name.setter
@@ -143,82 +143,95 @@ class Instruction(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Updates a child instance of instruction on the server.
+        """Updates instruction resource on the server.
 
-        Args:
-            Description (str): Description of the field.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Description (str): Description of the field.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Adds a new instruction node on the server and retrieves it in this instance.
+        """Adds a new instruction resource on the server and adds it to the container.
 
-        Args:
-            Description (str): Description of the field.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Description (str): Description of the field.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Returns:
-            self: This instance with all currently retrieved instruction data using find and the newly added instruction data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved instruction resources using find and the newly added instruction resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the instruction data in this instance from server.
+        """Deletes all the contained instruction resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
-        """Finds and retrieves instruction data from the server.
+        """Finds and retrieves instruction resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve instruction data from the server.
-        By default the find method takes no parameters and will retrieve all instruction data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instruction resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all instruction resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            Description (str): Description of the field.
-            DisplayName (str): Display name used by GUI.
-            IsEditable (bool): Information on the requirement of the field.
-            IsEnabled (bool): Enables disables the field.
-            IsRequired (bool): Information on the requirement of the field.
-            Name (str): Name of packet field
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - Description (str): Description of the field.
+        - DisplayName (str): Display name used by GUI.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
 
-        Returns:
-            self: This instance with matching instruction data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching instruction resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of instruction data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the instruction data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the instruction resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -227,13 +240,14 @@ class Instruction(Base):
 
         Adds an Action item.
 
-        addAction(Arg2:string)
-            Args:
-                args[0] is Arg2 (str): 
+        addAction(Arg2=string)
+        ----------------------
+        - Arg2 (str): 
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class AdvFecRange(Base):
     """A set of FECs to be included in the LDP router.
-    The AdvFecRange class encapsulates a list of advFecRange resources that is be managed by the user.
+    The AdvFecRange class encapsulates a list of advFecRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the AdvFecRange.find() method.
-    The list can be managed by the user by using the AdvFecRange.add() and AdvFecRange.remove() methods.
+    The list can be managed by using the AdvFecRange.add() and AdvFecRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class AdvFecRange(Base):
 
     @property
     def EnablePacking(self):
-        """(For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
         """
         return self._get_attribute('enablePacking')
     @EnablePacking.setter
@@ -50,10 +50,10 @@ class AdvFecRange(Base):
 
     @property
     def EnableReplyingLspPing(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableReplyingLspPing')
     @EnableReplyingLspPing.setter
@@ -62,10 +62,10 @@ class AdvFecRange(Base):
 
     @property
     def Enabled(self):
-        """Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class AdvFecRange(Base):
 
     @property
     def FirstNetwork(self):
-        """The first network address in the range (in IP address format).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first network address in the range (in IP address format).
         """
         return self._get_attribute('firstNetwork')
     @FirstNetwork.setter
@@ -86,10 +86,10 @@ class AdvFecRange(Base):
 
     @property
     def LabelMode(self):
-        """Indicates whether the same label or incrementing labels should be used in the VC ranges.
-
-        Returns:
-            str(none|increment)
+        """
+        Returns
+        -------
+        - str(none | increment): Indicates whether the same label or incrementing labels should be used in the VC ranges.
         """
         return self._get_attribute('labelMode')
     @LabelMode.setter
@@ -98,10 +98,10 @@ class AdvFecRange(Base):
 
     @property
     def LabelValueStart(self):
-        """The first label in the range of labels.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first label in the range of labels.
         """
         return self._get_attribute('labelValueStart')
     @LabelValueStart.setter
@@ -110,10 +110,10 @@ class AdvFecRange(Base):
 
     @property
     def MaskWidth(self):
-        """The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
         """
         return self._get_attribute('maskWidth')
     @MaskWidth.setter
@@ -122,10 +122,10 @@ class AdvFecRange(Base):
 
     @property
     def NumberOfNetworks(self):
-        """The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
         """
         return self._get_attribute('numberOfNetworks')
     @NumberOfNetworks.setter
@@ -133,88 +133,101 @@ class AdvFecRange(Base):
         self._set_attribute('numberOfNetworks', value)
 
     def update(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
-        """Updates a child instance of advFecRange on the server.
+        """Updates advFecRange resource on the server.
 
-        Args:
-            EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
-            FirstNetwork (str): The first network address in the range (in IP address format).
-            LabelMode (str(none|increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
-            LabelValueStart (number): The first label in the range of labels.
-            MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
-            NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
+        - FirstNetwork (str): The first network address in the range (in IP address format).
+        - LabelMode (str(none | increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
+        - LabelValueStart (number): The first label in the range of labels.
+        - MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
+        - NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
-        """Adds a new advFecRange node on the server and retrieves it in this instance.
+        """Adds a new advFecRange resource on the server and adds it to the container.
 
-        Args:
-            EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
-            FirstNetwork (str): The first network address in the range (in IP address format).
-            LabelMode (str(none|increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
-            LabelValueStart (number): The first label in the range of labels.
-            MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
-            NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
+        - FirstNetwork (str): The first network address in the range (in IP address format).
+        - LabelMode (str(none | increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
+        - LabelValueStart (number): The first label in the range of labels.
+        - MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
+        - NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Returns:
-            self: This instance with all currently retrieved advFecRange data using find and the newly added advFecRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved advFecRange resources using find and the newly added advFecRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the advFecRange data in this instance from server.
+        """Deletes all the contained advFecRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
-        """Finds and retrieves advFecRange data from the server.
+        """Finds and retrieves advFecRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve advFecRange data from the server.
-        By default the find method takes no parameters and will retrieve all advFecRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve advFecRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all advFecRange resources from the server.
 
-        Args:
-            EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
-            EnableReplyingLspPing (bool): NOT DEFINED
-            Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
-            FirstNetwork (str): The first network address in the range (in IP address format).
-            LabelMode (str(none|increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
-            LabelValueStart (number): The first label in the range of labels.
-            MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
-            NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+        Args
+        ----
+        - EnablePacking (bool): (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
+        - EnableReplyingLspPing (bool): NOT DEFINED
+        - Enabled (bool): Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
+        - FirstNetwork (str): The first network address in the range (in IP address format).
+        - LabelMode (str(none | increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
+        - LabelValueStart (number): The first label in the range of labels.
+        - MaskWidth (number): The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
+        - NumberOfNetworks (number): The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
 
-        Returns:
-            self: This instance with matching advFecRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching advFecRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of advFecRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the advFecRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the advFecRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class Field(Base):
     """Tlv field
-    The Field class encapsulates a list of field resources that is managed by the system.
+    The Field class encapsulates a list of field resources that are managed by the system.
     A list of resources can be retrieved from the server using the Field.find() method.
     """
 
@@ -37,24 +37,24 @@ class Field(Base):
 
     @property
     def Restriction(self):
-        """An instance of the Restriction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction.Restriction): An instance of the Restriction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction.Restriction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction import Restriction
         return Restriction(self)
 
     @property
     def Description(self):
-        """Description of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the tlv
         """
         return self._get_attribute('description')
     @Description.setter
@@ -63,10 +63,10 @@ class Field(Base):
 
     @property
     def Encoding(self):
-        """Encoding of the tlv value, any change will result in the value being reset
-
-        Returns:
-            str(bool|decimal|fcid|float|hex|ipv4|ipv6|mac|string|varLenHex)
+        """
+        Returns
+        -------
+        - str(bool | decimal | fcid | float | hex | ipv4 | ipv6 | mac | string | varLenHex): Encoding of the tlv value, any change will result in the value being reset
         """
         return self._get_attribute('encoding')
     @Encoding.setter
@@ -75,10 +75,10 @@ class Field(Base):
 
     @property
     def IsEditable(self):
-        """Indicates whether this is editable or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this is editable or not
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -87,10 +87,10 @@ class Field(Base):
 
     @property
     def IsEnabled(self):
-        """Enables/disables this field
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables/disables this field
         """
         return self._get_attribute('isEnabled')
     @IsEnabled.setter
@@ -99,10 +99,10 @@ class Field(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -111,10 +111,10 @@ class Field(Base):
 
     @property
     def Size(self):
-        """Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
         """
         return self._get_attribute('size')
     @Size.setter
@@ -123,10 +123,10 @@ class Field(Base):
 
     @property
     def SizeType(self):
-        """Size type of the tlv value, any change will result in the value being reset
-
-        Returns:
-            str(bit|byte)
+        """
+        Returns
+        -------
+        - str(bit | byte): Size type of the tlv value, any change will result in the value being reset
         """
         return self._get_attribute('sizeType')
     @SizeType.setter
@@ -135,68 +135,78 @@ class Field(Base):
 
     @property
     def Value(self):
-        """Value represented as a multivalue object
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('value')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value represented as a multivalue object
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('value'))
 
     def update(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
-        """Updates a child instance of field on the server.
+        """Updates field resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Description (str): Description of the tlv
-            Encoding (str(bool|decimal|fcid|float|hex|ipv4|ipv6|mac|string|varLenHex)): Encoding of the tlv value, any change will result in the value being reset
-            IsEditable (bool): Indicates whether this is editable or not
-            IsEnabled (bool): Enables/disables this field
-            Name (str): Name of the tlv
-            Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
-            SizeType (str(bit|byte)): Size type of the tlv value, any change will result in the value being reset
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - Encoding (str(bool | decimal | fcid | float | hex | ipv4 | ipv6 | mac | string | varLenHex)): Encoding of the tlv value, any change will result in the value being reset
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsEnabled (bool): Enables/disables this field
+        - Name (str): Name of the tlv
+        - Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
+        - SizeType (str(bit | byte)): Size type of the tlv value, any change will result in the value being reset
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def find(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
-        """Finds and retrieves field data from the server.
+        """Finds and retrieves field resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve field data from the server.
-        By default the find method takes no parameters and will retrieve all field data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all field resources from the server.
 
-        Args:
-            Description (str): Description of the tlv
-            Encoding (str(bool|decimal|fcid|float|hex|ipv4|ipv6|mac|string|varLenHex)): Encoding of the tlv value, any change will result in the value being reset
-            IsEditable (bool): Indicates whether this is editable or not
-            IsEnabled (bool): Enables/disables this field
-            Name (str): Name of the tlv
-            Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
-            SizeType (str(bit|byte)): Size type of the tlv value, any change will result in the value being reset
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - Encoding (str(bool | decimal | fcid | float | hex | ipv4 | ipv6 | mac | string | varLenHex)): Encoding of the tlv value, any change will result in the value being reset
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsEnabled (bool): Enables/disables this field
+        - Name (str): Name of the tlv
+        - Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
+        - SizeType (str(bit | byte)): Size type of the tlv value, any change will result in the value being reset
 
-        Returns:
-            self: This instance with matching field data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching field resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the field data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the field resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -205,14 +215,17 @@ class Field(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Value (str): optional regex of value
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Value (str): optional regex of value
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

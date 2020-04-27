@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedInfo(Base):
     """The main learned information node that contains tables of learned information.
-    The LearnedInfo class encapsulates a list of learnedInfo resources that is managed by the system.
+    The LearnedInfo class encapsulates a list of learnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedInfo.find() method.
     """
 
@@ -37,109 +37,116 @@ class LearnedInfo(Base):
 
     @property
     def Col(self):
-        """An instance of the DEPRECATED Col class.
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col.Col): An instance of the Col class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col.Col)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col import Col
         return Col(self)
 
     @property
     def Table(self):
-        """An instance of the Table class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table.Table): An instance of the Table class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table.Table)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table import Table
         return Table(self)
 
     @property
     def __id__(self):
-        """A unique id for the learned information table
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): A unique id for the learned information table
         """
         return self._get_attribute('__id__')
 
     @property
     def Columns(self):
-        """DEPRECATED The list of columns in the learned information table
-
-        Returns:
-            list(str)
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str): The list of columns in the learned information table
         """
         return self._get_attribute('columns')
 
     @property
     def State(self):
-        """The state of the learned information query
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The state of the learned information query
         """
         return self._get_attribute('state')
 
     @property
     def Type(self):
-        """DEPRECATED The type of learned information
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: The type of learned information
         """
         return self._get_attribute('type')
 
     @property
     def Values(self):
-        """DEPRECATED A list of rows of learned information values
-
-        Returns:
-            list(list[str])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(list[str]): A list of rows of learned information values
         """
         return self._get_attribute('values')
 
     def find(self, __id__=None, Columns=None, State=None, Type=None, Values=None):
-        """Finds and retrieves learnedInfo data from the server.
+        """Finds and retrieves learnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all learnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedInfo resources from the server.
 
-        Args:
-            __id__ (list(str)): A unique id for the learned information table
-            Columns (list(str)): The list of columns in the learned information table
-            State (str): The state of the learned information query
-            Type (str): The type of learned information
-            Values (list(list[str])): A list of rows of learned information values
+        Args
+        ----
+        - __id__ (list(str)): A unique id for the learned information table
+        - Columns (list(str)): The list of columns in the learned information table
+        - State (str): The state of the learned information query
+        - Type (str): The type of learned information
+        - Values (list(list[str])): A list of rows of learned information values
 
-        Returns:
-            self: This instance with matching learnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FcFportGlobals(Base):
     """StackManager Fc F_Port Global Settings
-    The FcFportGlobals class encapsulates a list of fcFportGlobals resources that is be managed by the user.
+    The FcFportGlobals class encapsulates a list of fcFportGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the FcFportGlobals.find() method.
-    The list can be managed by the user by using the FcFportGlobals.add() and FcFportGlobals.remove() methods.
+    The list can be managed by using the FcFportGlobals.add() and FcFportGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class FcFportGlobals(Base):
 
     @property
     def AcceptPartialConfig(self):
-        """This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
         """
         return self._get_attribute('acceptPartialConfig')
     @AcceptPartialConfig.setter
@@ -50,10 +50,10 @@ class FcFportGlobals(Base):
 
     @property
     def MaxPacketsPerSecond(self):
-        """The maximum number of requests transmitted in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of requests transmitted in each second.
         """
         return self._get_attribute('maxPacketsPerSecond')
     @MaxPacketsPerSecond.setter
@@ -62,10 +62,10 @@ class FcFportGlobals(Base):
 
     @property
     def MaxRetries(self):
-        """The number of request retries for each negotiation stage in case of response timeout or error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
         return self._get_attribute('maxRetries')
     @MaxRetries.setter
@@ -74,19 +74,19 @@ class FcFportGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RetryInterval(self):
-        """The number of seconds to wait for a response before sending a new request.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for a response before sending a new request.
         """
         return self._get_attribute('retryInterval')
     @RetryInterval.setter
@@ -94,77 +94,90 @@ class FcFportGlobals(Base):
         self._set_attribute('retryInterval', value)
 
     def update(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
-        """Updates a child instance of fcFportGlobals on the server.
+        """Updates fcFportGlobals resource on the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
-        """Adds a new fcFportGlobals node on the server and retrieves it in this instance.
+        """Adds a new fcFportGlobals resource on the server and adds it to the container.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
 
-        Returns:
-            self: This instance with all currently retrieved fcFportGlobals data using find and the newly added fcFportGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved fcFportGlobals resources using find and the newly added fcFportGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the fcFportGlobals data in this instance from server.
+        """Deletes all the contained fcFportGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, ObjectId=None, RetryInterval=None):
-        """Finds and retrieves fcFportGlobals data from the server.
+        """Finds and retrieves fcFportGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve fcFportGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all fcFportGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcFportGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcFportGlobals resources from the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            ObjectId (str): Unique identifier for this object
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - ObjectId (str): Unique identifier for this object
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
 
-        Returns:
-            self: This instance with matching fcFportGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching fcFportGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of fcFportGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the fcFportGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the fcFportGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

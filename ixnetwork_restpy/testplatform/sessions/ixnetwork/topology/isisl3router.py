@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class IsisL3Router(Base):
     """ISIS-L3 Router configuration
-    The IsisL3Router class encapsulates a list of isisL3Router resources that is managed by the system.
+    The IsisL3Router class encapsulates a list of isisL3Router resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisL3Router.find() method.
     """
 
@@ -37,393 +37,432 @@ class IsisL3Router(Base):
 
     @property
     def IsisBierSubDomainList(self):
-        """An instance of the IsisBierSubDomainList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbiersubdomainlist.IsisBierSubDomainList): An instance of the IsisBierSubDomainList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbiersubdomainlist.IsisBierSubDomainList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbiersubdomainlist import IsisBierSubDomainList
         return IsisBierSubDomainList(self)._select()
 
     @property
+    def IsisFlexAlgorithmList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisflexalgorithmlist.IsisFlexAlgorithmList): An instance of the IsisFlexAlgorithmList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisflexalgorithmlist import IsisFlexAlgorithmList
+        return IsisFlexAlgorithmList(self)._select()
+
+    @property
     def IsisMappingServerIPV4List(self):
-        """An instance of the IsisMappingServerIPV4List class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv4list.IsisMappingServerIPV4List): An instance of the IsisMappingServerIPV4List class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv4list.IsisMappingServerIPV4List)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv4list import IsisMappingServerIPV4List
         return IsisMappingServerIPV4List(self)._select()
 
     @property
     def IsisMappingServerIPV6List(self):
-        """An instance of the IsisMappingServerIPV6List class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv6list.IsisMappingServerIPV6List): An instance of the IsisMappingServerIPV6List class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv6list.IsisMappingServerIPV6List)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismappingserveripv6list import IsisMappingServerIPV6List
         return IsisMappingServerIPV6List(self)._select()
 
     @property
     def IsisMultiTopologyValuesList(self):
-        """An instance of the IsisMultiTopologyValuesList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismultitopologyvalueslist.IsisMultiTopologyValuesList): An instance of the IsisMultiTopologyValuesList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismultitopologyvalueslist.IsisMultiTopologyValuesList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismultitopologyvalueslist import IsisMultiTopologyValuesList
         return IsisMultiTopologyValuesList(self)
 
     @property
     def IsisSRAlgorithmList(self):
-        """An instance of the IsisSRAlgorithmList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissralgorithmlist.IsisSRAlgorithmList): An instance of the IsisSRAlgorithmList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissralgorithmlist.IsisSRAlgorithmList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissralgorithmlist import IsisSRAlgorithmList
         return IsisSRAlgorithmList(self)
 
     @property
     def IsisSRGBRangeSubObjectsList(self):
-        """An instance of the IsisSRGBRangeSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrgbrangesubobjectslist.IsisSRGBRangeSubObjectsList): An instance of the IsisSRGBRangeSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrgbrangesubobjectslist.IsisSRGBRangeSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrgbrangesubobjectslist import IsisSRGBRangeSubObjectsList
         return IsisSRGBRangeSubObjectsList(self)
 
     @property
     def IsisSRLBDescriptorList(self):
-        """An instance of the IsisSRLBDescriptorList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrlbdescriptorlist.IsisSRLBDescriptorList): An instance of the IsisSRLBDescriptorList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrlbdescriptorlist.IsisSRLBDescriptorList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrlbdescriptorlist import IsisSRLBDescriptorList
         return IsisSRLBDescriptorList(self)
 
     @property
     def IsisSRTunnelList(self):
-        """An instance of the IsisSRTunnelList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrtunnellist.IsisSRTunnelList): An instance of the IsisSRTunnelList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrtunnellist.IsisSRTunnelList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrtunnellist import IsisSRTunnelList
         return IsisSRTunnelList(self)._select()
 
     @property
     def IsisSRv6LocatorEntryList(self):
-        """An instance of the IsisSRv6LocatorEntryList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist.IsisSRv6LocatorEntryList): An instance of the IsisSRv6LocatorEntryList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist.IsisSRv6LocatorEntryList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist import IsisSRv6LocatorEntryList
         return IsisSRv6LocatorEntryList(self)._select()
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def BIERNodePrefix(self):
-        """Node Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('BIERNodePrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Node Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('BIERNodePrefix'))
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AdvertiseNodeMsd(self):
-        """Advertise Node MSD
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseNodeMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Node MSD
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseNodeMsd'))
 
     @property
     def AdvertiseSRLB(self):
-        """Enables advertisement of Segment Routing Local Block (SRLB) Sub-Tlv in Router Capability Tlv
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseSRLB')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables advertisement of Segment Routing Local Block (SRLB) Sub-Tlv in Router Capability Tlv
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseSRLB'))
 
     @property
     def AdvertiseSRMSPreference(self):
-        """Advertise SRMS Preference sub-TLV in Router capability TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('advertiseSRMSPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRMS Preference sub-TLV in Router capability TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseSRMSPreference'))
 
     @property
     def AdvertiseSidAsLocator(self):
-        """DEPRECATED If enabled, then the configured IPv6 Node SID gets advertised as a reachable IPv6 prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, then the configured IPv6 Node SID gets advertised as a reachable IPv6 prefix
         """
-        return self._get_attribute('advertiseSidAsLocator')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('advertiseSidAsLocator'))
 
     @property
     def Algorithm(self):
-        """DEPRECATED Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
-        return self._get_attribute('algorithm')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('algorithm'))
 
     @property
     def AreaAddresses(self):
-        """Area Addresses
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaAddresses')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Addresses
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaAddresses'))
 
     @property
     def AreaAuthenticationType(self):
-        """Area Authentication Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaAuthenticationType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Authentication Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaAuthenticationType'))
 
     @property
     def AreaTransmitPasswordOrMD5Key(self):
-        """Area Transmit Password / MD5-Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('areaTransmitPasswordOrMD5Key')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Area Transmit Password / MD5-Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('areaTransmitPasswordOrMD5Key'))
 
     @property
     def Attached(self):
-        """Attached
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('attached')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Attached
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('attached'))
 
     @property
     def BIERIPv6NodePrefix(self):
-        """IPv6 Node Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bIERIPv6NodePrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Node Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bIERIPv6NodePrefix'))
 
     @property
     def BierNFlag(self):
-        """Nodal prefix flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bierNFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Nodal prefix flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bierNFlag'))
 
     @property
     def BierRFlag(self):
-        """Redistribution flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bierRFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bierRFlag'))
 
     @property
     def CSNPInterval(self):
-        """CSNP Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('cSNPInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CSNP Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('cSNPInterval'))
 
     @property
     def ConfigureSIDIndexLabel(self):
-        """Configure SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('configureSIDIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('configureSIDIndexLabel'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DBit(self):
-        """When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dBit'))
 
     @property
     def DBitForSRv6Cap(self):
-        """When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('dBitForSRv6Cap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dBitForSRv6Cap'))
 
     @property
     def DBitInsideSRv6SidTLV(self):
-        """DEPRECATED When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
         """
-        return self._get_attribute('dBitInsideSRv6SidTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('dBitInsideSRv6SidTLV'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DiscardLSPs(self):
-        """Discard LSPs
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('discardLSPs')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Discard LSPs
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('discardLSPs'))
 
     @property
     def Distribution(self):
-        """Distribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('distribution')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Distribution
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('distribution'))
 
     @property
     def DomainAuthenticationType(self):
-        """Domain Authentication Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('domainAuthenticationType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Domain Authentication Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('domainAuthenticationType'))
 
     @property
     def DomainTransmitPasswordOrMD5Key(self):
-        """Domain Transmit Password / MD5-Key
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('domainTransmitPasswordOrMD5Key')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Domain Transmit Password / MD5-Key
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('domainTransmitPasswordOrMD5Key'))
 
     @property
     def EFlag(self):
-        """Explicit NULL flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('eFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlag'))
 
     @property
     def EFlagOfSRv6CapTlv(self):
-        """DEPRECATED If set, then router is able to apply T.Encap operation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then router is able to apply T.Encap operation
         """
-        return self._get_attribute('eFlagOfSRv6CapTlv')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('eFlagOfSRv6CapTlv'))
 
     @property
     def EnableBIER(self):
-        """Enable BIER
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable BIER
         """
         return self._get_attribute('enableBIER')
     @EnableBIER.setter
@@ -432,55 +471,90 @@ class IsisL3Router(Base):
 
     @property
     def EnableHelloPadding(self):
-        """Enable Hello Padding
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHelloPadding')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Padding
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHelloPadding'))
 
     @property
     def EnableHitlessRestart(self):
-        """Enable Hitless Restart
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHitlessRestart')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hitless Restart
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHitlessRestart'))
 
     @property
     def EnableHostName(self):
-        """Enable Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHostName'))
+
+    @property
+    def EnableITID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select this checkbox to enable Instance-specific topology identifier. Once it is enabled, it allows to configure ITID value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableITID'))
+
+    @property
+    def EnableIpV6TE(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IPv6 TE
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableIpV6TE'))
+
+    @property
+    def EnableMI(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select this checkbox to configure the Router as Multi Instance. Once it is enabled, it allows to configure IID and ITID details.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMI'))
 
     @property
     def EnableMTIPv6(self):
-        """Enable MT for IPv6
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMTIPv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MT for IPv6
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMTIPv6'))
 
     @property
     def EnableMappingServer(self):
-        """This ensures whether the ISIS router will behave as a Segment Routing Mapping Server (SRMS) or not.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableMappingServer')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This ensures whether the ISIS router will behave as a Segment Routing Mapping Server (SRMS) or not.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableMappingServer'))
 
     @property
     def EnableSR(self):
-        """This enables SR MPLS on all the emulated ISIS router(s)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This enables SR MPLS on all the emulated ISIS router(s)
         """
         return self._get_attribute('enableSR')
     @EnableSR.setter
@@ -489,298 +563,370 @@ class IsisL3Router(Base):
 
     @property
     def EnableTE(self):
-        """Enable TE
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableTE')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IPv4 TE
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableTE'))
 
     @property
     def EnableWMforTE(self):
-        """Hidden field is to disable wide Metric, when user disable TE Router conditionally
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableWMforTE')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hidden field is to disable wide Metric, when user disable TE Router conditionally
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableWMforTE'))
 
     @property
     def EnableWideMetric(self):
-        """Enable Wide Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableWideMetric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Wide Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableWideMetric'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
-    def Funcflags(self):
-        """DEPRECATED This is the function flags
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+    def FlexAlgoCount(self):
         """
-        return self._get_attribute('funcflags')
+        Returns
+        -------
+        - number: Flex Algo Count
+        """
+        return self._get_attribute('flexAlgoCount')
+    @FlexAlgoCount.setter
+    def FlexAlgoCount(self, value):
+        self._set_attribute('flexAlgoCount', value)
+
+    @property
+    def Funcflags(self):
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the function flags
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('funcflags'))
 
     @property
     def Function(self):
-        """DEPRECATED This specifies endpoint function codes
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies endpoint function codes
         """
-        return self._get_attribute('function')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('function'))
 
     @property
     def HitlessRestartMode(self):
-        """Restart Mode
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartMode')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Mode
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartMode'))
 
     @property
     def HitlessRestartTime(self):
-        """Restart Time
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartTime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Time
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartTime'))
 
     @property
     def HitlessRestartVersion(self):
-        """Restart Version
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hitlessRestartVersion')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Version
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hitlessRestartVersion'))
 
     @property
     def HostName(self):
-        """Host Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('hostName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('hostName'))
 
     @property
     def IgnoreReceiveMD5(self):
-        """Ignore Receive MD5
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ignoreReceiveMD5')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Ignore Receive MD5
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ignoreReceiveMD5'))
+
+    @property
+    def Iid(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Instance Identifier. Configure any number within the range of 0-65535.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('iid'))
 
     @property
     def IncludeMaxSlMsd(self):
-        """If set, then Include Maximum Segment Left MSD in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMaxSlMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum Segment Left MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaxSlMsd'))
 
     @property
     def IncludeMaximumEndDMsd(self):
-        """If set, then include Maximum End D MSD in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMaximumEndDMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum End D MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumEndDMsd'))
 
     @property
     def IncludeMaximumEndDSrhTLV(self):
-        """DEPRECATED If set, then include Maximum End D SRH TLV in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum End D SRH TLV in SRv6 capability
         """
-        return self._get_attribute('includeMaximumEndDSrhTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumEndDSrhTLV'))
 
     @property
     def IncludeMaximumEndPopMsd(self):
-        """If set, then include Max-End-Pop-MSD in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMaximumEndPopMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Max-End-Pop-MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumEndPopMsd'))
 
     @property
     def IncludeMaximumEndPopSrhTLV(self):
-        """DEPRECATED If set, then include Max-End-Pop-SRH TLV in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Max-End-Pop-SRH TLV in SRv6 capability
         """
-        return self._get_attribute('includeMaximumEndPopSrhTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumEndPopSrhTLV'))
 
     @property
     def IncludeMaximumSLTLV(self):
-        """DEPRECATED If set, then include Maximum SL TLV in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum SL TLV in SRv6 capability
         """
-        return self._get_attribute('includeMaximumSLTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumSLTLV'))
 
     @property
     def IncludeMaximumTEncapMsd(self):
-        """If set, then include Maximum T.Encap MSD in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMaximumTEncapMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Encap MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumTEncapMsd'))
 
     @property
     def IncludeMaximumTEncapSrhTLV(self):
-        """DEPRECATED If set, then include Maximum T.Encap SRH TLV in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Encap SRH TLV in SRv6 capability
         """
-        return self._get_attribute('includeMaximumTEncapSrhTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumTEncapSrhTLV'))
 
     @property
     def IncludeMaximumTInsertMsd(self):
-        """If set, then include Maximum T.Insert MSD in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMaximumTInsertMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Insert MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumTInsertMsd'))
 
     @property
     def IncludeMaximumTInsertSrhTLV(self):
-        """DEPRECATED If set, then include Maximum T.Insert SRH TLV in SRv6 capability
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Insert SRH TLV in SRv6 capability
         """
-        return self._get_attribute('includeMaximumTInsertSrhTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMaximumTInsertSrhTLV'))
 
     @property
     def IncludePrefixAttrFlags(self):
-        """Include Prefix Attributes Flags
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includePrefixAttrFlags')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Prefix Attributes Flags
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includePrefixAttrFlags'))
 
     @property
     def InterLSPsOrMGroupPDUBurstGap(self):
-        """Inter LSPs/MGROUP-PDUs Burst Gap (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interLSPsOrMGroupPDUBurstGap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inter LSPs/MGROUP-PDUs Burst Gap (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interLSPsOrMGroupPDUBurstGap'))
+
+    @property
+    def IpV6TERouterId(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 TE Router ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipV6TERouterId'))
 
     @property
     def Ipv4Flag(self):
-        """If set, then the router is capable of processing SR MPLS encapsulated IPv4 packets on all interfaces.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv4Flag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then the router is capable of processing SR MPLS encapsulated IPv4 packets on all interfaces.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv4Flag'))
 
     @property
     def Ipv6Flag(self):
-        """If set, then the router is capable of processing SR MPLS encapsulated IPv6 packets on all interfaces.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6Flag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then the router is capable of processing SR MPLS encapsulated IPv6 packets on all interfaces.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6Flag'))
 
     @property
     def Ipv6NodePrefix(self):
-        """DEPRECATED IPv6 Node SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Node SID
         """
-        return self._get_attribute('ipv6NodePrefix')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6NodePrefix'))
 
     @property
     def Ipv6Srh(self):
-        """This is the SR-IPv6 flag. If set to true, then this enables the SRv6 capability on the router If set to false, then this enables the MPLS SR capability on the router
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipv6Srh')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the SR-IPv6 flag. If set to true, then this enables the SRv6 capability on the router If set to false, then this enables the MPLS SR capability on the router
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipv6Srh'))
+
+    @property
+    def Itid(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Instance-specific topology identifier. Configure any number within the range of 0-65535.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('itid'))
 
     @property
     def LFlag(self):
-        """Local Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lFlag'))
 
     @property
     def LSPLifetime(self):
-        """LSP Rifetime (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPLifetime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Rifetime (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPLifetime'))
 
     @property
     def LSPRefreshRate(self):
-        """LSP Refresh Rate (sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPRefreshRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Refresh Rate (sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPRefreshRate'))
 
     @property
     def LSPorMGroupPDUMinTransmissionInterval(self):
-        """LSP/MGROUP-PDU Min Transmission Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('lSPorMGroupPDUMinTransmissionInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP/MGROUP-PDU Min Transmission Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('lSPorMGroupPDUMinTransmissionInterval'))
 
     @property
     def LocalSystemID(self):
-        """System ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): System ID
         """
         return self._get_attribute('localSystemID')
 
     @property
     def LocatorCount(self):
-        """Locator Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Locator Count
         """
         return self._get_attribute('locatorCount')
     @LocatorCount.setter
@@ -789,136 +935,150 @@ class IsisL3Router(Base):
 
     @property
     def LocatorPrefixLength(self):
-        """DEPRECATED Locator Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Prefix Length
         """
-        return self._get_attribute('locatorPrefixLength')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('locatorPrefixLength'))
 
     @property
     def Mask(self):
-        """Mask
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mask
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mask'))
 
     @property
     def MaxAreaAddresses(self):
-        """Maximum Area Addresses
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxAreaAddresses')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Area Addresses
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxAreaAddresses'))
 
     @property
     def MaxEndD(self):
-        """DEPRECATED This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions if the extension header right underneath the outer IPv6 header is an SRH.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions if the extension header right underneath the outer IPv6 header is an SRH.
         """
-        return self._get_attribute('maxEndD')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndD'))
 
     @property
     def MaxEndDMsd(self):
-        """This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxEndDMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndDMsd'))
 
     @property
     def MaxEndPopMsd(self):
-        """This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxEndPopMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndPopMsd'))
 
     @property
     def MaxEndPopSrh(self):
-        """DEPRECATED This field specifies the maximum number of SIDs in the top SRH in an SRH stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in the top SRH in an SRH stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
         """
-        return self._get_attribute('maxEndPopSrh')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxEndPopSrh'))
 
     @property
     def MaxLSPSize(self):
-        """Max LSP Size
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxLSPSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSP Size
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxLSPSize'))
 
     @property
     def MaxLSPsOrMGroupPDUsPerBurst(self):
-        """Max LSPs/MGROUP-PDUs Per Burst
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxLSPsOrMGroupPDUsPerBurst')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSPs/MGROUP-PDUs Per Burst
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxLSPsOrMGroupPDUsPerBurst'))
 
     @property
     def MaxSL(self):
-        """DEPRECATED This field specifies the maximum value of the Segments Left (SL) field in the SRH of a received packet before applying the function associated with a SID.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum value of the Segments Left (SL) field in the SRH of a received packet before applying the function associated with a SID.
         """
-        return self._get_attribute('maxSL')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxSL'))
 
     @property
     def MaxSlMsd(self):
-        """This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxSlMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxSlMsd'))
 
     @property
     def MaxTEncap(self):
-        """This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxTEncap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTEncap'))
 
     @property
     def MaxTInsert(self):
-        """DEPRECATED This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
         """
-        return self._get_attribute('maxTInsert')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTInsert'))
 
     @property
     def MaxTInsertMsd(self):
-        """This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxTInsertMsd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxTInsertMsd'))
 
     @property
     def MtCount(self):
-        """MT Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: MT Count
         """
         return self._get_attribute('mtCount')
     @MtCount.setter
@@ -927,19 +1087,20 @@ class IsisL3Router(Base):
 
     @property
     def NFlag(self):
-        """Nodal prefix flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Nodal prefix flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nFlag'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -948,10 +1109,10 @@ class IsisL3Router(Base):
 
     @property
     def NoOfBIERSubDomains(self):
-        """Number of BIER Sub Domains
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of BIER Sub Domains
         """
         return self._get_attribute('noOfBIERSubDomains')
     @NoOfBIERSubDomains.setter
@@ -960,10 +1121,10 @@ class IsisL3Router(Base):
 
     @property
     def NoOfSRTunnels(self):
-        """Number of MPLS SR Tunnels
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of MPLS SR Tunnels
         """
         return self._get_attribute('noOfSRTunnels')
     @NoOfSRTunnels.setter
@@ -972,19 +1133,20 @@ class IsisL3Router(Base):
 
     @property
     def NodePrefix(self):
-        """Node Prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('nodePrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Node Prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('nodePrefix'))
 
     @property
     def NumberOfMappingIPV4Ranges(self):
-        """Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
         """
         return self._get_attribute('numberOfMappingIPV4Ranges')
     @NumberOfMappingIPV4Ranges.setter
@@ -993,10 +1155,10 @@ class IsisL3Router(Base):
 
     @property
     def NumberOfMappingIPV6Ranges(self):
-        """Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
         """
         return self._get_attribute('numberOfMappingIPV6Ranges')
     @NumberOfMappingIPV6Ranges.setter
@@ -1005,190 +1167,210 @@ class IsisL3Router(Base):
 
     @property
     def OFlagOfSRv6Cap(self):
-        """If set, it indicates that this packet is an operations and management (OAM) packet.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('oFlagOfSRv6Cap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, it indicates that this packet is an operations and management (OAM) packet.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('oFlagOfSRv6Cap'))
 
     @property
     def OFlagOfSRv6CapTlv(self):
-        """DEPRECATED If set, it indicates that this packet is an operations and management (OAM) packet.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, it indicates that this packet is an operations and management (OAM) packet.
         """
-        return self._get_attribute('oFlagOfSRv6CapTlv')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('oFlagOfSRv6CapTlv'))
 
     @property
     def Overloaded(self):
-        """Overloaded
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('overloaded')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Overloaded
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('overloaded'))
 
     @property
     def PFlag(self):
-        """No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlag'))
 
     @property
     def PSNPInterval(self):
-        """PSNP Interval (ms)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pSNPInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PSNP Interval (ms)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pSNPInterval'))
 
     @property
     def PartitionRepair(self):
-        """Partition Repair
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('partitionRepair')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Partition Repair
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('partitionRepair'))
 
     @property
     def PrefixAdvertisementType(self):
-        """Prefix Advertisement Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('prefixAdvertisementType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Advertisement Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixAdvertisementType'))
 
     @property
     def PrefixLength(self):
-        """DEPRECATED Prefix Length
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
-        return self._get_attribute('prefixLength')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('prefixLength'))
 
     @property
     def RFlag(self):
-        """Redistribution flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rFlag'))
 
     @property
     def Redistribution(self):
-        """Redistribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redistribution')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redistribution'))
 
     @property
     def RedistributionForSRv6(self):
-        """DEPRECATED Redistribution
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
         """
-        return self._get_attribute('redistributionForSRv6')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redistributionForSRv6'))
 
     @property
     def ReservedInsideFlagsOfSRv6SidTLV(self):
-        """DEPRECATED This is the reserved field (part of flags field of SRv6 SID TLV)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the reserved field (part of flags field of SRv6 SID TLV)
         """
-        return self._get_attribute('reservedInsideFlagsOfSRv6SidTLV')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedInsideFlagsOfSRv6SidTLV'))
 
     @property
     def ReservedInsideSRv6CapFlag(self):
-        """This is the reserved field (as part of Flags field of SRv6 Capability TLV)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reservedInsideSRv6CapFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the reserved field (as part of Flags field of SRv6 Capability TLV)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reservedInsideSRv6CapFlag'))
 
     @property
     def RouteMetric(self):
-        """DEPRECATED Route Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
         """
-        return self._get_attribute('routeMetric')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeMetric'))
 
     @property
     def RouteOrigin(self):
-        """DEPRECATED Route Origin
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
-        return self._get_attribute('routeOrigin')
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('routeOrigin'))
 
     @property
     def RtrcapId(self):
-        """Router Capability Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rtrcapId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router Capability Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rtrcapId'))
 
     @property
     def RtrcapIdForSrv6(self):
-        """Router Capability Id
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('rtrcapIdForSrv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Router Capability Id
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('rtrcapIdForSrv6'))
 
     @property
     def SBit(self):
-        """Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sBit'))
 
     @property
     def SBitForSRv6Cap(self):
-        """Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sBitForSRv6Cap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sBitForSRv6Cap'))
 
     @property
     def SIDIndexLabel(self):
-        """SID/Index/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sIDIndexLabel')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sIDIndexLabel'))
 
     @property
     def SRAlgorithmCount(self):
-        """SR Algorithm Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SR Algorithm Count
         """
         return self._get_attribute('sRAlgorithmCount')
     @SRAlgorithmCount.setter
@@ -1197,10 +1379,10 @@ class IsisL3Router(Base):
 
     @property
     def SRGBRangeCount(self):
-        """SRGB Range Count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: SRGB Range Count
         """
         return self._get_attribute('sRGBRangeCount')
     @SRGBRangeCount.setter
@@ -1209,46 +1391,48 @@ class IsisL3Router(Base):
 
     @property
     def SRv6NodePrefix(self):
-        """This is an IPv6 Node prefix for the SRv6 router
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sRv6NodePrefix')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is an IPv6 Node prefix for the SRv6 router
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sRv6NodePrefix'))
 
     @property
     def SRv6NodePrefixLength(self):
-        """This is the prefix length of the SRv6 node prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sRv6NodePrefixLength')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the prefix length of the SRv6 node prefix
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sRv6NodePrefixLength'))
 
     @property
     def SessionInfo(self):
-        """Logs additional information about the session Information
-
-        Returns:
-            list(str[noIfaceUp|up])
+        """
+        Returns
+        -------
+        - list(str[noIfaceUp | up]): Logs additional information about the session Information
         """
         return self._get_attribute('sessionInfo')
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def SrlbDescriptorCount(self):
-        """Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
         """
         return self._get_attribute('srlbDescriptorCount')
     @SrlbDescriptorCount.setter
@@ -1257,249 +1441,273 @@ class IsisL3Router(Base):
 
     @property
     def SrlbFlags(self):
-        """This specifies the value of the SRLB flags field
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srlbFlags')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the value of the SRLB flags field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srlbFlags'))
 
     @property
     def SrmsPreference(self):
-        """This is used to associate a preference with SRMS advertisements and is being advertised as a sub-TLV in Router Capability TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('srmsPreference')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to associate a preference with SRMS advertisements and is being advertised as a sub-TLV in Router Capability TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('srmsPreference'))
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TERouterId(self):
-        """TE Router ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('tERouterId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TE Router ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('tERouterId'))
 
     @property
     def VFlag(self):
-        """Value Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('vFlag')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('vFlag'))
 
-    def update(self, EnableBIER=None, EnableSR=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
-        """Updates a child instance of isisL3Router on the server.
+    def update(self, EnableBIER=None, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+        """Updates isisL3Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            EnableBIER (bool): Enable BIER
-            EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
-            LocatorCount (number): Locator Count
-            MtCount (number): MT Count
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfBIERSubDomains (number): Number of BIER Sub Domains
-            NoOfSRTunnels (number): Number of MPLS SR Tunnels
-            NumberOfMappingIPV4Ranges (number): Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
-            NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
-            SRAlgorithmCount (number): SR Algorithm Count
-            SRGBRangeCount (number): SRGB Range Count
-            SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+        Args
+        ----
+        - EnableBIER (bool): Enable BIER
+        - EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
+        - FlexAlgoCount (number): Flex Algo Count
+        - LocatorCount (number): Locator Count
+        - MtCount (number): MT Count
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfBIERSubDomains (number): Number of BIER Sub Domains
+        - NoOfSRTunnels (number): Number of MPLS SR Tunnels
+        - NumberOfMappingIPV4Ranges (number): Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
+        - NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SRGBRangeCount (number): SRGB Range Count
+        - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
-    def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSR=None, Errors=None, LocalSystemID=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SessionInfo=None, SessionStatus=None, SrlbDescriptorCount=None, StateCounts=None, Status=None):
-        """Finds and retrieves isisL3Router data from the server.
+    def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSR=None, Errors=None, FlexAlgoCount=None, LocalSystemID=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SessionInfo=None, SessionStatus=None, SrlbDescriptorCount=None, StateCounts=None, Status=None):
+        """Finds and retrieves isisL3Router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve isisL3Router data from the server.
-        By default the find method takes no parameters and will retrieve all isisL3Router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3Router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisL3Router resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableBIER (bool): Enable BIER
-            EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LocalSystemID (list(str)): System ID
-            LocatorCount (number): Locator Count
-            MtCount (number): MT Count
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            NoOfBIERSubDomains (number): Number of BIER Sub Domains
-            NoOfSRTunnels (number): Number of MPLS SR Tunnels
-            NumberOfMappingIPV4Ranges (number): Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
-            NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
-            SRAlgorithmCount (number): SR Algorithm Count
-            SRGBRangeCount (number): SRGB Range Count
-            SessionInfo (list(str[noIfaceUp|up])): Logs additional information about the session Information
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableBIER (bool): Enable BIER
+        - EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - FlexAlgoCount (number): Flex Algo Count
+        - LocalSystemID (list(str)): System ID
+        - LocatorCount (number): Locator Count
+        - MtCount (number): MT Count
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfBIERSubDomains (number): Number of BIER Sub Domains
+        - NoOfSRTunnels (number): Number of MPLS SR Tunnels
+        - NumberOfMappingIPV4Ranges (number): Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
+        - NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SRGBRangeCount (number): SRGB Range Count
+        - SessionInfo (list(str[noIfaceUp | up])): Logs additional information about the session Information
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching isisL3Router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching isisL3Router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of isisL3Router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the isisL3Router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the isisL3Router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERNodePrefix=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSRMSPreference=None, AdvertiseSidAsLocator=None, Algorithm=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, BIERIPv6NodePrefix=None, BierNFlag=None, BierRFlag=None, CSNPInterval=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, DiscardLSPs=None, Distribution=None, DomainAuthenticationType=None, DomainTransmitPasswordOrMD5Key=None, EFlag=None, EFlagOfSRv6CapTlv=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableMTIPv6=None, EnableMappingServer=None, EnableTE=None, EnableWMforTE=None, EnableWideMetric=None, Funcflags=None, Function=None, HitlessRestartMode=None, HitlessRestartTime=None, HitlessRestartVersion=None, HostName=None, IgnoreReceiveMD5=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, IncludePrefixAttrFlags=None, InterLSPsOrMGroupPDUBurstGap=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6NodePrefix=None, Ipv6Srh=None, LFlag=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, LocatorPrefixLength=None, Mask=None, MaxAreaAddresses=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsert=None, MaxTInsertMsd=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, OFlagOfSRv6CapTlv=None, Overloaded=None, PFlag=None, PSNPInterval=None, PartitionRepair=None, PrefixAdvertisementType=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, SrmsPreference=None, TERouterId=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, BIERNodePrefix=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSRMSPreference=None, AdvertiseSidAsLocator=None, Algorithm=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, BIERIPv6NodePrefix=None, BierNFlag=None, BierRFlag=None, CSNPInterval=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, DiscardLSPs=None, Distribution=None, DomainAuthenticationType=None, DomainTransmitPasswordOrMD5Key=None, EFlag=None, EFlagOfSRv6CapTlv=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableITID=None, EnableIpV6TE=None, EnableMI=None, EnableMTIPv6=None, EnableMappingServer=None, EnableTE=None, EnableWMforTE=None, EnableWideMetric=None, Funcflags=None, Function=None, HitlessRestartMode=None, HitlessRestartTime=None, HitlessRestartVersion=None, HostName=None, IgnoreReceiveMD5=None, Iid=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, IncludePrefixAttrFlags=None, InterLSPsOrMGroupPDUBurstGap=None, IpV6TERouterId=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6NodePrefix=None, Ipv6Srh=None, Itid=None, LFlag=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, LocatorPrefixLength=None, Mask=None, MaxAreaAddresses=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsert=None, MaxTInsertMsd=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, OFlagOfSRv6CapTlv=None, Overloaded=None, PFlag=None, PSNPInterval=None, PartitionRepair=None, PrefixAdvertisementType=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, SrmsPreference=None, TERouterId=None, VFlag=None):
         """Base class infrastructure that gets a list of isisL3Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            BIERNodePrefix (str): optional regex of BIERNodePrefix
-            Active (str): optional regex of active
-            AdvertiseNodeMsd (str): optional regex of advertiseNodeMsd
-            AdvertiseSRLB (str): optional regex of advertiseSRLB
-            AdvertiseSRMSPreference (str): optional regex of advertiseSRMSPreference
-            AdvertiseSidAsLocator (str): optional regex of advertiseSidAsLocator
-            Algorithm (str): optional regex of algorithm
-            AreaAddresses (str): optional regex of areaAddresses
-            AreaAuthenticationType (str): optional regex of areaAuthenticationType
-            AreaTransmitPasswordOrMD5Key (str): optional regex of areaTransmitPasswordOrMD5Key
-            Attached (str): optional regex of attached
-            BIERIPv6NodePrefix (str): optional regex of bIERIPv6NodePrefix
-            BierNFlag (str): optional regex of bierNFlag
-            BierRFlag (str): optional regex of bierRFlag
-            CSNPInterval (str): optional regex of cSNPInterval
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
-            DBit (str): optional regex of dBit
-            DBitForSRv6Cap (str): optional regex of dBitForSRv6Cap
-            DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
-            DiscardLSPs (str): optional regex of discardLSPs
-            Distribution (str): optional regex of distribution
-            DomainAuthenticationType (str): optional regex of domainAuthenticationType
-            DomainTransmitPasswordOrMD5Key (str): optional regex of domainTransmitPasswordOrMD5Key
-            EFlag (str): optional regex of eFlag
-            EFlagOfSRv6CapTlv (str): optional regex of eFlagOfSRv6CapTlv
-            EnableHelloPadding (str): optional regex of enableHelloPadding
-            EnableHitlessRestart (str): optional regex of enableHitlessRestart
-            EnableHostName (str): optional regex of enableHostName
-            EnableMTIPv6 (str): optional regex of enableMTIPv6
-            EnableMappingServer (str): optional regex of enableMappingServer
-            EnableTE (str): optional regex of enableTE
-            EnableWMforTE (str): optional regex of enableWMforTE
-            EnableWideMetric (str): optional regex of enableWideMetric
-            Funcflags (str): optional regex of funcflags
-            Function (str): optional regex of function
-            HitlessRestartMode (str): optional regex of hitlessRestartMode
-            HitlessRestartTime (str): optional regex of hitlessRestartTime
-            HitlessRestartVersion (str): optional regex of hitlessRestartVersion
-            HostName (str): optional regex of hostName
-            IgnoreReceiveMD5 (str): optional regex of ignoreReceiveMD5
-            IncludeMaxSlMsd (str): optional regex of includeMaxSlMsd
-            IncludeMaximumEndDMsd (str): optional regex of includeMaximumEndDMsd
-            IncludeMaximumEndDSrhTLV (str): optional regex of includeMaximumEndDSrhTLV
-            IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
-            IncludeMaximumEndPopSrhTLV (str): optional regex of includeMaximumEndPopSrhTLV
-            IncludeMaximumSLTLV (str): optional regex of includeMaximumSLTLV
-            IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
-            IncludeMaximumTEncapSrhTLV (str): optional regex of includeMaximumTEncapSrhTLV
-            IncludeMaximumTInsertMsd (str): optional regex of includeMaximumTInsertMsd
-            IncludeMaximumTInsertSrhTLV (str): optional regex of includeMaximumTInsertSrhTLV
-            IncludePrefixAttrFlags (str): optional regex of includePrefixAttrFlags
-            InterLSPsOrMGroupPDUBurstGap (str): optional regex of interLSPsOrMGroupPDUBurstGap
-            Ipv4Flag (str): optional regex of ipv4Flag
-            Ipv6Flag (str): optional regex of ipv6Flag
-            Ipv6NodePrefix (str): optional regex of ipv6NodePrefix
-            Ipv6Srh (str): optional regex of ipv6Srh
-            LFlag (str): optional regex of lFlag
-            LSPLifetime (str): optional regex of lSPLifetime
-            LSPRefreshRate (str): optional regex of lSPRefreshRate
-            LSPorMGroupPDUMinTransmissionInterval (str): optional regex of lSPorMGroupPDUMinTransmissionInterval
-            LocatorPrefixLength (str): optional regex of locatorPrefixLength
-            Mask (str): optional regex of mask
-            MaxAreaAddresses (str): optional regex of maxAreaAddresses
-            MaxEndD (str): optional regex of maxEndD
-            MaxEndDMsd (str): optional regex of maxEndDMsd
-            MaxEndPopMsd (str): optional regex of maxEndPopMsd
-            MaxEndPopSrh (str): optional regex of maxEndPopSrh
-            MaxLSPSize (str): optional regex of maxLSPSize
-            MaxLSPsOrMGroupPDUsPerBurst (str): optional regex of maxLSPsOrMGroupPDUsPerBurst
-            MaxSL (str): optional regex of maxSL
-            MaxSlMsd (str): optional regex of maxSlMsd
-            MaxTEncap (str): optional regex of maxTEncap
-            MaxTInsert (str): optional regex of maxTInsert
-            MaxTInsertMsd (str): optional regex of maxTInsertMsd
-            NFlag (str): optional regex of nFlag
-            NodePrefix (str): optional regex of nodePrefix
-            OFlagOfSRv6Cap (str): optional regex of oFlagOfSRv6Cap
-            OFlagOfSRv6CapTlv (str): optional regex of oFlagOfSRv6CapTlv
-            Overloaded (str): optional regex of overloaded
-            PFlag (str): optional regex of pFlag
-            PSNPInterval (str): optional regex of pSNPInterval
-            PartitionRepair (str): optional regex of partitionRepair
-            PrefixAdvertisementType (str): optional regex of prefixAdvertisementType
-            PrefixLength (str): optional regex of prefixLength
-            RFlag (str): optional regex of rFlag
-            Redistribution (str): optional regex of redistribution
-            RedistributionForSRv6 (str): optional regex of redistributionForSRv6
-            ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
-            ReservedInsideSRv6CapFlag (str): optional regex of reservedInsideSRv6CapFlag
-            RouteMetric (str): optional regex of routeMetric
-            RouteOrigin (str): optional regex of routeOrigin
-            RtrcapId (str): optional regex of rtrcapId
-            RtrcapIdForSrv6 (str): optional regex of rtrcapIdForSrv6
-            SBit (str): optional regex of sBit
-            SBitForSRv6Cap (str): optional regex of sBitForSRv6Cap
-            SIDIndexLabel (str): optional regex of sIDIndexLabel
-            SRv6NodePrefix (str): optional regex of sRv6NodePrefix
-            SRv6NodePrefixLength (str): optional regex of sRv6NodePrefixLength
-            SrlbFlags (str): optional regex of srlbFlags
-            SrmsPreference (str): optional regex of srmsPreference
-            TERouterId (str): optional regex of tERouterId
-            VFlag (str): optional regex of vFlag
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - BIERNodePrefix (str): optional regex of BIERNodePrefix
+        - Active (str): optional regex of active
+        - AdvertiseNodeMsd (str): optional regex of advertiseNodeMsd
+        - AdvertiseSRLB (str): optional regex of advertiseSRLB
+        - AdvertiseSRMSPreference (str): optional regex of advertiseSRMSPreference
+        - AdvertiseSidAsLocator (str): optional regex of advertiseSidAsLocator
+        - Algorithm (str): optional regex of algorithm
+        - AreaAddresses (str): optional regex of areaAddresses
+        - AreaAuthenticationType (str): optional regex of areaAuthenticationType
+        - AreaTransmitPasswordOrMD5Key (str): optional regex of areaTransmitPasswordOrMD5Key
+        - Attached (str): optional regex of attached
+        - BIERIPv6NodePrefix (str): optional regex of bIERIPv6NodePrefix
+        - BierNFlag (str): optional regex of bierNFlag
+        - BierRFlag (str): optional regex of bierRFlag
+        - CSNPInterval (str): optional regex of cSNPInterval
+        - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - DBit (str): optional regex of dBit
+        - DBitForSRv6Cap (str): optional regex of dBitForSRv6Cap
+        - DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
+        - DiscardLSPs (str): optional regex of discardLSPs
+        - Distribution (str): optional regex of distribution
+        - DomainAuthenticationType (str): optional regex of domainAuthenticationType
+        - DomainTransmitPasswordOrMD5Key (str): optional regex of domainTransmitPasswordOrMD5Key
+        - EFlag (str): optional regex of eFlag
+        - EFlagOfSRv6CapTlv (str): optional regex of eFlagOfSRv6CapTlv
+        - EnableHelloPadding (str): optional regex of enableHelloPadding
+        - EnableHitlessRestart (str): optional regex of enableHitlessRestart
+        - EnableHostName (str): optional regex of enableHostName
+        - EnableITID (str): optional regex of enableITID
+        - EnableIpV6TE (str): optional regex of enableIpV6TE
+        - EnableMI (str): optional regex of enableMI
+        - EnableMTIPv6 (str): optional regex of enableMTIPv6
+        - EnableMappingServer (str): optional regex of enableMappingServer
+        - EnableTE (str): optional regex of enableTE
+        - EnableWMforTE (str): optional regex of enableWMforTE
+        - EnableWideMetric (str): optional regex of enableWideMetric
+        - Funcflags (str): optional regex of funcflags
+        - Function (str): optional regex of function
+        - HitlessRestartMode (str): optional regex of hitlessRestartMode
+        - HitlessRestartTime (str): optional regex of hitlessRestartTime
+        - HitlessRestartVersion (str): optional regex of hitlessRestartVersion
+        - HostName (str): optional regex of hostName
+        - IgnoreReceiveMD5 (str): optional regex of ignoreReceiveMD5
+        - Iid (str): optional regex of iid
+        - IncludeMaxSlMsd (str): optional regex of includeMaxSlMsd
+        - IncludeMaximumEndDMsd (str): optional regex of includeMaximumEndDMsd
+        - IncludeMaximumEndDSrhTLV (str): optional regex of includeMaximumEndDSrhTLV
+        - IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
+        - IncludeMaximumEndPopSrhTLV (str): optional regex of includeMaximumEndPopSrhTLV
+        - IncludeMaximumSLTLV (str): optional regex of includeMaximumSLTLV
+        - IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
+        - IncludeMaximumTEncapSrhTLV (str): optional regex of includeMaximumTEncapSrhTLV
+        - IncludeMaximumTInsertMsd (str): optional regex of includeMaximumTInsertMsd
+        - IncludeMaximumTInsertSrhTLV (str): optional regex of includeMaximumTInsertSrhTLV
+        - IncludePrefixAttrFlags (str): optional regex of includePrefixAttrFlags
+        - InterLSPsOrMGroupPDUBurstGap (str): optional regex of interLSPsOrMGroupPDUBurstGap
+        - IpV6TERouterId (str): optional regex of ipV6TERouterId
+        - Ipv4Flag (str): optional regex of ipv4Flag
+        - Ipv6Flag (str): optional regex of ipv6Flag
+        - Ipv6NodePrefix (str): optional regex of ipv6NodePrefix
+        - Ipv6Srh (str): optional regex of ipv6Srh
+        - Itid (str): optional regex of itid
+        - LFlag (str): optional regex of lFlag
+        - LSPLifetime (str): optional regex of lSPLifetime
+        - LSPRefreshRate (str): optional regex of lSPRefreshRate
+        - LSPorMGroupPDUMinTransmissionInterval (str): optional regex of lSPorMGroupPDUMinTransmissionInterval
+        - LocatorPrefixLength (str): optional regex of locatorPrefixLength
+        - Mask (str): optional regex of mask
+        - MaxAreaAddresses (str): optional regex of maxAreaAddresses
+        - MaxEndD (str): optional regex of maxEndD
+        - MaxEndDMsd (str): optional regex of maxEndDMsd
+        - MaxEndPopMsd (str): optional regex of maxEndPopMsd
+        - MaxEndPopSrh (str): optional regex of maxEndPopSrh
+        - MaxLSPSize (str): optional regex of maxLSPSize
+        - MaxLSPsOrMGroupPDUsPerBurst (str): optional regex of maxLSPsOrMGroupPDUsPerBurst
+        - MaxSL (str): optional regex of maxSL
+        - MaxSlMsd (str): optional regex of maxSlMsd
+        - MaxTEncap (str): optional regex of maxTEncap
+        - MaxTInsert (str): optional regex of maxTInsert
+        - MaxTInsertMsd (str): optional regex of maxTInsertMsd
+        - NFlag (str): optional regex of nFlag
+        - NodePrefix (str): optional regex of nodePrefix
+        - OFlagOfSRv6Cap (str): optional regex of oFlagOfSRv6Cap
+        - OFlagOfSRv6CapTlv (str): optional regex of oFlagOfSRv6CapTlv
+        - Overloaded (str): optional regex of overloaded
+        - PFlag (str): optional regex of pFlag
+        - PSNPInterval (str): optional regex of pSNPInterval
+        - PartitionRepair (str): optional regex of partitionRepair
+        - PrefixAdvertisementType (str): optional regex of prefixAdvertisementType
+        - PrefixLength (str): optional regex of prefixLength
+        - RFlag (str): optional regex of rFlag
+        - Redistribution (str): optional regex of redistribution
+        - RedistributionForSRv6 (str): optional regex of redistributionForSRv6
+        - ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
+        - ReservedInsideSRv6CapFlag (str): optional regex of reservedInsideSRv6CapFlag
+        - RouteMetric (str): optional regex of routeMetric
+        - RouteOrigin (str): optional regex of routeOrigin
+        - RtrcapId (str): optional regex of rtrcapId
+        - RtrcapIdForSrv6 (str): optional regex of rtrcapIdForSrv6
+        - SBit (str): optional regex of sBit
+        - SBitForSRv6Cap (str): optional regex of sBitForSRv6Cap
+        - SIDIndexLabel (str): optional regex of sIDIndexLabel
+        - SRv6NodePrefix (str): optional regex of sRv6NodePrefix
+        - SRv6NodePrefixLength (str): optional regex of sRv6NodePrefixLength
+        - SrlbFlags (str): optional regex of srlbFlags
+        - SrmsPreference (str): optional regex of srmsPreference
+        - TERouterId (str): optional regex of tERouterId
+        - VFlag (str): optional regex of vFlag
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -1508,22 +1716,20 @@ class IsisL3Router(Base):
 
         Start ISIS Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        isisStartRouter()
+        isisStartRouter(SessionIndices=list)
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        isisStartRouter(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        isisStartRouter(SessionIndices=string)
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        isisStartRouter(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1535,22 +1741,20 @@ class IsisL3Router(Base):
 
         Stop ISIS Router
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        isisStopRouter()
+        isisStopRouter(SessionIndices=list)
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        isisStopRouter(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        isisStopRouter(SessionIndices=string)
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        isisStopRouter(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1562,22 +1766,20 @@ class IsisL3Router(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1589,22 +1791,20 @@ class IsisL3Router(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1616,22 +1816,20 @@ class IsisL3Router(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

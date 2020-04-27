@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class BgpIpv6AdL2Vpn(Base):
     """BGP AD-L2VPN Configuration
-    The BgpIpv6AdL2Vpn class encapsulates a list of bgpIpv6AdL2Vpn resources that is be managed by the user.
+    The BgpIpv6AdL2Vpn class encapsulates a list of bgpIpv6AdL2Vpn resources that are managed by the user.
     A list of resources can be retrieved from the server using the BgpIpv6AdL2Vpn.find() method.
-    The list can be managed by the user by using the BgpIpv6AdL2Vpn.add() and BgpIpv6AdL2Vpn.remove() methods.
+    The list can be managed by using the BgpIpv6AdL2Vpn.add() and BgpIpv6AdL2Vpn.remove() methods.
     """
 
     __slots__ = ()
@@ -38,73 +38,80 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def AsNumberVplsId(self):
-        """VPLS ID AS Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumberVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VPLS ID AS Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumberVplsId'))
 
     @property
     def AsNumberVplsRd(self):
-        """Route Distinguisher AS Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumberVplsRd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Distinguisher AS Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumberVplsRd'))
 
     @property
     def AsNumberVplsRt(self):
-        """Route Target AS Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('asNumberVplsRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Target AS Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('asNumberVplsRt'))
 
     @property
     def AssignedNumberVplsId(self):
-        """VPLS ID Assigned Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumberVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VPLS ID Assigned Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumberVplsId'))
 
     @property
     def AssignedNumberVplsRd(self):
-        """Route Distinguisher Assigned Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumberVplsRd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Distinguisher Assigned Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumberVplsRd'))
 
     @property
     def AssignedNumberVplsRt(self):
-        """Route Target Assigned Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('assignedNumberVplsRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Target Assigned Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('assignedNumberVplsRt'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -113,109 +120,114 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DutIpv6(self):
-        """DUT IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): DUT IP
         """
         return self._get_attribute('dutIpv6')
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def ImportRDAsRT(self):
-        """Use RD As RT
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('importRDAsRT')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use RD As RT
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('importRDAsRT'))
 
     @property
     def ImportVplsIdAsRd(self):
-        """Use VPLS ID As Route Distinguisher
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('importVplsIdAsRd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use VPLS ID As Route Distinguisher
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('importVplsIdAsRd'))
 
     @property
     def IpAddressVplsId(self):
-        """VPLS ID IP Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipAddressVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VPLS ID IP Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipAddressVplsId'))
 
     @property
     def IpAddressVplsRd(self):
-        """Route Distinguisher IP Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipAddressVplsRd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Distinguisher IP Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipAddressVplsRd'))
 
     @property
     def IpAddressVplsRt(self):
-        """Route Target IP Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipAddressVplsRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Target IP Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipAddressVplsRt'))
 
     @property
     def LocalIpv6(self):
-        """Local IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Local IP
         """
         return self._get_attribute('localIpv6')
 
     @property
     def LocalRouterID(self):
-        """Router ID
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Router ID
         """
         return self._get_attribute('localRouterID')
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -224,10 +236,10 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -236,28 +248,29 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def NumberVsiId(self):
-        """VSI ID Number
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numberVsiId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VSI ID Number
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numberVsiId'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -266,142 +279,159 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TypeVplsId(self):
-        """VPLS ID Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeVplsId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VPLS ID Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeVplsId'))
 
     @property
     def TypeVplsRd(self):
-        """RD Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeVplsRd')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RD Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeVplsRd'))
 
     @property
     def TypeVplsRt(self):
-        """RT Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeVplsRt')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RT Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeVplsRt'))
 
     @property
     def TypeVsiId(self):
-        """VSI ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('typeVsiId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): VSI ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('typeVsiId'))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Updates a child instance of bgpIpv6AdL2Vpn on the server.
+        """Updates bgpIpv6AdL2Vpn resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
-        """Adds a new bgpIpv6AdL2Vpn node on the server and retrieves it in this instance.
+        """Adds a new bgpIpv6AdL2Vpn resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved bgpIpv6AdL2Vpn data using find and the newly added bgpIpv6AdL2Vpn data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpIpv6AdL2Vpn resources using find and the newly added bgpIpv6AdL2Vpn resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bgpIpv6AdL2Vpn data in this instance from server.
+        """Deletes all the contained bgpIpv6AdL2Vpn resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv6=None, Errors=None, LocalIpv6=None, LocalRouterID=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves bgpIpv6AdL2Vpn data from the server.
+        """Finds and retrieves bgpIpv6AdL2Vpn resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bgpIpv6AdL2Vpn data from the server.
-        By default the find method takes no parameters and will retrieve all bgpIpv6AdL2Vpn data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv6AdL2Vpn resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpIpv6AdL2Vpn resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            DutIpv6 (list(str)): DUT IP
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            LocalIpv6 (list(str)): Local IP
-            LocalRouterID (list(str)): Router ID
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DutIpv6 (list(str)): DUT IP
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LocalIpv6 (list(str)): Local IP
+        - LocalRouterID (list(str)): Router ID
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching bgpIpv6AdL2Vpn data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bgpIpv6AdL2Vpn resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bgpIpv6AdL2Vpn data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bgpIpv6AdL2Vpn data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bgpIpv6AdL2Vpn resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -410,31 +440,34 @@ class BgpIpv6AdL2Vpn(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AsNumberVplsId (str): optional regex of asNumberVplsId
-            AsNumberVplsRd (str): optional regex of asNumberVplsRd
-            AsNumberVplsRt (str): optional regex of asNumberVplsRt
-            AssignedNumberVplsId (str): optional regex of assignedNumberVplsId
-            AssignedNumberVplsRd (str): optional regex of assignedNumberVplsRd
-            AssignedNumberVplsRt (str): optional regex of assignedNumberVplsRt
-            ImportRDAsRT (str): optional regex of importRDAsRT
-            ImportVplsIdAsRd (str): optional regex of importVplsIdAsRd
-            IpAddressVplsId (str): optional regex of ipAddressVplsId
-            IpAddressVplsRd (str): optional regex of ipAddressVplsRd
-            IpAddressVplsRt (str): optional regex of ipAddressVplsRt
-            NumberVsiId (str): optional regex of numberVsiId
-            TypeVplsId (str): optional regex of typeVplsId
-            TypeVplsRd (str): optional regex of typeVplsRd
-            TypeVplsRt (str): optional regex of typeVplsRt
-            TypeVsiId (str): optional regex of typeVsiId
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - AsNumberVplsId (str): optional regex of asNumberVplsId
+        - AsNumberVplsRd (str): optional regex of asNumberVplsRd
+        - AsNumberVplsRt (str): optional regex of asNumberVplsRt
+        - AssignedNumberVplsId (str): optional regex of assignedNumberVplsId
+        - AssignedNumberVplsRd (str): optional regex of assignedNumberVplsRd
+        - AssignedNumberVplsRt (str): optional regex of assignedNumberVplsRt
+        - ImportRDAsRT (str): optional regex of importRDAsRT
+        - ImportVplsIdAsRd (str): optional regex of importVplsIdAsRd
+        - IpAddressVplsId (str): optional regex of ipAddressVplsId
+        - IpAddressVplsRd (str): optional regex of ipAddressVplsRd
+        - IpAddressVplsRt (str): optional regex of ipAddressVplsRt
+        - NumberVsiId (str): optional regex of numberVsiId
+        - TypeVplsId (str): optional regex of typeVplsId
+        - TypeVplsRd (str): optional regex of typeVplsRd
+        - TypeVplsRt (str): optional regex of typeVplsRt
+        - TypeVsiId (str): optional regex of typeVsiId
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -443,22 +476,20 @@ class BgpIpv6AdL2Vpn(Base):
 
         Re-advertise Aged out BGP Routes in a Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        readvertiseADVPLSRoute()
+        readvertiseADVPLSRoute(SessionIndices=list)
+        -------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        readvertiseADVPLSRoute(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        readvertiseADVPLSRoute(SessionIndices=string)
+        ---------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        readvertiseADVPLSRoute(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -470,16 +501,15 @@ class BgpIpv6AdL2Vpn(Base):
 
         Readvertise only the aged-out routes contained in this route range.
 
-        readvertiseadvplsroute(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        readvertiseadvplsroute(Arg2=list)list
+        -------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -491,22 +521,20 @@ class BgpIpv6AdL2Vpn(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -518,22 +546,20 @@ class BgpIpv6AdL2Vpn(Base):
 
         Start BGP AD VPLS
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -545,22 +571,20 @@ class BgpIpv6AdL2Vpn(Base):
 
         Stop BGP AD VPLS
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -572,22 +596,20 @@ class BgpIpv6AdL2Vpn(Base):
 
         Age out percentage of BGP Routes in a Route Range
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        withdrawADVPLSRoute()
+        withdrawADVPLSRoute(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        withdrawADVPLSRoute(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        withdrawADVPLSRoute(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        withdrawADVPLSRoute(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -599,16 +621,15 @@ class BgpIpv6AdL2Vpn(Base):
 
         Completely/Partially age out routes contained in this route range.
 
-        withdrawadvplsroute(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        withdrawadvplsroute(Arg2=list)list
+        ----------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

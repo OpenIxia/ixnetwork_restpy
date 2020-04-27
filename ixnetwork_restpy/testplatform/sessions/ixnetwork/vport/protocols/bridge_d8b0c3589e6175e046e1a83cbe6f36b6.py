@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Bridge(Base):
     """This object contains the configuration for the CFM bridge.
-    The Bridge class encapsulates a list of bridge resources that is be managed by the user.
+    The Bridge class encapsulates a list of bridge resources that are managed by the user.
     A list of resources can be retrieved from the server using the Bridge.find() method.
-    The list can be managed by the user by using the Bridge.add() and Bridge.remove() methods.
+    The list can be managed by using the Bridge.add() and Bridge.remove() methods.
     """
 
     __slots__ = ()
@@ -38,374 +38,374 @@ class Bridge(Base):
 
     @property
     def AisLearnedInfo(self):
-        """An instance of the AisLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.aislearnedinfo_84ec55883717f43c98f87583a7ace177.AisLearnedInfo): An instance of the AisLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.aislearnedinfo_84ec55883717f43c98f87583a7ace177.AisLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.aislearnedinfo_84ec55883717f43c98f87583a7ace177 import AisLearnedInfo
         return AisLearnedInfo(self)
 
     @property
     def CcmLearnedInfo(self):
-        """An instance of the CcmLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ccmlearnedinfo_9baaacc2508aea99f5324e794c7430a0.CcmLearnedInfo): An instance of the CcmLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ccmlearnedinfo_9baaacc2508aea99f5324e794c7430a0.CcmLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ccmlearnedinfo_9baaacc2508aea99f5324e794c7430a0 import CcmLearnedInfo
         return CcmLearnedInfo(self)
 
     @property
     def CustomTlvs(self):
-        """An instance of the CustomTlvs class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlvs_b679b39bf7b4a713be28d7db7aa86bed.CustomTlvs): An instance of the CustomTlvs class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlvs_b679b39bf7b4a713be28d7db7aa86bed.CustomTlvs)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlvs_b679b39bf7b4a713be28d7db7aa86bed import CustomTlvs
         return CustomTlvs(self)
 
     @property
     def DelayLearnedInfo(self):
-        """An instance of the DelayLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.delaylearnedinfo_79b4c3856835e73a34c390457efa6ad2.DelayLearnedInfo): An instance of the DelayLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.delaylearnedinfo_79b4c3856835e73a34c390457efa6ad2.DelayLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.delaylearnedinfo_79b4c3856835e73a34c390457efa6ad2 import DelayLearnedInfo
         return DelayLearnedInfo(self)
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_d0634a8f381feecfae06836434390e56.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_d0634a8f381feecfae06836434390e56.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_d0634a8f381feecfae06836434390e56 import Interface
         return Interface(self)
 
     @property
     def LbLearnedInfo(self):
-        """An instance of the LbLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lblearnedinfo_ec56ce29319e76b0e1d8451951f052e6.LbLearnedInfo): An instance of the LbLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lblearnedinfo_ec56ce29319e76b0e1d8451951f052e6.LbLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lblearnedinfo_ec56ce29319e76b0e1d8451951f052e6 import LbLearnedInfo
         return LbLearnedInfo(self)
 
     @property
     def LckLearnedInfo(self):
-        """An instance of the LckLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lcklearnedinfo_64ce1c0413a6b36286c3aec03a316b5f.LckLearnedInfo): An instance of the LckLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lcklearnedinfo_64ce1c0413a6b36286c3aec03a316b5f.LckLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lcklearnedinfo_64ce1c0413a6b36286c3aec03a316b5f import LckLearnedInfo
         return LckLearnedInfo(self)
 
     @property
     def Link(self):
-        """An instance of the Link class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_c8cd7dc0b25bdfc24496bef1811ac785.Link): An instance of the Link class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_c8cd7dc0b25bdfc24496bef1811ac785.Link)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_c8cd7dc0b25bdfc24496bef1811ac785 import Link
         return Link(self)
 
     @property
     def LossLearnedInfo(self):
-        """An instance of the LossLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.losslearnedinfo_c21d89e38fc50e907c08da07460ab8cb.LossLearnedInfo): An instance of the LossLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.losslearnedinfo_c21d89e38fc50e907c08da07460ab8cb.LossLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.losslearnedinfo_c21d89e38fc50e907c08da07460ab8cb import LossLearnedInfo
         return LossLearnedInfo(self)
 
     @property
     def LtLearnedInfo(self):
-        """An instance of the LtLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedinfo_c11e1d991569cbe84098c437e3d8f560.LtLearnedInfo): An instance of the LtLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedinfo_c11e1d991569cbe84098c437e3d8f560.LtLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedinfo_c11e1d991569cbe84098c437e3d8f560 import LtLearnedInfo
         return LtLearnedInfo(self)
 
     @property
     def MdLevel(self):
-        """An instance of the MdLevel class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mdlevel_0dfd292e7b0b04015e11a57954a65648.MdLevel): An instance of the MdLevel class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mdlevel_0dfd292e7b0b04015e11a57954a65648.MdLevel)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mdlevel_0dfd292e7b0b04015e11a57954a65648 import MdLevel
         return MdLevel(self)
 
     @property
     def Mp(self):
-        """An instance of the Mp class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mp_c258ba0d39201ea9310735882b0d66d6.Mp): An instance of the Mp class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mp_c258ba0d39201ea9310735882b0d66d6.Mp)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mp_c258ba0d39201ea9310735882b0d66d6 import Mp
         return Mp(self)
 
     @property
     def PbbTeCcmLearnedInfo(self):
-        """An instance of the PbbTeCcmLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteccmlearnedinfo_75bd8f81e009c34e0a3550002dd9b237.PbbTeCcmLearnedInfo): An instance of the PbbTeCcmLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteccmlearnedinfo_75bd8f81e009c34e0a3550002dd9b237.PbbTeCcmLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteccmlearnedinfo_75bd8f81e009c34e0a3550002dd9b237 import PbbTeCcmLearnedInfo
         return PbbTeCcmLearnedInfo(self)
 
     @property
     def PbbTeDelayLearnedInfo(self):
-        """An instance of the PbbTeDelayLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtedelaylearnedinfo_f3988daa95355a31c260690daaf605e5.PbbTeDelayLearnedInfo): An instance of the PbbTeDelayLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtedelaylearnedinfo_f3988daa95355a31c260690daaf605e5.PbbTeDelayLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtedelaylearnedinfo_f3988daa95355a31c260690daaf605e5 import PbbTeDelayLearnedInfo
         return PbbTeDelayLearnedInfo(self)
 
     @property
     def PbbTeLbLearnedInfo(self):
-        """An instance of the PbbTeLbLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtelblearnedinfo_cedbd678dfd3ca6a787f0562fb5e7e27.PbbTeLbLearnedInfo): An instance of the PbbTeLbLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtelblearnedinfo_cedbd678dfd3ca6a787f0562fb5e7e27.PbbTeLbLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtelblearnedinfo_cedbd678dfd3ca6a787f0562fb5e7e27 import PbbTeLbLearnedInfo
         return PbbTeLbLearnedInfo(self)
 
     @property
     def PbbTeLtLearnedInfo(self):
-        """An instance of the PbbTeLtLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteltlearnedinfo_93cf79776236c88ede7714d3c82d34f5.PbbTeLtLearnedInfo): An instance of the PbbTeLtLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteltlearnedinfo_93cf79776236c88ede7714d3c82d34f5.PbbTeLtLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteltlearnedinfo_93cf79776236c88ede7714d3c82d34f5 import PbbTeLtLearnedInfo
         return PbbTeLtLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamDmLearnedInfo(self):
-        """An instance of the PbbTePeriodicOamDmLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamdmlearnedinfo_99ec35e7a9f94b3f1e6b8ae45f1747df.PbbTePeriodicOamDmLearnedInfo): An instance of the PbbTePeriodicOamDmLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamdmlearnedinfo_99ec35e7a9f94b3f1e6b8ae45f1747df.PbbTePeriodicOamDmLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamdmlearnedinfo_99ec35e7a9f94b3f1e6b8ae45f1747df import PbbTePeriodicOamDmLearnedInfo
         return PbbTePeriodicOamDmLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamLbLearnedInfo(self):
-        """An instance of the PbbTePeriodicOamLbLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamlblearnedinfo_3f6ce689cc3a6b8f44b7cce003e299ac.PbbTePeriodicOamLbLearnedInfo): An instance of the PbbTePeriodicOamLbLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamlblearnedinfo_3f6ce689cc3a6b8f44b7cce003e299ac.PbbTePeriodicOamLbLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamlblearnedinfo_3f6ce689cc3a6b8f44b7cce003e299ac import PbbTePeriodicOamLbLearnedInfo
         return PbbTePeriodicOamLbLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamLtLearnedInfo(self):
-        """An instance of the PbbTePeriodicOamLtLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamltlearnedinfo_ff71646600cf4e67f1a4415bd52f2eda.PbbTePeriodicOamLtLearnedInfo): An instance of the PbbTePeriodicOamLtLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamltlearnedinfo_ff71646600cf4e67f1a4415bd52f2eda.PbbTePeriodicOamLtLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamltlearnedinfo_ff71646600cf4e67f1a4415bd52f2eda import PbbTePeriodicOamLtLearnedInfo
         return PbbTePeriodicOamLtLearnedInfo(self)
 
     @property
     def PeriodicOamDmLearnedInfo(self):
-        """An instance of the PeriodicOamDmLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamdmlearnedinfo_83bc258f0215cd29e5da43e42d96747e.PeriodicOamDmLearnedInfo): An instance of the PeriodicOamDmLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamdmlearnedinfo_83bc258f0215cd29e5da43e42d96747e.PeriodicOamDmLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamdmlearnedinfo_83bc258f0215cd29e5da43e42d96747e import PeriodicOamDmLearnedInfo
         return PeriodicOamDmLearnedInfo(self)
 
     @property
     def PeriodicOamLbLearnedInfo(self):
-        """An instance of the PeriodicOamLbLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlblearnedinfo_684d1d460277cd2357b55dfd08d09a75.PeriodicOamLbLearnedInfo): An instance of the PeriodicOamLbLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlblearnedinfo_684d1d460277cd2357b55dfd08d09a75.PeriodicOamLbLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlblearnedinfo_684d1d460277cd2357b55dfd08d09a75 import PeriodicOamLbLearnedInfo
         return PeriodicOamLbLearnedInfo(self)
 
     @property
     def PeriodicOamLmLearnedInfo(self):
-        """An instance of the PeriodicOamLmLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlmlearnedinfo_3fc327b8fe3fa3de03d90b861d17730b.PeriodicOamLmLearnedInfo): An instance of the PeriodicOamLmLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlmlearnedinfo_3fc327b8fe3fa3de03d90b861d17730b.PeriodicOamLmLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlmlearnedinfo_3fc327b8fe3fa3de03d90b861d17730b import PeriodicOamLmLearnedInfo
         return PeriodicOamLmLearnedInfo(self)
 
     @property
     def PeriodicOamLtLearnedInfo(self):
-        """An instance of the PeriodicOamLtLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamltlearnedinfo_417818ba85e00c8d316815462a5a24ac.PeriodicOamLtLearnedInfo): An instance of the PeriodicOamLtLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamltlearnedinfo_417818ba85e00c8d316815462a5a24ac.PeriodicOamLtLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamltlearnedinfo_417818ba85e00c8d316815462a5a24ac import PeriodicOamLtLearnedInfo
         return PeriodicOamLtLearnedInfo(self)
 
     @property
     def Trunk(self):
-        """An instance of the Trunk class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trunk_228a8a189c28ecc4e797686d931314bc.Trunk): An instance of the Trunk class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trunk_228a8a189c28ecc4e797686d931314bc.Trunk)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trunk_228a8a189c28ecc4e797686d931314bc import Trunk
         return Trunk(self)
 
     @property
     def TstLearnedInfo(self):
-        """An instance of the TstLearnedInfo class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tstlearnedinfo_dec6fd55f89d9eadf89ea66614d38b22.TstLearnedInfo): An instance of the TstLearnedInfo class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tstlearnedinfo_dec6fd55f89d9eadf89ea66614d38b22.TstLearnedInfo)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tstlearnedinfo_dec6fd55f89d9eadf89ea66614d38b22 import TstLearnedInfo
         return TstLearnedInfo(self)
 
     @property
     def Vlans(self):
-        """An instance of the Vlans class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlans_53ae5448a828df6c6fcd2f6b03f79ed9.Vlans): An instance of the Vlans class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlans_53ae5448a828df6c6fcd2f6b03f79ed9.Vlans)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlans_53ae5448a828df6c6fcd2f6b03f79ed9 import Vlans
         return Vlans(self)
 
     @property
     def AisInterval(self):
-        """DEPRECATED The interval between AIS messages sent from this CFM bridge.
-
-        Returns:
-            str(oneSec|oneMin)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(oneSec | oneMin): The interval between AIS messages sent from this CFM bridge.
         """
         return self._get_attribute('aisInterval')
     @AisInterval.setter
@@ -414,10 +414,10 @@ class Bridge(Base):
 
     @property
     def AllowCfmMaidFormatsInY1731(self):
-        """If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
         """
         return self._get_attribute('allowCfmMaidFormatsInY1731')
     @AllowCfmMaidFormatsInY1731.setter
@@ -426,10 +426,10 @@ class Bridge(Base):
 
     @property
     def BridgeId(self):
-        """The bridge MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The bridge MAC address.
         """
         return self._get_attribute('bridgeId')
     @BridgeId.setter
@@ -438,19 +438,19 @@ class Bridge(Base):
 
     @property
     def DelayLearnedErrorString(self):
-        """(read only) The learned error string for the delay measurement.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned error string for the delay measurement.
         """
         return self._get_attribute('delayLearnedErrorString')
 
     @property
     def EnableAis(self):
-        """DEPRECATED If true, enables the use of AIS messages.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, enables the use of AIS messages.
         """
         return self._get_attribute('enableAis')
     @EnableAis.setter
@@ -459,10 +459,10 @@ class Bridge(Base):
 
     @property
     def EnableOutOfSequenceDetection(self):
-        """If true, enables the detection of out of sequence CCM messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the detection of out of sequence CCM messages.
         """
         return self._get_attribute('enableOutOfSequenceDetection')
     @EnableOutOfSequenceDetection.setter
@@ -471,10 +471,10 @@ class Bridge(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the CFM bridge.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the CFM bridge.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -483,10 +483,10 @@ class Bridge(Base):
 
     @property
     def Encapsulation(self):
-        """Sets the encapsulation type for the bridge.
-
-        Returns:
-            str(ethernet|llcSnap)
+        """
+        Returns
+        -------
+        - str(ethernet | llcSnap): Sets the encapsulation type for the bridge.
         """
         return self._get_attribute('encapsulation')
     @Encapsulation.setter
@@ -495,10 +495,10 @@ class Bridge(Base):
 
     @property
     def EtherType(self):
-        """Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
         """
         return self._get_attribute('etherType')
     @EtherType.setter
@@ -507,10 +507,10 @@ class Bridge(Base):
 
     @property
     def Function(self):
-        """DEPRECATED Determines the CFM function when operationMode is set to Y.1731.
-
-        Returns:
-            str(faultManagement|performanceMeasurement)
+        """DEPRECATED 
+        Returns
+        -------
+        - str(faultManagement | performanceMeasurement): Determines the CFM function when operationMode is set to Y.1731.
         """
         return self._get_attribute('function')
     @Function.setter
@@ -519,10 +519,10 @@ class Bridge(Base):
 
     @property
     def GarbageCollectTime(self):
-        """Integer value denotes the interval for holding the expired database. Default 10 seconds.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Integer value denotes the interval for holding the expired database. Default 10 seconds.
         """
         return self._get_attribute('garbageCollectTime')
     @GarbageCollectTime.setter
@@ -531,244 +531,244 @@ class Bridge(Base):
 
     @property
     def IsAisLearnedInfoRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isAisLearnedInfoRefreshed')
 
     @property
     def IsCcmLearnedInfoRefreshed(self):
-        """(read only) If true, the CCM learned information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the CCM learned information is current.
         """
         return self._get_attribute('isCcmLearnedInfoRefreshed')
 
     @property
     def IsDelayLearnedConfigMep(self):
-        """(read only) If true, indicates if the configured MEP for the delay measurement was found.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates if the configured MEP for the delay measurement was found.
         """
         return self._get_attribute('isDelayLearnedConfigMep')
 
     @property
     def IsDelayLearnedPacketSent(self):
-        """(read only) If true, indicates the delay packet was sent.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates the delay packet was sent.
         """
         return self._get_attribute('isDelayLearnedPacketSent')
 
     @property
     def IsDelayMeasurementLearnedInfoRefreshed(self):
-        """(read only) If true, the learned delay information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned delay information is current.
         """
         return self._get_attribute('isDelayMeasurementLearnedInfoRefreshed')
 
     @property
     def IsLbLearnedConfigMep(self):
-        """(read only) If true, indicates if the configured MEP for the loopback measurement was found.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates if the configured MEP for the loopback measurement was found.
         """
         return self._get_attribute('isLbLearnedConfigMep')
 
     @property
     def IsLbLearnedPacketSent(self):
-        """(read only) If true, indicates the loopback packet was sent.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates the loopback packet was sent.
         """
         return self._get_attribute('isLbLearnedPacketSent')
 
     @property
     def IsLckLearnedInfoRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isLckLearnedInfoRefreshed')
 
     @property
     def IsLinkTraceLearnedInfoRefreshed(self):
-        """(read only) If true, the learned link trace information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned link trace information is current.
         """
         return self._get_attribute('isLinkTraceLearnedInfoRefreshed')
 
     @property
     def IsLoopbackLearnedInfoRefreshed(self):
-        """(read only) If true, the learned loopback information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned loopback information is current.
         """
         return self._get_attribute('isLoopbackLearnedInfoRefreshed')
 
     @property
     def IsLossMeasurementLearnedInfoPacketSent(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isLossMeasurementLearnedInfoPacketSent')
 
     @property
     def IsLossMeasurementLearnedInfoRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isLossMeasurementLearnedInfoRefreshed')
 
     @property
     def IsLtLearnedConfigMep(self):
-        """(read only) If true, indicates if the configured MEP for the link trace measurement was found.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates if the configured MEP for the link trace measurement was found.
         """
         return self._get_attribute('isLtLearnedConfigMep')
 
     @property
     def IsLtLearnedPacketSent(self):
-        """(read only) If true, indicates the link trace packet was sent.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates the link trace packet was sent.
         """
         return self._get_attribute('isLtLearnedPacketSent')
 
     @property
     def IsPbbTeCcmLearnedInfoRefreshed(self):
-        """(read only) If true, the learned PBB-TE CCM information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned PBB-TE CCM information is current.
         """
         return self._get_attribute('isPbbTeCcmLearnedInfoRefreshed')
 
     @property
     def IsPbbTeDelayLearnedConfigMep(self):
-        """(read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
         """
         return self._get_attribute('isPbbTeDelayLearnedConfigMep')
 
     @property
     def IsPbbTeDelayLearnedInfoRefreshed(self):
-        """(read only) If true, the learned PBB-TE delay information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the learned PBB-TE delay information is current.
         """
         return self._get_attribute('isPbbTeDelayLearnedInfoRefreshed')
 
     @property
     def IsPbbTeDelayLearnedPacketSent(self):
-        """(read only) If true, indicates the PBB-TE delay packet was sent.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates the PBB-TE delay packet was sent.
         """
         return self._get_attribute('isPbbTeDelayLearnedPacketSent')
 
     @property
     def IsPbbTeLbLearnedConfigMep(self):
-        """(read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
         """
         return self._get_attribute('isPbbTeLbLearnedConfigMep')
 
     @property
     def IsPbbTeLbLearnedInfoRefreshed(self):
-        """(read only) If true, the PBB-TE learned loopback information is current.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, the PBB-TE learned loopback information is current.
         """
         return self._get_attribute('isPbbTeLbLearnedInfoRefreshed')
 
     @property
     def IsPbbTeLbLearnedPacketSent(self):
-        """(read only) If true, indicates the PBB-TE loopback packet was sent.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: (read only) If true, indicates the PBB-TE loopback packet was sent.
         """
         return self._get_attribute('isPbbTeLbLearnedPacketSent')
 
     @property
     def IsPeriodicOamLearnedInfoRefreshed(self):
-        """If true, the periodic OAM learned information is up-to-date.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the periodic OAM learned information is up-to-date.
         """
         return self._get_attribute('isPeriodicOamLearnedInfoRefreshed')
 
     @property
     def IsTstLearnedInfoRefreshed(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('isTstLearnedInfoRefreshed')
 
     @property
     def LbLearnedErrorString(self):
-        """(read only) The learned error string for the loopback measurement.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned error string for the loopback measurement.
         """
         return self._get_attribute('lbLearnedErrorString')
 
     @property
     def LossMeasurementLearnedInfoErrorString(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('lossMeasurementLearnedInfoErrorString')
 
     @property
     def LtLearnedErrorString(self):
-        """(read only) The learned error string for the link trace measurement.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned error string for the link trace measurement.
         """
         return self._get_attribute('ltLearnedErrorString')
 
     @property
     def OperationMode(self):
-        """Selects the type of CFM to enable.
-
-        Returns:
-            str(cfm|y1731|pbbTe)
+        """
+        Returns
+        -------
+        - str(cfm | y1731 | pbbTe): Selects the type of CFM to enable.
         """
         return self._get_attribute('operationMode')
     @OperationMode.setter
@@ -777,28 +777,28 @@ class Bridge(Base):
 
     @property
     def PbbTeDelayLearnedErrorString(self):
-        """(read only) The learned error string for the PBB-TE delay measurement.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned error string for the PBB-TE delay measurement.
         """
         return self._get_attribute('pbbTeDelayLearnedErrorString')
 
     @property
     def PbbTeLbLearnedErrorString(self):
-        """(read only) The learned error string for the PBB-TE loopback measurement.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (read only) The learned error string for the PBB-TE loopback measurement.
         """
         return self._get_attribute('pbbTeLbLearnedErrorString')
 
     @property
     def UserBvlan(self):
-        """Sets the bridge filter for PBB-TE learned information for the VLAN.
-
-        Returns:
-            str(noVlanId|vlanId|allVlanId)
+        """
+        Returns
+        -------
+        - str(noVlanId | vlanId | allVlanId): Sets the bridge filter for PBB-TE learned information for the VLAN.
         """
         return self._get_attribute('userBvlan')
     @UserBvlan.setter
@@ -807,10 +807,10 @@ class Bridge(Base):
 
     @property
     def UserBvlanId(self):
-        """Sets the PBB-TE VLAN identifier for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the PBB-TE VLAN identifier for filtering learned information.
         """
         return self._get_attribute('userBvlanId')
     @UserBvlanId.setter
@@ -819,10 +819,10 @@ class Bridge(Base):
 
     @property
     def UserBvlanPriority(self):
-        """Sets the PBB-TE VLAN priority for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the PBB-TE VLAN priority for filtering learned information.
         """
         return self._get_attribute('userBvlanPriority')
     @UserBvlanPriority.setter
@@ -831,10 +831,10 @@ class Bridge(Base):
 
     @property
     def UserBvlanTpId(self):
-        """Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
         return self._get_attribute('userBvlanTpId')
     @UserBvlanTpId.setter
@@ -843,10 +843,10 @@ class Bridge(Base):
 
     @property
     def UserCvlan(self):
-        """Sets the bridge filter for learned information for a single VLAN.
-
-        Returns:
-            str(noVlanId|vlanId|allVlanId)
+        """
+        Returns
+        -------
+        - str(noVlanId | vlanId | allVlanId): Sets the bridge filter for learned information for a single VLAN.
         """
         return self._get_attribute('userCvlan')
     @UserCvlan.setter
@@ -855,10 +855,10 @@ class Bridge(Base):
 
     @property
     def UserCvlanId(self):
-        """Sets the single VLAN identifier for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the single VLAN identifier for filtering learned information.
         """
         return self._get_attribute('userCvlanId')
     @UserCvlanId.setter
@@ -867,10 +867,10 @@ class Bridge(Base):
 
     @property
     def UserCvlanPriority(self):
-        """Sets the single VLAN priority for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the single VLAN priority for filtering learned information.
         """
         return self._get_attribute('userCvlanPriority')
     @UserCvlanPriority.setter
@@ -879,10 +879,10 @@ class Bridge(Base):
 
     @property
     def UserCvlanTpId(self):
-        """Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
         return self._get_attribute('userCvlanTpId')
     @UserCvlanTpId.setter
@@ -891,10 +891,10 @@ class Bridge(Base):
 
     @property
     def UserDelayMethod(self):
-        """Sets the type of delay method to use.
-
-        Returns:
-            str(oneWay|twoWay)
+        """
+        Returns
+        -------
+        - str(oneWay | twoWay): Sets the type of delay method to use.
         """
         return self._get_attribute('userDelayMethod')
     @UserDelayMethod.setter
@@ -903,10 +903,10 @@ class Bridge(Base):
 
     @property
     def UserDelayType(self):
-        """Sets the type of delay measurement to use.
-
-        Returns:
-            str(dm|dvm)
+        """
+        Returns
+        -------
+        - str(dm | dvm): Sets the type of delay measurement to use.
         """
         return self._get_attribute('userDelayType')
     @UserDelayType.setter
@@ -915,10 +915,10 @@ class Bridge(Base):
 
     @property
     def UserDstMacAddress(self):
-        """Filters on the destination MAC address specified.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Filters on the destination MAC address specified.
         """
         return self._get_attribute('userDstMacAddress')
     @UserDstMacAddress.setter
@@ -927,10 +927,10 @@ class Bridge(Base):
 
     @property
     def UserDstMepId(self):
-        """Sets the MEP identifier for use with userSelectDstMepById.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the MEP identifier for use with userSelectDstMepById.
         """
         return self._get_attribute('userDstMepId')
     @UserDstMepId.setter
@@ -939,10 +939,10 @@ class Bridge(Base):
 
     @property
     def UserDstType(self):
-        """The user destination type.
-
-        Returns:
-            str(mepMac|mepId|mepMacAll|mepIdAll)
+        """
+        Returns
+        -------
+        - str(mepMac | mepId | mepMacAll | mepIdAll): The user destination type.
         """
         return self._get_attribute('userDstType')
     @UserDstType.setter
@@ -951,10 +951,10 @@ class Bridge(Base):
 
     @property
     def UserLearnedInfoTimeOut(self):
-        """The interval in millisecond for the learned record to timeout. Default: 5000.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interval in millisecond for the learned record to timeout. Default: 5000.
         """
         return self._get_attribute('userLearnedInfoTimeOut')
     @UserLearnedInfoTimeOut.setter
@@ -963,10 +963,10 @@ class Bridge(Base):
 
     @property
     def UserLossMethod(self):
-        """NOT DEFINED
-
-        Returns:
-            str(dualEnded|singleEnded)
+        """
+        Returns
+        -------
+        - str(dualEnded | singleEnded): NOT DEFINED
         """
         return self._get_attribute('userLossMethod')
     @UserLossMethod.setter
@@ -975,10 +975,10 @@ class Bridge(Base):
 
     @property
     def UserMdLevel(self):
-        """Filters on the specified MD level.
-
-        Returns:
-            str(0|1|2|3|4|5|6|7|allMd)
+        """
+        Returns
+        -------
+        - str(0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | allMd): Filters on the specified MD level.
         """
         return self._get_attribute('userMdLevel')
     @UserMdLevel.setter
@@ -987,10 +987,10 @@ class Bridge(Base):
 
     @property
     def UserPbbTeDelayMethod(self):
-        """Sets the PBB-TE type of delay method to use.
-
-        Returns:
-            str(twoWay|oneWay)
+        """
+        Returns
+        -------
+        - str(twoWay | oneWay): Sets the PBB-TE type of delay method to use.
         """
         return self._get_attribute('userPbbTeDelayMethod')
     @UserPbbTeDelayMethod.setter
@@ -999,10 +999,10 @@ class Bridge(Base):
 
     @property
     def UserPbbTeDelayType(self):
-        """Sets the PBB-TE type of delay measurement to use.
-
-        Returns:
-            str(dm|dvm)
+        """
+        Returns
+        -------
+        - str(dm | dvm): Sets the PBB-TE type of delay measurement to use.
         """
         return self._get_attribute('userPbbTeDelayType')
     @UserPbbTeDelayType.setter
@@ -1011,10 +1011,10 @@ class Bridge(Base):
 
     @property
     def UserPeriodicOamType(self):
-        """Sets the type of periodic OAM.
-
-        Returns:
-            str(linkTrace|loopback|delayMeasurement|lossMeasurement)
+        """
+        Returns
+        -------
+        - str(linkTrace | loopback | delayMeasurement | lossMeasurement): Sets the type of periodic OAM.
         """
         return self._get_attribute('userPeriodicOamType')
     @UserPeriodicOamType.setter
@@ -1023,10 +1023,10 @@ class Bridge(Base):
 
     @property
     def UserSelectDstMepById(self):
-        """DEPRECATED If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
         """
         return self._get_attribute('userSelectDstMepById')
     @UserSelectDstMepById.setter
@@ -1035,10 +1035,10 @@ class Bridge(Base):
 
     @property
     def UserSelectSrcMepById(self):
-        """DEPRECATED If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
         """
         return self._get_attribute('userSelectSrcMepById')
     @UserSelectSrcMepById.setter
@@ -1047,10 +1047,10 @@ class Bridge(Base):
 
     @property
     def UserSendType(self):
-        """Filters on the the send type.
-
-        Returns:
-            str(unicast|multicast)
+        """
+        Returns
+        -------
+        - str(unicast | multicast): Filters on the the send type.
         """
         return self._get_attribute('userSendType')
     @UserSendType.setter
@@ -1059,10 +1059,10 @@ class Bridge(Base):
 
     @property
     def UserShortMaName(self):
-        """Filters on the specified Short MA Name.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Filters on the specified Short MA Name.
         """
         return self._get_attribute('userShortMaName')
     @UserShortMaName.setter
@@ -1071,10 +1071,10 @@ class Bridge(Base):
 
     @property
     def UserShortMaNameFormat(self):
-        """Filters on the Short MA Name Format.
-
-        Returns:
-            str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)
+        """
+        Returns
+        -------
+        - str(allFormats | primaryVid | characterString | twoOctetInteger | rfc2685VpnId): Filters on the Short MA Name Format.
         """
         return self._get_attribute('userShortMaNameFormat')
     @UserShortMaNameFormat.setter
@@ -1083,10 +1083,10 @@ class Bridge(Base):
 
     @property
     def UserSrcMacAddress(self):
-        """Filters on the specified source MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Filters on the specified source MAC address.
         """
         return self._get_attribute('userSrcMacAddress')
     @UserSrcMacAddress.setter
@@ -1095,10 +1095,10 @@ class Bridge(Base):
 
     @property
     def UserSrcMepId(self):
-        """Sets the MEP identifier for use with userSelectSrcMepById.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the MEP identifier for use with userSelectSrcMepById.
         """
         return self._get_attribute('userSrcMepId')
     @UserSrcMepId.setter
@@ -1107,10 +1107,10 @@ class Bridge(Base):
 
     @property
     def UserSrcType(self):
-        """The user source type.
-
-        Returns:
-            str(mepMac|mepId|mepMacAll|mepIdAll)
+        """
+        Returns
+        -------
+        - str(mepMac | mepId | mepMacAll | mepIdAll): The user source type.
         """
         return self._get_attribute('userSrcType')
     @UserSrcType.setter
@@ -1119,10 +1119,10 @@ class Bridge(Base):
 
     @property
     def UserSvlan(self):
-        """Sets the bridge filter for learned information for a stacked VLAN.
-
-        Returns:
-            str(noVlanId|vlanId|allVlanId)
+        """
+        Returns
+        -------
+        - str(noVlanId | vlanId | allVlanId): Sets the bridge filter for learned information for a stacked VLAN.
         """
         return self._get_attribute('userSvlan')
     @UserSvlan.setter
@@ -1131,10 +1131,10 @@ class Bridge(Base):
 
     @property
     def UserSvlanId(self):
-        """Sets the stacked VLAN identifier for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the stacked VLAN identifier for filtering learned information.
         """
         return self._get_attribute('userSvlanId')
     @UserSvlanId.setter
@@ -1143,10 +1143,10 @@ class Bridge(Base):
 
     @property
     def UserSvlanPriority(self):
-        """Sets the stacked VLAN priority for filtering learned information.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the stacked VLAN priority for filtering learned information.
         """
         return self._get_attribute('userSvlanPriority')
     @UserSvlanPriority.setter
@@ -1155,10 +1155,10 @@ class Bridge(Base):
 
     @property
     def UserSvlanTpId(self):
-        """Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
         return self._get_attribute('userSvlanTpId')
     @UserSvlanTpId.setter
@@ -1167,10 +1167,10 @@ class Bridge(Base):
 
     @property
     def UserTransactionId(self):
-        """The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
         """
         return self._get_attribute('userTransactionId')
     @UserTransactionId.setter
@@ -1179,10 +1179,10 @@ class Bridge(Base):
 
     @property
     def UserTtlInterval(self):
-        """Time to live value, in seconds. Default is 64.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to live value, in seconds. Default is 64.
         """
         return self._get_attribute('userTtlInterval')
     @UserTtlInterval.setter
@@ -1191,10 +1191,10 @@ class Bridge(Base):
 
     @property
     def UserUsabilityOption(self):
-        """User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
-
-        Returns:
-            str(manual|oneToOne|oneToAll|allToOne|allToAll)
+        """
+        Returns
+        -------
+        - str(manual | oneToOne | oneToAll | allToOne | allToAll): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
         """
         return self._get_attribute('userUsabilityOption')
     @UserUsabilityOption.setter
@@ -1202,229 +1202,242 @@ class Bridge(Base):
         self._set_attribute('userUsabilityOption', value)
 
     def update(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
-        """Updates a child instance of bridge on the server.
+        """Updates bridge resource on the server.
 
-        Args:
-            AisInterval (str(oneSec|oneMin)): The interval between AIS messages sent from this CFM bridge.
-            AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
-            BridgeId (str): The bridge MAC address.
-            EnableAis (bool): If true, enables the use of AIS messages.
-            EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
-            Enabled (bool): If true, enables the CFM bridge.
-            Encapsulation (str(ethernet|llcSnap)): Sets the encapsulation type for the bridge.
-            EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
-            Function (str(faultManagement|performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
-            GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
-            OperationMode (str(cfm|y1731|pbbTe)): Selects the type of CFM to enable.
-            UserBvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
-            UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
-            UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
-            UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserCvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a single VLAN.
-            UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
-            UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
-            UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserDelayMethod (str(oneWay|twoWay)): Sets the type of delay method to use.
-            UserDelayType (str(dm|dvm)): Sets the type of delay measurement to use.
-            UserDstMacAddress (str): Filters on the destination MAC address specified.
-            UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
-            UserDstType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user destination type.
-            UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
-            UserLossMethod (str(dualEnded|singleEnded)): NOT DEFINED
-            UserMdLevel (str(0|1|2|3|4|5|6|7|allMd)): Filters on the specified MD level.
-            UserPbbTeDelayMethod (str(twoWay|oneWay)): Sets the PBB-TE type of delay method to use.
-            UserPbbTeDelayType (str(dm|dvm)): Sets the PBB-TE type of delay measurement to use.
-            UserPeriodicOamType (str(linkTrace|loopback|delayMeasurement|lossMeasurement)): Sets the type of periodic OAM.
-            UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
-            UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
-            UserSendType (str(unicast|multicast)): Filters on the the send type.
-            UserShortMaName (str): Filters on the specified Short MA Name.
-            UserShortMaNameFormat (str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)): Filters on the Short MA Name Format.
-            UserSrcMacAddress (str): Filters on the specified source MAC address.
-            UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
-            UserSrcType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user source type.
-            UserSvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
-            UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
-            UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
-            UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
-            UserTtlInterval (number): Time to live value, in seconds. Default is 64.
-            UserUsabilityOption (str(manual|oneToOne|oneToAll|allToOne|allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
+        Args
+        ----
+        - AisInterval (str(oneSec | oneMin)): The interval between AIS messages sent from this CFM bridge.
+        - AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
+        - BridgeId (str): The bridge MAC address.
+        - EnableAis (bool): If true, enables the use of AIS messages.
+        - EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
+        - Enabled (bool): If true, enables the CFM bridge.
+        - Encapsulation (str(ethernet | llcSnap)): Sets the encapsulation type for the bridge.
+        - EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
+        - Function (str(faultManagement | performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
+        - GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
+        - OperationMode (str(cfm | y1731 | pbbTe)): Selects the type of CFM to enable.
+        - UserBvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
+        - UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
+        - UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
+        - UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserCvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a single VLAN.
+        - UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
+        - UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
+        - UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserDelayMethod (str(oneWay | twoWay)): Sets the type of delay method to use.
+        - UserDelayType (str(dm | dvm)): Sets the type of delay measurement to use.
+        - UserDstMacAddress (str): Filters on the destination MAC address specified.
+        - UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
+        - UserDstType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user destination type.
+        - UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
+        - UserLossMethod (str(dualEnded | singleEnded)): NOT DEFINED
+        - UserMdLevel (str(0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | allMd)): Filters on the specified MD level.
+        - UserPbbTeDelayMethod (str(twoWay | oneWay)): Sets the PBB-TE type of delay method to use.
+        - UserPbbTeDelayType (str(dm | dvm)): Sets the PBB-TE type of delay measurement to use.
+        - UserPeriodicOamType (str(linkTrace | loopback | delayMeasurement | lossMeasurement)): Sets the type of periodic OAM.
+        - UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
+        - UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
+        - UserSendType (str(unicast | multicast)): Filters on the the send type.
+        - UserShortMaName (str): Filters on the specified Short MA Name.
+        - UserShortMaNameFormat (str(allFormats | primaryVid | characterString | twoOctetInteger | rfc2685VpnId)): Filters on the Short MA Name Format.
+        - UserSrcMacAddress (str): Filters on the specified source MAC address.
+        - UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
+        - UserSrcType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user source type.
+        - UserSvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
+        - UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
+        - UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
+        - UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
+        - UserTtlInterval (number): Time to live value, in seconds. Default is 64.
+        - UserUsabilityOption (str(manual | oneToOne | oneToAll | allToOne | allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
-        """Adds a new bridge node on the server and retrieves it in this instance.
+        """Adds a new bridge resource on the server and adds it to the container.
 
-        Args:
-            AisInterval (str(oneSec|oneMin)): The interval between AIS messages sent from this CFM bridge.
-            AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
-            BridgeId (str): The bridge MAC address.
-            EnableAis (bool): If true, enables the use of AIS messages.
-            EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
-            Enabled (bool): If true, enables the CFM bridge.
-            Encapsulation (str(ethernet|llcSnap)): Sets the encapsulation type for the bridge.
-            EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
-            Function (str(faultManagement|performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
-            GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
-            OperationMode (str(cfm|y1731|pbbTe)): Selects the type of CFM to enable.
-            UserBvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
-            UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
-            UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
-            UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserCvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a single VLAN.
-            UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
-            UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
-            UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserDelayMethod (str(oneWay|twoWay)): Sets the type of delay method to use.
-            UserDelayType (str(dm|dvm)): Sets the type of delay measurement to use.
-            UserDstMacAddress (str): Filters on the destination MAC address specified.
-            UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
-            UserDstType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user destination type.
-            UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
-            UserLossMethod (str(dualEnded|singleEnded)): NOT DEFINED
-            UserMdLevel (str(0|1|2|3|4|5|6|7|allMd)): Filters on the specified MD level.
-            UserPbbTeDelayMethod (str(twoWay|oneWay)): Sets the PBB-TE type of delay method to use.
-            UserPbbTeDelayType (str(dm|dvm)): Sets the PBB-TE type of delay measurement to use.
-            UserPeriodicOamType (str(linkTrace|loopback|delayMeasurement|lossMeasurement)): Sets the type of periodic OAM.
-            UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
-            UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
-            UserSendType (str(unicast|multicast)): Filters on the the send type.
-            UserShortMaName (str): Filters on the specified Short MA Name.
-            UserShortMaNameFormat (str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)): Filters on the Short MA Name Format.
-            UserSrcMacAddress (str): Filters on the specified source MAC address.
-            UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
-            UserSrcType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user source type.
-            UserSvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
-            UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
-            UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
-            UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
-            UserTtlInterval (number): Time to live value, in seconds. Default is 64.
-            UserUsabilityOption (str(manual|oneToOne|oneToAll|allToOne|allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
+        Args
+        ----
+        - AisInterval (str(oneSec | oneMin)): The interval between AIS messages sent from this CFM bridge.
+        - AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
+        - BridgeId (str): The bridge MAC address.
+        - EnableAis (bool): If true, enables the use of AIS messages.
+        - EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
+        - Enabled (bool): If true, enables the CFM bridge.
+        - Encapsulation (str(ethernet | llcSnap)): Sets the encapsulation type for the bridge.
+        - EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
+        - Function (str(faultManagement | performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
+        - GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
+        - OperationMode (str(cfm | y1731 | pbbTe)): Selects the type of CFM to enable.
+        - UserBvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
+        - UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
+        - UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
+        - UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserCvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a single VLAN.
+        - UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
+        - UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
+        - UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserDelayMethod (str(oneWay | twoWay)): Sets the type of delay method to use.
+        - UserDelayType (str(dm | dvm)): Sets the type of delay measurement to use.
+        - UserDstMacAddress (str): Filters on the destination MAC address specified.
+        - UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
+        - UserDstType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user destination type.
+        - UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
+        - UserLossMethod (str(dualEnded | singleEnded)): NOT DEFINED
+        - UserMdLevel (str(0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | allMd)): Filters on the specified MD level.
+        - UserPbbTeDelayMethod (str(twoWay | oneWay)): Sets the PBB-TE type of delay method to use.
+        - UserPbbTeDelayType (str(dm | dvm)): Sets the PBB-TE type of delay measurement to use.
+        - UserPeriodicOamType (str(linkTrace | loopback | delayMeasurement | lossMeasurement)): Sets the type of periodic OAM.
+        - UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
+        - UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
+        - UserSendType (str(unicast | multicast)): Filters on the the send type.
+        - UserShortMaName (str): Filters on the specified Short MA Name.
+        - UserShortMaNameFormat (str(allFormats | primaryVid | characterString | twoOctetInteger | rfc2685VpnId)): Filters on the Short MA Name Format.
+        - UserSrcMacAddress (str): Filters on the specified source MAC address.
+        - UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
+        - UserSrcType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user source type.
+        - UserSvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
+        - UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
+        - UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
+        - UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
+        - UserTtlInterval (number): Time to live value, in seconds. Default is 64.
+        - UserUsabilityOption (str(manual | oneToOne | oneToAll | allToOne | allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
 
-        Returns:
-            self: This instance with all currently retrieved bridge data using find and the newly added bridge data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved bridge resources using find and the newly added bridge resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the bridge data in this instance from server.
+        """Deletes all the contained bridge resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, DelayLearnedErrorString=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, IsAisLearnedInfoRefreshed=None, IsCcmLearnedInfoRefreshed=None, IsDelayLearnedConfigMep=None, IsDelayLearnedPacketSent=None, IsDelayMeasurementLearnedInfoRefreshed=None, IsLbLearnedConfigMep=None, IsLbLearnedPacketSent=None, IsLckLearnedInfoRefreshed=None, IsLinkTraceLearnedInfoRefreshed=None, IsLoopbackLearnedInfoRefreshed=None, IsLossMeasurementLearnedInfoPacketSent=None, IsLossMeasurementLearnedInfoRefreshed=None, IsLtLearnedConfigMep=None, IsLtLearnedPacketSent=None, IsPbbTeCcmLearnedInfoRefreshed=None, IsPbbTeDelayLearnedConfigMep=None, IsPbbTeDelayLearnedInfoRefreshed=None, IsPbbTeDelayLearnedPacketSent=None, IsPbbTeLbLearnedConfigMep=None, IsPbbTeLbLearnedInfoRefreshed=None, IsPbbTeLbLearnedPacketSent=None, IsPeriodicOamLearnedInfoRefreshed=None, IsTstLearnedInfoRefreshed=None, LbLearnedErrorString=None, LossMeasurementLearnedInfoErrorString=None, LtLearnedErrorString=None, OperationMode=None, PbbTeDelayLearnedErrorString=None, PbbTeLbLearnedErrorString=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
-        """Finds and retrieves bridge data from the server.
+        """Finds and retrieves bridge resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve bridge data from the server.
-        By default the find method takes no parameters and will retrieve all bridge data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bridge resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bridge resources from the server.
 
-        Args:
-            AisInterval (str(oneSec|oneMin)): The interval between AIS messages sent from this CFM bridge.
-            AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
-            BridgeId (str): The bridge MAC address.
-            DelayLearnedErrorString (str): (read only) The learned error string for the delay measurement.
-            EnableAis (bool): If true, enables the use of AIS messages.
-            EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
-            Enabled (bool): If true, enables the CFM bridge.
-            Encapsulation (str(ethernet|llcSnap)): Sets the encapsulation type for the bridge.
-            EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
-            Function (str(faultManagement|performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
-            GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
-            IsAisLearnedInfoRefreshed (bool): NOT DEFINED
-            IsCcmLearnedInfoRefreshed (bool): (read only) If true, the CCM learned information is current.
-            IsDelayLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the delay measurement was found.
-            IsDelayLearnedPacketSent (bool): (read only) If true, indicates the delay packet was sent.
-            IsDelayMeasurementLearnedInfoRefreshed (bool): (read only) If true, the learned delay information is current.
-            IsLbLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the loopback measurement was found.
-            IsLbLearnedPacketSent (bool): (read only) If true, indicates the loopback packet was sent.
-            IsLckLearnedInfoRefreshed (bool): NOT DEFINED
-            IsLinkTraceLearnedInfoRefreshed (bool): (read only) If true, the learned link trace information is current.
-            IsLoopbackLearnedInfoRefreshed (bool): (read only) If true, the learned loopback information is current.
-            IsLossMeasurementLearnedInfoPacketSent (bool): NOT DEFINED
-            IsLossMeasurementLearnedInfoRefreshed (bool): NOT DEFINED
-            IsLtLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the link trace measurement was found.
-            IsLtLearnedPacketSent (bool): (read only) If true, indicates the link trace packet was sent.
-            IsPbbTeCcmLearnedInfoRefreshed (bool): (read only) If true, the learned PBB-TE CCM information is current.
-            IsPbbTeDelayLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
-            IsPbbTeDelayLearnedInfoRefreshed (bool): (read only) If true, the learned PBB-TE delay information is current.
-            IsPbbTeDelayLearnedPacketSent (bool): (read only) If true, indicates the PBB-TE delay packet was sent.
-            IsPbbTeLbLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
-            IsPbbTeLbLearnedInfoRefreshed (bool): (read only) If true, the PBB-TE learned loopback information is current.
-            IsPbbTeLbLearnedPacketSent (bool): (read only) If true, indicates the PBB-TE loopback packet was sent.
-            IsPeriodicOamLearnedInfoRefreshed (bool): If true, the periodic OAM learned information is up-to-date.
-            IsTstLearnedInfoRefreshed (bool): NOT DEFINED
-            LbLearnedErrorString (str): (read only) The learned error string for the loopback measurement.
-            LossMeasurementLearnedInfoErrorString (str): NOT DEFINED
-            LtLearnedErrorString (str): (read only) The learned error string for the link trace measurement.
-            OperationMode (str(cfm|y1731|pbbTe)): Selects the type of CFM to enable.
-            PbbTeDelayLearnedErrorString (str): (read only) The learned error string for the PBB-TE delay measurement.
-            PbbTeLbLearnedErrorString (str): (read only) The learned error string for the PBB-TE loopback measurement.
-            UserBvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
-            UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
-            UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
-            UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserCvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a single VLAN.
-            UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
-            UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
-            UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserDelayMethod (str(oneWay|twoWay)): Sets the type of delay method to use.
-            UserDelayType (str(dm|dvm)): Sets the type of delay measurement to use.
-            UserDstMacAddress (str): Filters on the destination MAC address specified.
-            UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
-            UserDstType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user destination type.
-            UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
-            UserLossMethod (str(dualEnded|singleEnded)): NOT DEFINED
-            UserMdLevel (str(0|1|2|3|4|5|6|7|allMd)): Filters on the specified MD level.
-            UserPbbTeDelayMethod (str(twoWay|oneWay)): Sets the PBB-TE type of delay method to use.
-            UserPbbTeDelayType (str(dm|dvm)): Sets the PBB-TE type of delay measurement to use.
-            UserPeriodicOamType (str(linkTrace|loopback|delayMeasurement|lossMeasurement)): Sets the type of periodic OAM.
-            UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
-            UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
-            UserSendType (str(unicast|multicast)): Filters on the the send type.
-            UserShortMaName (str): Filters on the specified Short MA Name.
-            UserShortMaNameFormat (str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)): Filters on the Short MA Name Format.
-            UserSrcMacAddress (str): Filters on the specified source MAC address.
-            UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
-            UserSrcType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user source type.
-            UserSvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
-            UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
-            UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
-            UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
-            UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
-            UserTtlInterval (number): Time to live value, in seconds. Default is 64.
-            UserUsabilityOption (str(manual|oneToOne|oneToAll|allToOne|allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
+        Args
+        ----
+        - AisInterval (str(oneSec | oneMin)): The interval between AIS messages sent from this CFM bridge.
+        - AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
+        - BridgeId (str): The bridge MAC address.
+        - DelayLearnedErrorString (str): (read only) The learned error string for the delay measurement.
+        - EnableAis (bool): If true, enables the use of AIS messages.
+        - EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
+        - Enabled (bool): If true, enables the CFM bridge.
+        - Encapsulation (str(ethernet | llcSnap)): Sets the encapsulation type for the bridge.
+        - EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
+        - Function (str(faultManagement | performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
+        - GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
+        - IsAisLearnedInfoRefreshed (bool): NOT DEFINED
+        - IsCcmLearnedInfoRefreshed (bool): (read only) If true, the CCM learned information is current.
+        - IsDelayLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the delay measurement was found.
+        - IsDelayLearnedPacketSent (bool): (read only) If true, indicates the delay packet was sent.
+        - IsDelayMeasurementLearnedInfoRefreshed (bool): (read only) If true, the learned delay information is current.
+        - IsLbLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the loopback measurement was found.
+        - IsLbLearnedPacketSent (bool): (read only) If true, indicates the loopback packet was sent.
+        - IsLckLearnedInfoRefreshed (bool): NOT DEFINED
+        - IsLinkTraceLearnedInfoRefreshed (bool): (read only) If true, the learned link trace information is current.
+        - IsLoopbackLearnedInfoRefreshed (bool): (read only) If true, the learned loopback information is current.
+        - IsLossMeasurementLearnedInfoPacketSent (bool): NOT DEFINED
+        - IsLossMeasurementLearnedInfoRefreshed (bool): NOT DEFINED
+        - IsLtLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the link trace measurement was found.
+        - IsLtLearnedPacketSent (bool): (read only) If true, indicates the link trace packet was sent.
+        - IsPbbTeCcmLearnedInfoRefreshed (bool): (read only) If true, the learned PBB-TE CCM information is current.
+        - IsPbbTeDelayLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
+        - IsPbbTeDelayLearnedInfoRefreshed (bool): (read only) If true, the learned PBB-TE delay information is current.
+        - IsPbbTeDelayLearnedPacketSent (bool): (read only) If true, indicates the PBB-TE delay packet was sent.
+        - IsPbbTeLbLearnedConfigMep (bool): (read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
+        - IsPbbTeLbLearnedInfoRefreshed (bool): (read only) If true, the PBB-TE learned loopback information is current.
+        - IsPbbTeLbLearnedPacketSent (bool): (read only) If true, indicates the PBB-TE loopback packet was sent.
+        - IsPeriodicOamLearnedInfoRefreshed (bool): If true, the periodic OAM learned information is up-to-date.
+        - IsTstLearnedInfoRefreshed (bool): NOT DEFINED
+        - LbLearnedErrorString (str): (read only) The learned error string for the loopback measurement.
+        - LossMeasurementLearnedInfoErrorString (str): NOT DEFINED
+        - LtLearnedErrorString (str): (read only) The learned error string for the link trace measurement.
+        - OperationMode (str(cfm | y1731 | pbbTe)): Selects the type of CFM to enable.
+        - PbbTeDelayLearnedErrorString (str): (read only) The learned error string for the PBB-TE delay measurement.
+        - PbbTeLbLearnedErrorString (str): (read only) The learned error string for the PBB-TE loopback measurement.
+        - UserBvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
+        - UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
+        - UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
+        - UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserCvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a single VLAN.
+        - UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
+        - UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
+        - UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserDelayMethod (str(oneWay | twoWay)): Sets the type of delay method to use.
+        - UserDelayType (str(dm | dvm)): Sets the type of delay measurement to use.
+        - UserDstMacAddress (str): Filters on the destination MAC address specified.
+        - UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
+        - UserDstType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user destination type.
+        - UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
+        - UserLossMethod (str(dualEnded | singleEnded)): NOT DEFINED
+        - UserMdLevel (str(0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | allMd)): Filters on the specified MD level.
+        - UserPbbTeDelayMethod (str(twoWay | oneWay)): Sets the PBB-TE type of delay method to use.
+        - UserPbbTeDelayType (str(dm | dvm)): Sets the PBB-TE type of delay measurement to use.
+        - UserPeriodicOamType (str(linkTrace | loopback | delayMeasurement | lossMeasurement)): Sets the type of periodic OAM.
+        - UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
+        - UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
+        - UserSendType (str(unicast | multicast)): Filters on the the send type.
+        - UserShortMaName (str): Filters on the specified Short MA Name.
+        - UserShortMaNameFormat (str(allFormats | primaryVid | characterString | twoOctetInteger | rfc2685VpnId)): Filters on the Short MA Name Format.
+        - UserSrcMacAddress (str): Filters on the specified source MAC address.
+        - UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
+        - UserSrcType (str(mepMac | mepId | mepMacAll | mepIdAll)): The user source type.
+        - UserSvlan (str(noVlanId | vlanId | allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
+        - UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
+        - UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
+        - UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+        - UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
+        - UserTtlInterval (number): Time to live value, in seconds. Default is 64.
+        - UserUsabilityOption (str(manual | oneToOne | oneToAll | allToOne | allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
 
-        Returns:
-            self: This instance with matching bridge data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching bridge resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of bridge data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the bridge data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the bridge resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -1433,12 +1446,10 @@ class Bridge(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshAisLearnedInfo', payload=payload, response_object=None)
@@ -1448,12 +1459,10 @@ class Bridge(Base):
 
         This command is used to refresh the learned CCM information on the bridge.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshCcmLearnedInfo', payload=payload, response_object=None)
@@ -1463,12 +1472,10 @@ class Bridge(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshLckLearnedInfo', payload=payload, response_object=None)
@@ -1478,12 +1485,10 @@ class Bridge(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('refreshTstLearnedInfo', payload=payload, response_object=None)
@@ -1493,12 +1498,10 @@ class Bridge(Base):
 
         This command is used to refresh the learned CFM ITU information on this bridge.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startDelayMeasurement', payload=payload, response_object=None)
@@ -1508,12 +1511,10 @@ class Bridge(Base):
 
         This command is used to refresh the learned CFM LT information on this bridge.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startLinkTrace', payload=payload, response_object=None)
@@ -1523,12 +1524,10 @@ class Bridge(Base):
 
         This command is used to refresh the learned CFM LB information on this bridge.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startLoopback', payload=payload, response_object=None)
@@ -1538,12 +1537,10 @@ class Bridge(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('startLossMeasurement', payload=payload, response_object=None)
@@ -1553,12 +1550,10 @@ class Bridge(Base):
 
         This command updates the periodic OAM learned information on this bridge.
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('updatePeriodicOamLearnedInfo', payload=payload, response_object=None)

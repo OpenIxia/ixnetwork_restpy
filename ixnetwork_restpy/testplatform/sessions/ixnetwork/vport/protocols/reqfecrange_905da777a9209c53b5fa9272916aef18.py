@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ReqFecRange(Base):
     """This object enables a request for a set of FEC ranges.
-    The ReqFecRange class encapsulates a list of reqFecRange resources that is be managed by the user.
+    The ReqFecRange class encapsulates a list of reqFecRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the ReqFecRange.find() method.
-    The list can be managed by the user by using the ReqFecRange.add() and ReqFecRange.remove() methods.
+    The list can be managed by using the ReqFecRange.add() and ReqFecRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class ReqFecRange(Base):
 
     @property
     def EnableHopCount(self):
-        """Enables the hops along the path of the LSP.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the hops along the path of the LSP.
         """
         return self._get_attribute('enableHopCount')
     @EnableHopCount.setter
@@ -50,10 +50,10 @@ class ReqFecRange(Base):
 
     @property
     def EnableStateTimer(self):
-        """Enable the Stale Request Timer.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable the Stale Request Timer.
         """
         return self._get_attribute('enableStateTimer')
     @EnableStateTimer.setter
@@ -62,10 +62,10 @@ class ReqFecRange(Base):
 
     @property
     def Enabled(self):
-        """Enables the use of this request FEC range for the simulated router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of this request FEC range for the simulated router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class ReqFecRange(Base):
 
     @property
     def FirstNetwork(self):
-        """The first FEC network address in the range (in IP address format).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first FEC network address in the range (in IP address format).
         """
         return self._get_attribute('firstNetwork')
     @FirstNetwork.setter
@@ -86,10 +86,10 @@ class ReqFecRange(Base):
 
     @property
     def HopCount(self):
-        """The number of hops along the path of the LSP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of hops along the path of the LSP.
         """
         return self._get_attribute('hopCount')
     @HopCount.setter
@@ -98,10 +98,10 @@ class ReqFecRange(Base):
 
     @property
     def MaskWidth(self):
-        """The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
         """
         return self._get_attribute('maskWidth')
     @MaskWidth.setter
@@ -110,10 +110,10 @@ class ReqFecRange(Base):
 
     @property
     def NextHopPeer(self):
-        """The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
         """
         return self._get_attribute('nextHopPeer')
     @NextHopPeer.setter
@@ -122,10 +122,10 @@ class ReqFecRange(Base):
 
     @property
     def NumberOfRoutes(self):
-        """The number of routes configured for this LDP requesting FEC range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of routes configured for this LDP requesting FEC range.
         """
         return self._get_attribute('numberOfRoutes')
     @NumberOfRoutes.setter
@@ -134,10 +134,10 @@ class ReqFecRange(Base):
 
     @property
     def StaleReqTime(self):
-        """The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
         """
         return self._get_attribute('staleReqTime')
     @StaleReqTime.setter
@@ -145,91 +145,104 @@ class ReqFecRange(Base):
         self._set_attribute('staleReqTime', value)
 
     def update(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
-        """Updates a child instance of reqFecRange on the server.
+        """Updates reqFecRange resource on the server.
 
-        Args:
-            EnableHopCount (bool): Enables the hops along the path of the LSP.
-            EnableStateTimer (bool): Enable the Stale Request Timer.
-            Enabled (bool): Enables the use of this request FEC range for the simulated router.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            HopCount (number): The number of hops along the path of the LSP.
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
-            NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
-            NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
-            StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
+        Args
+        ----
+        - EnableHopCount (bool): Enables the hops along the path of the LSP.
+        - EnableStateTimer (bool): Enable the Stale Request Timer.
+        - Enabled (bool): Enables the use of this request FEC range for the simulated router.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - HopCount (number): The number of hops along the path of the LSP.
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
+        - NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
+        - NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
+        - StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
-        """Adds a new reqFecRange node on the server and retrieves it in this instance.
+        """Adds a new reqFecRange resource on the server and adds it to the container.
 
-        Args:
-            EnableHopCount (bool): Enables the hops along the path of the LSP.
-            EnableStateTimer (bool): Enable the Stale Request Timer.
-            Enabled (bool): Enables the use of this request FEC range for the simulated router.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            HopCount (number): The number of hops along the path of the LSP.
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
-            NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
-            NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
-            StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
+        Args
+        ----
+        - EnableHopCount (bool): Enables the hops along the path of the LSP.
+        - EnableStateTimer (bool): Enable the Stale Request Timer.
+        - Enabled (bool): Enables the use of this request FEC range for the simulated router.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - HopCount (number): The number of hops along the path of the LSP.
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
+        - NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
+        - NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
+        - StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
 
-        Returns:
-            self: This instance with all currently retrieved reqFecRange data using find and the newly added reqFecRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved reqFecRange resources using find and the newly added reqFecRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the reqFecRange data in this instance from server.
+        """Deletes all the contained reqFecRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
-        """Finds and retrieves reqFecRange data from the server.
+        """Finds and retrieves reqFecRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve reqFecRange data from the server.
-        By default the find method takes no parameters and will retrieve all reqFecRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve reqFecRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all reqFecRange resources from the server.
 
-        Args:
-            EnableHopCount (bool): Enables the hops along the path of the LSP.
-            EnableStateTimer (bool): Enable the Stale Request Timer.
-            Enabled (bool): Enables the use of this request FEC range for the simulated router.
-            FirstNetwork (str): The first FEC network address in the range (in IP address format).
-            HopCount (number): The number of hops along the path of the LSP.
-            MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
-            NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
-            NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
-            StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
+        Args
+        ----
+        - EnableHopCount (bool): Enables the hops along the path of the LSP.
+        - EnableStateTimer (bool): Enable the Stale Request Timer.
+        - Enabled (bool): Enables the use of this request FEC range for the simulated router.
+        - FirstNetwork (str): The first FEC network address in the range (in IP address format).
+        - HopCount (number): The number of hops along the path of the LSP.
+        - MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
+        - NextHopPeer (str): The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
+        - NumberOfRoutes (number): The number of routes configured for this LDP requesting FEC range.
+        - StaleReqTime (number): The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
 
-        Returns:
-            self: This instance with matching reqFecRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching reqFecRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of reqFecRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the reqFecRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the reqFecRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

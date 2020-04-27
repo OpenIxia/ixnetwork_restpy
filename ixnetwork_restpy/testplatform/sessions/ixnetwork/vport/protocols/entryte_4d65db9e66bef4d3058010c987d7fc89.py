@@ -36,10 +36,10 @@ class EntryTe(Base):
 
     @property
     def EnableEntryTe(self):
-        """If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
         """
         return self._get_attribute('enableEntryTe')
     @EnableEntryTe.setter
@@ -48,10 +48,10 @@ class EntryTe(Base):
 
     @property
     def EteAdmGroup(self):
-        """For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
         """
         return self._get_attribute('eteAdmGroup')
     @EteAdmGroup.setter
@@ -60,10 +60,10 @@ class EntryTe(Base):
 
     @property
     def EteLinkMetric(self):
-        """A user-defined metric for the link.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: A user-defined metric for the link.
         """
         return self._get_attribute('eteLinkMetric')
     @EteLinkMetric.setter
@@ -72,10 +72,10 @@ class EntryTe(Base):
 
     @property
     def EteMaxBandWidth(self):
-        """For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
         return self._get_attribute('eteMaxBandWidth')
     @EteMaxBandWidth.setter
@@ -84,10 +84,10 @@ class EntryTe(Base):
 
     @property
     def EteMaxReserveBandWidth(self):
-        """For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
         return self._get_attribute('eteMaxReserveBandWidth')
     @EteMaxReserveBandWidth.setter
@@ -96,10 +96,10 @@ class EntryTe(Base):
 
     @property
     def EteRouterId(self):
-        """This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
         """
         return self._get_attribute('eteRouterId')
     @EteRouterId.setter
@@ -108,10 +108,10 @@ class EntryTe(Base):
 
     @property
     def EteRouterIdIncrement(self):
-        """The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
         """
         return self._get_attribute('eteRouterIdIncrement')
     @EteRouterIdIncrement.setter
@@ -120,10 +120,10 @@ class EntryTe(Base):
 
     @property
     def EteUnreservedBandWidth(self):
-        """There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
-
-        Returns:
-            list(number)
+        """
+        Returns
+        -------
+        - list(number): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
         """
         return self._get_attribute('eteUnreservedBandWidth')
     @EteUnreservedBandWidth.setter
@@ -131,19 +131,21 @@ class EntryTe(Base):
         self._set_attribute('eteUnreservedBandWidth', value)
 
     def update(self, EnableEntryTe=None, EteAdmGroup=None, EteLinkMetric=None, EteMaxBandWidth=None, EteMaxReserveBandWidth=None, EteRouterId=None, EteRouterIdIncrement=None, EteUnreservedBandWidth=None):
-        """Updates a child instance of entryTe on the server.
+        """Updates entryTe resource on the server.
 
-        Args:
-            EnableEntryTe (bool): If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
-            EteAdmGroup (str): For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
-            EteLinkMetric (number): A user-defined metric for the link.
-            EteMaxBandWidth (number): For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
-            EteMaxReserveBandWidth (number): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
-            EteRouterId (str): This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
-            EteRouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-            EteUnreservedBandWidth (list(number)): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
+        Args
+        ----
+        - EnableEntryTe (bool): If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
+        - EteAdmGroup (str): For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
+        - EteLinkMetric (number): A user-defined metric for the link.
+        - EteMaxBandWidth (number): For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteMaxReserveBandWidth (number): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteRouterId (str): This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
+        - EteRouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+        - EteUnreservedBandWidth (list(number)): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

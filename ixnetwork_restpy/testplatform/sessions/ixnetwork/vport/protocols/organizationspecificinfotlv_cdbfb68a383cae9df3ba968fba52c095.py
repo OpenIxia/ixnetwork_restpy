@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OrganizationSpecificInfoTlv(Base):
     """
-    The OrganizationSpecificInfoTlv class encapsulates a list of organizationSpecificInfoTlv resources that is be managed by the user.
+    The OrganizationSpecificInfoTlv class encapsulates a list of organizationSpecificInfoTlv resources that are managed by the user.
     A list of resources can be retrieved from the server using the OrganizationSpecificInfoTlv.find() method.
-    The list can be managed by the user by using the OrganizationSpecificInfoTlv.add() and OrganizationSpecificInfoTlv.remove() methods.
+    The list can be managed by using the OrganizationSpecificInfoTlv.add() and OrganizationSpecificInfoTlv.remove() methods.
     """
 
     __slots__ = ()
@@ -39,9 +39,9 @@ class OrganizationSpecificInfoTlv(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -51,9 +51,9 @@ class OrganizationSpecificInfoTlv(Base):
     @property
     def Oui(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('oui')
     @Oui.setter
@@ -63,9 +63,9 @@ class OrganizationSpecificInfoTlv(Base):
     @property
     def Value(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('value')
     @Value.setter
@@ -73,73 +73,86 @@ class OrganizationSpecificInfoTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Enabled=None, Oui=None, Value=None):
-        """Updates a child instance of organizationSpecificInfoTlv on the server.
+        """Updates organizationSpecificInfoTlv resource on the server.
 
-        Args:
-            Enabled (bool): 
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Enabled (bool): 
+        - Oui (str): 
+        - Value (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, Oui=None, Value=None):
-        """Adds a new organizationSpecificInfoTlv node on the server and retrieves it in this instance.
+        """Adds a new organizationSpecificInfoTlv resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): 
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Enabled (bool): 
+        - Oui (str): 
+        - Value (str): 
 
-        Returns:
-            self: This instance with all currently retrieved organizationSpecificInfoTlv data using find and the newly added organizationSpecificInfoTlv data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved organizationSpecificInfoTlv resources using find and the newly added organizationSpecificInfoTlv resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the organizationSpecificInfoTlv data in this instance from server.
+        """Deletes all the contained organizationSpecificInfoTlv resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, Oui=None, Value=None):
-        """Finds and retrieves organizationSpecificInfoTlv data from the server.
+        """Finds and retrieves organizationSpecificInfoTlv resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve organizationSpecificInfoTlv data from the server.
-        By default the find method takes no parameters and will retrieve all organizationSpecificInfoTlv data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve organizationSpecificInfoTlv resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all organizationSpecificInfoTlv resources from the server.
 
-        Args:
-            Enabled (bool): 
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Enabled (bool): 
+        - Oui (str): 
+        - Value (str): 
 
-        Returns:
-            self: This instance with matching organizationSpecificInfoTlv data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching organizationSpecificInfoTlv resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of organizationSpecificInfoTlv data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the organizationSpecificInfoTlv data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the organizationSpecificInfoTlv resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedInfoUpdate(Base):
     """The learned information trigger node that contains trigger tables of learned information.
-    The LearnedInfoUpdate class encapsulates a list of learnedInfoUpdate resources that is managed by the system.
+    The LearnedInfoUpdate class encapsulates a list of learnedInfoUpdate resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedInfoUpdate.find() method.
     """
 
@@ -37,113 +37,119 @@ class LearnedInfoUpdate(Base):
 
     @property
     def PceBasicRsvpSyncLspUpdateParams(self):
-        """An instance of the PceBasicRsvpSyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams.PceBasicRsvpSyncLspUpdateParams): An instance of the PceBasicRsvpSyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams.PceBasicRsvpSyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams import PceBasicRsvpSyncLspUpdateParams
         return PceBasicRsvpSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrSyncLspUpdateParams(self):
-        """An instance of the PceBasicSrSyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams.PceBasicSrSyncLspUpdateParams): An instance of the PceBasicSrSyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams.PceBasicSrSyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams import PceBasicSrSyncLspUpdateParams
         return PceBasicSrSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrv6SyncLspUpdateParams(self):
-        """An instance of the PceBasicSrv6SyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams.PceBasicSrv6SyncLspUpdateParams): An instance of the PceBasicSrv6SyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams.PceBasicSrv6SyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams import PceBasicSrv6SyncLspUpdateParams
         return PceBasicSrv6SyncLspUpdateParams(self)
 
     @property
     def PceDetailedRsvpSyncLspUpdateParams(self):
-        """An instance of the PceDetailedRsvpSyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams.PceDetailedRsvpSyncLspUpdateParams): An instance of the PceDetailedRsvpSyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams.PceDetailedRsvpSyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams import PceDetailedRsvpSyncLspUpdateParams
         return PceDetailedRsvpSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrSyncLspUpdateParams(self):
-        """An instance of the PceDetailedSrSyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams.PceDetailedSrSyncLspUpdateParams): An instance of the PceDetailedSrSyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams.PceDetailedSrSyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams import PceDetailedSrSyncLspUpdateParams
         return PceDetailedSrSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrv6SyncLspUpdateParams(self):
-        """An instance of the PceDetailedSrv6SyncLspUpdateParams class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams.PceDetailedSrv6SyncLspUpdateParams): An instance of the PceDetailedSrv6SyncLspUpdateParams class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams.PceDetailedSrv6SyncLspUpdateParams)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams import PceDetailedSrv6SyncLspUpdateParams
         return PceDetailedSrv6SyncLspUpdateParams(self)
 
     def find(self):
-        """Finds and retrieves learnedInfoUpdate data from the server.
+        """Finds and retrieves learnedInfoUpdate resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedInfoUpdate data from the server.
-        By default the find method takes no parameters and will retrieve all learnedInfoUpdate data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInfoUpdate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedInfoUpdate resources from the server.
 
-        Returns:
-            self: This instance with matching learnedInfoUpdate data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedInfoUpdate resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedInfoUpdate data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedInfoUpdate data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedInfoUpdate resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

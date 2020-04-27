@@ -36,38 +36,38 @@ class Multicast(Base):
 
     @property
     def Cluster(self):
-        """An instance of the Cluster class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f08852b9c9deb8f4d5cb6a574458c7a3.Cluster): An instance of the Cluster class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f08852b9c9deb8f4d5cb6a574458c7a3.Cluster)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f08852b9c9deb8f4d5cb6a574458c7a3 import Cluster
         return Cluster(self)._select()
 
     @property
     def RouteDistinguisher(self):
-        """An instance of the RouteDistinguisher class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_ae0f37a2a9fe5bae70963004133245e8.RouteDistinguisher): An instance of the RouteDistinguisher class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_ae0f37a2a9fe5bae70963004133245e8.RouteDistinguisher)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_ae0f37a2a9fe5bae70963004133245e8 import RouteDistinguisher
         return RouteDistinguisher(self)._select()
 
     @property
     def EnableMulticast(self):
-        """Enables the use of Multicast VRFs (MVRFs). (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the use of Multicast VRFs (MVRFs). (default = false)
         """
         return self._get_attribute('enableMulticast')
     @EnableMulticast.setter
@@ -76,10 +76,10 @@ class Multicast(Base):
 
     @property
     def EnableMulticastCluster(self):
-        """If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
         """
         return self._get_attribute('enableMulticastCluster')
     @EnableMulticastCluster.setter
@@ -88,10 +88,10 @@ class Multicast(Base):
 
     @property
     def GroupAddress(self):
-        """The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
         """
         return self._get_attribute('groupAddress')
     @GroupAddress.setter
@@ -99,14 +99,16 @@ class Multicast(Base):
         self._set_attribute('groupAddress', value)
 
     def update(self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None):
-        """Updates a child instance of multicast on the server.
+        """Updates multicast resource on the server.
 
-        Args:
-            EnableMulticast (bool): Enables the use of Multicast VRFs (MVRFs). (default = false)
-            EnableMulticastCluster (bool): If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
-            GroupAddress (str): The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
+        Args
+        ----
+        - EnableMulticast (bool): Enables the use of Multicast VRFs (MVRFs). (default = false)
+        - EnableMulticastCluster (bool): If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
+        - GroupAddress (str): The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

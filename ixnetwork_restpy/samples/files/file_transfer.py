@@ -1,17 +1,14 @@
 """Demonstrates how to upload and download files to a remote server.
 
 """
-
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.files import Files
+from ixnetwork_restpy import SessionAssistant, Files
 
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
+    UserName='admin', Password='admin',
+    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
+    ClearConfig=True)
+ixnetwork = session_assistant.Ixnetwork
 
 # add 4 vport objects
 ixnetwork.Vport.add().add().add().add()
@@ -20,13 +17,13 @@ ixnetwork.Vport.add().add().add().add()
 ixnetwork.SaveConfig(Files('sample.ixncfg'))
 
 # get a list of remote files
-print(sessions.GetFileList())
+print(session_assistant.Session.GetFileList())
 
 # download the remote saved configuration as some other local file
-sessions.DownloadFile('sample.ixncfg', 'local.ixncfg')
+session_assistant.Session.DownloadFile('sample.ixncfg', 'local.ixncfg')
 
 # upload the local file
-print(sessions.UploadFile('local.ixncfg'))
+print(session_assistant.Session.UploadFile('local.ixncfg'))
 
 # load the remote local configuration
 print(ixnetwork.LoadConfig(Files('local.ixncfg')))

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class MeterConfigStatsBandLearnedInformation(Base):
     """NOT DEFINED
-    The MeterConfigStatsBandLearnedInformation class encapsulates a list of meterConfigStatsBandLearnedInformation resources that is managed by the system.
+    The MeterConfigStatsBandLearnedInformation class encapsulates a list of meterConfigStatsBandLearnedInformation resources that are managed by the system.
     A list of resources can be retrieved from the server using the MeterConfigStatsBandLearnedInformation.find() method.
     """
 
@@ -37,131 +37,138 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def BurstSize(self):
-        """Specifies the Burst Size
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the Burst Size
         """
         return self._get_attribute('burstSize')
 
     @property
     def DataPathId(self):
-        """The Data Path identifier of the OpenFlow Controller.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Data Path identifier of the OpenFlow Controller.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """The Data Path identifier of the OpenFlow Controller in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Data Path identifier of the OpenFlow Controller in hexadecimal format.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def Experimenter(self):
-        """Specifies the Experimenter Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Experimenter Value
         """
         return self._get_attribute('experimenter')
 
     @property
     def LocalIp(self):
-        """Indicates the local IP of the Controller.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Indicates the local IP of the Controller.
         """
         return self._get_attribute('localIp')
 
     @property
     def MeterId(self):
-        """Specifies Meter Id
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies Meter Id
         """
         return self._get_attribute('meterId')
 
     @property
     def PrecedenceLevel(self):
-        """Specifies the Precedence Level Value
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Precedence Level Value
         """
         return self._get_attribute('precedenceLevel')
 
     @property
     def Rate(self):
-        """Specifies the rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the rate
         """
         return self._get_attribute('rate')
 
     @property
     def RemoteIp(self):
-        """The Remote IP address of the selected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Remote IP address of the selected interface.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def Type(self):
-        """Specifies the Band Type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specifies the Band Type
         """
         return self._get_attribute('type')
 
     def find(self, BurstSize=None, DataPathId=None, DataPathIdAsHex=None, Experimenter=None, LocalIp=None, MeterId=None, PrecedenceLevel=None, Rate=None, RemoteIp=None, Type=None):
-        """Finds and retrieves meterConfigStatsBandLearnedInformation data from the server.
+        """Finds and retrieves meterConfigStatsBandLearnedInformation resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve meterConfigStatsBandLearnedInformation data from the server.
-        By default the find method takes no parameters and will retrieve all meterConfigStatsBandLearnedInformation data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meterConfigStatsBandLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all meterConfigStatsBandLearnedInformation resources from the server.
 
-        Args:
-            BurstSize (number): Specifies the Burst Size
-            DataPathId (number): The Data Path identifier of the OpenFlow Controller.
-            DataPathIdAsHex (str): The Data Path identifier of the OpenFlow Controller in hexadecimal format.
-            Experimenter (str): Specifies the Experimenter Value
-            LocalIp (str): Indicates the local IP of the Controller.
-            MeterId (number): Specifies Meter Id
-            PrecedenceLevel (str): Specifies the Precedence Level Value
-            Rate (number): Specifies the rate
-            RemoteIp (str): The Remote IP address of the selected interface.
-            Type (str): Specifies the Band Type
+        Args
+        ----
+        - BurstSize (number): Specifies the Burst Size
+        - DataPathId (number): The Data Path identifier of the OpenFlow Controller.
+        - DataPathIdAsHex (str): The Data Path identifier of the OpenFlow Controller in hexadecimal format.
+        - Experimenter (str): Specifies the Experimenter Value
+        - LocalIp (str): Indicates the local IP of the Controller.
+        - MeterId (number): Specifies Meter Id
+        - PrecedenceLevel (str): Specifies the Precedence Level Value
+        - Rate (number): Specifies the rate
+        - RemoteIp (str): The Remote IP address of the selected interface.
+        - Type (str): Specifies the Band Type
 
-        Returns:
-            self: This instance with matching meterConfigStatsBandLearnedInformation data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching meterConfigStatsBandLearnedInformation resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of meterConfigStatsBandLearnedInformation data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the meterConfigStatsBandLearnedInformation data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the meterConfigStatsBandLearnedInformation resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

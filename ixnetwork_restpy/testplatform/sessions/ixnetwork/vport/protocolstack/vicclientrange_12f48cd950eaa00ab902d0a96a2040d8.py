@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class VicClientRange(Base):
     """Range settings for VIC protocol
-    The VicClientRange class encapsulates a list of vicClientRange resources that is be managed by the user.
+    The VicClientRange class encapsulates a list of vicClientRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the VicClientRange.find() method.
-    The list can be managed by the user by using the VicClientRange.add() and VicClientRange.remove() methods.
+    The list can be managed by using the VicClientRange.add() and VicClientRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class VicClientRange(Base):
 
     @property
     def ChannelIdIncrement(self):
-        """The increment step for channel ID.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for channel ID.
         """
         return self._get_attribute('channelIdIncrement')
     @ChannelIdIncrement.setter
@@ -50,10 +50,10 @@ class VicClientRange(Base):
 
     @property
     def ChannelIdStart(self):
-        """The channel ID within VIC session.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The channel ID within VIC session.
         """
         return self._get_attribute('channelIdStart')
     @ChannelIdStart.setter
@@ -62,10 +62,10 @@ class VicClientRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class VicClientRange(Base):
 
     @property
     def MacsPerVif(self):
-        """Number of MAC interfaces managed by a single VIF object.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of MAC interfaces managed by a single VIF object.
         """
         return self._get_attribute('macsPerVif')
     @MacsPerVif.setter
@@ -86,10 +86,10 @@ class VicClientRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -98,19 +98,19 @@ class VicClientRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def ProvInfoOui(self):
-        """IEEE OUI owning the provisioning information type space.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: IEEE OUI owning the provisioning information type space.
         """
         return self._get_attribute('provInfoOui')
     @ProvInfoOui.setter
@@ -119,10 +119,10 @@ class VicClientRange(Base):
 
     @property
     def ProvInfoTlvs(self):
-        """The provisioning TLVs associated with this range.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=vicOptionSet)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet): The provisioning TLVs associated with this range.
         """
         return self._get_attribute('provInfoTlvs')
     @ProvInfoTlvs.setter
@@ -131,10 +131,10 @@ class VicClientRange(Base):
 
     @property
     def ProvInfoType(self):
-        """The type of the provisioning information (defined in each namespace).
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of the provisioning information (defined in each namespace).
         """
         return self._get_attribute('provInfoType')
     @ProvInfoType.setter
@@ -143,10 +143,10 @@ class VicClientRange(Base):
 
     @property
     def TlvOffset(self):
-        """The number of TLV increments to apply before using the TLV values for this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of TLV increments to apply before using the TLV values for this range.
         """
         return self._get_attribute('tlvOffset')
     @TlvOffset.setter
@@ -155,10 +155,10 @@ class VicClientRange(Base):
 
     @property
     def VifActive(self):
-        """The initial state of this interface set: true for Active, false for Standby.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The initial state of this interface set: true for Active, false for Standby.
         """
         return self._get_attribute('vifActive')
     @VifActive.setter
@@ -166,96 +166,109 @@ class VicClientRange(Base):
         self._set_attribute('vifActive', value)
 
     def update(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
-        """Updates a child instance of vicClientRange on the server.
+        """Updates vicClientRange resource on the server.
 
-        Args:
-            ChannelIdIncrement (number): The increment step for channel ID.
-            ChannelIdStart (number): The channel ID within VIC session.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
-            Name (str): Name of range
-            ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-            ProvInfoTlvs (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=vicOptionSet)): The provisioning TLVs associated with this range.
-            ProvInfoType (number): The type of the provisioning information (defined in each namespace).
-            TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
-            VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
+        Args
+        ----
+        - ChannelIdIncrement (number): The increment step for channel ID.
+        - ChannelIdStart (number): The channel ID within VIC session.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
+        - Name (str): Name of range
+        - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
+        - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
+        - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
-        """Adds a new vicClientRange node on the server and retrieves it in this instance.
+        """Adds a new vicClientRange resource on the server and adds it to the container.
 
-        Args:
-            ChannelIdIncrement (number): The increment step for channel ID.
-            ChannelIdStart (number): The channel ID within VIC session.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
-            Name (str): Name of range
-            ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-            ProvInfoTlvs (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=vicOptionSet)): The provisioning TLVs associated with this range.
-            ProvInfoType (number): The type of the provisioning information (defined in each namespace).
-            TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
-            VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
+        Args
+        ----
+        - ChannelIdIncrement (number): The increment step for channel ID.
+        - ChannelIdStart (number): The channel ID within VIC session.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
+        - Name (str): Name of range
+        - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
+        - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
+        - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
 
-        Returns:
-            self: This instance with all currently retrieved vicClientRange data using find and the newly added vicClientRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved vicClientRange resources using find and the newly added vicClientRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the vicClientRange data in this instance from server.
+        """Deletes all the contained vicClientRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ObjectId=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
-        """Finds and retrieves vicClientRange data from the server.
+        """Finds and retrieves vicClientRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve vicClientRange data from the server.
-        By default the find method takes no parameters and will retrieve all vicClientRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vicClientRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all vicClientRange resources from the server.
 
-        Args:
-            ChannelIdIncrement (number): The increment step for channel ID.
-            ChannelIdStart (number): The channel ID within VIC session.
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
-            ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-            ProvInfoTlvs (str(None|/api/v1/sessions/1/ixnetwork/globals?deepchild=vicOptionSet)): The provisioning TLVs associated with this range.
-            ProvInfoType (number): The type of the provisioning information (defined in each namespace).
-            TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
-            VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
+        Args
+        ----
+        - ChannelIdIncrement (number): The increment step for channel ID.
+        - ChannelIdStart (number): The channel ID within VIC session.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
+        - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
+        - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
 
-        Returns:
-            self: This instance with matching vicClientRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching vicClientRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of vicClientRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the vicClientRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the vicClientRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -264,14 +277,15 @@ class VicClientRange(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -283,16 +297,15 @@ class VicClientRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -304,16 +317,15 @@ class VicClientRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -325,9 +337,10 @@ class VicClientRange(Base):
 
         Send VIF-ACTIVATE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientActivate', payload=payload, response_object=None)
@@ -337,9 +350,10 @@ class VicClientRange(Base):
 
         Send VIF-CREATE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientCreate', payload=payload, response_object=None)
@@ -349,9 +363,10 @@ class VicClientRange(Base):
 
         Send VIF-DEACTIVATE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientDeactivate', payload=payload, response_object=None)
@@ -361,9 +376,10 @@ class VicClientRange(Base):
 
         Send VIF-DELETE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientDelete', payload=payload, response_object=None)
@@ -373,9 +389,10 @@ class VicClientRange(Base):
 
         Send VIF-DISABLE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientDisable', payload=payload, response_object=None)
@@ -385,9 +402,10 @@ class VicClientRange(Base):
 
         Send VIF-ENABLE for selected ranges
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('vicClientEnable', payload=payload, response_object=None)
@@ -397,18 +415,16 @@ class VicClientRange(Base):
 
         Negotiate VIC sessions for selected ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        vicClientStart()
+        vicClientStart(Arg2=enum)
+        -------------------------
+        - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/ethernet/dcbxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppoxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vepaEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vicClient,/vport/protocolStack/ethernetEndpoint/range/vicClientRange,/vport/protocolStack/ethernetEndpoint/vicClient]
 
-        vicClientStart(Arg2:enum)
-            Args:
-                args[0] is Arg2 (str(async|sync)): kArray[kObjref=/vport/protocolStack/ethernet/dcbxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppoxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vepaEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vicClient,/vport/protocolStack/ethernetEndpoint/range/vicClientRange,/vport/protocolStack/ethernetEndpoint/vicClient]
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -420,18 +436,16 @@ class VicClientRange(Base):
 
         Teardown VIC sessions for selected ranges
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        vicClientStop()
+        vicClientStop(Arg2=enum)
+        ------------------------
+        - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/ethernet/dcbxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppoxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vepaEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vicClient,/vport/protocolStack/ethernetEndpoint/range/vicClientRange,/vport/protocolStack/ethernetEndpoint/vicClient]
 
-        vicClientStop(Arg2:enum)
-            Args:
-                args[0] is Arg2 (str(async|sync)): kArray[kObjref=/vport/protocolStack/ethernet/dcbxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpEnbEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpMmeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/ipEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/pppoxEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vepaEndpoint/range/vicClientRange,/vport/protocolStack/ethernet/vicClient,/vport/protocolStack/ethernetEndpoint/range/vicClientRange,/vport/protocolStack/ethernetEndpoint/vicClient]
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

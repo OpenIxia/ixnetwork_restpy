@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class RsvpteLsps(Base):
     """Rsvp LSP Configuration
-    The RsvpteLsps class encapsulates a list of rsvpteLsps resources that is be managed by the user.
+    The RsvpteLsps class encapsulates a list of rsvpteLsps resources that are managed by the user.
     A list of resources can be retrieved from the server using the RsvpteLsps.find() method.
-    The list can be managed by the user by using the RsvpteLsps.add() and RsvpteLsps.remove() methods.
+    The list can be managed by using the RsvpteLsps.add() and RsvpteLsps.remove() methods.
     """
 
     __slots__ = ()
@@ -38,89 +38,90 @@ class RsvpteLsps(Base):
 
     @property
     def RsvpP2PEgressLsps(self):
-        """An instance of the RsvpP2PEgressLsps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps.RsvpP2PEgressLsps): An instance of the RsvpP2PEgressLsps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps.RsvpP2PEgressLsps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps import RsvpP2PEgressLsps
         return RsvpP2PEgressLsps(self)._select()
 
     @property
     def RsvpP2PIngressLsps(self):
-        """An instance of the RsvpP2PIngressLsps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps.RsvpP2PIngressLsps): An instance of the RsvpP2PIngressLsps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps.RsvpP2PIngressLsps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps import RsvpP2PIngressLsps
         return RsvpP2PIngressLsps(self)._select()
 
     @property
     def RsvpP2mpEgressLsps(self):
-        """An instance of the RsvpP2mpEgressLsps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps.RsvpP2mpEgressLsps): An instance of the RsvpP2mpEgressLsps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps.RsvpP2mpEgressLsps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps import RsvpP2mpEgressLsps
         return RsvpP2mpEgressLsps(self)._select()
 
     @property
     def RsvpP2mpIngressLsps(self):
-        """An instance of the RsvpP2mpIngressLsps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps.RsvpP2mpIngressLsps): An instance of the RsvpP2mpIngressLsps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps.RsvpP2mpIngressLsps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps import RsvpP2mpIngressLsps
         return RsvpP2mpIngressLsps(self)._select()
 
     @property
     def RsvpPcepExpectedInitiatedLsps(self):
-        """An instance of the RsvpPcepExpectedInitiatedLsps class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps.RsvpPcepExpectedInitiatedLsps): An instance of the RsvpPcepExpectedInitiatedLsps class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps.RsvpPcepExpectedInitiatedLsps)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps import RsvpPcepExpectedInitiatedLsps
         return RsvpPcepExpectedInitiatedLsps(self)._select()
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -129,28 +130,28 @@ class RsvpteLsps(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableP2PEgress(self):
-        """Enable to configure P2P Egress LSPs
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable to configure P2P Egress LSPs
         """
         return self._get_attribute('enableP2PEgress')
     @EnableP2PEgress.setter
@@ -159,19 +160,19 @@ class RsvpteLsps(Base):
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def ExpectedPceInitiatedLspsCount(self):
-        """Number of Expected PCE Initiated RSVP-TE LSPs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Expected PCE Initiated RSVP-TE LSPs
         """
         return self._get_attribute('expectedPceInitiatedLspsCount')
     @ExpectedPceInitiatedLspsCount.setter
@@ -180,10 +181,10 @@ class RsvpteLsps(Base):
 
     @property
     def IngressP2PLsps(self):
-        """Number of P2P Ingress LSPs configured per IPv4 Loopback
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of P2P Ingress LSPs configured per IPv4 Loopback
         """
         return self._get_attribute('ingressP2PLsps')
     @IngressP2PLsps.setter
@@ -192,19 +193,19 @@ class RsvpteLsps(Base):
 
     @property
     def LocalIp(self):
-        """Local IP
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Local IP
         """
         return self._get_attribute('localIp')
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -213,10 +214,10 @@ class RsvpteLsps(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -225,10 +226,10 @@ class RsvpteLsps(Base):
 
     @property
     def P2mpEgressTunnelCount(self):
-        """Number of P2MP Egress Tunnels configured per IPv4 Loopback
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of P2MP Egress Tunnels configured per IPv4 Loopback
         """
         return self._get_attribute('p2mpEgressTunnelCount')
     @P2mpEgressTunnelCount.setter
@@ -237,10 +238,10 @@ class RsvpteLsps(Base):
 
     @property
     def P2mpIngressLspCount(self):
-        """Number of P2MP Ingress LSPs configured per IPv4 Loopback
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of P2MP Ingress LSPs configured per IPv4 Loopback
         """
         return self._get_attribute('p2mpIngressLspCount')
     @P2mpIngressLspCount.setter
@@ -249,19 +250,19 @@ class RsvpteLsps(Base):
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -270,119 +271,132 @@ class RsvpteLsps(Base):
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     def update(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
-        """Updates a child instance of rsvpteLsps on the server.
+        """Updates rsvpteLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
-            ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
-            IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
-            P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
+        - ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
+        - IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
+        - P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
-        """Adds a new rsvpteLsps node on the server and retrieves it in this instance.
+        """Adds a new rsvpteLsps resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
-            ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
-            IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
-            P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
+        - ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
+        - IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
+        - P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
-        Returns:
-            self: This instance with all currently retrieved rsvpteLsps data using find and the newly added rsvpteLsps data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved rsvpteLsps resources using find and the newly added rsvpteLsps resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the rsvpteLsps data in this instance from server.
+        """Deletes all the contained rsvpteLsps resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableP2PEgress=None, Errors=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, LocalIp=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
-        """Finds and retrieves rsvpteLsps data from the server.
+        """Finds and retrieves rsvpteLsps resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve rsvpteLsps data from the server.
-        By default the find method takes no parameters and will retrieve all rsvpteLsps data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpteLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpteLsps resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
-            IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
-            LocalIp (list(str)): Local IP
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
-            P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
+        - IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
+        - LocalIp (list(str)): Local IP
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
+        - P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
-        Returns:
-            self: This instance with matching rsvpteLsps data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching rsvpteLsps resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of rsvpteLsps data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the rsvpteLsps data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the rsvpteLsps resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -391,15 +405,18 @@ class RsvpteLsps(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -408,22 +425,20 @@ class RsvpteLsps(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -435,22 +450,20 @@ class RsvpteLsps(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -462,22 +475,20 @@ class RsvpteLsps(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

@@ -36,10 +36,10 @@ class Delay(Base):
 
     @property
     def Enabled(self):
-        """If true, delay packets.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, delay packets.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class Delay(Base):
 
     @property
     def Units(self):
-        """Specify the units for the delay value.
-
-        Returns:
-            str(kilometers|kKilometers|kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)
+        """
+        Returns
+        -------
+        - str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Specify the units for the delay value.
         """
         return self._get_attribute('units')
     @Units.setter
@@ -60,10 +60,10 @@ class Delay(Base):
 
     @property
     def Value(self):
-        """Time to delay each packet.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Time to delay each packet.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -71,14 +71,16 @@ class Delay(Base):
         self._set_attribute('value', value)
 
     def update(self, Enabled=None, Units=None, Value=None):
-        """Updates a child instance of delay on the server.
+        """Updates delay resource on the server.
 
-        Args:
-            Enabled (bool): If true, delay packets.
-            Units (str(kilometers|kKilometers|kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)): Specify the units for the delay value.
-            Value (number): Time to delay each packet.
+        Args
+        ----
+        - Enabled (bool): If true, delay packets.
+        - Units (str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds)): Specify the units for the delay value.
+        - Value (number): Time to delay each packet.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -37,9 +37,9 @@ class OrganizationSpecificEventTlv(Base):
     @property
     def Enabled(self):
         """
-
-        Returns:
-            bool
+        Returns
+        -------
+        - bool: 
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -49,9 +49,9 @@ class OrganizationSpecificEventTlv(Base):
     @property
     def Oui(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('oui')
     @Oui.setter
@@ -61,9 +61,9 @@ class OrganizationSpecificEventTlv(Base):
     @property
     def Value(self):
         """
-
-        Returns:
-            str
+        Returns
+        -------
+        - str: 
         """
         return self._get_attribute('value')
     @Value.setter
@@ -71,14 +71,16 @@ class OrganizationSpecificEventTlv(Base):
         self._set_attribute('value', value)
 
     def update(self, Enabled=None, Oui=None, Value=None):
-        """Updates a child instance of organizationSpecificEventTlv on the server.
+        """Updates organizationSpecificEventTlv resource on the server.
 
-        Args:
-            Enabled (bool): 
-            Oui (str): 
-            Value (str): 
+        Args
+        ----
+        - Enabled (bool): 
+        - Oui (str): 
+        - Value (str): 
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -36,47 +36,47 @@ class AvailableHardware(Base):
 
     @property
     def Chassis(self):
-        """An instance of the Chassis class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis.Chassis): An instance of the Chassis class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis.Chassis)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import Chassis
         return Chassis(self)
 
     @property
     def VirtualChassis(self):
-        """An instance of the VirtualChassis class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis.VirtualChassis): An instance of the VirtualChassis class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis.VirtualChassis)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import VirtualChassis
         return VirtualChassis(self)._select()
 
     @property
     def IsLocked(self):
-        """If true, locks the Hardware Manager.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, locks the Hardware Manager.
         """
         return self._get_attribute('isLocked')
 
     @property
     def IsOffChassis(self):
-        """DEPRECATED If true, the Hardware Manager is Off Chassis.
-
-        Returns:
-            bool
+        """DEPRECATED 
+        Returns
+        -------
+        - bool: If true, the Hardware Manager is Off Chassis.
         """
         return self._get_attribute('isOffChassis')
     @IsOffChassis.setter
@@ -85,10 +85,10 @@ class AvailableHardware(Base):
 
     @property
     def OffChassisHwM(self):
-        """DEPRECATED Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
         """
         return self._get_attribute('offChassisHwM')
     @OffChassisHwM.setter
@@ -96,13 +96,15 @@ class AvailableHardware(Base):
         self._set_attribute('offChassisHwM', value)
 
     def update(self, IsOffChassis=None, OffChassisHwM=None):
-        """Updates a child instance of availableHardware on the server.
+        """Updates availableHardware resource on the server.
 
-        Args:
-            IsOffChassis (bool): If true, the Hardware Manager is Off Chassis.
-            OffChassisHwM (str): Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
+        Args
+        ----
+        - IsOffChassis (bool): If true, the Hardware Manager is Off Chassis.
+        - OffChassisHwM (str): Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

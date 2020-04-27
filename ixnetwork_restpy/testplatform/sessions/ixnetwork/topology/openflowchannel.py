@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class OpenFlowChannel(Base):
     """Openflow Controller Channel level Configuration
-    The OpenFlowChannel class encapsulates a list of openFlowChannel resources that is be managed by the user.
+    The OpenFlowChannel class encapsulates a list of openFlowChannel resources that are managed by the user.
     A list of resources can be retrieved from the server using the OpenFlowChannel.find() method.
-    The list can be managed by the user by using the OpenFlowChannel.add() and OpenFlowChannel.remove() methods.
+    The list can be managed by using the OpenFlowChannel.add() and OpenFlowChannel.remove() methods.
     """
 
     __slots__ = ()
@@ -38,79 +38,82 @@ class OpenFlowChannel(Base):
 
     @property
     def Groups(self):
-        """An instance of the Groups class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups.Groups): An instance of the Groups class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups.Groups)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups import Groups
         return Groups(self)
 
     @property
     def Meters(self):
-        """An instance of the Meters class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters.Meters): An instance of the Meters class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters.Meters)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters import Meters
         return Meters(self)
 
     @property
     def Tables(self):
-        """An instance of the Tables class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables.Tables): An instance of the Tables class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables.Tables)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables import Tables
         return Tables(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def CalcFlowRate(self):
-        """If selected, the statistics on the rate of transmission of flows per second by the controller is published.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('calcFlowRate')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the statistics on the rate of transmission of flows per second by the controller is published.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('calcFlowRate'))
 
     @property
     def CalcFlowRateWithBarrier(self):
-        """If selected, statistics on the rate of transmission of flows per second by the controller, along with Barrier Request messages is published.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('calcFlowRateWithBarrier')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, statistics on the rate of transmission of flows per second by the controller, along with Barrier Request messages is published.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('calcFlowRateWithBarrier'))
 
     @property
     def ConnectedVia(self):
-        """DEPRECATED List of layers this layer used to connect to the wire
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """DEPRECATED 
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
         """
         return self._get_attribute('connectedVia')
     @ConnectedVia.setter
@@ -119,91 +122,95 @@ class OpenFlowChannel(Base):
 
     @property
     def ControllerIndex(self):
-        """Parent Controller Index
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Parent Controller Index
         """
         return self._get_attribute('controllerIndex')
 
     @property
     def ControllerName(self):
-        """Parent Controller Name
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Parent Controller Name
         """
         return self._get_attribute('controllerName')
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DatapathId(self):
-        """The Datapath ID of the OF Channel.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('datapathId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID of the OF Channel.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('datapathId'))
 
     @property
     def DatapathIdHex(self):
-        """The Datapath ID in hexadecimal format.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('datapathIdHex')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID in hexadecimal format.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('datapathIdHex'))
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def EnableHelloElement(self):
-        """If selected, the Controller sends a hello message consisting of an OpenFlow header and a set of variable size hello elements to inform the initial handshake of the connection.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('enableHelloElement')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Controller sends a hello message consisting of an OpenFlow header and a set of variable size hello elements to inform the initial handshake of the connection.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('enableHelloElement'))
 
     @property
     def Errors(self):
-        """A list of errors that have occurred
-
-        Returns:
-            list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
+        """
+        Returns
+        -------
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute('errors')
 
     @property
     def FlowTxBurstSize(self):
-        """Specify the number of Flow transmitting packets that can be sent in a single burst within the time frame specified by the Inter Flow Burst Gap value.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('flowTxBurstSize')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the number of Flow transmitting packets that can be sent in a single burst within the time frame specified by the Inter Flow Burst Gap value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('flowTxBurstSize'))
 
     @property
     def GroupsPerChannel(self):
-        """Number of Groups per Channel
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Groups per Channel
         """
         return self._get_attribute('groupsPerChannel')
     @GroupsPerChannel.setter
@@ -212,37 +219,39 @@ class OpenFlowChannel(Base):
 
     @property
     def InterFlowBurstGap(self):
-        """Specify the duration (in milliseconds) for which the controller waits between successive flow advertisements.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('interFlowBurstGap')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the duration (in milliseconds) for which the controller waits between successive flow advertisements.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('interFlowBurstGap'))
 
     @property
     def LocalIp(self):
-        """The local IP address of the interface. This field is auto-populated and cannot be changed.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The local IP address of the interface. This field is auto-populated and cannot be changed.
         """
         return self._get_attribute('localIp')
 
     @property
     def MaxFlowsAtATime(self):
-        """The Max Number of Flows Processed at a Time is the size of an internal buffer maintained by the Ixiacontroller, which prevents it from sending more flows than the Openflow switch can consume at a time.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('maxFlowsAtATime')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Max Number of Flows Processed at a Time is the size of an internal buffer maintained by the Ixiacontroller, which prevents it from sending more flows than the Openflow switch can consume at a time.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('maxFlowsAtATime'))
 
     @property
     def MetersPerChannel(self):
-        """Number of Meters per Channel
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Meters per Channel
         """
         return self._get_attribute('metersPerChannel')
     @MetersPerChannel.setter
@@ -251,10 +260,10 @@ class OpenFlowChannel(Base):
 
     @property
     def Multiplier(self):
-        """Number of layer instances per parent instance (multiplier)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of layer instances per parent instance (multiplier)
         """
         return self._get_attribute('multiplier')
     @Multiplier.setter
@@ -263,10 +272,10 @@ class OpenFlowChannel(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -275,37 +284,39 @@ class OpenFlowChannel(Base):
 
     @property
     def RemoteIp(self):
-        """The IP address of the DUT at the other end of the OF Channel.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('remoteIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the DUT at the other end of the OF Channel.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('remoteIp'))
 
     @property
     def SendRoleRequest(self):
-        """If selected, the controller sends a Role Request message after the connection is established; to change its role according to the Role Request option selected.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sendRoleRequest')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the controller sends a Role Request message after the connection is established; to change its role according to the Role Request option selected.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sendRoleRequest'))
 
     @property
     def SessionStatus(self):
-        """Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-
-        Returns:
-            list(str[down|notStarted|up])
+        """
+        Returns
+        -------
+        - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute('sessionStatus')
 
     @property
     def StackedLayers(self):
-        """List of secondary (many to one) child layer protocols
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute('stackedLayers')
     @StackedLayers.setter
@@ -314,46 +325,48 @@ class OpenFlowChannel(Base):
 
     @property
     def StartupGenerationId(self):
-        """A 64-bit sequence number field that identifies a given mastership view.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startupGenerationId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A 64-bit sequence number field that identifies a given mastership view.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startupGenerationId'))
 
     @property
     def StartupRoleRequest(self):
-        """This defines role of the controller.Options include: 1) No Change 2) Equal 3) Master 4) Slave
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startupRoleRequest')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This defines role of the controller.Options include: 1) No Change 2) Equal 3) Master 4) Slave
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('startupRoleRequest'))
 
     @property
     def StateCounts(self):
-        """A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-
-        Returns:
-            dict(total:number,notStarted:number,down:number,up:number)
+        """
+        Returns
+        -------
+        - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
         return self._get_attribute('stateCounts')
 
     @property
     def Status(self):
-        """Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-
-        Returns:
-            str(configured|error|mixed|notStarted|started|starting|stopping)
+        """
+        Returns
+        -------
+        - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute('status')
 
     @property
     def TablesPerChannel(self):
-        """Number of Tables per Channel
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of Tables per Channel
         """
         return self._get_attribute('tablesPerChannel')
     @TablesPerChannel.setter
@@ -362,106 +375,120 @@ class OpenFlowChannel(Base):
 
     @property
     def UseDatapathID(self):
-        """If selected, the Datapath ID and IP address are used as the OF Channel identifier.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('useDatapathID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Datapath ID and IP address are used as the OF Channel identifier.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('useDatapathID'))
 
     def update(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
-        """Updates a child instance of openFlowChannel on the server.
+        """Updates openFlowChannel resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            GroupsPerChannel (number): Number of Groups per Channel
-            MetersPerChannel (number): Number of Meters per Channel
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TablesPerChannel (number): Number of Tables per Channel
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - GroupsPerChannel (number): Number of Groups per Channel
+        - MetersPerChannel (number): Number of Meters per Channel
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TablesPerChannel (number): Number of Tables per Channel
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
-        """Adds a new openFlowChannel node on the server and retrieves it in this instance.
+        """Adds a new openFlowChannel resource on the server and adds it to the container.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            GroupsPerChannel (number): Number of Groups per Channel
-            MetersPerChannel (number): Number of Meters per Channel
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            TablesPerChannel (number): Number of Tables per Channel
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - GroupsPerChannel (number): Number of Groups per Channel
+        - MetersPerChannel (number): Number of Meters per Channel
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - TablesPerChannel (number): Number of Tables per Channel
 
-        Returns:
-            self: This instance with all currently retrieved openFlowChannel data using find and the newly added openFlowChannel data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved openFlowChannel resources using find and the newly added openFlowChannel resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the openFlowChannel data in this instance from server.
+        """Deletes all the contained openFlowChannel resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ConnectedVia=None, ControllerIndex=None, ControllerName=None, Count=None, DescriptiveName=None, Errors=None, GroupsPerChannel=None, LocalIp=None, MetersPerChannel=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TablesPerChannel=None):
-        """Finds and retrieves openFlowChannel data from the server.
+        """Finds and retrieves openFlowChannel resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve openFlowChannel data from the server.
-        By default the find method takes no parameters and will retrieve all openFlowChannel data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve openFlowChannel resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all openFlowChannel resources from the server.
 
-        Args:
-            ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-            ControllerIndex (list(str)): Parent Controller Index
-            ControllerName (str): Parent Controller Name
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-            GroupsPerChannel (number): Number of Groups per Channel
-            LocalIp (list(str)): The local IP address of the interface. This field is auto-populated and cannot be changed.
-            MetersPerChannel (number): Number of Meters per Channel
-            Multiplier (number): Number of layer instances per parent instance (multiplier)
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
-            StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-            Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-            TablesPerChannel (number): Number of Tables per Channel
+        Args
+        ----
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ControllerIndex (list(str)): Parent Controller Index
+        - ControllerName (str): Parent Controller Name
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - GroupsPerChannel (number): Number of Groups per Channel
+        - LocalIp (list(str)): The local IP address of the interface. This field is auto-populated and cannot be changed.
+        - MetersPerChannel (number): Number of Meters per Channel
+        - Multiplier (number): Number of layer instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+        - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - TablesPerChannel (number): Number of Tables per Channel
 
-        Returns:
-            self: This instance with matching openFlowChannel data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching openFlowChannel resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of openFlowChannel data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the openFlowChannel data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the openFlowChannel resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -470,28 +497,31 @@ class OpenFlowChannel(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            CalcFlowRate (str): optional regex of calcFlowRate
-            CalcFlowRateWithBarrier (str): optional regex of calcFlowRateWithBarrier
-            DatapathId (str): optional regex of datapathId
-            DatapathIdHex (str): optional regex of datapathIdHex
-            EnableHelloElement (str): optional regex of enableHelloElement
-            FlowTxBurstSize (str): optional regex of flowTxBurstSize
-            InterFlowBurstGap (str): optional regex of interFlowBurstGap
-            MaxFlowsAtATime (str): optional regex of maxFlowsAtATime
-            RemoteIp (str): optional regex of remoteIp
-            SendRoleRequest (str): optional regex of sendRoleRequest
-            StartupGenerationId (str): optional regex of startupGenerationId
-            StartupRoleRequest (str): optional regex of startupRoleRequest
-            UseDatapathID (str): optional regex of useDatapathID
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - CalcFlowRate (str): optional regex of calcFlowRate
+        - CalcFlowRateWithBarrier (str): optional regex of calcFlowRateWithBarrier
+        - DatapathId (str): optional regex of datapathId
+        - DatapathIdHex (str): optional regex of datapathIdHex
+        - EnableHelloElement (str): optional regex of enableHelloElement
+        - FlowTxBurstSize (str): optional regex of flowTxBurstSize
+        - InterFlowBurstGap (str): optional regex of interFlowBurstGap
+        - MaxFlowsAtATime (str): optional regex of maxFlowsAtATime
+        - RemoteIp (str): optional regex of remoteIp
+        - SendRoleRequest (str): optional regex of sendRoleRequest
+        - StartupGenerationId (str): optional regex of startupGenerationId
+        - StartupRoleRequest (str): optional regex of startupRoleRequest
+        - UseDatapathID (str): optional regex of useDatapathID
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -500,29 +530,25 @@ class OpenFlowChannel(Base):
 
         Get Asynchronous Configurationr
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        getAsynchronousConfiguration()
+        getAsynchronousConfiguration(SessionIndices=list)
+        -------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        getAsynchronousConfiguration(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        getAsynchronousConfiguration(SessionIndices=string)
+        ---------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        getAsynchronousConfiguration(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        getAsynchronousConfiguration(Arg2=list)list
+        -------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        getAsynchronousConfiguration(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -534,16 +560,15 @@ class OpenFlowChannel(Base):
 
         Sends a Role Request for selected Channel.
 
-        invokeSendRoleRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices in channel grid
+        invokeSendRoleRequest(Arg2=list)list
+        ------------------------------------
+        - Arg2 (list(number)): List of indices in channel grid
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -555,29 +580,25 @@ class OpenFlowChannel(Base):
 
         Pause Sending Echo Reply Messages
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        pauseEchoReply()
+        pauseEchoReply(SessionIndices=list)
+        -----------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        pauseEchoReply(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        pauseEchoReply(SessionIndices=string)
+        -------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        pauseEchoReply(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        pauseEchoReply(Arg2=list)list
+        -----------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        pauseEchoReply(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -589,29 +610,25 @@ class OpenFlowChannel(Base):
 
         Pause Sending Echo Request Messages
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        pauseEchoRequest()
+        pauseEchoRequest(SessionIndices=list)
+        -------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        pauseEchoRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        pauseEchoRequest(SessionIndices=string)
+        ---------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        pauseEchoRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        pauseEchoRequest(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        pauseEchoRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -623,22 +640,20 @@ class OpenFlowChannel(Base):
 
         Stop and start interfaces and sessions that are in Down state.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        restartDown()
+        restartDown(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        restartDown(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        restartDown(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        restartDown(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -650,29 +665,25 @@ class OpenFlowChannel(Base):
 
         Resume Sending Echo Reply Messages
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        resumeEchoReply()
+        resumeEchoReply(SessionIndices=list)
+        ------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        resumeEchoReply(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        resumeEchoReply(SessionIndices=string)
+        --------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        resumeEchoReply(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        resumeEchoReply(Arg2=list)list
+        ------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        resumeEchoReply(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -684,29 +695,25 @@ class OpenFlowChannel(Base):
 
         Resume Sending Echo Request Messages
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        resumeEchoRequest()
+        resumeEchoRequest(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        resumeEchoRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        resumeEchoRequest(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        resumeEchoRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        resumeEchoRequest(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        resumeEchoRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -718,29 +725,25 @@ class OpenFlowChannel(Base):
 
         Send Barrier Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendBarrierRequest()
+        sendBarrierRequest(SessionIndices=list)
+        ---------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendBarrierRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendBarrierRequest(SessionIndices=string)
+        -----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendBarrierRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendBarrierRequest(Arg2=list)list
+        ---------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendBarrierRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -752,29 +755,25 @@ class OpenFlowChannel(Base):
 
         Send Config Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendConfigRequest()
+        sendConfigRequest(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendConfigRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendConfigRequest(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendConfigRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendConfigRequest(Arg2=list)list
+        --------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendConfigRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -786,29 +785,25 @@ class OpenFlowChannel(Base):
 
         Send Description Stat Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendDescriptionStatRequest()
+        sendDescriptionStatRequest(SessionIndices=list)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendDescriptionStatRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendDescriptionStatRequest(SessionIndices=string)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendDescriptionStatRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendDescriptionStatRequest(Arg2=list)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendDescriptionStatRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -820,38 +815,36 @@ class OpenFlowChannel(Base):
 
         Send Echo Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendEchoRequest(EnableEchoTimeout:bool, EchoTimeoutVal:number)
-            Args:
-                args[0] is EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
-                args[1] is EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
+        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number)
+        --------------------------------------------------------------
+        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
+        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
 
-        sendEchoRequest(EnableEchoTimeout:bool, EchoTimeoutVal:number, SessionIndices:list)
-            Args:
-                args[0] is EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
-                args[1] is EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number, SessionIndices=list)
+        -----------------------------------------------------------------------------------
+        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
+        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendEchoRequest(SessionIndices:string, EnableEchoTimeout:bool, EchoTimeoutVal:number)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a enableEchoTimeout of type kBool
-                args[1] is EnableEchoTimeout (bool): This parameter requires a echoTimeoutVal of type kInteger
-                args[2] is EchoTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
+        sendEchoRequest(SessionIndices=string, EnableEchoTimeout=bool, EchoTimeoutVal=number)
+        -------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a enableEchoTimeout of type kBool
+        - EnableEchoTimeout (bool): This parameter requires a echoTimeoutVal of type kInteger
+        - EchoTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendEchoRequest(Arg2:list, Arg3:bool, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (bool): Enable Echo Timeout
-                args[2] is Arg4 (number): Echo Timeout Value
+        sendEchoRequest(Arg2=list, Arg3=bool, Arg4=number)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (bool): Enable Echo Timeout
+        - Arg4 (number): Echo Timeout Value
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -863,46 +856,44 @@ class OpenFlowChannel(Base):
 
         Send Experimenter Message
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendExperimenterMessage(ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string)
-            Args:
-                args[0] is ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ExperimenterData (str): This parameter requires a experimenterData of type kString
+        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        -------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
 
-        sendExperimenterMessage(ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string, SessionIndices:list)
-            Args:
-                args[0] is ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ExperimenterData (str): This parameter requires a experimenterData of type kString
-                args[4] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendExperimenterMessage(SessionIndices:string, ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
-                args[4] is ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendExperimenterMessage(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
+        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
+        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendExperimenterMessage(Arg2:list, Arg3:number, Arg4:number, Arg5:number, Arg6:string)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (number): Experimenter Data Length.
-                args[2] is Arg4 (number): Experimenter ID.
-                args[3] is Arg5 (number): Experimenter ID
-                args[4] is Arg6 (str): Experimenter Data in Hex.
+        sendExperimenterMessage(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string)list
+        ------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Experimenter Data Length.
+        - Arg4 (number): Experimenter ID.
+        - Arg5 (number): Experimenter ID
+        - Arg6 (str): Experimenter Data in Hex.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -914,46 +905,44 @@ class OpenFlowChannel(Base):
 
         Send Experimenter Stats Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendExperimenterStatRequest(ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string)
-            Args:
-                args[0] is ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ExperimenterData (str): This parameter requires a experimenterData of type kString
+        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        -----------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
 
-        sendExperimenterStatRequest(ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string, SessionIndices:list)
-            Args:
-                args[0] is ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ExperimenterData (str): This parameter requires a experimenterData of type kString
-                args[4] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendExperimenterStatRequest(SessionIndices:string, ExperimenterDataLength:number, ErrorUnsupportedTypeFormat:null, ErrorUnsupportedTypeFormat:null, ExperimenterData:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
-                args[1] is ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
-                args[4] is ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendExperimenterStatRequest(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
+        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
+        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendExperimenterStatRequest(Arg2:list, Arg3:number, Arg4:number, Arg5:number, Arg6:string)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (number): Experimenter Data Length.
-                args[2] is Arg4 (number): Experimenter ID.
-                args[3] is Arg5 (number): Experimenter ID
-                args[4] is Arg6 (str): Experimenter Data in Hex.
+        sendExperimenterStatRequest(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string)list
+        ----------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Experimenter Data Length.
+        - Arg4 (number): Experimenter ID.
+        - Arg5 (number): Experimenter ID
+        - Arg6 (str): Experimenter Data in Hex.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -965,29 +954,25 @@ class OpenFlowChannel(Base):
 
         Send Feature Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendFeatureRequest()
+        sendFeatureRequest(SessionIndices=list)
+        ---------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendFeatureRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendFeatureRequest(SessionIndices=string)
+        -----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendFeatureRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendFeatureRequest(Arg2=list)list
+        ---------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendFeatureRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -999,38 +984,36 @@ class OpenFlowChannel(Base):
 
         Send Queue Stats Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGetQueueConfigRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendGetQueueConfigRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        ----------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendGetQueueConfigRequest(SessionIndices:string, OutputPortType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendGetQueueConfigRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        ------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendGetQueueConfigRequest(Arg2:list, Arg3:enum, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
-                args[2] is Arg4 (number): Port ID
+        sendGetQueueConfigRequest(Arg2=list, Arg3=enum, Arg4=number)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1042,29 +1025,25 @@ class OpenFlowChannel(Base):
 
         Send Group Description Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGroupDescriptionRequest()
+        sendGroupDescriptionRequest(SessionIndices=list)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendGroupDescriptionRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendGroupDescriptionRequest(SessionIndices=string)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendGroupDescriptionRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendGroupDescriptionRequest(Arg2=list)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendGroupDescriptionRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1076,29 +1055,25 @@ class OpenFlowChannel(Base):
 
         Send Group Features Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGroupFeaturesRequest()
+        sendGroupFeaturesRequest(SessionIndices=list)
+        ---------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendGroupFeaturesRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendGroupFeaturesRequest(SessionIndices=string)
+        -----------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendGroupFeaturesRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendGroupFeaturesRequest(Arg2=list)list
+        ---------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendGroupFeaturesRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1110,38 +1085,36 @@ class OpenFlowChannel(Base):
 
         Send Group Stats Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGroupStatsRequest(GroupIDType:enum, GroupID:number)
-            Args:
-                args[0] is GroupIDType (str(enumOpt-Manual|enumOpt-OFPG_ALL|enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-                args[1] is GroupID (number): This parameter requires a groupID of type kInteger
+        sendGroupStatsRequest(GroupIDType=enum, GroupID=number)
+        -------------------------------------------------------
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupID (number): This parameter requires a groupID of type kInteger
 
-        sendGroupStatsRequest(GroupIDType:enum, GroupID:number, SessionIndices:list)
-            Args:
-                args[0] is GroupIDType (str(enumOpt-Manual|enumOpt-OFPG_ALL|enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-                args[1] is GroupID (number): This parameter requires a groupID of type kInteger
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendGroupStatsRequest(GroupIDType=enum, GroupID=number, SessionIndices=list)
+        ----------------------------------------------------------------------------
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupID (number): This parameter requires a groupID of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendGroupStatsRequest(SessionIndices:string, GroupIDType:enum, GroupID:number)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-                args[1] is GroupIDType (str(enumOpt-Manual|enumOpt-OFPG_ALL|enumOpt-OFPG_ANY)): This parameter requires a groupID of type kInteger
-                args[2] is GroupID (number): This parameter requires a string of session numbers 1-4;6;7-12
+        sendGroupStatsRequest(SessionIndices=string, GroupIDType=enum, GroupID=number)
+        ------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupID of type kInteger
+        - GroupID (number): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendGroupStatsRequest(Arg2:list, Arg3:enum, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPG_ALL|oFPG_ANY|manual)): Group ID Type
-                args[2] is Arg4 (number): Group ID
+        sendGroupStatsRequest(Arg2=list, Arg3=enum, Arg4=number)list
+        ------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPG_ALL | oFPG_ANY | manual)): Group ID Type
+        - Arg4 (number): Group ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1153,38 +1126,36 @@ class OpenFlowChannel(Base):
 
         Send Meter Config Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMeterConfigRequest(MeterIDType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendMeterConfigRequest(MeterIDType:enum, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        ----------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendMeterConfigRequest(SessionIndices:string, MeterIDType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendMeterConfigRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        ------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendMeterConfigRequest(Arg2:list, Arg3:enum, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPM_SLOWPATH|oFPM_CONTROLLER|all|manual)): Meter ID Type
-                args[2] is Arg4 (number): Meter ID
+        sendMeterConfigRequest(Arg2=list, Arg3=enum, Arg4=number)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
+        - Arg4 (number): Meter ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1196,29 +1167,25 @@ class OpenFlowChannel(Base):
 
         Send Meter Features Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMeterFeaturesRequest()
+        sendMeterFeaturesRequest(SessionIndices=list)
+        ---------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendMeterFeaturesRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendMeterFeaturesRequest(SessionIndices=string)
+        -----------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendMeterFeaturesRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendMeterFeaturesRequest(Arg2=list)list
+        ---------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendMeterFeaturesRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1230,18 +1197,17 @@ class OpenFlowChannel(Base):
 
         Send Meter Stat Request to Switch.
 
-        sendMeterStatRequest(Arg2:list, Arg3:enum, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPM_SLOWPATH|oFPM_CONTROLLER|all|manual)): Meter ID Type
-                args[2] is Arg4 (number): Meter ID
+        sendMeterStatRequest(Arg2=list, Arg3=enum, Arg4=number)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
+        - Arg4 (number): Meter ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1253,29 +1219,29 @@ class OpenFlowChannel(Base):
 
         Send Meter Stats Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMeterStatsRequest(MeterIDType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        ------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendMeterStatsRequest(MeterIDType:enum, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        ---------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendMeterStatsRequest(SessionIndices:string, MeterIDType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-                args[1] is MeterIDType (str(enumOpt-ALL|enumOpt-MANUAL|enumOpt-OFPM_CONTROLLER|enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendMeterStatsRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        -----------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1287,29 +1253,25 @@ class OpenFlowChannel(Base):
 
         Send Port Description
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendPortDescription()
+        sendPortDescription(SessionIndices=list)
+        ----------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendPortDescription(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendPortDescription(SessionIndices=string)
+        ------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendPortDescription(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendPortDescription(Arg2=list)list
+        ----------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendPortDescription(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1321,38 +1283,36 @@ class OpenFlowChannel(Base):
 
         Send Port Stats Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendPortStatsRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY|enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        --------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendPortStatsRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY|enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        -----------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendPortStatsRequest(SessionIndices:string, OutputPortType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-                args[1] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY|enumOpt-OFPP_NONE)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendPortStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendPortStatsRequest(Arg2:list, Arg3:enum, Arg4:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
-                args[2] is Arg4 (number): Port ID
+        sendPortStatsRequest(Arg2=list, Arg3=enum, Arg4=number)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1364,46 +1324,44 @@ class OpenFlowChannel(Base):
 
         Send Queue Stats Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendQueueStatsRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null, QueueType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is QueueType (str(enumOpt-MANUAL|enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-                args[3] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
+        ----------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendQueueStatsRequest(OutputPortType:enum, ErrorUnsupportedTypeFormat:null, QueueType:enum, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is QueueType (str(enumOpt-MANUAL|enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-                args[3] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[4] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        -------------------------------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendQueueStatsRequest(SessionIndices:string, OutputPortType:enum, ErrorUnsupportedTypeFormat:null, QueueType:enum, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-                args[1] is OutputPortType (str(enumOpt-MANUAL|enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-                args[3] is QueueType (str(enumOpt-MANUAL|enumOpt-OFPQ_ALL)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[4] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendQueueStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
+        ---------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendQueueStatsRequest(Arg2:list, Arg3:enum, Arg4:number, Arg5:enum, Arg6:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
-                args[2] is Arg4 (number): Port ID
-                args[3] is Arg5 (str(oFPQ_ALL|manual)): Queue Type
-                args[4] is Arg6 (number): Queue ID
+        sendQueueStatsRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number)list
+        ------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - Arg5 (str(oFPQ_ALL | manual)): Queue Type
+        - Arg6 (number): Queue ID
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1415,42 +1373,40 @@ class OpenFlowChannel(Base):
 
         Send Table Mod Request
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendTableModRequest(TableIdType:enum, TableId:number, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is TableIdType (str(enumOpt-ALL_TABLE|enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-                args[1] is TableId (number): This parameter requires a tableId of type kInteger
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
+        --------------------------------------------------------------------------------------
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableId (number): This parameter requires a tableId of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
-        sendTableModRequest(TableIdType:enum, TableId:number, ErrorUnsupportedTypeFormat:null, SessionIndices:list)
-            Args:
-                args[0] is TableIdType (str(enumOpt-ALL_TABLE|enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-                args[1] is TableId (number): This parameter requires a tableId of type kInteger
-                args[2] is ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
+        -----------------------------------------------------------------------------------------------------------
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableId (number): This parameter requires a tableId of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendTableModRequest(SessionIndices:string, TableIdType:enum, TableId:number, ErrorUnsupportedTypeFormat:null)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-                args[1] is TableIdType (str(enumOpt-ALL_TABLE|enumOpt-MANUAL)): This parameter requires a tableId of type kInteger
-                args[2] is TableId (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-                args[3] is ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        sendTableModRequest(SessionIndices=string, TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableId of type kInteger
+        - TableId (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendTableModRequest(Arg2:list, Arg3:enum, Arg4:number, Arg5:number)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-                args[1] is Arg3 (str(aLL_TABLE|manual)): Table ID Type
-                args[2] is Arg4 (number): Table ID
-                args[3] is Arg5 (number): Table Config
+        sendTableModRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=number)list
+        -----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(aLL_TABLE | manual)): Table ID Type
+        - Arg4 (number): Table ID
+        - Arg5 (number): Table Config
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1462,29 +1418,25 @@ class OpenFlowChannel(Base):
 
         Send Table Stats Request to Switch
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendTableStatsRequest()
+        sendTableStatsRequest(SessionIndices=list)
+        ------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        sendTableStatsRequest(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        sendTableStatsRequest(SessionIndices=string)
+        --------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        sendTableStatsRequest(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        sendTableStatsRequest(Arg2=list)list
+        ------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-        sendTableStatsRequest(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1496,22 +1448,20 @@ class OpenFlowChannel(Base):
 
         Start selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        start(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        start(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        start(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1523,22 +1473,20 @@ class OpenFlowChannel(Base):
 
         Start OpenFlow Channel
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startChannel()
+        startChannel(SessionIndices=list)
+        ---------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        startChannel(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        startChannel(SessionIndices=string)
+        -----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        startChannel(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1550,22 +1498,20 @@ class OpenFlowChannel(Base):
 
         Stop selected protocols.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop()
+        stop(SessionIndices=list)
+        -------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stop(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stop(SessionIndices=string)
+        ---------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stop(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1577,22 +1523,20 @@ class OpenFlowChannel(Base):
 
         Stop OpenFlow Channel
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stopChannel()
+        stopChannel(SessionIndices=list)
+        --------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
 
-        stopChannel(SessionIndices:list)
-            Args:
-                args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        stopChannel(SessionIndices=string)
+        ----------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
-        stopChannel(SessionIndices:string)
-            Args:
-                args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

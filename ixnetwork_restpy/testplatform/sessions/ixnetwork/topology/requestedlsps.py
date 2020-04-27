@@ -36,273 +36,294 @@ class RequestedLsps(Base):
 
     @property
     def PccRequestedMetricSubObjectsList(self):
-        """An instance of the PccRequestedMetricSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist.PccRequestedMetricSubObjectsList): An instance of the PccRequestedMetricSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist.PccRequestedMetricSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist import PccRequestedMetricSubObjectsList
         return PccRequestedMetricSubObjectsList(self)
 
     @property
     def PcepIroSubObjectsList(self):
-        """An instance of the PcepIroSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist.PcepIroSubObjectsList): An instance of the PcepIroSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist.PcepIroSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist import PcepIroSubObjectsList
         return PcepIroSubObjectsList(self)
 
     @property
     def PcepXroSubObjectsList(self):
-        """An instance of the PcepXroSubObjectsList class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist.PcepXroSubObjectsList): An instance of the PcepXroSubObjectsList class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist.PcepXroSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist import PcepXroSubObjectsList
         return PcepXroSubObjectsList(self)
 
     @property
     def Tag(self):
-        """An instance of the Tag class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag): An instance of the Tag class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag.Tag)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
         return Tag(self)
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('active')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('active'))
 
     @property
     def ActiveDataTrafficEndPoints(self):
-        """Specifies whether that specific Data Traffic Endpoint will generate data traffic
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('activeDataTrafficEndPoints')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies whether that specific Data Traffic Endpoint will generate data traffic
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('activeDataTrafficEndPoints'))
 
     @property
     def Bandwidth(self):
-        """Bandwidth (bits/sec)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('bandwidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bits/sec)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('bandwidth'))
 
     @property
     def BiDirectional(self):
-        """Bi-directional
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('biDirectional')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bi-directional
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('biDirectional'))
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def DestinationIpv4Address(self):
-        """Destination IPv4 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destinationIpv4Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv4 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destinationIpv4Address'))
 
     @property
     def DestinationIpv6Address(self):
-        """Destination IPv6 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('destinationIpv6Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('destinationIpv6Address'))
 
     @property
     def ExcludeAny(self):
-        """Exclude Any
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('excludeAny')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('excludeAny'))
 
     @property
     def FailBit(self):
-        """Fail Bit
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('failBit')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Fail Bit
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('failBit'))
 
     @property
     def HoldingPriority(self):
-        """Holding Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('holdingPriority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('holdingPriority'))
 
     @property
     def IncludeAll(self):
-        """Include All
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeAll')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeAll'))
 
     @property
     def IncludeAny(self):
-        """Include Any
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeAny')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeAny'))
 
     @property
     def IncludeBandwidth(self):
-        """Include Bandwidth
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeBandwidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Bandwidth
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeBandwidth'))
 
     @property
     def IncludeEndPoints(self):
-        """Include End Points
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeEndPoints')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include End Points
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeEndPoints'))
 
     @property
     def IncludeIro(self):
-        """Include IRO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeIro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include IRO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeIro'))
 
     @property
     def IncludeLsp(self):
-        """Include LSP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeLsp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeLsp'))
 
     @property
     def IncludeLspa(self):
-        """Include LSPA
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeLspa')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include LSPA
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeLspa'))
 
     @property
     def IncludeMetric(self):
-        """Include Metric
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeMetric')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeMetric'))
 
     @property
     def IncludeRp(self):
-        """Include RP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeRp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include RP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeRp'))
 
     @property
     def IncludeSymbolicPathNameTlv(self):
-        """Include Symbolic Path Name TLV
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeSymbolicPathNameTlv')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Symbolic Path Name TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeSymbolicPathNameTlv'))
 
     @property
     def IncludeXro(self):
-        """Include XRO
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('includeXro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include XRO
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('includeXro'))
 
     @property
     def InitialDelegation(self):
-        """Initial Delegation
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('initialDelegation')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Delegation
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('initialDelegation'))
 
     @property
     def InsertIpv6ExplicitNull(self):
-        """Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         """
         return self._get_attribute('insertIpv6ExplicitNull')
     @InsertIpv6ExplicitNull.setter
@@ -311,46 +332,49 @@ class RequestedLsps(Base):
 
     @property
     def IpVersion(self):
-        """IP Version
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ipVersion')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IP Version
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ipVersion'))
 
     @property
     def LocalProtection(self):
-        """Local Protection
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('localProtection')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Local Protection
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('localProtection'))
 
     @property
     def Loose(self):
-        """Loose
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('loose')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Loose
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('loose'))
 
     @property
     def LspDelegationState(self):
-        """LSP Delegation State
-
-        Returns:
-            list(str[delegated|delegationConfirmed|delegationRejected|delegationReturned|delegationRevoked|nonDelegated|none])
+        """
+        Returns
+        -------
+        - list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none]): LSP Delegation State
         """
         return self._get_attribute('lspDelegationState')
 
     @property
     def MaxExpectedSegmentCount(self):
-        """This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
         """
         return self._get_attribute('maxExpectedSegmentCount')
     @MaxExpectedSegmentCount.setter
@@ -359,10 +383,10 @@ class RequestedLsps(Base):
 
     @property
     def MaxNoOfIroSubObjects(self):
-        """Max Number of IRO Sub Objects
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Number of IRO Sub Objects
         """
         return self._get_attribute('maxNoOfIroSubObjects')
     @MaxNoOfIroSubObjects.setter
@@ -371,10 +395,10 @@ class RequestedLsps(Base):
 
     @property
     def MaxNoOfXroSubObjects(self):
-        """Max Number of XRO Sub Objects
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Number of XRO Sub Objects
         """
         return self._get_attribute('maxNoOfXroSubObjects')
     @MaxNoOfXroSubObjects.setter
@@ -383,10 +407,10 @@ class RequestedLsps(Base):
 
     @property
     def MaxNumberOfMetrics(self):
-        """Max Number of Metrics
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Max Number of Metrics
         """
         return self._get_attribute('maxNumberOfMetrics')
     @MaxNumberOfMetrics.setter
@@ -395,10 +419,10 @@ class RequestedLsps(Base):
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -407,10 +431,10 @@ class RequestedLsps(Base):
 
     @property
     def OverridePlspId(self):
-        """Override PLSP-ID
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Override PLSP-ID
         """
         return self._get_attribute('overridePlspId')
     @OverridePlspId.setter
@@ -419,10 +443,10 @@ class RequestedLsps(Base):
 
     @property
     def OverrideRequestId(self):
-        """Override Request ID
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Override Request ID
         """
         return self._get_attribute('overrideRequestId')
     @OverrideRequestId.setter
@@ -431,261 +455,285 @@ class RequestedLsps(Base):
 
     @property
     def OverrideSourceAddress(self):
-        """Override Source Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('overrideSourceAddress')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Override Source Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('overrideSourceAddress'))
 
     @property
     def PFlagBandwidth(self):
-        """Bandwidth P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagBandwidth')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagBandwidth'))
 
     @property
     def PFlagIro(self):
-        """IRO P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagIro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IRO P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagIro'))
 
     @property
     def PFlagLsp(self):
-        """LSP P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagLsp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSP P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagLsp'))
 
     @property
     def PFlagLspa(self):
-        """LSPA P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagLspa')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): LSPA P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagLspa'))
 
     @property
     def PFlagRp(self):
-        """RP P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagRp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RP P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagRp'))
 
     @property
     def PFlagXro(self):
-        """XRO P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pFlagXro')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): XRO P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pFlagXro'))
 
     @property
     def PflagEndpoints(self):
-        """End Points P Flag
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('pflagEndpoints')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): End Points P Flag
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('pflagEndpoints'))
 
     @property
     def PlspId(self):
-        """An identifier for the LSP. A PCC creates a unique PLSP-ID for each LSP that is constant for the lifetime of a PCEP session. The PCC will advertise the same PLSP-ID on all PCEP sessions it maintains at a given time.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('plspId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier for the LSP. A PCC creates a unique PLSP-ID for each LSP that is constant for the lifetime of a PCEP session. The PCC will advertise the same PLSP-ID on all PCEP sessions it maintains at a given time.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('plspId'))
 
     @property
     def Priority(self):
-        """Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('priority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('priority'))
 
     @property
     def ReDelegationTimerStatus(self):
-        """Re-Delegation Timer Status
-
-        Returns:
-            list(str[expired|none|notStarted|running|stopped])
+        """
+        Returns
+        -------
+        - list(str[expired | none | notStarted | running | stopped]): Re-Delegation Timer Status
         """
         return self._get_attribute('reDelegationTimerStatus')
 
     @property
     def ReOptimization(self):
-        """Re-optimization
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('reOptimization')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Re-optimization
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('reOptimization'))
 
     @property
     def RedelegationTimeoutInterval(self):
-        """The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('redelegationTimeoutInterval')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('redelegationTimeoutInterval'))
 
     @property
     def RequestId(self):
-        """Request ID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('requestId')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Request ID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('requestId'))
 
     @property
     def SetupPriority(self):
-        """Setup Priority
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('setupPriority')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('setupPriority'))
 
     @property
     def SourceEndPointIPv4(self):
-        """Source IPv4 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceEndPointIPv4')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv4 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceEndPointIPv4'))
 
     @property
     def SourceEndPointIPv6(self):
-        """Source IPv6 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceEndPointIPv6')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceEndPointIPv6'))
 
     @property
     def SourceIpv4Address(self):
-        """Source IPv4 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceIpv4Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv4 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceIpv4Address'))
 
     @property
     def SourceIpv6Address(self):
-        """Source IPv6 Address
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sourceIpv6Address')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('sourceIpv6Address'))
 
     @property
     def SymbolicPathName(self):
-        """Symbolic Path Name
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('symbolicPathName')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbolic Path Name
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('symbolicPathName'))
 
     def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, MaxNoOfIroSubObjects=None, MaxNoOfXroSubObjects=None, MaxNumberOfMetrics=None, Name=None, OverridePlspId=None, OverrideRequestId=None):
-        """Updates a child instance of requestedLsps on the server.
+        """Updates requestedLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
-            MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
-            MaxNoOfIroSubObjects (number): Max Number of IRO Sub Objects
-            MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
-            MaxNumberOfMetrics (number): Max Number of Metrics
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            OverridePlspId (bool): Override PLSP-ID
-            OverrideRequestId (bool): Override Request ID
+        Args
+        ----
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        - MaxNoOfIroSubObjects (number): Max Number of IRO Sub Objects
+        - MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
+        - MaxNumberOfMetrics (number): Max Number of Metrics
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - OverridePlspId (bool): Override PLSP-ID
+        - OverrideRequestId (bool): Override Request ID
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndPoints=None, Bandwidth=None, BiDirectional=None, DestinationIpv4Address=None, DestinationIpv6Address=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEndPoints=None, IncludeIro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeXro=None, InitialDelegation=None, IpVersion=None, LocalProtection=None, Loose=None, OverrideSourceAddress=None, PFlagBandwidth=None, PFlagIro=None, PFlagLsp=None, PFlagLspa=None, PFlagRp=None, PFlagXro=None, PflagEndpoints=None, PlspId=None, Priority=None, ReOptimization=None, RedelegationTimeoutInterval=None, RequestId=None, SetupPriority=None, SourceEndPointIPv4=None, SourceEndPointIPv6=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
         """Base class infrastructure that gets a list of requestedLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            ActiveDataTrafficEndPoints (str): optional regex of activeDataTrafficEndPoints
-            Bandwidth (str): optional regex of bandwidth
-            BiDirectional (str): optional regex of biDirectional
-            DestinationIpv4Address (str): optional regex of destinationIpv4Address
-            DestinationIpv6Address (str): optional regex of destinationIpv6Address
-            ExcludeAny (str): optional regex of excludeAny
-            FailBit (str): optional regex of failBit
-            HoldingPriority (str): optional regex of holdingPriority
-            IncludeAll (str): optional regex of includeAll
-            IncludeAny (str): optional regex of includeAny
-            IncludeBandwidth (str): optional regex of includeBandwidth
-            IncludeEndPoints (str): optional regex of includeEndPoints
-            IncludeIro (str): optional regex of includeIro
-            IncludeLsp (str): optional regex of includeLsp
-            IncludeLspa (str): optional regex of includeLspa
-            IncludeMetric (str): optional regex of includeMetric
-            IncludeRp (str): optional regex of includeRp
-            IncludeSymbolicPathNameTlv (str): optional regex of includeSymbolicPathNameTlv
-            IncludeXro (str): optional regex of includeXro
-            InitialDelegation (str): optional regex of initialDelegation
-            IpVersion (str): optional regex of ipVersion
-            LocalProtection (str): optional regex of localProtection
-            Loose (str): optional regex of loose
-            OverrideSourceAddress (str): optional regex of overrideSourceAddress
-            PFlagBandwidth (str): optional regex of pFlagBandwidth
-            PFlagIro (str): optional regex of pFlagIro
-            PFlagLsp (str): optional regex of pFlagLsp
-            PFlagLspa (str): optional regex of pFlagLspa
-            PFlagRp (str): optional regex of pFlagRp
-            PFlagXro (str): optional regex of pFlagXro
-            PflagEndpoints (str): optional regex of pflagEndpoints
-            PlspId (str): optional regex of plspId
-            Priority (str): optional regex of priority
-            ReOptimization (str): optional regex of reOptimization
-            RedelegationTimeoutInterval (str): optional regex of redelegationTimeoutInterval
-            RequestId (str): optional regex of requestId
-            SetupPriority (str): optional regex of setupPriority
-            SourceEndPointIPv4 (str): optional regex of sourceEndPointIPv4
-            SourceEndPointIPv6 (str): optional regex of sourceEndPointIPv6
-            SourceIpv4Address (str): optional regex of sourceIpv4Address
-            SourceIpv6Address (str): optional regex of sourceIpv6Address
-            SymbolicPathName (str): optional regex of symbolicPathName
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - ActiveDataTrafficEndPoints (str): optional regex of activeDataTrafficEndPoints
+        - Bandwidth (str): optional regex of bandwidth
+        - BiDirectional (str): optional regex of biDirectional
+        - DestinationIpv4Address (str): optional regex of destinationIpv4Address
+        - DestinationIpv6Address (str): optional regex of destinationIpv6Address
+        - ExcludeAny (str): optional regex of excludeAny
+        - FailBit (str): optional regex of failBit
+        - HoldingPriority (str): optional regex of holdingPriority
+        - IncludeAll (str): optional regex of includeAll
+        - IncludeAny (str): optional regex of includeAny
+        - IncludeBandwidth (str): optional regex of includeBandwidth
+        - IncludeEndPoints (str): optional regex of includeEndPoints
+        - IncludeIro (str): optional regex of includeIro
+        - IncludeLsp (str): optional regex of includeLsp
+        - IncludeLspa (str): optional regex of includeLspa
+        - IncludeMetric (str): optional regex of includeMetric
+        - IncludeRp (str): optional regex of includeRp
+        - IncludeSymbolicPathNameTlv (str): optional regex of includeSymbolicPathNameTlv
+        - IncludeXro (str): optional regex of includeXro
+        - InitialDelegation (str): optional regex of initialDelegation
+        - IpVersion (str): optional regex of ipVersion
+        - LocalProtection (str): optional regex of localProtection
+        - Loose (str): optional regex of loose
+        - OverrideSourceAddress (str): optional regex of overrideSourceAddress
+        - PFlagBandwidth (str): optional regex of pFlagBandwidth
+        - PFlagIro (str): optional regex of pFlagIro
+        - PFlagLsp (str): optional regex of pFlagLsp
+        - PFlagLspa (str): optional regex of pFlagLspa
+        - PFlagRp (str): optional regex of pFlagRp
+        - PFlagXro (str): optional regex of pFlagXro
+        - PflagEndpoints (str): optional regex of pflagEndpoints
+        - PlspId (str): optional regex of plspId
+        - Priority (str): optional regex of priority
+        - ReOptimization (str): optional regex of reOptimization
+        - RedelegationTimeoutInterval (str): optional regex of redelegationTimeoutInterval
+        - RequestId (str): optional regex of requestId
+        - SetupPriority (str): optional regex of setupPriority
+        - SourceEndPointIPv4 (str): optional regex of sourceEndPointIPv4
+        - SourceEndPointIPv6 (str): optional regex of sourceEndPointIPv6
+        - SourceIpv4Address (str): optional regex of sourceIpv4Address
+        - SourceIpv6Address (str): optional regex of sourceIpv6Address
+        - SymbolicPathName (str): optional regex of symbolicPathName
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -694,16 +742,15 @@ class RequestedLsps(Base):
 
         Delegate
 
-        delegate(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        delegate(Arg2=list)list
+        -----------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -715,16 +762,15 @@ class RequestedLsps(Base):
 
         Revoke Delegation
 
-        revokeDelegation(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        revokeDelegation(Arg2=list)list
+        -------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
 
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

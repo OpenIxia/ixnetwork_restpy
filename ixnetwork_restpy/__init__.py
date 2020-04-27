@@ -5,4 +5,4 @@ try:
     from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
     from ixnetwork_restpy.assistants.sessions.sessionassistant import SessionAssistant
 except Exception as e:
-    print('generator build exception: %s' % e)
+    print('non-generated class usage for generator build...')

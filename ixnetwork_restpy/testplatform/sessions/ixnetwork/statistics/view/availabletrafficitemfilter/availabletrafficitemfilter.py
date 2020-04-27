@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class AvailableTrafficItemFilter(Base):
     """List of traffic items available for filtering.
-    The AvailableTrafficItemFilter class encapsulates a list of availableTrafficItemFilter resources that is managed by the system.
+    The AvailableTrafficItemFilter class encapsulates a list of availableTrafficItemFilter resources that are managed by the system.
     A list of resources can be retrieved from the server using the AvailableTrafficItemFilter.find() method.
     """
 
@@ -37,51 +37,58 @@ class AvailableTrafficItemFilter(Base):
 
     @property
     def Constraints(self):
-        """Lists down the constraints associated with the available traffic item filter list.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): Lists down the constraints associated with the available traffic item filter list.
         """
         return self._get_attribute('constraints')
 
     @property
     def Name(self):
-        """Displays the name of the traffic item filter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the name of the traffic item filter.
         """
         return self._get_attribute('name')
 
     def find(self, Constraints=None, Name=None):
-        """Finds and retrieves availableTrafficItemFilter data from the server.
+        """Finds and retrieves availableTrafficItemFilter resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve availableTrafficItemFilter data from the server.
-        By default the find method takes no parameters and will retrieve all availableTrafficItemFilter data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableTrafficItemFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableTrafficItemFilter resources from the server.
 
-        Args:
-            Constraints (list(str)): Lists down the constraints associated with the available traffic item filter list.
-            Name (str): Displays the name of the traffic item filter.
+        Args
+        ----
+        - Constraints (list(str)): Lists down the constraints associated with the available traffic item filter list.
+        - Name (str): Displays the name of the traffic item filter.
 
-        Returns:
-            self: This instance with matching availableTrafficItemFilter data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching availableTrafficItemFilter resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of availableTrafficItemFilter data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the availableTrafficItemFilter data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the availableTrafficItemFilter resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

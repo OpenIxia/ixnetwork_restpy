@@ -36,10 +36,10 @@ class InstructionMiss(Base):
 
     @property
     def ApplyActions(self):
-        """If selected, applies the actions associated with a flow immediately.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, applies the actions associated with a flow immediately.
         """
         return self._get_attribute('applyActions')
     @ApplyActions.setter
@@ -48,10 +48,10 @@ class InstructionMiss(Base):
 
     @property
     def ClearActions(self):
-        """If selected, clears the actions attached with the flow.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, clears the actions attached with the flow.
         """
         return self._get_attribute('clearActions')
     @ClearActions.setter
@@ -60,10 +60,10 @@ class InstructionMiss(Base):
 
     @property
     def Experimenter(self):
-        """If selected, gives experimenter instruction.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, gives experimenter instruction.
         """
         return self._get_attribute('experimenter')
     @Experimenter.setter
@@ -72,10 +72,10 @@ class InstructionMiss(Base):
 
     @property
     def GoToTable(self):
-        """If selected, forwards the packet to the next table in the pipeline.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, forwards the packet to the next table in the pipeline.
         """
         return self._get_attribute('goToTable')
     @GoToTable.setter
@@ -84,10 +84,10 @@ class InstructionMiss(Base):
 
     @property
     def Meter(self):
-        """If selected, directs a flow to a particular meter.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, directs a flow to a particular meter.
         """
         return self._get_attribute('meter')
     @Meter.setter
@@ -96,10 +96,10 @@ class InstructionMiss(Base):
 
     @property
     def WriteActions(self):
-        """If selected, appends actions to the existing action set of the packet.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, appends actions to the existing action set of the packet.
         """
         return self._get_attribute('writeActions')
     @WriteActions.setter
@@ -108,10 +108,10 @@ class InstructionMiss(Base):
 
     @property
     def WriteMetadata(self):
-        """If selected, writes the masked metadata field to the match.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, writes the masked metadata field to the match.
         """
         return self._get_attribute('writeMetadata')
     @WriteMetadata.setter
@@ -119,18 +119,20 @@ class InstructionMiss(Base):
         self._set_attribute('writeMetadata', value)
 
     def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
-        """Updates a child instance of instructionMiss on the server.
+        """Updates instructionMiss resource on the server.
 
-        Args:
-            ApplyActions (bool): If selected, applies the actions associated with a flow immediately.
-            ClearActions (bool): If selected, clears the actions attached with the flow.
-            Experimenter (bool): If selected, gives experimenter instruction.
-            GoToTable (bool): If selected, forwards the packet to the next table in the pipeline.
-            Meter (bool): If selected, directs a flow to a particular meter.
-            WriteActions (bool): If selected, appends actions to the existing action set of the packet.
-            WriteMetadata (bool): If selected, writes the masked metadata field to the match.
+        Args
+        ----
+        - ApplyActions (bool): If selected, applies the actions associated with a flow immediately.
+        - ClearActions (bool): If selected, clears the actions attached with the flow.
+        - Experimenter (bool): If selected, gives experimenter instruction.
+        - GoToTable (bool): If selected, forwards the packet to the next table in the pipeline.
+        - Meter (bool): If selected, directs a flow to a particular meter.
+        - WriteActions (bool): If selected, appends actions to the existing action set of the packet.
+        - WriteMetadata (bool): If selected, writes the masked metadata field to the match.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

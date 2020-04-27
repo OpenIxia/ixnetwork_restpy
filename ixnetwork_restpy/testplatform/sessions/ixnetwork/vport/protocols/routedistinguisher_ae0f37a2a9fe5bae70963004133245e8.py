@@ -36,10 +36,10 @@ class RouteDistinguisher(Base):
 
     @property
     def AsNumber(self):
-        """If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
         """
         return self._get_attribute('asNumber')
     @AsNumber.setter
@@ -48,10 +48,10 @@ class RouteDistinguisher(Base):
 
     @property
     def AsNumberStep(self):
-        """The increment step for for the AS.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for for the AS.
         """
         return self._get_attribute('asNumberStep')
     @AsNumberStep.setter
@@ -60,10 +60,10 @@ class RouteDistinguisher(Base):
 
     @property
     def AssignedNumber(self):
-        """The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
         """
         return self._get_attribute('assignedNumber')
     @AssignedNumber.setter
@@ -72,10 +72,10 @@ class RouteDistinguisher(Base):
 
     @property
     def AssignedNumberStep(self):
-        """The increment step for for the assigned number.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The increment step for for the assigned number.
         """
         return self._get_attribute('assignedNumberStep')
     @AssignedNumberStep.setter
@@ -84,10 +84,10 @@ class RouteDistinguisher(Base):
 
     @property
     def IpAddress(self):
-        """If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
         """
         return self._get_attribute('ipAddress')
     @IpAddress.setter
@@ -96,10 +96,10 @@ class RouteDistinguisher(Base):
 
     @property
     def IpAddressStep(self):
-        """The increment step for for the IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The increment step for for the IP address.
         """
         return self._get_attribute('ipAddressStep')
     @IpAddressStep.setter
@@ -108,10 +108,10 @@ class RouteDistinguisher(Base):
 
     @property
     def Type(self):
-        """Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
-
-        Returns:
-            str(as|ip|asNumber2)
+        """
+        Returns
+        -------
+        - str(as | ip | asNumber2): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -119,18 +119,20 @@ class RouteDistinguisher(Base):
         self._set_attribute('type', value)
 
     def update(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
-        """Updates a child instance of routeDistinguisher on the server.
+        """Updates routeDistinguisher resource on the server.
 
-        Args:
-            AsNumber (number): If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
-            AsNumberStep (number): The increment step for for the AS.
-            AssignedNumber (number): The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
-            AssignedNumberStep (number): The increment step for for the assigned number.
-            IpAddress (str): If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
-            IpAddressStep (str): The increment step for for the IP address.
-            Type (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+        Args
+        ----
+        - AsNumber (number): If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
+        - AsNumberStep (number): The increment step for for the AS.
+        - AssignedNumber (number): The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
+        - AssignedNumberStep (number): The increment step for for the assigned number.
+        - IpAddress (str): If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
+        - IpAddressStep (str): The increment step for for the IP address.
+        - Type (str(as | ip | asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

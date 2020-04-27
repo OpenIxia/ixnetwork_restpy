@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FcoeClientGlobals(Base):
     """StackManager FCoE Global Settings
-    The FcoeClientGlobals class encapsulates a list of fcoeClientGlobals resources that is be managed by the user.
+    The FcoeClientGlobals class encapsulates a list of fcoeClientGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the FcoeClientGlobals.find() method.
-    The list can be managed by the user by using the FcoeClientGlobals.add() and FcoeClientGlobals.remove() methods.
+    The list can be managed by using the FcoeClientGlobals.add() and FcoeClientGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class FcoeClientGlobals(Base):
 
     @property
     def FcoeClientOptionSet(self):
-        """An instance of the FcoeClientOptionSet class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptionset.FcoeClientOptionSet): An instance of the FcoeClientOptionSet class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptionset.FcoeClientOptionSet)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptionset import FcoeClientOptionSet
         return FcoeClientOptionSet(self)
 
     @property
     def AcceptPartialConfig(self):
-        """This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
         """
         return self._get_attribute('acceptPartialConfig')
     @AcceptPartialConfig.setter
@@ -64,10 +64,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def B2bRxSize(self):
-        """The buffer-to-buffer receive data field size in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The buffer-to-buffer receive data field size in bytes.
         """
         return self._get_attribute('b2bRxSize')
     @B2bRxSize.setter
@@ -76,10 +76,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def DcbxTimeout(self):
-        """The number of seconds to wait for DCBX to negotiate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for DCBX to negotiate.
         """
         return self._get_attribute('dcbxTimeout')
     @DcbxTimeout.setter
@@ -88,10 +88,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipAdvertisementPeriod(self):
-        """The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
         """
         return self._get_attribute('fipAdvertisementPeriod')
     @FipAdvertisementPeriod.setter
@@ -100,10 +100,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipFcfMacListCollection(self):
-        """Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
         """
         return self._get_attribute('fipFcfMacListCollection')
     @FipFcfMacListCollection.setter
@@ -112,10 +112,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipFcfMacListCollectionInterval(self):
-        """The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
         """
         return self._get_attribute('fipFcfMacListCollectionInterval')
     @FipFcfMacListCollectionInterval.setter
@@ -124,10 +124,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipOverrideAdvertisementPeriod(self):
-        """If enabled, the Discovery Advertisement period will be specified by the application.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the Discovery Advertisement period will be specified by the application.
         """
         return self._get_attribute('fipOverrideAdvertisementPeriod')
     @FipOverrideAdvertisementPeriod.setter
@@ -136,10 +136,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipOverrideVnportKeepAlivePeriod(self):
-        """If enabled, the VN_Port Keep-Alive period will be specified by the application.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the VN_Port Keep-Alive period will be specified by the application.
         """
         return self._get_attribute('fipOverrideVnportKeepAlivePeriod')
     @FipOverrideVnportKeepAlivePeriod.setter
@@ -148,10 +148,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipProposeMacInFpma(self):
-        """Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
         """
         return self._get_attribute('fipProposeMacInFpma')
     @FipProposeMacInFpma.setter
@@ -160,10 +160,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipResetDiscovery(self):
-        """Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
         """
         return self._get_attribute('fipResetDiscovery')
     @FipResetDiscovery.setter
@@ -172,10 +172,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipResetNumRetry(self):
-        """The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
         """
         return self._get_attribute('fipResetNumRetry')
     @FipResetNumRetry.setter
@@ -184,10 +184,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipRestartOnSessionDown(self):
-        """If enabled, the port will restart FIP negotiation when the session goes down.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port will restart FIP negotiation when the session goes down.
         """
         return self._get_attribute('fipRestartOnSessionDown')
     @FipRestartOnSessionDown.setter
@@ -196,10 +196,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipSendKeepAlives(self):
-        """If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
         """
         return self._get_attribute('fipSendKeepAlives')
     @FipSendKeepAlives.setter
@@ -208,10 +208,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipVersion(self):
-        """The FIP version to use. Auto mode will accept same version as the negotiating party.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The FIP version to use. Auto mode will accept same version as the negotiating party.
         """
         return self._get_attribute('fipVersion')
     @FipVersion.setter
@@ -220,10 +220,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipVlanDiscWithNameId(self):
-        """Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
         """
         return self._get_attribute('fipVlanDiscWithNameId')
     @FipVlanDiscWithNameId.setter
@@ -232,10 +232,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def FipVnportKeepAlivePeriod(self):
-        """The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
         """
         return self._get_attribute('fipVnportKeepAlivePeriod')
     @FipVnportKeepAlivePeriod.setter
@@ -244,10 +244,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def IgnoreDuplicateMacDescriptors(self):
-        """Ignore duplicate MAC descriptors.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Ignore duplicate MAC descriptors.
         """
         return self._get_attribute('ignoreDuplicateMacDescriptors')
     @IgnoreDuplicateMacDescriptors.setter
@@ -256,10 +256,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def MaxFcoeSize(self):
-        """The maximum FCoE frame size in bytes.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum FCoE frame size in bytes.
         """
         return self._get_attribute('maxFcoeSize')
     @MaxFcoeSize.setter
@@ -268,10 +268,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def MaxPacketsPerSecond(self):
-        """The maximum number of requests transmitted in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum number of requests transmitted in each second.
         """
         return self._get_attribute('maxPacketsPerSecond')
     @MaxPacketsPerSecond.setter
@@ -280,10 +280,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def MaxRetries(self):
-        """The number of request retries for each negotiation stage in case of response timeout or error.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
         return self._get_attribute('maxRetries')
     @MaxRetries.setter
@@ -292,19 +292,19 @@ class FcoeClientGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def RetryInterval(self):
-        """The number of seconds to wait for a response before sending a new request.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of seconds to wait for a response before sending a new request.
         """
         return self._get_attribute('retryInterval')
     @RetryInterval.setter
@@ -313,10 +313,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def SetupRate(self):
-        """The number of interfaces scheduled to be configured in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces scheduled to be configured in each second.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -325,10 +325,10 @@ class FcoeClientGlobals(Base):
 
     @property
     def TeardownRate(self):
-        """The number of interfaces scheduled to be deconfigured in each second.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of interfaces scheduled to be deconfigured in each second.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -336,134 +336,147 @@ class FcoeClientGlobals(Base):
         self._set_attribute('teardownRate', value)
 
     def update(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
-        """Updates a child instance of fcoeClientGlobals on the server.
+        """Updates fcoeClientGlobals resource on the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
-            B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
-            FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
-            FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
-            FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
-            FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
-            FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
-            FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
-            FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
-            FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
-            FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
-            FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
-            FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
-            FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
-            IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
-            MaxFcoeSize (number): The maximum FCoE frame size in bytes.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
+        - FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
+        - FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
+        - FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
+        - FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
+        - FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
+        - FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
+        - FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
+        - FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
+        - FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
+        - FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
+        - FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
+        - FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
+        - IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
+        - MaxFcoeSize (number): The maximum FCoE frame size in bytes.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
-        """Adds a new fcoeClientGlobals node on the server and retrieves it in this instance.
+        """Adds a new fcoeClientGlobals resource on the server and adds it to the container.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
-            B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
-            FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
-            FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
-            FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
-            FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
-            FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
-            FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
-            FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
-            FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
-            FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
-            FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
-            FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
-            FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
-            IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
-            MaxFcoeSize (number): The maximum FCoE frame size in bytes.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
+        - FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
+        - FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
+        - FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
+        - FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
+        - FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
+        - FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
+        - FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
+        - FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
+        - FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
+        - FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
+        - FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
+        - FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
+        - IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
+        - MaxFcoeSize (number): The maximum FCoE frame size in bytes.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
 
-        Returns:
-            self: This instance with all currently retrieved fcoeClientGlobals data using find and the newly added fcoeClientGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved fcoeClientGlobals resources using find and the newly added fcoeClientGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the fcoeClientGlobals data in this instance from server.
+        """Deletes all the contained fcoeClientGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, ObjectId=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
-        """Finds and retrieves fcoeClientGlobals data from the server.
+        """Finds and retrieves fcoeClientGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve fcoeClientGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all fcoeClientGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeClientGlobals resources from the server.
 
-        Args:
-            AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
-            B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
-            DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
-            FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
-            FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
-            FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
-            FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
-            FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
-            FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
-            FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
-            FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
-            FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
-            FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
-            FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
-            FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
-            FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
-            IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
-            MaxFcoeSize (number): The maximum FCoE frame size in bytes.
-            MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
-            MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
-            ObjectId (str): Unique identifier for this object
-            RetryInterval (number): The number of seconds to wait for a response before sending a new request.
-            SetupRate (number): The number of interfaces scheduled to be configured in each second.
-            TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
+        Args
+        ----
+        - AcceptPartialConfig (bool): This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - DcbxTimeout (number): The number of seconds to wait for DCBX to negotiate.
+        - FipAdvertisementPeriod (number): The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
+        - FipFcfMacListCollection (bool): Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
+        - FipFcfMacListCollectionInterval (number): The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
+        - FipOverrideAdvertisementPeriod (bool): If enabled, the Discovery Advertisement period will be specified by the application.
+        - FipOverrideVnportKeepAlivePeriod (bool): If enabled, the VN_Port Keep-Alive period will be specified by the application.
+        - FipProposeMacInFpma (bool): Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
+        - FipResetDiscovery (bool): Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
+        - FipResetNumRetry (number): The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
+        - FipRestartOnSessionDown (bool): If enabled, the port will restart FIP negotiation when the session goes down.
+        - FipSendKeepAlives (bool): If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
+        - FipVersion (str): The FIP version to use. Auto mode will accept same version as the negotiating party.
+        - FipVlanDiscWithNameId (bool): Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
+        - FipVnportKeepAlivePeriod (number): The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
+        - IgnoreDuplicateMacDescriptors (bool): Ignore duplicate MAC descriptors.
+        - MaxFcoeSize (number): The maximum FCoE frame size in bytes.
+        - MaxPacketsPerSecond (number): The maximum number of requests transmitted in each second.
+        - MaxRetries (number): The number of request retries for each negotiation stage in case of response timeout or error.
+        - ObjectId (str): Unique identifier for this object
+        - RetryInterval (number): The number of seconds to wait for a response before sending a new request.
+        - SetupRate (number): The number of interfaces scheduled to be configured in each second.
+        - TeardownRate (number): The number of interfaces scheduled to be deconfigured in each second.
 
-        Returns:
-            self: This instance with matching fcoeClientGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching fcoeClientGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the fcoeClientGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the fcoeClientGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

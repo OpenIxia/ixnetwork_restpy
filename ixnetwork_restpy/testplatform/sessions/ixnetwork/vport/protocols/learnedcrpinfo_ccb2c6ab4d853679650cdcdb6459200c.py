@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class LearnedCrpInfo(Base):
     """The learnedCrpInfo object fetches and describes the learned CRP information for the current interface.
-    The LearnedCrpInfo class encapsulates a list of learnedCrpInfo resources that is managed by the system.
+    The LearnedCrpInfo class encapsulates a list of learnedCrpInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the LearnedCrpInfo.find() method.
     """
 
@@ -37,81 +37,88 @@ class LearnedCrpInfo(Base):
 
     @property
     def CrpAddress(self):
-        """The RP address expresing candidacy for the specific group of RPs.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The RP address expresing candidacy for the specific group of RPs.
         """
         return self._get_attribute('crpAddress')
 
     @property
     def ExpiryTimer(self):
-        """The expiry time for the specific record as received in CRP Adv Message.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The expiry time for the specific record as received in CRP Adv Message.
         """
         return self._get_attribute('expiryTimer')
 
     @property
     def GroupAddress(self):
-        """The Group Address learnt through Candidate RP advertisements.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Group Address learnt through Candidate RP advertisements.
         """
         return self._get_attribute('groupAddress')
 
     @property
     def GroupMaskWidth(self):
-        """It shows the prefix length (in bits) of the group address learnt.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It shows the prefix length (in bits) of the group address learnt.
         """
         return self._get_attribute('groupMaskWidth')
 
     @property
     def Priority(self):
-        """Priority of the selected Candidate RP.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Priority of the selected Candidate RP.
         """
         return self._get_attribute('priority')
 
     def find(self, CrpAddress=None, ExpiryTimer=None, GroupAddress=None, GroupMaskWidth=None, Priority=None):
-        """Finds and retrieves learnedCrpInfo data from the server.
+        """Finds and retrieves learnedCrpInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedCrpInfo data from the server.
-        By default the find method takes no parameters and will retrieve all learnedCrpInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedCrpInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedCrpInfo resources from the server.
 
-        Args:
-            CrpAddress (str): The RP address expresing candidacy for the specific group of RPs.
-            ExpiryTimer (number): The expiry time for the specific record as received in CRP Adv Message.
-            GroupAddress (str): The Group Address learnt through Candidate RP advertisements.
-            GroupMaskWidth (number): It shows the prefix length (in bits) of the group address learnt.
-            Priority (number): Priority of the selected Candidate RP.
+        Args
+        ----
+        - CrpAddress (str): The RP address expresing candidacy for the specific group of RPs.
+        - ExpiryTimer (number): The expiry time for the specific record as received in CRP Adv Message.
+        - GroupAddress (str): The Group Address learnt through Candidate RP advertisements.
+        - GroupMaskWidth (number): It shows the prefix length (in bits) of the group address learnt.
+        - Priority (number): Priority of the selected Candidate RP.
 
-        Returns:
-            self: This instance with matching learnedCrpInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedCrpInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedCrpInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedCrpInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedCrpInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

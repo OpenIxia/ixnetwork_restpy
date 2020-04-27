@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Radius(Base):
     """A network stack element implementing RADIUS security features.
-    The Radius class encapsulates a list of radius resources that is be managed by the user.
+    The Radius class encapsulates a list of radius resources that are managed by the user.
     A list of resources can be retrieved from the server using the Radius.find() method.
-    The list can be managed by the user by using the Radius.add() and Radius.remove() methods.
+    The list can be managed by using the Radius.add() and Radius.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Radius(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -50,77 +50,90 @@ class Radius(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     def update(self, Name=None):
-        """Updates a child instance of radius on the server.
+        """Updates radius resource on the server.
 
-        Args:
-            Name (str): Name of range
+        Args
+        ----
+        - Name (str): Name of range
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None):
-        """Adds a new radius node on the server and retrieves it in this instance.
+        """Adds a new radius resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of range
+        Args
+        ----
+        - Name (str): Name of range
 
-        Returns:
-            self: This instance with all currently retrieved radius data using find and the newly added radius data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved radius resources using find and the newly added radius resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the radius data in this instance from server.
+        """Deletes all the contained radius resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
-        """Finds and retrieves radius data from the server.
+        """Finds and retrieves radius resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve radius data from the server.
-        By default the find method takes no parameters and will retrieve all radius data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve radius resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all radius resources from the server.
 
-        Args:
-            Name (str): Name of range
-            ObjectId (str): Unique identifier for this object
+        Args
+        ----
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
 
-        Returns:
-            self: This instance with matching radius data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching radius resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of radius data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the radius data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the radius resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -129,14 +142,15 @@ class Radius(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -148,16 +162,15 @@ class Radius(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -169,16 +182,15 @@ class Radius(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

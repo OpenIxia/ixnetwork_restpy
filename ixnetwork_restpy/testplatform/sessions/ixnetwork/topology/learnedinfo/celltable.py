@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class CellTable(Base):
     """The node where learned information is grouped into tables or columns and rows.
-    The CellTable class encapsulates a list of cellTable resources that is managed by the system.
+    The CellTable class encapsulates a list of cellTable resources that are managed by the system.
     A list of resources can be retrieved from the server using the CellTable.find() method.
     """
 
@@ -37,85 +37,92 @@ class CellTable(Base):
 
     @property
     def Col(self):
-        """An instance of the DEPRECATED Col class.
+        """DEPRECATED 
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col.Col): An instance of the Col class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col.Col)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col import Col
         return Col(self)
 
     @property
     def Actions(self):
-        """The list of actions allowed on the learned information table
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of actions allowed on the learned information table
         """
         return self._get_attribute('actions')
 
     @property
     def Columns(self):
-        """The list of columns in the learned information table
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of columns in the learned information table
         """
         return self._get_attribute('columns')
 
     @property
     def Type(self):
-        """Description of the learned information type
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the learned information type
         """
         return self._get_attribute('type')
 
     @property
     def Values(self):
-        """A list of rows of learned information values
-
-        Returns:
-            list(list[str])
+        """
+        Returns
+        -------
+        - list(list[str]): A list of rows of learned information values
         """
         return self._get_attribute('values')
 
     def find(self, Actions=None, Columns=None, Type=None, Values=None):
-        """Finds and retrieves cellTable data from the server.
+        """Finds and retrieves cellTable resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve cellTable data from the server.
-        By default the find method takes no parameters and will retrieve all cellTable data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cellTable resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cellTable resources from the server.
 
-        Args:
-            Actions (list(str)): The list of actions allowed on the learned information table
-            Columns (list(str)): The list of columns in the learned information table
-            Type (str): Description of the learned information type
-            Values (list(list[str])): A list of rows of learned information values
+        Args
+        ----
+        - Actions (list(str)): The list of actions allowed on the learned information table
+        - Columns (list(str)): The list of columns in the learned information table
+        - Type (str): Description of the learned information type
+        - Values (list(list[str])): A list of rows of learned information values
 
-        Returns:
-            self: This instance with matching cellTable data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching cellTable resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of cellTable data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the cellTable data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the cellTable resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

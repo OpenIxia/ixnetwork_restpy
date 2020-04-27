@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ItrRemoteEidRange(Base):
     """It gives details about the itr remote eid range
-    The ItrRemoteEidRange class encapsulates a list of itrRemoteEidRange resources that is be managed by the user.
+    The ItrRemoteEidRange class encapsulates a list of itrRemoteEidRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the ItrRemoteEidRange.find() method.
-    The list can be managed by the user by using the ItrRemoteEidRange.add() and ItrRemoteEidRange.remove() methods.
+    The list can be managed by using the ItrRemoteEidRange.add() and ItrRemoteEidRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def Count(self):
-        """it gives details about the count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: it gives details about the count
         """
         return self._get_attribute('count')
     @Count.setter
@@ -50,10 +50,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def EnableMapReplyRecordSegmentMbit(self):
-        """If true, it enables Map reply record Segment Mbit
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables Map reply record Segment Mbit
         """
         return self._get_attribute('enableMapReplyRecordSegmentMbit')
     @EnableMapReplyRecordSegmentMbit.setter
@@ -62,10 +62,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def Enabled(self):
-        """If true, it gives details about then protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it gives details about then protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -74,10 +74,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def Family(self):
-        """It gives details about the IP family it represents
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): It gives details about the IP family it represents
         """
         return self._get_attribute('family')
     @Family.setter
@@ -86,10 +86,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def KeepQueryingUnlessResolved(self):
-        """If true, it keeps Querying Unless resolved
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it keeps Querying Unless resolved
         """
         return self._get_attribute('keepQueryingUnlessResolved')
     @KeepQueryingUnlessResolved.setter
@@ -98,10 +98,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def MapResolvingInterval(self):
-        """It gives the map resolving interval
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives the map resolving interval
         """
         return self._get_attribute('mapResolvingInterval')
     @MapResolvingInterval.setter
@@ -110,10 +110,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def PrefixLength(self):
-        """it gives the prefix length
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: it gives the prefix length
         """
         return self._get_attribute('prefixLength')
     @PrefixLength.setter
@@ -122,10 +122,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def QueryIntervalUnlessResolved(self):
-        """It gives the query regarding the interval unless resolved
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It gives the query regarding the interval unless resolved
         """
         return self._get_attribute('queryIntervalUnlessResolved')
     @QueryIntervalUnlessResolved.setter
@@ -134,10 +134,10 @@ class ItrRemoteEidRange(Base):
 
     @property
     def StartAddress(self):
-        """It gives details about the start address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the start address
         """
         return self._get_attribute('startAddress')
     @StartAddress.setter
@@ -145,91 +145,104 @@ class ItrRemoteEidRange(Base):
         self._set_attribute('startAddress', value)
 
     def update(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
-        """Updates a child instance of itrRemoteEidRange on the server.
+        """Updates itrRemoteEidRange resource on the server.
 
-        Args:
-            Count (number): it gives details about the count
-            EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
-            Enabled (bool): If true, it gives details about then protocol
-            Family (str(ipv4|ipv6)): It gives details about the IP family it represents
-            KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
-            MapResolvingInterval (number): It gives the map resolving interval
-            PrefixLength (number): it gives the prefix length
-            QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
-            StartAddress (str): It gives details about the start address
+        Args
+        ----
+        - Count (number): it gives details about the count
+        - EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
+        - Enabled (bool): If true, it gives details about then protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the IP family it represents
+        - KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
+        - MapResolvingInterval (number): It gives the map resolving interval
+        - PrefixLength (number): it gives the prefix length
+        - QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
+        - StartAddress (str): It gives details about the start address
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
-        """Adds a new itrRemoteEidRange node on the server and retrieves it in this instance.
+        """Adds a new itrRemoteEidRange resource on the server and adds it to the container.
 
-        Args:
-            Count (number): it gives details about the count
-            EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
-            Enabled (bool): If true, it gives details about then protocol
-            Family (str(ipv4|ipv6)): It gives details about the IP family it represents
-            KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
-            MapResolvingInterval (number): It gives the map resolving interval
-            PrefixLength (number): it gives the prefix length
-            QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
-            StartAddress (str): It gives details about the start address
+        Args
+        ----
+        - Count (number): it gives details about the count
+        - EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
+        - Enabled (bool): If true, it gives details about then protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the IP family it represents
+        - KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
+        - MapResolvingInterval (number): It gives the map resolving interval
+        - PrefixLength (number): it gives the prefix length
+        - QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
+        - StartAddress (str): It gives details about the start address
 
-        Returns:
-            self: This instance with all currently retrieved itrRemoteEidRange data using find and the newly added itrRemoteEidRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved itrRemoteEidRange resources using find and the newly added itrRemoteEidRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the itrRemoteEidRange data in this instance from server.
+        """Deletes all the contained itrRemoteEidRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
-        """Finds and retrieves itrRemoteEidRange data from the server.
+        """Finds and retrieves itrRemoteEidRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve itrRemoteEidRange data from the server.
-        By default the find method takes no parameters and will retrieve all itrRemoteEidRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve itrRemoteEidRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all itrRemoteEidRange resources from the server.
 
-        Args:
-            Count (number): it gives details about the count
-            EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
-            Enabled (bool): If true, it gives details about then protocol
-            Family (str(ipv4|ipv6)): It gives details about the IP family it represents
-            KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
-            MapResolvingInterval (number): It gives the map resolving interval
-            PrefixLength (number): it gives the prefix length
-            QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
-            StartAddress (str): It gives details about the start address
+        Args
+        ----
+        - Count (number): it gives details about the count
+        - EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
+        - Enabled (bool): If true, it gives details about then protocol
+        - Family (str(ipv4 | ipv6)): It gives details about the IP family it represents
+        - KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
+        - MapResolvingInterval (number): It gives the map resolving interval
+        - PrefixLength (number): it gives the prefix length
+        - QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
+        - StartAddress (str): It gives details about the start address
 
-        Returns:
-            self: This instance with matching itrRemoteEidRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching itrRemoteEidRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of itrRemoteEidRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the itrRemoteEidRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the itrRemoteEidRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def AggregateByDirection(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('aggregateByDirection')
     @AggregateByDirection.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def AggregateByFlowgroup(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('aggregateByFlowgroup')
     @AggregateByFlowgroup.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def AggregateByPort(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('aggregateByPort')
     @AggregateByPort.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def BackoffIteration(self):
-        """Signifies the back of iteration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the back of iteration.
         """
         return self._get_attribute('backoffIteration')
     @BackoffIteration.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def BinaryAcceptableFrameLossLabel(self):
-        """Signifies the binary value of acceptable frame loss label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary value of acceptable frame loss label
         """
         return self._get_attribute('binaryAcceptableFrameLossLabel')
     @BinaryAcceptableFrameLossLabel.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def BinaryBackoffLabel(self):
-        """Signifies the binary backoff label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary backoff label
         """
         return self._get_attribute('binaryBackoffLabel')
     @BinaryBackoffLabel.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def BinaryInitialRateLabel(self):
-        """Signifies initial rate label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies initial rate label
         """
         return self._get_attribute('binaryInitialRateLabel')
     @BinaryInitialRateLabel.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def BinaryLoadUnitLabel(self):
-        """Signifies the binary load unit label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary load unit label
         """
         return self._get_attribute('binaryLoadUnitLabel')
     @BinaryLoadUnitLabel.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def BinaryMaxRateLabel(self):
-        """Signifies the binary maximum rate label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary maximum rate label
         """
         return self._get_attribute('binaryMaxRateLabel')
     @BinaryMaxRateLabel.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def BinaryMinRateLabel(self):
-        """Signifies the binary minimum rte label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary minimum rte label
         """
         return self._get_attribute('binaryMinRateLabel')
     @BinaryMinRateLabel.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolutionLabel(self):
-        """Signifies the binary resolution label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the binary resolution label
         """
         return self._get_attribute('binaryResolutionLabel')
     @BinaryResolutionLabel.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """The number of packets to send in a burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of packets to send in a burst.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def CalculateJitter(self):
-        """If true, calculates jitter.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates jitter.
         """
         return self._get_attribute('calculateJitter')
     @CalculateJitter.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """If true, calculates latency.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates latency.
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """Signifies the delay time after transmit of the packet.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the delay time after transmit of the packet.
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinaryBackoff(self):
-        """Signifies the downstream binary backoff
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the downstream binary backoff
         """
         return self._get_attribute('downstreamBinaryBackoff')
     @DownstreamBinaryBackoff.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinaryFrameLossUnit(self):
-        """Signifies the downstream binary frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): Signifies the downstream binary frame loss unit.
         """
         return self._get_attribute('downstreamBinaryFrameLossUnit')
     @DownstreamBinaryFrameLossUnit.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinaryLoadUnit(self):
-        """Signifies downstream binary load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies downstream binary load unit.
         """
         return self._get_attribute('downstreamBinaryLoadUnit')
     @DownstreamBinaryLoadUnit.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinaryResolution(self):
-        """Signifies the downstream binary resolution.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the downstream binary resolution.
         """
         return self._get_attribute('downstreamBinaryResolution')
     @DownstreamBinaryResolution.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinarySearchType(self):
-        """This signifies the downstream binary search type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the downstream binary search type.
         """
         return self._get_attribute('downstreamBinarySearchType')
     @DownstreamBinarySearchType.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamBinaryTolerance(self):
-        """Signifies the downstream binary tolerance.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the downstream binary tolerance.
         """
         return self._get_attribute('downstreamBinaryTolerance')
     @DownstreamBinaryTolerance.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixAdd(self):
-        """Adds downstream IMIX
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Adds downstream IMIX
         """
         return self._get_attribute('downstreamImixAdd')
     @DownstreamImixAdd.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixData(self):
-        """Signifies the downstream IMIX data
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the downstream IMIX data
         """
         return self._get_attribute('downstreamImixData')
     @DownstreamImixData.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixDataQoS(self):
-        """If true, enables the quality of service for downstream IMIX
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the quality of service for downstream IMIX
         """
         return self._get_attribute('downstreamImixDataQoS')
     @DownstreamImixDataQoS.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixDelete(self):
-        """Deletes downstream IMIX
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Deletes downstream IMIX
         """
         return self._get_attribute('downstreamImixDelete')
     @DownstreamImixDelete.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixDistribution(self):
-        """signifies the downstream imix distribution.
-
-        Returns:
-            str(bwpercentage|weight)
+        """
+        Returns
+        -------
+        - str(bwpercentage | weight): signifies the downstream imix distribution.
         """
         return self._get_attribute('downstreamImixDistribution')
     @DownstreamImixDistribution.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixEnabled(self):
-        """If true, enables downstream IMIX
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables downstream IMIX
         """
         return self._get_attribute('downstreamImixEnabled')
     @DownstreamImixEnabled.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamImixTemplates(self):
-        """Signifies downstream IMIX templates.
-
-        Returns:
-            str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)
+        """
+        Returns
+        -------
+        - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Signifies downstream IMIX templates.
         """
         return self._get_attribute('downstreamImixTemplates')
     @DownstreamImixTemplates.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamInitialBinaryLoadRate(self):
-        """This signifies downstream initial binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies downstream initial binary load rate.
         """
         return self._get_attribute('downstreamInitialBinaryLoadRate')
     @DownstreamInitialBinaryLoadRate.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamInitialStepLoadRate(self):
-        """This signifies downstream initial step load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies downstream initial step load rate.
         """
         return self._get_attribute('downstreamInitialStepLoadRate')
     @DownstreamInitialStepLoadRate.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamLoadType(self):
-        """Signifies downstream load type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies downstream load type.
         """
         return self._get_attribute('downstreamLoadType')
     @DownstreamLoadType.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamMaxBinaryLoadRate(self):
-        """Signifies maximum downstream binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies maximum downstream binary load rate.
         """
         return self._get_attribute('downstreamMaxBinaryLoadRate')
     @DownstreamMaxBinaryLoadRate.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamMaxStepLoadRate(self):
-        """Signifies downstream maximum step load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies downstream maximum step load rate.
         """
         return self._get_attribute('downstreamMaxStepLoadRate')
     @DownstreamMaxStepLoadRate.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamMinBinaryLoadRate(self):
-        """Signifies minimum downstream binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies minimum downstream binary load rate.
         """
         return self._get_attribute('downstreamMinBinaryLoadRate')
     @DownstreamMinBinaryLoadRate.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamStepFrameLossUnit(self):
-        """Signifies downstream step frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): Signifies downstream step frame loss unit.
         """
         return self._get_attribute('downstreamStepFrameLossUnit')
     @DownstreamStepFrameLossUnit.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamStepLoadUnit(self):
-        """Signifies downstream step load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies downstream step load unit.
         """
         return self._get_attribute('downstreamStepLoadUnit')
     @DownstreamStepLoadUnit.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamStepStepLoadRate(self):
-        """This signifies downstream step load rate.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies downstream step load rate.
         """
         return self._get_attribute('downstreamStepStepLoadRate')
     @DownstreamStepStepLoadRate.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamStepTolerance(self):
-        """Signifies downstream step tolerance.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies downstream step tolerance.
         """
         return self._get_attribute('downstreamStepTolerance')
     @DownstreamStepTolerance.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def DownstreamStopTestOnHighLoss(self):
-        """This stops the downstream test on high loss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This stops the downstream test on high loss.
         """
         return self._get_attribute('downstreamStopTestOnHighLoss')
     @DownstreamStopTestOnHighLoss.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """Signifies the duration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the duration.
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def EnableBackoffIteration(self):
-        """If true, enables backoff iteration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables backoff iteration.
         """
         return self._get_attribute('enableBackoffIteration')
     @EnableBackoffIteration.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """If true, enables data integrity.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables data integrity.
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def EnableFastConvergence(self):
-        """If true, enables fast convergence.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables fast convergence.
         """
         return self._get_attribute('enableFastConvergence')
     @EnableFastConvergence.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer1Rate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLayer1Rate')
     @EnableLayer1Rate.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If true, enables minimum frame size.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables minimum frame size.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def EnableSaturationIteration(self):
-        """If true, enables the test to run an extra iteration for calculating the SaturationLatency.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the test to run an extra iteration for calculating the SaturationLatency.
         """
         return self._get_attribute('enableSaturationIteration')
     @EnableSaturationIteration.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def EnableStopTestOnHighLoss(self):
-        """If true, enables stop test on high loss option.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables stop test on high loss option.
         """
         return self._get_attribute('enableStopTestOnHighLoss')
     @EnableStopTestOnHighLoss.setter
@@ -600,10 +600,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceDuration(self):
-        """Signifies fast convergence duration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies fast convergence duration.
         """
         return self._get_attribute('fastConvergenceDuration')
     @FastConvergenceDuration.setter
@@ -612,10 +612,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceThreshold(self):
-        """Signifies the threshold for fast convergence.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the threshold for fast convergence.
         """
         return self._get_attribute('fastConvergenceThreshold')
     @FastConvergenceThreshold.setter
@@ -624,10 +624,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """If true, enables force regenerate.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables force regenerate.
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -636,10 +636,10 @@ class TestConfig(Base):
 
     @property
     def FramesPerBurstGap(self):
-        """Signifies the frames sent per burst gap
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the frames sent per burst gap
         """
         return self._get_attribute('framesPerBurstGap')
     @FramesPerBurstGap.setter
@@ -648,10 +648,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """Signifies the burst gap
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the burst gap
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -660,10 +660,10 @@ class TestConfig(Base):
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
-        """If true, generates tracking option of aggregation files.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, generates tracking option of aggregation files.
         """
         return self._get_attribute('generateTrackingOptionAggregationFiles')
     @GenerateTrackingOptionAggregationFiles.setter
@@ -672,10 +672,10 @@ class TestConfig(Base):
 
     @property
     def ImixTrafficType(self):
-        """Signifies the type of IMIX traffic.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the type of IMIX traffic.
         """
         return self._get_attribute('imixTrafficType')
     @ImixTrafficType.setter
@@ -684,10 +684,10 @@ class TestConfig(Base):
 
     @property
     def IterationParameters(self):
-        """DEPRECATED This signifies the Iteration Parameters.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: This signifies the Iteration Parameters.
         """
         return self._get_attribute('iterationParameters')
     @IterationParameters.setter
@@ -696,10 +696,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBins(self):
-        """DEPRECATED Sets the latency bins statistics.
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Sets the latency bins statistics.
         """
         return self._get_attribute('latencyBins')
     @LatencyBins.setter
@@ -708,10 +708,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBinsEnabled(self):
-        """Enables the latency bins statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the latency bins statistics.
         """
         return self._get_attribute('latencyBinsEnabled')
     @LatencyBinsEnabled.setter
@@ -720,10 +720,10 @@ class TestConfig(Base):
 
     @property
     def LatencyType(self):
-        """Signifies the latency type.
-
-        Returns:
-            str(cutThrough|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | storeForward): Signifies the latency type.
         """
         return self._get_attribute('latencyType')
     @LatencyType.setter
@@ -732,10 +732,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """Signifies the load type.
-
-        Returns:
-            str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)
+        """
+        Returns
+        -------
+        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): Signifies the load type.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -744,10 +744,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """Signifies the map type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the map type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -756,10 +756,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """Signifies the numeric trials.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the numeric trials.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -768,10 +768,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -780,10 +780,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured.
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured.
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -792,10 +792,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value.
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -804,10 +804,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -816,10 +816,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """If true, reports sequence error.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, reports sequence error.
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -828,10 +828,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """Reports throughput rate unit.
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): Reports throughput rate unit.
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -840,10 +840,10 @@ class TestConfig(Base):
 
     @property
     def SaturationIteration(self):
-        """Signifies saturation iteration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies saturation iteration.
         """
         return self._get_attribute('saturationIteration')
     @SaturationIteration.setter
@@ -852,10 +852,10 @@ class TestConfig(Base):
 
     @property
     def StaggeredStart(self):
-        """If true, staggers start.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, staggers start.
         """
         return self._get_attribute('staggeredStart')
     @StaggeredStart.setter
@@ -864,10 +864,10 @@ class TestConfig(Base):
 
     @property
     def StepAcceptableFrameLossLabel(self):
-        """Signifies step acceptable frame loss label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies step acceptable frame loss label
         """
         return self._get_attribute('stepAcceptableFrameLossLabel')
     @StepAcceptableFrameLossLabel.setter
@@ -876,10 +876,10 @@ class TestConfig(Base):
 
     @property
     def StepEndRateLabel(self):
-        """Signifies step end rate label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies step end rate label
         """
         return self._get_attribute('stepEndRateLabel')
     @StepEndRateLabel.setter
@@ -888,10 +888,10 @@ class TestConfig(Base):
 
     @property
     def StepInitialRateLabel(self):
-        """Signifies step initial rate label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies step initial rate label
         """
         return self._get_attribute('stepInitialRateLabel')
     @StepInitialRateLabel.setter
@@ -900,10 +900,10 @@ class TestConfig(Base):
 
     @property
     def StepLoadUnitLabel(self):
-        """Signifies the step load unit label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the step load unit label
         """
         return self._get_attribute('stepLoadUnitLabel')
     @StepLoadUnitLabel.setter
@@ -912,10 +912,10 @@ class TestConfig(Base):
 
     @property
     def StepStepRateLabel(self):
-        """Signifies the step rate label
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the step rate label
         """
         return self._get_attribute('stepStepRateLabel')
     @StepStepRateLabel.setter
@@ -924,10 +924,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """Signifies the traffic types supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the traffic types supported.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -936,10 +936,10 @@ class TestConfig(Base):
 
     @property
     def TestType(self):
-        """Signifies th test type.
-
-        Returns:
-            str(downstreamOnly|upstreamDownstream|upstreamOnly)
+        """
+        Returns
+        -------
+        - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies th test type.
         """
         return self._get_attribute('testType')
     @TestType.setter
@@ -948,10 +948,10 @@ class TestConfig(Base):
 
     @property
     def TestTypeTemp(self):
-        """Signifies the temporary test type.
-
-        Returns:
-            str(downstreamOnly|upstreamDownstream|upstreamOnly)
+        """
+        Returns
+        -------
+        - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies the temporary test type.
         """
         return self._get_attribute('testTypeTemp')
     @TestTypeTemp.setter
@@ -960,10 +960,10 @@ class TestConfig(Base):
 
     @property
     def TestTypeTemp2(self):
-        """Signifies the second temporary test type.
-
-        Returns:
-            str(downstreamOnly|upstreamDownstream|upstreamOnly)
+        """
+        Returns
+        -------
+        - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies the second temporary test type.
         """
         return self._get_attribute('testTypeTemp2')
     @TestTypeTemp2.setter
@@ -972,10 +972,10 @@ class TestConfig(Base):
 
     @property
     def Tolerance(self):
-        """Signifies the tolerance.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the tolerance.
         """
         return self._get_attribute('tolerance')
     @Tolerance.setter
@@ -984,10 +984,10 @@ class TestConfig(Base):
 
     @property
     def TrafficType(self):
-        """Signifies the traffic type.
-
-        Returns:
-            str(burstyLoading|constantLoading)
+        """
+        Returns
+        -------
+        - str(burstyLoading | constantLoading): Signifies the traffic type.
         """
         return self._get_attribute('trafficType')
     @TrafficType.setter
@@ -996,10 +996,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """Signifies the delay time during the transmission of data
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the delay time during the transmission of data
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -1008,10 +1008,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinaryBackoff(self):
-        """Signifies upstream binary backoff
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream binary backoff
         """
         return self._get_attribute('upstreamBinaryBackoff')
     @UpstreamBinaryBackoff.setter
@@ -1020,10 +1020,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinaryFrameLossUnit(self):
-        """Signifies the upstream binary frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): Signifies the upstream binary frame loss unit.
         """
         return self._get_attribute('upstreamBinaryFrameLossUnit')
     @UpstreamBinaryFrameLossUnit.setter
@@ -1032,10 +1032,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinaryLoadUnit(self):
-        """This signifies the upstream binary load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): This signifies the upstream binary load unit.
         """
         return self._get_attribute('upstreamBinaryLoadUnit')
     @UpstreamBinaryLoadUnit.setter
@@ -1044,10 +1044,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinaryResolution(self):
-        """Signifies upstream binary resolution.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream binary resolution.
         """
         return self._get_attribute('upstreamBinaryResolution')
     @UpstreamBinaryResolution.setter
@@ -1056,10 +1056,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinarySearchType(self):
-        """Signifies the upstream binary search type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the upstream binary search type.
         """
         return self._get_attribute('upstreamBinarySearchType')
     @UpstreamBinarySearchType.setter
@@ -1068,10 +1068,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamBinaryTolerance(self):
-        """Signifies the upstream binary tolerance.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the upstream binary tolerance.
         """
         return self._get_attribute('upstreamBinaryTolerance')
     @UpstreamBinaryTolerance.setter
@@ -1080,10 +1080,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamEnableExtraIterations(self):
-        """If true, enables extra iterations upstream.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables extra iterations upstream.
         """
         return self._get_attribute('upstreamEnableExtraIterations')
     @UpstreamEnableExtraIterations.setter
@@ -1092,10 +1092,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamExtraIterationOffsets(self):
-        """Signifies extra iteration offsets upstream.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies extra iteration offsets upstream.
         """
         return self._get_attribute('upstreamExtraIterationOffsets')
     @UpstreamExtraIterationOffsets.setter
@@ -1104,10 +1104,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixAdd(self):
-        """Adds upstream IMIX
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Adds upstream IMIX
         """
         return self._get_attribute('upstreamImixAdd')
     @UpstreamImixAdd.setter
@@ -1116,10 +1116,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixData(self):
-        """Signifies upstream IMIX data
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies upstream IMIX data
         """
         return self._get_attribute('upstreamImixData')
     @UpstreamImixData.setter
@@ -1128,10 +1128,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixDataQoS(self):
-        """If true, enables quality of service for upstream IMIX data
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables quality of service for upstream IMIX data
         """
         return self._get_attribute('upstreamImixDataQoS')
     @UpstreamImixDataQoS.setter
@@ -1140,10 +1140,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixDelete(self):
-        """Deletes upstream IMIX data
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Deletes upstream IMIX data
         """
         return self._get_attribute('upstreamImixDelete')
     @UpstreamImixDelete.setter
@@ -1152,10 +1152,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixDistribution(self):
-        """Distributes upstream IMIX
-
-        Returns:
-            str(bwpercentage|weight)
+        """
+        Returns
+        -------
+        - str(bwpercentage | weight): Distributes upstream IMIX
         """
         return self._get_attribute('upstreamImixDistribution')
     @UpstreamImixDistribution.setter
@@ -1164,10 +1164,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixEnabled(self):
-        """If true, enables upstream IMIX
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables upstream IMIX
         """
         return self._get_attribute('upstreamImixEnabled')
     @UpstreamImixEnabled.setter
@@ -1176,10 +1176,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamImixTemplates(self):
-        """Signifies upstream IMIX templates.
-
-        Returns:
-            str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)
+        """
+        Returns
+        -------
+        - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Signifies upstream IMIX templates.
         """
         return self._get_attribute('upstreamImixTemplates')
     @UpstreamImixTemplates.setter
@@ -1188,10 +1188,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamInitialBinaryLoadRate(self):
-        """Signifies the uptream initial binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the uptream initial binary load rate.
         """
         return self._get_attribute('upstreamInitialBinaryLoadRate')
     @UpstreamInitialBinaryLoadRate.setter
@@ -1200,10 +1200,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamInitialStepLoadRate(self):
-        """This signifies upstream initial step load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This signifies upstream initial step load rate.
         """
         return self._get_attribute('upstreamInitialStepLoadRate')
     @UpstreamInitialStepLoadRate.setter
@@ -1212,10 +1212,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamLoadType(self):
-        """Signifies upstream load type.
-
-        Returns:
-            str(binary)
+        """
+        Returns
+        -------
+        - str(binary): Signifies upstream load type.
         """
         return self._get_attribute('upstreamLoadType')
     @UpstreamLoadType.setter
@@ -1224,10 +1224,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamMaxBinaryLoadRate(self):
-        """Signifies upstream maximum binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream maximum binary load rate.
         """
         return self._get_attribute('upstreamMaxBinaryLoadRate')
     @UpstreamMaxBinaryLoadRate.setter
@@ -1236,10 +1236,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamMaxStepLoadRate(self):
-        """Signifies upstream maximum step load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream maximum step load rate.
         """
         return self._get_attribute('upstreamMaxStepLoadRate')
     @UpstreamMaxStepLoadRate.setter
@@ -1248,10 +1248,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamMinBinaryLoadRate(self):
-        """Signifies the upstream binary load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the upstream binary load rate.
         """
         return self._get_attribute('upstreamMinBinaryLoadRate')
     @UpstreamMinBinaryLoadRate.setter
@@ -1260,10 +1260,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamStepFrameLossUnit(self):
-        """Signifies the upstream step frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): Signifies the upstream step frame loss unit.
         """
         return self._get_attribute('upstreamStepFrameLossUnit')
     @UpstreamStepFrameLossUnit.setter
@@ -1272,10 +1272,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamStepLoadUnit(self):
-        """Signifies upstream step load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies upstream step load unit.
         """
         return self._get_attribute('upstreamStepLoadUnit')
     @UpstreamStepLoadUnit.setter
@@ -1284,10 +1284,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamStepStepLoadRate(self):
-        """Signifies the upstream step load rate.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies the upstream step load rate.
         """
         return self._get_attribute('upstreamStepStepLoadRate')
     @UpstreamStepStepLoadRate.setter
@@ -1296,10 +1296,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamStepTolerance(self):
-        """Signifies upstream step tolerance value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream step tolerance value.
         """
         return self._get_attribute('upstreamStepTolerance')
     @UpstreamStepTolerance.setter
@@ -1308,10 +1308,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamStopTestOnHighLoss(self):
-        """Signifies upstream stop test on high loss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies upstream stop test on high loss.
         """
         return self._get_attribute('upstreamStopTestOnHighLoss')
     @UpstreamStopTestOnHighLoss.setter
@@ -1320,10 +1320,10 @@ class TestConfig(Base):
 
     @property
     def UpstreamUsePercentOffsets(self):
-        """Signifies upstream use percent offsets.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Signifies upstream use percent offsets.
         """
         return self._get_attribute('upstreamUsePercentOffsets')
     @UpstreamUsePercentOffsets.setter
@@ -1331,131 +1331,134 @@ class TestConfig(Base):
         self._set_attribute('upstreamUsePercentOffsets', value)
 
     def update(self, AggregateByDirection=None, AggregateByFlowgroup=None, AggregateByPort=None, BackoffIteration=None, BinaryAcceptableFrameLossLabel=None, BinaryBackoffLabel=None, BinaryInitialRateLabel=None, BinaryLoadUnitLabel=None, BinaryMaxRateLabel=None, BinaryMinRateLabel=None, BinaryResolutionLabel=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamBinaryBackoff=None, DownstreamBinaryFrameLossUnit=None, DownstreamBinaryLoadUnit=None, DownstreamBinaryResolution=None, DownstreamBinarySearchType=None, DownstreamBinaryTolerance=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialBinaryLoadRate=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamMaxBinaryLoadRate=None, DownstreamMaxStepLoadRate=None, DownstreamMinBinaryLoadRate=None, DownstreamStepFrameLossUnit=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, DownstreamStopTestOnHighLoss=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixTrafficType=None, IterationParameters=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, MapType=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, SaturationIteration=None, StaggeredStart=None, StepAcceptableFrameLossLabel=None, StepEndRateLabel=None, StepInitialRateLabel=None, StepLoadUnitLabel=None, StepStepRateLabel=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, Tolerance=None, TrafficType=None, TxDelay=None, UpstreamBinaryBackoff=None, UpstreamBinaryFrameLossUnit=None, UpstreamBinaryLoadUnit=None, UpstreamBinaryResolution=None, UpstreamBinarySearchType=None, UpstreamBinaryTolerance=None, UpstreamEnableExtraIterations=None, UpstreamExtraIterationOffsets=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialBinaryLoadRate=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamMaxBinaryLoadRate=None, UpstreamMaxStepLoadRate=None, UpstreamMinBinaryLoadRate=None, UpstreamStepFrameLossUnit=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None, UpstreamStopTestOnHighLoss=None, UpstreamUsePercentOffsets=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            AggregateByDirection (bool): NOT DEFINED
-            AggregateByFlowgroup (bool): NOT DEFINED
-            AggregateByPort (bool): NOT DEFINED
-            BackoffIteration (number): Signifies the back of iteration.
-            BinaryAcceptableFrameLossLabel (str): Signifies the binary value of acceptable frame loss label
-            BinaryBackoffLabel (str): Signifies the binary backoff label
-            BinaryInitialRateLabel (str): Signifies initial rate label
-            BinaryLoadUnitLabel (str): Signifies the binary load unit label
-            BinaryMaxRateLabel (str): Signifies the binary maximum rate label
-            BinaryMinRateLabel (str): Signifies the binary minimum rte label
-            BinaryResolutionLabel (str): Signifies the binary resolution label
-            BurstSize (number): The number of packets to send in a burst.
-            CalculateJitter (bool): If true, calculates jitter.
-            CalculateLatency (bool): If true, calculates latency.
-            DelayAfterTransmit (number): Signifies the delay time after transmit of the packet.
-            DownstreamBinaryBackoff (number): Signifies the downstream binary backoff
-            DownstreamBinaryFrameLossUnit (str(%|frames)): Signifies the downstream binary frame loss unit.
-            DownstreamBinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies downstream binary load unit.
-            DownstreamBinaryResolution (number): Signifies the downstream binary resolution.
-            DownstreamBinarySearchType (str): This signifies the downstream binary search type.
-            DownstreamBinaryTolerance (number): Signifies the downstream binary tolerance.
-            DownstreamImixAdd (str): Adds downstream IMIX
-            DownstreamImixData (str): Signifies the downstream IMIX data
-            DownstreamImixDataQoS (bool): If true, enables the quality of service for downstream IMIX
-            DownstreamImixDelete (str): Deletes downstream IMIX
-            DownstreamImixDistribution (str(bwpercentage|weight)): signifies the downstream imix distribution.
-            DownstreamImixEnabled (bool): If true, enables downstream IMIX
-            DownstreamImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Signifies downstream IMIX templates.
-            DownstreamInitialBinaryLoadRate (number): This signifies downstream initial binary load rate.
-            DownstreamInitialStepLoadRate (number): This signifies downstream initial step load rate.
-            DownstreamLoadType (str): Signifies downstream load type.
-            DownstreamMaxBinaryLoadRate (number): Signifies maximum downstream binary load rate.
-            DownstreamMaxStepLoadRate (number): Signifies downstream maximum step load rate.
-            DownstreamMinBinaryLoadRate (number): Signifies minimum downstream binary load rate.
-            DownstreamStepFrameLossUnit (str(%|frames)): Signifies downstream step frame loss unit.
-            DownstreamStepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies downstream step load unit.
-            DownstreamStepStepLoadRate (str): This signifies downstream step load rate.
-            DownstreamStepTolerance (number): Signifies downstream step tolerance.
-            DownstreamStopTestOnHighLoss (number): This stops the downstream test on high loss.
-            Duration (number): Signifies the duration.
-            EnableBackoffIteration (bool): If true, enables backoff iteration.
-            EnableDataIntegrity (bool): If true, enables data integrity.
-            EnableFastConvergence (bool): If true, enables fast convergence.
-            EnableLayer1Rate (bool): NOT DEFINED
-            EnableMinFrameSize (bool): If true, enables minimum frame size.
-            EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the SaturationLatency.
-            EnableStopTestOnHighLoss (bool): If true, enables stop test on high loss option.
-            FastConvergenceDuration (number): Signifies fast convergence duration.
-            FastConvergenceThreshold (number): Signifies the threshold for fast convergence.
-            ForceRegenerate (bool): If true, enables force regenerate.
-            FramesPerBurstGap (number): Signifies the frames sent per burst gap
-            Gap (number): Signifies the burst gap
-            GenerateTrackingOptionAggregationFiles (bool): If true, generates tracking option of aggregation files.
-            ImixTrafficType (str): Signifies the type of IMIX traffic.
-            IterationParameters (str): This signifies the Iteration Parameters.
-            LatencyBins (str): Sets the latency bins statistics.
-            LatencyBinsEnabled (bool): Enables the latency bins statistics.
-            LatencyType (str(cutThrough|storeForward)): Signifies the latency type.
-            LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): Signifies the load type.
-            MapType (str): Signifies the map type.
-            Numtrials (number): Signifies the numeric trials.
-            PortDelayEnabled (bool): NOT DEFINED
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
-            PortDelayValue (number): Sets the port delay value.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            ReportSequenceError (bool): If true, reports sequence error.
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): Reports throughput rate unit.
-            SaturationIteration (number): Signifies saturation iteration.
-            StaggeredStart (bool): If true, staggers start.
-            StepAcceptableFrameLossLabel (str): Signifies step acceptable frame loss label
-            StepEndRateLabel (str): Signifies step end rate label
-            StepInitialRateLabel (str): Signifies step initial rate label
-            StepLoadUnitLabel (str): Signifies the step load unit label
-            StepStepRateLabel (str): Signifies the step rate label
-            SupportedTrafficTypes (str): Signifies the traffic types supported.
-            TestType (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies th test type.
-            TestTypeTemp (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies the temporary test type.
-            TestTypeTemp2 (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies the second temporary test type.
-            Tolerance (number): Signifies the tolerance.
-            TrafficType (str(burstyLoading|constantLoading)): Signifies the traffic type.
-            TxDelay (number): Signifies the delay time during the transmission of data
-            UpstreamBinaryBackoff (number): Signifies upstream binary backoff
-            UpstreamBinaryFrameLossUnit (str(%|frames)): Signifies the upstream binary frame loss unit.
-            UpstreamBinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): This signifies the upstream binary load unit.
-            UpstreamBinaryResolution (number): Signifies upstream binary resolution.
-            UpstreamBinarySearchType (str): Signifies the upstream binary search type.
-            UpstreamBinaryTolerance (number): Signifies the upstream binary tolerance.
-            UpstreamEnableExtraIterations (bool): If true, enables extra iterations upstream.
-            UpstreamExtraIterationOffsets (str): Signifies extra iteration offsets upstream.
-            UpstreamImixAdd (str): Adds upstream IMIX
-            UpstreamImixData (str): Signifies upstream IMIX data
-            UpstreamImixDataQoS (bool): If true, enables quality of service for upstream IMIX data
-            UpstreamImixDelete (str): Deletes upstream IMIX data
-            UpstreamImixDistribution (str(bwpercentage|weight)): Distributes upstream IMIX
-            UpstreamImixEnabled (bool): If true, enables upstream IMIX
-            UpstreamImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Signifies upstream IMIX templates.
-            UpstreamInitialBinaryLoadRate (number): Signifies the uptream initial binary load rate.
-            UpstreamInitialStepLoadRate (number): This signifies upstream initial step load rate.
-            UpstreamLoadType (str(binary)): Signifies upstream load type.
-            UpstreamMaxBinaryLoadRate (number): Signifies upstream maximum binary load rate.
-            UpstreamMaxStepLoadRate (number): Signifies upstream maximum step load rate.
-            UpstreamMinBinaryLoadRate (number): Signifies the upstream binary load rate.
-            UpstreamStepFrameLossUnit (str(%|frames)): Signifies the upstream step frame loss unit.
-            UpstreamStepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies upstream step load unit.
-            UpstreamStepStepLoadRate (str): Signifies the upstream step load rate.
-            UpstreamStepTolerance (number): Signifies upstream step tolerance value.
-            UpstreamStopTestOnHighLoss (number): Signifies upstream stop test on high loss.
-            UpstreamUsePercentOffsets (str): Signifies upstream use percent offsets.
+        Args
+        ----
+        - AggregateByDirection (bool): NOT DEFINED
+        - AggregateByFlowgroup (bool): NOT DEFINED
+        - AggregateByPort (bool): NOT DEFINED
+        - BackoffIteration (number): Signifies the back of iteration.
+        - BinaryAcceptableFrameLossLabel (str): Signifies the binary value of acceptable frame loss label
+        - BinaryBackoffLabel (str): Signifies the binary backoff label
+        - BinaryInitialRateLabel (str): Signifies initial rate label
+        - BinaryLoadUnitLabel (str): Signifies the binary load unit label
+        - BinaryMaxRateLabel (str): Signifies the binary maximum rate label
+        - BinaryMinRateLabel (str): Signifies the binary minimum rte label
+        - BinaryResolutionLabel (str): Signifies the binary resolution label
+        - BurstSize (number): The number of packets to send in a burst.
+        - CalculateJitter (bool): If true, calculates jitter.
+        - CalculateLatency (bool): If true, calculates latency.
+        - DelayAfterTransmit (number): Signifies the delay time after transmit of the packet.
+        - DownstreamBinaryBackoff (number): Signifies the downstream binary backoff
+        - DownstreamBinaryFrameLossUnit (str(% | frames)): Signifies the downstream binary frame loss unit.
+        - DownstreamBinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies downstream binary load unit.
+        - DownstreamBinaryResolution (number): Signifies the downstream binary resolution.
+        - DownstreamBinarySearchType (str): This signifies the downstream binary search type.
+        - DownstreamBinaryTolerance (number): Signifies the downstream binary tolerance.
+        - DownstreamImixAdd (str): Adds downstream IMIX
+        - DownstreamImixData (str): Signifies the downstream IMIX data
+        - DownstreamImixDataQoS (bool): If true, enables the quality of service for downstream IMIX
+        - DownstreamImixDelete (str): Deletes downstream IMIX
+        - DownstreamImixDistribution (str(bwpercentage | weight)): signifies the downstream imix distribution.
+        - DownstreamImixEnabled (bool): If true, enables downstream IMIX
+        - DownstreamImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Signifies downstream IMIX templates.
+        - DownstreamInitialBinaryLoadRate (number): This signifies downstream initial binary load rate.
+        - DownstreamInitialStepLoadRate (number): This signifies downstream initial step load rate.
+        - DownstreamLoadType (str): Signifies downstream load type.
+        - DownstreamMaxBinaryLoadRate (number): Signifies maximum downstream binary load rate.
+        - DownstreamMaxStepLoadRate (number): Signifies downstream maximum step load rate.
+        - DownstreamMinBinaryLoadRate (number): Signifies minimum downstream binary load rate.
+        - DownstreamStepFrameLossUnit (str(% | frames)): Signifies downstream step frame loss unit.
+        - DownstreamStepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies downstream step load unit.
+        - DownstreamStepStepLoadRate (str): This signifies downstream step load rate.
+        - DownstreamStepTolerance (number): Signifies downstream step tolerance.
+        - DownstreamStopTestOnHighLoss (number): This stops the downstream test on high loss.
+        - Duration (number): Signifies the duration.
+        - EnableBackoffIteration (bool): If true, enables backoff iteration.
+        - EnableDataIntegrity (bool): If true, enables data integrity.
+        - EnableFastConvergence (bool): If true, enables fast convergence.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the SaturationLatency.
+        - EnableStopTestOnHighLoss (bool): If true, enables stop test on high loss option.
+        - FastConvergenceDuration (number): Signifies fast convergence duration.
+        - FastConvergenceThreshold (number): Signifies the threshold for fast convergence.
+        - ForceRegenerate (bool): If true, enables force regenerate.
+        - FramesPerBurstGap (number): Signifies the frames sent per burst gap
+        - Gap (number): Signifies the burst gap
+        - GenerateTrackingOptionAggregationFiles (bool): If true, generates tracking option of aggregation files.
+        - ImixTrafficType (str): Signifies the type of IMIX traffic.
+        - IterationParameters (str): This signifies the Iteration Parameters.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LatencyType (str(cutThrough | storeForward)): Signifies the latency type.
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): Signifies the load type.
+        - MapType (str): Signifies the map type.
+        - Numtrials (number): Signifies the numeric trials.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportSequenceError (bool): If true, reports sequence error.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Reports throughput rate unit.
+        - SaturationIteration (number): Signifies saturation iteration.
+        - StaggeredStart (bool): If true, staggers start.
+        - StepAcceptableFrameLossLabel (str): Signifies step acceptable frame loss label
+        - StepEndRateLabel (str): Signifies step end rate label
+        - StepInitialRateLabel (str): Signifies step initial rate label
+        - StepLoadUnitLabel (str): Signifies the step load unit label
+        - StepStepRateLabel (str): Signifies the step rate label
+        - SupportedTrafficTypes (str): Signifies the traffic types supported.
+        - TestType (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies th test type.
+        - TestTypeTemp (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies the temporary test type.
+        - TestTypeTemp2 (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies the second temporary test type.
+        - Tolerance (number): Signifies the tolerance.
+        - TrafficType (str(burstyLoading | constantLoading)): Signifies the traffic type.
+        - TxDelay (number): Signifies the delay time during the transmission of data
+        - UpstreamBinaryBackoff (number): Signifies upstream binary backoff
+        - UpstreamBinaryFrameLossUnit (str(% | frames)): Signifies the upstream binary frame loss unit.
+        - UpstreamBinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): This signifies the upstream binary load unit.
+        - UpstreamBinaryResolution (number): Signifies upstream binary resolution.
+        - UpstreamBinarySearchType (str): Signifies the upstream binary search type.
+        - UpstreamBinaryTolerance (number): Signifies the upstream binary tolerance.
+        - UpstreamEnableExtraIterations (bool): If true, enables extra iterations upstream.
+        - UpstreamExtraIterationOffsets (str): Signifies extra iteration offsets upstream.
+        - UpstreamImixAdd (str): Adds upstream IMIX
+        - UpstreamImixData (str): Signifies upstream IMIX data
+        - UpstreamImixDataQoS (bool): If true, enables quality of service for upstream IMIX data
+        - UpstreamImixDelete (str): Deletes upstream IMIX data
+        - UpstreamImixDistribution (str(bwpercentage | weight)): Distributes upstream IMIX
+        - UpstreamImixEnabled (bool): If true, enables upstream IMIX
+        - UpstreamImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Signifies upstream IMIX templates.
+        - UpstreamInitialBinaryLoadRate (number): Signifies the uptream initial binary load rate.
+        - UpstreamInitialStepLoadRate (number): This signifies upstream initial step load rate.
+        - UpstreamLoadType (str(binary)): Signifies upstream load type.
+        - UpstreamMaxBinaryLoadRate (number): Signifies upstream maximum binary load rate.
+        - UpstreamMaxStepLoadRate (number): Signifies upstream maximum step load rate.
+        - UpstreamMinBinaryLoadRate (number): Signifies the upstream binary load rate.
+        - UpstreamStepFrameLossUnit (str(% | frames)): Signifies the upstream step frame loss unit.
+        - UpstreamStepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies upstream step load unit.
+        - UpstreamStepStepLoadRate (str): Signifies the upstream step load rate.
+        - UpstreamStepTolerance (number): Signifies upstream step tolerance value.
+        - UpstreamStopTestOnHighLoss (number): Signifies upstream stop test on high loss.
+        - UpstreamUsePercentOffsets (str): Signifies upstream use percent offsets.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -1463,9 +1466,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -1473,12 +1477,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -1488,9 +1490,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -1500,12 +1503,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -1515,24 +1516,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1544,18 +1538,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -1567,9 +1559,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -1579,12 +1572,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

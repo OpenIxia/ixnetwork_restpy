@@ -36,10 +36,10 @@ class SmDnsRange(Base):
 
     @property
     def CacheReplies(self):
-        """Cache DNS Replies
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Cache DNS Replies
         """
         return self._get_attribute('cacheReplies')
     @CacheReplies.setter
@@ -48,10 +48,10 @@ class SmDnsRange(Base):
 
     @property
     def EdnsReceiveBufferSize(self):
-        """UDP Payload Size
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: UDP Payload Size
         """
         return self._get_attribute('ednsReceiveBufferSize')
     @EdnsReceiveBufferSize.setter
@@ -60,10 +60,10 @@ class SmDnsRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -72,10 +72,10 @@ class SmDnsRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -84,19 +84,19 @@ class SmDnsRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def ResolveDns(self):
-        """Resolve DNS
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Resolve DNS
         """
         return self._get_attribute('resolveDns')
     @ResolveDns.setter
@@ -105,10 +105,10 @@ class SmDnsRange(Base):
 
     @property
     def ServerIp(self):
-        """DNS server IP address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: DNS server IP address
         """
         return self._get_attribute('serverIp')
     @ServerIp.setter
@@ -117,10 +117,10 @@ class SmDnsRange(Base):
 
     @property
     def UseAdditionalRecords(self):
-        """Use Additional Records if included by the server to avoid doing redundant A/AAAA queries
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use Additional Records if included by the server to avoid doing redundant A/AAAA queries
         """
         return self._get_attribute('useAdditionalRecords')
     @UseAdditionalRecords.setter
@@ -129,10 +129,10 @@ class SmDnsRange(Base):
 
     @property
     def UseEdns(self):
-        """Use EDNS
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use EDNS
         """
         return self._get_attribute('useEdns')
     @UseEdns.setter
@@ -141,10 +141,10 @@ class SmDnsRange(Base):
 
     @property
     def UseTcp(self):
-        """Use TCP connections for DNS queries instead of UDP packets
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use TCP connections for DNS queries instead of UDP packets
         """
         return self._get_attribute('useTcp')
     @UseTcp.setter
@@ -152,37 +152,40 @@ class SmDnsRange(Base):
         self._set_attribute('useTcp', value)
 
     def update(self, CacheReplies=None, EdnsReceiveBufferSize=None, Enabled=None, Name=None, ResolveDns=None, ServerIp=None, UseAdditionalRecords=None, UseEdns=None, UseTcp=None):
-        """Updates a child instance of smDnsRange on the server.
+        """Updates smDnsRange resource on the server.
 
-        Args:
-            CacheReplies (bool): Cache DNS Replies
-            EdnsReceiveBufferSize (number): UDP Payload Size
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Name (str): Name of range
-            ResolveDns (bool): Resolve DNS
-            ServerIp (str): DNS server IP address
-            UseAdditionalRecords (bool): Use Additional Records if included by the server to avoid doing redundant A/AAAA queries
-            UseEdns (bool): Use EDNS
-            UseTcp (bool): Use TCP connections for DNS queries instead of UDP packets
+        Args
+        ----
+        - CacheReplies (bool): Cache DNS Replies
+        - EdnsReceiveBufferSize (number): UDP Payload Size
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - ResolveDns (bool): Resolve DNS
+        - ServerIp (str): DNS server IP address
+        - UseAdditionalRecords (bool): Use Additional Records if included by the server to avoid doing redundant A/AAAA queries
+        - UseEdns (bool): Use EDNS
+        - UseTcp (bool): Use TCP connections for DNS queries instead of UDP packets
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -194,16 +197,15 @@ class SmDnsRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -215,16 +217,15 @@ class SmDnsRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

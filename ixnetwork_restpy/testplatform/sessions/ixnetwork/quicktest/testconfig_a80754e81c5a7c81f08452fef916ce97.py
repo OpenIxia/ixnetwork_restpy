@@ -36,10 +36,10 @@ class TestConfig(Base):
 
     @property
     def ApplyMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('applyMode')
     @ApplyMode.setter
@@ -48,10 +48,10 @@ class TestConfig(Base):
 
     @property
     def AssignGroupType(self):
-        """Assigns the group type.
-
-        Returns:
-            str(accumulated|distributed)
+        """
+        Returns
+        -------
+        - str(accumulated | distributed): Assigns the group type.
         """
         return self._get_attribute('assignGroupType')
     @AssignGroupType.setter
@@ -60,10 +60,10 @@ class TestConfig(Base):
 
     @property
     def BackoffIteration(self):
-        """This enables the test to run an extra iteration for calculating the Backoff Latency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to run an extra iteration for calculating the Backoff Latency.
         """
         return self._get_attribute('backoffIteration')
     @BackoffIteration.setter
@@ -72,10 +72,10 @@ class TestConfig(Base):
 
     @property
     def BidirectionalOptionEnabled(self):
-        """If true, enables bidirectional option.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables bidirectional option.
         """
         return self._get_attribute('bidirectionalOptionEnabled')
     @BidirectionalOptionEnabled.setter
@@ -84,10 +84,10 @@ class TestConfig(Base):
 
     @property
     def BinaryBackoff(self):
-        """Specifies the percentage of binary backoff.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the percentage of binary backoff.
         """
         return self._get_attribute('binaryBackoff')
     @BinaryBackoff.setter
@@ -96,10 +96,10 @@ class TestConfig(Base):
 
     @property
     def BinaryFrameLossUnit(self):
-        """The binary frame loss unit.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The binary frame loss unit.
         """
         return self._get_attribute('binaryFrameLossUnit')
     @BinaryFrameLossUnit.setter
@@ -108,10 +108,10 @@ class TestConfig(Base):
 
     @property
     def BinaryLoadUnit(self):
-        """The binary load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The binary load unit.
         """
         return self._get_attribute('binaryLoadUnit')
     @BinaryLoadUnit.setter
@@ -120,10 +120,10 @@ class TestConfig(Base):
 
     @property
     def BinaryResolution(self):
-        """Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
         """
         return self._get_attribute('binaryResolution')
     @BinaryResolution.setter
@@ -132,10 +132,10 @@ class TestConfig(Base):
 
     @property
     def BinarySearchType(self):
-        """The binary search type value.
-
-        Returns:
-            str(linear|perFlow|perPort|perTrafficItem)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort | perTrafficItem): The binary search type value.
         """
         return self._get_attribute('binarySearchType')
     @BinarySearchType.setter
@@ -144,10 +144,10 @@ class TestConfig(Base):
 
     @property
     def BinaryTolerance(self):
-        """The binary tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The binary tolerance level.
         """
         return self._get_attribute('binaryTolerance')
     @BinaryTolerance.setter
@@ -156,10 +156,10 @@ class TestConfig(Base):
 
     @property
     def BurstSize(self):
-        """The number of packets that are sent in a burst.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of packets that are sent in a burst.
         """
         return self._get_attribute('burstSize')
     @BurstSize.setter
@@ -168,10 +168,10 @@ class TestConfig(Base):
 
     @property
     def CalculateJitter(self):
-        """If true, calculates jitter.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates jitter.
         """
         return self._get_attribute('calculateJitter')
     @CalculateJitter.setter
@@ -180,10 +180,10 @@ class TestConfig(Base):
 
     @property
     def CalculateLatency(self):
-        """If true, calculates the latency.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, calculates the latency.
         """
         return self._get_attribute('calculateLatency')
     @CalculateLatency.setter
@@ -192,10 +192,10 @@ class TestConfig(Base):
 
     @property
     def ComboBackoff(self):
-        """The backoff combination of the test configuration.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The backoff combination of the test configuration.
         """
         return self._get_attribute('comboBackoff')
     @ComboBackoff.setter
@@ -204,10 +204,10 @@ class TestConfig(Base):
 
     @property
     def ComboFrameLossUnit(self):
-        """The frame loss unit for traffic in binary.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The frame loss unit for traffic in binary.
         """
         return self._get_attribute('comboFrameLossUnit')
     @ComboFrameLossUnit.setter
@@ -216,10 +216,10 @@ class TestConfig(Base):
 
     @property
     def ComboLoadUnit(self):
-        """The combination of load units. Possible values include:
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The combination of load units. Possible values include:
         """
         return self._get_attribute('comboLoadUnit')
     @ComboLoadUnit.setter
@@ -228,10 +228,10 @@ class TestConfig(Base):
 
     @property
     def ComboResolution(self):
-        """The combined resolution value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The combined resolution value.
         """
         return self._get_attribute('comboResolution')
     @ComboResolution.setter
@@ -240,10 +240,10 @@ class TestConfig(Base):
 
     @property
     def ComboTolerance(self):
-        """The combined tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The combined tolerance level.
         """
         return self._get_attribute('comboTolerance')
     @ComboTolerance.setter
@@ -252,10 +252,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomFrameSize(self):
-        """If true, frame sizes are counted at random.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: If true, frame sizes are counted at random.
         """
         return self._get_attribute('countRandomFrameSize')
     @CountRandomFrameSize.setter
@@ -264,10 +264,10 @@ class TestConfig(Base):
 
     @property
     def CountRandomLoadRate(self):
-        """The random count of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The random count of the load rate.
         """
         return self._get_attribute('countRandomLoadRate')
     @CountRandomLoadRate.setter
@@ -276,10 +276,10 @@ class TestConfig(Base):
 
     @property
     def CustomLoadUnit(self):
-        """Specifies the custom load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the custom load unit.
         """
         return self._get_attribute('customLoadUnit')
     @CustomLoadUnit.setter
@@ -288,10 +288,10 @@ class TestConfig(Base):
 
     @property
     def DelayAfterTransmit(self):
-        """The amount of delay after every transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The amount of delay after every transmit.
         """
         return self._get_attribute('delayAfterTransmit')
     @DelayAfterTransmit.setter
@@ -300,10 +300,10 @@ class TestConfig(Base):
 
     @property
     def Duration(self):
-        """The duration of the test in hours, which is used to calculate the number of frames to transmit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The duration of the test in hours, which is used to calculate the number of frames to transmit.
         """
         return self._get_attribute('duration')
     @Duration.setter
@@ -312,10 +312,10 @@ class TestConfig(Base):
 
     @property
     def EnableBackoffIteration(self):
-        """If true, enables back off iteration test.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables back off iteration test.
         """
         return self._get_attribute('enableBackoffIteration')
     @EnableBackoffIteration.setter
@@ -324,10 +324,10 @@ class TestConfig(Base):
 
     @property
     def EnableDataIntegrity(self):
-        """enableDataIntegrity
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: enableDataIntegrity
         """
         return self._get_attribute('enableDataIntegrity')
     @EnableDataIntegrity.setter
@@ -336,10 +336,10 @@ class TestConfig(Base):
 
     @property
     def EnableExtraIterations(self):
-        """If true, more iterations are performed.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, more iterations are performed.
         """
         return self._get_attribute('enableExtraIterations')
     @EnableExtraIterations.setter
@@ -348,10 +348,10 @@ class TestConfig(Base):
 
     @property
     def EnableFastConvergence(self):
-        """If true, the test perform iterations using the fast convergence duration configured.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the test perform iterations using the fast convergence duration configured.
         """
         return self._get_attribute('enableFastConvergence')
     @EnableFastConvergence.setter
@@ -360,10 +360,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer1Rate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLayer1Rate')
     @EnableLayer1Rate.setter
@@ -372,10 +372,10 @@ class TestConfig(Base):
 
     @property
     def EnableLayer2(self):
-        """If true, enables Layer2 protocols.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables Layer2 protocols.
         """
         return self._get_attribute('enableLayer2')
     @EnableLayer2.setter
@@ -384,10 +384,10 @@ class TestConfig(Base):
 
     @property
     def EnableLeaveGroup(self):
-        """If true, the leave group is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the leave group is enabled.
         """
         return self._get_attribute('enableLeaveGroup')
     @EnableLeaveGroup.setter
@@ -396,10 +396,10 @@ class TestConfig(Base):
 
     @property
     def EnableMinFrameSize(self):
-        """If enabled, it shows the minimum frame size.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, it shows the minimum frame size.
         """
         return self._get_attribute('enableMinFrameSize')
     @EnableMinFrameSize.setter
@@ -408,10 +408,10 @@ class TestConfig(Base):
 
     @property
     def EnableMulticastQuerier(self):
-        """Enable Multicast Querier Settings
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Multicast Querier Settings
         """
         return self._get_attribute('enableMulticastQuerier')
     @EnableMulticastQuerier.setter
@@ -420,10 +420,10 @@ class TestConfig(Base):
 
     @property
     def EnableOldStatsForReef(self):
-        """Enable old statistics for reef.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable old statistics for reef.
         """
         return self._get_attribute('enableOldStatsForReef')
     @EnableOldStatsForReef.setter
@@ -432,10 +432,10 @@ class TestConfig(Base):
 
     @property
     def EnableSaturationIteration(self):
-        """If true, SaturationIteration in enabled .
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, SaturationIteration in enabled .
         """
         return self._get_attribute('enableSaturationIteration')
     @EnableSaturationIteration.setter
@@ -444,10 +444,10 @@ class TestConfig(Base):
 
     @property
     def EnableStopTestOnHighLoss(self):
-        """The test stops in case of a high loss.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The test stops in case of a high loss.
         """
         return self._get_attribute('enableStopTestOnHighLoss')
     @EnableStopTestOnHighLoss.setter
@@ -456,10 +456,10 @@ class TestConfig(Base):
 
     @property
     def ExtraIterationOffsets(self):
-        """This enables the test to run an extra iteration.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This enables the test to run an extra iteration.
         """
         return self._get_attribute('extraIterationOffsets')
     @ExtraIterationOffsets.setter
@@ -468,10 +468,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergence(self):
-        """If true, enables fast convergence.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, enables fast convergence.
         """
         return self._get_attribute('fastConvergence')
     @FastConvergence.setter
@@ -480,10 +480,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceDuration(self):
-        """This enables the test to perform iterations using the fast convergence duration configured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to perform iterations using the fast convergence duration configured.
         """
         return self._get_attribute('fastConvergenceDuration')
     @FastConvergenceDuration.setter
@@ -492,10 +492,10 @@ class TestConfig(Base):
 
     @property
     def FastConvergenceThreshold(self):
-        """This enables the test to perform iterations using the fast convergence threshold configured.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to perform iterations using the fast convergence threshold configured.
         """
         return self._get_attribute('fastConvergenceThreshold')
     @FastConvergenceThreshold.setter
@@ -504,10 +504,10 @@ class TestConfig(Base):
 
     @property
     def FirstMulticastDestMACAddress(self):
-        """The first multicast destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The first multicast destination MAC address.
         """
         return self._get_attribute('firstMulticastDestMACAddress')
     @FirstMulticastDestMACAddress.setter
@@ -516,10 +516,10 @@ class TestConfig(Base):
 
     @property
     def FloodedFramesEnabled(self):
-        """Show Flooded Frames
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Show Flooded Frames
         """
         return self._get_attribute('floodedFramesEnabled')
     @FloodedFramesEnabled.setter
@@ -528,10 +528,10 @@ class TestConfig(Base):
 
     @property
     def ForceRegenerate(self):
-        """Initiates a forced regeneration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Initiates a forced regeneration.
         """
         return self._get_attribute('forceRegenerate')
     @ForceRegenerate.setter
@@ -540,10 +540,10 @@ class TestConfig(Base):
 
     @property
     def FrameLossUnit(self):
-        """The frame loss unit.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The frame loss unit.
         """
         return self._get_attribute('frameLossUnit')
     @FrameLossUnit.setter
@@ -552,10 +552,10 @@ class TestConfig(Base):
 
     @property
     def FrameSizeMode(self):
-        """This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
-
-        Returns:
-            str(custom|fixed|increment|random)
+        """
+        Returns
+        -------
+        - str(custom | fixed | increment | random): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
         """
         return self._get_attribute('frameSizeMode')
     @FrameSizeMode.setter
@@ -564,10 +564,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeImixList(self):
-        """The list of frame size to be used
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The list of frame size to be used
         """
         return self._get_attribute('framesizeImixList')
     @FramesizeImixList.setter
@@ -576,10 +576,10 @@ class TestConfig(Base):
 
     @property
     def FramesizeList(self):
-        """The list of frame sizes.
-
-        Returns:
-            list(str)
+        """
+        Returns
+        -------
+        - list(str): The list of frame sizes.
         """
         return self._get_attribute('framesizeList')
     @FramesizeList.setter
@@ -588,10 +588,10 @@ class TestConfig(Base):
 
     @property
     def Gap(self):
-        """It signifies the gap value for the protocol.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It signifies the gap value for the protocol.
         """
         return self._get_attribute('gap')
     @Gap.setter
@@ -600,10 +600,10 @@ class TestConfig(Base):
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
-        """If true, enables the tracking option in aggregation files.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the tracking option in aggregation files.
         """
         return self._get_attribute('generateTrackingOptionAggregationFiles')
     @GenerateTrackingOptionAggregationFiles.setter
@@ -612,10 +612,10 @@ class TestConfig(Base):
 
     @property
     def GroupCapacityGreaterThan(self):
-        """The integer that distinguishes the group capacity that could be greater than the specified integer.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that distinguishes the group capacity that could be greater than the specified integer.
         """
         return self._get_attribute('groupCapacityGreaterThan')
     @GroupCapacityGreaterThan.setter
@@ -624,10 +624,10 @@ class TestConfig(Base):
 
     @property
     def GroupDistributionType(self):
-        """The group distribution type.
-
-        Returns:
-            str(acrossHosts|acrossPorts)
+        """
+        Returns
+        -------
+        - str(acrossHosts | acrossPorts): The group distribution type.
         """
         return self._get_attribute('groupDistributionType')
     @GroupDistributionType.setter
@@ -636,10 +636,10 @@ class TestConfig(Base):
 
     @property
     def IgmpV1Timeout(self):
-        """The IGMPv1 timeout value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The IGMPv1 timeout value.
         """
         return self._get_attribute('igmpV1Timeout')
     @IgmpV1Timeout.setter
@@ -648,10 +648,10 @@ class TestConfig(Base):
 
     @property
     def IgmpVersion(self):
-        """The igmp version .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The igmp version .
         """
         return self._get_attribute('igmpVersion')
     @IgmpVersion.setter
@@ -660,10 +660,10 @@ class TestConfig(Base):
 
     @property
     def Igmpv3MessageType(self):
-        """It gives details about the igmpv3 message type in the test configuration
-
-        Returns:
-            str(exclude|include)
+        """
+        Returns
+        -------
+        - str(exclude | include): It gives details about the igmpv3 message type in the test configuration
         """
         return self._get_attribute('igmpv3MessageType')
     @Igmpv3MessageType.setter
@@ -672,10 +672,10 @@ class TestConfig(Base):
 
     @property
     def Igmpv3SourceAddrList(self):
-        """It gives details about the igmpv3 source address list in the test configuration
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the igmpv3 source address list in the test configuration
         """
         return self._get_attribute('igmpv3SourceAddrList')
     @Igmpv3SourceAddrList.setter
@@ -684,10 +684,10 @@ class TestConfig(Base):
 
     @property
     def ImixAdd(self):
-        """Adds an imix data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Adds an imix data.
         """
         return self._get_attribute('imixAdd')
     @ImixAdd.setter
@@ -696,10 +696,10 @@ class TestConfig(Base):
 
     @property
     def ImixData(self):
-        """Displays the imix Data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the imix Data.
         """
         return self._get_attribute('imixData')
     @ImixData.setter
@@ -708,10 +708,10 @@ class TestConfig(Base):
 
     @property
     def ImixDataQoS(self):
-        """Enables Imix Data QoS
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables Imix Data QoS
         """
         return self._get_attribute('imixDataQoS')
     @ImixDataQoS.setter
@@ -720,10 +720,10 @@ class TestConfig(Base):
 
     @property
     def ImixDelete(self):
-        """Deletes the imix data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Deletes the imix data.
         """
         return self._get_attribute('imixDelete')
     @ImixDelete.setter
@@ -732,10 +732,10 @@ class TestConfig(Base):
 
     @property
     def ImixDistribution(self):
-        """Specifies the imix distribution unit.
-
-        Returns:
-            str(bwpercentage|weight)
+        """
+        Returns
+        -------
+        - str(bwpercentage | weight): Specifies the imix distribution unit.
         """
         return self._get_attribute('imixDistribution')
     @ImixDistribution.setter
@@ -744,10 +744,10 @@ class TestConfig(Base):
 
     @property
     def ImixEnabled(self):
-        """If True, Enables the imix value.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If True, Enables the imix value.
         """
         return self._get_attribute('imixEnabled')
     @ImixEnabled.setter
@@ -756,10 +756,10 @@ class TestConfig(Base):
 
     @property
     def ImixTemplates(self):
-        """Specefies the imix templates.
-
-        Returns:
-            str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)
+        """
+        Returns
+        -------
+        - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Specefies the imix templates.
         """
         return self._get_attribute('imixTemplates')
     @ImixTemplates.setter
@@ -768,10 +768,10 @@ class TestConfig(Base):
 
     @property
     def ImixTrafficType(self):
-        """Displays the imix traffic type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Displays the imix traffic type.
         """
         return self._get_attribute('imixTrafficType')
     @ImixTrafficType.setter
@@ -780,10 +780,10 @@ class TestConfig(Base):
 
     @property
     def IncMulticastDestMACAddress(self):
-        """The incrementing multicast destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incrementing multicast destination MAC address.
         """
         return self._get_attribute('incMulticastDestMACAddress')
     @IncMulticastDestMACAddress.setter
@@ -792,10 +792,10 @@ class TestConfig(Base):
 
     @property
     def IncPortMACAddress(self):
-        """The incrementing MAC address of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incrementing MAC address of the port.
         """
         return self._get_attribute('incPortMACAddress')
     @IncPortMACAddress.setter
@@ -804,10 +804,10 @@ class TestConfig(Base):
 
     @property
     def IncrAddresses(self):
-        """The incremental address.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental address.
         """
         return self._get_attribute('incrAddresses')
     @IncrAddresses.setter
@@ -816,10 +816,10 @@ class TestConfig(Base):
 
     @property
     def IncrStep(self):
-        """The option to increment step value.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The option to increment step value.
         """
         return self._get_attribute('incrStep')
     @IncrStep.setter
@@ -828,10 +828,10 @@ class TestConfig(Base):
 
     @property
     def IncrementLoadRate(self):
-        """The incremental value of load rate.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The incremental value of load rate.
         """
         return self._get_attribute('incrementLoadRate')
     @IncrementLoadRate.setter
@@ -840,10 +840,10 @@ class TestConfig(Base):
 
     @property
     def IncrementLoadUnit(self):
-        """The incremental value of the load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The incremental value of the load unit.
         """
         return self._get_attribute('incrementLoadUnit')
     @IncrementLoadUnit.setter
@@ -852,10 +852,10 @@ class TestConfig(Base):
 
     @property
     def InitialBinaryLoadRate(self):
-        """Specifies the initial rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the initial rate of the binary algorithm.
         """
         return self._get_attribute('initialBinaryLoadRate')
     @InitialBinaryLoadRate.setter
@@ -864,10 +864,10 @@ class TestConfig(Base):
 
     @property
     def InitialComboLoadRate(self):
-        """The initial combination value of the load rate .
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial combination value of the load rate .
         """
         return self._get_attribute('initialComboLoadRate')
     @InitialComboLoadRate.setter
@@ -876,10 +876,10 @@ class TestConfig(Base):
 
     @property
     def InitialIncrementLoadRate(self):
-        """The initial incremental value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial incremental value of the load rate.
         """
         return self._get_attribute('initialIncrementLoadRate')
     @InitialIncrementLoadRate.setter
@@ -888,10 +888,10 @@ class TestConfig(Base):
 
     @property
     def InitialStepLoadRate(self):
-        """The initial step value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial step value of the load rate.
         """
         return self._get_attribute('initialStepLoadRate')
     @InitialStepLoadRate.setter
@@ -900,10 +900,10 @@ class TestConfig(Base):
 
     @property
     def Ipv4Address(self):
-        """The allocated IPv4 address for this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The allocated IPv4 address for this interface.
         """
         return self._get_attribute('ipv4Address')
     @Ipv4Address.setter
@@ -912,10 +912,10 @@ class TestConfig(Base):
 
     @property
     def Ipv6Address(self):
-        """The allocated IPv6address for this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The allocated IPv6address for this interface.
         """
         return self._get_attribute('ipv6Address')
     @Ipv6Address.setter
@@ -924,10 +924,10 @@ class TestConfig(Base):
 
     @property
     def IsIPv6(self):
-        """The allocated IPv6address for this interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The allocated IPv6address for this interface.
         """
         return self._get_attribute('isIPv6')
     @IsIPv6.setter
@@ -936,10 +936,10 @@ class TestConfig(Base):
 
     @property
     def IsMulticastAutomaticFrameData(self):
-        """The multicast automatic frame data.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The multicast automatic frame data.
         """
         return self._get_attribute('isMulticastAutomaticFrameData')
     @IsMulticastAutomaticFrameData.setter
@@ -948,10 +948,10 @@ class TestConfig(Base):
 
     @property
     def IsNewMode(self):
-        """Is New Mode
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Is New Mode
         """
         return self._get_attribute('isNewMode')
     @IsNewMode.setter
@@ -960,10 +960,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveMultiplier(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('joinLeaveMultiplier')
     @JoinLeaveMultiplier.setter
@@ -972,10 +972,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveRate(self):
-        """The join leave rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The join leave rate.
         """
         return self._get_attribute('joinLeaveRate')
     @JoinLeaveRate.setter
@@ -984,10 +984,10 @@ class TestConfig(Base):
 
     @property
     def JoinLeaveWaitTime(self):
-        """The wait time for join delay.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The wait time for join delay.
         """
         return self._get_attribute('joinLeaveWaitTime')
     @JoinLeaveWaitTime.setter
@@ -996,10 +996,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBins(self):
-        """DEPRECATED Sets the latency bins statistics
-
-        Returns:
-            str
+        """DEPRECATED 
+        Returns
+        -------
+        - str: Sets the latency bins statistics
         """
         return self._get_attribute('latencyBins')
     @LatencyBins.setter
@@ -1008,10 +1008,10 @@ class TestConfig(Base):
 
     @property
     def LatencyBinsEnabled(self):
-        """Enables the latency bins statistics
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the latency bins statistics
         """
         return self._get_attribute('latencyBinsEnabled')
     @LatencyBinsEnabled.setter
@@ -1020,10 +1020,10 @@ class TestConfig(Base):
 
     @property
     def LatencyType(self):
-        """The type of latency.
-
-        Returns:
-            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | forwardingDelay | mef | storeForward): The type of latency.
         """
         return self._get_attribute('latencyType')
     @LatencyType.setter
@@ -1032,10 +1032,10 @@ class TestConfig(Base):
 
     @property
     def LearnRateMac(self):
-        """Rates learning frames to MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Rates learning frames to MAC address.
         """
         return self._get_attribute('learnRateMac')
     @LearnRateMac.setter
@@ -1044,10 +1044,10 @@ class TestConfig(Base):
 
     @property
     def LearnSendMac(self):
-        """Sends learning frames to MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sends learning frames to MAC address.
         """
         return self._get_attribute('learnSendMac')
     @LearnSendMac.setter
@@ -1056,10 +1056,10 @@ class TestConfig(Base):
 
     @property
     def LearnSendMacEnabled(self):
-        """Send Mac learning
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Send Mac learning
         """
         return self._get_attribute('learnSendMacEnabled')
     @LearnSendMacEnabled.setter
@@ -1068,10 +1068,10 @@ class TestConfig(Base):
 
     @property
     def LoadInitialRate(self):
-        """The initial rate of the load.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The initial rate of the load.
         """
         return self._get_attribute('loadInitialRate')
     @LoadInitialRate.setter
@@ -1080,10 +1080,10 @@ class TestConfig(Base):
 
     @property
     def LoadRateList(self):
-        """Enters the Load Rate List.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Enters the Load Rate List.
         """
         return self._get_attribute('loadRateList')
     @LoadRateList.setter
@@ -1092,10 +1092,10 @@ class TestConfig(Base):
 
     @property
     def LoadType(self):
-        """The type of the payload setting.
-
-        Returns:
-            str(binary|combo|custom|increment|quickSearch|random|step)
+        """
+        Returns
+        -------
+        - str(binary | combo | custom | increment | quickSearch | random | step): The type of the payload setting.
         """
         return self._get_attribute('loadType')
     @LoadType.setter
@@ -1104,10 +1104,10 @@ class TestConfig(Base):
 
     @property
     def MapType(self):
-        """The mapping type.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The mapping type.
         """
         return self._get_attribute('mapType')
     @MapType.setter
@@ -1116,10 +1116,10 @@ class TestConfig(Base):
 
     @property
     def MaxBinaryLoadRate(self):
-        """Specifies the maximum rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the maximum rate of the binary algorithm.
         """
         return self._get_attribute('maxBinaryLoadRate')
     @MaxBinaryLoadRate.setter
@@ -1128,10 +1128,10 @@ class TestConfig(Base):
 
     @property
     def MaxComboLoadRate(self):
-        """The maximum value of the load rate Combo Load Type.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum value of the load rate Combo Load Type.
         """
         return self._get_attribute('maxComboLoadRate')
     @MaxComboLoadRate.setter
@@ -1140,10 +1140,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementFrameSize(self):
-        """The integer that states the maximum amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the maximum amount to which the frame size can be incremented.
         """
         return self._get_attribute('maxIncrementFrameSize')
     @MaxIncrementFrameSize.setter
@@ -1152,10 +1152,10 @@ class TestConfig(Base):
 
     @property
     def MaxIncrementLoadRate(self):
-        """The maximum incremental value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum incremental value of the load rate.
         """
         return self._get_attribute('maxIncrementLoadRate')
     @MaxIncrementLoadRate.setter
@@ -1164,10 +1164,10 @@ class TestConfig(Base):
 
     @property
     def MaxQuickSearchLoadRate(self):
-        """Sets the maximum QuickSearch load rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the maximum QuickSearch load rate
         """
         return self._get_attribute('maxQuickSearchLoadRate')
     @MaxQuickSearchLoadRate.setter
@@ -1176,10 +1176,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomFrameSize(self):
-        """The integer that states the maximum random amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the maximum random amount to which the frame size can be incremented.
         """
         return self._get_attribute('maxRandomFrameSize')
     @MaxRandomFrameSize.setter
@@ -1188,10 +1188,10 @@ class TestConfig(Base):
 
     @property
     def MaxRandomLoadRate(self):
-        """The maximum random value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random value of the load rate.
         """
         return self._get_attribute('maxRandomLoadRate')
     @MaxRandomLoadRate.setter
@@ -1200,10 +1200,10 @@ class TestConfig(Base):
 
     @property
     def MaxStepLoadRate(self):
-        """The maximum step value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum step value of the load rate.
         """
         return self._get_attribute('maxStepLoadRate')
     @MaxStepLoadRate.setter
@@ -1212,10 +1212,10 @@ class TestConfig(Base):
 
     @property
     def MinBinaryLoadRate(self):
-        """Specifies the minimum rate of the binary algorithm.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specifies the minimum rate of the binary algorithm.
         """
         return self._get_attribute('minBinaryLoadRate')
     @MinBinaryLoadRate.setter
@@ -1224,10 +1224,10 @@ class TestConfig(Base):
 
     @property
     def MinComboLoadRate(self):
-        """The minimum combination load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The minimum combination load rate.
         """
         return self._get_attribute('minComboLoadRate')
     @MinComboLoadRate.setter
@@ -1236,10 +1236,10 @@ class TestConfig(Base):
 
     @property
     def MinIncrementFrameSize(self):
-        """The integer that states the minimum amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the minimum amount to which the frame size can be incremented.
         """
         return self._get_attribute('minIncrementFrameSize')
     @MinIncrementFrameSize.setter
@@ -1248,10 +1248,10 @@ class TestConfig(Base):
 
     @property
     def MinQuickSearchLoadRate(self):
-        """Sets the minum Quick Search load rate
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the minum Quick Search load rate
         """
         return self._get_attribute('minQuickSearchLoadRate')
     @MinQuickSearchLoadRate.setter
@@ -1260,10 +1260,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomFrameSize(self):
-        """The integer that states the minimum random amount to which the frame size can be incremented.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer that states the minimum random amount to which the frame size can be incremented.
         """
         return self._get_attribute('minRandomFrameSize')
     @MinRandomFrameSize.setter
@@ -1272,10 +1272,10 @@ class TestConfig(Base):
 
     @property
     def MinRandomLoadRate(self):
-        """The maximum random value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The maximum random value of the load rate.
         """
         return self._get_attribute('minRandomLoadRate')
     @MinRandomLoadRate.setter
@@ -1284,10 +1284,10 @@ class TestConfig(Base):
 
     @property
     def MixedClassMulticast(self):
-        """The mixed multicast class.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The mixed multicast class.
         """
         return self._get_attribute('mixedClassMulticast')
     @MixedClassMulticast.setter
@@ -1296,10 +1296,10 @@ class TestConfig(Base):
 
     @property
     def MldVersion(self):
-        """The version of the MLD messages.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The version of the MLD messages.
         """
         return self._get_attribute('mldVersion')
     @MldVersion.setter
@@ -1308,10 +1308,10 @@ class TestConfig(Base):
 
     @property
     def NumAddresses(self):
-        """The integer value for the number of addresses.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value for the number of addresses.
         """
         return self._get_attribute('numAddresses')
     @NumAddresses.setter
@@ -1320,10 +1320,10 @@ class TestConfig(Base):
 
     @property
     def NumIterations(self):
-        """The integer value for the number of iterations.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value for the number of iterations.
         """
         return self._get_attribute('numIterations')
     @NumIterations.setter
@@ -1332,10 +1332,10 @@ class TestConfig(Base):
 
     @property
     def Numtrials(self):
-        """The integer value that states the number of trials permitted.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The integer value that states the number of trials permitted.
         """
         return self._get_attribute('numtrials')
     @Numtrials.setter
@@ -1344,10 +1344,10 @@ class TestConfig(Base):
 
     @property
     def PercentMulticastFrames(self):
-        """The percentage of multicast frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The percentage of multicast frames.
         """
         return self._get_attribute('percentMulticastFrames')
     @PercentMulticastFrames.setter
@@ -1356,10 +1356,10 @@ class TestConfig(Base):
 
     @property
     def PercentUnicastFrames(self):
-        """The percentage of unicast frames.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The percentage of unicast frames.
         """
         return self._get_attribute('percentUnicastFrames')
     @PercentUnicastFrames.setter
@@ -1368,10 +1368,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayEnabled(self):
-        """Enable Delay Between Ports
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable Delay Between Ports
         """
         return self._get_attribute('portDelayEnabled')
     @PortDelayEnabled.setter
@@ -1380,10 +1380,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayUnit(self):
-        """Sets the port delay unit in which it will be measured
-
-        Returns:
-            str(bytes|nanoseconds)
+        """
+        Returns
+        -------
+        - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured
         """
         return self._get_attribute('portDelayUnit')
     @PortDelayUnit.setter
@@ -1392,10 +1392,10 @@ class TestConfig(Base):
 
     @property
     def PortDelayValue(self):
-        """Sets the port delay value
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the port delay value
         """
         return self._get_attribute('portDelayValue')
     @PortDelayValue.setter
@@ -1404,10 +1404,10 @@ class TestConfig(Base):
 
     @property
     def PortMACAddress(self):
-        """The MAC address of the port.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the port.
         """
         return self._get_attribute('portMACAddress')
     @PortMACAddress.setter
@@ -1416,10 +1416,10 @@ class TestConfig(Base):
 
     @property
     def ProtocolItem(self):
-        """Protocol Items
-
-        Returns:
-            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        Returns
+        -------
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute('protocolItem')
     @ProtocolItem.setter
@@ -1428,10 +1428,10 @@ class TestConfig(Base):
 
     @property
     def QuickBackoffIteration(self):
-        """Sets the quicksearch backoff iteration
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quicksearch backoff iteration
         """
         return self._get_attribute('quickBackoffIteration')
     @QuickBackoffIteration.setter
@@ -1440,10 +1440,10 @@ class TestConfig(Base):
 
     @property
     def QuickEnableBackoffIteration(self):
-        """Enables the quick search backoff iteration
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the quick search backoff iteration
         """
         return self._get_attribute('quickEnableBackoffIteration')
     @QuickEnableBackoffIteration.setter
@@ -1452,10 +1452,10 @@ class TestConfig(Base):
 
     @property
     def QuickEnableSaturationIteration(self):
-        """Enables the Quick Search saturation iteration
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables the Quick Search saturation iteration
         """
         return self._get_attribute('quickEnableSaturationIteration')
     @QuickEnableSaturationIteration.setter
@@ -1464,10 +1464,10 @@ class TestConfig(Base):
 
     @property
     def QuickSaturationIteration(self):
-        """Sets the quick search saturation iteration
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search saturation iteration
         """
         return self._get_attribute('quickSaturationIteration')
     @QuickSaturationIteration.setter
@@ -1476,10 +1476,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchFrameLossUnit(self):
-        """Sets the quick search frame loss unit
-
-        Returns:
-            str(%)
+        """
+        Returns
+        -------
+        - str(%): Sets the quick search frame loss unit
         """
         return self._get_attribute('quickSearchFrameLossUnit')
     @QuickSearchFrameLossUnit.setter
@@ -1488,10 +1488,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchLoadUnit(self):
-        """Sets the quick search load unit
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Sets the quick search load unit
         """
         return self._get_attribute('quickSearchLoadUnit')
     @QuickSearchLoadUnit.setter
@@ -1500,10 +1500,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchResolution(self):
-        """Sets the quick search resolution
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search resolution
         """
         return self._get_attribute('quickSearchResolution')
     @QuickSearchResolution.setter
@@ -1512,10 +1512,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchSearchType(self):
-        """Sets the quick search type
-
-        Returns:
-            str(linear|perFlow|perPort|perTrafficItem)
+        """
+        Returns
+        -------
+        - str(linear | perFlow | perPort | perTrafficItem): Sets the quick search type
         """
         return self._get_attribute('quickSearchSearchType')
     @QuickSearchSearchType.setter
@@ -1524,10 +1524,10 @@ class TestConfig(Base):
 
     @property
     def QuickSearchTolerance(self):
-        """Sets the quick search tolerance
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the quick search tolerance
         """
         return self._get_attribute('quickSearchTolerance')
     @QuickSearchTolerance.setter
@@ -1536,10 +1536,10 @@ class TestConfig(Base):
 
     @property
     def RandomLoadUnit(self):
-        """The random values of the load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The random values of the load unit.
         """
         return self._get_attribute('randomLoadUnit')
     @RandomLoadUnit.setter
@@ -1548,10 +1548,10 @@ class TestConfig(Base):
 
     @property
     def ReportSequenceError(self):
-        """If enabled, it reports sequence error.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If enabled, it reports sequence error.
         """
         return self._get_attribute('reportSequenceError')
     @ReportSequenceError.setter
@@ -1560,10 +1560,10 @@ class TestConfig(Base):
 
     @property
     def ReportTputRateUnit(self):
-        """The throughput rate unit.
-
-        Returns:
-            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        Returns
+        -------
+        - str(gbps | gBps | kbps | kBps | mbps | mBps): The throughput rate unit.
         """
         return self._get_attribute('reportTputRateUnit')
     @ReportTputRateUnit.setter
@@ -1572,10 +1572,10 @@ class TestConfig(Base):
 
     @property
     def RouterAlert(self):
-        """The router alert selected from the Hop-by-hop Options.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: The router alert selected from the Hop-by-hop Options.
         """
         return self._get_attribute('routerAlert')
     @RouterAlert.setter
@@ -1584,10 +1584,10 @@ class TestConfig(Base):
 
     @property
     def SaturationIteration(self):
-        """This enables the test to run an extra iteration for calculating the Saturation latency.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This enables the test to run an extra iteration for calculating the Saturation latency.
         """
         return self._get_attribute('saturationIteration')
     @SaturationIteration.setter
@@ -1596,10 +1596,10 @@ class TestConfig(Base):
 
     @property
     def ShowDetailedBinaryResults(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('showDetailedBinaryResults')
     @ShowDetailedBinaryResults.setter
@@ -1608,10 +1608,10 @@ class TestConfig(Base):
 
     @property
     def StepComboLoadRate(self):
-        """The step value of combination load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step value of combination load rate.
         """
         return self._get_attribute('stepComboLoadRate')
     @StepComboLoadRate.setter
@@ -1620,10 +1620,10 @@ class TestConfig(Base):
 
     @property
     def StepFrameLossUnit(self):
-        """The frame loss unit for traffic.
-
-        Returns:
-            str(%|frames)
+        """
+        Returns
+        -------
+        - str(% | frames): The frame loss unit for traffic.
         """
         return self._get_attribute('stepFrameLossUnit')
     @StepFrameLossUnit.setter
@@ -1632,10 +1632,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementFrameSize(self):
-        """The step to increment the frame size.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step to increment the frame size.
         """
         return self._get_attribute('stepIncrementFrameSize')
     @StepIncrementFrameSize.setter
@@ -1644,10 +1644,10 @@ class TestConfig(Base):
 
     @property
     def StepIncrementLoadRate(self):
-        """The step incremental value of the load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step incremental value of the load rate.
         """
         return self._get_attribute('stepIncrementLoadRate')
     @StepIncrementLoadRate.setter
@@ -1656,10 +1656,10 @@ class TestConfig(Base):
 
     @property
     def StepLoadUnit(self):
-        """Specifies the step rate of the load unit.
-
-        Returns:
-            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the step rate of the load unit.
         """
         return self._get_attribute('stepLoadUnit')
     @StepLoadUnit.setter
@@ -1668,10 +1668,10 @@ class TestConfig(Base):
 
     @property
     def StepStepLoadRate(self):
-        """The incremental step value of load rate.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The incremental step value of load rate.
         """
         return self._get_attribute('stepStepLoadRate')
     @StepStepLoadRate.setter
@@ -1680,10 +1680,10 @@ class TestConfig(Base):
 
     @property
     def StepTolerance(self):
-        """The step value of the tolerance level.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The step value of the tolerance level.
         """
         return self._get_attribute('stepTolerance')
     @StepTolerance.setter
@@ -1692,10 +1692,10 @@ class TestConfig(Base):
 
     @property
     def StopTestOnHighLoss(self):
-        """It stops test on high loss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It stops test on high loss.
         """
         return self._get_attribute('stopTestOnHighLoss')
     @StopTestOnHighLoss.setter
@@ -1704,10 +1704,10 @@ class TestConfig(Base):
 
     @property
     def SupportedTrafficTypes(self):
-        """The traffic types supported.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The traffic types supported.
         """
         return self._get_attribute('supportedTrafficTypes')
     @SupportedTrafficTypes.setter
@@ -1716,10 +1716,10 @@ class TestConfig(Base):
 
     @property
     def TestTrafficType(self):
-        """It signifies the test traffic type value.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It signifies the test traffic type value.
         """
         return self._get_attribute('testTrafficType')
     @TestTrafficType.setter
@@ -1728,10 +1728,10 @@ class TestConfig(Base):
 
     @property
     def TrafficDistribution(self):
-        """Sets the traffic distribution type
-
-        Returns:
-            str(mixed|multicast|unicast)
+        """
+        Returns
+        -------
+        - str(mixed | multicast | unicast): Sets the traffic distribution type
         """
         return self._get_attribute('trafficDistribution')
     @TrafficDistribution.setter
@@ -1740,10 +1740,10 @@ class TestConfig(Base):
 
     @property
     def TxDelay(self):
-        """the delay recorded in the transmit port.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: the delay recorded in the transmit port.
         """
         return self._get_attribute('txDelay')
     @TxDelay.setter
@@ -1752,10 +1752,10 @@ class TestConfig(Base):
 
     @property
     def UnchangedInitial(self):
-        """The first value of an unchanged parameter.
-
-        Returns:
-            str(False|True)
+        """
+        Returns
+        -------
+        - str(False | True): The first value of an unchanged parameter.
         """
         return self._get_attribute('unchangedInitial')
     @UnchangedInitial.setter
@@ -1764,10 +1764,10 @@ class TestConfig(Base):
 
     @property
     def UsePercentOffsets(self):
-        """If true, sets the offset value in percentage.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: If true, sets the offset value in percentage.
         """
         return self._get_attribute('usePercentOffsets')
     @UsePercentOffsets.setter
@@ -1775,168 +1775,171 @@ class TestConfig(Base):
         self._set_attribute('usePercentOffsets', value)
 
     def update(self, ApplyMode=None, AssignGroupType=None, BackoffIteration=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CountRandomLoadRate=None, CustomLoadUnit=None, DelayAfterTransmit=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableLayer2=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergence=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FirstMulticastDestMACAddress=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, ImixAdd=None, ImixData=None, ImixDataQoS=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncMulticastDestMACAddress=None, IncPortMACAddress=None, IncrAddresses=None, IncrStep=None, IncrementLoadRate=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, IsNewMode=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LearnRateMac=None, LearnSendMac=None, LearnSendMacEnabled=None, LoadInitialRate=None, LoadRateList=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinIncrementFrameSize=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, MixedClassMulticast=None, MldVersion=None, NumAddresses=None, NumIterations=None, Numtrials=None, PercentMulticastFrames=None, PercentUnicastFrames=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortMACAddress=None, ProtocolItem=None, QuickBackoffIteration=None, QuickEnableBackoffIteration=None, QuickEnableSaturationIteration=None, QuickSaturationIteration=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RandomLoadUnit=None, ReportSequenceError=None, ReportTputRateUnit=None, RouterAlert=None, SaturationIteration=None, ShowDetailedBinaryResults=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, SupportedTrafficTypes=None, TestTrafficType=None, TrafficDistribution=None, TxDelay=None, UnchangedInitial=None, UsePercentOffsets=None):
-        """Updates a child instance of testConfig on the server.
+        """Updates testConfig resource on the server.
 
-        Args:
-            ApplyMode (str): NOT DEFINED
-            AssignGroupType (str(accumulated|distributed)): Assigns the group type.
-            BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
-            BidirectionalOptionEnabled (bool): If true, enables bidirectional option.
-            BinaryBackoff (number): Specifies the percentage of binary backoff.
-            BinaryFrameLossUnit (str(%|frames)): The binary frame loss unit.
-            BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The binary load unit.
-            BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-            BinarySearchType (str(linear|perFlow|perPort|perTrafficItem)): The binary search type value.
-            BinaryTolerance (number): The binary tolerance level.
-            BurstSize (number): The number of packets that are sent in a burst.
-            CalculateJitter (bool): If true, calculates jitter.
-            CalculateLatency (bool): If true, calculates the latency.
-            ComboBackoff (number): The backoff combination of the test configuration.
-            ComboFrameLossUnit (str(%|frames)): The frame loss unit for traffic in binary.
-            ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The combination of load units. Possible values include:
-            ComboResolution (number): The combined resolution value.
-            ComboTolerance (number): The combined tolerance level.
-            CountRandomFrameSize (number): If true, frame sizes are counted at random.
-            CountRandomLoadRate (number): The random count of the load rate.
-            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
-            DelayAfterTransmit (number): The amount of delay after every transmit.
-            Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
-            EnableBackoffIteration (bool): If true, enables back off iteration test.
-            EnableDataIntegrity (bool): enableDataIntegrity
-            EnableExtraIterations (str): If true, more iterations are performed.
-            EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
-            EnableLayer1Rate (bool): NOT DEFINED
-            EnableLayer2 (bool): If true, enables Layer2 protocols.
-            EnableLeaveGroup (bool): If true, the leave group is enabled.
-            EnableMinFrameSize (bool): If enabled, it shows the minimum frame size.
-            EnableMulticastQuerier (bool): Enable Multicast Querier Settings
-            EnableOldStatsForReef (bool): Enable old statistics for reef.
-            EnableSaturationIteration (bool): If true, SaturationIteration in enabled .
-            EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
-            ExtraIterationOffsets (str): This enables the test to run an extra iteration.
-            FastConvergence (str): If true, enables fast convergence.
-            FastConvergenceDuration (number): This enables the test to perform iterations using the fast convergence duration configured.
-            FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
-            FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
-            FloodedFramesEnabled (bool): Show Flooded Frames
-            ForceRegenerate (bool): Initiates a forced regeneration.
-            FrameLossUnit (str): The frame loss unit.
-            FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
-            FramesizeImixList (str): The list of frame size to be used
-            FramesizeList (list(str)): The list of frame sizes.
-            Gap (number): It signifies the gap value for the protocol.
-            GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
-            GroupCapacityGreaterThan (number): The integer that distinguishes the group capacity that could be greater than the specified integer.
-            GroupDistributionType (str(acrossHosts|acrossPorts)): The group distribution type.
-            IgmpV1Timeout (number): The IGMPv1 timeout value.
-            IgmpVersion (number): The igmp version .
-            Igmpv3MessageType (str(exclude|include)): It gives details about the igmpv3 message type in the test configuration
-            Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
-            ImixAdd (str): Adds an imix data.
-            ImixData (str): Displays the imix Data.
-            ImixDataQoS (bool): Enables Imix Data QoS
-            ImixDelete (str): Deletes the imix data.
-            ImixDistribution (str(bwpercentage|weight)): Specifies the imix distribution unit.
-            ImixEnabled (bool): If True, Enables the imix value.
-            ImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Specefies the imix templates.
-            ImixTrafficType (str): Displays the imix traffic type.
-            IncMulticastDestMACAddress (str): The incrementing multicast destination MAC address.
-            IncPortMACAddress (str): The incrementing MAC address of the port.
-            IncrAddresses (number): The incremental address.
-            IncrStep (number): The option to increment step value.
-            IncrementLoadRate (str): The incremental value of load rate.
-            IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The incremental value of the load unit.
-            InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
-            InitialComboLoadRate (number): The initial combination value of the load rate .
-            InitialIncrementLoadRate (number): The initial incremental value of the load rate.
-            InitialStepLoadRate (number): The initial step value of the load rate.
-            Ipv4Address (str): The allocated IPv4 address for this interface.
-            Ipv6Address (str): The allocated IPv6address for this interface.
-            IsIPv6 (str): The allocated IPv6address for this interface.
-            IsMulticastAutomaticFrameData (str): The multicast automatic frame data.
-            IsNewMode (bool): Is New Mode
-            JoinLeaveMultiplier (number): NOT DEFINED
-            JoinLeaveRate (number): The join leave rate.
-            JoinLeaveWaitTime (number): The wait time for join delay.
-            LatencyBins (str): Sets the latency bins statistics
-            LatencyBinsEnabled (bool): Enables the latency bins statistics
-            LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): The type of latency.
-            LearnRateMac (str): Rates learning frames to MAC address.
-            LearnSendMac (str): Sends learning frames to MAC address.
-            LearnSendMacEnabled (str): Send Mac learning
-            LoadInitialRate (number): The initial rate of the load.
-            LoadRateList (str): Enters the Load Rate List.
-            LoadType (str(binary|combo|custom|increment|quickSearch|random|step)): The type of the payload setting.
-            MapType (str): The mapping type.
-            MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
-            MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
-            MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
-            MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
-            MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
-            MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
-            MaxRandomLoadRate (number): The maximum random value of the load rate.
-            MaxStepLoadRate (number): The maximum step value of the load rate.
-            MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
-            MinComboLoadRate (number): The minimum combination load rate.
-            MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
-            MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
-            MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
-            MinRandomLoadRate (number): The maximum random value of the load rate.
-            MixedClassMulticast (str): The mixed multicast class.
-            MldVersion (number): The version of the MLD messages.
-            NumAddresses (number): The integer value for the number of addresses.
-            NumIterations (number): The integer value for the number of iterations.
-            Numtrials (number): The integer value that states the number of trials permitted.
-            PercentMulticastFrames (number): The percentage of multicast frames.
-            PercentUnicastFrames (number): The percentage of unicast frames.
-            PortDelayEnabled (bool): Enable Delay Between Ports
-            PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
-            PortDelayValue (number): Sets the port delay value
-            PortMACAddress (str): The MAC address of the port.
-            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
-            QuickBackoffIteration (number): Sets the quicksearch backoff iteration
-            QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
-            QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
-            QuickSaturationIteration (number): Sets the quick search saturation iteration
-            QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
-            QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit
-            QuickSearchResolution (number): Sets the quick search resolution
-            QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): Sets the quick search type
-            QuickSearchTolerance (number): Sets the quick search tolerance
-            RandomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The random values of the load unit.
-            ReportSequenceError (bool): If enabled, it reports sequence error.
-            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The throughput rate unit.
-            RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
-            SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
-            ShowDetailedBinaryResults (bool): NOT DEFINED
-            StepComboLoadRate (number): The step value of combination load rate.
-            StepFrameLossUnit (str(%|frames)): The frame loss unit for traffic.
-            StepIncrementFrameSize (number): The step to increment the frame size.
-            StepIncrementLoadRate (number): The step incremental value of the load rate.
-            StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
-            StepStepLoadRate (number): The incremental step value of load rate.
-            StepTolerance (number): The step value of the tolerance level.
-            StopTestOnHighLoss (number): It stops test on high loss.
-            SupportedTrafficTypes (str): The traffic types supported.
-            TestTrafficType (str): It signifies the test traffic type value.
-            TrafficDistribution (str(mixed|multicast|unicast)): Sets the traffic distribution type
-            TxDelay (number): the delay recorded in the transmit port.
-            UnchangedInitial (str(False|True)): The first value of an unchanged parameter.
-            UsePercentOffsets (str): If true, sets the offset value in percentage.
+        Args
+        ----
+        - ApplyMode (str): NOT DEFINED
+        - AssignGroupType (str(accumulated | distributed)): Assigns the group type.
+        - BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+        - BidirectionalOptionEnabled (bool): If true, enables bidirectional option.
+        - BinaryBackoff (number): Specifies the percentage of binary backoff.
+        - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit.
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The binary load unit.
+        - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+        - BinarySearchType (str(linear | perFlow | perPort | perTrafficItem)): The binary search type value.
+        - BinaryTolerance (number): The binary tolerance level.
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CalculateJitter (bool): If true, calculates jitter.
+        - CalculateLatency (bool): If true, calculates the latency.
+        - ComboBackoff (number): The backoff combination of the test configuration.
+        - ComboFrameLossUnit (str(% | frames)): The frame loss unit for traffic in binary.
+        - ComboLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The combination of load units. Possible values include:
+        - ComboResolution (number): The combined resolution value.
+        - ComboTolerance (number): The combined tolerance level.
+        - CountRandomFrameSize (number): If true, frame sizes are counted at random.
+        - CountRandomLoadRate (number): The random count of the load rate.
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit.
+        - DelayAfterTransmit (number): The amount of delay after every transmit.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - EnableBackoffIteration (bool): If true, enables back off iteration test.
+        - EnableDataIntegrity (bool): enableDataIntegrity
+        - EnableExtraIterations (str): If true, more iterations are performed.
+        - EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableLayer2 (bool): If true, enables Layer2 protocols.
+        - EnableLeaveGroup (bool): If true, the leave group is enabled.
+        - EnableMinFrameSize (bool): If enabled, it shows the minimum frame size.
+        - EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+        - EnableOldStatsForReef (bool): Enable old statistics for reef.
+        - EnableSaturationIteration (bool): If true, SaturationIteration in enabled .
+        - EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
+        - ExtraIterationOffsets (str): This enables the test to run an extra iteration.
+        - FastConvergence (str): If true, enables fast convergence.
+        - FastConvergenceDuration (number): This enables the test to perform iterations using the fast convergence duration configured.
+        - FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
+        - FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
+        - FloodedFramesEnabled (bool): Show Flooded Frames
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameLossUnit (str): The frame loss unit.
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
+        - FramesizeImixList (str): The list of frame size to be used
+        - FramesizeList (list(str)): The list of frame sizes.
+        - Gap (number): It signifies the gap value for the protocol.
+        - GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+        - GroupCapacityGreaterThan (number): The integer that distinguishes the group capacity that could be greater than the specified integer.
+        - GroupDistributionType (str(acrossHosts | acrossPorts)): The group distribution type.
+        - IgmpV1Timeout (number): The IGMPv1 timeout value.
+        - IgmpVersion (number): The igmp version .
+        - Igmpv3MessageType (str(exclude | include)): It gives details about the igmpv3 message type in the test configuration
+        - Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+        - ImixAdd (str): Adds an imix data.
+        - ImixData (str): Displays the imix Data.
+        - ImixDataQoS (bool): Enables Imix Data QoS
+        - ImixDelete (str): Deletes the imix data.
+        - ImixDistribution (str(bwpercentage | weight)): Specifies the imix distribution unit.
+        - ImixEnabled (bool): If True, Enables the imix value.
+        - ImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Specefies the imix templates.
+        - ImixTrafficType (str): Displays the imix traffic type.
+        - IncMulticastDestMACAddress (str): The incrementing multicast destination MAC address.
+        - IncPortMACAddress (str): The incrementing MAC address of the port.
+        - IncrAddresses (number): The incremental address.
+        - IncrStep (number): The option to increment step value.
+        - IncrementLoadRate (str): The incremental value of load rate.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The incremental value of the load unit.
+        - InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
+        - InitialComboLoadRate (number): The initial combination value of the load rate .
+        - InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+        - InitialStepLoadRate (number): The initial step value of the load rate.
+        - Ipv4Address (str): The allocated IPv4 address for this interface.
+        - Ipv6Address (str): The allocated IPv6address for this interface.
+        - IsIPv6 (str): The allocated IPv6address for this interface.
+        - IsMulticastAutomaticFrameData (str): The multicast automatic frame data.
+        - IsNewMode (bool): Is New Mode
+        - JoinLeaveMultiplier (number): NOT DEFINED
+        - JoinLeaveRate (number): The join leave rate.
+        - JoinLeaveWaitTime (number): The wait time for join delay.
+        - LatencyBins (str): Sets the latency bins statistics
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): The type of latency.
+        - LearnRateMac (str): Rates learning frames to MAC address.
+        - LearnSendMac (str): Sends learning frames to MAC address.
+        - LearnSendMacEnabled (str): Send Mac learning
+        - LoadInitialRate (number): The initial rate of the load.
+        - LoadRateList (str): Enters the Load Rate List.
+        - LoadType (str(binary | combo | custom | increment | quickSearch | random | step)): The type of the payload setting.
+        - MapType (str): The mapping type.
+        - MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
+        - MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
+        - MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
+        - MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
+        - MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
+        - MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+        - MaxRandomLoadRate (number): The maximum random value of the load rate.
+        - MaxStepLoadRate (number): The maximum step value of the load rate.
+        - MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+        - MinComboLoadRate (number): The minimum combination load rate.
+        - MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
+        - MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
+        - MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
+        - MinRandomLoadRate (number): The maximum random value of the load rate.
+        - MixedClassMulticast (str): The mixed multicast class.
+        - MldVersion (number): The version of the MLD messages.
+        - NumAddresses (number): The integer value for the number of addresses.
+        - NumIterations (number): The integer value for the number of iterations.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - PercentMulticastFrames (number): The percentage of multicast frames.
+        - PercentUnicastFrames (number): The percentage of unicast frames.
+        - PortDelayEnabled (bool): Enable Delay Between Ports
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - PortMACAddress (str): The MAC address of the port.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - QuickBackoffIteration (number): Sets the quicksearch backoff iteration
+        - QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
+        - QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
+        - QuickSaturationIteration (number): Sets the quick search saturation iteration
+        - QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
+        - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Sets the quick search load unit
+        - QuickSearchResolution (number): Sets the quick search resolution
+        - QuickSearchSearchType (str(linear | perFlow | perPort | perTrafficItem)): Sets the quick search type
+        - QuickSearchTolerance (number): Sets the quick search tolerance
+        - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The random values of the load unit.
+        - ReportSequenceError (bool): If enabled, it reports sequence error.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The throughput rate unit.
+        - RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
+        - SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - StepComboLoadRate (number): The step value of combination load rate.
+        - StepFrameLossUnit (str(% | frames)): The frame loss unit for traffic.
+        - StepIncrementFrameSize (number): The step to increment the frame size.
+        - StepIncrementLoadRate (number): The step incremental value of the load rate.
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
+        - StepStepLoadRate (number): The incremental step value of load rate.
+        - StepTolerance (number): The step value of the tolerance level.
+        - StopTestOnHighLoss (number): It stops test on high loss.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TestTrafficType (str): It signifies the test traffic type value.
+        - TrafficDistribution (str(mixed | multicast | unicast)): Sets the traffic distribution type
+        - TxDelay (number): the delay recorded in the transmit port.
+        - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.
+        - UsePercentOffsets (str): If true, sets the offset value in percentage.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Apply(self):
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('apply', payload=payload, response_object=None)
@@ -1944,9 +1947,10 @@ class TestConfig(Base):
     def ApplyAsync(self):
         """Executes the applyAsync operation on the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsync', payload=payload, response_object=None)
@@ -1954,12 +1958,10 @@ class TestConfig(Base):
     def ApplyAsyncResult(self):
         """Executes the applyAsyncResult operation on the server.
 
-            Returns:
-                bool: 
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
@@ -1969,9 +1971,10 @@ class TestConfig(Base):
 
         Applies the specified Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
@@ -1981,12 +1984,10 @@ class TestConfig(Base):
 
         Generate a PDF report for the last succesfull test run.
 
-            Returns:
-                str: This method is asynchronous and has no return value.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('generateReport', payload=payload, response_object=None)
@@ -1996,24 +1997,17 @@ class TestConfig(Base):
 
         Starts the specified Quick Test and waits for its execution to finish.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run()list
+        run(InputParameters=string)list
+        -------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - Returns list(str): This method is synchronous and returns the result of the test.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        run(InputParameters:string)list
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -2025,18 +2019,16 @@ class TestConfig(Base):
 
         Starts the specified Quick Test.
 
-        The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
-        The following correlates the modeling Signatures to the python *args variable length list:
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start()
+        start(InputParameters=string)
+        -----------------------------
+        - InputParameters (str): The input arguments of the test.
 
-        start(InputParameters:string)
-            Args:
-                args[0] is InputParameters (str): The input arguments of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -2048,9 +2040,10 @@ class TestConfig(Base):
 
         Stops the currently running Quick Test.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)
@@ -2060,12 +2053,10 @@ class TestConfig(Base):
 
         Waits for the execution of the specified Quick Test to be completed.
 
-            Returns:
-                list(str): This method is synchronous and returns the result of the test.
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('waitForTest', payload=payload, response_object=None)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class NetworkRangeInfo(Base):
     """RBRangeInfo help : TODO.
-    The NetworkRangeInfo class encapsulates a list of networkRangeInfo resources that is be managed by the user.
+    The NetworkRangeInfo class encapsulates a list of networkRangeInfo resources that are managed by the user.
     A list of resources can be retrieved from the server using the NetworkRangeInfo.find() method.
-    The list can be managed by the user by using the NetworkRangeInfo.add() and NetworkRangeInfo.remove() methods.
+    The list can be managed by using the NetworkRangeInfo.add() and NetworkRangeInfo.remove() methods.
     """
 
     __slots__ = ()
@@ -38,70 +38,70 @@ class NetworkRangeInfo(Base):
 
     @property
     def CMacProperties(self):
-        """An instance of the CMacProperties class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties): An instance of the CMacProperties class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties.CMacProperties)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties import CMacProperties
         return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
-        """An instance of the EvpnIPv4PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange.EvpnIPv4PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange import EvpnIPv4PrefixRange
         return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
-        """An instance of the EvpnIPv6PrefixRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange.EvpnIPv6PrefixRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -110,171 +110,195 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeIPByMask(self):
-        """Use mask to generate range of addresses
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeIPByMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Use mask to generate range of addresses
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeIPByMask'))
 
     @property
     def NetworkRangeInterfaceIp(self):
-        """Interface IP address for a non-connected interface
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeInterfaceIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Interface IP address for a non-connected interface
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeInterfaceIp'))
 
     @property
     def NetworkRangeInterfaceIpMask(self):
-        """Interface IP mask for a non-connected interface
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeInterfaceIpMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Interface IP mask for a non-connected interface
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeInterfaceIpMask'))
 
     @property
     def NetworkRangeIp(self):
-        """Network Range IP
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeIp')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Range IP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeIp'))
 
     @property
     def NetworkRangeIpIncrementBy(self):
-        """Network Range IP Increment By
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeIpIncrementBy')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Range IP Increment By
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeIpIncrementBy'))
 
     @property
     def NetworkRangeIpMask(self):
-        """Network Range IP Mask
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeIpMask')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Range IP Mask
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeIpMask'))
 
     @property
     def NetworkRangeLinkType(self):
-        """Link Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeLinkType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeLinkType'))
 
     @property
     def NetworkRangeRID(self):
-        """Network Range RID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeRID')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Range RID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeRID'))
 
     @property
     def NetworkRangeRIDIncrement(self):
-        """Network Range RID Increment
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('networkRangeRIDIncrement')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Network Range RID Increment
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('networkRangeRIDIncrement'))
 
     @property
     def NumColumns(self):
-        """4 Byte Integer.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numColumns')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 Byte Integer.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numColumns'))
 
     @property
     def NumRows(self):
-        """4 Byte Integer.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('numRows')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 Byte Integer.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('numRows'))
 
     def update(self, Name=None):
-        """Updates a child instance of networkRangeInfo on the server.
+        """Updates networkRangeInfo resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Name=None):
-        """Adds a new networkRangeInfo node on the server and retrieves it in this instance.
+        """Adds a new networkRangeInfo resource on the server and adds it to the container.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with all currently retrieved networkRangeInfo data using find and the newly added networkRangeInfo data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved networkRangeInfo resources using find and the newly added networkRangeInfo resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the networkRangeInfo data in this instance from server.
+        """Deletes all the contained networkRangeInfo resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves networkRangeInfo data from the server.
+        """Finds and retrieves networkRangeInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve networkRangeInfo data from the server.
-        By default the find method takes no parameters and will retrieve all networkRangeInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkRangeInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all networkRangeInfo resources from the server.
 
-        Args:
-            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Returns:
-            self: This instance with matching networkRangeInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching networkRangeInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of networkRangeInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the networkRangeInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the networkRangeInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -283,25 +307,28 @@ class NetworkRangeInfo(Base):
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            NetworkRangeIPByMask (str): optional regex of networkRangeIPByMask
-            NetworkRangeInterfaceIp (str): optional regex of networkRangeInterfaceIp
-            NetworkRangeInterfaceIpMask (str): optional regex of networkRangeInterfaceIpMask
-            NetworkRangeIp (str): optional regex of networkRangeIp
-            NetworkRangeIpIncrementBy (str): optional regex of networkRangeIpIncrementBy
-            NetworkRangeIpMask (str): optional regex of networkRangeIpMask
-            NetworkRangeLinkType (str): optional regex of networkRangeLinkType
-            NetworkRangeRID (str): optional regex of networkRangeRID
-            NetworkRangeRIDIncrement (str): optional regex of networkRangeRIDIncrement
-            NumColumns (str): optional regex of numColumns
-            NumRows (str): optional regex of numRows
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - NetworkRangeIPByMask (str): optional regex of networkRangeIPByMask
+        - NetworkRangeInterfaceIp (str): optional regex of networkRangeInterfaceIp
+        - NetworkRangeInterfaceIpMask (str): optional regex of networkRangeInterfaceIpMask
+        - NetworkRangeIp (str): optional regex of networkRangeIp
+        - NetworkRangeIpIncrementBy (str): optional regex of networkRangeIpIncrementBy
+        - NetworkRangeIpMask (str): optional regex of networkRangeIpMask
+        - NetworkRangeLinkType (str): optional regex of networkRangeLinkType
+        - NetworkRangeRID (str): optional regex of networkRangeRID
+        - NetworkRangeRIDIncrement (str): optional regex of networkRangeRIDIncrement
+        - NumColumns (str): optional regex of numColumns
+        - NumRows (str): optional regex of numRows
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
 
@@ -310,9 +337,10 @@ class NetworkRangeInfo(Base):
 
         Start CPF control plane (equals to promote to negotiated state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('start', payload=payload, response_object=None)
@@ -322,9 +350,10 @@ class NetworkRangeInfo(Base):
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         return self._execute('stop', payload=payload, response_object=None)

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Mp(Base):
     """This object contains the Maintenance Point (MP) configuration.
-    The Mp class encapsulates a list of mp resources that is be managed by the user.
+    The Mp class encapsulates a list of mp resources that are managed by the user.
     A list of resources can be retrieved from the server using the Mp.find() method.
-    The list can be managed by the user by using the Mp.add() and Mp.remove() methods.
+    The list can be managed by using the Mp.add() and Mp.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class Mp(Base):
 
     @property
     def AddCcmCustomTlvs(self):
-        """If true, adds a custom CCM TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom CCM TLV to bridge messages.
         """
         return self._get_attribute('addCcmCustomTlvs')
     @AddCcmCustomTlvs.setter
@@ -50,10 +50,10 @@ class Mp(Base):
 
     @property
     def AddDataTlv(self):
-        """If true, adds a data TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a data TLV to bridge messages.
         """
         return self._get_attribute('addDataTlv')
     @AddDataTlv.setter
@@ -62,10 +62,10 @@ class Mp(Base):
 
     @property
     def AddInterfaceStatusTlv(self):
-        """If true, adds an interface status TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds an interface status TLV to bridge messages.
         """
         return self._get_attribute('addInterfaceStatusTlv')
     @AddInterfaceStatusTlv.setter
@@ -74,10 +74,10 @@ class Mp(Base):
 
     @property
     def AddLbmCustomTlvs(self):
-        """If true, adds a custom loopback message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom loopback message TLV to bridge messages.
         """
         return self._get_attribute('addLbmCustomTlvs')
     @AddLbmCustomTlvs.setter
@@ -86,10 +86,10 @@ class Mp(Base):
 
     @property
     def AddLbrCustomTlvs(self):
-        """If true, adds a custom loopback response message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom loopback response message TLV to bridge messages.
         """
         return self._get_attribute('addLbrCustomTlvs')
     @AddLbrCustomTlvs.setter
@@ -98,10 +98,10 @@ class Mp(Base):
 
     @property
     def AddLmmCustomTlvs(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('addLmmCustomTlvs')
     @AddLmmCustomTlvs.setter
@@ -110,10 +110,10 @@ class Mp(Base):
 
     @property
     def AddLmrCustomTlvs(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('addLmrCustomTlvs')
     @AddLmrCustomTlvs.setter
@@ -122,10 +122,10 @@ class Mp(Base):
 
     @property
     def AddLtmCustomTlvs(self):
-        """If true, adds a custom link trace message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom link trace message TLV to bridge messages.
         """
         return self._get_attribute('addLtmCustomTlvs')
     @AddLtmCustomTlvs.setter
@@ -134,10 +134,10 @@ class Mp(Base):
 
     @property
     def AddLtrCustomTlvs(self):
-        """If true, adds a custom link trace message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom link trace message TLV to bridge messages.
         """
         return self._get_attribute('addLtrCustomTlvs')
     @AddLtrCustomTlvs.setter
@@ -146,10 +146,10 @@ class Mp(Base):
 
     @property
     def AddOrganizationSpecificTlv(self):
-        """If true, adds a custom organization specific message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom organization specific message TLV to bridge messages.
         """
         return self._get_attribute('addOrganizationSpecificTlv')
     @AddOrganizationSpecificTlv.setter
@@ -158,10 +158,10 @@ class Mp(Base):
 
     @property
     def AddPortStatusTlv(self):
-        """If true, adds a custom port statust message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom port statust message TLV to bridge messages.
         """
         return self._get_attribute('addPortStatusTlv')
     @AddPortStatusTlv.setter
@@ -170,10 +170,10 @@ class Mp(Base):
 
     @property
     def AddSenderIdTlv(self):
-        """If true, adds a custom sender ID message TLV to bridge messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, adds a custom sender ID message TLV to bridge messages.
         """
         return self._get_attribute('addSenderIdTlv')
     @AddSenderIdTlv.setter
@@ -182,10 +182,10 @@ class Mp(Base):
 
     @property
     def AisEnableUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('aisEnableUnicastMac')
     @AisEnableUnicastMac.setter
@@ -194,10 +194,10 @@ class Mp(Base):
 
     @property
     def AisInterval(self):
-        """NOT DEFINED
-
-        Returns:
-            str(oneSec|oneMin)
+        """
+        Returns
+        -------
+        - str(oneSec | oneMin): NOT DEFINED
         """
         return self._get_attribute('aisInterval')
     @AisInterval.setter
@@ -206,10 +206,10 @@ class Mp(Base):
 
     @property
     def AisMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(auto|start|stop)
+        """
+        Returns
+        -------
+        - str(auto | start | stop): NOT DEFINED
         """
         return self._get_attribute('aisMode')
     @AisMode.setter
@@ -218,10 +218,10 @@ class Mp(Base):
 
     @property
     def AisPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('aisPriority')
     @AisPriority.setter
@@ -230,10 +230,10 @@ class Mp(Base):
 
     @property
     def AisUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('aisUnicastMac')
     @AisUnicastMac.setter
@@ -242,10 +242,10 @@ class Mp(Base):
 
     @property
     def AutoDmAllDestination(self):
-        """If true, enables the automatic sending of DM Messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending of DM Messages.
         """
         return self._get_attribute('autoDmAllDestination')
     @AutoDmAllDestination.setter
@@ -254,10 +254,10 @@ class Mp(Base):
 
     @property
     def AutoDmDestination(self):
-        """The sent MAC address for the DM, if autoDmAllDestination is set to true.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The sent MAC address for the DM, if autoDmAllDestination is set to true.
         """
         return self._get_attribute('autoDmDestination')
     @AutoDmDestination.setter
@@ -266,10 +266,10 @@ class Mp(Base):
 
     @property
     def AutoDmIteration(self):
-        """The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
         """
         return self._get_attribute('autoDmIteration')
     @AutoDmIteration.setter
@@ -278,10 +278,10 @@ class Mp(Base):
 
     @property
     def AutoDmTimeout(self):
-        """The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
         """
         return self._get_attribute('autoDmTimeout')
     @AutoDmTimeout.setter
@@ -290,10 +290,10 @@ class Mp(Base):
 
     @property
     def AutoDmTimer(self):
-        """The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
         """
         return self._get_attribute('autoDmTimer')
     @AutoDmTimer.setter
@@ -302,10 +302,10 @@ class Mp(Base):
 
     @property
     def AutoLbAllDestination(self):
-        """If true, enables the automatic sending of Loopback Messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending of Loopback Messages.
         """
         return self._get_attribute('autoLbAllDestination')
     @AutoLbAllDestination.setter
@@ -314,10 +314,10 @@ class Mp(Base):
 
     @property
     def AutoLbDestination(self):
-        """Sets the loopback destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the loopback destination MAC address.
         """
         return self._get_attribute('autoLbDestination')
     @AutoLbDestination.setter
@@ -326,10 +326,10 @@ class Mp(Base):
 
     @property
     def AutoLbIteration(self):
-        """The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
         """
         return self._get_attribute('autoLbIteration')
     @AutoLbIteration.setter
@@ -338,10 +338,10 @@ class Mp(Base):
 
     @property
     def AutoLbTimeout(self):
-        """The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
         """
         return self._get_attribute('autoLbTimeout')
     @AutoLbTimeout.setter
@@ -350,10 +350,10 @@ class Mp(Base):
 
     @property
     def AutoLbTimer(self):
-        """The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
         """
         return self._get_attribute('autoLbTimer')
     @AutoLbTimer.setter
@@ -362,10 +362,10 @@ class Mp(Base):
 
     @property
     def AutoLmIteration(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('autoLmIteration')
     @AutoLmIteration.setter
@@ -374,10 +374,10 @@ class Mp(Base):
 
     @property
     def AutoLmTimeout(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('autoLmTimeout')
     @AutoLmTimeout.setter
@@ -386,10 +386,10 @@ class Mp(Base):
 
     @property
     def AutoLmTimer(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('autoLmTimer')
     @AutoLmTimer.setter
@@ -398,10 +398,10 @@ class Mp(Base):
 
     @property
     def AutoLtAllDestination(self):
-        """If true, enables the automatic sending to Link Trace Messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending to Link Trace Messages.
         """
         return self._get_attribute('autoLtAllDestination')
     @AutoLtAllDestination.setter
@@ -410,10 +410,10 @@ class Mp(Base):
 
     @property
     def AutoLtDestination(self):
-        """Sets the link trance destination MAC address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the link trance destination MAC address.
         """
         return self._get_attribute('autoLtDestination')
     @AutoLtDestination.setter
@@ -422,10 +422,10 @@ class Mp(Base):
 
     @property
     def AutoLtIteration(self):
-        """The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
         """
         return self._get_attribute('autoLtIteration')
     @AutoLtIteration.setter
@@ -434,10 +434,10 @@ class Mp(Base):
 
     @property
     def AutoLtTimeout(self):
-        """The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
         """
         return self._get_attribute('autoLtTimeout')
     @AutoLtTimeout.setter
@@ -446,10 +446,10 @@ class Mp(Base):
 
     @property
     def AutoLtTimer(self):
-        """The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
         """
         return self._get_attribute('autoLtTimer')
     @AutoLtTimer.setter
@@ -458,10 +458,10 @@ class Mp(Base):
 
     @property
     def CciInterval(self):
-        """Sets the Continuity Check Interval (CCI).
-
-        Returns:
-            str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)
+        """
+        Returns
+        -------
+        - str(3.33msec | 10msec | 100msec | 1sec | 10sec | 1min | 10min): Sets the Continuity Check Interval (CCI).
         """
         return self._get_attribute('cciInterval')
     @CciInterval.setter
@@ -470,10 +470,10 @@ class Mp(Base):
 
     @property
     def CcmLmmTxFcf(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('ccmLmmTxFcf')
     @CcmLmmTxFcf.setter
@@ -482,10 +482,10 @@ class Mp(Base):
 
     @property
     def CcmLmmTxFcfStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('ccmLmmTxFcfStep')
     @CcmLmmTxFcfStep.setter
@@ -494,10 +494,10 @@ class Mp(Base):
 
     @property
     def CcmPriority(self):
-        """Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
         """
         return self._get_attribute('ccmPriority')
     @CcmPriority.setter
@@ -506,10 +506,10 @@ class Mp(Base):
 
     @property
     def CcmRxFcb(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('ccmRxFcb')
     @CcmRxFcb.setter
@@ -518,10 +518,10 @@ class Mp(Base):
 
     @property
     def CcmRxFcbStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('ccmRxFcbStep')
     @CcmRxFcbStep.setter
@@ -530,10 +530,10 @@ class Mp(Base):
 
     @property
     def ChassisId(self):
-        """Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
         """
         return self._get_attribute('chassisId')
     @ChassisId.setter
@@ -542,10 +542,10 @@ class Mp(Base):
 
     @property
     def ChassisIdLength(self):
-        """Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
         """
         return self._get_attribute('chassisIdLength')
     @ChassisIdLength.setter
@@ -554,10 +554,10 @@ class Mp(Base):
 
     @property
     def ChassisIdSubType(self):
-        """Sets the chassis identifier sub-type for the optional TLV messages. Options are:
-
-        Returns:
-            str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)
+        """
+        Returns
+        -------
+        - str(chassisComponent | interfaceAlias | portComponent | macAddress | networkAddress | interfaceName | locallyAssigned): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
         """
         return self._get_attribute('chassisIdSubType')
     @ChassisIdSubType.setter
@@ -566,10 +566,10 @@ class Mp(Base):
 
     @property
     def DataTlvLength(self):
-        """Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
         """
         return self._get_attribute('dataTlvLength')
     @DataTlvLength.setter
@@ -578,10 +578,10 @@ class Mp(Base):
 
     @property
     def DataTlvValue(self):
-        """This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
         """
         return self._get_attribute('dataTlvValue')
     @DataTlvValue.setter
@@ -590,10 +590,10 @@ class Mp(Base):
 
     @property
     def DmMethod(self):
-        """The type of Delay Measurment support.
-
-        Returns:
-            str(twoWay|oneWay)
+        """
+        Returns
+        -------
+        - str(twoWay | oneWay): The type of Delay Measurment support.
         """
         return self._get_attribute('dmMethod')
     @DmMethod.setter
@@ -602,10 +602,10 @@ class Mp(Base):
 
     @property
     def DmPriority(self):
-        """Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
         """
         return self._get_attribute('dmPriority')
     @DmPriority.setter
@@ -614,10 +614,10 @@ class Mp(Base):
 
     @property
     def DmmPriority(self):
-        """DEPRECATED Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
-
-        Returns:
-            number
+        """DEPRECATED 
+        Returns
+        -------
+        - number: Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
         """
         return self._get_attribute('dmmPriority')
     @DmmPriority.setter
@@ -626,10 +626,10 @@ class Mp(Base):
 
     @property
     def EnableAisRx(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAisRx')
     @EnableAisRx.setter
@@ -638,10 +638,10 @@ class Mp(Base):
 
     @property
     def EnableAutoDm(self):
-        """If true, enables the automatic sending of DM Messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending of DM Messages.
         """
         return self._get_attribute('enableAutoDm')
     @EnableAutoDm.setter
@@ -650,10 +650,10 @@ class Mp(Base):
 
     @property
     def EnableAutoLb(self):
-        """If true, enables the automatic sending of Loopback messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending of Loopback messages.
         """
         return self._get_attribute('enableAutoLb')
     @EnableAutoLb.setter
@@ -662,10 +662,10 @@ class Mp(Base):
 
     @property
     def EnableAutoLm(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableAutoLm')
     @EnableAutoLm.setter
@@ -674,10 +674,10 @@ class Mp(Base):
 
     @property
     def EnableAutoLt(self):
-        """If true, enables the automatic sending of Link Trace messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the automatic sending of Link Trace messages.
         """
         return self._get_attribute('enableAutoLt')
     @EnableAutoLt.setter
@@ -686,10 +686,10 @@ class Mp(Base):
 
     @property
     def EnableLckRx(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLckRx')
     @EnableLckRx.setter
@@ -698,10 +698,10 @@ class Mp(Base):
 
     @property
     def EnableLmCounterUpdate(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableLmCounterUpdate')
     @EnableLmCounterUpdate.setter
@@ -710,10 +710,10 @@ class Mp(Base):
 
     @property
     def EnableTstRx(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enableTstRx')
     @EnableTstRx.setter
@@ -722,10 +722,10 @@ class Mp(Base):
 
     @property
     def Enabled(self):
-        """If true, the MP is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the MP is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -734,10 +734,10 @@ class Mp(Base):
 
     @property
     def InterRemoteMepRxIncrementStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('interRemoteMepRxIncrementStep')
     @InterRemoteMepRxIncrementStep.setter
@@ -746,10 +746,10 @@ class Mp(Base):
 
     @property
     def InterRemoteMepTxIncrementStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('interRemoteMepTxIncrementStep')
     @InterRemoteMepTxIncrementStep.setter
@@ -758,10 +758,10 @@ class Mp(Base):
 
     @property
     def LbmPriority(self):
-        """Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
         """
         return self._get_attribute('lbmPriority')
     @LbmPriority.setter
@@ -770,10 +770,10 @@ class Mp(Base):
 
     @property
     def LckEnableUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('lckEnableUnicastMac')
     @LckEnableUnicastMac.setter
@@ -782,10 +782,10 @@ class Mp(Base):
 
     @property
     def LckInterval(self):
-        """NOT DEFINED
-
-        Returns:
-            str(oneSec|oneMin)
+        """
+        Returns
+        -------
+        - str(oneSec | oneMin): NOT DEFINED
         """
         return self._get_attribute('lckInterval')
     @LckInterval.setter
@@ -794,10 +794,10 @@ class Mp(Base):
 
     @property
     def LckMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(auto|start|stop)
+        """
+        Returns
+        -------
+        - str(auto | start | stop): NOT DEFINED
         """
         return self._get_attribute('lckMode')
     @LckMode.setter
@@ -806,10 +806,10 @@ class Mp(Base):
 
     @property
     def LckPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('lckPriority')
     @LckPriority.setter
@@ -818,10 +818,10 @@ class Mp(Base):
 
     @property
     def LckSupportAisGeneration(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('lckSupportAisGeneration')
     @LckSupportAisGeneration.setter
@@ -830,10 +830,10 @@ class Mp(Base):
 
     @property
     def LckUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('lckUnicastMac')
     @LckUnicastMac.setter
@@ -842,10 +842,10 @@ class Mp(Base):
 
     @property
     def LmAllRemoteMeps(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('lmAllRemoteMeps')
     @LmAllRemoteMeps.setter
@@ -854,10 +854,10 @@ class Mp(Base):
 
     @property
     def LmDestinationMacAddress(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('lmDestinationMacAddress')
     @LmDestinationMacAddress.setter
@@ -866,10 +866,10 @@ class Mp(Base):
 
     @property
     def LmMethod(self):
-        """NOT DEFINED
-
-        Returns:
-            str(singleEnded|dualEnded)
+        """
+        Returns
+        -------
+        - str(singleEnded | dualEnded): NOT DEFINED
         """
         return self._get_attribute('lmMethod')
     @LmMethod.setter
@@ -878,10 +878,10 @@ class Mp(Base):
 
     @property
     def LmmPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('lmmPriority')
     @LmmPriority.setter
@@ -890,10 +890,10 @@ class Mp(Base):
 
     @property
     def LmrPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('lmrPriority')
     @LmrPriority.setter
@@ -902,10 +902,10 @@ class Mp(Base):
 
     @property
     def LmrRxFcf(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('lmrRxFcf')
     @LmrRxFcf.setter
@@ -914,10 +914,10 @@ class Mp(Base):
 
     @property
     def LmrRxFcfStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('lmrRxFcfStep')
     @LmrRxFcfStep.setter
@@ -926,10 +926,10 @@ class Mp(Base):
 
     @property
     def LtmPriority(self):
-        """Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
         """
         return self._get_attribute('ltmPriority')
     @LtmPriority.setter
@@ -938,10 +938,10 @@ class Mp(Base):
 
     @property
     def MacAddress(self):
-        """The MAC address of the MP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MAC address of the MP.
         """
         return self._get_attribute('macAddress')
     @MacAddress.setter
@@ -950,10 +950,10 @@ class Mp(Base):
 
     @property
     def ManagementAddress(self):
-        """Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
         """
         return self._get_attribute('managementAddress')
     @ManagementAddress.setter
@@ -962,10 +962,10 @@ class Mp(Base):
 
     @property
     def ManagementAddressDomain(self):
-        """Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
         """
         return self._get_attribute('managementAddressDomain')
     @ManagementAddressDomain.setter
@@ -974,10 +974,10 @@ class Mp(Base):
 
     @property
     def ManagementAddressDomainLength(self):
-        """Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
         """
         return self._get_attribute('managementAddressDomainLength')
     @ManagementAddressDomainLength.setter
@@ -986,10 +986,10 @@ class Mp(Base):
 
     @property
     def ManagementAddressLength(self):
-        """Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
         """
         return self._get_attribute('managementAddressLength')
     @ManagementAddressLength.setter
@@ -998,10 +998,10 @@ class Mp(Base):
 
     @property
     def MdLevel(self):
-        """The MD level of the MP. The MD level must be previously configured.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel): The MD level of the MP. The MD level must be previously configured.
         """
         return self._get_attribute('mdLevel')
     @MdLevel.setter
@@ -1010,10 +1010,10 @@ class Mp(Base):
 
     @property
     def MegId(self):
-        """The MEG identifier of the MP. This is for use with ITU-T Y.1731.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The MEG identifier of the MP. This is for use with ITU-T Y.1731.
         """
         return self._get_attribute('megId')
     @MegId.setter
@@ -1022,10 +1022,10 @@ class Mp(Base):
 
     @property
     def MegIdFormat(self):
-        """The MEG identifier format.
-
-        Returns:
-            str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)
+        """
+        Returns
+        -------
+        - str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId): The MEG identifier format.
         """
         return self._get_attribute('megIdFormat')
     @MegIdFormat.setter
@@ -1034,10 +1034,10 @@ class Mp(Base):
 
     @property
     def MepId(self):
-        """The MEP identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The MEP identifier.
         """
         return self._get_attribute('mepId')
     @MepId.setter
@@ -1046,10 +1046,10 @@ class Mp(Base):
 
     @property
     def MipId(self):
-        """The MIP identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The MIP identifier.
         """
         return self._get_attribute('mipId')
     @MipId.setter
@@ -1058,10 +1058,10 @@ class Mp(Base):
 
     @property
     def MpType(self):
-        """Sets the MP type.
-
-        Returns:
-            str(mip|mep)
+        """
+        Returns
+        -------
+        - str(mip | mep): Sets the MP type.
         """
         return self._get_attribute('mpType')
     @MpType.setter
@@ -1070,10 +1070,10 @@ class Mp(Base):
 
     @property
     def OrganizationSpecificTlvLength(self):
-        """Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
         """
         return self._get_attribute('organizationSpecificTlvLength')
     @OrganizationSpecificTlvLength.setter
@@ -1082,10 +1082,10 @@ class Mp(Base):
 
     @property
     def OrganizationSpecificTlvValue(self):
-        """Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
         """
         return self._get_attribute('organizationSpecificTlvValue')
     @OrganizationSpecificTlvValue.setter
@@ -1094,10 +1094,10 @@ class Mp(Base):
 
     @property
     def OverrideVlanPriority(self):
-        """If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
         """
         return self._get_attribute('overrideVlanPriority')
     @OverrideVlanPriority.setter
@@ -1106,10 +1106,10 @@ class Mp(Base):
 
     @property
     def Rdi(self):
-        """The Remote Defect Identification.
-
-        Returns:
-            str(auto|on|off)
+        """
+        Returns
+        -------
+        - str(auto | on | off): The Remote Defect Identification.
         """
         return self._get_attribute('rdi')
     @Rdi.setter
@@ -1118,10 +1118,10 @@ class Mp(Base):
 
     @property
     def ShortMaName(self):
-        """Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
         """
         return self._get_attribute('shortMaName')
     @ShortMaName.setter
@@ -1130,10 +1130,10 @@ class Mp(Base):
 
     @property
     def ShortMaNameFormat(self):
-        """Sets the Short MA Name format.
-
-        Returns:
-            str(primaryVid|characterString|2octetInteger|rfc2685VpnId)
+        """
+        Returns
+        -------
+        - str(primaryVid | characterString | 2octetInteger | rfc2685VpnId): Sets the Short MA Name format.
         """
         return self._get_attribute('shortMaNameFormat')
     @ShortMaNameFormat.setter
@@ -1142,10 +1142,10 @@ class Mp(Base):
 
     @property
     def TstEnableUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tstEnableUnicastMac')
     @TstEnableUnicastMac.setter
@@ -1154,10 +1154,10 @@ class Mp(Base):
 
     @property
     def TstIncrPacketLength(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tstIncrPacketLength')
     @TstIncrPacketLength.setter
@@ -1166,10 +1166,10 @@ class Mp(Base):
 
     @property
     def TstIncrPacketLengthStep(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstIncrPacketLengthStep')
     @TstIncrPacketLengthStep.setter
@@ -1178,10 +1178,10 @@ class Mp(Base):
 
     @property
     def TstInitialPatternValue(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstInitialPatternValue')
     @TstInitialPatternValue.setter
@@ -1190,10 +1190,10 @@ class Mp(Base):
 
     @property
     def TstInterval(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstInterval')
     @TstInterval.setter
@@ -1202,10 +1202,10 @@ class Mp(Base):
 
     @property
     def TstMode(self):
-        """NOT DEFINED
-
-        Returns:
-            str(start|stop)
+        """
+        Returns
+        -------
+        - str(start | stop): NOT DEFINED
         """
         return self._get_attribute('tstMode')
     @TstMode.setter
@@ -1214,10 +1214,10 @@ class Mp(Base):
 
     @property
     def TstOverwriteSequenceNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('tstOverwriteSequenceNumber')
     @TstOverwriteSequenceNumber.setter
@@ -1226,10 +1226,10 @@ class Mp(Base):
 
     @property
     def TstPacketLength(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstPacketLength')
     @TstPacketLength.setter
@@ -1238,10 +1238,10 @@ class Mp(Base):
 
     @property
     def TstPatternType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)
+        """
+        Returns
+        -------
+        - str(nullSignalWithoutCrc32 | nullSignalWithCrc32 | prbs2311WithoutCrc32 | prbs2311WithCrc32): NOT DEFINED
         """
         return self._get_attribute('tstPatternType')
     @TstPatternType.setter
@@ -1250,10 +1250,10 @@ class Mp(Base):
 
     @property
     def TstPriority(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstPriority')
     @TstPriority.setter
@@ -1262,10 +1262,10 @@ class Mp(Base):
 
     @property
     def TstSequenceNumber(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('tstSequenceNumber')
     @TstSequenceNumber.setter
@@ -1274,10 +1274,10 @@ class Mp(Base):
 
     @property
     def TstTestType(self):
-        """NOT DEFINED
-
-        Returns:
-            str(inService|outOfService)
+        """
+        Returns
+        -------
+        - str(inService | outOfService): NOT DEFINED
         """
         return self._get_attribute('tstTestType')
     @TstTestType.setter
@@ -1286,10 +1286,10 @@ class Mp(Base):
 
     @property
     def TstUnicastMac(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('tstUnicastMac')
     @TstUnicastMac.setter
@@ -1298,10 +1298,10 @@ class Mp(Base):
 
     @property
     def Ttl(self):
-        """Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
         """
         return self._get_attribute('ttl')
     @Ttl.setter
@@ -1310,10 +1310,10 @@ class Mp(Base):
 
     @property
     def Vlan(self):
-        """Assigns a VLAN to the MP. The VLAN must be previously configured.
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans): Assigns a VLAN to the MP. The VLAN must be previously configured.
         """
         return self._get_attribute('vlan')
     @Vlan.setter
@@ -1321,385 +1321,398 @@ class Mp(Base):
         self._set_attribute('vlan', value)
 
     def update(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmAllDestination=None, AutoDmDestination=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbAllDestination=None, AutoLbDestination=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtAllDestination=None, AutoLtDestination=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableTstRx=None, Enabled=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, MacAddress=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevel=None, MegId=None, MegIdFormat=None, MepId=None, MipId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, Ttl=None, Vlan=None):
-        """Updates a child instance of mp on the server.
+        """Updates mp resource on the server.
 
-        Args:
-            AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
-            AddDataTlv (bool): If true, adds a data TLV to bridge messages.
-            AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
-            AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
-            AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
-            AddLmmCustomTlvs (bool): NOT DEFINED
-            AddLmrCustomTlvs (bool): NOT DEFINED
-            AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
-            AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
-            AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
-            AisEnableUnicastMac (bool): NOT DEFINED
-            AisInterval (str(oneSec|oneMin)): NOT DEFINED
-            AisMode (str(auto|start|stop)): NOT DEFINED
-            AisPriority (number): NOT DEFINED
-            AisUnicastMac (str): NOT DEFINED
-            AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
-            AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
-            AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
-            AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
-            AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
-            AutoLbDestination (str): Sets the loopback destination MAC address.
-            AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
-            AutoLmIteration (number): NOT DEFINED
-            AutoLmTimeout (number): NOT DEFINED
-            AutoLmTimer (number): NOT DEFINED
-            AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
-            AutoLtDestination (str): Sets the link trance destination MAC address.
-            AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
-            CciInterval (str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)): Sets the Continuity Check Interval (CCI).
-            CcmLmmTxFcf (number): NOT DEFINED
-            CcmLmmTxFcfStep (number): NOT DEFINED
-            CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
-            CcmRxFcb (number): NOT DEFINED
-            CcmRxFcbStep (number): NOT DEFINED
-            ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
-            ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
-            ChassisIdSubType (str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
-            DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
-            DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
-            DmMethod (str(twoWay|oneWay)): The type of Delay Measurment support.
-            DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
-            DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
-            EnableAisRx (bool): NOT DEFINED
-            EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
-            EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
-            EnableAutoLm (bool): NOT DEFINED
-            EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
-            EnableLckRx (bool): NOT DEFINED
-            EnableLmCounterUpdate (bool): NOT DEFINED
-            EnableTstRx (bool): NOT DEFINED
-            Enabled (bool): If true, the MP is enabled.
-            InterRemoteMepRxIncrementStep (number): NOT DEFINED
-            InterRemoteMepTxIncrementStep (number): NOT DEFINED
-            LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
-            LckEnableUnicastMac (bool): NOT DEFINED
-            LckInterval (str(oneSec|oneMin)): NOT DEFINED
-            LckMode (str(auto|start|stop)): NOT DEFINED
-            LckPriority (number): NOT DEFINED
-            LckSupportAisGeneration (bool): NOT DEFINED
-            LckUnicastMac (str): NOT DEFINED
-            LmAllRemoteMeps (bool): NOT DEFINED
-            LmDestinationMacAddress (str): NOT DEFINED
-            LmMethod (str(singleEnded|dualEnded)): NOT DEFINED
-            LmmPriority (number): NOT DEFINED
-            LmrPriority (number): NOT DEFINED
-            LmrRxFcf (number): NOT DEFINED
-            LmrRxFcfStep (number): NOT DEFINED
-            LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
-            MacAddress (str): The MAC address of the MP.
-            ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
-            ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
-            ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
-            ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-            MdLevel (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)): The MD level of the MP. The MD level must be previously configured.
-            MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
-            MegIdFormat (str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)): The MEG identifier format.
-            MepId (number): The MEP identifier.
-            MipId (number): The MIP identifier.
-            MpType (str(mip|mep)): Sets the MP type.
-            OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
-            OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
-            OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
-            Rdi (str(auto|on|off)): The Remote Defect Identification.
-            ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
-            ShortMaNameFormat (str(primaryVid|characterString|2octetInteger|rfc2685VpnId)): Sets the Short MA Name format.
-            TstEnableUnicastMac (bool): NOT DEFINED
-            TstIncrPacketLength (bool): NOT DEFINED
-            TstIncrPacketLengthStep (number): NOT DEFINED
-            TstInitialPatternValue (number): NOT DEFINED
-            TstInterval (number): NOT DEFINED
-            TstMode (str(start|stop)): NOT DEFINED
-            TstOverwriteSequenceNumber (bool): NOT DEFINED
-            TstPacketLength (number): NOT DEFINED
-            TstPatternType (str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)): NOT DEFINED
-            TstPriority (number): NOT DEFINED
-            TstSequenceNumber (number): NOT DEFINED
-            TstTestType (str(inService|outOfService)): NOT DEFINED
-            TstUnicastMac (str): NOT DEFINED
-            Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-            Vlan (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        Args
+        ----
+        - AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
+        - AddDataTlv (bool): If true, adds a data TLV to bridge messages.
+        - AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
+        - AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
+        - AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
+        - AddLmmCustomTlvs (bool): NOT DEFINED
+        - AddLmrCustomTlvs (bool): NOT DEFINED
+        - AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
+        - AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
+        - AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
+        - AisEnableUnicastMac (bool): NOT DEFINED
+        - AisInterval (str(oneSec | oneMin)): NOT DEFINED
+        - AisMode (str(auto | start | stop)): NOT DEFINED
+        - AisPriority (number): NOT DEFINED
+        - AisUnicastMac (str): NOT DEFINED
+        - AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
+        - AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
+        - AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
+        - AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
+        - AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
+        - AutoLbDestination (str): Sets the loopback destination MAC address.
+        - AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
+        - AutoLmIteration (number): NOT DEFINED
+        - AutoLmTimeout (number): NOT DEFINED
+        - AutoLmTimer (number): NOT DEFINED
+        - AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
+        - AutoLtDestination (str): Sets the link trance destination MAC address.
+        - AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+        - CciInterval (str(3.33msec | 10msec | 100msec | 1sec | 10sec | 1min | 10min)): Sets the Continuity Check Interval (CCI).
+        - CcmLmmTxFcf (number): NOT DEFINED
+        - CcmLmmTxFcfStep (number): NOT DEFINED
+        - CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
+        - CcmRxFcb (number): NOT DEFINED
+        - CcmRxFcbStep (number): NOT DEFINED
+        - ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
+        - ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
+        - ChassisIdSubType (str(chassisComponent | interfaceAlias | portComponent | macAddress | networkAddress | interfaceName | locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
+        - DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
+        - DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
+        - DmMethod (str(twoWay | oneWay)): The type of Delay Measurment support.
+        - DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
+        - DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+        - EnableAisRx (bool): NOT DEFINED
+        - EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
+        - EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
+        - EnableAutoLm (bool): NOT DEFINED
+        - EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
+        - EnableLckRx (bool): NOT DEFINED
+        - EnableLmCounterUpdate (bool): NOT DEFINED
+        - EnableTstRx (bool): NOT DEFINED
+        - Enabled (bool): If true, the MP is enabled.
+        - InterRemoteMepRxIncrementStep (number): NOT DEFINED
+        - InterRemoteMepTxIncrementStep (number): NOT DEFINED
+        - LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+        - LckEnableUnicastMac (bool): NOT DEFINED
+        - LckInterval (str(oneSec | oneMin)): NOT DEFINED
+        - LckMode (str(auto | start | stop)): NOT DEFINED
+        - LckPriority (number): NOT DEFINED
+        - LckSupportAisGeneration (bool): NOT DEFINED
+        - LckUnicastMac (str): NOT DEFINED
+        - LmAllRemoteMeps (bool): NOT DEFINED
+        - LmDestinationMacAddress (str): NOT DEFINED
+        - LmMethod (str(singleEnded | dualEnded)): NOT DEFINED
+        - LmmPriority (number): NOT DEFINED
+        - LmrPriority (number): NOT DEFINED
+        - LmrRxFcf (number): NOT DEFINED
+        - LmrRxFcfStep (number): NOT DEFINED
+        - LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+        - MacAddress (str): The MAC address of the MP.
+        - ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+        - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+        - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+        - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
+        - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
+        - MepId (number): The MEP identifier.
+        - MipId (number): The MIP identifier.
+        - MpType (str(mip | mep)): Sets the MP type.
+        - OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+        - OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+        - OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+        - Rdi (str(auto | on | off)): The Remote Defect Identification.
+        - ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
+        - ShortMaNameFormat (str(primaryVid | characterString | 2octetInteger | rfc2685VpnId)): Sets the Short MA Name format.
+        - TstEnableUnicastMac (bool): NOT DEFINED
+        - TstIncrPacketLength (bool): NOT DEFINED
+        - TstIncrPacketLengthStep (number): NOT DEFINED
+        - TstInitialPatternValue (number): NOT DEFINED
+        - TstInterval (number): NOT DEFINED
+        - TstMode (str(start | stop)): NOT DEFINED
+        - TstOverwriteSequenceNumber (bool): NOT DEFINED
+        - TstPacketLength (number): NOT DEFINED
+        - TstPatternType (str(nullSignalWithoutCrc32 | nullSignalWithCrc32 | prbs2311WithoutCrc32 | prbs2311WithCrc32)): NOT DEFINED
+        - TstPriority (number): NOT DEFINED
+        - TstSequenceNumber (number): NOT DEFINED
+        - TstTestType (str(inService | outOfService)): NOT DEFINED
+        - TstUnicastMac (str): NOT DEFINED
+        - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmAllDestination=None, AutoDmDestination=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbAllDestination=None, AutoLbDestination=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtAllDestination=None, AutoLtDestination=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableTstRx=None, Enabled=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, MacAddress=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevel=None, MegId=None, MegIdFormat=None, MepId=None, MipId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, Ttl=None, Vlan=None):
-        """Adds a new mp node on the server and retrieves it in this instance.
+        """Adds a new mp resource on the server and adds it to the container.
 
-        Args:
-            AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
-            AddDataTlv (bool): If true, adds a data TLV to bridge messages.
-            AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
-            AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
-            AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
-            AddLmmCustomTlvs (bool): NOT DEFINED
-            AddLmrCustomTlvs (bool): NOT DEFINED
-            AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
-            AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
-            AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
-            AisEnableUnicastMac (bool): NOT DEFINED
-            AisInterval (str(oneSec|oneMin)): NOT DEFINED
-            AisMode (str(auto|start|stop)): NOT DEFINED
-            AisPriority (number): NOT DEFINED
-            AisUnicastMac (str): NOT DEFINED
-            AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
-            AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
-            AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
-            AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
-            AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
-            AutoLbDestination (str): Sets the loopback destination MAC address.
-            AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
-            AutoLmIteration (number): NOT DEFINED
-            AutoLmTimeout (number): NOT DEFINED
-            AutoLmTimer (number): NOT DEFINED
-            AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
-            AutoLtDestination (str): Sets the link trance destination MAC address.
-            AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
-            CciInterval (str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)): Sets the Continuity Check Interval (CCI).
-            CcmLmmTxFcf (number): NOT DEFINED
-            CcmLmmTxFcfStep (number): NOT DEFINED
-            CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
-            CcmRxFcb (number): NOT DEFINED
-            CcmRxFcbStep (number): NOT DEFINED
-            ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
-            ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
-            ChassisIdSubType (str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
-            DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
-            DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
-            DmMethod (str(twoWay|oneWay)): The type of Delay Measurment support.
-            DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
-            DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
-            EnableAisRx (bool): NOT DEFINED
-            EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
-            EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
-            EnableAutoLm (bool): NOT DEFINED
-            EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
-            EnableLckRx (bool): NOT DEFINED
-            EnableLmCounterUpdate (bool): NOT DEFINED
-            EnableTstRx (bool): NOT DEFINED
-            Enabled (bool): If true, the MP is enabled.
-            InterRemoteMepRxIncrementStep (number): NOT DEFINED
-            InterRemoteMepTxIncrementStep (number): NOT DEFINED
-            LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
-            LckEnableUnicastMac (bool): NOT DEFINED
-            LckInterval (str(oneSec|oneMin)): NOT DEFINED
-            LckMode (str(auto|start|stop)): NOT DEFINED
-            LckPriority (number): NOT DEFINED
-            LckSupportAisGeneration (bool): NOT DEFINED
-            LckUnicastMac (str): NOT DEFINED
-            LmAllRemoteMeps (bool): NOT DEFINED
-            LmDestinationMacAddress (str): NOT DEFINED
-            LmMethod (str(singleEnded|dualEnded)): NOT DEFINED
-            LmmPriority (number): NOT DEFINED
-            LmrPriority (number): NOT DEFINED
-            LmrRxFcf (number): NOT DEFINED
-            LmrRxFcfStep (number): NOT DEFINED
-            LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
-            MacAddress (str): The MAC address of the MP.
-            ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
-            ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
-            ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
-            ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-            MdLevel (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)): The MD level of the MP. The MD level must be previously configured.
-            MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
-            MegIdFormat (str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)): The MEG identifier format.
-            MepId (number): The MEP identifier.
-            MipId (number): The MIP identifier.
-            MpType (str(mip|mep)): Sets the MP type.
-            OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
-            OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
-            OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
-            Rdi (str(auto|on|off)): The Remote Defect Identification.
-            ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
-            ShortMaNameFormat (str(primaryVid|characterString|2octetInteger|rfc2685VpnId)): Sets the Short MA Name format.
-            TstEnableUnicastMac (bool): NOT DEFINED
-            TstIncrPacketLength (bool): NOT DEFINED
-            TstIncrPacketLengthStep (number): NOT DEFINED
-            TstInitialPatternValue (number): NOT DEFINED
-            TstInterval (number): NOT DEFINED
-            TstMode (str(start|stop)): NOT DEFINED
-            TstOverwriteSequenceNumber (bool): NOT DEFINED
-            TstPacketLength (number): NOT DEFINED
-            TstPatternType (str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)): NOT DEFINED
-            TstPriority (number): NOT DEFINED
-            TstSequenceNumber (number): NOT DEFINED
-            TstTestType (str(inService|outOfService)): NOT DEFINED
-            TstUnicastMac (str): NOT DEFINED
-            Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-            Vlan (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        Args
+        ----
+        - AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
+        - AddDataTlv (bool): If true, adds a data TLV to bridge messages.
+        - AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
+        - AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
+        - AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
+        - AddLmmCustomTlvs (bool): NOT DEFINED
+        - AddLmrCustomTlvs (bool): NOT DEFINED
+        - AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
+        - AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
+        - AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
+        - AisEnableUnicastMac (bool): NOT DEFINED
+        - AisInterval (str(oneSec | oneMin)): NOT DEFINED
+        - AisMode (str(auto | start | stop)): NOT DEFINED
+        - AisPriority (number): NOT DEFINED
+        - AisUnicastMac (str): NOT DEFINED
+        - AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
+        - AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
+        - AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
+        - AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
+        - AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
+        - AutoLbDestination (str): Sets the loopback destination MAC address.
+        - AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
+        - AutoLmIteration (number): NOT DEFINED
+        - AutoLmTimeout (number): NOT DEFINED
+        - AutoLmTimer (number): NOT DEFINED
+        - AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
+        - AutoLtDestination (str): Sets the link trance destination MAC address.
+        - AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+        - CciInterval (str(3.33msec | 10msec | 100msec | 1sec | 10sec | 1min | 10min)): Sets the Continuity Check Interval (CCI).
+        - CcmLmmTxFcf (number): NOT DEFINED
+        - CcmLmmTxFcfStep (number): NOT DEFINED
+        - CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
+        - CcmRxFcb (number): NOT DEFINED
+        - CcmRxFcbStep (number): NOT DEFINED
+        - ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
+        - ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
+        - ChassisIdSubType (str(chassisComponent | interfaceAlias | portComponent | macAddress | networkAddress | interfaceName | locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
+        - DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
+        - DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
+        - DmMethod (str(twoWay | oneWay)): The type of Delay Measurment support.
+        - DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
+        - DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+        - EnableAisRx (bool): NOT DEFINED
+        - EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
+        - EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
+        - EnableAutoLm (bool): NOT DEFINED
+        - EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
+        - EnableLckRx (bool): NOT DEFINED
+        - EnableLmCounterUpdate (bool): NOT DEFINED
+        - EnableTstRx (bool): NOT DEFINED
+        - Enabled (bool): If true, the MP is enabled.
+        - InterRemoteMepRxIncrementStep (number): NOT DEFINED
+        - InterRemoteMepTxIncrementStep (number): NOT DEFINED
+        - LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+        - LckEnableUnicastMac (bool): NOT DEFINED
+        - LckInterval (str(oneSec | oneMin)): NOT DEFINED
+        - LckMode (str(auto | start | stop)): NOT DEFINED
+        - LckPriority (number): NOT DEFINED
+        - LckSupportAisGeneration (bool): NOT DEFINED
+        - LckUnicastMac (str): NOT DEFINED
+        - LmAllRemoteMeps (bool): NOT DEFINED
+        - LmDestinationMacAddress (str): NOT DEFINED
+        - LmMethod (str(singleEnded | dualEnded)): NOT DEFINED
+        - LmmPriority (number): NOT DEFINED
+        - LmrPriority (number): NOT DEFINED
+        - LmrRxFcf (number): NOT DEFINED
+        - LmrRxFcfStep (number): NOT DEFINED
+        - LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+        - MacAddress (str): The MAC address of the MP.
+        - ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+        - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+        - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+        - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
+        - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
+        - MepId (number): The MEP identifier.
+        - MipId (number): The MIP identifier.
+        - MpType (str(mip | mep)): Sets the MP type.
+        - OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+        - OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+        - OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+        - Rdi (str(auto | on | off)): The Remote Defect Identification.
+        - ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
+        - ShortMaNameFormat (str(primaryVid | characterString | 2octetInteger | rfc2685VpnId)): Sets the Short MA Name format.
+        - TstEnableUnicastMac (bool): NOT DEFINED
+        - TstIncrPacketLength (bool): NOT DEFINED
+        - TstIncrPacketLengthStep (number): NOT DEFINED
+        - TstInitialPatternValue (number): NOT DEFINED
+        - TstInterval (number): NOT DEFINED
+        - TstMode (str(start | stop)): NOT DEFINED
+        - TstOverwriteSequenceNumber (bool): NOT DEFINED
+        - TstPacketLength (number): NOT DEFINED
+        - TstPatternType (str(nullSignalWithoutCrc32 | nullSignalWithCrc32 | prbs2311WithoutCrc32 | prbs2311WithCrc32)): NOT DEFINED
+        - TstPriority (number): NOT DEFINED
+        - TstSequenceNumber (number): NOT DEFINED
+        - TstTestType (str(inService | outOfService)): NOT DEFINED
+        - TstUnicastMac (str): NOT DEFINED
+        - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
-        Returns:
-            self: This instance with all currently retrieved mp data using find and the newly added mp data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved mp resources using find and the newly added mp resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the mp data in this instance from server.
+        """Deletes all the contained mp resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmAllDestination=None, AutoDmDestination=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbAllDestination=None, AutoLbDestination=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtAllDestination=None, AutoLtDestination=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableTstRx=None, Enabled=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, MacAddress=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevel=None, MegId=None, MegIdFormat=None, MepId=None, MipId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, Ttl=None, Vlan=None):
-        """Finds and retrieves mp data from the server.
+        """Finds and retrieves mp resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve mp data from the server.
-        By default the find method takes no parameters and will retrieve all mp data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all mp resources from the server.
 
-        Args:
-            AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
-            AddDataTlv (bool): If true, adds a data TLV to bridge messages.
-            AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
-            AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
-            AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
-            AddLmmCustomTlvs (bool): NOT DEFINED
-            AddLmrCustomTlvs (bool): NOT DEFINED
-            AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
-            AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
-            AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
-            AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
-            AisEnableUnicastMac (bool): NOT DEFINED
-            AisInterval (str(oneSec|oneMin)): NOT DEFINED
-            AisMode (str(auto|start|stop)): NOT DEFINED
-            AisPriority (number): NOT DEFINED
-            AisUnicastMac (str): NOT DEFINED
-            AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
-            AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
-            AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
-            AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
-            AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
-            AutoLbDestination (str): Sets the loopback destination MAC address.
-            AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
-            AutoLmIteration (number): NOT DEFINED
-            AutoLmTimeout (number): NOT DEFINED
-            AutoLmTimer (number): NOT DEFINED
-            AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
-            AutoLtDestination (str): Sets the link trance destination MAC address.
-            AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
-            AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
-            AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
-            CciInterval (str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)): Sets the Continuity Check Interval (CCI).
-            CcmLmmTxFcf (number): NOT DEFINED
-            CcmLmmTxFcfStep (number): NOT DEFINED
-            CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
-            CcmRxFcb (number): NOT DEFINED
-            CcmRxFcbStep (number): NOT DEFINED
-            ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
-            ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
-            ChassisIdSubType (str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
-            DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
-            DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
-            DmMethod (str(twoWay|oneWay)): The type of Delay Measurment support.
-            DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
-            DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
-            EnableAisRx (bool): NOT DEFINED
-            EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
-            EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
-            EnableAutoLm (bool): NOT DEFINED
-            EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
-            EnableLckRx (bool): NOT DEFINED
-            EnableLmCounterUpdate (bool): NOT DEFINED
-            EnableTstRx (bool): NOT DEFINED
-            Enabled (bool): If true, the MP is enabled.
-            InterRemoteMepRxIncrementStep (number): NOT DEFINED
-            InterRemoteMepTxIncrementStep (number): NOT DEFINED
-            LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
-            LckEnableUnicastMac (bool): NOT DEFINED
-            LckInterval (str(oneSec|oneMin)): NOT DEFINED
-            LckMode (str(auto|start|stop)): NOT DEFINED
-            LckPriority (number): NOT DEFINED
-            LckSupportAisGeneration (bool): NOT DEFINED
-            LckUnicastMac (str): NOT DEFINED
-            LmAllRemoteMeps (bool): NOT DEFINED
-            LmDestinationMacAddress (str): NOT DEFINED
-            LmMethod (str(singleEnded|dualEnded)): NOT DEFINED
-            LmmPriority (number): NOT DEFINED
-            LmrPriority (number): NOT DEFINED
-            LmrRxFcf (number): NOT DEFINED
-            LmrRxFcfStep (number): NOT DEFINED
-            LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
-            MacAddress (str): The MAC address of the MP.
-            ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
-            ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
-            ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
-            ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-            MdLevel (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)): The MD level of the MP. The MD level must be previously configured.
-            MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
-            MegIdFormat (str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)): The MEG identifier format.
-            MepId (number): The MEP identifier.
-            MipId (number): The MIP identifier.
-            MpType (str(mip|mep)): Sets the MP type.
-            OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
-            OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
-            OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
-            Rdi (str(auto|on|off)): The Remote Defect Identification.
-            ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
-            ShortMaNameFormat (str(primaryVid|characterString|2octetInteger|rfc2685VpnId)): Sets the Short MA Name format.
-            TstEnableUnicastMac (bool): NOT DEFINED
-            TstIncrPacketLength (bool): NOT DEFINED
-            TstIncrPacketLengthStep (number): NOT DEFINED
-            TstInitialPatternValue (number): NOT DEFINED
-            TstInterval (number): NOT DEFINED
-            TstMode (str(start|stop)): NOT DEFINED
-            TstOverwriteSequenceNumber (bool): NOT DEFINED
-            TstPacketLength (number): NOT DEFINED
-            TstPatternType (str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)): NOT DEFINED
-            TstPriority (number): NOT DEFINED
-            TstSequenceNumber (number): NOT DEFINED
-            TstTestType (str(inService|outOfService)): NOT DEFINED
-            TstUnicastMac (str): NOT DEFINED
-            Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-            Vlan (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        Args
+        ----
+        - AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
+        - AddDataTlv (bool): If true, adds a data TLV to bridge messages.
+        - AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
+        - AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
+        - AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
+        - AddLmmCustomTlvs (bool): NOT DEFINED
+        - AddLmrCustomTlvs (bool): NOT DEFINED
+        - AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+        - AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
+        - AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
+        - AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
+        - AisEnableUnicastMac (bool): NOT DEFINED
+        - AisInterval (str(oneSec | oneMin)): NOT DEFINED
+        - AisMode (str(auto | start | stop)): NOT DEFINED
+        - AisPriority (number): NOT DEFINED
+        - AisUnicastMac (str): NOT DEFINED
+        - AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
+        - AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
+        - AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
+        - AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
+        - AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
+        - AutoLbDestination (str): Sets the loopback destination MAC address.
+        - AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
+        - AutoLmIteration (number): NOT DEFINED
+        - AutoLmTimeout (number): NOT DEFINED
+        - AutoLmTimer (number): NOT DEFINED
+        - AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
+        - AutoLtDestination (str): Sets the link trance destination MAC address.
+        - AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+        - AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+        - AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+        - CciInterval (str(3.33msec | 10msec | 100msec | 1sec | 10sec | 1min | 10min)): Sets the Continuity Check Interval (CCI).
+        - CcmLmmTxFcf (number): NOT DEFINED
+        - CcmLmmTxFcfStep (number): NOT DEFINED
+        - CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
+        - CcmRxFcb (number): NOT DEFINED
+        - CcmRxFcbStep (number): NOT DEFINED
+        - ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
+        - ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
+        - ChassisIdSubType (str(chassisComponent | interfaceAlias | portComponent | macAddress | networkAddress | interfaceName | locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
+        - DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
+        - DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
+        - DmMethod (str(twoWay | oneWay)): The type of Delay Measurment support.
+        - DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
+        - DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+        - EnableAisRx (bool): NOT DEFINED
+        - EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
+        - EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
+        - EnableAutoLm (bool): NOT DEFINED
+        - EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
+        - EnableLckRx (bool): NOT DEFINED
+        - EnableLmCounterUpdate (bool): NOT DEFINED
+        - EnableTstRx (bool): NOT DEFINED
+        - Enabled (bool): If true, the MP is enabled.
+        - InterRemoteMepRxIncrementStep (number): NOT DEFINED
+        - InterRemoteMepTxIncrementStep (number): NOT DEFINED
+        - LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+        - LckEnableUnicastMac (bool): NOT DEFINED
+        - LckInterval (str(oneSec | oneMin)): NOT DEFINED
+        - LckMode (str(auto | start | stop)): NOT DEFINED
+        - LckPriority (number): NOT DEFINED
+        - LckSupportAisGeneration (bool): NOT DEFINED
+        - LckUnicastMac (str): NOT DEFINED
+        - LmAllRemoteMeps (bool): NOT DEFINED
+        - LmDestinationMacAddress (str): NOT DEFINED
+        - LmMethod (str(singleEnded | dualEnded)): NOT DEFINED
+        - LmmPriority (number): NOT DEFINED
+        - LmrPriority (number): NOT DEFINED
+        - LmrRxFcf (number): NOT DEFINED
+        - LmrRxFcfStep (number): NOT DEFINED
+        - LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+        - MacAddress (str): The MAC address of the MP.
+        - ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+        - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+        - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+        - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
+        - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
+        - MepId (number): The MEP identifier.
+        - MipId (number): The MIP identifier.
+        - MpType (str(mip | mep)): Sets the MP type.
+        - OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+        - OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+        - OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+        - Rdi (str(auto | on | off)): The Remote Defect Identification.
+        - ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
+        - ShortMaNameFormat (str(primaryVid | characterString | 2octetInteger | rfc2685VpnId)): Sets the Short MA Name format.
+        - TstEnableUnicastMac (bool): NOT DEFINED
+        - TstIncrPacketLength (bool): NOT DEFINED
+        - TstIncrPacketLengthStep (number): NOT DEFINED
+        - TstInitialPatternValue (number): NOT DEFINED
+        - TstInterval (number): NOT DEFINED
+        - TstMode (str(start | stop)): NOT DEFINED
+        - TstOverwriteSequenceNumber (bool): NOT DEFINED
+        - TstPacketLength (number): NOT DEFINED
+        - TstPatternType (str(nullSignalWithoutCrc32 | nullSignalWithCrc32 | prbs2311WithoutCrc32 | prbs2311WithCrc32)): NOT DEFINED
+        - TstPriority (number): NOT DEFINED
+        - TstSequenceNumber (number): NOT DEFINED
+        - TstTestType (str(inService | outOfService)): NOT DEFINED
+        - TstUnicastMac (str): NOT DEFINED
+        - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
-        Returns:
-            self: This instance with matching mp data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching mp resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of mp data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the mp data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the mp resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

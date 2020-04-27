@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MapServerResolver(Base):
     """It gives details about the map server resolver
-    The MapServerResolver class encapsulates a list of mapServerResolver resources that is be managed by the user.
+    The MapServerResolver class encapsulates a list of mapServerResolver resources that are managed by the user.
     A list of resources can be retrieved from the server using the MapServerResolver.find() method.
-    The list can be managed by the user by using the MapServerResolver.add() and MapServerResolver.remove() methods.
+    The list can be managed by using the MapServerResolver.add() and MapServerResolver.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class MapServerResolver(Base):
 
     @property
     def AuthenticationAlgorithm(self):
-        """It gives details about the authentication algorithm
-
-        Returns:
-            str(sha-1-96|sha-128-256)
+        """
+        Returns
+        -------
+        - str(sha-1-96 | sha-128-256): It gives details about the authentication algorithm
         """
         return self._get_attribute('authenticationAlgorithm')
     @AuthenticationAlgorithm.setter
@@ -50,10 +50,10 @@ class MapServerResolver(Base):
 
     @property
     def Enabled(self):
-        """If true, it enables the protocol
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables the protocol
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,10 +62,10 @@ class MapServerResolver(Base):
 
     @property
     def ExternalMsmrAddress(self):
-        """It gives details about the external Msmr address
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: It gives details about the external Msmr address
         """
         return self._get_attribute('externalMsmrAddress')
     @ExternalMsmrAddress.setter
@@ -74,10 +74,10 @@ class MapServerResolver(Base):
 
     @property
     def Family(self):
-        """It gives details about the ip family it represents
-
-        Returns:
-            str(ipv4|ipv6)
+        """
+        Returns
+        -------
+        - str(ipv4 | ipv6): It gives details about the ip family it represents
         """
         return self._get_attribute('family')
     @Family.setter
@@ -86,10 +86,10 @@ class MapServerResolver(Base):
 
     @property
     def InternalIxiaMsmrRouter(self):
-        """It gives details about the internal ixia msmr router
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../router): It gives details about the internal ixia msmr router
         """
         return self._get_attribute('internalIxiaMsmrRouter')
     @InternalIxiaMsmrRouter.setter
@@ -98,10 +98,10 @@ class MapServerResolver(Base):
 
     @property
     def Key(self):
-        """it gives details about the key
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: it gives details about the key
         """
         return self._get_attribute('key')
     @Key.setter
@@ -110,10 +110,10 @@ class MapServerResolver(Base):
 
     @property
     def MsmrLocation(self):
-        """It details about the msmr location
-
-        Returns:
-            str(internal|external)
+        """
+        Returns
+        -------
+        - str(internal | external): It details about the msmr location
         """
         return self._get_attribute('msmrLocation')
     @MsmrLocation.setter
@@ -122,10 +122,10 @@ class MapServerResolver(Base):
 
     @property
     def Type(self):
-        """It gives details about the type
-
-        Returns:
-            str(ms|mr|msmr)
+        """
+        Returns
+        -------
+        - str(ms | mr | msmr): It gives details about the type
         """
         return self._get_attribute('type')
     @Type.setter
@@ -133,88 +133,101 @@ class MapServerResolver(Base):
         self._set_attribute('type', value)
 
     def update(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
-        """Updates a child instance of mapServerResolver on the server.
+        """Updates mapServerResolver resource on the server.
 
-        Args:
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            Enabled (bool): If true, it enables the protocol
-            ExternalMsmrAddress (str): It gives details about the external Msmr address
-            Family (str(ipv4|ipv6)): It gives details about the ip family it represents
-            InternalIxiaMsmrRouter (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router)): It gives details about the internal ixia msmr router
-            Key (str): it gives details about the key
-            MsmrLocation (str(internal|external)): It details about the msmr location
-            Type (str(ms|mr|msmr)): It gives details about the type
+        Args
+        ----
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - Enabled (bool): If true, it enables the protocol
+        - ExternalMsmrAddress (str): It gives details about the external Msmr address
+        - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - Key (str): it gives details about the key
+        - MsmrLocation (str(internal | external)): It details about the msmr location
+        - Type (str(ms | mr | msmr)): It gives details about the type
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
-        """Adds a new mapServerResolver node on the server and retrieves it in this instance.
+        """Adds a new mapServerResolver resource on the server and adds it to the container.
 
-        Args:
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            Enabled (bool): If true, it enables the protocol
-            ExternalMsmrAddress (str): It gives details about the external Msmr address
-            Family (str(ipv4|ipv6)): It gives details about the ip family it represents
-            InternalIxiaMsmrRouter (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router)): It gives details about the internal ixia msmr router
-            Key (str): it gives details about the key
-            MsmrLocation (str(internal|external)): It details about the msmr location
-            Type (str(ms|mr|msmr)): It gives details about the type
+        Args
+        ----
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - Enabled (bool): If true, it enables the protocol
+        - ExternalMsmrAddress (str): It gives details about the external Msmr address
+        - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - Key (str): it gives details about the key
+        - MsmrLocation (str(internal | external)): It details about the msmr location
+        - Type (str(ms | mr | msmr)): It gives details about the type
 
-        Returns:
-            self: This instance with all currently retrieved mapServerResolver data using find and the newly added mapServerResolver data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved mapServerResolver resources using find and the newly added mapServerResolver resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the mapServerResolver data in this instance from server.
+        """Deletes all the contained mapServerResolver resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
-        """Finds and retrieves mapServerResolver data from the server.
+        """Finds and retrieves mapServerResolver resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve mapServerResolver data from the server.
-        By default the find method takes no parameters and will retrieve all mapServerResolver data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mapServerResolver resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all mapServerResolver resources from the server.
 
-        Args:
-            AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
-            Enabled (bool): If true, it enables the protocol
-            ExternalMsmrAddress (str): It gives details about the external Msmr address
-            Family (str(ipv4|ipv6)): It gives details about the ip family it represents
-            InternalIxiaMsmrRouter (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router)): It gives details about the internal ixia msmr router
-            Key (str): it gives details about the key
-            MsmrLocation (str(internal|external)): It details about the msmr location
-            Type (str(ms|mr|msmr)): It gives details about the type
+        Args
+        ----
+        - AuthenticationAlgorithm (str(sha-1-96 | sha-128-256)): It gives details about the authentication algorithm
+        - Enabled (bool): If true, it enables the protocol
+        - ExternalMsmrAddress (str): It gives details about the external Msmr address
+        - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - Key (str): it gives details about the key
+        - MsmrLocation (str(internal | external)): It details about the msmr location
+        - Type (str(ms | mr | msmr)): It gives details about the type
 
-        Returns:
-            self: This instance with matching mapServerResolver data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching mapServerResolver resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of mapServerResolver data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the mapServerResolver data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the mapServerResolver resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

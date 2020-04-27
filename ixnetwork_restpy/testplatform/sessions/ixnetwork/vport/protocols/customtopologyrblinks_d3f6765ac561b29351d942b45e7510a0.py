@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTopologyRbLinks(Base):
     """NOT DEFINED
-    The CustomTopologyRbLinks class encapsulates a list of customTopologyRbLinks resources that is be managed by the user.
+    The CustomTopologyRbLinks class encapsulates a list of customTopologyRbLinks resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTopologyRbLinks.find() method.
-    The list can be managed by the user by using the CustomTopologyRbLinks.add() and CustomTopologyRbLinks.remove() methods.
+    The list can be managed by using the CustomTopologyRbLinks.add() and CustomTopologyRbLinks.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomTopologyRbLinks(Base):
 
     @property
     def Enabled(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class CustomTopologyRbLinks(Base):
 
     @property
     def LinkMetric(self):
-        """NOT DEFINED
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: NOT DEFINED
         """
         return self._get_attribute('linkMetric')
     @LinkMetric.setter
@@ -62,10 +62,10 @@ class CustomTopologyRbLinks(Base):
 
     @property
     def LinkNodeSystemId(self):
-        """NOT DEFINED
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: NOT DEFINED
         """
         return self._get_attribute('linkNodeSystemId')
     @LinkNodeSystemId.setter
@@ -73,73 +73,86 @@ class CustomTopologyRbLinks(Base):
         self._set_attribute('linkNodeSystemId', value)
 
     def update(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Updates a child instance of customTopologyRbLinks on the server.
+        """Updates customTopologyRbLinks resource on the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Adds a new customTopologyRbLinks node on the server and retrieves it in this instance.
+        """Adds a new customTopologyRbLinks resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Returns:
-            self: This instance with all currently retrieved customTopologyRbLinks data using find and the newly added customTopologyRbLinks data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTopologyRbLinks resources using find and the newly added customTopologyRbLinks resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTopologyRbLinks data in this instance from server.
+        """Deletes all the contained customTopologyRbLinks resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
-        """Finds and retrieves customTopologyRbLinks data from the server.
+        """Finds and retrieves customTopologyRbLinks resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTopologyRbLinks data from the server.
-        By default the find method takes no parameters and will retrieve all customTopologyRbLinks data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyRbLinks resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTopologyRbLinks resources from the server.
 
-        Args:
-            Enabled (bool): NOT DEFINED
-            LinkMetric (number): NOT DEFINED
-            LinkNodeSystemId (str): NOT DEFINED
+        Args
+        ----
+        - Enabled (bool): NOT DEFINED
+        - LinkMetric (number): NOT DEFINED
+        - LinkNodeSystemId (str): NOT DEFINED
 
-        Returns:
-            self: This instance with matching customTopologyRbLinks data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTopologyRbLinks resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTopologyRbLinks data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTopologyRbLinks data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTopologyRbLinks resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,10 +36,10 @@ class QueueProperty(Base):
 
     @property
     def MaximumDataRate(self):
-        """If true, indicates that a maximum data rate is guaranteed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates that a maximum data rate is guaranteed.
         """
         return self._get_attribute('maximumDataRate')
     @MaximumDataRate.setter
@@ -48,10 +48,10 @@ class QueueProperty(Base):
 
     @property
     def MinimumDataRateGuaranteed(self):
-        """If true, indicates that a minimum data rate is guaranteed.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates that a minimum data rate is guaranteed.
         """
         return self._get_attribute('minimumDataRateGuaranteed')
     @MinimumDataRateGuaranteed.setter
@@ -60,10 +60,10 @@ class QueueProperty(Base):
 
     @property
     def IsNone(self):
-        """If true, indicates that no property is defined for the queue.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, indicates that no property is defined for the queue.
         """
         return self._get_attribute('none')
     @IsNone.setter
@@ -71,13 +71,15 @@ class QueueProperty(Base):
         self._set_attribute('none', value)
 
     def update(self, MaximumDataRate=None, MinimumDataRateGuaranteed=None):
-        """Updates a child instance of queueProperty on the server.
+        """Updates queueProperty resource on the server.
 
-        Args:
-            MaximumDataRate (bool): If true, indicates that a maximum data rate is guaranteed.
-            MinimumDataRateGuaranteed (bool): If true, indicates that a minimum data rate is guaranteed.
+        Args
+        ----
+        - MaximumDataRate (bool): If true, indicates that a maximum data rate is guaranteed.
+        - MinimumDataRateGuaranteed (bool): If true, indicates that a minimum data rate is guaranteed.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

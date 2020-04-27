@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class LabelBlock(Base):
     """This object holds the labels to be used with an L2 VPN.
-    The LabelBlock class encapsulates a list of labelBlock resources that is be managed by the user.
+    The LabelBlock class encapsulates a list of labelBlock resources that are managed by the user.
     A list of resources can be retrieved from the server using the LabelBlock.find() method.
-    The list can be managed by the user by using the LabelBlock.add() and LabelBlock.remove() methods.
+    The list can be managed by using the LabelBlock.add() and LabelBlock.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class LabelBlock(Base):
 
     @property
     def Enabled(self):
-        """Enables or disables use of the L2 VPN label block.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables use of the L2 VPN label block.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class LabelBlock(Base):
 
     @property
     def LabelBlockOffsetIncrementAcrossL2Site(self):
-        """Signifies the increment of label block offset across L2 site
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the increment of label block offset across L2 site
         """
         return self._get_attribute('labelBlockOffsetIncrementAcrossL2Site')
     @LabelBlockOffsetIncrementAcrossL2Site.setter
@@ -62,10 +62,10 @@ class LabelBlock(Base):
 
     @property
     def LabelStartIncrementAcrossL2Site(self):
-        """Starts the increment of label across L2 site
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Starts the increment of label across L2 site
         """
         return self._get_attribute('labelStartIncrementAcrossL2Site')
     @LabelStartIncrementAcrossL2Site.setter
@@ -74,10 +74,10 @@ class LabelBlock(Base):
 
     @property
     def NumberOfLabels(self):
-        """The number of labels contained in the label block. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of labels contained in the label block. (default = 0)
         """
         return self._get_attribute('numberOfLabels')
     @NumberOfLabels.setter
@@ -86,10 +86,10 @@ class LabelBlock(Base):
 
     @property
     def Offset(self):
-        """The VPLS block offset value used to create a unique subset of the label values. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The VPLS block offset value used to create a unique subset of the label values. (default = 0)
         """
         return self._get_attribute('offset')
     @Offset.setter
@@ -98,10 +98,10 @@ class LabelBlock(Base):
 
     @property
     def Start(self):
-        """The first label in the label block. (default = 0)
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first label in the label block. (default = 0)
         """
         return self._get_attribute('start')
     @Start.setter
@@ -110,91 +110,104 @@ class LabelBlock(Base):
 
     @property
     def TotalLabelCount(self):
-        """Signifies the total label count
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Signifies the total label count
         """
         return self._get_attribute('totalLabelCount')
 
     def update(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
-        """Updates a child instance of labelBlock on the server.
+        """Updates labelBlock resource on the server.
 
-        Args:
-            Enabled (bool): Enables or disables use of the L2 VPN label block.
-            LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
-            LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
-            NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
-            Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
-            Start (number): The first label in the label block. (default = 0)
+        Args
+        ----
+        - Enabled (bool): Enables or disables use of the L2 VPN label block.
+        - LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
+        - LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
+        - NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
+        - Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
+        - Start (number): The first label in the label block. (default = 0)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
-        """Adds a new labelBlock node on the server and retrieves it in this instance.
+        """Adds a new labelBlock resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): Enables or disables use of the L2 VPN label block.
-            LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
-            LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
-            NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
-            Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
-            Start (number): The first label in the label block. (default = 0)
+        Args
+        ----
+        - Enabled (bool): Enables or disables use of the L2 VPN label block.
+        - LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
+        - LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
+        - NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
+        - Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
+        - Start (number): The first label in the label block. (default = 0)
 
-        Returns:
-            self: This instance with all currently retrieved labelBlock data using find and the newly added labelBlock data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved labelBlock resources using find and the newly added labelBlock resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the labelBlock data in this instance from server.
+        """Deletes all the contained labelBlock resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None, TotalLabelCount=None):
-        """Finds and retrieves labelBlock data from the server.
+        """Finds and retrieves labelBlock resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve labelBlock data from the server.
-        By default the find method takes no parameters and will retrieve all labelBlock data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve labelBlock resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all labelBlock resources from the server.
 
-        Args:
-            Enabled (bool): Enables or disables use of the L2 VPN label block.
-            LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
-            LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
-            NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
-            Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
-            Start (number): The first label in the label block. (default = 0)
-            TotalLabelCount (number): Signifies the total label count
+        Args
+        ----
+        - Enabled (bool): Enables or disables use of the L2 VPN label block.
+        - LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
+        - LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
+        - NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
+        - Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
+        - Start (number): The first label in the label block. (default = 0)
+        - TotalLabelCount (number): Signifies the total label count
 
-        Returns:
-            self: This instance with matching labelBlock data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching labelBlock resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of labelBlock data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the labelBlock data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the labelBlock resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

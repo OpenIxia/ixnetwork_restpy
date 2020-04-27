@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class PtpGlobals(Base):
     """Global settings placeholder for PtpPlugin.
-    The PtpGlobals class encapsulates a list of ptpGlobals resources that is be managed by the user.
+    The PtpGlobals class encapsulates a list of ptpGlobals resources that are managed by the user.
     A list of resources can be retrieved from the server using the PtpGlobals.find() method.
-    The list can be managed by the user by using the PtpGlobals.add() and PtpGlobals.remove() methods.
+    The list can be managed by using the PtpGlobals.add() and PtpGlobals.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class PtpGlobals(Base):
 
     @property
     def MaxOutstanding(self):
-        """The number of PTP connections to be in initiation or terminating state at any time.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The number of PTP connections to be in initiation or terminating state at any time.
         """
         return self._get_attribute('maxOutstanding')
     @MaxOutstanding.setter
@@ -50,19 +50,19 @@ class PtpGlobals(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def SetupRate(self):
-        """Initiation rate for the PTP connection establishement.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Initiation rate for the PTP connection establishement.
         """
         return self._get_attribute('setupRate')
     @SetupRate.setter
@@ -71,10 +71,10 @@ class PtpGlobals(Base):
 
     @property
     def TeardownRate(self):
-        """Teardown rate for the PTP connection establishement.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Teardown rate for the PTP connection establishement.
         """
         return self._get_attribute('teardownRate')
     @TeardownRate.setter
@@ -82,74 +82,87 @@ class PtpGlobals(Base):
         self._set_attribute('teardownRate', value)
 
     def update(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
-        """Updates a child instance of ptpGlobals on the server.
+        """Updates ptpGlobals resource on the server.
 
-        Args:
-            MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
-            SetupRate (number): Initiation rate for the PTP connection establishement.
-            TeardownRate (number): Teardown rate for the PTP connection establishement.
+        Args
+        ----
+        - MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
+        - SetupRate (number): Initiation rate for the PTP connection establishement.
+        - TeardownRate (number): Teardown rate for the PTP connection establishement.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
-        """Adds a new ptpGlobals node on the server and retrieves it in this instance.
+        """Adds a new ptpGlobals resource on the server and adds it to the container.
 
-        Args:
-            MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
-            SetupRate (number): Initiation rate for the PTP connection establishement.
-            TeardownRate (number): Teardown rate for the PTP connection establishement.
+        Args
+        ----
+        - MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
+        - SetupRate (number): Initiation rate for the PTP connection establishement.
+        - TeardownRate (number): Teardown rate for the PTP connection establishement.
 
-        Returns:
-            self: This instance with all currently retrieved ptpGlobals data using find and the newly added ptpGlobals data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved ptpGlobals resources using find and the newly added ptpGlobals resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the ptpGlobals data in this instance from server.
+        """Deletes all the contained ptpGlobals resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, MaxOutstanding=None, ObjectId=None, SetupRate=None, TeardownRate=None):
-        """Finds and retrieves ptpGlobals data from the server.
+        """Finds and retrieves ptpGlobals resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ptpGlobals data from the server.
-        By default the find method takes no parameters and will retrieve all ptpGlobals data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ptpGlobals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ptpGlobals resources from the server.
 
-        Args:
-            MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
-            ObjectId (str): Unique identifier for this object
-            SetupRate (number): Initiation rate for the PTP connection establishement.
-            TeardownRate (number): Teardown rate for the PTP connection establishement.
+        Args
+        ----
+        - MaxOutstanding (number): The number of PTP connections to be in initiation or terminating state at any time.
+        - ObjectId (str): Unique identifier for this object
+        - SetupRate (number): Initiation rate for the PTP connection establishement.
+        - TeardownRate (number): Teardown rate for the PTP connection establishement.
 
-        Returns:
-            self: This instance with matching ptpGlobals data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching ptpGlobals resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of ptpGlobals data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the ptpGlobals data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the ptpGlobals resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

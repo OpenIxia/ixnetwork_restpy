@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class ControllerTables(Base):
     """This view lists all the controller table features that can be configured.
-    The ControllerTables class encapsulates a list of controllerTables resources that is be managed by the user.
+    The ControllerTables class encapsulates a list of controllerTables resources that are managed by the user.
     A list of resources can be retrieved from the server using the ControllerTables.find() method.
-    The list can be managed by the user by using the ControllerTables.add() and ControllerTables.remove() methods.
+    The list can be managed by using the ControllerTables.add() and ControllerTables.remove() methods.
     """
 
     __slots__ = ()
@@ -38,220 +38,220 @@ class ControllerTables(Base):
 
     @property
     def ApplyActions(self):
-        """An instance of the ApplyActions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_df8955851ad5d0673dd88b47b7369e35.ApplyActions): An instance of the ApplyActions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_df8955851ad5d0673dd88b47b7369e35.ApplyActions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_df8955851ad5d0673dd88b47b7369e35 import ApplyActions
         return ApplyActions(self)._select()
 
     @property
     def ApplyActionsMiss(self):
-        """An instance of the ApplyActionsMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_8ebb9c94e4a8550ba98f27d504d7e9dd.ApplyActionsMiss): An instance of the ApplyActionsMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_8ebb9c94e4a8550ba98f27d504d7e9dd.ApplyActionsMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_8ebb9c94e4a8550ba98f27d504d7e9dd import ApplyActionsMiss
         return ApplyActionsMiss(self)._select()
 
     @property
     def ApplySetField(self):
-        """An instance of the ApplySetField class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_d2709edccf7369b6b3923fe2b08a1dac.ApplySetField): An instance of the ApplySetField class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_d2709edccf7369b6b3923fe2b08a1dac.ApplySetField)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_d2709edccf7369b6b3923fe2b08a1dac import ApplySetField
         return ApplySetField(self)._select()
 
     @property
     def ApplySetFieldMiss(self):
-        """An instance of the ApplySetFieldMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_25a655c6dcc33830dac2c53ef1a0b8b9.ApplySetFieldMiss): An instance of the ApplySetFieldMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_25a655c6dcc33830dac2c53ef1a0b8b9.ApplySetFieldMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_25a655c6dcc33830dac2c53ef1a0b8b9 import ApplySetFieldMiss
         return ApplySetFieldMiss(self)._select()
 
     @property
     def ControllerTableFlowRanges(self):
-        """An instance of the ControllerTableFlowRanges class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertableflowranges_88b7d022d4061c169a3ec4c12bf4fcb0.ControllerTableFlowRanges): An instance of the ControllerTableFlowRanges class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertableflowranges_88b7d022d4061c169a3ec4c12bf4fcb0.ControllerTableFlowRanges)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertableflowranges_88b7d022d4061c169a3ec4c12bf4fcb0 import ControllerTableFlowRanges
         return ControllerTableFlowRanges(self)
 
     @property
     def FeaturesSupported(self):
-        """An instance of the FeaturesSupported class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_518a040c89e18b3809a31074121e3e3c.FeaturesSupported): An instance of the FeaturesSupported class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_518a040c89e18b3809a31074121e3e3c.FeaturesSupported)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_518a040c89e18b3809a31074121e3e3c import FeaturesSupported
         return FeaturesSupported(self)._select()
 
     @property
     def Instruction(self):
-        """An instance of the Instruction class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_fc4c8d936f9a47dfb9b78be59d9816fe.Instruction): An instance of the Instruction class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_fc4c8d936f9a47dfb9b78be59d9816fe.Instruction)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_fc4c8d936f9a47dfb9b78be59d9816fe import Instruction
         return Instruction(self)._select()
 
     @property
     def InstructionMiss(self):
-        """An instance of the InstructionMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_ed6ad9a3510df5c276705931e63b5ced.InstructionMiss): An instance of the InstructionMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_ed6ad9a3510df5c276705931e63b5ced.InstructionMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_ed6ad9a3510df5c276705931e63b5ced import InstructionMiss
         return InstructionMiss(self)._select()
 
     @property
     def Match(self):
-        """An instance of the Match class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_2409de9ca2e0bc083fcfe8a1c1b8a2d0.Match): An instance of the Match class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_2409de9ca2e0bc083fcfe8a1c1b8a2d0.Match)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_2409de9ca2e0bc083fcfe8a1c1b8a2d0 import Match
         return Match(self)._select()
 
     @property
     def TableModificationTriggerAttributes(self):
-        """An instance of the TableModificationTriggerAttributes class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablemodificationtriggerattributes_da2df8c4d69df02c66589255cb37f2ee.TableModificationTriggerAttributes): An instance of the TableModificationTriggerAttributes class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablemodificationtriggerattributes_da2df8c4d69df02c66589255cb37f2ee.TableModificationTriggerAttributes)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablemodificationtriggerattributes_da2df8c4d69df02c66589255cb37f2ee import TableModificationTriggerAttributes
         return TableModificationTriggerAttributes(self)._select()
 
     @property
     def Wildcards(self):
-        """An instance of the Wildcards class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_e113074f6eac47b307248dd232bbc64f.Wildcards): An instance of the Wildcards class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_e113074f6eac47b307248dd232bbc64f.Wildcards)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_e113074f6eac47b307248dd232bbc64f import Wildcards
         return Wildcards(self)._select()
 
     @property
     def WriteActions(self):
-        """An instance of the WriteActions class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_859fb7a3fc2b09b85372f9e405104e53.WriteActions): An instance of the WriteActions class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_859fb7a3fc2b09b85372f9e405104e53.WriteActions)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_859fb7a3fc2b09b85372f9e405104e53 import WriteActions
         return WriteActions(self)._select()
 
     @property
     def WriteActionsMiss(self):
-        """An instance of the WriteActionsMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_6e6e3b702378be691e7c951333ee284c.WriteActionsMiss): An instance of the WriteActionsMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_6e6e3b702378be691e7c951333ee284c.WriteActionsMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_6e6e3b702378be691e7c951333ee284c import WriteActionsMiss
         return WriteActionsMiss(self)._select()
 
     @property
     def WriteSetField(self):
-        """An instance of the WriteSetField class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_1ea0f4e35e89dda3c1e4eec50f631e87.WriteSetField): An instance of the WriteSetField class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_1ea0f4e35e89dda3c1e4eec50f631e87.WriteSetField)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_1ea0f4e35e89dda3c1e4eec50f631e87 import WriteSetField
         return WriteSetField(self)._select()
 
     @property
     def WriteSetFieldMiss(self):
-        """An instance of the WriteSetFieldMiss class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_bd1b824bbc6181cb8a367ba9bfc78479.WriteSetFieldMiss): An instance of the WriteSetFieldMiss class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_bd1b824bbc6181cb8a367ba9bfc78479.WriteSetFieldMiss)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_bd1b824bbc6181cb8a367ba9bfc78479 import WriteSetFieldMiss
         return WriteSetFieldMiss(self)._select()
 
     @property
     def ApplyActionExperimenterData(self):
-        """The data of the Apply Action Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Apply Action Experimenter.
         """
         return self._get_attribute('applyActionExperimenterData')
     @ApplyActionExperimenterData.setter
@@ -260,10 +260,10 @@ class ControllerTables(Base):
 
     @property
     def ApplyActionExperimenterDataLength(self):
-        """The data length of the Apply Action Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Apply Action Experimenter.
         """
         return self._get_attribute('applyActionExperimenterDataLength')
     @ApplyActionExperimenterDataLength.setter
@@ -272,10 +272,10 @@ class ControllerTables(Base):
 
     @property
     def ApplyActionExperimenterId(self):
-        """The unique identifier for Apply Action Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for Apply Action Experimenter.
         """
         return self._get_attribute('applyActionExperimenterId')
     @ApplyActionExperimenterId.setter
@@ -284,10 +284,10 @@ class ControllerTables(Base):
 
     @property
     def ApplyActionMissExperimenterData(self):
-        """Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
         """
         return self._get_attribute('applyActionMissExperimenterData')
     @ApplyActionMissExperimenterData.setter
@@ -296,10 +296,10 @@ class ControllerTables(Base):
 
     @property
     def ApplyActionMissExperimenterDataLength(self):
-        """The data length of the Apply Action Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Apply Action Miss Experimenter.
         """
         return self._get_attribute('applyActionMissExperimenterDataLength')
     @ApplyActionMissExperimenterDataLength.setter
@@ -308,10 +308,10 @@ class ControllerTables(Base):
 
     @property
     def ApplyActionMissExperimenterId(self):
-        """The unique identifier for Apply Action Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for Apply Action Miss Experimenter.
         """
         return self._get_attribute('applyActionMissExperimenterId')
     @ApplyActionMissExperimenterId.setter
@@ -320,10 +320,10 @@ class ControllerTables(Base):
 
     @property
     def Config(self):
-        """Specify the bitmap of OFPTC_* values. The default value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the bitmap of OFPTC_* values. The default value is 0.
         """
         return self._get_attribute('config')
     @Config.setter
@@ -332,10 +332,10 @@ class ControllerTables(Base):
 
     @property
     def Enabled(self):
-        """If selected, this table is used in this controller configuration.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If selected, this table is used in this controller configuration.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -344,10 +344,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterData(self):
-        """The data of the Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Experimenter.
         """
         return self._get_attribute('experimenterData')
     @ExperimenterData.setter
@@ -356,10 +356,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterDataLength(self):
-        """The data length of the Experimenter for table-miss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Experimenter for table-miss.
         """
         return self._get_attribute('experimenterDataLength')
     @ExperimenterDataLength.setter
@@ -368,10 +368,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterId(self):
-        """The unique identifier for the Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for the Experimenter.
         """
         return self._get_attribute('experimenterId')
     @ExperimenterId.setter
@@ -380,10 +380,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterMissData(self):
-        """The data of the Experimenter for table-miss.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Experimenter for table-miss.
         """
         return self._get_attribute('experimenterMissData')
     @ExperimenterMissData.setter
@@ -392,10 +392,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterMissDataLength(self):
-        """The data length of the Experimenter for table-miss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Experimenter for table-miss.
         """
         return self._get_attribute('experimenterMissDataLength')
     @ExperimenterMissDataLength.setter
@@ -404,10 +404,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterMissId(self):
-        """The unique identifier for the Experimenter for table-miss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for the Experimenter for table-miss.
         """
         return self._get_attribute('experimenterMissId')
     @ExperimenterMissId.setter
@@ -416,10 +416,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterMissType(self):
-        """The type of experimenter for table-miss.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of experimenter for table-miss.
         """
         return self._get_attribute('experimenterMissType')
     @ExperimenterMissType.setter
@@ -428,10 +428,10 @@ class ControllerTables(Base):
 
     @property
     def ExperimenterType(self):
-        """The type of experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The type of experimenter.
         """
         return self._get_attribute('experimenterType')
     @ExperimenterType.setter
@@ -440,10 +440,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionExperimenterData(self):
-        """The data of the Instruction Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Instruction Experimenter.
         """
         return self._get_attribute('instructionExperimenterData')
     @InstructionExperimenterData.setter
@@ -452,10 +452,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionExperimenterDataLength(self):
-        """The data length of the experimental instruction of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the experimental instruction of Controller Table Experimenter.
         """
         return self._get_attribute('instructionExperimenterDataLength')
     @InstructionExperimenterDataLength.setter
@@ -464,10 +464,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionExperimenterId(self):
-        """The unique identifier for the Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for the Experimenter.
         """
         return self._get_attribute('instructionExperimenterId')
     @InstructionExperimenterId.setter
@@ -476,10 +476,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionMissExperimenterData(self):
-        """The data of the Instruction Miss Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Instruction Miss Experimenter.
         """
         return self._get_attribute('instructionMissExperimenterData')
     @InstructionMissExperimenterData.setter
@@ -488,10 +488,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionMissExperimenterDataLength(self):
-        """It indicates the data length of the Instruction Miss Experimenter
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: It indicates the data length of the Instruction Miss Experimenter
         """
         return self._get_attribute('instructionMissExperimenterDataLength')
     @InstructionMissExperimenterDataLength.setter
@@ -500,10 +500,10 @@ class ControllerTables(Base):
 
     @property
     def InstructionMissExperimenterId(self):
-        """The unique identifier of Instruction Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier of Instruction Miss Experimenter.
         """
         return self._get_attribute('instructionMissExperimenterId')
     @InstructionMissExperimenterId.setter
@@ -512,10 +512,10 @@ class ControllerTables(Base):
 
     @property
     def MatchExperimenterData(self):
-        """The match data of the Controller Table Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The match data of the Controller Table Experimenter.
         """
         return self._get_attribute('matchExperimenterData')
     @MatchExperimenterData.setter
@@ -524,10 +524,10 @@ class ControllerTables(Base):
 
     @property
     def MatchExperimenterDataLength(self):
-        """The data length of the wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('matchExperimenterDataLength')
     @MatchExperimenterDataLength.setter
@@ -536,10 +536,10 @@ class ControllerTables(Base):
 
     @property
     def MatchExperimenterField(self):
-        """The identifier for match experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for match experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('matchExperimenterField')
     @MatchExperimenterField.setter
@@ -548,10 +548,10 @@ class ControllerTables(Base):
 
     @property
     def MatchExperimenterHasMask(self):
-        """Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
         """
         return self._get_attribute('matchExperimenterHasMask')
     @MatchExperimenterHasMask.setter
@@ -560,10 +560,10 @@ class ControllerTables(Base):
 
     @property
     def MatchExperimenterId(self):
-        """The unique identifier for wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('matchExperimenterId')
     @MatchExperimenterId.setter
@@ -572,10 +572,10 @@ class ControllerTables(Base):
 
     @property
     def MaxEntries(self):
-        """Specify the maximum number of entries supported. The default value is 0.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the maximum number of entries supported. The default value is 0.
         """
         return self._get_attribute('maxEntries')
     @MaxEntries.setter
@@ -584,10 +584,10 @@ class ControllerTables(Base):
 
     @property
     def MetadataMatch(self):
-        """Specify the bits of metadata table that can match. The default value is 0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the bits of metadata table that can match. The default value is 0.
         """
         return self._get_attribute('metadataMatch')
     @MetadataMatch.setter
@@ -596,10 +596,10 @@ class ControllerTables(Base):
 
     @property
     def MetadataWrite(self):
-        """Specify the bits of metadata table that can write. The default value is 0.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the bits of metadata table that can write. The default value is 0.
         """
         return self._get_attribute('metadataWrite')
     @MetadataWrite.setter
@@ -608,10 +608,10 @@ class ControllerTables(Base):
 
     @property
     def NextTable(self):
-        """Next table property.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Next table property.
         """
         return self._get_attribute('nextTable')
     @NextTable.setter
@@ -620,10 +620,10 @@ class ControllerTables(Base):
 
     @property
     def NextTableMiss(self):
-        """Next table for table-miss.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Next table for table-miss.
         """
         return self._get_attribute('nextTableMiss')
     @NextTableMiss.setter
@@ -632,10 +632,10 @@ class ControllerTables(Base):
 
     @property
     def TableId(self):
-        """Specify the controller table identifier. Lower numbered tables are consulted first.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the controller table identifier. Lower numbered tables are consulted first.
         """
         return self._get_attribute('tableId')
     @TableId.setter
@@ -644,10 +644,10 @@ class ControllerTables(Base):
 
     @property
     def TableName(self):
-        """Specify the name of the controller table.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Specify the name of the controller table.
         """
         return self._get_attribute('tableName')
     @TableName.setter
@@ -656,10 +656,10 @@ class ControllerTables(Base):
 
     @property
     def WildcardExperimenterData(self):
-        """The data of the wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('wildcardExperimenterData')
     @WildcardExperimenterData.setter
@@ -668,10 +668,10 @@ class ControllerTables(Base):
 
     @property
     def WildcardExperimenterDataLength(self):
-        """The data length of the wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('wildcardExperimenterDataLength')
     @WildcardExperimenterDataLength.setter
@@ -680,10 +680,10 @@ class ControllerTables(Base):
 
     @property
     def WildcardExperimenterField(self):
-        """The identifier for wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The identifier for wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('wildcardExperimenterField')
     @WildcardExperimenterField.setter
@@ -692,10 +692,10 @@ class ControllerTables(Base):
 
     @property
     def WildcardExperimenterHasMask(self):
-        """Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
         """
         return self._get_attribute('wildcardExperimenterHasMask')
     @WildcardExperimenterHasMask.setter
@@ -704,10 +704,10 @@ class ControllerTables(Base):
 
     @property
     def WildcardExperimenterId(self):
-        """The unique identifier for wildcard experimenter of Controller Table Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for wildcard experimenter of Controller Table Experimenter.
         """
         return self._get_attribute('wildcardExperimenterId')
     @WildcardExperimenterId.setter
@@ -716,10 +716,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionExperimenterData(self):
-        """The data of the Write Action Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Write Action Experimenter.
         """
         return self._get_attribute('writeActionExperimenterData')
     @WriteActionExperimenterData.setter
@@ -728,10 +728,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionExperimenterDataLength(self):
-        """The data length of the Write Action Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Write Action Miss Experimenter.
         """
         return self._get_attribute('writeActionExperimenterDataLength')
     @WriteActionExperimenterDataLength.setter
@@ -740,10 +740,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionExperimenterId(self):
-        """The unique identifier for Write Action Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier for Write Action Experimenter.
         """
         return self._get_attribute('writeActionExperimenterId')
     @WriteActionExperimenterId.setter
@@ -752,10 +752,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionMissExperimenterData(self):
-        """The data of the Write Action Miss Experimenter.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The data of the Write Action Miss Experimenter.
         """
         return self._get_attribute('writeActionMissExperimenterData')
     @WriteActionMissExperimenterData.setter
@@ -764,10 +764,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionMissExperimenterDataLength(self):
-        """The data length of the Write Action Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The data length of the Write Action Miss Experimenter.
         """
         return self._get_attribute('writeActionMissExperimenterDataLength')
     @WriteActionMissExperimenterDataLength.setter
@@ -776,10 +776,10 @@ class ControllerTables(Base):
 
     @property
     def WriteActionMissExperimenterId(self):
-        """The unique identifier of Write Action Miss Experimenter.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The unique identifier of Write Action Miss Experimenter.
         """
         return self._get_attribute('writeActionMissExperimenterId')
     @WriteActionMissExperimenterId.setter
@@ -787,200 +787,213 @@ class ControllerTables(Base):
         self._set_attribute('writeActionMissExperimenterId', value)
 
     def update(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
-        """Updates a child instance of controllerTables on the server.
+        """Updates controllerTables resource on the server.
 
-        Args:
-            ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
-            ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
-            ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
-            ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
-            ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
-            ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
-            Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
-            Enabled (bool): If selected, this table is used in this controller configuration.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterId (number): The unique identifier for the Experimenter.
-            ExperimenterMissData (str): The data of the Experimenter for table-miss.
-            ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
-            ExperimenterMissType (number): The type of experimenter for table-miss.
-            ExperimenterType (number): The type of experimenter.
-            InstructionExperimenterData (str): The data of the Instruction Experimenter.
-            InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
-            InstructionExperimenterId (number): The unique identifier for the Experimenter.
-            InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
-            InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
-            InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
-            MatchExperimenterData (str): The match data of the Controller Table Experimenter.
-            MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
-            MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
-            MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
-            MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
-            MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
-            NextTable (str): Next table property.
-            NextTableMiss (str): Next table for table-miss.
-            TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
-            TableName (str): Specify the name of the controller table.
-            WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
-            WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            WriteActionExperimenterData (str): The data of the Write Action Experimenter.
-            WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
-            WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
+        Args
+        ----
+        - ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
+        - ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
+        - ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
+        - ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
+        - ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
+        - ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
+        - Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
+        - Enabled (bool): If selected, this table is used in this controller configuration.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterId (number): The unique identifier for the Experimenter.
+        - ExperimenterMissData (str): The data of the Experimenter for table-miss.
+        - ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
+        - ExperimenterMissType (number): The type of experimenter for table-miss.
+        - ExperimenterType (number): The type of experimenter.
+        - InstructionExperimenterData (str): The data of the Instruction Experimenter.
+        - InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
+        - InstructionExperimenterId (number): The unique identifier for the Experimenter.
+        - InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
+        - InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
+        - InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
+        - MatchExperimenterData (str): The match data of the Controller Table Experimenter.
+        - MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
+        - MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
+        - MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
+        - MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
+        - MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
+        - NextTable (str): Next table property.
+        - NextTableMiss (str): Next table for table-miss.
+        - TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
+        - TableName (str): Specify the name of the controller table.
+        - WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
+        - WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - WriteActionExperimenterData (str): The data of the Write Action Experimenter.
+        - WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
+        - WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
-        """Adds a new controllerTables node on the server and retrieves it in this instance.
+        """Adds a new controllerTables resource on the server and adds it to the container.
 
-        Args:
-            ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
-            ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
-            ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
-            ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
-            ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
-            ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
-            Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
-            Enabled (bool): If selected, this table is used in this controller configuration.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterId (number): The unique identifier for the Experimenter.
-            ExperimenterMissData (str): The data of the Experimenter for table-miss.
-            ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
-            ExperimenterMissType (number): The type of experimenter for table-miss.
-            ExperimenterType (number): The type of experimenter.
-            InstructionExperimenterData (str): The data of the Instruction Experimenter.
-            InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
-            InstructionExperimenterId (number): The unique identifier for the Experimenter.
-            InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
-            InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
-            InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
-            MatchExperimenterData (str): The match data of the Controller Table Experimenter.
-            MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
-            MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
-            MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
-            MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
-            MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
-            NextTable (str): Next table property.
-            NextTableMiss (str): Next table for table-miss.
-            TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
-            TableName (str): Specify the name of the controller table.
-            WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
-            WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            WriteActionExperimenterData (str): The data of the Write Action Experimenter.
-            WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
-            WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
+        Args
+        ----
+        - ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
+        - ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
+        - ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
+        - ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
+        - ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
+        - ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
+        - Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
+        - Enabled (bool): If selected, this table is used in this controller configuration.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterId (number): The unique identifier for the Experimenter.
+        - ExperimenterMissData (str): The data of the Experimenter for table-miss.
+        - ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
+        - ExperimenterMissType (number): The type of experimenter for table-miss.
+        - ExperimenterType (number): The type of experimenter.
+        - InstructionExperimenterData (str): The data of the Instruction Experimenter.
+        - InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
+        - InstructionExperimenterId (number): The unique identifier for the Experimenter.
+        - InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
+        - InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
+        - InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
+        - MatchExperimenterData (str): The match data of the Controller Table Experimenter.
+        - MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
+        - MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
+        - MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
+        - MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
+        - MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
+        - NextTable (str): Next table property.
+        - NextTableMiss (str): Next table for table-miss.
+        - TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
+        - TableName (str): Specify the name of the controller table.
+        - WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
+        - WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - WriteActionExperimenterData (str): The data of the Write Action Experimenter.
+        - WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
+        - WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
 
-        Returns:
-            self: This instance with all currently retrieved controllerTables data using find and the newly added controllerTables data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved controllerTables resources using find and the newly added controllerTables resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the controllerTables data in this instance from server.
+        """Deletes all the contained controllerTables resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
-        """Finds and retrieves controllerTables data from the server.
+        """Finds and retrieves controllerTables resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve controllerTables data from the server.
-        By default the find method takes no parameters and will retrieve all controllerTables data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve controllerTables resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all controllerTables resources from the server.
 
-        Args:
-            ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
-            ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
-            ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
-            ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
-            ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
-            ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
-            Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
-            Enabled (bool): If selected, this table is used in this controller configuration.
-            ExperimenterData (str): The data of the Experimenter.
-            ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterId (number): The unique identifier for the Experimenter.
-            ExperimenterMissData (str): The data of the Experimenter for table-miss.
-            ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
-            ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
-            ExperimenterMissType (number): The type of experimenter for table-miss.
-            ExperimenterType (number): The type of experimenter.
-            InstructionExperimenterData (str): The data of the Instruction Experimenter.
-            InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
-            InstructionExperimenterId (number): The unique identifier for the Experimenter.
-            InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
-            InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
-            InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
-            MatchExperimenterData (str): The match data of the Controller Table Experimenter.
-            MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
-            MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
-            MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
-            MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
-            MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
-            NextTable (str): Next table property.
-            NextTableMiss (str): Next table for table-miss.
-            TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
-            TableName (str): Specify the name of the controller table.
-            WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
-            WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
-            WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
-            WriteActionExperimenterData (str): The data of the Write Action Experimenter.
-            WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
-            WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
-            WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
+        Args
+        ----
+        - ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
+        - ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
+        - ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
+        - ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
+        - ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
+        - ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
+        - Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
+        - Enabled (bool): If selected, this table is used in this controller configuration.
+        - ExperimenterData (str): The data of the Experimenter.
+        - ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterId (number): The unique identifier for the Experimenter.
+        - ExperimenterMissData (str): The data of the Experimenter for table-miss.
+        - ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
+        - ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
+        - ExperimenterMissType (number): The type of experimenter for table-miss.
+        - ExperimenterType (number): The type of experimenter.
+        - InstructionExperimenterData (str): The data of the Instruction Experimenter.
+        - InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
+        - InstructionExperimenterId (number): The unique identifier for the Experimenter.
+        - InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
+        - InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
+        - InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
+        - MatchExperimenterData (str): The match data of the Controller Table Experimenter.
+        - MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
+        - MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
+        - MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
+        - MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
+        - MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
+        - NextTable (str): Next table property.
+        - NextTableMiss (str): Next table for table-miss.
+        - TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
+        - TableName (str): Specify the name of the controller table.
+        - WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
+        - WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
+        - WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+        - WriteActionExperimenterData (str): The data of the Write Action Experimenter.
+        - WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
+        - WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+        - WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
 
-        Returns:
-            self: This instance with matching controllerTables data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching controllerTables resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of controllerTables data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the controllerTables data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the controllerTables resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -989,12 +1002,10 @@ class ControllerTables(Base):
 
         NOT DEFINED
 
-            Returns:
-                bool: NOT DEFINED
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('tableModificationTrigger', payload=payload, response_object=None)

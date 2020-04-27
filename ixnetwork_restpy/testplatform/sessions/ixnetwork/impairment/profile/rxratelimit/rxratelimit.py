@@ -36,10 +36,10 @@ class RxRateLimit(Base):
 
     @property
     def BufferSizeEnabled(self):
-        """Allows user to specify a custom buffer size. Default false
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Allows user to specify a custom buffer size. Default false
         """
         return self._get_attribute('bufferSizeEnabled')
     @BufferSizeEnabled.setter
@@ -48,10 +48,10 @@ class RxRateLimit(Base):
 
     @property
     def BufferSizeUnits(self):
-        """Units (Kilobytes, Megabytes). Default: Kilobytes
-
-        Returns:
-            str(kilobytes|kKilobytes|kMegabytes|megabytes)
+        """
+        Returns
+        -------
+        - str(kilobytes | kKilobytes | kMegabytes | megabytes): Units (Kilobytes, Megabytes). Default: Kilobytes
         """
         return self._get_attribute('bufferSizeUnits')
     @BufferSizeUnits.setter
@@ -60,10 +60,10 @@ class RxRateLimit(Base):
 
     @property
     def BufferSizeValue(self):
-        """Burst tolerance buffer size. Default value is 32 KB
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Burst tolerance buffer size. Default value is 32 KB
         """
         return self._get_attribute('bufferSizeValue')
     @BufferSizeValue.setter
@@ -72,10 +72,10 @@ class RxRateLimit(Base):
 
     @property
     def Enabled(self):
-        """Enable or disable the receive rate limit impairment.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enable or disable the receive rate limit impairment.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -84,10 +84,10 @@ class RxRateLimit(Base):
 
     @property
     def Units(self):
-        """Specify the units for the receive rate limit value.
-
-        Returns:
-            str(kilobitsPerSecond|kKilobitsPerSecond|kMegabitsPerSecond|megabitsPerSecond)
+        """
+        Returns
+        -------
+        - str(kilobitsPerSecond | kKilobitsPerSecond | kMegabitsPerSecond | megabitsPerSecond): Specify the units for the receive rate limit value.
         """
         return self._get_attribute('units')
     @Units.setter
@@ -96,10 +96,10 @@ class RxRateLimit(Base):
 
     @property
     def Value(self):
-        """Specify the value of the receive rate limit.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Specify the value of the receive rate limit.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -107,17 +107,19 @@ class RxRateLimit(Base):
         self._set_attribute('value', value)
 
     def update(self, BufferSizeEnabled=None, BufferSizeUnits=None, BufferSizeValue=None, Enabled=None, Units=None, Value=None):
-        """Updates a child instance of rxRateLimit on the server.
+        """Updates rxRateLimit resource on the server.
 
-        Args:
-            BufferSizeEnabled (bool): Allows user to specify a custom buffer size. Default false
-            BufferSizeUnits (str(kilobytes|kKilobytes|kMegabytes|megabytes)): Units (Kilobytes, Megabytes). Default: Kilobytes
-            BufferSizeValue (number): Burst tolerance buffer size. Default value is 32 KB
-            Enabled (bool): Enable or disable the receive rate limit impairment.
-            Units (str(kilobitsPerSecond|kKilobitsPerSecond|kMegabitsPerSecond|megabitsPerSecond)): Specify the units for the receive rate limit value.
-            Value (number): Specify the value of the receive rate limit.
+        Args
+        ----
+        - BufferSizeEnabled (bool): Allows user to specify a custom buffer size. Default false
+        - BufferSizeUnits (str(kilobytes | kKilobytes | kMegabytes | megabytes)): Units (Kilobytes, Megabytes). Default: Kilobytes
+        - BufferSizeValue (number): Burst tolerance buffer size. Default value is 32 KB
+        - Enabled (bool): Enable or disable the receive rate limit impairment.
+        - Units (str(kilobitsPerSecond | kKilobitsPerSecond | kMegabitsPerSecond | megabitsPerSecond)): Specify the units for the receive rate limit value.
+        - Value (number): Specify the value of the receive rate limit.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

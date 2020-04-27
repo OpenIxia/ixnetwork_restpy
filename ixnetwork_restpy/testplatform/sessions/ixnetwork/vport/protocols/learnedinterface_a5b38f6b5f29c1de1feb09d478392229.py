@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class LearnedInterface(Base):
     """Learned information associated with a CIST for an interface on an (MSTP) stpBridge.
-    The LearnedInterface class encapsulates a list of learnedInterface resources that is be managed by the user.
+    The LearnedInterface class encapsulates a list of learnedInterface resources that are managed by the user.
     A list of resources can be retrieved from the server using the LearnedInterface.find() method.
-    The list can be managed by the user by using the LearnedInterface.add() and LearnedInterface.remove() methods.
+    The list can be managed by using the LearnedInterface.add() and LearnedInterface.remove() methods.
     """
 
     __slots__ = ()
@@ -38,111 +38,121 @@ class LearnedInterface(Base):
 
     @property
     def DesignatedMac(self):
-        """(Read-only) The 6-byte MAC Address of the advertised designated MSTP bridge on the LAN segment.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read-only) The 6-byte MAC Address of the advertised designated MSTP bridge on the LAN segment.
         """
         return self._get_attribute('designatedMac')
 
     @property
     def DesignatedPortId(self):
-        """(Read-only) The port ID of the advertised eesignated MSTP bridge's port on the LAN segment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read-only) The port ID of the advertised eesignated MSTP bridge's port on the LAN segment.
         """
         return self._get_attribute('designatedPortId')
 
     @property
     def DesignatedPriority(self):
-        """(Read-only) The priority of the advertised designated MSTP bridge on the LAN segment.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: (Read-only) The priority of the advertised designated MSTP bridge on the LAN segment.
         """
         return self._get_attribute('designatedPriority')
 
     @property
     def InterfaceDesc(self):
-        """(Read-only) The descriptive identifier of this advertised protocol interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read-only) The descriptive identifier of this advertised protocol interface.
         """
         return self._get_attribute('interfaceDesc')
 
     @property
     def InterfaceRole(self):
-        """(Read-only) The role of the advertised interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read-only) The role of the advertised interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
         """
         return self._get_attribute('interfaceRole')
 
     @property
     def InterfaceState(self):
-        """(Read-only) The state of the advertised interface. One of the following options: Discarding (discarding MAC), Learning (MAC frame learning), or Forwarding (forwarding MAC frames).
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: (Read-only) The state of the advertised interface. One of the following options: Discarding (discarding MAC), Learning (MAC frame learning), or Forwarding (forwarding MAC frames).
         """
         return self._get_attribute('interfaceState')
 
     def add(self):
-        """Adds a new learnedInterface node on the server and retrieves it in this instance.
+        """Adds a new learnedInterface resource on the server and adds it to the container.
 
-        Returns:
-            self: This instance with all currently retrieved learnedInterface data using find and the newly added learnedInterface data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedInterface resources using find and the newly added learnedInterface resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the learnedInterface data in this instance from server.
+        """Deletes all the contained learnedInterface resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, DesignatedMac=None, DesignatedPortId=None, DesignatedPriority=None, InterfaceDesc=None, InterfaceRole=None, InterfaceState=None):
-        """Finds and retrieves learnedInterface data from the server.
+        """Finds and retrieves learnedInterface resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve learnedInterface data from the server.
-        By default the find method takes no parameters and will retrieve all learnedInterface data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInterface resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedInterface resources from the server.
 
-        Args:
-            DesignatedMac (str): (Read-only) The 6-byte MAC Address of the advertised designated MSTP bridge on the LAN segment.
-            DesignatedPortId (number): (Read-only) The port ID of the advertised eesignated MSTP bridge's port on the LAN segment.
-            DesignatedPriority (number): (Read-only) The priority of the advertised designated MSTP bridge on the LAN segment.
-            InterfaceDesc (str): (Read-only) The descriptive identifier of this advertised protocol interface.
-            InterfaceRole (str): (Read-only) The role of the advertised interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
-            InterfaceState (str): (Read-only) The state of the advertised interface. One of the following options: Discarding (discarding MAC), Learning (MAC frame learning), or Forwarding (forwarding MAC frames).
+        Args
+        ----
+        - DesignatedMac (str): (Read-only) The 6-byte MAC Address of the advertised designated MSTP bridge on the LAN segment.
+        - DesignatedPortId (number): (Read-only) The port ID of the advertised eesignated MSTP bridge's port on the LAN segment.
+        - DesignatedPriority (number): (Read-only) The priority of the advertised designated MSTP bridge on the LAN segment.
+        - InterfaceDesc (str): (Read-only) The descriptive identifier of this advertised protocol interface.
+        - InterfaceRole (str): (Read-only) The role of the advertised interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
+        - InterfaceState (str): (Read-only) The state of the advertised interface. One of the following options: Discarding (discarding MAC), Learning (MAC frame learning), or Forwarding (forwarding MAC frames).
 
-        Returns:
-            self: This instance with matching learnedInterface data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching learnedInterface resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of learnedInterface data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the learnedInterface data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the learnedInterface resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

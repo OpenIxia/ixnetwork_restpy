@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class MulticastLeafRange(Base):
     """Configures the multicast leaf range values.
-    The MulticastLeafRange class encapsulates a list of multicastLeafRange resources that is be managed by the user.
+    The MulticastLeafRange class encapsulates a list of multicastLeafRange resources that are managed by the user.
     A list of resources can be retrieved from the server using the MulticastLeafRange.find() method.
-    The list can be managed by the user by using the MulticastLeafRange.add() and MulticastLeafRange.remove() methods.
+    The list can be managed by using the MulticastLeafRange.add() and MulticastLeafRange.remove() methods.
     """
 
     __slots__ = ()
@@ -38,38 +38,38 @@ class MulticastLeafRange(Base):
 
     @property
     def GroupTrafficRange(self):
-        """An instance of the GroupTrafficRange class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptrafficrange_6674db8047155f72a381d50fbf8dce90.GroupTrafficRange): An instance of the GroupTrafficRange class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptrafficrange_6674db8047155f72a381d50fbf8dce90.GroupTrafficRange)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptrafficrange_6674db8047155f72a381d50fbf8dce90 import GroupTrafficRange
         return GroupTrafficRange(self)
 
     @property
     def OpaqueValueElement(self):
-        """An instance of the OpaqueValueElement class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_c9192c4f69230ba221c46e4939c56328.OpaqueValueElement): An instance of the OpaqueValueElement class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_c9192c4f69230ba221c46e4939c56328.OpaqueValueElement)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_c9192c4f69230ba221c46e4939c56328 import OpaqueValueElement
         return OpaqueValueElement(self)
 
     @property
     def ContinuousIncrOpaqueValuesAcrossRoot(self):
-        """It signifies the continuous increment of opaque values across root.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: It signifies the continuous increment of opaque values across root.
         """
         return self._get_attribute('continuousIncrOpaqueValuesAcrossRoot')
     @ContinuousIncrOpaqueValuesAcrossRoot.setter
@@ -78,10 +78,10 @@ class MulticastLeafRange(Base):
 
     @property
     def Enabled(self):
-        """If true, enables the protocol.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the protocol.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -90,10 +90,10 @@ class MulticastLeafRange(Base):
 
     @property
     def LabelValueStart(self):
-        """The first label in the range of labels.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The first label in the range of labels.
         """
         return self._get_attribute('labelValueStart')
     @LabelValueStart.setter
@@ -102,10 +102,10 @@ class MulticastLeafRange(Base):
 
     @property
     def LabelValueStep(self):
-        """The label value increment step for more than 1 range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The label value increment step for more than 1 range.
         """
         return self._get_attribute('labelValueStep')
     @LabelValueStep.setter
@@ -114,10 +114,10 @@ class MulticastLeafRange(Base):
 
     @property
     def LspCountPerRoot(self):
-        """This is to specify how many different LSPs are created per Root.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This is to specify how many different LSPs are created per Root.
         """
         return self._get_attribute('lspCountPerRoot')
     @LspCountPerRoot.setter
@@ -126,19 +126,19 @@ class MulticastLeafRange(Base):
 
     @property
     def LspType(self):
-        """The type of multicast LSP.
-
-        Returns:
-            str(p2mp)
+        """
+        Returns
+        -------
+        - str(p2mp): The type of multicast LSP.
         """
         return self._get_attribute('lspType')
 
     @property
     def RootAddrCount(self):
-        """The root address count for this Multicast FEC range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The root address count for this Multicast FEC range.
         """
         return self._get_attribute('rootAddrCount')
     @RootAddrCount.setter
@@ -147,10 +147,10 @@ class MulticastLeafRange(Base):
 
     @property
     def RootAddrStep(self):
-        """The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
         """
         return self._get_attribute('rootAddrStep')
     @RootAddrStep.setter
@@ -159,10 +159,10 @@ class MulticastLeafRange(Base):
 
     @property
     def RootAddress(self):
-        """The root address of the multicast LSP.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The root address of the multicast LSP.
         """
         return self._get_attribute('rootAddress')
     @RootAddress.setter
@@ -170,89 +170,102 @@ class MulticastLeafRange(Base):
         self._set_attribute('rootAddress', value)
 
     def update(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
-        """Updates a child instance of multicastLeafRange on the server.
+        """Updates multicastLeafRange resource on the server.
 
-        Args:
-            ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
-            Enabled (bool): If true, enables the protocol.
-            LabelValueStart (number): The first label in the range of labels.
-            LabelValueStep (number): The label value increment step for more than 1 range.
-            LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
-            RootAddrCount (number): The root address count for this Multicast FEC range.
-            RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
-            RootAddress (str): The root address of the multicast LSP.
+        Args
+        ----
+        - ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
+        - Enabled (bool): If true, enables the protocol.
+        - LabelValueStart (number): The first label in the range of labels.
+        - LabelValueStep (number): The label value increment step for more than 1 range.
+        - LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
+        - RootAddrCount (number): The root address count for this Multicast FEC range.
+        - RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
+        - RootAddress (str): The root address of the multicast LSP.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
-        """Adds a new multicastLeafRange node on the server and retrieves it in this instance.
+        """Adds a new multicastLeafRange resource on the server and adds it to the container.
 
-        Args:
-            ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
-            Enabled (bool): If true, enables the protocol.
-            LabelValueStart (number): The first label in the range of labels.
-            LabelValueStep (number): The label value increment step for more than 1 range.
-            LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
-            RootAddrCount (number): The root address count for this Multicast FEC range.
-            RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
-            RootAddress (str): The root address of the multicast LSP.
+        Args
+        ----
+        - ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
+        - Enabled (bool): If true, enables the protocol.
+        - LabelValueStart (number): The first label in the range of labels.
+        - LabelValueStep (number): The label value increment step for more than 1 range.
+        - LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
+        - RootAddrCount (number): The root address count for this Multicast FEC range.
+        - RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
+        - RootAddress (str): The root address of the multicast LSP.
 
-        Returns:
-            self: This instance with all currently retrieved multicastLeafRange data using find and the newly added multicastLeafRange data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved multicastLeafRange resources using find and the newly added multicastLeafRange resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the multicastLeafRange data in this instance from server.
+        """Deletes all the contained multicastLeafRange resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, LspType=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
-        """Finds and retrieves multicastLeafRange data from the server.
+        """Finds and retrieves multicastLeafRange resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve multicastLeafRange data from the server.
-        By default the find method takes no parameters and will retrieve all multicastLeafRange data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve multicastLeafRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all multicastLeafRange resources from the server.
 
-        Args:
-            ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
-            Enabled (bool): If true, enables the protocol.
-            LabelValueStart (number): The first label in the range of labels.
-            LabelValueStep (number): The label value increment step for more than 1 range.
-            LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
-            LspType (str(p2mp)): The type of multicast LSP.
-            RootAddrCount (number): The root address count for this Multicast FEC range.
-            RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
-            RootAddress (str): The root address of the multicast LSP.
+        Args
+        ----
+        - ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
+        - Enabled (bool): If true, enables the protocol.
+        - LabelValueStart (number): The first label in the range of labels.
+        - LabelValueStep (number): The label value increment step for more than 1 range.
+        - LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
+        - LspType (str(p2mp)): The type of multicast LSP.
+        - RootAddrCount (number): The root address count for this Multicast FEC range.
+        - RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
+        - RootAddress (str): The root address of the multicast LSP.
 
-        Returns:
-            self: This instance with matching multicastLeafRange data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching multicastLeafRange resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of multicastLeafRange data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the multicastLeafRange data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the multicastLeafRange resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

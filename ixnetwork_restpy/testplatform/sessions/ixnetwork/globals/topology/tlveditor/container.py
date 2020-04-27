@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Container(Base):
     """Tlv container used to group multiple object containers
-    The Container class encapsulates a list of container resources that is be managed by the user.
+    The Container class encapsulates a list of container resources that are managed by the user.
     A list of resources can be retrieved from the server using the Container.find() method.
-    The list can be managed by the user by using the Container.add() and Container.remove() methods.
+    The list can be managed by using the Container.add() and Container.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Container(Base):
 
     @property
     def Object(self):
-        """An instance of the Object class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object.Object): An instance of the Object class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object.Object)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object import Object
         return Object(self)
 
     @property
     def Description(self):
-        """Description of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Description of the tlv
         """
         return self._get_attribute('description')
     @Description.setter
@@ -64,10 +64,10 @@ class Container(Base):
 
     @property
     def IsEditable(self):
-        """Indicates whether this is editable or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether this is editable or not
         """
         return self._get_attribute('isEditable')
     @IsEditable.setter
@@ -76,10 +76,10 @@ class Container(Base):
 
     @property
     def IsRepeatable(self):
-        """Flag indicating whether this is repeatable or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag indicating whether this is repeatable or not
         """
         return self._get_attribute('isRepeatable')
     @IsRepeatable.setter
@@ -88,10 +88,10 @@ class Container(Base):
 
     @property
     def IsRequired(self):
-        """Flag indicating whether this is required or not
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag indicating whether this is required or not
         """
         return self._get_attribute('isRequired')
     @IsRequired.setter
@@ -100,10 +100,10 @@ class Container(Base):
 
     @property
     def Name(self):
-        """Name of the tlv
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of the tlv
         """
         return self._get_attribute('name')
     @Name.setter
@@ -111,79 +111,92 @@ class Container(Base):
         self._set_attribute('name', value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Updates a child instance of container on the server.
+        """Updates container resource on the server.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Flag indicating whether this is repeatable or not
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Flag indicating whether this is repeatable or not
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Adds a new container node on the server and retrieves it in this instance.
+        """Adds a new container resource on the server and adds it to the container.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Flag indicating whether this is repeatable or not
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Flag indicating whether this is repeatable or not
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with all currently retrieved container data using find and the newly added container data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved container resources using find and the newly added container resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the container data in this instance from server.
+        """Deletes all the contained container resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
-        """Finds and retrieves container data from the server.
+        """Finds and retrieves container resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve container data from the server.
-        By default the find method takes no parameters and will retrieve all container data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve container resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all container resources from the server.
 
-        Args:
-            Description (str): Description of the tlv
-            IsEditable (bool): Indicates whether this is editable or not
-            IsRepeatable (bool): Flag indicating whether this is repeatable or not
-            IsRequired (bool): Flag indicating whether this is required or not
-            Name (str): Name of the tlv
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRepeatable (bool): Flag indicating whether this is repeatable or not
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
 
-        Returns:
-            self: This instance with matching container data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching container resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of container data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the container data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the container resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

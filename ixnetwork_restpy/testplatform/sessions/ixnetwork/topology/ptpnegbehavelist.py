@@ -36,91 +36,98 @@ class PtpNegBehaveList(Base):
 
     @property
     def Count(self):
-        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute('count')
 
     @property
     def DescriptiveName(self):
-        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
         """
         return self._get_attribute('descriptiveName')
 
     @property
     def MvActive(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvActive')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvActive'))
 
     @property
     def MvDelay(self):
-        """Delay To Follow in this message (ns)
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvDelay')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay To Follow in this message (ns)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvDelay'))
 
     @property
     def MvFieldValue(self):
-        """Value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvFieldValue')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvFieldValue'))
 
     @property
     def MvFieldValue1(self):
-        """Value1
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvFieldValue1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvFieldValue1'))
 
     @property
     def MvMsgAction(self):
-        """Action On The Message Type
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvMsgAction')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Action On The Message Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvMsgAction'))
 
     @property
     def MvPtpMsgField(self):
-        """PTP Msg Field
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvPtpMsgField')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PTP Msg Field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvPtpMsgField'))
 
     @property
     def MvPtpMsgField1(self):
-        """PTP Msg Field1
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('mvPtpMsgField1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PTP Msg Field1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('mvPtpMsgField1'))
 
     @property
     def Name(self):
-        """Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
         return self._get_attribute('name')
     @Name.setter
@@ -129,67 +136,75 @@ class PtpNegBehaveList(Base):
 
     @property
     def PtpMsgType(self):
-        """Displays the current PTP Msg
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ptpMsgType')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Displays the current PTP Msg
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ptpMsgType'))
 
     @property
     def PtpValueDisPattern(self):
-        """Pattern For Value Field
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ptpValueDisPattern')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Pattern For Value Field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ptpValueDisPattern'))
 
     @property
     def PtpValueDisPattern1(self):
-        """Pattern For Value Field
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('ptpValueDisPattern1')
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Pattern For Value Field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute('ptpValueDisPattern1'))
 
     def update(self, Name=None):
-        """Updates a child instance of ptpNegBehaveList on the server.
+        """Updates ptpNegBehaveList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
-        Args:
-            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def get_device_ids(self, PortNames=None, MvActive=None, MvDelay=None, MvFieldValue=None, MvFieldValue1=None, MvMsgAction=None, MvPtpMsgField=None, MvPtpMsgField1=None, PtpMsgType=None, PtpValueDisPattern=None, PtpValueDisPattern1=None):
         """Base class infrastructure that gets a list of ptpNegBehaveList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-        Args:
-            PortNames (str): optional regex of port names
-            MvActive (str): optional regex of mvActive
-            MvDelay (str): optional regex of mvDelay
-            MvFieldValue (str): optional regex of mvFieldValue
-            MvFieldValue1 (str): optional regex of mvFieldValue1
-            MvMsgAction (str): optional regex of mvMsgAction
-            MvPtpMsgField (str): optional regex of mvPtpMsgField
-            MvPtpMsgField1 (str): optional regex of mvPtpMsgField1
-            PtpMsgType (str): optional regex of ptpMsgType
-            PtpValueDisPattern (str): optional regex of ptpValueDisPattern
-            PtpValueDisPattern1 (str): optional regex of ptpValueDisPattern1
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - MvActive (str): optional regex of mvActive
+        - MvDelay (str): optional regex of mvDelay
+        - MvFieldValue (str): optional regex of mvFieldValue
+        - MvFieldValue1 (str): optional regex of mvFieldValue1
+        - MvMsgAction (str): optional regex of mvMsgAction
+        - MvPtpMsgField (str): optional regex of mvPtpMsgField
+        - MvPtpMsgField1 (str): optional regex of mvPtpMsgField1
+        - PtpMsgType (str): optional regex of ptpMsgType
+        - PtpValueDisPattern (str): optional regex of ptpValueDisPattern
+        - PtpValueDisPattern1 (str): optional regex of ptpValueDisPattern1
 
-        Returns:
-            list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())

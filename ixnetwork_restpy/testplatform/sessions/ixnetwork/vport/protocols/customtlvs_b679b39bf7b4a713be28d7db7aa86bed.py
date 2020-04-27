@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class CustomTlvs(Base):
     """The customTlvs object contains the configuration information for custom TLVs.
-    The CustomTlvs class encapsulates a list of customTlvs resources that is be managed by the user.
+    The CustomTlvs class encapsulates a list of customTlvs resources that are managed by the user.
     A list of resources can be retrieved from the server using the CustomTlvs.find() method.
-    The list can be managed by the user by using the CustomTlvs.add() and CustomTlvs.remove() methods.
+    The list can be managed by using the CustomTlvs.add() and CustomTlvs.remove() methods.
     """
 
     __slots__ = ()
@@ -38,10 +38,10 @@ class CustomTlvs(Base):
 
     @property
     def Enabled(self):
-        """If true, the custom TLV is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the custom TLV is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -50,10 +50,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInCcm(self):
-        """If true, a custom TLV is included in the bridge CCM messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a custom TLV is included in the bridge CCM messages.
         """
         return self._get_attribute('includeInCcm')
     @IncludeInCcm.setter
@@ -62,10 +62,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLbm(self):
-        """If true, a custom TLV is included in the bridge loopback messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a custom TLV is included in the bridge loopback messages.
         """
         return self._get_attribute('includeInLbm')
     @IncludeInLbm.setter
@@ -74,10 +74,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLbr(self):
-        """If true, a custom TLV is included in the bridge loopback responses messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a custom TLV is included in the bridge loopback responses messages.
         """
         return self._get_attribute('includeInLbr')
     @IncludeInLbr.setter
@@ -86,10 +86,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLmm(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeInLmm')
     @IncludeInLmm.setter
@@ -98,10 +98,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLmr(self):
-        """NOT DEFINED
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: NOT DEFINED
         """
         return self._get_attribute('includeInLmr')
     @IncludeInLmr.setter
@@ -110,10 +110,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLtm(self):
-        """If true, a custom TLV is included in the bridge link trace messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a custom TLV is included in the bridge link trace messages.
         """
         return self._get_attribute('includeInLtm')
     @IncludeInLtm.setter
@@ -122,10 +122,10 @@ class CustomTlvs(Base):
 
     @property
     def IncludeInLtr(self):
-        """If true, a custom TLV is included in the bridge link trace response messages.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, a custom TLV is included in the bridge link trace response messages.
         """
         return self._get_attribute('includeInLtr')
     @IncludeInLtr.setter
@@ -134,10 +134,10 @@ class CustomTlvs(Base):
 
     @property
     def Length(self):
-        """Enter the data for the TLV length field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Enter the data for the TLV length field.
         """
         return self._get_attribute('length')
     @Length.setter
@@ -146,10 +146,10 @@ class CustomTlvs(Base):
 
     @property
     def Type(self):
-        """Enter the data for the TLV type field.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Enter the data for the TLV type field.
         """
         return self._get_attribute('type')
     @Type.setter
@@ -158,10 +158,10 @@ class CustomTlvs(Base):
 
     @property
     def Value(self):
-        """Enter the data for the TLV value field. This data is in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Enter the data for the TLV value field. This data is in hexadecimal format.
         """
         return self._get_attribute('value')
     @Value.setter
@@ -169,97 +169,110 @@ class CustomTlvs(Base):
         self._set_attribute('value', value)
 
     def update(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
-        """Updates a child instance of customTlvs on the server.
+        """Updates customTlvs resource on the server.
 
-        Args:
-            Enabled (bool): If true, the custom TLV is enabled.
-            IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
-            IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
-            IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
-            IncludeInLmm (bool): NOT DEFINED
-            IncludeInLmr (bool): NOT DEFINED
-            IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
-            IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
-            Length (number): Enter the data for the TLV length field.
-            Type (number): Enter the data for the TLV type field.
-            Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
+        Args
+        ----
+        - Enabled (bool): If true, the custom TLV is enabled.
+        - IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
+        - IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
+        - IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
+        - IncludeInLmm (bool): NOT DEFINED
+        - IncludeInLmr (bool): NOT DEFINED
+        - IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
+        - IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
+        - Length (number): Enter the data for the TLV length field.
+        - Type (number): Enter the data for the TLV type field.
+        - Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
-        """Adds a new customTlvs node on the server and retrieves it in this instance.
+        """Adds a new customTlvs resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, the custom TLV is enabled.
-            IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
-            IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
-            IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
-            IncludeInLmm (bool): NOT DEFINED
-            IncludeInLmr (bool): NOT DEFINED
-            IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
-            IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
-            Length (number): Enter the data for the TLV length field.
-            Type (number): Enter the data for the TLV type field.
-            Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
+        Args
+        ----
+        - Enabled (bool): If true, the custom TLV is enabled.
+        - IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
+        - IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
+        - IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
+        - IncludeInLmm (bool): NOT DEFINED
+        - IncludeInLmr (bool): NOT DEFINED
+        - IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
+        - IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
+        - Length (number): Enter the data for the TLV length field.
+        - Type (number): Enter the data for the TLV type field.
+        - Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
 
-        Returns:
-            self: This instance with all currently retrieved customTlvs data using find and the newly added customTlvs data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved customTlvs resources using find and the newly added customTlvs resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the customTlvs data in this instance from server.
+        """Deletes all the contained customTlvs resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
-        """Finds and retrieves customTlvs data from the server.
+        """Finds and retrieves customTlvs resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve customTlvs data from the server.
-        By default the find method takes no parameters and will retrieve all customTlvs data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTlvs resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all customTlvs resources from the server.
 
-        Args:
-            Enabled (bool): If true, the custom TLV is enabled.
-            IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
-            IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
-            IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
-            IncludeInLmm (bool): NOT DEFINED
-            IncludeInLmr (bool): NOT DEFINED
-            IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
-            IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
-            Length (number): Enter the data for the TLV length field.
-            Type (number): Enter the data for the TLV type field.
-            Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
+        Args
+        ----
+        - Enabled (bool): If true, the custom TLV is enabled.
+        - IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
+        - IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
+        - IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
+        - IncludeInLmm (bool): NOT DEFINED
+        - IncludeInLmr (bool): NOT DEFINED
+        - IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
+        - IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
+        - Length (number): Enter the data for the TLV length field.
+        - Type (number): Enter the data for the TLV type field.
+        - Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
 
-        Returns:
-            self: This instance with matching customTlvs data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching customTlvs resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of customTlvs data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the customTlvs data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the customTlvs resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

@@ -36,24 +36,24 @@ class Rip(Base):
 
     @property
     def Router(self):
-        """An instance of the Router class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1276f3b957293a8549568c8c466e4db4.Router): An instance of the Router class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1276f3b957293a8549568c8c466e4db4.Router)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1276f3b957293a8549568c8c466e4db4 import Router
         return Router(self)
 
     @property
     def Enabled(self):
-        """Enables or disables the use of this emulated RIP router in the emulated RIP network. (default = disabled)
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Enables or disables the use of this emulated RIP router in the emulated RIP network. (default = disabled)
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,32 +62,35 @@ class Rip(Base):
 
     @property
     def RunningState(self):
-        """The current running state of the RIP router.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current running state of the RIP router.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None):
-        """Updates a child instance of rip on the server.
+        """Updates rip resource on the server.
 
-        Args:
-            Enabled (bool): Enables or disables the use of this emulated RIP router in the emulated RIP network. (default = disabled)
+        Args
+        ----
+        - Enabled (bool): Enables or disables the use of this emulated RIP router in the emulated RIP network. (default = disabled)
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the RIP protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -97,9 +100,10 @@ class Rip(Base):
 
         Stops the RIP protocol on a port or group of ports simultaneously.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

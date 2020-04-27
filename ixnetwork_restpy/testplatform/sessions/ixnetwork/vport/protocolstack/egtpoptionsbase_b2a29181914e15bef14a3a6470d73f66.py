@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class EgtpOptionsBase(Base):
     """
-    The EgtpOptionsBase class encapsulates a list of egtpOptionsBase resources that is be managed by the user.
+    The EgtpOptionsBase class encapsulates a list of egtpOptionsBase resources that are managed by the user.
     A list of resources can be retrieved from the server using the EgtpOptionsBase.find() method.
-    The list can be managed by the user by using the EgtpOptionsBase.add() and EgtpOptionsBase.remove() methods.
+    The list can be managed by using the EgtpOptionsBase.add() and EgtpOptionsBase.remove() methods.
     """
 
     __slots__ = ()
@@ -38,19 +38,19 @@ class EgtpOptionsBase(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def PcpuLogLevel(self):
-        """PCPU log level
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: PCPU log level
         """
         return self._get_attribute('pcpuLogLevel')
     @PcpuLogLevel.setter
@@ -58,69 +58,82 @@ class EgtpOptionsBase(Base):
         self._set_attribute('pcpuLogLevel', value)
 
     def update(self, PcpuLogLevel=None):
-        """Updates a child instance of egtpOptionsBase on the server.
+        """Updates egtpOptionsBase resource on the server.
 
-        Args:
-            PcpuLogLevel (str): PCPU log level
+        Args
+        ----
+        - PcpuLogLevel (str): PCPU log level
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, PcpuLogLevel=None):
-        """Adds a new egtpOptionsBase node on the server and retrieves it in this instance.
+        """Adds a new egtpOptionsBase resource on the server and adds it to the container.
 
-        Args:
-            PcpuLogLevel (str): PCPU log level
+        Args
+        ----
+        - PcpuLogLevel (str): PCPU log level
 
-        Returns:
-            self: This instance with all currently retrieved egtpOptionsBase data using find and the newly added egtpOptionsBase data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved egtpOptionsBase resources using find and the newly added egtpOptionsBase resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the egtpOptionsBase data in this instance from server.
+        """Deletes all the contained egtpOptionsBase resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, ObjectId=None, PcpuLogLevel=None):
-        """Finds and retrieves egtpOptionsBase data from the server.
+        """Finds and retrieves egtpOptionsBase resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve egtpOptionsBase data from the server.
-        By default the find method takes no parameters and will retrieve all egtpOptionsBase data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpOptionsBase resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpOptionsBase resources from the server.
 
-        Args:
-            ObjectId (str): Unique identifier for this object
-            PcpuLogLevel (str): PCPU log level
+        Args
+        ----
+        - ObjectId (str): Unique identifier for this object
+        - PcpuLogLevel (str): PCPU log level
 
-        Returns:
-            self: This instance with matching egtpOptionsBase data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching egtpOptionsBase resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of egtpOptionsBase data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the egtpOptionsBase data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the egtpOptionsBase resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
 
@@ -129,14 +142,15 @@ class EgtpOptionsBase(Base):
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -148,16 +162,15 @@ class EgtpOptionsBase(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -169,16 +182,15 @@ class EgtpOptionsBase(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]

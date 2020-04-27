@@ -36,10 +36,10 @@ class Capabilities(Base):
 
     @property
     def FlowStatistics(self):
-        """Indicates that the ofChannel capabilities of the switch includes flow statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes flow statistics.
         """
         return self._get_attribute('flowStatistics')
     @FlowStatistics.setter
@@ -48,10 +48,10 @@ class Capabilities(Base):
 
     @property
     def MatchIpAddressInArpPackets(self):
-        """Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
         """
         return self._get_attribute('matchIpAddressInArpPackets')
     @MatchIpAddressInArpPackets.setter
@@ -60,10 +60,10 @@ class Capabilities(Base):
 
     @property
     def PortStatistics(self):
-        """Indicates that the ofChannel capabilities of the switch includes port statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes port statistics.
         """
         return self._get_attribute('portStatistics')
     @PortStatistics.setter
@@ -72,10 +72,10 @@ class Capabilities(Base):
 
     @property
     def QueueStatistics(self):
-        """Indicates that the ofChannel capabilities of the switch include Queue statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch include Queue statistics.
         """
         return self._get_attribute('queueStatistics')
     @QueueStatistics.setter
@@ -84,10 +84,10 @@ class Capabilities(Base):
 
     @property
     def ReassambleIpFragments(self):
-        """Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
         """
         return self._get_attribute('reassambleIpFragments')
     @ReassambleIpFragments.setter
@@ -96,10 +96,10 @@ class Capabilities(Base):
 
     @property
     def Reserved(self):
-        """Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
         """
         return self._get_attribute('reserved')
     @Reserved.setter
@@ -108,10 +108,10 @@ class Capabilities(Base):
 
     @property
     def SpanningTree(self):
-        """Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
         """
         return self._get_attribute('spanningTree')
     @SpanningTree.setter
@@ -120,10 +120,10 @@ class Capabilities(Base):
 
     @property
     def TableStatistics(self):
-        """Indicates that the ofChannel capabilities of the switch includes table statistics.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Indicates that the ofChannel capabilities of the switch includes table statistics.
         """
         return self._get_attribute('tableStatistics')
     @TableStatistics.setter
@@ -131,19 +131,21 @@ class Capabilities(Base):
         self._set_attribute('tableStatistics', value)
 
     def update(self, FlowStatistics=None, MatchIpAddressInArpPackets=None, PortStatistics=None, QueueStatistics=None, ReassambleIpFragments=None, Reserved=None, SpanningTree=None, TableStatistics=None):
-        """Updates a child instance of capabilities on the server.
+        """Updates capabilities resource on the server.
 
-        Args:
-            FlowStatistics (bool): Indicates that the ofChannel capabilities of the switch includes flow statistics.
-            MatchIpAddressInArpPackets (bool): Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
-            PortStatistics (bool): Indicates that the ofChannel capabilities of the switch includes port statistics.
-            QueueStatistics (bool): Indicates that the ofChannel capabilities of the switch include Queue statistics.
-            ReassambleIpFragments (bool): Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
-            Reserved (bool): Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
-            SpanningTree (bool): Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
-            TableStatistics (bool): Indicates that the ofChannel capabilities of the switch includes table statistics.
+        Args
+        ----
+        - FlowStatistics (bool): Indicates that the ofChannel capabilities of the switch includes flow statistics.
+        - MatchIpAddressInArpPackets (bool): Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
+        - PortStatistics (bool): Indicates that the ofChannel capabilities of the switch includes port statistics.
+        - QueueStatistics (bool): Indicates that the ofChannel capabilities of the switch include Queue statistics.
+        - ReassambleIpFragments (bool): Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
+        - Reserved (bool): Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
+        - SpanningTree (bool): Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
+        - TableStatistics (bool): Indicates that the ofChannel capabilities of the switch includes table statistics.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,9 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class Router(Base):
     """This object holds three lists associated with the Router, Route ranges and Interfaces.
-    The Router class encapsulates a list of router resources that is be managed by the user.
+    The Router class encapsulates a list of router resources that are managed by the user.
     A list of resources can be retrieved from the server using the Router.find() method.
-    The list can be managed by the user by using the Router.add() and Router.remove() methods.
+    The list can be managed by using the Router.add() and Router.remove() methods.
     """
 
     __slots__ = ()
@@ -38,24 +38,24 @@ class Router(Base):
 
     @property
     def Interface(self):
-        """An instance of the Interface class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_7241a7f320a24805ec0aca177c6947c2.Interface): An instance of the Interface class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_7241a7f320a24805ec0aca177c6947c2.Interface)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_7241a7f320a24805ec0aca177c6947c2 import Interface
         return Interface(self)
 
     @property
     def Enabled(self):
-        """If true, it enables or disables the simulated router.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, it enables or disables the simulated router.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -64,10 +64,10 @@ class Router(Base):
 
     @property
     def RouterId(self):
-        """This signifies the ID of the simulated router, expressed as an IP address.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This signifies the ID of the simulated router, expressed as an IP address.
         """
         return self._get_attribute('routerId')
     @RouterId.setter
@@ -75,70 +75,83 @@ class Router(Base):
         self._set_attribute('routerId', value)
 
     def update(self, Enabled=None, RouterId=None):
-        """Updates a child instance of router on the server.
+        """Updates router resource on the server.
 
-        Args:
-            Enabled (bool): If true, it enables or disables the simulated router.
-            RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
+        Args
+        ----
+        - Enabled (bool): If true, it enables or disables the simulated router.
+        - RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def add(self, Enabled=None, RouterId=None):
-        """Adds a new router node on the server and retrieves it in this instance.
+        """Adds a new router resource on the server and adds it to the container.
 
-        Args:
-            Enabled (bool): If true, it enables or disables the simulated router.
-            RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
+        Args
+        ----
+        - Enabled (bool): If true, it enables or disables the simulated router.
+        - RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
 
-        Returns:
-            self: This instance with all currently retrieved router data using find and the newly added router data available through an iterator or index
+        Returns
+        -------
+        - self: This instance with all currently retrieved router resources using find and the newly added router resources available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._create(locals())
 
     def remove(self):
-        """Deletes all the router data in this instance from server.
+        """Deletes all the contained router resources in this instance from the server.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         self._delete()
 
     def find(self, Enabled=None, RouterId=None):
-        """Finds and retrieves router data from the server.
+        """Finds and retrieves router resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve router data from the server.
-        By default the find method takes no parameters and will retrieve all router data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all router resources from the server.
 
-        Args:
-            Enabled (bool): If true, it enables or disables the simulated router.
-            RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
+        Args
+        ----
+        - Enabled (bool): If true, it enables or disables the simulated router.
+        - RouterId (str): This signifies the ID of the simulated router, expressed as an IP address.
 
-        Returns:
-            self: This instance with matching router data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching router resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of router data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the router data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the router resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

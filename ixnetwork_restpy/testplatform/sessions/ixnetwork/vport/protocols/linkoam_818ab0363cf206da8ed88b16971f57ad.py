@@ -36,24 +36,24 @@ class LinkOam(Base):
 
     @property
     def Link(self):
-        """An instance of the Link class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b.Link): An instance of the Link class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b.Link)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b import Link
         return Link(self)
 
     @property
     def Enabled(self):
-        """If true, the Link OAM protocol is enabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, the Link OAM protocol is enabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -62,32 +62,35 @@ class LinkOam(Base):
 
     @property
     def RunningState(self):
-        """The current runnings state of Link OAM.
-
-        Returns:
-            str(unknown|stopped|stopping|starting|started)
+        """
+        Returns
+        -------
+        - str(unknown | stopped | stopping | starting | started): The current runnings state of Link OAM.
         """
         return self._get_attribute('runningState')
 
     def update(self, Enabled=None):
-        """Updates a child instance of linkOam on the server.
+        """Updates linkOam resource on the server.
 
-        Args:
-            Enabled (bool): If true, the Link OAM protocol is enabled.
+        Args
+        ----
+        - Enabled (bool): If true, the Link OAM protocol is enabled.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def Start(self):
         """Executes the start operation on the server.
 
         Starts the Link OAM protocol.
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('start', payload=payload, response_object=None)
@@ -97,9 +100,10 @@ class LinkOam(Base):
 
         Stops the Link OAM protocol
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         return self._execute('stop', payload=payload, response_object=None)

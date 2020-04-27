@@ -36,10 +36,10 @@ class Base64CodeOptions(Base):
 
     @property
     def IncludeSampleCode(self):
-        """Flag to include sample code
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Flag to include sample code
         """
         return self._get_attribute('includeSampleCode')
     @IncludeSampleCode.setter
@@ -48,10 +48,10 @@ class Base64CodeOptions(Base):
 
     @property
     def SampleObjectReferences(self):
-        """A list of object references used to generate sample code
-
-        Returns:
-            list(str[None])
+        """
+        Returns
+        -------
+        - list(str[None]): A list of object references used to generate sample code
         """
         return self._get_attribute('sampleObjectReferences')
     @SampleObjectReferences.setter
@@ -59,13 +59,15 @@ class Base64CodeOptions(Base):
         self._set_attribute('sampleObjectReferences', value)
 
     def update(self, IncludeSampleCode=None, SampleObjectReferences=None):
-        """Updates a child instance of base64CodeOptions on the server.
+        """Updates base64CodeOptions resource on the server.
 
-        Args:
-            IncludeSampleCode (bool): Flag to include sample code
-            SampleObjectReferences (list(str[None])): A list of object references used to generate sample code
+        Args
+        ----
+        - IncludeSampleCode (bool): Flag to include sample code
+        - SampleObjectReferences (list(str[None])): A list of object references used to generate sample code
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

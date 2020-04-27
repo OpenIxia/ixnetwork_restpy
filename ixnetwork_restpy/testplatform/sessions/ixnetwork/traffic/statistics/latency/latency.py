@@ -36,10 +36,10 @@ class Latency(Base):
 
     @property
     def Enabled(self):
-        """If true, latency statistics is enabled and if false, latency statistics is disabled.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: If true, latency statistics is enabled and if false, latency statistics is disabled.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -48,10 +48,10 @@ class Latency(Base):
 
     @property
     def Mode(self):
-        """Latency statistics is generated according to the mode set if latency is enabled.
-
-        Returns:
-            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        Returns
+        -------
+        - str(cutThrough | forwardingDelay | mef | storeForward): Latency statistics is generated according to the mode set if latency is enabled.
         """
         return self._get_attribute('mode')
     @Mode.setter
@@ -59,13 +59,15 @@ class Latency(Base):
         self._set_attribute('mode', value)
 
     def update(self, Enabled=None, Mode=None):
-        """Updates a child instance of latency on the server.
+        """Updates latency resource on the server.
 
-        Args:
-            Enabled (bool): If true, latency statistics is enabled and if false, latency statistics is disabled.
-            Mode (str(cutThrough|forwardingDelay|mef|storeForward)): Latency statistics is generated according to the mode set if latency is enabled.
+        Args
+        ----
+        - Enabled (bool): If true, latency statistics is enabled and if false, latency statistics is disabled.
+        - Mode (str(cutThrough | forwardingDelay | mef | storeForward)): Latency statistics is generated according to the mode set if latency is enabled.
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())

@@ -25,7 +25,7 @@ from ixnetwork_restpy.files import Files
 
 class SwitchAuxiliaryConnectionLearnedInfo(Base):
     """This object allows to configure the switch auxiliary connection learned information.
-    The SwitchAuxiliaryConnectionLearnedInfo class encapsulates a list of switchAuxiliaryConnectionLearnedInfo resources that is managed by the system.
+    The SwitchAuxiliaryConnectionLearnedInfo class encapsulates a list of switchAuxiliaryConnectionLearnedInfo resources that are managed by the system.
     A list of resources can be retrieved from the server using the SwitchAuxiliaryConnectionLearnedInfo.find() method.
     """
 
@@ -37,111 +37,118 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def AuxiliaryId(self):
-        """This describes the identifier for auxiliary connections.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the identifier for auxiliary connections.
         """
         return self._get_attribute('auxiliaryId')
 
     @property
     def ConnectionType(self):
-        """This describes the type of OpenFlow connection.
-
-        Returns:
-            str(tcp|tls|udp)
+        """
+        Returns
+        -------
+        - str(tcp | tls | udp): This describes the type of OpenFlow connection.
         """
         return self._get_attribute('connectionType')
 
     @property
     def DataPathId(self):
-        """This describes the Data Path ID of the OpenFlow switch.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This describes the Data Path ID of the OpenFlow switch.
         """
         return self._get_attribute('dataPathId')
 
     @property
     def DataPathIdAsHex(self):
-        """This describes the Data Path ID of the OpenFlow switch in hexadecimal format.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This describes the Data Path ID of the OpenFlow switch in hexadecimal format.
         """
         return self._get_attribute('dataPathIdAsHex')
 
     @property
     def LocalIp(self):
-        """This describes the local IP address of the selected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This describes the local IP address of the selected interface.
         """
         return self._get_attribute('localIp')
 
     @property
     def LocalPort(self):
-        """This describes the local port number identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the local port number identifier.
         """
         return self._get_attribute('localPort')
 
     @property
     def RemoteIp(self):
-        """This describes the Remote IP address of the selected interface.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: This describes the Remote IP address of the selected interface.
         """
         return self._get_attribute('remoteIp')
 
     @property
     def RemotePort(self):
-        """This describes the remote port number identifier.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: This describes the remote port number identifier.
         """
         return self._get_attribute('remotePort')
 
     def find(self, AuxiliaryId=None, ConnectionType=None, DataPathId=None, DataPathIdAsHex=None, LocalIp=None, LocalPort=None, RemoteIp=None, RemotePort=None):
-        """Finds and retrieves switchAuxiliaryConnectionLearnedInfo data from the server.
+        """Finds and retrieves switchAuxiliaryConnectionLearnedInfo resources from the server.
 
-        All named parameters support regex and can be used to selectively retrieve switchAuxiliaryConnectionLearnedInfo data from the server.
-        By default the find method takes no parameters and will retrieve all switchAuxiliaryConnectionLearnedInfo data from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchAuxiliaryConnectionLearnedInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchAuxiliaryConnectionLearnedInfo resources from the server.
 
-        Args:
-            AuxiliaryId (number): This describes the identifier for auxiliary connections.
-            ConnectionType (str(tcp|tls|udp)): This describes the type of OpenFlow connection.
-            DataPathId (str): This describes the Data Path ID of the OpenFlow switch.
-            DataPathIdAsHex (str): This describes the Data Path ID of the OpenFlow switch in hexadecimal format.
-            LocalIp (str): This describes the local IP address of the selected interface.
-            LocalPort (number): This describes the local port number identifier.
-            RemoteIp (str): This describes the Remote IP address of the selected interface.
-            RemotePort (number): This describes the remote port number identifier.
+        Args
+        ----
+        - AuxiliaryId (number): This describes the identifier for auxiliary connections.
+        - ConnectionType (str(tcp | tls | udp)): This describes the type of OpenFlow connection.
+        - DataPathId (str): This describes the Data Path ID of the OpenFlow switch.
+        - DataPathIdAsHex (str): This describes the Data Path ID of the OpenFlow switch in hexadecimal format.
+        - LocalIp (str): This describes the local IP address of the selected interface.
+        - LocalPort (number): This describes the local port number identifier.
+        - RemoteIp (str): This describes the Remote IP address of the selected interface.
+        - RemotePort (number): This describes the remote port number identifier.
 
-        Returns:
-            self: This instance with matching switchAuxiliaryConnectionLearnedInfo data retrieved from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with matching switchAuxiliaryConnectionLearnedInfo resources retrieved from the server available through an iterator or index
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._select(locals())
 
     def read(self, href):
         """Retrieves a single instance of switchAuxiliaryConnectionLearnedInfo data from the server.
 
-        Args:
-            href (str): An href to the instance to be retrieved
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
 
-        Returns:
-            self: This instance with the switchAuxiliaryConnectionLearnedInfo data from the server available through an iterator or index
+        Returns
+        -------
+        - self: This instance with the switchAuxiliaryConnectionLearnedInfo resources from the server available through an iterator or index
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)

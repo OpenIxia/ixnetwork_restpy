@@ -36,38 +36,38 @@ class EgtpUeRange(Base):
 
     @property
     def MobilePathEntries(self):
-        """An instance of the MobilePathEntries class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentries_6a07e110e42ebf0f9f068d52f1415211.MobilePathEntries): An instance of the MobilePathEntries class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentries_6a07e110e42ebf0f9f068d52f1415211.MobilePathEntries)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentries_6a07e110e42ebf0f9f068d52f1415211 import MobilePathEntries
         return MobilePathEntries(self)
 
     @property
     def TrafficProfileProxies(self):
-        """An instance of the TrafficProfileProxies class.
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxies_9aa63bb5951228c5db8de11f3c117b5a.TrafficProfileProxies): An instance of the TrafficProfileProxies class
 
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxies_9aa63bb5951228c5db8de11f3c117b5a.TrafficProfileProxies)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxies_9aa63bb5951228c5db8de11f3c117b5a import TrafficProfileProxies
         return TrafficProfileProxies(self)
 
     @property
     def AmbrDl(self):
-        """Obsolete. Use values from APN list
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Obsolete. Use values from APN list
         """
         return self._get_attribute('ambrDl')
     @AmbrDl.setter
@@ -76,10 +76,10 @@ class EgtpUeRange(Base):
 
     @property
     def AmbrUl(self):
-        """Obsolete. Use values from APN list
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Obsolete. Use values from APN list
         """
         return self._get_attribute('ambrUl')
     @AmbrUl.setter
@@ -88,10 +88,10 @@ class EgtpUeRange(Base):
 
     @property
     def ApnIncrement(self):
-        """Use the first APN from the list bellow. Increment it for each UE
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use the first APN from the list bellow. Increment it for each UE
         """
         return self._get_attribute('apnIncrement')
     @ApnIncrement.setter
@@ -100,10 +100,10 @@ class EgtpUeRange(Base):
 
     @property
     def ApnRestriction(self):
-        """Authorization to access another APN
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Authorization to access another APN
         """
         return self._get_attribute('apnRestriction')
     @ApnRestriction.setter
@@ -112,10 +112,10 @@ class EgtpUeRange(Base):
 
     @property
     def Count(self):
-        """The total number of UEs to be created for this range.
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total number of UEs to be created for this range.
         """
         return self._get_attribute('count')
     @Count.setter
@@ -124,10 +124,10 @@ class EgtpUeRange(Base):
 
     @property
     def EnableMobility(self):
-        """Perform a mobility test
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Perform a mobility test
         """
         return self._get_attribute('enableMobility')
     @EnableMobility.setter
@@ -136,10 +136,10 @@ class EgtpUeRange(Base):
 
     @property
     def EnableSv(self):
-        """Use Software Version to generate IMEISV
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Use Software Version to generate IMEISV
         """
         return self._get_attribute('enableSv')
     @EnableSv.setter
@@ -148,10 +148,10 @@ class EgtpUeRange(Base):
 
     @property
     def Enabled(self):
-        """Disabled ranges won't be configured nor validated.
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Disabled ranges won't be configured nor validated.
         """
         return self._get_attribute('enabled')
     @Enabled.setter
@@ -160,10 +160,10 @@ class EgtpUeRange(Base):
 
     @property
     def Hni(self):
-        """Home Network Identifier: MNC+MCC (doesn't need to mach eNodeB Location Information)
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Home Network Identifier: MNC+MCC (doesn't need to mach eNodeB Location Information)
         """
         return self._get_attribute('hni')
     @Hni.setter
@@ -172,10 +172,10 @@ class EgtpUeRange(Base):
 
     @property
     def Imsi(self):
-        """International Mobile Subscriber Identity
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: International Mobile Subscriber Identity
         """
         return self._get_attribute('imsi')
     @Imsi.setter
@@ -184,10 +184,10 @@ class EgtpUeRange(Base):
 
     @property
     def IncrementBy(self):
-        """Increment by this amount
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Increment by this amount
         """
         return self._get_attribute('incrementBy')
     @IncrementBy.setter
@@ -196,10 +196,10 @@ class EgtpUeRange(Base):
 
     @property
     def MaxDelayVariation(self):
-        """Randomize Start delay by max +/- X%
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomize Start delay by max +/- X%
         """
         return self._get_attribute('maxDelayVariation')
     @MaxDelayVariation.setter
@@ -208,10 +208,10 @@ class EgtpUeRange(Base):
 
     @property
     def MaxIntervalVariation(self):
-        """Randomize Mobility interval by max +/- X%
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: Randomize Mobility interval by max +/- X%
         """
         return self._get_attribute('maxIntervalVariation')
     @MaxIntervalVariation.setter
@@ -220,10 +220,10 @@ class EgtpUeRange(Base):
 
     @property
     def Mei(self):
-        """International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
         """
         return self._get_attribute('mei')
     @Mei.setter
@@ -232,10 +232,10 @@ class EgtpUeRange(Base):
 
     @property
     def MobilityInterval(self):
-        """The total time (seconds) it will take the mobile to return to the starting node
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: The total time (seconds) it will take the mobile to return to the starting node
         """
         return self._get_attribute('mobilityInterval')
     @MobilityInterval.setter
@@ -244,10 +244,10 @@ class EgtpUeRange(Base):
 
     @property
     def Msisdn(self):
-        """Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
         """
         return self._get_attribute('msisdn')
     @Msisdn.setter
@@ -256,10 +256,10 @@ class EgtpUeRange(Base):
 
     @property
     def Name(self):
-        """Name of range
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Name of range
         """
         return self._get_attribute('name')
     @Name.setter
@@ -268,19 +268,19 @@ class EgtpUeRange(Base):
 
     @property
     def ObjectId(self):
-        """Unique identifier for this object
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: Unique identifier for this object
         """
         return self._get_attribute('objectId')
 
     @property
     def ParentENodeB(self):
-        """Do not use this. Use parentRange instead
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Do not use this. Use parentRange instead
         """
         return self._get_attribute('parentENodeB')
     @ParentENodeB.setter
@@ -289,10 +289,10 @@ class EgtpUeRange(Base):
 
     @property
     def ParentRange(self):
-        """Parent range
-
-        Returns:
-            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Parent range
         """
         return self._get_attribute('parentRange')
     @ParentRange.setter
@@ -301,10 +301,10 @@ class EgtpUeRange(Base):
 
     @property
     def RelocateSgwOnLastEnodeB(self):
-        """Relocate SGW on Last eNB
-
-        Returns:
-            bool
+        """
+        Returns
+        -------
+        - bool: Relocate SGW on Last eNB
         """
         return self._get_attribute('relocateSgwOnLastEnodeB')
     @RelocateSgwOnLastEnodeB.setter
@@ -313,10 +313,10 @@ class EgtpUeRange(Base):
 
     @property
     def StartDelay(self):
-        """How many seconds to wait before starting to move the UEs
-
-        Returns:
-            number
+        """
+        Returns
+        -------
+        - number: How many seconds to wait before starting to move the UEs
         """
         return self._get_attribute('startDelay')
     @StartDelay.setter
@@ -325,10 +325,10 @@ class EgtpUeRange(Base):
 
     @property
     def Sv(self):
-        """The software version number to be appended to the IMEI in order to generate IMEISV
-
-        Returns:
-            str
+        """
+        Returns
+        -------
+        - str: The software version number to be appended to the IMEI in order to generate IMEISV
         """
         return self._get_attribute('sv')
     @Sv.setter
@@ -336,50 +336,53 @@ class EgtpUeRange(Base):
         self._set_attribute('sv', value)
 
     def update(self, AmbrDl=None, AmbrUl=None, ApnIncrement=None, ApnRestriction=None, Count=None, EnableMobility=None, EnableSv=None, Enabled=None, Hni=None, Imsi=None, IncrementBy=None, MaxDelayVariation=None, MaxIntervalVariation=None, Mei=None, MobilityInterval=None, Msisdn=None, Name=None, ParentENodeB=None, ParentRange=None, RelocateSgwOnLastEnodeB=None, StartDelay=None, Sv=None):
-        """Updates a child instance of egtpUeRange on the server.
+        """Updates egtpUeRange resource on the server.
 
-        Args:
-            AmbrDl (number): Obsolete. Use values from APN list
-            AmbrUl (number): Obsolete. Use values from APN list
-            ApnIncrement (bool): Use the first APN from the list bellow. Increment it for each UE
-            ApnRestriction (number): Authorization to access another APN
-            Count (number): The total number of UEs to be created for this range.
-            EnableMobility (bool): Perform a mobility test
-            EnableSv (bool): Use Software Version to generate IMEISV
-            Enabled (bool): Disabled ranges won't be configured nor validated.
-            Hni (str): Home Network Identifier: MNC+MCC (doesn't need to mach eNodeB Location Information)
-            Imsi (str): International Mobile Subscriber Identity
-            IncrementBy (number): Increment by this amount
-            MaxDelayVariation (number): Randomize Start delay by max +/- X%
-            MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
-            Mei (str): International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
-            MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
-            Msisdn (str): Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
-            Name (str): Name of range
-            ParentENodeB (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Do not use this. Use parentRange instead
-            ParentRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): Parent range
-            RelocateSgwOnLastEnodeB (bool): Relocate SGW on Last eNB
-            StartDelay (number): How many seconds to wait before starting to move the UEs
-            Sv (str): The software version number to be appended to the IMEI in order to generate IMEISV
+        Args
+        ----
+        - AmbrDl (number): Obsolete. Use values from APN list
+        - AmbrUl (number): Obsolete. Use values from APN list
+        - ApnIncrement (bool): Use the first APN from the list bellow. Increment it for each UE
+        - ApnRestriction (number): Authorization to access another APN
+        - Count (number): The total number of UEs to be created for this range.
+        - EnableMobility (bool): Perform a mobility test
+        - EnableSv (bool): Use Software Version to generate IMEISV
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Hni (str): Home Network Identifier: MNC+MCC (doesn't need to mach eNodeB Location Information)
+        - Imsi (str): International Mobile Subscriber Identity
+        - IncrementBy (number): Increment by this amount
+        - MaxDelayVariation (number): Randomize Start delay by max +/- X%
+        - MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
+        - Mei (str): International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
+        - MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
+        - Msisdn (str): Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
+        - Name (str): Name of range
+        - ParentENodeB (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Do not use this. Use parentRange instead
+        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Parent range
+        - RelocateSgwOnLastEnodeB (bool): Relocate SGW on Last eNB
+        - StartDelay (number): How many seconds to wait before starting to move the UEs
+        - Sv (str): The software version number to be appended to the IMEI in order to generate IMEISV
 
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
         """
-        self._update(locals())
+        return self._update(locals())
 
     def CustomProtocolStack(self, *args, **kwargs):
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2:list, Arg3:enum)
-            Args:
-                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
 
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -391,16 +394,15 @@ class EgtpUeRange(Base):
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2=string)string
+        ---------------------------------------
+        - Arg2 (str): Protocol class name to disable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
@@ -412,16 +414,15 @@ class EgtpUeRange(Base):
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2:string)string
-            Args:
-                args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2=string)string
+        --------------------------------------
+        - Arg2 (str): Protocol class name to enable
+        - Returns str: Status of the exec
 
-            Returns:
-                str: Status of the exec
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
